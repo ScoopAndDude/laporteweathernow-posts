@@ -1,0 +1,45 @@
+# Saves the Markets & Economy numbers from the U.S. Bureau of Labor Statistics into
+# markets-data.json, which laporteweathernow.com/markets reads. Runs twice a day; the
+# file only changes when BLS has new numbers (about once a month per series).
+name: Markets numbers from BLS
+
+on:
+  schedule:
+    - cron: "17 14 * * *"   # 9:17 AM Central (8:17 AM in winter), after BLS's 8:30 AM Eastern releases
+    - cron: "47 21 * * *"   # 4:47 PM Central, a second try in case BLS didn't answer in the morning
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/markets_data.py
+      - .github/workflows/markets-data.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: markets-data
+  cancel-in-progress: false
+
+jobs:
+  save:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ask BLS for the latest numbers
+        env:
+          BLS_API_KEY: ${{ secrets.BLS_API_KEY }}
+        run: python3 scripts/markets_data.py
+      - name: Save them if anything changed
+        run: |
+          git add markets-data.json
+          if git diff --cached --quiet; then
+            echo "Nothing new to save."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Markets numbers from BLS ($(date -u +%Y-%m-%d))"
+          git pull --rebase origin main
+          git push origin HEAD:main
