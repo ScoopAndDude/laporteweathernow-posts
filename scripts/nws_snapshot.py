@@ -38,6 +38,9 @@ STATION = "KPPO"                    # La Porte Municipal Airport
 OFFICE = "IWX"                      # NWS Northern Indiana (Syracuse, IN)
 COUNTY_ZONES = ["INZ103", "INZ203", "INC091"]   # northern La Porte, southern La Porte, La Porte County
 API = "https://api.weather.gov"
+# Indiana's Central-time counties (same list as the website's timeutil.js).
+CENTRAL_TIME_COUNTIES = {"INC051", "INC073", "INC089", "INC091", "INC111", "INC123", "INC127",
+                         "INC129", "INC147", "INC149", "INC163", "INC173"}
 UA = "LaPorteWeatherNow/1.0 (+https://laporteweathernow.com)"
 CENTRAL = ZoneInfo("America/Chicago")
 
@@ -141,11 +144,15 @@ def iso_hours(duration):
 def point():
     p = get_json(f"{API}/points/{LAT},{LON}")["properties"]
     rel = (p.get("relativeLocation") or {}).get("properties") or {}
+    county = (p.get("county") or "").rsplit("/", 1)[-1]
     return {
         "office": p.get("gridId"), "gridX": p.get("gridX"), "gridY": p.get("gridY"),
         "forecast": p.get("forecast"), "forecastGridData": p.get("forecastGridData"),
         "forecastZone": (p.get("forecastZone") or "").rsplit("/", 1)[-1],
-        "county": (p.get("county") or "").rsplit("/", 1)[-1],
+        "county": county,
+        "nwsTimeZone": p.get("timeZone"),
+        # Indiana's Central-time counties are on file with NWS as Eastern; La Porte (INC091) keeps Central.
+        "timeZone": "America/Chicago" if county in CENTRAL_TIME_COUNTIES else p.get("timeZone"),
         "nearestPlace": ", ".join(x for x in (rel.get("city"), rel.get("state")) if x),
     }
 
@@ -184,21 +191,56 @@ def observation():
     }
 
 
+TIME_WORD = re.compile(r"\b(?:(1[0-2]|[1-9])(?::([0-5]\d))?\s?(am|pm)|(noon|midnight))\b", re.I)
+
+
+def text_in_zone(text, when, nws_tz, real_tz):
+    """NWS writes clock times ("before 5pm") in the zone it has on file for the point. For
+    La Porte that's Eastern, but La Porte keeps Central time, so every time reads an hour
+    late. Same fix as the website's nwsTextInZone (timeutil.js)."""
+    if not text or not nws_tz or not real_tz or nws_tz == real_tz:
+        return text
+    d = datetime.datetime.fromisoformat(when)
+    shift = int((d.astimezone(ZoneInfo(real_tz)).utcoffset() - d.astimezone(ZoneInfo(nws_tz)).utcoffset()).total_seconds() // 60)
+    if not shift:
+        return text
+
+    def fix(m):
+        h, mm, ap, word = m.groups()
+        if word:
+            mins = 720 if word.lower() == "noon" else 0
+        else:
+            mins = (int(h) % 12 + (12 if ap.lower() == "pm" else 0)) * 60 + int(mm or 0)
+        mins = (mins + shift) % 1440
+        hh, mn = divmod(mins, 60)
+        out = "midnight" if mins == 0 else "noon" if mins == 720 else \
+            f"{hh % 12 or 12}{':%02d' % mn if mn else ''}{'am' if hh < 12 else 'pm'}"
+        return out[0].upper() + out[1:] if m.group(0)[0].isupper() else out
+    return TIME_WORD.sub(fix, text)
+
+
 def forecast(pt):
     d = get_json(pt["forecast"])["properties"]
+    nws_tz, real_tz = pt.get("nwsTimeZone"), pt.get("timeZone")
     periods = []
     for x in d.get("periods") or []:
+        start = x.get("startTime")
         periods.append({
             "name": x.get("name"),
-            "start": x.get("startTime"), "end": x.get("endTime"),
+            "start": start, "end": x.get("endTime"),
             "isDaytime": x.get("isDaytime"),
             "temperatureF": x.get("temperature"),
             "rainChancePercent": (x.get("probabilityOfPrecipitation") or {}).get("value"),
             "wind": " ".join(v for v in (x.get("windDirection"), x.get("windSpeed")) if v),
-            "short": x.get("shortForecast"),
-            "detailed": x.get("detailedForecast"),
+            "short": text_in_zone(x.get("shortForecast"), start, nws_tz, real_tz),
+            "detailed": text_in_zone(x.get("detailedForecast"), start, nws_tz, real_tz),
         })
-    return {"updated": d.get("updateTime") or d.get("updated"), "generated": d.get("generatedAt"), "periods": periods}
+    note = None
+    if nws_tz and real_tz and nws_tz != real_tz:
+        note = (f"Clock times in the forecast wording are already in {real_tz} (La Porte's real time). "
+                f"NWS writes them in {nws_tz}, which it has on file for La Porte by mistake.")
+    return {"updated": d.get("updateTime") or d.get("updated"), "generated": d.get("generatedAt"),
+            "timesNote": note, "periods": periods}
 
 
 def rain_amounts(pt, periods):
