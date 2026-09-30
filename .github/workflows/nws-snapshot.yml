@@ -31,17 +31,24 @@ jobs:
       - name: Ask NWS, SPC and WPC for the latest
         run: python3 scripts/nws_snapshot.py
       - name: Save the snapshot
+        # The newest snapshot always wins: each try starts from the latest main and puts
+        # this run's file on top, so two runs close together can't block each other.
         run: |
-          git add nws-snapshot.json
-          if git diff --cached --quiet; then
-            echo "Nothing new to save."
-            exit 0
-          fi
+          cp nws-snapshot.json "$RUNNER_TEMP/nws-snapshot.json"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "NWS weather snapshot ($(TZ=America/Chicago date '+%Y-%m-%d %H:%M %Z'))"
-          for i in 1 2 3; do
-            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+          msg="NWS weather snapshot ($(TZ=America/Chicago date '+%Y-%m-%d %H:%M %Z'))"
+          for i in 1 2 3 4; do
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            cp "$RUNNER_TEMP/nws-snapshot.json" nws-snapshot.json
+            git add nws-snapshot.json
+            if git diff --cached --quiet; then
+              echo "Nothing new to save."
+              exit 0
+            fi
+            git commit -q -m "$msg"
+            if git push -q origin HEAD:main; then exit 0; fi
             sleep 5
           done
           exit 1
