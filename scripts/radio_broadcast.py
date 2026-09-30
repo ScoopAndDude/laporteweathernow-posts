@@ -49,6 +49,8 @@ RATE = 24000
 PAUSE_PARAGRAPH = 0.55
 PAUSE_SEGMENT = 1.0
 OBS_MAX_HOURS = 2
+# How the voice says local names (Kokoro/misaki sound symbols): La Porte is "luh-PORT".
+PRONOUNCE = {"La Port": "ləpˈɔɹt"}
 WEEKDAYS = bs.WEEKDAYS
 MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September",
           "October", "November", "December"]
@@ -514,6 +516,9 @@ def cmd_record(script_path, out_dir):
     pipe = KPipeline(lang_code="a", repo_id="hexgrad/Kokoro-82M")
 
     def speak(text):
+        # Kokoro takes a pronunciation in [word](/sounds/): La Porte is "luh-PORT" here.
+        for word, sounds in PRONOUNCE.items():
+            text = text.replace(word, f"[{word}](/{sounds}/)")
         chunks = []
         for result in pipe(text, voice=VOICE, speed=SPEED, split_pattern=r"\n+"):
             audio = result.audio if hasattr(result, "audio") else result[2]
