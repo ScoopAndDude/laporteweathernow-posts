@@ -28,7 +28,7 @@
   var LANGS = [
     { code: "en", name: "English", short: "EN", dir: "ltr" },
     { code: "ar-DZ", name: "الدارجة", short: "دارجة", note: "Algerian Arabic", dir: "rtl",
-      src: "https://scoopanddude.github.io/laporteweathernow-posts/preview/lang/ar-dz.js?v=f24ce6a8e7", css: "https://scoopanddude.github.io/laporteweathernow-posts/preview/lang/rtl.css?v=5f824b80c9" },
+      src: "https://scoopanddude.github.io/laporteweathernow-posts/preview/lang/ar-dz.js?v=0d3fdba228", css: "https://scoopanddude.github.io/laporteweathernow-posts/preview/lang/rtl.css?v=5f824b80c9" },
   ];
   // Languages Google Translate handles: code|English name|name in the language. Suggested ones first.
   var GOOGLE = ("es|Spanish|Español;ar|Arabic|العربية;fr|French|Français;pl|Polish|Polski;zh-CN|Chinese (Simplified)|简体中文;" +
