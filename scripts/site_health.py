@@ -36,13 +36,19 @@ EXTRA_PAGES = ["/", "/hardhat/", "/hardhat/pay", "/hardhat/terms", "/hardhat/pri
 ASSET_RE = re.compile(r'(?:src|href)="((?:/|\.\./)?[A-Za-z0-9_\-./]+\.(?:js|css|png|svg|ico|json)\?v=([0-9a-f]{10}))"')
 
 problems = []
-urgent = []
+urgent = []     # readers would notice (a page or file down, no Scoop today)
+stuck = []      # a job that keeps the site fresh has stopped (readers may not notice yet)
 
 
 def problem(text, is_urgent=False):
     problems.append(text)
     if is_urgent:
         urgent.append(text)
+
+
+def stuck_job(text):
+    problems.append(text)
+    stuck.append(text)
 
 
 def fetch(url, tries=2, headers=None):
@@ -166,7 +172,8 @@ def check_data():
         h = age_hours(json.loads(body).get("fetched")) if status == 200 else None
         out["home.json"] = {"status": status, "ageHours": h}
         if h is None or h > 3:
-            problem(f"The homepage's backup weather copy is {h} hours old (status {status}); the 'Homepage weather copy' job may be stuck.", True)
+            # Readers only see this copy when NWS is down, so it's a stuck job, not a page problem.
+            stuck_job(f"The homepage's backup weather copy is {h} hours old (status {status}); the 'Homepage weather copy' job may be stuck.")
     except Exception as e:
         problem(f"Couldn't read the homepage weather copy: {e}", True)
     # Weather radio: re-recorded whenever the broadcast changes (the airport reading alone changes it
@@ -176,32 +183,45 @@ def check_data():
         h = age_hours(json.loads(body).get("recorded")) if status == 200 else None
         out["radio.json"] = {"status": status, "ageHours": h}
         if h is None or h > 4:
-            problem(f"The weather radio recording is {h} hours old (status {status}); the 'Weather radio' job may be stuck.")
+            stuck_job(f"The weather radio recording is {h} hours old (status {status}); the 'Weather radio' job may be stuck. "
+                      "(The Alerts page reads the latest in the phone's own voice meanwhile.)")
     except Exception as e:
         problem(f"Couldn't read the weather radio recording: {e}")
     return out
 
 
 def check_actions():
+    """Failed GitHub jobs in the last 7 days, and when the outside clock last ticked."""
     if not TOKEN:
         return None
+    auth = {"Authorization": f"Bearer {TOKEN}", "Accept": "application/vnd.github+json"}
     since = (datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=7)).strftime("%Y-%m-%d")
-    status, body, _ = fetch(f"https://api.github.com/repos/{REPO_NAME}/actions/runs?per_page=100&created=>={since}",
-                            headers={"Authorization": f"Bearer {TOKEN}", "Accept": "application/vnd.github+json"})
+    # The timer starts runs all day long, so ask GitHub for the failures only (the full list is too long).
+    status, body, _ = fetch(f"https://api.github.com/repos/{REPO_NAME}/actions/runs?status=failure&per_page=100&created=>={since}", headers=auth)
     if status != 200:
         return {"error": f"status {status}"}
-    # This check's own runs fail on purpose when something is urgent (that's the email), so they don't count.
+    # This check's own runs fail on purpose when something needs a look (that's the email), so they don't count.
     runs = [r for r in json.loads(body).get("workflow_runs") or [] if r.get("name") != "Site health check"]
-    failed = [{"name": r["name"], "when": r["created_at"], "url": r["html_url"]} for r in runs if r.get("conclusion") == "failure"]
     by_name = {}
     for r in runs:
-        by_name.setdefault(r["name"], {"runs": 0, "failed": 0})
-        by_name[r["name"]]["runs"] += 1
-        by_name[r["name"]]["failed"] += 1 if r.get("conclusion") == "failure" else 0
-    for name, c in by_name.items():
-        if c["failed"]:
-            problem(f"GitHub job '{name}' failed {c['failed']} of {c['runs']} times in the last 7 days.")
-    return {"last7days": by_name, "failures": failed[:20]}
+        by_name[r["name"]] = by_name.get(r["name"], 0) + 1
+    for name, n in by_name.items():
+        problem(f"GitHub job '{name}' failed {n} time{'s' if n != 1 else ''} in the last 7 days.")
+    # The outside clock (Apps Script "LPWN timer") sends a tick every 15 minutes. Once it has
+    # started, a long silence means it stopped (usually an expired GitHub key).
+    status, body, _ = fetch(f"https://api.github.com/repos/{REPO_NAME}/actions/workflows/timer.yml/runs?event=repository_dispatch&per_page=1", headers=auth)
+    last_tick = None
+    try:
+        tick_runs = json.loads(body).get("workflow_runs") or [] if status == 200 else []
+        if tick_runs:
+            last_tick = tick_runs[0]["created_at"]
+            h = round((datetime.datetime.now(datetime.timezone.utc) - datetime.datetime.fromisoformat(last_tick.replace("Z", "+00:00"))).total_seconds() / 3600, 1)
+            if h > 2:
+                stuck_job(f"The outside clock (Apps Script 'LPWN timer') last ticked {h} hours ago; its GitHub key may have expired.")
+    except Exception as e:
+        problem(f"Couldn't read the timer's runs: {e}")
+    return {"failedLast7days": by_name, "failures": [{"name": r["name"], "when": r["created_at"], "url": r["html_url"]} for r in runs[:20]],
+            "lastTick": last_tick}
 
 
 def main():
@@ -214,6 +234,7 @@ def main():
         "ok": not problems,
         "problems": problems,
         "urgent": urgent,
+        "stuck": stuck,
         "pages": pages,
         "assets": {"checked": len(assets), "notOk": [a for a in assets if a["status"] != 200 or not a["stampOk"]]},
         "data": data,
@@ -222,7 +243,7 @@ def main():
     with open(OUT, "w", encoding="utf-8") as fh:
         json.dump(report, fh, ensure_ascii=False, indent=1)
         fh.write("\n")
-    print(f"{len(pages)} pages, {len(assets)} files checked; {len(problems)} problem(s), {len(urgent)} urgent.")
+    print(f"{len(pages)} pages, {len(assets)} files checked; {len(problems)} problem(s), {len(urgent)} urgent, {len(stuck)} stuck job(s).")
     for p in problems:
         print("  -", p)
 

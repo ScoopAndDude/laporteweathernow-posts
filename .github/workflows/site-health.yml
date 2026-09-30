@@ -15,6 +15,10 @@ on:
         description: "Send a test email (nothing is wrong)"
         type: boolean
         default: false
+      alert:
+        description: "Email Scoop if something is wrong (the daily run does; runs by hand don't unless this is ticked)"
+        type: boolean
+        default: false
   push:
     branches: [main]
     paths:
@@ -60,21 +64,30 @@ jobs:
       - name: Email Scoop if something needs a look
         env:
           TEST_ALERT: ${{ github.event.inputs.test_alert }}
+          ALERT: ${{ github.event_name == 'schedule' || github.event.inputs.alert == 'true' }}
         run: |
           python3 - <<'EOF'
           import json, os, sys
           with open(os.path.join(os.environ["RUNNER_TEMP"], "health.json"), encoding="utf-8") as fh:
-              urgent = json.load(fh).get("urgent") or []
+              report = json.load(fh)
+          urgent, stuck = report.get("urgent") or [], report.get("stuck") or []
           if os.environ.get("TEST_ALERT") == "true":
-              urgent = ["TEST ONLY, nothing is wrong: this is what an email from the daily site check looks like."]
-          if not urgent:
-              print("Nothing urgent.")
+              urgent, stuck = ["TEST ONLY, nothing is wrong: this is what an email from the daily site check looks like."], []
+          if not urgent and not stuck:
+              print("Nothing urgent, no stuck jobs.")
               sys.exit(0)
-          lines = ["## Something on laporteweathernow.com needs a look", ""] + [f"- {u}" for u in urgent]
+          lines = ["## Something on laporteweathernow.com needs a look", ""]
+          lines += [f"- Readers may notice: {u}" for u in urgent] + [f"- Stuck job: {s}" for s in stuck]
           lines += ["", "Full report: health.json in this repository."]
           with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as fh:
               fh.write("\n".join(lines) + "\n")
           for u in urgent:
-              print(f"::error title=Site check::{u}")
-          sys.exit(1)
+              print(f"::error title=Readers may notice::{u}")
+          for s in stuck:
+              print(f"::error title=Stuck job::{s}")
+          # Only the daily run (or a run asked to alert) fails on purpose, which is what emails Scoop.
+          # Checks run by hand just report, so testing never sends a scary email.
+          if os.environ.get("ALERT") == "true" or os.environ.get("TEST_ALERT") == "true":
+              sys.exit(1)
+          print("Found the items above; not emailing, because this run wasn't asked to alert.")
           EOF

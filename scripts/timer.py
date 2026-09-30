@@ -44,10 +44,17 @@ def due(now):
     return jobs
 
 
+# The daily site check started by the timer is the one that emails Scoop about problems.
+INPUTS = {"site-health.yml": {"alert": "true"}}
+
+
 def dispatch(workflow):
+    body = {"ref": "main"}
+    if workflow in INPUTS:
+        body["inputs"] = INPUTS[workflow]
     req = urllib.request.Request(
         f"https://api.github.com/repos/{REPO}/actions/workflows/{workflow}/dispatches",
-        data=json.dumps({"ref": "main"}).encode(),
+        data=json.dumps(body).encode(),
         headers={"Authorization": f"Bearer {TOKEN}", "Accept": "application/vnd.github+json",
                  "Content-Type": "application/json", "X-GitHub-Api-Version": "2022-11-28"},
         method="POST")
