@@ -1,0 +1,50 @@
+# Daily health check for laporteweathernow.com: every page and file loads, version
+# stamps match, the data files are fresh, the Daily Scoop is on time, and no GitHub job
+# keeps failing. Saves health.json; the weekly check-up reads it.
+name: Site health check
+
+on:
+  schedule:
+    - cron: "10 12 * * *"   # 7:10 AM Central (6:10 AM in winter), after the morning Scoop
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/site_health.py
+      - .github/workflows/site-health.yml
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: site-health
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check the site and its data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/site_health.py
+      - name: Save health.json
+        run: |
+          cp health.json "$RUNNER_TEMP/health.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          msg="Site health check ($(TZ=America/Chicago date '+%Y-%m-%d %H:%M %Z'))"
+          for i in 1 2 3 4; do
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            cp "$RUNNER_TEMP/health.json" health.json
+            git add health.json
+            if git diff --cached --quiet; then echo "Nothing new to save."; exit 0; fi
+            git commit -q -m "$msg"
+            if git push -q origin HEAD:main; then exit 0; fi
+            sleep 5
+          done
+          exit 1
