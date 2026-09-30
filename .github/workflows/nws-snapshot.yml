@@ -1,0 +1,47 @@
+# Saves the newest official weather for La Porte (NWS forecast, alerts, forecaster
+# discussion, storm and flooding-rain outlooks) into nws-snapshot.json. The Daily Scoop
+# is written from this file every morning. The morning post task starts this job itself
+# (workflow_dispatch) so it never waits on GitHub's schedule, which can run hours late;
+# the schedule below is only a backup copy for the same morning.
+name: NWS weather snapshot
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "5 10 * * *"   # 5:05 AM Central (4:05 AM in winter), backup only
+  push:
+    branches: [main]
+    paths:
+      - scripts/nws_snapshot.py
+      - .github/workflows/nws-snapshot.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nws-snapshot
+  cancel-in-progress: false
+
+jobs:
+  save:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ask NWS, SPC and WPC for the latest
+        run: python3 scripts/nws_snapshot.py
+      - name: Save the snapshot
+        run: |
+          git add nws-snapshot.json
+          if git diff --cached --quiet; then
+            echo "Nothing new to save."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "NWS weather snapshot ($(TZ=America/Chicago date '+%Y-%m-%d %H:%M %Z'))"
+          for i in 1 2 3; do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            sleep 5
+          done
+          exit 1
