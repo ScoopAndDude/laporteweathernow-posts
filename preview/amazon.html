@@ -13,6 +13,7 @@
 <meta property="og:title" content="Amazon Watch | La Porte Weather Now" />
 <meta property="og:description" content="What&rsquo;s happening in the Amazon: real satellite pictures, video, the latest numbers, and the people protecting it." />
 <meta property="og:image" content="https://laporteweathernow.com/og-image.png" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 <style>
 /* Amazon Watch (Sept. 30, 2026). Reuses the World Disaster Watch look. */
 .hero.am-hero { background: linear-gradient(180deg, rgba(8,40,24,0.62), rgba(8,40,24,0.9)), var(--dusk); padding-bottom: 36px; }
@@ -55,8 +56,25 @@
 .am-fine { font-size: 13px; color: var(--ink-soft); margin-top: 14px; }
 .am-sources { margin: 10px 0 0; padding-left: 18px; display: grid; gap: 6px; font-size: 14px; line-height: 1.45; }
 .am-sources a { color: #1f6b3a; font-weight: 700; }
+.am-map-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: 14px 0 10px; }
+.am-map-bar button { border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: 8px 14px; font-weight: 700; font-size: 14px; cursor: pointer; color: var(--ink); min-height: 40px; }
+.am-map-bar button:disabled { opacity: .45; cursor: default; }
+.am-map-bar strong { font-size: 16px; }
+.am-map-bar label { font-weight: 700; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; }
+.am-map { height: 460px; border-radius: var(--radius); box-shadow: var(--shadow); background: #0b1a12; z-index: 0; }
+.am-legend { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; color: var(--ink-soft); }
+.am-dot { width: 10px; height: 10px; border-radius: 50%; background: #ff3b1f; box-shadow: 0 0 0 2px rgba(255,59,31,.25); display: inline-block; }
+.am-compare { position: relative; overflow: hidden; --pos: 50%; }
+.am-compare .am-after { position: absolute; inset: 0; width: 100%; height: 100%; clip-path: inset(0 0 0 var(--pos)); }
+.am-divider { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 3px; margin-left: -1px; background: #fff; box-shadow: 0 0 8px rgba(0,0,0,.55); pointer-events: none; }
+.am-compare .am-tag { position: absolute; left: 10px; top: 10px; background: rgba(0,0,0,.72); color: #fff; font-size: 12px; font-weight: 800; letter-spacing: .04em; padding: 4px 8px; border-radius: 6px; }
+.am-compare .am-tag-r { left: auto; right: 10px; }
+.am-slider { display: block; width: calc(100% - 28px); margin: 12px 14px 0; accent-color: #1f6b3a; min-height: 28px; }
+.am-why { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 16px; }
+.am-why .am-card { border-top-color: var(--amber); }
+.am-why .am-kicker { font-size: 12px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: var(--amber-text); margin-bottom: 6px; }
 @media (max-width: 720px) { .am-glance { grid-template-columns: repeat(2, minmax(0,1fr)); } .am-stat-num { font-size: 24px; } }
-@media (max-width: 600px) { .am-pair { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .am-pair { grid-template-columns: 1fr; } .am-map { height: 380px; } }
 </style>
 <link rel="stylesheet" href="https://laporteweathernow.com/style.css?v=c697776a03" />
 <link rel="stylesheet" href="https://laporteweathernow.com/site-nav.css?v=b42ceda2a1" />
@@ -110,7 +128,7 @@
     <div class="hero-eyebrow">AMAZON WATCH</div>
     <h1>What&rsquo;s happening in the Amazon.</h1>
     <p class="lede">The world&rsquo;s largest rainforest in real satellite pictures and video, with the latest numbers from official sources and the people on the front line protecting it. We update the numbers every week.</p>
-    <div class="am-btns"><a class="btn btn-amber" href="#help">How you can help</a><a class="btn am-ghost" href="#see">See it from space</a><a class="btn am-ghost" href="#people">Who&rsquo;s protecting it</a></div>
+    <div class="am-btns"><a class="btn btn-amber" href="#help">How you can help</a><a class="btn am-ghost" href="#live">Live fire map</a><a class="btn am-ghost" href="#see">See it from space</a><a class="btn am-ghost" href="#people">Who&rsquo;s protecting it</a></div>
     <div class="am-glance" id="amStats" aria-label="The numbers"><div class="am-stat"><div class="am-stat-num">2,874 km²</div><div class="am-stat-label">Cleared, Brazilian Amazon, Aug. 2025–July 2026</div></div><div class="am-stat"><div class="am-stat-num">69%</div><div class="am-stat-label">Chance this El Niño is the strongest since 1950</div></div><div class="am-stat"><div class="am-stat-num">78</div><div class="am-stat-label">Illegal mining rafts destroyed in one Peru raid</div></div><div class="am-stat"><div class="am-stat-num">Oct. 4</div><div class="am-stat-label">Brazil votes</div></div></div>
     <ul class="am-stat-notes" id="amStatNotes"></ul>
     <p class="am-updated" id="amUpdated"></p>
@@ -125,22 +143,39 @@
   </div>
 </section>
 
-<section class="section alt" id="see">
+<section class="section alt" id="live">
+  <div class="wrap">
+    <div class="section-eyebrow">LIVE FROM SPACE</div>
+    <h2>The Amazon from space, with fires</h2>
+    <p class="lede" style="max-width:72ch;">NASA&rsquo;s satellites photograph the whole Amazon every day and spot fires from orbit. This map shows yesterday&rsquo;s picture; step back a day at a time to see how things change.</p>
+    <div class="am-map-bar">
+      <button type="button" id="amPrev">&larr; Day before</button>
+      <strong id="amMapDate" aria-live="polite">Yesterday</strong>
+      <button type="button" id="amNext">Day after &rarr;</button>
+      <label><input type="checkbox" id="amFires" checked /> Show fires</label>
+      <span class="am-legend"><span class="am-dot" aria-hidden="true"></span> Fire or other heat source</span>
+    </div>
+    <div id="amMap" class="am-map" role="region" aria-label="Satellite map of the Amazon with fire detections"></div>
+    <p class="am-fine">Pictures from NASA&rsquo;s Global Imagery Browse Services (GIBS), taken by the VIIRS instrument on the Suomi NPP satellite; fire and heat detections from VIIRS on Suomi NPP and NOAA-20. Detections also catch things like gas flares, and clouds or smoke hide the ground on some days. <a href="https://worldview.earthdata.nasa.gov/?v=-80,-20,-40,8" target="_blank" rel="noopener">Explore more in NASA Worldview &#8599;</a></p>
+  </div>
+</section>
+
+<section class="section" id="see">
   <div class="wrap">
     <div class="section-eyebrow">SEE IT FROM SPACE</div>
     <h2>Real satellite pictures</h2>
     <p class="lede" style="max-width:70ch;">NASA&rsquo;s satellites watch the Amazon every day. These pictures show what drought, fire, gold mining and clearing look like from above.</p>
     <div class="am-gallery">
-      <figure class="am-fig am-wide"><div class="am-pair"><div class="am-shot"><img src="https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/images/imagerecords/151000/151961/rionegro_oli2_2022281.jpg" alt="Satellite view of the Rio Negro near Manaus at normal water, October 8, 2022" loading="lazy" width="720" height="480" /><span class="am-tag">OCT. 8, 2022</span></div><div class="am-shot"><img src="https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/images/imagerecords/151000/151961/rionegro_oli_2023276.jpg" alt="Satellite view of the Rio Negro near Manaus at record-low water, with sandbars showing, October 3, 2023" loading="lazy" width="720" height="480" /><span class="am-tag">OCT. 3, 2023</span></div></div><figcaption><strong>Drought: the Rio Negro at a record low</strong>The Rio Negro, the Amazon&rsquo;s largest tributary, near Manaus, Brazil, in a normal October (2022) and at its record low during the 2023 El Ni&ntilde;o drought (2023). Low rivers cut off drinking water and boat travel for hundreds of communities.<span class="am-credit">NASA Earth Observatory images by Wanmei Liang, using Landsat data from the U.S. Geological Survey. <a href="https://science.nasa.gov/earth/earth-observatory/drought-on-the-rio-negro-151961/" target="_blank" rel="noopener">NASA&rsquo;s story &#8599;</a></span></figcaption></figure>
+      <figure class="am-fig am-wide"><div class="am-compare"><img src="https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/images/imagerecords/151000/151961/rionegro_oli2_2022281.jpg" alt="Satellite view of the Rio Negro near Manaus at normal water, October 8, 2022" loading="lazy" width="720" height="480" /><img class="am-after" src="https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/images/imagerecords/151000/151961/rionegro_oli_2023276.jpg" alt="Satellite view of the Rio Negro near Manaus at record-low water, with sandbars showing, October 3, 2023" loading="lazy" width="720" height="480" /><div class="am-divider" aria-hidden="true"></div><span class="am-tag">OCT. 8, 2022</span><span class="am-tag am-tag-r">OCT. 3, 2023</span></div><input type="range" class="am-slider" min="0" max="100" value="50" aria-label="Slide to compare Oct. 8, 2022 with Oct. 3, 2023" /><figcaption><strong>Drought: the Rio Negro at a record low</strong>The Rio Negro, the Amazon&rsquo;s largest tributary, near Manaus, Brazil, in a normal October (2022) and at its record low during the 2023 El Ni&ntilde;o drought (2023). Low rivers cut off drinking water and boat travel for hundreds of communities. Drag the slider to compare.<span class="am-credit">NASA Earth Observatory images by Wanmei Liang, using Landsat data from the U.S. Geological Survey. <a href="https://science.nasa.gov/earth/earth-observatory/drought-on-the-rio-negro-151961/" target="_blank" rel="noopener">NASA&rsquo;s story &#8599;</a></span></figcaption></figure>
       <figure class="am-fig"><img src="https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/images/imagerecords/151000/151965/amazonfires_tmo_2023284.jpg" alt="Satellite view of wildfire smoke over the Amazon rainforest, October 11, 2023" loading="lazy" width="720" height="480" /><figcaption><strong>Fire: smoke over the Amazon</strong>Smoke from wildfires spreads over the Amazon on Oct. 11, 2023, during the El Ni&ntilde;o drought. Drought lets fire creep through the forest floor under the trees, damage that lasts for decades.<span class="am-credit">NASA Earth Observatory image by Lauren Dauphin, using MODIS data from NASA EOSDIS LANCE and GIBS/Worldview. <a href="https://science.nasa.gov/earth/earth-observatory/drought-fuels-wildfires-in-the-amazon-151965/" target="_blank" rel="noopener">NASA&rsquo;s story &#8599;</a></span></figcaption></figure>
       <figure class="am-fig"><img src="https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/images/imagerecords/148000/148439/peruhotspot_oli_2021122.jpg" alt="Satellite view of gold mining clearings along the Pariamanu River in Peru, 2021" loading="lazy" width="720" height="480" /><figcaption><strong>Gold mining: Peru&rsquo;s Pariamanu River</strong>Unauthorized gold mining cleared more than 200 hectares of forest along the Pariamanu River in Madre de Dios, Peru, in 2020 and 2021. The bare patches and ponds are mining pits.<span class="am-credit">NASA Earth Observatory image by Lauren Dauphin, using Landsat data from the U.S. Geological Survey. <a href="https://science.nasa.gov/earth/earth-observatory/finding-gold-mining-hotspots-in-peru-148439/" target="_blank" rel="noopener">NASA&rsquo;s story &#8599;</a></span></figcaption></figure>
-      <figure class="am-fig am-wide"><div class="am-pair"><div class="am-shot"><img src="https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/woc/images/amazon/amazon_deforestation_20000730.jpg" alt="Satellite view of mostly unbroken forest in Rondônia, Brazil, July 30, 2000" loading="lazy" width="720" height="480" /><span class="am-tag">JULY 30, 2000</span></div><div class="am-shot"><img src="https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/woc/images/amazon/amazon_deforestation_20120718.jpg" alt="Satellite view of the same area of Rondônia with widespread fishbone-pattern clearing, July 18, 2012" loading="lazy" width="720" height="480" /><span class="am-tag">JULY 18, 2012</span></div></div><figcaption><strong>Clearing: Rond&ocirc;nia, Brazil, 2000 and 2012</strong>Roads cut into the forest, and clearings spread from them in a fishbone pattern. Twelve years in western Brazil, seen from space.<span class="am-credit">NASA Earth Observatory map by Robert Simmon and Reto St&ouml;ckli, using MODIS imagery from the Terra satellite. <a href="https://science.nasa.gov/earth/earth-observatory/world-of-change/amazon-deforestation/" target="_blank" rel="noopener">NASA&rsquo;s story &#8599;</a></span></figcaption></figure>
+      <figure class="am-fig am-wide"><div class="am-compare"><img src="https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/woc/images/amazon/amazon_deforestation_20000730.jpg" alt="Satellite view of mostly unbroken forest in Rondônia, Brazil, July 30, 2000" loading="lazy" width="720" height="480" /><img class="am-after" src="https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/woc/images/amazon/amazon_deforestation_20120718.jpg" alt="Satellite view of the same area of Rondônia with widespread fishbone-pattern clearing, July 18, 2012" loading="lazy" width="720" height="480" /><div class="am-divider" aria-hidden="true"></div><span class="am-tag">JULY 30, 2000</span><span class="am-tag am-tag-r">JULY 18, 2012</span></div><input type="range" class="am-slider" min="0" max="100" value="50" aria-label="Slide to compare July 30, 2000 with July 18, 2012" /><figcaption><strong>Clearing: Rond&ocirc;nia, Brazil, 2000 and 2012</strong>Roads cut into the forest, and clearings spread from them in a fishbone pattern. Twelve years in western Brazil, seen from space. Drag the slider to compare.<span class="am-credit">NASA Earth Observatory map by Robert Simmon and Reto St&ouml;ckli, using MODIS imagery from the Terra satellite. <a href="https://science.nasa.gov/earth/earth-observatory/world-of-change/amazon-deforestation/" target="_blank" rel="noopener">NASA&rsquo;s story &#8599;</a></span></figcaption></figure>
     </div>
     <p class="am-fine">See today&rsquo;s view from space on <a href="https://worldview.earthdata.nasa.gov/?v=-80,-20,-40,8" target="_blank" rel="noopener">NASA Worldview &#8599;</a>, and this week&rsquo;s fires on <a href="https://firms.modaps.eosdis.nasa.gov/map/" target="_blank" rel="noopener">NASA&rsquo;s fire map &#8599;</a>.</p>
   </div>
 </section>
 
-<section class="section" id="watch">
+<section class="section alt" id="watch">
   <div class="wrap">
     <div class="section-eyebrow">WATCH</div>
     <h2>Real video from the front line</h2>
@@ -150,6 +185,19 @@
       <div class="am-video"><button type="button" class="am-play" data-yt="rwaZkZCx_4c" aria-label="Play video: Peru steps up fight against illegal gold mining"><img src="https://i.ytimg.com/vi/rwaZkZCx_4c/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" /><span class="am-play-icon" aria-hidden="true">&#9654;</span></button><h3>Peru raids illegal gold mines</h3><p>Footage from Peru&rsquo;s August 2026 operation as illegal miners pushed into Tambopata National Reserve. From AP Archive.</p></div>
     </div>
     <p class="am-fine">Tap a video to play it. The preview pictures come from YouTube, and the video loads from YouTube&rsquo;s privacy-enhanced player only when you tap play.</p>
+  </div>
+</section>
+
+<section class="section" id="why">
+  <div class="wrap">
+    <div class="section-eyebrow">WHY IT MATTERS</div>
+    <h2>What the Amazon really does, and one myth</h2>
+    <div class="am-why">
+      <div class="am-card"><div class="am-kicker">Myth</div><h3>&ldquo;The lungs of the planet&rdquo;</h3><p>You may have heard the Amazon makes 20% of the world&rsquo;s oxygen. Scientists estimate its plants make about 6 to 9%, and the forest&rsquo;s own trees and microbes use nearly all of it, so its net share is close to zero.</p><p class="am-src">Source: <a href="https://www.factcheck.org/2019/09/amazon-doesnt-produce-20-of-earths-oxygen/" target="_blank" rel="noopener">FactCheck.org &#8599;</a></p></div>
+      <div class="am-card"><div class="am-kicker">Fact</div><h3>It holds a huge amount of carbon</h3><p>The Amazon stores about 150 to 200 billion metric tons of carbon in its trees and soil. If it all went into the air, carbon dioxide would rise by about 100 parts per million, roughly a quarter more than today.</p><p class="am-src">Source: <a href="https://www.factcheck.org/2019/09/amazon-doesnt-produce-20-of-earths-oxygen/" target="_blank" rel="noopener">FactCheck.org &#8599;</a></p></div>
+      <div class="am-card"><div class="am-kicker">Fact</div><h3>It makes its own rain</h3><p>About 30% of the moisture over the Amazon comes from the forest itself, as trees breathe out water that falls again as rain. A 2026 study found clearing caused most of the drop in rainfall in the southern Amazon since 1980.</p><p class="am-src">Source: <a href="https://news.mongabay.com/2026/03/study-finds-deforestation-accounts-for-major-amazon-rainfall-decline/" target="_blank" rel="noopener">Mongabay, on a Nature Communications study &#8599;</a></p></div>
+      <div class="am-card"><div class="am-kicker">Close to home</div><h3>The same El Ni&ntilde;o</h3><p>This year&rsquo;s strong El Ni&ntilde;o links us: the same event that usually brings milder winters to the northern U.S. is expected to bring heat and drought to the Amazon this fall.</p><p class="am-src">More: <a href="https://laporteweathernow.com/disasters#el-nino">our El Ni&ntilde;o watch</a></p></div>
+    </div>
   </div>
 </section>
 
@@ -252,6 +300,7 @@
   <p style="width:100%; text-align:center; margin-top:20px;"><a href="https://www.paypal.com/donate/?business=19scoops87%40gmail.com&currency_code=USD" target="_blank" rel="noopener" class="btn btn-amber" style="margin:6px;">&#9829; Support This Site &mdash; Donate</a><a href="https://www.gofundme.com/f/scoopanddude" target="_blank" rel="noopener" class="btn btn-outline" style="margin:6px;">&#128656; Help Keep Us on the Road</a></p>
 </footer>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
 // Amazon Watch (laporteweathernow.com/amazon). The numbers and news live in amazon-watch.json
 // in the public posts repo on GitHub, refreshed every week, so they update without a site publish.
@@ -260,7 +309,7 @@
   "use strict";
   var DATA_URL = "https://scoopanddude.github.io/laporteweathernow-posts/amazon-watch.json";
   var FALLBACK = {"about": "Numbers and news for laporteweathernow.com/amazon (Amazon Watch). Updated weekly from official data as reported by trusted outlets. Only numbers the sources state; calm, factual, no hype.", "updated": "2026-09-30", "nextUpdate": "2026-10-05", "headline": "Forest clearing is down in Brazil. Drought, fire and illegal gold mining are the dangers now.", "stats": [{"value": "2,874 km²", "label": "Cleared, Brazilian Amazon, Aug. 2025–July 2026", "note": "Down 36% from the year before, the lowest since 2012–13 (INPE satellite alerts).", "source": {"label": "INPE DETER alerts, reported Aug. 9, 2026", "url": "https://www.nationalheraldindia.com/environment/amazon-deforestation-alerts-fall-to-lowest-level-since-2013"}}, {"value": "69%", "label": "Chance this El Niño is the strongest since 1950", "note": "Brazil's Geological Service expects a hotter, drier fall and low rivers into November.", "source": {"label": "Geological Service of Brazil bulletin, reported Sept. 3, 2026", "url": "https://revistacenarium.com.br/en/2026-27-el-nino-could-be-the-strongest-since-1950-worsening-heat-and-drought-in-amazon/"}}, {"value": "78", "label": "Illegal mining rafts destroyed in one Peru raid", "note": "August 2026, as gold miners pushed into Tambopata National Reserve.", "source": {"label": "Associated Press, Aug. 14, 2026", "url": "https://www.clickorlando.com/news/world/2026/08/14/peru-steps-up-fight-against-illegal-gold-mining-as-activity-enters-protected-amazon-reserve/"}}, {"value": "Oct. 4", "label": "Brazil votes", "note": "Environmental groups say the result will shape how the Amazon is protected.", "source": {"label": "Plant-for-the-Planet, Sept. 28, 2026", "url": "https://blog.plant-for-the-planet.org/2026/brazils-2026-election-future-amazon-rainforest/"}}], "now": [{"date": "2026-09-03", "title": "A record El Niño could bring drought", "text": "Brazil's Geological Service gives a 69% chance that this El Niño becomes stronger than any since 1950. It expects above-normal heat, less rain and three to five heat waves from September to November, with Rio Negro basin rivers below normal and dropping more in November. The El Niño should last into early 2027. Drought is what lets fire burn through standing forest.", "source": {"label": "Revista Cenarium, citing the Geological Service of Brazil", "url": "https://revistacenarium.com.br/en/2026-27-el-nino-could-be-the-strongest-since-1950-worsening-heat-and-drought-in-amazon/"}}, {"date": "2026-08-14", "title": "Illegal gold miners enter a protected reserve in Peru", "text": "Peru's prosecutors say illegal gold miners have entered Tambopata National Reserve in the Madre de Dios region. A three-day operation destroyed 56 motors, 78 mining rafts and more than 13,000 gallons of fuel. Mercury from the mining poisons rivers and the fish Indigenous communities depend on.", "source": {"label": "Associated Press", "url": "https://www.clickorlando.com/news/world/2026/08/14/peru-steps-up-fight-against-illegal-gold-mining-as-activity-enters-protected-amazon-reserve/"}}, {"date": "2026-08-09", "title": "Deforestation alerts at their lowest since 2013", "text": "Brazil's space agency, INPE, counted 2,874 square kilometers of deforestation alerts in the Amazon from August 2025 through July 2026, down 36% and the lowest since 2012–13. Scientists caution that logging, drought and fire can still damage standing forest without counting as clearing.", "source": {"label": "Reported from INPE's DETER data", "url": "https://www.nationalheraldindia.com/environment/amazon-deforestation-alerts-fall-to-lowest-level-since-2013"}}, {"date": "2026-05-28", "title": "Illegal mining still earns billions in Brazil", "text": "A Greenpeace investigation found illegal gold mining in Brazil's Amazon still brings in billions of dollars despite federal crackdowns, concentrated in Indigenous lands such as the Yanomami territory. High gold prices and weak tracing of where gold comes from keep it going.", "source": {"label": "Greenpeace report, as reported May 28, 2026", "url": "https://political.org/2026/05/28/illegal-miners-extract-billions-in-amazon-gold-despite-brazil-crackdown-greenpeace-finds/"}}]};
-  var STATIC_SOURCES = [["NASA Earth Observatory: Drought on the Rio Negro (2023)", "https://science.nasa.gov/earth/earth-observatory/drought-on-the-rio-negro-151961/"], ["NASA Earth Observatory: Drought fuels wildfires in the Amazon (2023)", "https://science.nasa.gov/earth/earth-observatory/drought-fuels-wildfires-in-the-amazon-151965/"], ["NASA Earth Observatory: Finding gold mining hotspots in Peru (2021)", "https://science.nasa.gov/earth/earth-observatory/finding-gold-mining-hotspots-in-peru-148439/"], ["NASA Earth Observatory: World of Change, Amazon deforestation", "https://science.nasa.gov/earth/earth-observatory/world-of-change/amazon-deforestation/"], ["Junglekeepers: END GAME (Jan. 13, 2026)", "https://www.junglekeepers.org/press/releases/dc28a0b9-ecfc-40d6-a661-6502ebf0695e"], ["Democracy Now!: Yanuni and Juma Xipaia (Jan. 13, 2026)", "https://www.democracynow.org/2026/1/13/yanuni"]];
+  var STATIC_SOURCES = [["NASA Earth Observatory: Drought on the Rio Negro (2023)", "https://science.nasa.gov/earth/earth-observatory/drought-on-the-rio-negro-151961/"], ["NASA Earth Observatory: Drought fuels wildfires in the Amazon (2023)", "https://science.nasa.gov/earth/earth-observatory/drought-fuels-wildfires-in-the-amazon-151965/"], ["NASA Earth Observatory: Finding gold mining hotspots in Peru (2021)", "https://science.nasa.gov/earth/earth-observatory/finding-gold-mining-hotspots-in-peru-148439/"], ["NASA Earth Observatory: World of Change, Amazon deforestation", "https://science.nasa.gov/earth/earth-observatory/world-of-change/amazon-deforestation/"], ["NASA Global Imagery Browse Services (GIBS): daily satellite pictures and fire detections", "https://nasa-gibs.github.io/gibs-api-docs/"], ["FactCheck.org: The Amazon doesn't produce 20% of Earth's oxygen (2019)", "https://www.factcheck.org/2019/09/amazon-doesnt-produce-20-of-earths-oxygen/"], ["Mongabay: Deforestation accounts for major Amazon rainfall decline (2026)", "https://news.mongabay.com/2026/03/study-finds-deforestation-accounts-for-major-amazon-rainfall-decline/"], ["Junglekeepers: END GAME (Jan. 13, 2026)", "https://www.junglekeepers.org/press/releases/dc28a0b9-ecfc-40d6-a661-6502ebf0695e"], ["Democracy Now!: Yanuni and Juma Xipaia (Jan. 13, 2026)", "https://www.democracynow.org/2026/1/13/yanuni"]];
   var MONTHS = ["Jan.", "Feb.", "March", "April", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
   function $(id) { return document.getElementById(id); }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
@@ -296,6 +345,47 @@
       .then(function (d) { if (d && Array.isArray(d.stats) && d.stats.length) render(d); })
       .catch(function () { /* keep the copy that shipped with the site */ });
   } catch (e) { /* very old browser: keep the shipped copy */ }
+
+  // Before-and-after sliders.
+  Array.prototype.forEach.call(document.querySelectorAll(".am-fig"), function (fig) {
+    var r = fig.querySelector(".am-slider"), c = fig.querySelector(".am-compare");
+    if (r && c) r.addEventListener("input", function () { c.style.setProperty("--pos", r.value + "%"); });
+  });
+
+  // Live map: NASA GIBS daily satellite picture (VIIRS true color) and VIIRS fire detections for one day.
+  (function () {
+    var el = $("amMap");
+    if (!el || !window.L) { if (el) el.innerHTML = '<p style="color:#fff;padding:18px;">The map couldn&rsquo;t load. <a style="color:#ffd08a" href="https://worldview.earthdata.nasa.gov/?v=-80,-20,-40,8" target="_blank" rel="noopener">Open NASA Worldview</a> instead.</p>'; return; }
+    var DAY = 864e5, MAX_BACK = 30;
+    var now = new Date();
+    var latest = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()) - DAY;   // yesterday (UTC): today's pictures are still coming in
+    var shown = latest;
+    function ymd(t) { return new Date(t).toISOString().slice(0, 10); }
+    var GIBS = "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/";
+    var map = L.map(el, { minZoom: 3, maxZoom: 10, maxBounds: [[-40, -100], [20, -20]], maxBoundsViscosity: 0.8, scrollWheelZoom: false })
+      .setView([-6, -62], window.innerWidth < 600 ? 3 : 4);
+    var credit = 'Imagery: <a href="https://earthdata.nasa.gov/gibs" target="_blank" rel="noopener">NASA GIBS</a> (VIIRS)';
+    var base = L.tileLayer(GIBS + "VIIRS_SNPP_CorrectedReflectance_TrueColor/default/" + ymd(shown) + "/GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpg",
+      { maxNativeZoom: 9, maxZoom: 10, attribution: credit }).addTo(map);
+    L.tileLayer(GIBS + "Reference_Features_15m/default/GoogleMapsCompatible_Level13/{z}/{y}/{x}.png", { maxNativeZoom: 13, opacity: 0.8 }).addTo(map);
+    L.tileLayer(GIBS + "Reference_Labels_15m/default/GoogleMapsCompatible_Level13/{z}/{y}/{x}.png", { maxNativeZoom: 13 }).addTo(map);
+    var fires = L.tileLayer.wms("https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi", {
+      layers: "VIIRS_NOAA20_Thermal_Anomalies_375m_All,VIIRS_SNPP_Thermal_Anomalies_375m_All",
+      format: "image/png", transparent: true, version: "1.3.0", time: ymd(shown),
+      attribution: "Fires: VIIRS (NASA/NOAA)"
+    }).addTo(map);
+    function show() {
+      $("amMapDate").textContent = apDate(ymd(shown)) + (shown === latest ? " (yesterday)" : "");
+      base.setUrl(GIBS + "VIIRS_SNPP_CorrectedReflectance_TrueColor/default/" + ymd(shown) + "/GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpg");
+      fires.setParams({ time: ymd(shown) });
+      $("amNext").disabled = shown >= latest;
+      $("amPrev").disabled = shown <= latest - MAX_BACK * DAY;
+    }
+    $("amPrev").addEventListener("click", function () { shown -= DAY; show(); });
+    $("amNext").addEventListener("click", function () { shown = Math.min(latest, shown + DAY); show(); });
+    $("amFires").addEventListener("change", function (e) { if (e.target.checked) fires.addTo(map); else map.removeLayer(fires); });
+    show();
+  })();
 
   // Videos load only when someone taps play (YouTube's privacy-enhanced player).
   Array.prototype.forEach.call(document.querySelectorAll(".am-play[data-yt]"), function (b) {
