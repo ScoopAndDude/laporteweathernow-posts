@@ -9,6 +9,9 @@ Checks, in plain words:
 - the Daily Scoop's on-time record for the last 14 days (posted by 6:30 AM Central);
 - which GitHub jobs failed in the last 7 days.
 Anything wrong goes into "problems" in plain English. The weekly check-up reads this.
+The ones readers would notice (a page or file down, no Scoop today or only the automatic
+backup, a stuck homepage copy, a posts file that won't read) also go into "urgent"; the
+workflow then fails on purpose, and GitHub emails Scoop.
 """
 import datetime
 import hashlib
@@ -33,6 +36,13 @@ EXTRA_PAGES = ["/", "/hardhat/", "/hardhat/pay", "/hardhat/terms", "/hardhat/pri
 ASSET_RE = re.compile(r'(?:src|href)="((?:/|\.\./)?[A-Za-z0-9_\-./]+\.(?:js|css|png|svg|ico|json)\?v=([0-9a-f]{10}))"')
 
 problems = []
+urgent = []
+
+
+def problem(text, is_urgent=False):
+    problems.append(text)
+    if is_urgent:
+        urgent.append(text)
 
 
 def fetch(url, tries=2, headers=None):
@@ -69,7 +79,7 @@ def check_pages():
     if status == 200:
         paths = [re.sub(r"^https?://[^/]+", "", u) or "/" for u in re.findall(r"<loc>([^<]+)</loc>", body.decode("utf-8", "replace"))]
     else:
-        problems.append(f"The sitemap didn't load (status {status}).")
+        problem(f"The sitemap didn't load (status {status}).")
     for p in EXTRA_PAGES:
         if p not in paths:
             paths.append(p)
@@ -81,9 +91,9 @@ def check_pages():
                "fingerprint": hashlib.sha256(body).hexdigest()[:10] if status == 200 else None,
                "groupedMenu": 'class="nav-group"' in text}
         if status != 200:
-            problems.append(f"Page {p} didn't load (status {status}).")
+            problem(f"Page {p} didn't load (status {status}).", True)
         elif not p.startswith("/hardhat") and '<nav class="nav"' not in text:
-            problems.append(f"Page {p} is missing the site menu.")
+            problem(f"Page {p} is missing the site menu.", True)
         for ref, stamp in ASSET_RE.findall(text):
             base = p if p.endswith("/") else p.rsplit("/", 1)[0] + "/"
             url = SITE + (ref if ref.startswith("/") else base + ref)
@@ -97,9 +107,9 @@ def check_pages():
         ok = status == 200 and real == info["stamp"]
         checked.append({"url": url.replace(SITE, ""), "status": status, "stampOk": ok})
         if status != 200:
-            problems.append(f"{url.replace(SITE, '')} didn't load (status {status}), used by {', '.join(info['pages'][:3])}.")
+            problem(f"{url.replace(SITE, '')} didn't load (status {status}), used by {', '.join(info['pages'][:3])}.", True)
         elif not ok:
-            problems.append(f"{url.replace(SITE, '').split('?')[0]} has a version stamp that doesn't match the file (visitors may get an old copy).")
+            problem(f"{url.replace(SITE, '').split('?')[0]} has a version stamp that doesn't match the file (visitors may get an old copy).", True)
     return pages, checked
 
 
@@ -110,9 +120,11 @@ def check_data():
         posts = json.load(open(os.path.join(REPO, "scoop-posts.json"), encoding="utf-8")).get("posts") or []
         daily = [p for p in posts if p.get("type") == "daily"]
         latest = daily[0] if daily else {}
-        out["latestScoop"] = {"date": latest.get("date"), "posted": latest.get("posted")}
+        out["latestScoop"] = {"date": latest.get("date"), "posted": latest.get("posted"), "automatic": bool(latest.get("auto"))}
         if latest.get("date") != today and now().hour >= 7:
-            problems.append(f"There's no Daily Scoop for today ({today}); the newest is {latest.get('date')}.")
+            problem(f"There's no Daily Scoop for today ({today}); the newest is {latest.get('date')}.", True)
+        elif latest.get("date") == today and latest.get("auto"):
+            problem("Today's Daily Scoop is the automatic NWS backup: the morning Scoop task didn't post by 6:30 AM.", True)
         record = []
         for i in range(14):
             d = (now().date() - datetime.timedelta(days=i)).isoformat()
@@ -125,37 +137,38 @@ def check_data():
                 record.append({"date": d, "result": "unknown"})
                 continue
             posted = datetime.datetime.fromisoformat(stamp).astimezone(TZ)
-            record.append({"date": d, "result": "on time" if (posted.hour, posted.minute) <= (6, 30) else "late",
-                           "posted": posted.strftime("%H:%M")})
+            result = "backup" if p.get("auto") else "on time" if (posted.hour, posted.minute) <= (6, 30) else "late"
+            record.append({"date": d, "result": result, "posted": posted.strftime("%H:%M")})
         out["scoopLast14"] = {"onTime": sum(r["result"] == "on time" for r in record),
                               "late": sum(r["result"] == "late" for r in record),
+                              "backup": sum(r["result"] == "backup" for r in record),
                               "missing": sum(r["result"] == "missing" for r in record), "days": record}
     except Exception as e:
-        problems.append(f"Couldn't read scoop-posts.json: {e}")
+        problem(f"Couldn't read scoop-posts.json: {e}", True)
     for name, key, limit in (("nws-snapshot.json", "fetched", 26), ("scorecard.json", "generated", 26)):
         try:
             h = age_hours(json.load(open(os.path.join(REPO, name), encoding="utf-8")).get(key))
             out[name] = {"ageHours": h}
             if h is None or h > limit:
-                problems.append(f"{name} is {h} hours old (should be under {limit}).")
+                problem(f"{name} is {h} hours old (should be under {limit}).")
         except Exception as e:
-            problems.append(f"Couldn't read {name}: {e}")
+            problem(f"Couldn't read {name}: {e}")
     try:
         ww = json.load(open(os.path.join(REPO, "world-watch.json"), encoding="utf-8"))
         days = (now().date() - datetime.date.fromisoformat(ww.get("updated"))).days
         out["world-watch.json"] = {"updated": ww.get("updated"), "ageDays": days}
         if days > 8:
-            problems.append(f"The El Nino numbers (world-watch.json) are {days} days old; the weekly update may have stopped.")
+            problem(f"The El Nino numbers (world-watch.json) are {days} days old; the weekly update may have stopped.")
     except Exception as e:
-        problems.append(f"Couldn't read world-watch.json: {e}")
+        problem(f"Couldn't read world-watch.json: {e}")
     status, body, _ = fetch(f"https://raw.githubusercontent.com/{REPO_NAME}/live/home.json")
     try:
         h = age_hours(json.loads(body).get("fetched")) if status == 200 else None
         out["home.json"] = {"status": status, "ageHours": h}
         if h is None or h > 3:
-            problems.append(f"The homepage's hourly weather copy is {h} hours old (status {status}); the 'Homepage weather copy' job may be stuck.")
+            problem(f"The homepage's backup weather copy is {h} hours old (status {status}); the 'Homepage weather copy' job may be stuck.", True)
     except Exception as e:
-        problems.append(f"Couldn't read the homepage weather copy: {e}")
+        problem(f"Couldn't read the homepage weather copy: {e}", True)
     return out
 
 
@@ -167,7 +180,8 @@ def check_actions():
                             headers={"Authorization": f"Bearer {TOKEN}", "Accept": "application/vnd.github+json"})
     if status != 200:
         return {"error": f"status {status}"}
-    runs = json.loads(body).get("workflow_runs") or []
+    # This check's own runs fail on purpose when something is urgent (that's the email), so they don't count.
+    runs = [r for r in json.loads(body).get("workflow_runs") or [] if r.get("name") != "Site health check"]
     failed = [{"name": r["name"], "when": r["created_at"], "url": r["html_url"]} for r in runs if r.get("conclusion") == "failure"]
     by_name = {}
     for r in runs:
@@ -176,7 +190,7 @@ def check_actions():
         by_name[r["name"]]["failed"] += 1 if r.get("conclusion") == "failure" else 0
     for name, c in by_name.items():
         if c["failed"]:
-            problems.append(f"GitHub job '{name}' failed {c['failed']} of {c['runs']} times in the last 7 days.")
+            problem(f"GitHub job '{name}' failed {c['failed']} of {c['runs']} times in the last 7 days.")
     return {"last7days": by_name, "failures": failed[:20]}
 
 
@@ -189,6 +203,7 @@ def main():
         "checked": now().isoformat(),
         "ok": not problems,
         "problems": problems,
+        "urgent": urgent,
         "pages": pages,
         "assets": {"checked": len(assets), "notOk": [a for a in assets if a["status"] != 200 or not a["stampOk"]]},
         "data": data,
@@ -197,7 +212,7 @@ def main():
     with open(OUT, "w", encoding="utf-8") as fh:
         json.dump(report, fh, ensure_ascii=False, indent=1)
         fh.write("\n")
-    print(f"{len(pages)} pages, {len(assets)} files checked; {len(problems)} problem(s).")
+    print(f"{len(pages)} pages, {len(assets)} files checked; {len(problems)} problem(s), {len(urgent)} urgent.")
     for p in problems:
         print("  -", p)
 

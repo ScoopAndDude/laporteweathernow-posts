@@ -1,12 +1,20 @@
 # Daily health check for laporteweathernow.com: every page and file loads, version
 # stamps match, the data files are fresh, the Daily Scoop is on time, and no GitHub job
 # keeps failing. Saves health.json; the weekly check-up reads it.
+# When it finds something readers would notice ("urgent" in health.json), the last step
+# fails on purpose so GitHub emails Scoop that morning. Run it by hand with "test_alert"
+# to send a test email.
 name: Site health check
 
 on:
   schedule:
-    - cron: "10 12 * * *"   # 7:10 AM Central (6:10 AM in winter), after the morning Scoop
+    - cron: "10 13 * * *"   # 8:10 AM Central (7:10 AM in winter), after the morning Scoop and its backup
   workflow_dispatch:
+    inputs:
+      test_alert:
+        description: "Send a test email (nothing is wrong)"
+        type: boolean
+        default: false
   push:
     branches: [main]
     paths:
@@ -23,6 +31,7 @@ concurrency:
 
 jobs:
   check:
+    name: Daily site check
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
@@ -48,3 +57,24 @@ jobs:
             sleep 5
           done
           exit 1
+      - name: Email Scoop if something needs a look
+        env:
+          TEST_ALERT: ${{ github.event.inputs.test_alert }}
+        run: |
+          python3 - <<'EOF'
+          import json, os, sys
+          with open(os.path.join(os.environ["RUNNER_TEMP"], "health.json"), encoding="utf-8") as fh:
+              urgent = json.load(fh).get("urgent") or []
+          if os.environ.get("TEST_ALERT") == "true":
+              urgent = ["TEST ONLY, nothing is wrong: this is what an email from the daily site check looks like."]
+          if not urgent:
+              print("Nothing urgent.")
+              sys.exit(0)
+          lines = ["## Something on laporteweathernow.com needs a look", ""] + [f"- {u}" for u in urgent]
+          lines += ["", "Full report: health.json in this repository."]
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as fh:
+              fh.write("\n".join(lines) + "\n")
+          for u in urgent:
+              print(f"::error title=Site check::{u}")
+          sys.exit(1)
+          EOF

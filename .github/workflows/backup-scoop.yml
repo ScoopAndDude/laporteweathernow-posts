@@ -1,0 +1,65 @@
+# Backup Daily Scoop: if the morning Scoop isn't up by 6:30 AM Central, posts a short
+# automatic update with the official NWS forecast for La Porte, clearly marked as automatic
+# (scripts/backup_scoop.py). The morning Scoop task replaces it when its write-up comes in.
+# GitHub's clock is loose and Central time shifts in November, so this starts four times
+# each morning; the script itself only posts between 6:30 AM and 2 PM Central, and never
+# when today's Scoop is already up.
+name: Backup Daily Scoop
+
+on:
+  schedule:
+    - cron: "35 11,12 * * *"   # 6:35 and 7:35 AM Central in summer (5:35 and 6:35 in winter)
+    - cron: "5 12,13 * * *"    # 7:05 and 8:05 AM Central in summer (6:05 and 7:05 in winter)
+  workflow_dispatch:
+    inputs:
+      preview:
+        description: "Only show what a backup post would say right now (posts nothing)"
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - scripts/backup_scoop.py
+      - .github/workflows/backup-scoop.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: backup-scoop
+  cancel-in-progress: false
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Preview only (posts nothing)
+        if: github.event.inputs.preview == 'true'
+        run: |
+          python3 scripts/backup_scoop.py preview > "$RUNNER_TEMP/preview.json"
+          cat "$RUNNER_TEMP/preview.json"
+          { echo '```json'; cat "$RUNNER_TEMP/preview.json"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          python3 -c "import json, os; d = json.load(open(os.environ['RUNNER_TEMP'] + '/preview.json')); p = d['post']; print('::notice title=Backup Scoop preview (' + d['source'] + ')::' + p['title'] + ' | ' + ' '.join(p['body'][1:])[:900])"
+      - name: Build the backup post if today's Scoop is missing
+        if: github.event.inputs.preview != 'true'
+        run: python3 scripts/backup_scoop.py build "$RUNNER_TEMP/backup-post.json"
+      - name: Post it, unless the real Scoop arrived in the meantime
+        if: github.event.inputs.preview != 'true'
+        run: |
+          post="$RUNNER_TEMP/backup-post.json"
+          if [ ! -f "$post" ]; then echo "No backup needed."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3 4; do
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            python3 scripts/backup_scoop.py insert "$post"
+            git add scoop-posts.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -q -F "$post.msg"
+            if git push -q origin HEAD:main; then echo "Backup Scoop posted."; exit 0; fi
+            sleep 5
+          done
+          exit 1
