@@ -1,6 +1,6 @@
 {
  "about": "Official weather for La Porte, Indiana, saved by a GitHub job for the Daily Scoop (laporteweathernow.com/daily-scoop). Copied from NWS, SPC and WPC as-is; see scripts/nws_snapshot.py.",
- "fetched": "2026-09-30T07:26:30-05:00",
+ "fetched": "2026-09-30T08:47:10-05:00",
  "place": "La Porte, IN",
  "lat": 41.6081,
  "lon": -86.7189,
@@ -12,6 +12,8 @@
   "forecastGridData": "https://api.weather.gov/gridpoints/IWX/13,58",
   "forecastZone": "INZ103",
   "county": "INC091",
+  "nwsTimeZone": "America/Indiana/Indianapolis",
+  "timeZone": "America/Chicago",
   "nearestPlace": "La Porte, IN"
  },
  "zones": {
@@ -21,28 +23,29 @@
  },
  "observation": {
   "station": "KPPO (La Porte Municipal Airport)",
-  "time": "2026-09-30T06:55:00-05:00",
-  "weather": "Cloudy",
-  "temperatureF": 59,
-  "dewpointF": 59,
+  "time": "2026-09-30T07:35:00-05:00",
+  "weather": "",
+  "temperatureF": 61,
+  "dewpointF": 61,
   "humidityPercent": 100,
   "wind": {
-   "from": "SSE",
-   "degrees": 150,
-   "mph": 1,
+   "from": "WSW",
+   "degrees": 240,
+   "mph": 3,
    "gustMph": null
   },
   "visibilityMiles": 10.0,
-  "pressureInHg": 29.96,
-  "metar": "KPPO 301155Z AUTO 15001KT 10SM OVC065 15/15 A2996 RMK AO2 10166 20144 70000"
+  "pressureInHg": 29.98,
+  "metar": ""
  },
  "forecast": {
   "updated": "2026-09-30T12:01:03+00:00",
-  "generated": "2026-09-30T12:25:09+00:00",
+  "generated": "2026-09-30T13:47:10+00:00",
+  "timesNote": "Clock times in the forecast wording are already in America/Chicago (La Porte's real time). NWS writes them in America/Indiana/Indianapolis, which it has on file for La Porte by mistake.",
   "periods": [
    {
     "name": "Today",
-    "start": "2026-09-30T08:00:00-04:00",
+    "start": "2026-09-30T09:00:00-04:00",
     "end": "2026-09-30T18:00:00-04:00",
     "isDaytime": true,
     "temperatureF": 68,
@@ -71,7 +74,7 @@
     "rainChancePercent": 77,
     "wind": "S 5 mph",
     "short": "Showers And Thunderstorms",
-    "detailed": "Rain showers likely before 5pm, then showers and thunderstorms. Mostly cloudy, with a high near 73. South wind around 5 mph. Chance of precipitation is 80%. New rainfall amounts between a quarter and half of an inch possible."
+    "detailed": "Rain showers likely before 4pm, then showers and thunderstorms. Mostly cloudy, with a high near 73. South wind around 5 mph. Chance of precipitation is 80%. New rainfall amounts between a quarter and half of an inch possible."
    },
    {
     "name": "Thursday Night",
@@ -93,7 +96,7 @@
     "rainChancePercent": 72,
     "wind": "N 5 to 10 mph",
     "short": "Rain Showers Likely",
-    "detailed": "Rain showers likely before 2pm. Partly sunny, with a high near 64. North wind 5 to 10 mph. Chance of precipitation is 70%. New rainfall amounts between a quarter and half of an inch possible."
+    "detailed": "Rain showers likely before 1pm. Partly sunny, with a high near 64. North wind 5 to 10 mph. Chance of precipitation is 70%. New rainfall amounts between a quarter and half of an inch possible."
    },
    {
     "name": "Friday Night",
@@ -301,16 +304,16 @@
   ]
  },
  "discussion": {
-  "issued": "2026-09-30T05:13:00-05:00",
-  "ageHours": 2.2,
-  "text": "000\nFXUS63 KIWX 301013\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n613 AM EDT Wed Sep 30 2026\n\n.KEY MESSAGES...\n\n- Increasing chances (40-80%) for showers today along and mainly\n  north of US 24 , best potential will remain near Lake MI in \n  the mid-late afternoon. Highs will be in the upper 60s, low \n  70s for those areas. South of US 24 expect highs in the mid-\n  upper 70s with increasing clouds. \n\n- Rain chances (40-90%) spread eastward through Friday, with \n  isolated thunderstorm potential (non-severe). Highs will be in\n  the 70s, low 80s on Thursday and the 60s Friday. \n\n- Dry conditions are expected this weekend into early next \n  week, with highs in the 60s, low 70s (warmest further south). \n  Overnight lows will drop into the 40s.\n\n&&\n\n.DISCUSSION...\nIssued at 345 AM EDT Wed Sep 30 2026\n\nNot a whole lot of changes to the going forecast. Rain showers \ncontinue over northern IL into central MI this morning with the\nband of showers on the northwest periphery of ridging further \nsouth and east which will mainly keep the introduction of rain \nshowers for areas closer to Lake Michigan into this afternoon \nas the lower levels further moisten. WPC has a marginal risk for\nexcessive rainfall for later today and as the ridging pushes \nfurther south and east rain showers will make their way further \nsouth and east through Friday morning with a slight risk for \nexcessive rainfall for tomorrow. A few embedded thunderstorms \nwill be possible with the southern and eastward push but at this\ntime severe weather is not anticipated. \n\nA more zonal aloft pattern emerges across the region this\nweekend and will bring a return to dry conditions and cooler\ntemperatures especially into the beginning of next week when\nhighs will only get to around 60 degrees both Monday and\nTuesday.\n\n&&\n\n.AVIATION /12Z TAFS THROUGH 12Z THURSDAY/...\nIssued at 611 AM EDT Wed Sep 30 2026\n\nLight rain showers currently observed on latest radar imagery\nstarting to push into northwest IN with some of the showers\nmaking it to the surface. These showers are on the \nnorthwestern periphery of ridging in place further south and \neast. Showers look to remain light as the showers push further \nsouthward over mainly areas near Lake Michigan and into KSBN, so\nat this time think conditions will mainly remain VFR however \nsome slight reductions in vsbys due to rain showers may allow \nfor MVFR vsbys but at this time confidence remains low. At this \ntime KFWA looks to remain dry with the ridging in place over \nsouth and eastern portions of the CWA.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...None.\n\n&&\n\n$$\n\nDISCUSSION...Andersen\nAVIATION...Andersen"
+  "issued": "2026-09-30T07:24:00-05:00",
+  "ageHours": 1.4,
+  "text": "000\nFXUS63 KIWX 301224\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n824 AM EDT Wed Sep 30 2026\n\n.KEY MESSAGES...\n\n- Increasing chances (40-80%) for showers today along and mainly\n  north of US 24 , best potential will remain near Lake MI in \n  the mid-late afternoon. Highs will be in the upper 60s, low \n  70s for those areas. South of US 24 expect highs in the mid-\n  upper 70s with increasing clouds. \n\n- Rain chances (40-90%) spread eastward through Friday, with \n  isolated thunderstorm potential (non-severe). Highs will be in\n  the 70s, low 80s on Thursday and the 60s Friday. \n\n- Dry conditions are expected this weekend into early next \n  week, with highs in the 60s, low 70s (warmest further south). \n  Overnight lows will drop into the 40s.\n\n&&\n\n.UPDATE...\nIssued at 819 AM EDT Wed Sep 30 2026\n\nMade some minor tweaks to mainly pops this morning into this\nafternoon. Initial area of returns is encountering a fairly dry\nairmass, resulting in little more than some sprinkles making it\nto the ground. With time as saturation continues some light to\nmaybe locally moderate rain will settle into mainly far NW areas\nnear/after 15Z and then most likely linger into the afternoon as\nhigh pressure tries to hold on. QPF will likely remain below\n0.10\". Questions exist as to how far SE this initial surge of \nisentropic lift will make it. Will continue to sort out those \ndetails in the coming hours.\n\n&&\n\n.DISCUSSION...\nIssued at 345 AM EDT Wed Sep 30 2026\n\nNot a whole lot of changes to the going forecast. Rain showers \ncontinue over northern IL into central MI this morning with the\nband of showers on the northwest periphery of ridging further \nsouth and east which will mainly keep the introduction of rain \nshowers for areas closer to Lake Michigan into this afternoon \nas the lower levels further moisten. WPC has a marginal risk for\nexcessive rainfall for later today and as the ridging pushes \nfurther south and east rain showers will make their way further \nsouth and east through Friday morning with a slight risk for \nexcessive rainfall for tomorrow. A few embedded thunderstorms \nwill be possible with the southern and eastward push but at this\ntime severe weather is not anticipated. \n\nA more zonal aloft pattern emerges across the region this\nweekend and will bring a return to dry conditions and cooler\ntemperatures especially into the beginning of next week when\nhighs will only get to around 60 degrees both Monday and\nTuesday.\n\n&&\n\n.AVIATION /12Z TAFS THROUGH 12Z THURSDAY/...\nIssued at 611 AM EDT Wed Sep 30 2026\n\nLight rain showers currently observed on latest radar imagery\nstarting to push into northwest IN with some of the showers\nmaking it to the surface. These showers are on the \nnorthwestern periphery of ridging in place further south and \neast. Showers look to remain light as the showers push further \nsouthward over mainly areas near Lake Michigan and into KSBN, so\nat this time think conditions will mainly remain VFR however \nsome slight reductions in vsbys due to rain showers may allow \nfor MVFR vsbys but at this time confidence remains low. At this \ntime KFWA looks to remain dry with the ridging in place over \nsouth and eastern portions of the CWA.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...None.\n\n&&\n\n$$\n\nUPDATE...Fisher\nDISCUSSION...Andersen\nAVIATION...Andersen"
  },
  "hazardousWeatherOutlook": null,
  "hydrologicOutlook": null,
  "spc": [
   {
    "day": 1,
-   "valid": "202609301200",
+   "valid": "202609301300",
    "expires": "202610011200",
    "riskAtLaPorte": "No thunderstorm or severe risk area",
    "riskAreasAnywhere": [
@@ -318,8 +321,8 @@
     "Marginal Risk",
     "Slight Risk"
    ],
-   "summary": "Thunderstorms capable of severe wind gusts and possibly a brief tornado appear possible across portions of the southern Plains this afternoon into tonight. A conditional risk for isolated severe wind gusts and perhaps a couple tornadoes exists over parts of Kansas and southern Nebraska this afternoon and evening.",
-   "text": "SPC AC 300553\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1253 AM CDT Wed Sep 30 2026\n\n   Valid 301200Z - 011200Z\n\n   ...THERE IS A SLIGHT RISK OF SEVERE THUNDERSTORMS FROM SOUTHWEST\n   OK/NORTHWEST TX INTO THE EDWARDS PLATEAU...\n\n   ...SUMMARY...\n   Thunderstorms capable of severe wind gusts and possibly a brief\n   tornado appear possible across portions of the southern Plains this\n   afternoon into tonight. A conditional risk for isolated severe wind\n   gusts and perhaps a couple tornadoes exists over parts of Kansas and\n   southern Nebraska this afternoon and evening.\n\n   ...Central/southern Plains...\n   A mid/upper-level low will move from the southern Rockies toward the\n   central High Plains through the period. A surface low initially over\n   the southern High Plains is forecast to move only slowly eastward\n   into tonight. A warm front extending northeast of the surface low\n   may move slowly northward through the day, though persistent clouds\n   and precipitation may slow its advance. \n\n   A rather strong low-level jet is forecast to slowly shift\n   northeastward across parts of central/eastern KS into western MO and\n   southeast NE/southwest IA later today into the evening. This will\n   help to maintain favorable wind profiles in the vicinity of the\n   effective warm front. Destabilization near the warm front may remain\n   weak due to limited diurnal heating and weak midlevel lapse rates.\n   However, if sufficient buoyancy can develop by late afternoon, there\n   will be potential for surface-based supercell development, which\n   could pose a localized tornado and damaging-wind threat. \n\n   Farther south, the coverage and persistence of early-day convection\n   across the southern Plains remain somewhat uncertain, though there\n   may be a tendency for convection to weaken and/or shift northward by\n   early afternoon. The greatest confidence in substantial diurnal\n   destabilization is from southwest OK into northwest TX and the\n   Edwards Plateau, where heating of a very moist airmass will result\n   in MLCAPE increasing to near/above 1500 J/kg, despite poor midlevel\n   lapse rates. Renewed storm development is expected from late\n   afternoon into the evening, in advance of the approaching\n   mid/upper-level low. Moderate midlevel flow will provide sufficient\n   deep-layer shear for storm organization. \n\n   While supercells will be possible initially, generally\n   front-parallel flow and increasing storm coverage will likely lead\n   to more of a linear mode with time. Strong to severe gusts appear to\n   be the most likely hazard, though isolated hail also appears\n   possible across southwest TX, where somewhat stronger\n   destabilization may occur. Also, while low-level flow will be weaker\n   compared to areas farther north, some increase in effective SRH is\n   expected during the evening, which could support a localized brief\n   tornado threat within the very moist environment. \n\n   An isolated severe threat could persist into parts of central TX/OK\n   overnight, though diminishing buoyancy with time and eastward extent\n   should result in an eventual weakening trend.\n\n   ..Dean/Weinman.. 09/30/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 1300Z"
+   "summary": "Thunderstorms capable of severe wind gusts/some hail and a brief tornado are expected across the southern Plains this afternoon into tonight including portions of west Texas into southwest Oklahoma. The potential for a few tornadoes and localized wind damage will also exist across Kansas and possibly far southeast Nebraska.",
+   "text": "SPC AC 301257\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   0757 AM CDT Wed Sep 30 2026\n\n   Valid 301300Z - 011200Z\n\n   ...THERE IS A SLIGHT RISK OF SEVERE THUNDERSTORMS ACROSS PORTIONS OF\n   THE SOUTHERN AND CENTRAL PLAINS...\n\n   ...SUMMARY...\n   Thunderstorms capable of severe wind gusts/some hail and a brief\n   tornado are expected across the southern Plains this afternoon into\n   tonight including portions of west Texas into southwest Oklahoma.\n   The potential for a few tornadoes and localized wind damage will\n   also exist across Kansas and possibly far southeast Nebraska.\n\n   ...Central/southern Plains...\n   A mid/upper-level low will move from the southern Rockies toward the\n   central High Plains through tonight. A surface low initially over\n   the southern High Plains is forecast to move only slowly eastward\n   through tonight. A warm front extending northeast of the surface low\n   may move slowly northward through the day, though persistent clouds\n   and precipitation may hinder its advance. \n\n   A rather strong low-level jet (50+ kt diurnally) is forecast to\n   slowly shift northeastward across parts of central/eastern Kansas\n   into western Missouri and southeast Nebraska/southwest Iowa by\n   evening. This will help to maintain strong wind profiles in the\n   vicinity of the central Plains effective warm front. Destabilization\n   near the warm front may remain weak due to limited diurnal heating\n   and weak mid-level lapse rates.\n\n   While uncertainties remain regarding the disposition of persistent\n   early day precipitation and cloud cover, will defer to the\n   anticipated strength of 0-1km/0-3km AGL winds and related\n   supercell-conducive profiles. Have upgraded portions of\n   central/eastern Kansas into far southeast Nebraska with the notion\n   that multiple tornadoes are a viable possibility, even if\n   destabilization remains muted later today.\n\n   Farther south, the coverage and persistence of early-day convection\n   across the southern Plains remains somewhat uncertain, though there\n   may be a tendency for convection to weaken and/or shift northward by\n   early afternoon. The greatest confidence in substantial diurnal\n   destabilization is from southwest Oklahoma into northwest Texas and\n   the Edwards Plateau, where heating of a very moist airmass will\n   result in MLCAPE increasing to near/above 1500 J/kg, despite poor\n   mid-level lapse rates. Renewed storm development is expected from\n   late afternoon into the evening, in advance of the approaching\n   mid/upper-level low. Moderate mid-level flow will provide sufficient\n   deep-layer shear for storm organization. \n\n   While supercells will be possible initially, generally\n   front-parallel flow and increasing storm coverage will likely lead\n   to more of a linear mode with time. Strong to severe gusts appear to\n   be the most likely hazard, though isolated hail also appears\n   possible across southwest Texas, where somewhat stronger\n   destabilization may occur. Also, while low-level flow will be weaker\n   compared to areas farther north, some increase in effective SRH is\n   expected during the evening, which could support a localized tornado\n   threat within the very moist environment. An isolated severe threat\n   could persist into parts of central Texas/Oklahoma overnight, though\n   diminishing buoyancy with time and eastward extent should result in\n   an eventual weakening trend.\n\n   Elsewhere, a few strong to locally severe lower-topped storms could\n   occur across the south-central High Plains pending sufficient\n   destabilization.\n\n   ..Guyer/Bentley.. 09/30/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 1630Z"
   },
   {
    "day": 2,
