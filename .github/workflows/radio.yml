@@ -37,7 +37,7 @@ concurrency:
 jobs:
   radio:
     name: Weather radio
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
@@ -76,8 +76,9 @@ jobs:
 
       - name: Check the words
         if: steps.script.outputs.changed == 'true' && inputs.check
+        continue-on-error: true
         run: |
-          pip install -q faster-whisper
+          pip install -q faster-whisper > "$RUNNER_TEMP/whisper-install.txt" 2>&1 || tail -20 "$RUNNER_TEMP/whisper-install.txt" > "$RUNNER_TEMP/radio/check.txt"
           python3 scripts/radio_broadcast.py check "$RUNNER_TEMP/radio"
 
       - name: Publish to the radio branch

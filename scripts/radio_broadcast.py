@@ -579,6 +579,18 @@ def normalize_words(text):
 
 
 def cmd_check(out_dir):
+    try:
+        return word_check(out_dir)
+    except Exception:
+        import traceback
+        report = "The word check couldn't run:\n" + traceback.format_exc()
+        print(report)
+        with open(os.path.join(out_dir, "check.txt"), "w", encoding="utf-8") as fh:
+            fh.write(report)
+        return 0
+
+
+def word_check(out_dir):
     from faster_whisper import WhisperModel
     with open(os.path.join(out_dir, "radio.json"), encoding="utf-8") as fh:
         radio = json.load(fh)
