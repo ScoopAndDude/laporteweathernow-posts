@@ -268,9 +268,26 @@ def county_alerts():
     return rows
 
 
-def indiana_alerts():
-    feats = get_json(f"{API}/alerts/active?area=IN").get("features") or []
-    return [alert_row(f, full=False) for f in feats]
+# Counties next to or near La Porte County (SAME codes), so their alerts come with full text:
+# Lake, Porter, Starke, St. Joseph, Jasper, Newton, Pulaski, Marshall, Elkhart (IN) and Berrien (MI).
+NEARBY_SAME = {"018089", "018127", "018149", "018141", "018073", "018111", "018131", "018099", "018039", "026021"}
+
+
+def area_alerts():
+    """Every active alert in Indiana and Michigan (short form), plus full text for nearby counties."""
+    short, nearby, seen = [], [], set()
+    for area in ("IN", "MI"):
+        for f in get_json(f"{API}/alerts/active?area={area}").get("features") or []:
+            p = f.get("properties") or {}
+            same = set(((p.get("geocode") or {}).get("SAME")) or [])
+            if (area == "IN" or same & NEARBY_SAME) and p.get("id") not in seen:
+                seen.add(p.get("id"))
+                short.append(alert_row(f, full=False))
+            if same & NEARBY_SAME and "018091" not in same:
+                row = alert_row(f)
+                if row["id"] not in {r["id"] for r in nearby}:
+                    nearby.append(row)
+    return {"indiana": short, "nearbyCountiesFullText": nearby}
 
 
 def latest_product(kind, max_age_hours=None):
@@ -279,10 +296,12 @@ def latest_product(kind, max_age_hours=None):
     if not items:
         return None
     issued = datetime.datetime.fromisoformat(items[0]["issuanceTime"])
-    if max_age_hours and now_utc() - issued > datetime.timedelta(hours=max_age_hours):
-        return None
+    age = round((now_utc() - issued).total_seconds() / 3600, 1)
+    if max_age_hours and age > max_age_hours:
+        return {"issued": central(issued), "ageHours": age, "text": None,
+                "note": f"Newest one is older than {max_age_hours} hours, so it isn't current."}
     prod = get_json(f"{API}/products/{items[0]['id']}", accept="application/ld+json")
-    return {"issued": central(issued), "text": (prod.get("productText") or "").strip()}
+    return {"issued": central(issued), "ageHours": age, "text": (prod.get("productText") or "").strip()}
 
 
 # ---------- SPC and WPC ----------
@@ -370,7 +389,7 @@ def main():
         "forecast": fc,
         "rain": attempt("NWS forecast rain amounts", rain_amounts, pt, (fc or {}).get("periods")) if pt.get("forecastGridData") else None,
         "alertsLaPorteCounty": alerts,
-        "alertsIndiana": attempt("NWS alerts for Indiana", indiana_alerts),
+        "alertsNearby": attempt("NWS alerts for Indiana and nearby Michigan", area_alerts),
         "discussion": attempt("NWS Northern Indiana discussion (AFD)", latest_product, "AFD"),
         "hazardousWeatherOutlook": attempt("NWS hazardous weather outlook (HWO)", latest_product, "HWO", 36),
         "hydrologicOutlook": attempt("NWS hydrologic outlook (ESF)", latest_product, "ESF", 96),
