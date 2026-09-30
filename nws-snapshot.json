@@ -1,0 +1,392 @@
+{
+ "about": "Official weather for La Porte, Indiana, saved by a GitHub job for the Daily Scoop (laporteweathernow.com/daily-scoop). Copied from NWS, SPC and WPC as-is; see scripts/nws_snapshot.py.",
+ "fetched": "2026-09-30T07:23:08-05:00",
+ "place": "La Porte, IN",
+ "lat": 41.6081,
+ "lon": -86.7189,
+ "point": {
+  "office": "IWX",
+  "gridX": 13,
+  "gridY": 58,
+  "forecast": "https://api.weather.gov/gridpoints/IWX/13,58/forecast",
+  "forecastGridData": "https://api.weather.gov/gridpoints/IWX/13,58",
+  "forecastZone": "INZ103",
+  "county": "INC091",
+  "nearestPlace": "La Porte, IN"
+ },
+ "zones": {
+  "INZ103": "Northern La Porte",
+  "INZ203": "Southern La Porte",
+  "INC091": "La Porte"
+ },
+ "observation": {
+  "station": "KPPO (La Porte Municipal Airport)",
+  "time": "2026-09-30T06:55:00-05:00",
+  "weather": "Cloudy",
+  "temperatureF": 59,
+  "dewpointF": 59,
+  "humidityPercent": 100,
+  "wind": {
+   "from": "SSE",
+   "degrees": 150,
+   "mph": 1,
+   "gustMph": null
+  },
+  "visibilityMiles": 10.0,
+  "pressureInHg": 29.96,
+  "metar": "KPPO 301155Z AUTO 15001KT 10SM OVC065 15/15 A2996 RMK AO2 10166 20144 70000"
+ },
+ "forecast": {
+  "updated": "2026-09-30T12:01:03+00:00",
+  "generated": "2026-09-30T12:23:08+00:00",
+  "periods": [
+   {
+    "name": "Today",
+    "start": "2026-09-30T08:00:00-04:00",
+    "end": "2026-09-30T18:00:00-04:00",
+    "isDaytime": true,
+    "temperatureF": 68,
+    "rainChancePercent": 88,
+    "wind": "S 5 to 10 mph",
+    "short": "Rain Showers",
+    "detailed": "Rain showers. Mostly cloudy, with a high near 68. South wind 5 to 10 mph. Chance of precipitation is 90%. New rainfall amounts between a tenth and quarter of an inch possible."
+   },
+   {
+    "name": "Tonight",
+    "start": "2026-09-30T18:00:00-04:00",
+    "end": "2026-10-01T06:00:00-04:00",
+    "isDaytime": false,
+    "temperatureF": 62,
+    "rainChancePercent": 68,
+    "wind": "S 5 to 10 mph",
+    "short": "Rain Showers Likely",
+    "detailed": "Rain showers likely. Cloudy, with a low around 62. South wind 5 to 10 mph. Chance of precipitation is 70%. New rainfall amounts between a tenth and quarter of an inch possible."
+   },
+   {
+    "name": "Thursday",
+    "start": "2026-10-01T06:00:00-04:00",
+    "end": "2026-10-01T18:00:00-04:00",
+    "isDaytime": true,
+    "temperatureF": 73,
+    "rainChancePercent": 77,
+    "wind": "S 5 mph",
+    "short": "Showers And Thunderstorms",
+    "detailed": "Rain showers likely before 5pm, then showers and thunderstorms. Mostly cloudy, with a high near 73. South wind around 5 mph. Chance of precipitation is 80%. New rainfall amounts between a quarter and half of an inch possible."
+   },
+   {
+    "name": "Thursday Night",
+    "start": "2026-10-01T18:00:00-04:00",
+    "end": "2026-10-02T06:00:00-04:00",
+    "isDaytime": false,
+    "temperatureF": 56,
+    "rainChancePercent": 94,
+    "wind": "W 5 mph",
+    "short": "Showers And Thunderstorms",
+    "detailed": "Showers and thunderstorms. Cloudy, with a low around 56. West wind around 5 mph. Chance of precipitation is 90%. New rainfall amounts between three quarters and one inch possible."
+   },
+   {
+    "name": "Friday",
+    "start": "2026-10-02T06:00:00-04:00",
+    "end": "2026-10-02T18:00:00-04:00",
+    "isDaytime": true,
+    "temperatureF": 64,
+    "rainChancePercent": 72,
+    "wind": "N 5 to 10 mph",
+    "short": "Rain Showers Likely",
+    "detailed": "Rain showers likely before 2pm. Partly sunny, with a high near 64. North wind 5 to 10 mph. Chance of precipitation is 70%. New rainfall amounts between a quarter and half of an inch possible."
+   },
+   {
+    "name": "Friday Night",
+    "start": "2026-10-02T18:00:00-04:00",
+    "end": "2026-10-03T06:00:00-04:00",
+    "isDaytime": false,
+    "temperatureF": 43,
+    "rainChancePercent": 2,
+    "wind": "NE 5 to 10 mph",
+    "short": "Mostly Clear",
+    "detailed": "Mostly clear, with a low around 43."
+   },
+   {
+    "name": "Saturday",
+    "start": "2026-10-03T06:00:00-04:00",
+    "end": "2026-10-03T18:00:00-04:00",
+    "isDaytime": true,
+    "temperatureF": 65,
+    "rainChancePercent": 1,
+    "wind": "E 5 mph",
+    "short": "Sunny",
+    "detailed": "Sunny, with a high near 65."
+   },
+   {
+    "name": "Saturday Night",
+    "start": "2026-10-03T18:00:00-04:00",
+    "end": "2026-10-04T06:00:00-04:00",
+    "isDaytime": false,
+    "temperatureF": 44,
+    "rainChancePercent": 2,
+    "wind": "SE 0 to 5 mph",
+    "short": "Partly Cloudy",
+    "detailed": "Partly cloudy, with a low around 44."
+   },
+   {
+    "name": "Sunday",
+    "start": "2026-10-04T06:00:00-04:00",
+    "end": "2026-10-04T18:00:00-04:00",
+    "isDaytime": true,
+    "temperatureF": 65,
+    "rainChancePercent": 2,
+    "wind": "W 0 to 10 mph",
+    "short": "Mostly Sunny",
+    "detailed": "Mostly sunny, with a high near 65."
+   },
+   {
+    "name": "Sunday Night",
+    "start": "2026-10-04T18:00:00-04:00",
+    "end": "2026-10-05T06:00:00-04:00",
+    "isDaytime": false,
+    "temperatureF": 43,
+    "rainChancePercent": 1,
+    "wind": "N 5 to 10 mph",
+    "short": "Mostly Clear",
+    "detailed": "Mostly clear, with a low around 43."
+   },
+   {
+    "name": "Monday",
+    "start": "2026-10-05T06:00:00-04:00",
+    "end": "2026-10-05T18:00:00-04:00",
+    "isDaytime": true,
+    "temperatureF": 60,
+    "rainChancePercent": 0,
+    "wind": "N 5 to 10 mph",
+    "short": "Sunny",
+    "detailed": "Sunny, with a high near 60."
+   },
+   {
+    "name": "Monday Night",
+    "start": "2026-10-05T18:00:00-04:00",
+    "end": "2026-10-06T06:00:00-04:00",
+    "isDaytime": false,
+    "temperatureF": 37,
+    "rainChancePercent": 0,
+    "wind": "NE 0 to 5 mph",
+    "short": "Mostly Clear",
+    "detailed": "Mostly clear, with a low around 37."
+   },
+   {
+    "name": "Tuesday",
+    "start": "2026-10-06T06:00:00-04:00",
+    "end": "2026-10-06T18:00:00-04:00",
+    "isDaytime": true,
+    "temperatureF": 63,
+    "rainChancePercent": 0,
+    "wind": "SE 0 to 5 mph",
+    "short": "Sunny",
+    "detailed": "Sunny, with a high near 63."
+   },
+   {
+    "name": "Tuesday Night",
+    "start": "2026-10-06T18:00:00-04:00",
+    "end": "2026-10-07T06:00:00-04:00",
+    "isDaytime": false,
+    "temperatureF": 43,
+    "rainChancePercent": 1,
+    "wind": "S 5 mph",
+    "short": "Partly Cloudy",
+    "detailed": "Partly cloudy, with a low around 43."
+   }
+  ]
+ },
+ "rain": {
+  "note": "NWS forecast grid rain totals (QPF) for the La Porte grid point; the forecast text's own wording comes first.",
+  "next24hInches": 0.18,
+  "next72hInches": 1.08,
+  "byPeriod": [
+   {
+    "name": "Today",
+    "inches": 0.1
+   },
+   {
+    "name": "Tonight",
+    "inches": 0.08
+   },
+   {
+    "name": "Thursday",
+    "inches": 0.21
+   },
+   {
+    "name": "Thursday Night",
+    "inches": 0.6
+   },
+   {
+    "name": "Friday",
+    "inches": 0.1
+   },
+   {
+    "name": "Friday Night",
+    "inches": 0.0
+   },
+   {
+    "name": "Saturday",
+    "inches": 0.0
+   },
+   {
+    "name": "Saturday Night",
+    "inches": 0
+   },
+   {
+    "name": "Sunday",
+    "inches": 0
+   },
+   {
+    "name": "Sunday Night",
+    "inches": 0
+   },
+   {
+    "name": "Monday",
+    "inches": 0
+   },
+   {
+    "name": "Monday Night",
+    "inches": 0
+   },
+   {
+    "name": "Tuesday",
+    "inches": 0
+   },
+   {
+    "name": "Tuesday Night",
+    "inches": 0
+   }
+  ]
+ },
+ "alertsLaPorteCounty": [],
+ "alertsIndiana": [
+  {
+   "id": "urn:oid:2.49.0.1.840.0.bb73405683c9b77d8553078c6b5421b7dbb0634d.001.1",
+   "event": "Hydrologic Outlook",
+   "headline": "Hydrologic Outlook issued September 30 at 3:59AM CDT by NWS Chicago IL",
+   "nwsHeadline": "Areas of flooding and rises in river levels possible through late week",
+   "area": "Boone, IL; Cook, IL; De Kalb, IL; DuPage, IL; Grundy, IL; Kane, IL; Kendall, IL; Lake, IL; La Salle, IL; Lee, IL; McHenry, IL; Ogle, IL; Will, IL; Winnebago, IL; Lake, IN; Porter, IN",
+   "sender": "NWS Chicago IL",
+   "sent": "2026-09-30T03:59:00-05:00",
+   "onset": "2026-09-30T03:59:00-05:00",
+   "ends": null,
+   "expires": "2026-09-30T15:00:00-05:00",
+   "messageType": "Alert",
+   "severity": "Unknown",
+   "certainty": "Possible",
+   "urgency": "Future"
+  }
+ ],
+ "discussion": {
+  "issued": "2026-09-30T05:13:00-05:00",
+  "text": "000\nFXUS63 KIWX 301013\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n613 AM EDT Wed Sep 30 2026\n\n.KEY MESSAGES...\n\n- Increasing chances (40-80%) for showers today along and mainly\n  north of US 24 , best potential will remain near Lake MI in \n  the mid-late afternoon. Highs will be in the upper 60s, low \n  70s for those areas. South of US 24 expect highs in the mid-\n  upper 70s with increasing clouds. \n\n- Rain chances (40-90%) spread eastward through Friday, with \n  isolated thunderstorm potential (non-severe). Highs will be in\n  the 70s, low 80s on Thursday and the 60s Friday. \n\n- Dry conditions are expected this weekend into early next \n  week, with highs in the 60s, low 70s (warmest further south). \n  Overnight lows will drop into the 40s.\n\n&&\n\n.DISCUSSION...\nIssued at 345 AM EDT Wed Sep 30 2026\n\nNot a whole lot of changes to the going forecast. Rain showers \ncontinue over northern IL into central MI this morning with the\nband of showers on the northwest periphery of ridging further \nsouth and east which will mainly keep the introduction of rain \nshowers for areas closer to Lake Michigan into this afternoon \nas the lower levels further moisten. WPC has a marginal risk for\nexcessive rainfall for later today and as the ridging pushes \nfurther south and east rain showers will make their way further \nsouth and east through Friday morning with a slight risk for \nexcessive rainfall for tomorrow. A few embedded thunderstorms \nwill be possible with the southern and eastward push but at this\ntime severe weather is not anticipated. \n\nA more zonal aloft pattern emerges across the region this\nweekend and will bring a return to dry conditions and cooler\ntemperatures especially into the beginning of next week when\nhighs will only get to around 60 degrees both Monday and\nTuesday.\n\n&&\n\n.AVIATION /12Z TAFS THROUGH 12Z THURSDAY/...\nIssued at 611 AM EDT Wed Sep 30 2026\n\nLight rain showers currently observed on latest radar imagery\nstarting to push into northwest IN with some of the showers\nmaking it to the surface. These showers are on the \nnorthwestern periphery of ridging in place further south and \neast. Showers look to remain light as the showers push further \nsouthward over mainly areas near Lake Michigan and into KSBN, so\nat this time think conditions will mainly remain VFR however \nsome slight reductions in vsbys due to rain showers may allow \nfor MVFR vsbys but at this time confidence remains low. At this \ntime KFWA looks to remain dry with the ridging in place over \nsouth and eastern portions of the CWA.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...None.\n\n&&\n\n$$\n\nDISCUSSION...Andersen\nAVIATION...Andersen"
+ },
+ "hazardousWeatherOutlook": null,
+ "hydrologicOutlook": null,
+ "spc": [
+  {
+   "day": 1,
+   "valid": "202609301200",
+   "expires": "202610011200",
+   "riskAtLaPorte": "No thunderstorm or severe risk area",
+   "riskAreasAnywhere": [
+    "General Thunderstorms Risk",
+    "Marginal Risk",
+    "Slight Risk"
+   ],
+   "summary": "Thunderstorms capable of severe wind gusts and possibly a brief tornado appear possible across portions of the southern Plains this afternoon into tonight. A conditional risk for isolated severe wind gusts and perhaps a couple tornadoes exists over parts of Kansas and southern Nebraska this afternoon and evening.",
+   "text": "SPC AC 300553\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1253 AM CDT Wed Sep 30 2026\n\n   Valid 301200Z - 011200Z\n\n   ...THERE IS A SLIGHT RISK OF SEVERE THUNDERSTORMS FROM SOUTHWEST\n   OK/NORTHWEST TX INTO THE EDWARDS PLATEAU...\n\n   ...SUMMARY...\n   Thunderstorms capable of severe wind gusts and possibly a brief\n   tornado appear possible across portions of the southern Plains this\n   afternoon into tonight. A conditional risk for isolated severe wind\n   gusts and perhaps a couple tornadoes exists over parts of Kansas and\n   southern Nebraska this afternoon and evening.\n\n   ...Central/southern Plains...\n   A mid/upper-level low will move from the southern Rockies toward the\n   central High Plains through the period. A surface low initially over\n   the southern High Plains is forecast to move only slowly eastward\n   into tonight. A warm front extending northeast of the surface low\n   may move slowly northward through the day, though persistent clouds\n   and precipitation may slow its advance. \n\n   A rather strong low-level jet is forecast to slowly shift\n   northeastward across parts of central/eastern KS into western MO and\n   southeast NE/southwest IA later today into the evening. This will\n   help to maintain favorable wind profiles in the vicinity of the\n   effective warm front. Destabilization near the warm front may remain\n   weak due to limited diurnal heating and weak midlevel lapse rates.\n   However, if sufficient buoyancy can develop by late afternoon, there\n   will be potential for surface-based supercell development, which\n   could pose a localized tornado and damaging-wind threat. \n\n   Farther south, the coverage and persistence of early-day convection\n   across the southern Plains remain somewhat uncertain, though there\n   may be a tendency for convection to weaken and/or shift northward by\n   early afternoon. The greatest confidence in substantial diurnal\n   destabilization is from southwest OK into northwest TX and the\n   Edwards Plateau, where heating of a very moist airmass will result\n   in MLCAPE increasing to near/above 1500 J/kg, despite poor midlevel\n   lapse rates. Renewed storm development is expected from late\n   afternoon into the evening, in advance of the approaching\n   mid/upper-level low. Moderate midlevel flow will provide sufficient\n   deep-layer shear for storm organization. \n\n   While supercells will be possible initially, generally\n   front-parallel flow and increasing storm coverage will likely lead\n   to more of a linear mode with time. Strong to severe gusts appear to\n   be the most likely hazard, though isolated hail also appears\n   possible across southwest TX, where somewhat stronger\n   destabilization may occur. Also, while low-level flow will be weaker\n   compared to areas farther north, some increase in effective SRH is\n   expected during the evening, which could support a localized brief\n   tornado threat within the very moist environment. \n\n   An isolated severe threat could persist into parts of central TX/OK\n   overnight, though diminishing buoyancy with time and eastward extent\n   should result in an eventual weakening trend.\n\n   ..Dean/Weinman.. 09/30/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 1300Z"
+  },
+  {
+   "day": 2,
+   "valid": "202610011200",
+   "expires": "202610021200",
+   "riskAtLaPorte": "General Thunderstorms Risk",
+   "riskAreasAnywhere": [
+    "General Thunderstorms Risk",
+    "Marginal Risk"
+   ],
+   "summary": "Thunderstorms with isolated severe wind gusts will be possible on Thursday across parts of the southern Plains.",
+   "text": "SPC AC 300541\n\n   Day 2 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1241 AM CDT Wed Sep 30 2026\n\n   Valid 011200Z - 021200Z\n\n   ...THERE IS A MARGINAL RISK OF SEVERE THUNDERSTORMS ACROSS PARTS OF\n   THE SOUTHERN PLAINS...\n\n   ...SUMMARY...\n   Thunderstorms with isolated severe wind gusts will be possible on\n   Thursday across parts of the southern Plains.\n\n   ...Southern Plains...\n   A positively-tilted mid-level shortwave trough will move\n   northeastward across the southern Plains on Thursday. At the\n   surface, a cold front will advance south-southeastward across\n   Oklahoma and west Texas. Ahead of the front, surface dewpoints from\n   the mid 60s to lower 70s F will contribute to destabilization along\n   a corridor from central Texas north-northeastward into eastern\n   Oklahoma. As surface temperatures warm, isolated to scattered\n   thunderstorms will possible along and near the instability axis in\n   areas where low-level convergence becomes maximized. By mid to late\n   afternoon, steepening low-level lapse rates will make isolated\n   severe wind gusts a possibility. This threat could continue into the\n   early evening as low-level flow increases. Any wind-damage threat\n   that develops is expected to remain marginal.\n\n   ..Broyles.. 09/30/2026\n\n   CLICK TO GET WUUS02 PTSDY2 PRODUCT\n\n   NOTE: THE NEXT DAY 2 OUTLOOK IS SCHEDULED BY 1730Z"
+  },
+  {
+   "day": 3,
+   "valid": "202610021200",
+   "expires": "202610031200",
+   "riskAtLaPorte": "No thunderstorm or severe risk area",
+   "riskAreasAnywhere": [
+    "General Thunderstorms Risk"
+   ],
+   "summary": "No severe thunderstorms are expected across the U.S. on Friday.",
+   "text": "SPC AC 300718\n\n   Day 3 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   0218 AM CDT Wed Sep 30 2026\n\n   Valid 021200Z - 031200Z\n\n   ...NO SEVERE THUNDERSTORM AREAS FORECAST...\n\n   ...SUMMARY...\n   No severe thunderstorms are expected across the U.S. on Friday.\n\n   ...DISCUSSION...\n   A mid-level trough over the Ozarks Friday morning is forecast to\n   weaken and move east-northeastward into the Ohio Valley. At the\n   surface, a cold front is forecast to advance southeastward into the\n   lower Mississippi and Tennessee Valleys. Along and to the south of\n   the front, isolated to scattered thunderstorms may develop in areas\n   where instability and low-level convergence become maximized during\n   the afternoon. Over the moist airmass, the combination of\n   instability and deep-layer shear is expected to be insufficient for\n   a severe threat.\n\n   ..Broyles.. 09/30/2026\n\n   CLICK TO GET WUUS03 PTSDY3 PRODUCT\n\n   NOTE: THE NEXT DAY 3 OUTLOOK IS SCHEDULED BY 1930Z"
+  }
+ ],
+ "wpcExcessiveRain": [
+  {
+   "layer": "Excessive Rainfall Day 1",
+   "atLaPorte": [
+    {
+     "objectid": 1,
+     "product": "Day 1 Excessive Rainfall Potential Forecast",
+     "valid_time": "12Z 09/30/26 - 12Z 10/01/26",
+     "outlook": "Marginal (At Least 5%)",
+     "issue_time": "2026-09-30 07:56:00",
+     "start_time": "2026-09-30 12:00:00",
+     "end_time": "2026-10-01 12:00:00",
+     "idp_source": "94e3009",
+     "idp_filedate": 1790756893000,
+     "idp_ingestdate": 1790756958000,
+     "st_area(shape)": 1039160474072.6608,
+     "st_perimeter(shape)": 17157303.328822836,
+     "dn": 1,
+     "snippet": "12Z 09/30/26 - 12Z 10/01/26"
+    }
+   ]
+  },
+  {
+   "layer": "Excessive Rainfall Day 2",
+   "atLaPorte": [
+    {
+     "objectid": 2,
+     "product": "Day 2 Excessive Rainfall Potential Forecast",
+     "valid_time": "12Z 10/01/26 - 12Z 10/02/26",
+     "outlook": "Slight (At Least 15%)",
+     "issue_time": "2026-09-30 07:56:00",
+     "start_time": "2026-10-01 12:00:00",
+     "end_time": "2026-10-02 12:00:00",
+     "idp_source": "98e3009",
+     "idp_filedate": 1790756893000,
+     "idp_ingestdate": 1790756968000,
+     "st_area(shape)": 1463794498643.53,
+     "st_perimeter(shape)": 9631618.451624122,
+     "dn": 2,
+     "snippet": "12Z 10/01/26 - 12Z 10/02/26"
+    }
+   ]
+  },
+  {
+   "layer": "Excessive Rainfall Day 3",
+   "atLaPorte": []
+  },
+  {
+   "layer": "Excessive Rainfall Day 4",
+   "atLaPorte": []
+  },
+  {
+   "layer": "Excessive Rainfall Day 5",
+   "atLaPorte": []
+  }
+ ],
+ "links": {
+  "forecast": "https://forecast.weather.gov/MapClick.php?lat=41.6081&lon=-86.7189",
+  "discussion": "https://forecast.weather.gov/product.php?site=IWX&issuedby=IWX&product=AFD",
+  "hazardousWeatherOutlook": "https://forecast.weather.gov/product.php?site=IWX&issuedby=IWX&product=HWO",
+  "hydrologicOutlook": "https://forecast.weather.gov/product.php?site=IWX&issuedby=IWX&product=ESF",
+  "currentHazards": "https://www.weather.gov/iwx/",
+  "spcOutlooks": "https://www.spc.noaa.gov/products/outlook/",
+  "wpcExcessiveRain": "https://www.wpc.ncep.noaa.gov/qpf/excessive_rainfall_outlook_ero.php",
+  "observation": "https://forecast.weather.gov/data/obhistory/KPPO.html"
+ },
+ "errors": []
+}
