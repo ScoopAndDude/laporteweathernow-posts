@@ -1,204 +1,205 @@
 {
  "about": "Daily health check for laporteweathernow.com (scripts/site_health.py). 'problems' lists anything to fix, in plain English.",
- "checked": "2026-09-30T09:28:19-05:00",
+ "checked": "2026-09-30T10:07:55-05:00",
  "ok": false,
  "problems": [
   "GitHub job 'NWS weather snapshot' failed 1 of 7 times in the last 7 days."
  ],
+ "urgent": [],
  "pages": [
   {
    "path": "/",
    "status": 200,
-   "ms": 179,
+   "ms": 342,
    "fingerprint": "aebe0f1a51",
    "groupedMenu": true
   },
   {
    "path": "/daily-scoop",
    "status": 200,
-   "ms": 422,
+   "ms": 392,
    "fingerprint": "a260da4227",
    "groupedMenu": true
   },
   {
    "path": "/emergency",
    "status": 200,
-   "ms": 271,
+   "ms": 495,
    "fingerprint": "378a4f035f",
    "groupedMenu": true
   },
   {
    "path": "/trip-planner",
    "status": 200,
-   "ms": 275,
+   "ms": 203,
    "fingerprint": "37d2945a8b",
    "groupedMenu": true
   },
   {
    "path": "/camp-map",
    "status": 200,
-   "ms": 398,
+   "ms": 304,
    "fingerprint": "988c2d88cf",
    "groupedMenu": true
   },
   {
    "path": "/storm-patterns",
    "status": 200,
-   "ms": 325,
+   "ms": 304,
    "fingerprint": "c765749a4a",
    "groupedMenu": true
   },
   {
    "path": "/travel-guides",
    "status": 200,
-   "ms": 241,
+   "ms": 255,
    "fingerprint": "dfd7c0d622",
    "groupedMenu": true
   },
   {
    "path": "/global",
    "status": 200,
-   "ms": 216,
+   "ms": 326,
    "fingerprint": "24399d4a57",
    "groupedMenu": true
   },
   {
    "path": "/disasters",
    "status": 200,
-   "ms": 283,
+   "ms": 310,
    "fingerprint": "c0c61283db",
    "groupedMenu": true
   },
   {
    "path": "/markets",
    "status": 200,
-   "ms": 225,
+   "ms": 371,
    "fingerprint": "fe02298480",
    "groupedMenu": true
   },
   {
    "path": "/ai-survival-guide",
    "status": 200,
-   "ms": 364,
+   "ms": 331,
    "fingerprint": "9965cd5262",
    "groupedMenu": true
   },
   {
    "path": "/faith",
    "status": 200,
-   "ms": 209,
+   "ms": 321,
    "fingerprint": "1b9baabf2c",
    "groupedMenu": true
   },
   {
    "path": "/sources",
    "status": 200,
-   "ms": 277,
+   "ms": 401,
    "fingerprint": "cca4dfcc44",
    "groupedMenu": true
   },
   {
    "path": "/world-art",
    "status": 200,
-   "ms": 237,
+   "ms": 175,
    "fingerprint": "8adadde01a",
    "groupedMenu": true
   },
   {
    "path": "/community",
    "status": 200,
-   "ms": 274,
+   "ms": 361,
    "fingerprint": "64612c6fd9",
    "groupedMenu": true
   },
   {
    "path": "/history",
    "status": 200,
-   "ms": 253,
+   "ms": 344,
    "fingerprint": "463282ae52",
    "groupedMenu": true
   },
   {
    "path": "/about",
    "status": 200,
-   "ms": 217,
+   "ms": 294,
    "fingerprint": "73c9fbae4c",
    "groupedMenu": true
   },
   {
    "path": "/contact",
    "status": 200,
-   "ms": 329,
+   "ms": 309,
    "fingerprint": "5138023689",
    "groupedMenu": true
   },
   {
    "path": "/golf",
    "status": 200,
-   "ms": 256,
+   "ms": 305,
    "fingerprint": "e39770bae6",
    "groupedMenu": true
   },
   {
    "path": "/weekend",
    "status": 200,
-   "ms": 263,
+   "ms": 288,
    "fingerprint": "d9780a19e6",
    "groupedMenu": true
   },
   {
    "path": "/privacy",
    "status": 200,
-   "ms": 324,
+   "ms": 315,
    "fingerprint": "14d8517171",
    "groupedMenu": true
   },
   {
    "path": "/track-record",
    "status": 200,
-   "ms": 245,
+   "ms": 504,
    "fingerprint": "c17b13aef1",
    "groupedMenu": true
   },
   {
    "path": "/hardhat/",
    "status": 200,
-   "ms": 323,
+   "ms": 263,
    "fingerprint": "7a85b00404",
    "groupedMenu": false
   },
   {
    "path": "/hardhat/dashboard",
    "status": 200,
-   "ms": 236,
+   "ms": 323,
    "fingerprint": "6bccc99410",
    "groupedMenu": false
   },
   {
    "path": "/hardhat/terms",
    "status": 200,
-   "ms": 231,
+   "ms": 199,
    "fingerprint": "efff0dbd9f",
    "groupedMenu": false
   },
   {
    "path": "/hardhat/privacy",
    "status": 200,
-   "ms": 283,
+   "ms": 279,
    "fingerprint": "4378dd7f76",
    "groupedMenu": false
   },
   {
    "path": "/hardhat/pay",
    "status": 200,
-   "ms": 176,
+   "ms": 358,
    "fingerprint": "c516db5f08",
    "groupedMenu": false
   },
   {
    "path": "/hardhat/thanks",
    "status": 200,
-   "ms": 199,
+   "ms": 233,
    "fingerprint": "3be968e048",
    "groupedMenu": false
   }
@@ -210,11 +211,13 @@
  "data": {
   "latestScoop": {
    "date": "2026-09-30",
-   "posted": "2026-09-30T07:28:00-05:00"
+   "posted": "2026-09-30T07:28:00-05:00",
+   "automatic": false
   },
   "scoopLast14": {
    "onTime": 2,
    "late": 4,
+   "backup": 0,
    "missing": 8,
    "days": [
     {
@@ -282,10 +285,10 @@
    ]
   },
   "nws-snapshot.json": {
-   "ageHours": 0.6
+   "ageHours": 1.3
   },
   "scorecard.json": {
-   "ageHours": 0.6
+   "ageHours": 1.3
   },
   "world-watch.json": {
    "updated": "2026-09-28",
@@ -293,21 +296,21 @@
   },
   "home.json": {
    "status": 200,
-   "ageHours": 0.6
+   "ageHours": 0.0
   }
  },
  "githubJobs": {
   "last7days": {
-   "Site health check": {
-    "runs": 5,
-    "failed": 0
-   },
-   "pages build and deployment": {
-    "runs": 27,
+   "Backup Daily Scoop": {
+    "runs": 1,
     "failed": 0
    },
    "Homepage weather copy": {
-    "runs": 1,
+    "runs": 2,
+    "failed": 0
+   },
+   "pages build and deployment": {
+    "runs": 29,
     "failed": 0
    },
    "NWS weather snapshot": {
