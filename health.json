@@ -1,0 +1,206 @@
+{
+ "about": "Daily health check for laporteweathernow.com (scripts/site_health.py). 'problems' lists anything to fix, in plain English.",
+ "checked": "2026-09-30T09:07:58-05:00",
+ "ok": false,
+ "problems": [
+  "Couldn't read scoop-posts.json: 'posted'",
+  "GitHub job 'NWS weather snapshot' failed 1 of 7 times in the last 7 days."
+ ],
+ "pages": [
+  {
+   "path": "/",
+   "status": 200,
+   "ms": 354
+  },
+  {
+   "path": "/daily-scoop",
+   "status": 200,
+   "ms": 381
+  },
+  {
+   "path": "/emergency",
+   "status": 200,
+   "ms": 419
+  },
+  {
+   "path": "/trip-planner",
+   "status": 200,
+   "ms": 491
+  },
+  {
+   "path": "/camp-map",
+   "status": 200,
+   "ms": 408
+  },
+  {
+   "path": "/storm-patterns",
+   "status": 200,
+   "ms": 268
+  },
+  {
+   "path": "/travel-guides",
+   "status": 200,
+   "ms": 414
+  },
+  {
+   "path": "/global",
+   "status": 200,
+   "ms": 411
+  },
+  {
+   "path": "/disasters",
+   "status": 200,
+   "ms": 336
+  },
+  {
+   "path": "/markets",
+   "status": 200,
+   "ms": 384
+  },
+  {
+   "path": "/ai-survival-guide",
+   "status": 200,
+   "ms": 375
+  },
+  {
+   "path": "/faith",
+   "status": 200,
+   "ms": 351
+  },
+  {
+   "path": "/sources",
+   "status": 200,
+   "ms": 271
+  },
+  {
+   "path": "/world-art",
+   "status": 200,
+   "ms": 341
+  },
+  {
+   "path": "/community",
+   "status": 200,
+   "ms": 309
+  },
+  {
+   "path": "/history",
+   "status": 200,
+   "ms": 309
+  },
+  {
+   "path": "/about",
+   "status": 200,
+   "ms": 332
+  },
+  {
+   "path": "/contact",
+   "status": 200,
+   "ms": 175
+  },
+  {
+   "path": "/golf",
+   "status": 200,
+   "ms": 335
+  },
+  {
+   "path": "/weekend",
+   "status": 200,
+   "ms": 343
+  },
+  {
+   "path": "/privacy",
+   "status": 200,
+   "ms": 346
+  },
+  {
+   "path": "/track-record",
+   "status": 200,
+   "ms": 274
+  },
+  {
+   "path": "/hardhat/",
+   "status": 200,
+   "ms": 311
+  },
+  {
+   "path": "/hardhat/dashboard",
+   "status": 200,
+   "ms": 330
+  },
+  {
+   "path": "/hardhat/terms",
+   "status": 200,
+   "ms": 261
+  },
+  {
+   "path": "/hardhat/privacy",
+   "status": 200,
+   "ms": 255
+  },
+  {
+   "path": "/hardhat/pay",
+   "status": 200,
+   "ms": 301
+  },
+  {
+   "path": "/hardhat/thanks",
+   "status": 200,
+   "ms": 328
+  }
+ ],
+ "assets": {
+  "checked": 24,
+  "notOk": []
+ },
+ "data": {
+  "latestScoop": {
+   "date": "2026-09-30",
+   "posted": "2026-09-30T07:28:00-05:00"
+  },
+  "nws-snapshot.json": {
+   "ageHours": 0.3
+  },
+  "scorecard.json": {
+   "ageHours": 0.3
+  },
+  "world-watch.json": {
+   "updated": "2026-09-28",
+   "ageDays": 2
+  },
+  "home.json": {
+   "status": 200,
+   "ageHours": 0.3
+  }
+ },
+ "githubJobs": {
+  "last7days": {
+   "Site health check": {
+    "runs": 1,
+    "failed": 0
+   },
+   "pages build and deployment": {
+    "runs": 21,
+    "failed": 0
+   },
+   "Homepage weather copy": {
+    "runs": 1,
+    "failed": 0
+   },
+   "NWS weather snapshot": {
+    "runs": 7,
+    "failed": 1
+   },
+   "Markets numbers from BLS": {
+    "runs": 3,
+    "failed": 0
+   }
+  },
+  "failures": [
+   {
+    "name": "NWS weather snapshot",
+    "when": "2026-09-30T12:24:57Z",
+    "url": "https://github.com/ScoopAndDude/laporteweathernow-posts/actions/runs/36714569804"
+   }
+  ]
+ }
+}
