@@ -169,6 +169,16 @@ def check_data():
             problem(f"The homepage's backup weather copy is {h} hours old (status {status}); the 'Homepage weather copy' job may be stuck.", True)
     except Exception as e:
         problem(f"Couldn't read the homepage weather copy: {e}", True)
+    # Weather radio: re-recorded whenever the broadcast changes (the airport reading alone changes it
+    # every hour). Not urgent: the Alerts page's player uses the device's own voice when it's old.
+    status, body, _ = fetch(f"https://raw.githubusercontent.com/{REPO_NAME}/radio/radio.json")
+    try:
+        h = age_hours(json.loads(body).get("recorded")) if status == 200 else None
+        out["radio.json"] = {"status": status, "ageHours": h}
+        if h is None or h > 4:
+            problem(f"The weather radio recording is {h} hours old (status {status}); the 'Weather radio' job may be stuck.")
+    except Exception as e:
+        problem(f"Couldn't read the weather radio recording: {e}")
     return out
 
 
