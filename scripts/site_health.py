@@ -77,7 +77,9 @@ def check_pages():
     for p in paths:
         status, body, ms = fetch(SITE + p)
         text = body.decode("utf-8", "replace")
-        row = {"path": p, "status": status, "ms": ms}
+        row = {"path": p, "status": status, "ms": ms,
+               "fingerprint": hashlib.sha256(body).hexdigest()[:10] if status == 200 else None,
+               "groupedMenu": 'class="nav-group"' in text}
         if status != 200:
             problems.append(f"Page {p} didn't load (status {status}).")
         elif not p.startswith("/hardhat") and '<nav class="nav"' not in text:
