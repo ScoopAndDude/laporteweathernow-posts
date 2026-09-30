@@ -1,0 +1,32 @@
+# Timer: starts the jobs that are due whenever a "tick" arrives from outside GitHub.
+#
+# GitHub's own schedules for this repository have been hours late or missing (Sept. 29-30, 2026).
+# A Google Apps Script trigger in the business Google account ("LPWN timer") sends a tick every
+# 15 minutes to the GitHub API (repository_dispatch, event type "tick"), and scripts/timer.py starts
+# whatever is due in La Porte time. Run it by hand from Actions > Timer to send a tick yourself.
+name: Timer
+
+on:
+  repository_dispatch:
+    types: [tick]
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: timer
+  cancel-in-progress: false
+
+jobs:
+  tick:
+    name: Start what's due
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Start what's due
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/timer.py
