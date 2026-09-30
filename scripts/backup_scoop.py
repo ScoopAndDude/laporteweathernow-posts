@@ -241,7 +241,7 @@ def build_post(data, now):
         obs_time = datetime.datetime.fromisoformat(obs["time"]) if obs.get("time") else None
     except Exception:
         obs_time = None
-    if obs_time and obs.get("temperatureF") is not None and now - obs_time < datetime.timedelta(hours=2):
+    if obs_time and obs.get("temperatureF") is not None and now - obs_time < datetime.timedelta(hours=3):   # KPPO often reaches NWS an hour or two late; the sentence gives its time
         weather = (obs.get("weather") or "").strip().lower()
         near += end_sentence(f" At {clock(obs_time)} the La Porte airport reported "
                              f"{weather + ' and ' if weather else ''}{obs['temperatureF']} degrees")
