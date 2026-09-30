@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- language:start -->
+<script>/* Language (i18n.js): with a language other than English picked, keep the page hidden until it's translated (3 seconds at most). */(function(){try{var m=/[?&]lang=([^&#]*)/.exec(location.search),c=m?decodeURIComponent(m[1]):localStorage.getItem("lpwn_lang");if(!c||/^en$/i.test(c))return;var d=document.documentElement,s=document.createElement("style");s.textContent=".lpwn-i18n-wait body{visibility:hidden}";document.head.appendChild(s);d.classList.add("lpwn-i18n-wait");setTimeout(function(){d.classList.remove("lpwn-i18n-wait")},3000)}catch(e){}})();</script>
+<script src="https://laporteweathernow.com/i18n.js?v=d51207e505" defer></script>
+<!-- language:end -->
+<title>Amazon Watch: What&rsquo;s Happening in the Rainforest | La Porte Weather Now</title>
+<meta name="description" content="What&rsquo;s happening in the Amazon rainforest: deforestation and illegal gold mining numbers, drought and fire, real NASA satellite pictures and video, and the people protecting it." />
+<meta property="og:title" content="Amazon Watch | La Porte Weather Now" />
+<meta property="og:description" content="What&rsquo;s happening in the Amazon: real satellite pictures, video, the latest numbers, and the people protecting it." />
+<meta property="og:image" content="https://laporteweathernow.com/og-image.png" />
+<style>
+/* Amazon Watch (Sept. 30, 2026). Reuses the World Disaster Watch look. */
+.am-hero { background: linear-gradient(180deg, rgba(8,40,24,0.62), rgba(8,40,24,0.9)), var(--dusk); padding-bottom: 36px; }
+.am-hero .lede { max-width: 68ch; }
+.am-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+.am-btns .am-ghost { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.45); }
+.am-glance { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; margin-top: 28px; }
+.am-stat { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16); border-radius: 14px; padding: 14px 16px; }
+.am-stat-num { font-family: var(--serif); font-size: 30px; font-weight: 800; line-height: 1.1; color: #fff; }
+.am-stat-label { font-size: 12px; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; color: #cfe3d6; margin-top: 4px; line-height: 1.35; }
+.am-stat-notes { margin: 16px 0 0; padding-left: 18px; display: grid; gap: 6px; font-size: 13.5px; line-height: 1.5; color: #d9e8de; max-width: 90ch; }
+.am-stat-notes a { color: #ffd08a; font-weight: 700; }
+.am-updated { font-size: 13px; color: #cfe3d6; margin: 12px 0 0; }
+.am-now-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 16px; }
+.am-card { background: var(--card); border-radius: var(--radius-sm); box-shadow: var(--shadow); padding: 18px 20px; border-top: 3px solid #2f7d4f; }
+.am-card h3 { margin: 0 0 6px; font-size: 17px; line-height: 1.3; }
+.am-card p { margin: 0; font-size: 15px; line-height: 1.5; }
+.am-date { font-size: 12px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: var(--amber-text); margin-bottom: 6px; }
+.am-src { margin-top: 10px !important; font-size: 13.5px !important; }
+.am-src a, .am-fine a, .am-credit a { color: #1f6b3a; font-weight: 700; }
+.am-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 18px; }
+.am-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.am-fig { margin: 0; background: var(--card); border-radius: var(--radius-sm); box-shadow: var(--shadow); overflow: hidden; }
+.am-fig.am-wide { grid-column: 1 / -1; }
+.am-fig img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; background: #1b2a22; }
+.am-pair .am-shot { position: relative; }
+.am-pair .am-tag { position: absolute; left: 10px; top: 10px; background: rgba(0,0,0,.72); color: #fff; font-size: 12px; font-weight: 800; letter-spacing: .04em; padding: 4px 8px; border-radius: 6px; }
+.am-fig figcaption { padding: 12px 14px 14px; font-size: 14.5px; line-height: 1.45; }
+.am-fig figcaption strong { display: block; font-size: 16px; margin-bottom: 4px; }
+.am-credit { display: block; margin-top: 8px; font-size: 12px; color: var(--ink-soft); }
+.am-videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 16px; }
+.am-video { background: var(--card); border-radius: var(--radius-sm); box-shadow: var(--shadow); overflow: hidden; }
+.am-play { position: relative; display: block; width: 100%; padding: 0; border: 0; cursor: pointer; background: #000; aspect-ratio: 16 / 9; }
+.am-play img { width: 100%; height: 100%; object-fit: cover; opacity: .82; display: block; }
+.am-play-icon { position: absolute; inset: 0; margin: auto; width: 64px; height: 64px; border-radius: 50%; background: rgba(198,40,40,.94); color: #fff; font-size: 26px; display: grid; place-items: center; box-shadow: 0 6px 18px rgba(0,0,0,.35); }
+.am-play:hover .am-play-icon, .am-play:focus-visible .am-play-icon { transform: scale(1.06); }
+.am-frame { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; background: #000; }
+.am-video h3 { margin: 12px 16px 4px; font-size: 17px; line-height: 1.3; }
+.am-video p { margin: 0 16px 16px; font-size: 14px; color: var(--ink-soft); line-height: 1.45; }
+.am-fine { font-size: 13px; color: var(--ink-soft); margin-top: 14px; }
+.am-sources { margin: 10px 0 0; padding-left: 18px; display: grid; gap: 6px; font-size: 14px; line-height: 1.45; }
+.am-sources a { color: #1f6b3a; font-weight: 700; }
+@media (max-width: 720px) { .am-glance { grid-template-columns: repeat(2, minmax(0,1fr)); } .am-stat-num { font-size: 24px; } }
+@media (max-width: 600px) { .am-pair { grid-template-columns: 1fr; } }
+</style>
+<link rel="stylesheet" href="https://laporteweathernow.com/style.css?v=c697776a03" />
+<link rel="stylesheet" href="https://laporteweathernow.com/site-nav.css?v=b42ceda2a1" />
+<link rel="manifest" href="https://laporteweathernow.com/manifest.json" />
+<meta name="theme-color" content="#1a1a1a" />
+<link rel="apple-touch-icon" href="https://laporteweathernow.com/icon-192.png" />
+<link rel="icon" type="image/png" href="https://laporteweathernow.com/icon-192.png" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="topbar">
+  <div class="wrap"><span>LA PORTE COUNTY&#39;S LOCAL WEATHER &middot; FREE FOR EVERYONE</span><div class="topbar-links"><a href="https://laporteweathernow.com/emergency" class="emergency-link">&#9888;&#65039; Emergency</a><a href="https://laporteweathernow.com/about">Our mission &rarr;</a><a href="https://www.paypal.com/donate/?business=19scoops87%40gmail.com&currency_code=USD" target="_blank" rel="noopener" class="topbar-donate">&#9829; Donate</a><button type="button" id="installAppBtn" class="install-btn">&#128242; Download App</button></div></div>
+</div>
+
+<script>window.lpwnTrack = window.lpwnTrack || function () { (window.__lpwnQueue = window.__lpwnQueue || []).push([].slice.call(arguments)); };</script>
+<script src="https://laporteweathernow.com/seasonal.js?v=b531f84b9b" defer></script>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="https://laporteweathernow.com/">
+      <div class="brand-mark">LPWN</div>
+      <div class="brand-text"><div class="t1">LA PORTE</div><div class="t2">WEATHER NOW</div></div>
+    </a>
+    <div class="navlinks">
+      <a href="https://laporteweathernow.com/">WEATHER</a>
+      <a href="https://laporteweathernow.com/emergency">ALERTS</a>
+      <a href="https://laporteweathernow.com/daily-scoop">DAILY SCOOP</a>
+      <a href="https://laporteweathernow.com/weekend">WEEKEND</a>
+      <a href="https://laporteweathernow.com/faith">FAITH</a>
+      <details class="nav-more"><summary>MORE</summary>
+        <div class="nav-more-menu">
+          <div class="nav-grp"><div class="nav-group">Tools</div><a href="https://laporteweathernow.com/golf">Golf Weather</a><a href="https://laporteweathernow.com/hardhat/">Hard Hat Weather</a></div>
+          <div class="nav-grp"><div class="nav-group">Local</div><a href="https://laporteweathernow.com/community">Local help &amp; events</a><a href="https://laporteweathernow.com/history">La Porte history</a></div>
+          <div class="nav-grp"><div class="nav-group">Travel</div><a href="https://laporteweathernow.com/trip-planner">Trip Planner</a><a href="https://laporteweathernow.com/camp-map">Camp Map</a><a href="https://laporteweathernow.com/travel-guides">Travel Guides</a><a href="https://laporteweathernow.com/global">Global weather</a></div>
+          <div class="nav-grp"><div class="nav-group">Learn</div><a href="https://laporteweathernow.com/storm-patterns">Storm Patterns</a><a href="https://laporteweathernow.com/track-record">Track Record</a></div>
+          <div class="nav-grp"><div class="nav-group">From Scoop</div><a href="https://laporteweathernow.com/disasters">World Disaster Watch</a><a class="active" aria-current="page" href="https://laporteweathernow.com/amazon">Amazon Watch</a><a href="https://laporteweathernow.com/markets">Markets &amp; Economy</a><a href="https://laporteweathernow.com/ai-survival-guide">AI's Survival Guide</a><a href="https://laporteweathernow.com/world-art">World Art</a></div>
+          <div class="nav-grp"><div class="nav-group">About</div><a href="https://laporteweathernow.com/about">Our mission</a><a href="https://laporteweathernow.com/sources">Our sources</a><a href="https://laporteweathernow.com/contact">Contact</a></div>
+        </div>
+      </details>
+    </div>
+  </div>
+</nav>
+<main id="main">
+<div style="background:#fff4d6;border-bottom:1px solid #e9c46a;color:#3b2f0b;font-weight:700;text-align:center;padding:10px 16px;">Preview of the new Amazon Watch page. It is not on laporteweathernow.com yet.</div>
+
+<header class="hero am-hero">
+  <div class="wrap">
+    <div class="hero-eyebrow">AMAZON WATCH</div>
+    <h1>What&rsquo;s happening in the Amazon.</h1>
+    <p class="lede">The world&rsquo;s largest rainforest in real satellite pictures and video, with the latest numbers from official sources and the people on the front line protecting it. We update the numbers every week.</p>
+    <div class="am-btns"><a class="btn btn-amber" href="#help">How you can help</a><a class="btn am-ghost" href="#see">See it from space</a><a class="btn am-ghost" href="#people">Who&rsquo;s protecting it</a></div>
+    <div class="am-glance" id="amStats" aria-label="The numbers"><div class="am-stat"><div class="am-stat-num">2,874 km²</div><div class="am-stat-label">Cleared, Brazilian Amazon, Aug. 2025–July 2026</div></div><div class="am-stat"><div class="am-stat-num">69%</div><div class="am-stat-label">Chance this El Niño is the strongest since 1950</div></div><div class="am-stat"><div class="am-stat-num">78</div><div class="am-stat-label">Illegal mining rafts destroyed in one Peru raid</div></div><div class="am-stat"><div class="am-stat-num">Oct. 4</div><div class="am-stat-label">Brazil votes</div></div></div>
+    <ul class="am-stat-notes" id="amStatNotes"></ul>
+    <p class="am-updated" id="amUpdated"></p>
+  </div>
+</header>
+
+<section class="section" id="now">
+  <div class="wrap">
+    <div class="section-eyebrow">HAPPENING NOW</div>
+    <h2 id="amHeadline">Forest clearing is down in Brazil. Drought, fire and illegal gold mining are the dangers now.</h2>
+    <div class="am-now-list" id="amNow"></div>
+  </div>
+</section>
+
+<section class="section alt" id="see">
+  <div class="wrap">
+    <div class="section-eyebrow">SEE IT FROM SPACE</div>
+    <h2>Real satellite pictures</h2>
+    <p class="lede" style="max-width:70ch;">NASA&rsquo;s satellites watch the Amazon every day. These pictures show what drought, fire, gold mining and clearing look like from above.</p>
+    <div class="am-gallery">
+      <figure class="am-fig am-wide"><div class="am-pair"><div class="am-shot"><img src="https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/images/imagerecords/151000/151961/rionegro_oli2_2022281.jpg" alt="Satellite view of the Rio Negro near Manaus at normal water, October 8, 2022" loading="lazy" width="720" height="480" /><span class="am-tag">OCT. 8, 2022</span></div><div class="am-shot"><img src="https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/images/imagerecords/151000/151961/rionegro_oli_2023276.jpg" alt="Satellite view of the Rio Negro near Manaus at record-low water, with sandbars showing, October 3, 2023" loading="lazy" width="720" height="480" /><span class="am-tag">OCT. 3, 2023</span></div></div><figcaption><strong>Drought: the Rio Negro at a record low</strong>The Rio Negro, the Amazon&rsquo;s largest tributary, near Manaus, Brazil, in a normal October (2022) and at its record low during the 2023 El Ni&ntilde;o drought (2023). Low rivers cut off drinking water and boat travel for hundreds of communities.<span class="am-credit">NASA Earth Observatory images by Wanmei Liang, using Landsat data from the U.S. Geological Survey. <a href="https://science.nasa.gov/earth/earth-observatory/drought-on-the-rio-negro-151961/" target="_blank" rel="noopener">NASA&rsquo;s story &#8599;</a></span></figcaption></figure>
+      <figure class="am-fig"><img src="https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/images/imagerecords/151000/151965/amazonfires_tmo_2023284.jpg" alt="Satellite view of wildfire smoke over the Amazon rainforest, October 11, 2023" loading="lazy" width="720" height="480" /><figcaption><strong>Fire: smoke over the Amazon</strong>Smoke from wildfires spreads over the Amazon on Oct. 11, 2023, during the El Ni&ntilde;o drought. Drought lets fire creep through the forest floor under the trees, damage that lasts for decades.<span class="am-credit">NASA Earth Observatory image by Lauren Dauphin, using MODIS data from NASA EOSDIS LANCE and GIBS/Worldview. <a href="https://science.nasa.gov/earth/earth-observatory/drought-fuels-wildfires-in-the-amazon-151965/" target="_blank" rel="noopener">NASA&rsquo;s story &#8599;</a></span></figcaption></figure>
+      <figure class="am-fig"><img src="https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/images/imagerecords/148000/148439/peruhotspot_oli_2021122.jpg" alt="Satellite view of gold mining clearings along the Pariamanu River in Peru, 2021" loading="lazy" width="720" height="480" /><figcaption><strong>Gold mining: Peru&rsquo;s Pariamanu River</strong>Unauthorized gold mining cleared more than 200 hectares of forest along the Pariamanu River in Madre de Dios, Peru, in 2020 and 2021. The bare patches and ponds are mining pits.<span class="am-credit">NASA Earth Observatory image by Lauren Dauphin, using Landsat data from the U.S. Geological Survey. <a href="https://science.nasa.gov/earth/earth-observatory/finding-gold-mining-hotspots-in-peru-148439/" target="_blank" rel="noopener">NASA&rsquo;s story &#8599;</a></span></figcaption></figure>
+      <figure class="am-fig am-wide"><div class="am-pair"><div class="am-shot"><img src="https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/woc/images/amazon/amazon_deforestation_20000730.jpg" alt="Satellite view of mostly unbroken forest in Rondônia, Brazil, July 30, 2000" loading="lazy" width="720" height="480" /><span class="am-tag">JULY 30, 2000</span></div><div class="am-shot"><img src="https://assets.science.nasa.gov/dynamicimage/assets/science/esd/eo/woc/images/amazon/amazon_deforestation_20120718.jpg" alt="Satellite view of the same area of Rondônia with widespread fishbone-pattern clearing, July 18, 2012" loading="lazy" width="720" height="480" /><span class="am-tag">JULY 18, 2012</span></div></div><figcaption><strong>Clearing: Rond&ocirc;nia, Brazil, 2000 and 2012</strong>Roads cut into the forest, and clearings spread from them in a fishbone pattern. Twelve years in western Brazil, seen from space.<span class="am-credit">NASA Earth Observatory map by Robert Simmon and Reto St&ouml;ckli, using MODIS imagery from the Terra satellite. <a href="https://science.nasa.gov/earth/earth-observatory/world-of-change/amazon-deforestation/" target="_blank" rel="noopener">NASA&rsquo;s story &#8599;</a></span></figcaption></figure>
+    </div>
+    <p class="am-fine">See today&rsquo;s view from space on <a href="https://worldview.earthdata.nasa.gov/?v=-80,-20,-40,8" target="_blank" rel="noopener">NASA Worldview &#8599;</a>, and this week&rsquo;s fires on <a href="https://firms.modaps.eosdis.nasa.gov/map/" target="_blank" rel="noopener">NASA&rsquo;s fire map &#8599;</a>.</p>
+  </div>
+</section>
+
+<section class="section" id="watch">
+  <div class="wrap">
+    <div class="section-eyebrow">WATCH</div>
+    <h2>Real video from the front line</h2>
+    <div class="am-videos">
+      <div class="am-video"><button type="button" class="am-play" data-yt="80WKaCyAjUY" aria-label="Play video: Yanuni official trailer"><img src="https://i.ytimg.com/vi/80WKaCyAjUY/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" /><span class="am-play-icon" aria-hidden="true">&#9654;</span></button><h3><em>Yanuni</em>: official trailer</h3><p>Juma Xipaia&rsquo;s fight against illegal mining, from the Oscar-shortlisted documentary. From Leonardo DiCaprio&rsquo;s YouTube channel.</p></div>
+      <div class="am-video"><button type="button" class="am-play" data-yt="WBOE4Ya3ofg" aria-label="Play video: Patrolling the Amazon Rainforest with Paul Rosolie and Junglekeepers"><img src="https://i.ytimg.com/vi/WBOE4Ya3ofg/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" /><span class="am-play-icon" aria-hidden="true">&#9654;</span></button><h3>On patrol with Paul Rosolie and Junglekeepers</h3><p>What protecting the forest looks like day to day on Peru&rsquo;s Las Piedras River. From Age of Union, a Junglekeepers backer.</p></div>
+      <div class="am-video"><button type="button" class="am-play" data-yt="rwaZkZCx_4c" aria-label="Play video: Peru steps up fight against illegal gold mining"><img src="https://i.ytimg.com/vi/rwaZkZCx_4c/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" /><span class="am-play-icon" aria-hidden="true">&#9654;</span></button><h3>Peru raids illegal gold mines</h3><p>Footage from Peru&rsquo;s August 2026 operation as illegal miners pushed into Tambopata National Reserve. From AP Archive.</p></div>
+    </div>
+    <p class="am-fine">Tap a video to play it. The preview pictures come from YouTube, and the video loads from YouTube&rsquo;s privacy-enhanced player only when you tap play.</p>
+  </div>
+</section>
+
+<section class="section alt" id="people">
+  <div class="wrap">
+    <div class="section-eyebrow">WHO&rsquo;S PROTECTING IT</div>
+    <h2>The people on the front line</h2>
+    <div class="article-grid">
+      <div class="article-card feat"><div class="tag">Peru &middot; Madre de Dios</div><h3>Paul Rosolie and Junglekeepers</h3><p>Paul Rosolie, a conservationist and author, leads Junglekeepers, whose local rangers protect rainforest along Peru&rsquo;s Las Piedras River. In January 2026, after an armed ambush on conservation leaders and attacks from narcos, illegal miners and loggers, they launched END GAME: 18 months to protect 50,000 acres of the Las Piedras corridor and make it a national park. His book <em>Junglekeeper</em> came out in 2026.</p><a class="more" href="https://www.junglekeepers.org/donate" target="_blank" rel="noopener">Support Junglekeepers &#8599;</a> &nbsp; <a class="more" href="https://www.junglekeepers.org/press/releases/dc28a0b9-ecfc-40d6-a661-6502ebf0695e" target="_blank" rel="noopener">About END GAME &#8599;</a></div>
+      <div class="article-card feat"><div class="tag">Brazil &middot; Xingu</div><h3>Juma Xipaia</h3><p>Juma Xipaia is a leader of the Xipaya people in Brazil&rsquo;s Amazon. She became the first woman chief in the Middle Xingu region and later Brazil&rsquo;s first secretary of Indigenous rights. She has survived six assassination attempts while standing up to illegal gold mining that poisons rivers with mercury, to deforestation and to land invasion. Her story is the documentary <em>Yanuni</em>, shortlisted for the 2026 Academy Awards.</p><a class="more" href="https://www.democracynow.org/2026/1/13/yanuni" target="_blank" rel="noopener">Hear her story &#8599;</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="help">
+  <div class="wrap">
+    <div class="section-eyebrow">HOW TO HELP</div>
+    <h2>What you can do from here</h2>
+    <div class="am-now-list">
+      <div class="am-card"><h3>Back the people on the front line</h3><p>Rangers and Indigenous leaders stand between the forest and the chainsaws and dredges. Groups like <a href="https://www.junglekeepers.org/donate" target="_blank" rel="noopener">Junglekeepers</a> run on donations.</p></div>
+      <div class="am-card"><h3>Ask where your gold comes from</h3><p>Illegal Amazon gold gets mixed into the legal market because it&rsquo;s hard to trace. If you buy gold, choose recycled gold or a jeweler who can tell you where it came from.</p></div>
+      <div class="am-card"><h3>Watch, learn and share</h3><p>Watch <em>Yanuni</em>, read the numbers here each week, and share this page. People protect what they know about.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight alt" id="sources">
+  <div class="wrap">
+    <h2>Our sources</h2>
+    <ul class="am-sources" id="amSources"></ul>
+    <p class="am-fine">NASA&rsquo;s pictures are public domain; the credit is under each one. Videos belong to their channels. We pass along official numbers and reporting from trusted sources and link every one, and we don&rsquo;t take sides in any country&rsquo;s politics. Have a correction? <a href="https://laporteweathernow.com/contact">Tell us</a>.</p>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand" style="margin-bottom:14px;">
+        <div class="brand-mark">LPWN</div>
+        <div class="brand-text"><div class="t1" style="color:#fff;">LA PORTE</div><div class="t2">WEATHER NOW</div></div>
+      </div>
+      <p style="max-width:320px; color:#9fab9c;">Storm-smart weather for the Midwest, built on free public data. Not a replacement for official NWS warnings.</p>
+      <p style="max-width:320px; color:#9fab9c; font-size:12.5px; font-style:italic; margin-top:6px;">Love God. Love people. Tell the truth. Be prepared. Care for all that lives. &middot; Matthew 22:37&ndash;39</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h4>Weather</h4>
+        <ul>
+          <li><a href="https://laporteweathernow.com/">Right Now</a></li>
+          <li><a href="https://laporteweathernow.com/emergency">Emergency view</a></li>
+          <li><a href="https://laporteweathernow.com/daily-scoop">Daily Scoop</a></li>
+          <li><a href="https://laporteweathernow.com/weekend">This Weekend</a></li>
+          <li><a href="https://laporteweathernow.com/track-record">Track Record</a></li>
+          <li><a href="https://laporteweathernow.com/storm-patterns">Storm Patterns</a></li>
+          <li><a href="https://laporteweathernow.com/golf">Golf Weather</a></li>
+          <li><a href="https://laporteweathernow.com/global">Global</a></li>
+          <li><a href="https://laporteweathernow.com/disasters">World Disaster Watch</a></li>
+          <li><a href="https://laporteweathernow.com/markets">Markets &amp; Economy</a></li>
+          <li><a href="https://laporteweathernow.com/ai-survival-guide">AI's Survival Guide</a></li>
+          <li><a href="https://laporteweathernow.com/world-art">World's Oldest Art</a></li>
+          <li><a href="https://laporteweathernow.com/hardhat/">Hard Hat Weather for crews</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Travel</h4>
+        <ul>
+          <li><a href="https://laporteweathernow.com/trip-planner">Trip Planner</a></li>
+          <li><a href="https://laporteweathernow.com/camp-map">Camp Map</a></li>
+          <li><a href="https://laporteweathernow.com/travel-guides">Travel Guides</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>La Porte</h4>
+        <ul>
+          <li><a href="https://laporteweathernow.com/community">Community</a></li>
+          <li><a href="https://laporteweathernow.com/faith">Faith &amp; Ministry</a></li>
+          <li><a href="https://laporteweathernow.com/history">History</a></li>
+          <li><a href="https://laporteweathernow.com/about">Our Mission</a></li>
+          <li><a href="https://laporteweathernow.com/contact">Contact</a></li>
+          <li><a href="https://laporteweathernow.com/sources">Our sources</a></li>
+          <li><a href="https://laporteweathernow.com/privacy">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://pinterest.com/scoopanddude" target="_blank" rel="noopener">Pinterest</a></li>
+          <li><a href="https://www.instagram.com/laporteweathernow/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=61593704493345" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.facebook.com/groups/395203475619853" target="_blank" rel="noopener">Facebook group</a></li>
+          <li><a href="https://www.tiktok.com/@laporteweathernow" target="_blank" rel="noopener">TikTok</a></li>
+          <li><a href="https://www.etsy.com/shop/ScoopAndDude" target="_blank" rel="noopener">Etsy Shop</a></li>
+          <li><a href="https://www.weather.gov" target="_blank" rel="noopener">Verify with NWS &#8599;</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p style="width:100%; text-align:center; font-size:11px; color:#9aa197; margin-top:24px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.08);">Courthouse photo by MrHarman, <a href="https://creativecommons.org/licenses/by/3.0/deed.en" target="_blank" rel="noopener" style="color:#8a9089;">CC BY 3.0</a>, via Wikimedia Commons</p>
+  <p style="width:100%; text-align:center; margin-top:20px;"><a href="https://www.paypal.com/donate/?business=19scoops87%40gmail.com&currency_code=USD" target="_blank" rel="noopener" class="btn btn-amber" style="margin:6px;">&#9829; Support This Site &mdash; Donate</a><a href="https://www.gofundme.com/f/scoopanddude" target="_blank" rel="noopener" class="btn btn-outline" style="margin:6px;">&#128656; Help Keep Us on the Road</a></p>
+</footer>
+
+<script>
+// Amazon Watch (laporteweathernow.com/amazon). The numbers and news live in amazon-watch.json
+// in the public posts repo on GitHub, refreshed every week, so they update without a site publish.
+// The copy below is what shipped with the site; the live file replaces it when it loads.
+(function () {
+  "use strict";
+  var DATA_URL = "https://scoopanddude.github.io/laporteweathernow-posts/amazon-watch.json";
+  var FALLBACK = {"about": "Numbers and news for laporteweathernow.com/amazon (Amazon Watch). Updated weekly from official data as reported by trusted outlets. Only numbers the sources state; calm, factual, no hype.", "updated": "2026-09-30", "nextUpdate": "2026-10-05", "headline": "Forest clearing is down in Brazil. Drought, fire and illegal gold mining are the dangers now.", "stats": [{"value": "2,874 km²", "label": "Cleared, Brazilian Amazon, Aug. 2025–July 2026", "note": "Down 36% from the year before, the lowest since 2012–13 (INPE satellite alerts).", "source": {"label": "INPE DETER alerts, reported Aug. 9, 2026", "url": "https://www.nationalheraldindia.com/environment/amazon-deforestation-alerts-fall-to-lowest-level-since-2013"}}, {"value": "69%", "label": "Chance this El Niño is the strongest since 1950", "note": "Brazil's Geological Service expects a hotter, drier fall and low rivers into November.", "source": {"label": "Geological Service of Brazil bulletin, reported Sept. 3, 2026", "url": "https://revistacenarium.com.br/en/2026-27-el-nino-could-be-the-strongest-since-1950-worsening-heat-and-drought-in-amazon/"}}, {"value": "78", "label": "Illegal mining rafts destroyed in one Peru raid", "note": "August 2026, as gold miners pushed into Tambopata National Reserve.", "source": {"label": "Associated Press, Aug. 14, 2026", "url": "https://www.clickorlando.com/news/world/2026/08/14/peru-steps-up-fight-against-illegal-gold-mining-as-activity-enters-protected-amazon-reserve/"}}, {"value": "Oct. 4", "label": "Brazil votes", "note": "Environmental groups say the result will shape how the Amazon is protected.", "source": {"label": "Plant-for-the-Planet, Sept. 28, 2026", "url": "https://blog.plant-for-the-planet.org/2026/brazils-2026-election-future-amazon-rainforest/"}}], "now": [{"date": "2026-09-03", "title": "A record El Niño could bring drought", "text": "Brazil's Geological Service gives a 69% chance that this El Niño becomes stronger than any since 1950. It expects above-normal heat, less rain and three to five heat waves from September to November, with Rio Negro basin rivers below normal and dropping more in November. The El Niño should last into early 2027. Drought is what lets fire burn through standing forest.", "source": {"label": "Revista Cenarium, citing the Geological Service of Brazil", "url": "https://revistacenarium.com.br/en/2026-27-el-nino-could-be-the-strongest-since-1950-worsening-heat-and-drought-in-amazon/"}}, {"date": "2026-08-14", "title": "Illegal gold miners enter a protected reserve in Peru", "text": "Peru's prosecutors say illegal gold miners have entered Tambopata National Reserve in the Madre de Dios region. A three-day operation destroyed 56 motors, 78 mining rafts and more than 13,000 gallons of fuel. Mercury from the mining poisons rivers and the fish Indigenous communities depend on.", "source": {"label": "Associated Press", "url": "https://www.clickorlando.com/news/world/2026/08/14/peru-steps-up-fight-against-illegal-gold-mining-as-activity-enters-protected-amazon-reserve/"}}, {"date": "2026-08-09", "title": "Deforestation alerts at their lowest since 2013", "text": "Brazil's space agency, INPE, counted 2,874 square kilometers of deforestation alerts in the Amazon from August 2025 through July 2026, down 36% and the lowest since 2012–13. Scientists caution that logging, drought and fire can still damage standing forest without counting as clearing.", "source": {"label": "Reported from INPE's DETER data", "url": "https://www.nationalheraldindia.com/environment/amazon-deforestation-alerts-fall-to-lowest-level-since-2013"}}, {"date": "2026-05-28", "title": "Illegal mining still earns billions in Brazil", "text": "A Greenpeace investigation found illegal gold mining in Brazil's Amazon still brings in billions of dollars despite federal crackdowns, concentrated in Indigenous lands such as the Yanomami territory. High gold prices and weak tracing of where gold comes from keep it going.", "source": {"label": "Greenpeace report, as reported May 28, 2026", "url": "https://political.org/2026/05/28/illegal-miners-extract-billions-in-amazon-gold-despite-brazil-crackdown-greenpeace-finds/"}}]};
+  var STATIC_SOURCES = [["NASA Earth Observatory: Drought on the Rio Negro (2023)", "https://science.nasa.gov/earth/earth-observatory/drought-on-the-rio-negro-151961/"], ["NASA Earth Observatory: Drought fuels wildfires in the Amazon (2023)", "https://science.nasa.gov/earth/earth-observatory/drought-fuels-wildfires-in-the-amazon-151965/"], ["NASA Earth Observatory: Finding gold mining hotspots in Peru (2021)", "https://science.nasa.gov/earth/earth-observatory/finding-gold-mining-hotspots-in-peru-148439/"], ["NASA Earth Observatory: World of Change, Amazon deforestation", "https://science.nasa.gov/earth/earth-observatory/world-of-change/amazon-deforestation/"], ["Junglekeepers: END GAME (Jan. 13, 2026)", "https://www.junglekeepers.org/press/releases/dc28a0b9-ecfc-40d6-a661-6502ebf0695e"], ["Democracy Now!: Yanuni and Juma Xipaia (Jan. 13, 2026)", "https://www.democracynow.org/2026/1/13/yanuni"]];
+  var MONTHS = ["Jan.", "Feb.", "March", "April", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
+  function $(id) { return document.getElementById(id); }
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function safeUrl(u) { return /^https:\/\//i.test(String(u || "")) ? String(u) : ""; }
+  function apDate(ymd) { var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(ymd || ""); return m ? MONTHS[+m[2] - 1] + " " + (+m[3]) + ", " + m[1] : ""; }
+  function link(src) { var u = safeUrl(src && src.url); return u ? '<a href="' + esc(u) + '" target="_blank" rel="noopener">' + esc(src.label || "Source") + " &#8599;</a>" : ""; }
+
+  function render(d) {
+    if (!d || !Array.isArray(d.stats)) return;
+    var stats = d.stats.slice(0, 4);
+    if (d.headline) $("amHeadline").textContent = d.headline;
+    $("amStats").innerHTML = stats.map(function (s) {
+      return '<div class="am-stat"><div class="am-stat-num">' + esc(s.value) + '</div><div class="am-stat-label">' + esc(s.label) + "</div></div>";
+    }).join("");
+    $("amStatNotes").innerHTML = stats.map(function (s) {
+      return "<li><strong>" + esc(s.value) + ":</strong> " + esc(s.note) + (s.source ? " " + link(s.source) : "") + "</li>";
+    }).join("");
+    $("amNow").innerHTML = (d.now || []).map(function (n) {
+      return '<article class="am-card"><div class="am-date">' + esc(apDate(n.date)) + "</div><h3>" + esc(n.title) + "</h3><p>" + esc(n.text) + "</p>" +
+        (n.source ? '<p class="am-src">Source: ' + link(n.source) + "</p>" : "") + "</article>";
+    }).join("");
+    $("amUpdated").textContent = d.updated ? "Numbers updated " + apDate(d.updated) + ". We update them every week." : "";
+    var seen = {}, items = [];
+    stats.concat(d.now || []).forEach(function (x) { var s = x.source, u = safeUrl(s && s.url); if (u && !seen[u]) { seen[u] = 1; items.push("<li>" + link(s) + "</li>"); } });
+    STATIC_SOURCES.forEach(function (s) { if (!seen[s[1]]) { seen[s[1]] = 1; items.push("<li>" + link({ label: s[0], url: s[1] }) + "</li>"); } });
+    $("amSources").innerHTML = items.join("");
+  }
+
+  render(FALLBACK);
+  try {
+    fetch(DATA_URL, { cache: "no-cache" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) { if (d && Array.isArray(d.stats) && d.stats.length) render(d); })
+      .catch(function () { /* keep the copy that shipped with the site */ });
+  } catch (e) { /* very old browser: keep the shipped copy */ }
+
+  // Videos load only when someone taps play (YouTube's privacy-enhanced player).
+  Array.prototype.forEach.call(document.querySelectorAll(".am-play[data-yt]"), function (b) {
+    b.addEventListener("click", function () {
+      var id = b.getAttribute("data-yt");
+      if (!/^[A-Za-z0-9_-]{11}$/.test(id)) return;
+      var f = document.createElement("iframe");
+      f.className = "am-frame";
+      f.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
+      f.title = (b.getAttribute("aria-label") || "Video").replace(/^Play video: /, "");
+      f.setAttribute("allow", "autoplay; encrypted-media; picture-in-picture; fullscreen");
+      f.setAttribute("allowfullscreen", "");
+      b.parentNode.replaceChild(f, b);
+      if (typeof window.lpwnTrack === "function") window.lpwnTrack("amazon-video", id);
+    });
+  });
+})();
+
+</script>
+<nav class="bottom-bar" aria-label="Quick links">
+  <a href="https://laporteweathernow.com/"><span class="bi" aria-hidden="true">&#9728;&#65039;</span>Weather</a>
+  <a class="alerts-link" href="https://laporteweathernow.com/emergency"><span class="bi" aria-hidden="true">&#9888;&#65039;</span>Alerts</a>
+  <a href="https://laporteweathernow.com/daily-scoop"><span class="bi" aria-hidden="true">&#128240;</span>Scoop</a>
+  <a href="https://laporteweathernow.com/weekend"><span class="bi" aria-hidden="true">&#128197;</span>Weekend</a>
+  <details><summary><span class="bi" aria-hidden="true">&#9776;</span>More</summary>
+    <div class="more-sheet">
+      <div class="sheet-grp"><div class="nav-group">Faith</div><a href="https://laporteweathernow.com/faith">Faith &amp; Ministry</a></div>
+      <div class="sheet-grp"><div class="nav-group">Tools</div><a href="https://laporteweathernow.com/golf">Golf Weather</a><a href="https://laporteweathernow.com/hardhat/">Hard Hat Weather</a></div>
+      <div class="sheet-grp"><div class="nav-group">Local</div><a href="https://laporteweathernow.com/community">Local help &amp; events</a><a href="https://laporteweathernow.com/history">La Porte history</a></div>
+      <div class="sheet-grp"><div class="nav-group">Travel</div><a href="https://laporteweathernow.com/trip-planner">Trip Planner</a><a href="https://laporteweathernow.com/camp-map">Camp Map</a><a href="https://laporteweathernow.com/travel-guides">Travel Guides</a><a href="https://laporteweathernow.com/global">Global weather</a></div>
+      <div class="sheet-grp"><div class="nav-group">Learn</div><a href="https://laporteweathernow.com/storm-patterns">Storm Patterns</a><a href="https://laporteweathernow.com/track-record">Track Record</a></div>
+      <div class="sheet-grp"><div class="nav-group">From Scoop</div><a href="https://laporteweathernow.com/disasters">World Disaster Watch</a><a class="active" aria-current="page" href="https://laporteweathernow.com/amazon">Amazon Watch</a><a href="https://laporteweathernow.com/markets">Markets &amp; Economy</a><a href="https://laporteweathernow.com/ai-survival-guide">AI's Survival Guide</a><a href="https://laporteweathernow.com/world-art">World Art</a></div>
+      <div class="sheet-grp"><div class="nav-group">About</div><a href="https://laporteweathernow.com/about">Our mission</a><a href="https://laporteweathernow.com/sources">Our sources</a><a href="https://laporteweathernow.com/contact">Contact</a></div>
+    </div>
+  </details>
+</nav>
+</body>
+</html>
