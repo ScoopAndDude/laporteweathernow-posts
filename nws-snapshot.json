@@ -1,6 +1,6 @@
 {
  "about": "Official weather for La Porte, Indiana, saved by a GitHub job for the Daily Scoop (laporteweathernow.com/daily-scoop). Copied from NWS, SPC and WPC as-is; see scripts/nws_snapshot.py.",
- "fetched": "2026-09-30T07:23:08-05:00",
+ "fetched": "2026-09-30T07:24:56-05:00",
  "place": "La Porte, IN",
  "lat": 41.6081,
  "lon": -86.7189,
@@ -38,7 +38,7 @@
  },
  "forecast": {
   "updated": "2026-09-30T12:01:03+00:00",
-  "generated": "2026-09-30T12:23:08+00:00",
+  "generated": "2026-09-30T12:24:56+00:00",
   "periods": [
    {
     "name": "Today",
@@ -260,26 +260,49 @@
   ]
  },
  "alertsLaPorteCounty": [],
- "alertsIndiana": [
-  {
-   "id": "urn:oid:2.49.0.1.840.0.bb73405683c9b77d8553078c6b5421b7dbb0634d.001.1",
-   "event": "Hydrologic Outlook",
-   "headline": "Hydrologic Outlook issued September 30 at 3:59AM CDT by NWS Chicago IL",
-   "nwsHeadline": "Areas of flooding and rises in river levels possible through late week",
-   "area": "Boone, IL; Cook, IL; De Kalb, IL; DuPage, IL; Grundy, IL; Kane, IL; Kendall, IL; Lake, IL; La Salle, IL; Lee, IL; McHenry, IL; Ogle, IL; Will, IL; Winnebago, IL; Lake, IN; Porter, IN",
-   "sender": "NWS Chicago IL",
-   "sent": "2026-09-30T03:59:00-05:00",
-   "onset": "2026-09-30T03:59:00-05:00",
-   "ends": null,
-   "expires": "2026-09-30T15:00:00-05:00",
-   "messageType": "Alert",
-   "severity": "Unknown",
-   "certainty": "Possible",
-   "urgency": "Future"
-  }
- ],
+ "alertsNearby": {
+  "indiana": [
+   {
+    "id": "urn:oid:2.49.0.1.840.0.bb73405683c9b77d8553078c6b5421b7dbb0634d.001.1",
+    "event": "Hydrologic Outlook",
+    "headline": "Hydrologic Outlook issued September 30 at 3:59AM CDT by NWS Chicago IL",
+    "nwsHeadline": "Areas of flooding and rises in river levels possible through late week",
+    "area": "Boone, IL; Cook, IL; De Kalb, IL; DuPage, IL; Grundy, IL; Kane, IL; Kendall, IL; Lake, IL; La Salle, IL; Lee, IL; McHenry, IL; Ogle, IL; Will, IL; Winnebago, IL; Lake, IN; Porter, IN",
+    "sender": "NWS Chicago IL",
+    "sent": "2026-09-30T03:59:00-05:00",
+    "onset": "2026-09-30T03:59:00-05:00",
+    "ends": null,
+    "expires": "2026-09-30T15:00:00-05:00",
+    "messageType": "Alert",
+    "severity": "Unknown",
+    "certainty": "Possible",
+    "urgency": "Future"
+   }
+  ],
+  "nearbyCountiesFullText": [
+   {
+    "id": "urn:oid:2.49.0.1.840.0.bb73405683c9b77d8553078c6b5421b7dbb0634d.001.1",
+    "event": "Hydrologic Outlook",
+    "headline": "Hydrologic Outlook issued September 30 at 3:59AM CDT by NWS Chicago IL",
+    "nwsHeadline": "Areas of flooding and rises in river levels possible through late week",
+    "area": "Boone, IL; Cook, IL; De Kalb, IL; DuPage, IL; Grundy, IL; Kane, IL; Kendall, IL; Lake, IL; La Salle, IL; Lee, IL; McHenry, IL; Ogle, IL; Will, IL; Winnebago, IL; Lake, IN; Porter, IN",
+    "sender": "NWS Chicago IL",
+    "sent": "2026-09-30T03:59:00-05:00",
+    "onset": "2026-09-30T03:59:00-05:00",
+    "ends": null,
+    "expires": "2026-09-30T15:00:00-05:00",
+    "messageType": "Alert",
+    "severity": "Unknown",
+    "certainty": "Possible",
+    "urgency": "Future",
+    "description": "ESFLOT\n\nSeveral waves of rain, and possibly a few thunderstorms, are likely\nthrough Thursday night. High moisture content in the atmosphere will\nlead to periods of torrential downpours and the threat for 1 to 3\ninches of rainfall on a widespread basis through Thursday night.\n\nRepeated rounds of rain over saturated soils may lead to flooding of\nlow-lying and poor drainage areas as well as rises on area rivers,\nincluding along the Rock, Fox, DuPage, Des Plaines, and Illinois\nRivers.\n\nThis outlook means that elevated water levels and potential impacts\nare possible, but not yet certain. Persons should closely monitor\nforecasts including the possibility of flood watches, warnings, and\nadvisories.\n\nAdditional statements or outlooks may be issued by this afternoon.",
+    "instruction": null
+   }
+  ]
+ },
  "discussion": {
   "issued": "2026-09-30T05:13:00-05:00",
+  "ageHours": 2.2,
   "text": "000\nFXUS63 KIWX 301013\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n613 AM EDT Wed Sep 30 2026\n\n.KEY MESSAGES...\n\n- Increasing chances (40-80%) for showers today along and mainly\n  north of US 24 , best potential will remain near Lake MI in \n  the mid-late afternoon. Highs will be in the upper 60s, low \n  70s for those areas. South of US 24 expect highs in the mid-\n  upper 70s with increasing clouds. \n\n- Rain chances (40-90%) spread eastward through Friday, with \n  isolated thunderstorm potential (non-severe). Highs will be in\n  the 70s, low 80s on Thursday and the 60s Friday. \n\n- Dry conditions are expected this weekend into early next \n  week, with highs in the 60s, low 70s (warmest further south). \n  Overnight lows will drop into the 40s.\n\n&&\n\n.DISCUSSION...\nIssued at 345 AM EDT Wed Sep 30 2026\n\nNot a whole lot of changes to the going forecast. Rain showers \ncontinue over northern IL into central MI this morning with the\nband of showers on the northwest periphery of ridging further \nsouth and east which will mainly keep the introduction of rain \nshowers for areas closer to Lake Michigan into this afternoon \nas the lower levels further moisten. WPC has a marginal risk for\nexcessive rainfall for later today and as the ridging pushes \nfurther south and east rain showers will make their way further \nsouth and east through Friday morning with a slight risk for \nexcessive rainfall for tomorrow. A few embedded thunderstorms \nwill be possible with the southern and eastward push but at this\ntime severe weather is not anticipated. \n\nA more zonal aloft pattern emerges across the region this\nweekend and will bring a return to dry conditions and cooler\ntemperatures especially into the beginning of next week when\nhighs will only get to around 60 degrees both Monday and\nTuesday.\n\n&&\n\n.AVIATION /12Z TAFS THROUGH 12Z THURSDAY/...\nIssued at 611 AM EDT Wed Sep 30 2026\n\nLight rain showers currently observed on latest radar imagery\nstarting to push into northwest IN with some of the showers\nmaking it to the surface. These showers are on the \nnorthwestern periphery of ridging in place further south and \neast. Showers look to remain light as the showers push further \nsouthward over mainly areas near Lake Michigan and into KSBN, so\nat this time think conditions will mainly remain VFR however \nsome slight reductions in vsbys due to rain showers may allow \nfor MVFR vsbys but at this time confidence remains low. At this \ntime KFWA looks to remain dry with the ridging in place over \nsouth and eastern portions of the CWA.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...None.\n\n&&\n\n$$\n\nDISCUSSION...Andersen\nAVIATION...Andersen"
  },
  "hazardousWeatherOutlook": null,
