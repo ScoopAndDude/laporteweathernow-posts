@@ -1,151 +1,150 @@
 {
  "about": "Daily health check for laporteweathernow.com (scripts/site_health.py). 'problems' lists anything to fix, in plain English.",
- "checked": "2026-09-30T09:07:58-05:00",
+ "checked": "2026-09-30T09:09:29-05:00",
  "ok": false,
  "problems": [
-  "Couldn't read scoop-posts.json: 'posted'",
   "GitHub job 'NWS weather snapshot' failed 1 of 7 times in the last 7 days."
  ],
  "pages": [
   {
    "path": "/",
    "status": 200,
-   "ms": 354
+   "ms": 73
   },
   {
    "path": "/daily-scoop",
    "status": 200,
-   "ms": 381
+   "ms": 39
   },
   {
    "path": "/emergency",
    "status": 200,
-   "ms": 419
+   "ms": 102
   },
   {
    "path": "/trip-planner",
    "status": 200,
-   "ms": 491
+   "ms": 147
   },
   {
    "path": "/camp-map",
    "status": 200,
-   "ms": 408
+   "ms": 97
   },
   {
    "path": "/storm-patterns",
    "status": 200,
-   "ms": 268
+   "ms": 84
   },
   {
    "path": "/travel-guides",
    "status": 200,
-   "ms": 414
+   "ms": 128
   },
   {
    "path": "/global",
    "status": 200,
-   "ms": 411
+   "ms": 39
   },
   {
    "path": "/disasters",
    "status": 200,
-   "ms": 336
+   "ms": 73
   },
   {
    "path": "/markets",
    "status": 200,
-   "ms": 384
+   "ms": 132
   },
   {
    "path": "/ai-survival-guide",
    "status": 200,
-   "ms": 375
+   "ms": 66
   },
   {
    "path": "/faith",
    "status": 200,
-   "ms": 351
+   "ms": 72
   },
   {
    "path": "/sources",
    "status": 200,
-   "ms": 271
+   "ms": 42
   },
   {
    "path": "/world-art",
    "status": 200,
-   "ms": 341
+   "ms": 91
   },
   {
    "path": "/community",
    "status": 200,
-   "ms": 309
+   "ms": 38
   },
   {
    "path": "/history",
    "status": 200,
-   "ms": 309
+   "ms": 20
   },
   {
    "path": "/about",
    "status": 200,
-   "ms": 332
+   "ms": 24
   },
   {
    "path": "/contact",
    "status": 200,
-   "ms": 175
+   "ms": 127
   },
   {
    "path": "/golf",
    "status": 200,
-   "ms": 335
+   "ms": 102
   },
   {
    "path": "/weekend",
    "status": 200,
-   "ms": 343
+   "ms": 43
   },
   {
    "path": "/privacy",
    "status": 200,
-   "ms": 346
+   "ms": 73
   },
   {
    "path": "/track-record",
    "status": 200,
-   "ms": 274
+   "ms": 136
   },
   {
    "path": "/hardhat/",
    "status": 200,
-   "ms": 311
+   "ms": 32
   },
   {
    "path": "/hardhat/dashboard",
    "status": 200,
-   "ms": 330
+   "ms": 52
   },
   {
    "path": "/hardhat/terms",
    "status": 200,
-   "ms": 261
+   "ms": 38
   },
   {
    "path": "/hardhat/privacy",
    "status": 200,
-   "ms": 255
+   "ms": 158
   },
   {
    "path": "/hardhat/pay",
    "status": 200,
-   "ms": 301
+   "ms": 40
   },
   {
    "path": "/hardhat/thanks",
    "status": 200,
-   "ms": 328
+   "ms": 59
   }
  ],
  "assets": {
@@ -156,6 +155,75 @@
   "latestScoop": {
    "date": "2026-09-30",
    "posted": "2026-09-30T07:28:00-05:00"
+  },
+  "scoopLast14": {
+   "onTime": 2,
+   "late": 4,
+   "missing": 8,
+   "days": [
+    {
+     "date": "2026-09-30",
+     "result": "late",
+     "posted": "07:28"
+    },
+    {
+     "date": "2026-09-29",
+     "result": "late",
+     "posted": "06:36"
+    },
+    {
+     "date": "2026-09-28",
+     "result": "late",
+     "posted": "06:38"
+    },
+    {
+     "date": "2026-09-27",
+     "result": "on time",
+     "posted": "05:53"
+    },
+    {
+     "date": "2026-09-26",
+     "result": "on time",
+     "posted": "05:50"
+    },
+    {
+     "date": "2026-09-25",
+     "result": "late",
+     "posted": "19:45"
+    },
+    {
+     "date": "2026-09-24",
+     "result": "missing"
+    },
+    {
+     "date": "2026-09-23",
+     "result": "missing"
+    },
+    {
+     "date": "2026-09-22",
+     "result": "missing"
+    },
+    {
+     "date": "2026-09-21",
+     "result": "missing"
+    },
+    {
+     "date": "2026-09-20",
+     "result": "missing"
+    },
+    {
+     "date": "2026-09-19",
+     "result": "missing"
+    },
+    {
+     "date": "2026-09-18",
+     "result": "missing"
+    },
+    {
+     "date": "2026-09-17",
+     "result": "missing"
+    }
+   ]
   },
   "nws-snapshot.json": {
    "ageHours": 0.3
@@ -174,12 +242,12 @@
  },
  "githubJobs": {
   "last7days": {
-   "Site health check": {
-    "runs": 1,
+   "pages build and deployment": {
+    "runs": 23,
     "failed": 0
    },
-   "pages build and deployment": {
-    "runs": 21,
+   "Site health check": {
+    "runs": 2,
     "failed": 0
    },
    "Homepage weather copy": {
