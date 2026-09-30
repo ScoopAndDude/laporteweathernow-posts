@@ -8,7 +8,7 @@ starts whichever jobs are due at that moment, in La Porte (Central) time:
 
   every tick           Homepage weather copy, Weather radio
   5:00-5:14 AM         NWS weather snapshot (backup; the morning Scoop task starts its own)
-  6:30-8:14 AM         Backup Daily Scoop (it posts only if today's Scoop isn't up)
+  6:30-8:09 AM         Backup Daily Scoop (it posts only if today's Scoop isn't up)
   8:10-8:24 AM         Site health check
   9:15-9:29 AM, 4:45-4:59 PM   Markets numbers from BLS
 
@@ -29,7 +29,7 @@ CENTRAL = ZoneInfo("America/Chicago")
 EVERY_TICK = ["home-cache.yml", "radio.yml"]
 WINDOWS = [
     ("nws-snapshot.yml", [("05:00", "05:14")]),
-    ("backup-scoop.yml", [("06:30", "08:14")]),
+    ("backup-scoop.yml", [("06:30", "08:09")]),
     ("site-health.yml", [("08:10", "08:24")]),
     ("markets-data.yml", [("09:15", "09:29"), ("16:45", "16:59")]),
 ]
