@@ -590,13 +590,17 @@ def cmd_check(out_dir):
     said = " ".join(p for s in script["segments"] for p in s["spoken"])
     a, b = normalize_words(said), normalize_words(heard)
     ratio = difflib.SequenceMatcher(None, a, b).ratio()
-    print(f"Word match between the script and what a listener hears: {ratio:.1%} ({len(a)} words written, {len(b)} heard).")
-    print("\nHEARD:\n" + heard)
-    print("\nDIFFERENCES (written -> heard):")
+    lines = [f"Word check of {radio['audio']} (recorded {radio['recorded']}): {ratio:.1%} of the words match "
+             f"({len(a)} written, {len(b)} heard by speech-to-text).", "", "HEARD:", heard, "", "DIFFERENCES (written -> heard):"]
     sm = difflib.SequenceMatcher(None, a, b)
     for op, i1, i2, j1, j2 in sm.get_opcodes():
         if op != "equal":
-            print(f"  {' '.join(a[i1:i2]) or '-'}  ->  {' '.join(b[j1:j2]) or '-'}")
+            lines.append(f"  {' '.join(a[i1:i2]) or '-'}  ->  {' '.join(b[j1:j2]) or '-'}")
+    report = "\n".join(lines) + "\n"
+    print(report)
+    # Saved with the recording (the radio branch), so the check can be read without the job log.
+    with open(os.path.join(out_dir, "check.txt"), "w", encoding="utf-8") as fh:
+        fh.write(report)
     return 0
 
 
