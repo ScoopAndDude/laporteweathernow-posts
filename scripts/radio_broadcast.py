@@ -401,7 +401,7 @@ def scoop_paragraphs(posts, today):
     for c in post.get("corrections") or []:
         if c.get("text"):
             out.append("A correction to today's Scoop: " + c["text"])
-    out.append("The whole Scoop is at laporteweathernow.com.")
+    out.append("You can read the whole Scoop on our website.")
     return out, post.get("date")
 
 
