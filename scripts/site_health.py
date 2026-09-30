@@ -118,7 +118,11 @@ def check_data():
             if not p:
                 record.append({"date": d, "result": "missing"})
                 continue
-            posted = datetime.datetime.fromisoformat(p["posted"]).astimezone(TZ)
+            stamp = p.get("posted") or p.get("updated")
+            if not stamp:
+                record.append({"date": d, "result": "unknown"})
+                continue
+            posted = datetime.datetime.fromisoformat(stamp).astimezone(TZ)
             record.append({"date": d, "result": "on time" if (posted.hour, posted.minute) <= (6, 30) else "late",
                            "posted": posted.strftime("%H:%M")})
         out["scoopLast14"] = {"onTime": sum(r["result"] == "on time" for r in record),
