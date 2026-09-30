@@ -596,8 +596,13 @@ def word_check(out_dir):
         radio = json.load(fh)
     with open(os.path.join(out_dir, "script.json"), encoding="utf-8") as fh:
         script = json.load(fh)
+    import numpy as np
+    # ffmpeg decodes the MP3 (16 kHz mono), so the check doesn't depend on faster-whisper's own decoder.
+    raw = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", os.path.join(out_dir, radio["audio"]),
+                          "-ar", "16000", "-ac", "1", "-f", "f32le", "-"], check=True, capture_output=True).stdout
+    samples = np.frombuffer(raw, dtype=np.float32)
     model = WhisperModel("base.en", device="cpu", compute_type="int8")
-    segs, _ = model.transcribe(os.path.join(out_dir, radio["audio"]), beam_size=5, language="en")
+    segs, _ = model.transcribe(samples, beam_size=5, language="en")
     heard = " ".join(s.text.strip() for s in segs)
     said = " ".join(p for s in script["segments"] for p in s["spoken"])
     a, b = normalize_words(said), normalize_words(heard)

@@ -71,6 +71,36 @@
 .wz-box iframe { display: block; width: 100%; height: 440px; border: 0; }
 @media (max-width: 600px) { .wz-box iframe { height: 380px; } }
 </style>
+<style>
+/* Weather radio (Sept. 30, 2026) */
+.wr-card { max-width: 760px; }
+.wr-top { display: flex; align-items: center; gap: 16px; }
+.wr-play { flex: none; width: 64px; height: 64px; border-radius: 50%; border: 0; background: var(--forest); color: #fff; font-size: 22px; cursor: pointer; display: grid; place-items: center; box-shadow: var(--shadow); }
+.wr-play.on { background: var(--amber); color: var(--forest-dark); }
+.wr-play:disabled { opacity: .45; cursor: not-allowed; }
+.wr-play:focus-visible, .wr-chap:focus-visible, .wr-vol button:focus-visible { outline: 3px solid var(--amber-dark); outline-offset: 2px; }
+.wr-title { font-weight: 800; font-size: 17px; }
+.wr-status { font-size: 14px; color: var(--ink-soft); margin-top: 3px; line-height: 1.45; }
+.wr-progress { margin-top: 14px; }
+.wr-seekrow { display: flex; align-items: center; gap: 10px; }
+.wr-seekrow input { flex: 1; min-width: 0; accent-color: var(--amber-dark); height: 28px; }
+.wr-time { font-variant-numeric: tabular-nums; font-size: 13px; color: var(--ink-soft); min-width: 84px; text-align: end; }
+.wr-chapters { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.wr-chap { border: 1px solid var(--line); background: var(--card); color: var(--ink); border-radius: 999px; padding: 7px 13px; font-size: 13px; font-weight: 700; cursor: pointer; min-height: 36px; }
+.wr-chap.on { background: var(--forest); color: #fff; border-color: var(--forest); }
+.wr-vol { display: flex; align-items: center; gap: 8px; margin-top: 14px; }
+.wr-vol button { flex: none; border: 0; background: none; font-size: 22px; cursor: pointer; width: 44px; height: 44px; border-radius: 8px; }
+.wr-vol input { flex: 1; min-width: 0; max-width: 340px; accent-color: var(--forest); height: 32px; }
+.wr-volnum { font-variant-numeric: tabular-nums; font-size: 14px; min-width: 42px; font-weight: 700; }
+.wr-keep { display: flex; gap: 10px; align-items: flex-start; margin-top: 12px; font-size: 14px; line-height: 1.45; cursor: pointer; }
+.wr-keep input { flex: none; margin-top: 2px; width: 18px; height: 18px; accent-color: var(--forest); }
+.wr-read { margin-top: 12px; }
+.wr-read summary { cursor: pointer; font-weight: 700; min-height: 32px; }
+.wr-seg { padding: 6px 10px; border-radius: 8px; }
+.wr-seg.on { background: var(--warn-bg); }
+.wr-seg h4 { margin: 6px 0 2px; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-soft); }
+.wr-seg p { margin: 0 0 6px; font-size: 14px; line-height: 1.55; }
+</style>
 </head>
 <body>
 <div style="background:#fff4d6;border-bottom:1px solid #e9c46a;color:#3b2f0b;font-weight:700;text-align:center;padding:10px 16px;">Preview of the Alerts page with the new Scanner section (tap &ldquo;Scanner&rdquo; or scroll to the bottom). It is not on laporteweathernow.com yet.</div>
@@ -127,7 +157,7 @@
       </div>
     </div>
     <nav class="jump" aria-label="On this page">
-      <a href="#alerts">Official alerts</a><a href="#next">What to do</a><a href="#forecast">Forecast</a><a href="#contacts">Who to call</a><a href="#radar">Radar</a><a href="#roads">Roads</a><a href="#warnings">Get warnings</a><a href="#scanner">Scanner</a>
+      <a href="#alerts">Official alerts</a><a href="#next">What to do</a><a href="#radio">Radio</a><a href="#forecast">Forecast</a><a href="#contacts">Who to call</a><a href="#radar">Radar</a><a href="#roads">Roads</a><a href="#warnings">Get warnings</a><a href="#scanner">Scanner</a>
     </nav>
   </div>
 </header>
@@ -175,6 +205,37 @@
     <div class="be-ready" id="beReady" style="margin-top:18px;"></div>
   </div>
 </section>
+
+<section class="section tight" id="radio">
+  <div class="wrap">
+    <div class="section-eyebrow">WEATHER RADIO</div>
+    <h2>Hear the latest, read out loud</h2>
+    <p class="lede" style="margin-bottom:14px;">No radio? Press play to hear the official alerts, the La Porte airport reading, the forecast and today&rsquo;s Daily Scoop in a natural voice. Handy when your hands are full.</p>
+    <div class="auto-card wr-card">
+      <div class="wr-top">
+        <button type="button" class="wr-play" id="wrPlay" aria-label="Play the weather radio" disabled>&#9654;</button>
+        <div>
+          <div class="wr-title" id="wrTitle">La Porte County weather radio</div>
+          <div class="wr-status" id="wrStatus" aria-live="polite">The radio needs a connection to load.</div>
+        </div>
+      </div>
+      <div class="wr-progress" id="wrProgress" hidden>
+        <div class="wr-seekrow"><input type="range" id="wrSeek" min="0" max="100" step="0.5" value="0" aria-label="Position in the broadcast"><span class="wr-time" id="wrTime">0:00</span></div>
+        <div class="wr-chapters" id="wrChapters" role="group" aria-label="Jump to a part"></div>
+      </div>
+      <div class="wr-vol">
+        <button type="button" id="wrMute" aria-label="Mute">&#128266;</button>
+        <input type="range" id="wrVol" min="0" max="100" step="5" value="80" aria-label="Volume">
+        <span class="wr-volnum" id="wrVolNum" aria-hidden="true">80%</span>
+      </div>
+      <label class="wr-keep"><input type="checkbox" id="wrKeep" checked> <span>Keep listening: after the broadcast, read new alerts out loud as they come in while this page stays open (keeps your screen on).</span></label>
+      <details class="wr-read" id="wrReadAlong" hidden><summary>Read along</summary><div id="wrText"></div></details>
+      <p class="small-print">The La Porte County broadcast is read by an AI voice (Kokoro, open source) from official National Weather Service information, and recorded again whenever it changes, up to every 15 minutes. Other towns, and any alert newer than the recording, are read by your device&rsquo;s own voice. The radio only plays while this page is open, so keep your phone&rsquo;s emergency alerts on. A NOAA Weather Radio is best of all.</p>
+    </div>
+  </div>
+</section>
+<script>window.lpwnRadio = window.lpwnRadio || (function () { var q = []; function later(k) { return function () { q.push([k, arguments]); }; } return { q: q, place: later("place"), alerts: later("alerts"), forecast: later("forecast") }; })();</script>
+<script src="radio.js?v=387caa76f7" defer></script>
 
 <section class="section tight" id="forecast">
   <div class="wrap">
@@ -871,6 +932,7 @@ var lpwnWaze = (function () {
       const alerts = await fetchAlertsForPoint(loc.lat, loc.lon);
       if (mine !== seq) return;
       lastAlerts = alerts; lastOkAt = at;
+      if (window.lpwnRadio) lpwnRadio.alerts(alerts, loc);
       saveCache("alerts", alerts.map(slimAlert));
       const sig = sigOf(alerts);
       if (sig !== lastSig) {        // only rebuild when something changed, so open sections stay open
@@ -914,7 +976,7 @@ var lpwnWaze = (function () {
   }
   function forecastUnavailable() {
     const saved = loadCache("forecast");
-    if (saved && Array.isArray(saved.data) && saved.data.length) { renderForecast(saved.data, saved.at, true); return; }
+    if (saved && Array.isArray(saved.data) && saved.data.length) { renderForecast(saved.data, saved.at, true); if (window.lpwnRadio) lpwnRadio.forecast(saved.data, loc); return; }
     $("forecastAge").hidden = true;
     $("forecastList").innerHTML = `<li><span class="fc-name">Forecast unavailable right now.</span><span class="fc-text">Use the NWS link above when you have a signal.</span></li>`;
   }
@@ -927,6 +989,7 @@ var lpwnWaze = (function () {
       if (!periods.length) throw new Error("empty forecast");
       const at = Date.now();
       saveCache("forecast", periods);
+      if (window.lpwnRadio) lpwnRadio.forecast(periods, loc);
       renderForecast(periods, at, false);
     } catch (e) {
       if (mine === seq) forecastUnavailable();
@@ -1151,7 +1214,7 @@ var lpwnWaze = (function () {
 
   function useLocation(newLoc) {
     loc = newLoc;
-    if (window.lpwnWaze) lpwnWaze.setPlace(loc);
+    if (window.lpwnWaze) lpwnWaze.setPlace(loc); if (window.lpwnRadio) lpwnRadio.place(loc);
     start();
   }
 
@@ -1181,7 +1244,7 @@ var lpwnWaze = (function () {
   function alertLocation(msg) { $("locName").textContent = `${loc.name} (${msg})`; }
 
   if (typeof lpwnTrack === "function") lpwnTrack("emergency-view", loc.id === HOME_LOCATION.id ? "La Porte" : "another town");
-  if (window.lpwnWaze) lpwnWaze.setPlace(loc);
+  if (window.lpwnWaze) lpwnWaze.setPlace(loc); if (window.lpwnRadio) lpwnRadio.place(loc);
   start();
   let checks = 0;
   setInterval(() => {
