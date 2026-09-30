@@ -1,8 +1,9 @@
 # Saves the newest official weather for La Porte (NWS forecast, alerts, forecaster
-# discussion, storm and flooding-rain outlooks) into nws-snapshot.json. The Daily Scoop
-# is written from this file every morning. The morning post task starts this job itself
-# (workflow_dispatch) so it never waits on GitHub's schedule, which can run hours late;
-# the schedule below is only a backup copy for the same morning.
+# discussion, storm and flooding-rain outlooks) into nws-snapshot.json, and grades the
+# Daily Scoop's past forecasts against the La Porte airport into scorecard.json. The
+# Daily Scoop is written from these files every morning. The morning post task starts
+# this job itself (workflow_dispatch) so it never waits on GitHub's schedule, which can
+# run hours late; the schedule below is only a backup copy for the same morning.
 name: NWS weather snapshot
 
 on:
@@ -13,6 +14,7 @@ on:
     branches: [main]
     paths:
       - scripts/nws_snapshot.py
+      - scripts/scorecard.py
       - .github/workflows/nws-snapshot.yml
 
 permissions:
@@ -25,24 +27,30 @@ concurrency:
 jobs:
   save:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
       - name: Ask NWS, SPC and WPC for the latest
         run: python3 scripts/nws_snapshot.py
-      - name: Save the snapshot
-        # The newest snapshot always wins: each try starts from the latest main and puts
-        # this run's file on top, so two runs close together can't block each other.
+      - name: Grade past forecasts against the La Porte airport
+        # A failure here (the airport archive not answering) keeps the last scorecard.
+        continue-on-error: true
+        run: python3 scripts/scorecard.py
+      - name: Save the snapshot and scorecard
+        # The newest copy always wins: each try starts from the latest main and puts
+        # this run's files on top, so two runs close together can't block each other.
         run: |
-          cp nws-snapshot.json "$RUNNER_TEMP/nws-snapshot.json"
+          files="nws-snapshot.json"
+          [ -f scorecard.json ] && files="$files scorecard.json"
+          for f in $files; do cp "$f" "$RUNNER_TEMP/$f"; done
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           msg="NWS weather snapshot ($(TZ=America/Chicago date '+%Y-%m-%d %H:%M %Z'))"
           for i in 1 2 3 4; do
             git fetch -q origin main
             git reset -q --hard origin/main
-            cp "$RUNNER_TEMP/nws-snapshot.json" nws-snapshot.json
-            git add nws-snapshot.json
+            for f in $files; do cp "$RUNNER_TEMP/$f" "$f"; done
+            git add $files
             if git diff --cached --quiet; then
               echo "Nothing new to save."
               exit 0
