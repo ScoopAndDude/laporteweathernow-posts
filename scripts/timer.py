@@ -11,6 +11,10 @@ starts whichever jobs are due at that moment, in La Porte (Central) time:
   6:30-8:09 AM         Backup Daily Scoop (it posts only if today's Scoop isn't up)
   8:10-8:24 AM         Site health check
   9:15-9:29 AM, 4:45-4:59 PM   Markets numbers from BLS
+  Monday 3:15-3:29 AM and 3:15-3:29 PM   The Chase's map squares (the second start only builds
+                       if the first didn't; see places.yml)
+  Tuesday 5:45-5:59 PM, Wednesday and Thursday 9:45-9:59 AM   The Chase's fuel prices from EIA
+                       (saved only when EIA has a new week)
 
 The jobs keep their GitHub schedules too, so if GitHub's clock recovers, a job may run twice;
 each one is safe to run twice.
@@ -27,19 +31,23 @@ TOKEN = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
 CENTRAL = ZoneInfo("America/Chicago")
 
 EVERY_TICK = ["home-cache.yml", "radio.yml"]
+# (workflow, [(from, to), ...], days): days are Python weekdays (Monday is 0); None means every day.
 WINDOWS = [
-    ("nws-snapshot.yml", [("05:00", "05:14")]),
-    ("backup-scoop.yml", [("06:30", "08:09")]),
-    ("site-health.yml", [("08:10", "08:24")]),
-    ("markets-data.yml", [("09:15", "09:29"), ("16:45", "16:59")]),
+    ("nws-snapshot.yml", [("05:00", "05:14")], None),
+    ("backup-scoop.yml", [("06:30", "08:09")], None),
+    ("site-health.yml", [("08:10", "08:24")], None),
+    ("markets-data.yml", [("09:15", "09:29"), ("16:45", "16:59")], None),
+    ("places.yml", [("03:15", "03:29"), ("15:15", "15:29")], {0}),
+    ("fuel-prices.yml", [("17:45", "17:59")], {1}),
+    ("fuel-prices.yml", [("09:45", "09:59")], {2, 3}),
 ]
 
 
 def due(now):
     hm = now.strftime("%H:%M")
     jobs = list(EVERY_TICK)
-    for wf, spans in WINDOWS:
-        if any(a <= hm <= b for a, b in spans):
+    for wf, spans, days in WINDOWS:
+        if (days is None or now.weekday() in days) and any(a <= hm <= b for a, b in spans) and wf not in jobs:
             jobs.append(wf)
     return jobs
 

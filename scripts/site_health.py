@@ -187,6 +187,29 @@ def check_data():
                       "(The Alerts page reads the latest in the phone's own voice meanwhile.)")
     except Exception as e:
         problem(f"Couldn't read the weather radio recording: {e}")
+    # The Chase (camp map): weekly fuel prices and map squares. Readers still get the older copy
+    # (each shows its date), so a late update is a stuck job, not a page problem.
+    try:
+        fp = json.load(open(os.path.join(REPO, "fuel-prices.json"), encoding="utf-8"))
+        days = (now().date() - datetime.date.fromisoformat(fp.get("week"))).days
+        out["fuel-prices.json"] = {"week": fp.get("week"), "ageDays": days}
+        if days > 13:   # EIA's week starts Monday; it's normally saved by Tuesday night, holidays add a day or two
+            stuck_job(f"The Chase's fuel prices are for the week of {fp.get('week')} ({days} days ago); the weekly 'Fuel prices' job may be stuck.")
+    except Exception as e:
+        problem(f"Couldn't read fuel-prices.json: {e}")
+    try:
+        idx = json.load(open(os.path.join(REPO, "tiles", "index.json"), encoding="utf-8"))
+        h = age_hours(idx.get("made"))
+        out["tiles/index.json"] = {"made": idx.get("made"), "dataFrom": idx.get("built"), "ageDays": round(h / 24, 1) if h is not None else None}
+        if h is None or h > 10 * 24:
+            stuck_job(f"The Chase's map squares were last built {round(h / 24) if h is not None else '?'} days ago; the weekly "
+                      "'Camp map places from OpenStreetMap' job may be stuck. (The map still works from the older copy.)")
+    except Exception as e:
+        problem(f"Couldn't read The Chase's map squares (tiles/index.json): {e}")
+    status, body, _ = fetch(f"https://scoopanddude.github.io/{REPO_NAME.split('/')[1]}/tiles/index.json")
+    out["tiles on GitHub Pages"] = {"status": status}
+    if status != 200:
+        problem(f"GitHub Pages didn't serve The Chase's map squares (status {status}); the map is using the backup copy or Overpass.")
     return out
 
 

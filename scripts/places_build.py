@@ -28,6 +28,7 @@ The job runs in steps so it's fast and one bad download can't break the map:
   python3 scripts/places_build.py extract STATE OUT.json         (needs osmium-tool and curl)
   python3 scripts/places_build.py tiles NEW_DIR OLD_DIR WORK_DIR (writes WORK_DIR/out/tiles and WORK_DIR/out/parts)
   python3 scripts/places_build.py check INDEX.json               (fails if any state's data is over 4 weeks old)
+  python3 scripts/places_build.py fresh INDEX.json               (succeeds if the squares were built in the last 4 days)
 """
 import datetime
 import hashlib
@@ -336,6 +337,16 @@ def check(index_json):
     return 0
 
 
+def fresh(index_json, days=4):
+    """True when this week's squares are already built, so a second start this week can skip the work."""
+    try:
+        with open(index_json, encoding="utf-8") as f:
+            made = json.load(f).get("made")
+    except (OSError, ValueError):
+        return False
+    return age_days(made) < days
+
+
 if __name__ == "__main__":
     args = sys.argv[1:]
     if args == ["states"]:
@@ -347,5 +358,9 @@ if __name__ == "__main__":
         sys.exit(tiles(args[1], args[2], args[3]))
     if len(args) == 2 and args[0] == "check":
         sys.exit(check(args[1]))
+    if len(args) == 2 and args[0] == "fresh":
+        ok = fresh(args[1])
+        print("Built in the last 4 days." if ok else "Not built in the last 4 days.")
+        sys.exit(0 if ok else 1)
     print(__doc__)
     sys.exit(2)
