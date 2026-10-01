@@ -1,0 +1,44 @@
+# Saves the official weekly average gas and diesel prices from the U.S. Energy Information
+# Administration into fuel-prices.json, which laporteweathernow.com/camp-map (The Chase) reads.
+# EIA usually publishes Tuesday afternoon; the Wednesday and Thursday runs catch late weeks.
+name: Fuel prices from EIA
+
+on:
+  schedule:
+    - cron: "41 22 * * 2"   # Tuesday 5:41 PM Central (4:41 PM in winter)
+    - cron: "41 14 * * 3"   # Wednesday morning, in case EIA was late
+    - cron: "41 14 * * 4"   # Thursday morning, for holiday weeks
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/fuel_prices.py
+      - .github/workflows/fuel-prices.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fuel-prices
+  cancel-in-progress: false
+
+jobs:
+  save:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read this week's prices from EIA
+        run: python3 scripts/fuel_prices.py
+      - name: Save them if anything changed
+        run: |
+          git add fuel-prices.json
+          if git diff --cached --quiet; then
+            echo "Nothing new to save."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Fuel prices from EIA ($(date -u +%Y-%m-%d))"
+          git pull --rebase origin main
+          git push origin HEAD:main
