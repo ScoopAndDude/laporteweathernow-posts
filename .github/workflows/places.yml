@@ -1,7 +1,13 @@
-# Builds the map squares that make laporteweathernow.com/camp-map (The Chase) load fast: campsites,
-# rest areas, dog parks, springs, water, dump stations, showers, laundry, libraries, propane and truck
-# stops for the whole U.S., from OpenStreetMap (via Geofabrik). Runs once a week; each run replaces the
-# "places" branch, so old copies don't pile up. Map data (c) OpenStreetMap contributors, ODbL.
+# Builds the map squares that make laporteweathernow.com/camp-map (The Chase) load fast and keep working
+# when OpenStreetMap's volunteer servers are busy: campsites, rest areas, dog parks, springs, water, dump
+# stations, showers, laundry, libraries, propane and truck stops for the whole U.S., from OpenStreetMap
+# (via Geofabrik). Runs once a week.
+#
+# Each state downloads on its own runner at the same time; then one runner merges them into the tiles/
+# folder on main, which GitHub Pages serves to the site. A state that fails this week keeps last week's
+# copy (saved on the "places-parts" branch), so one bad download can't break the map or raise a false
+# alarm. The run only fails for a real problem: a state missing with no earlier copy, far too few places,
+# or a state that hasn't downloaded in four weeks. Map data (c) OpenStreetMap contributors, ODbL.
 name: Camp map places from OpenStreetMap
 
 on:
@@ -22,30 +28,99 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  plan:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 5
+    outputs:
+      states: ${{ steps.list.outputs.states }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: list
+        name: List the states
+        run: echo "states=$(python3 scripts/places_build.py states)" >> "$GITHUB_OUTPUT"
+
+  extract:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    continue-on-error: true   # a state that fails keeps last week's copy (see the tiles job)
+    strategy:
+      fail-fast: false
+      max-parallel: 16   # leaves runners free for the site's other jobs
+      matrix:
+        state: ${{ fromJSON(needs.plan.outputs.states) }}
     steps:
       - uses: actions/checkout@v4
       - name: Install osmium
         run: |
-          sudo apt-get update -q
-          sudo apt-get install -y -q osmium-tool
+          for i in 1 2 3; do
+            sudo apt-get update -q && sudo apt-get install -y -q --no-install-recommends osmium-tool && break
+            sleep 20
+          done
           osmium --version | head -1
-      - name: Make room for the downloads
+      - name: Download ${{ matrix.state }} and keep the places travelers need
+        run: python3 scripts/places_build.py extract "${{ matrix.state }}" "$RUNNER_TEMP/${{ matrix.state }}.json"
+      - name: Hand the places to the merge step
+        uses: actions/upload-artifact@v4
+        with:
+          name: places-${{ matrix.state }}
+          path: ${{ runner.temp }}/${{ matrix.state }}.json
+          retention-days: 3
+          if-no-files-found: error
+
+  tiles:
+    needs: [plan, extract]
+    if: ${{ !cancelled() && needs.plan.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Collect this week's states
+        uses: actions/download-artifact@v4
+        continue-on-error: true   # none at all is handled below: every state then needs an earlier copy
+        with:
+          pattern: places-*
+          merge-multiple: true
+          path: ${{ runner.temp }}/parts
+      - name: Get the earlier copies (used only for states that failed this week)
         run: |
-          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL || true
-          df -h "$RUNNER_TEMP" | tail -1
-      - name: Build the map squares
-        run: python3 scripts/places_build.py "$RUNNER_TEMP/places"
-      - name: Replace the places branch with the new squares
+          mkdir -p "$RUNNER_TEMP/old/parts"
+          if git fetch -q --depth=1 origin places-parts; then
+            git archive FETCH_HEAD | tar -x -C "$RUNNER_TEMP/old/parts"
+            echo "$(ls "$RUNNER_TEMP/old/parts" | grep -c '\.json$') earlier copies"
+          else
+            echo "No earlier copies yet."
+          fi
+      - name: Merge the states into map squares
+        run: python3 scripts/places_build.py tiles "$RUNNER_TEMP/parts" "$RUNNER_TEMP/old/parts" "$RUNNER_TEMP/places"
+      - name: Keep this week's states for next week
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          cd "$RUNNER_TEMP/places/out"
-          git init -q -b places
+          cd "$RUNNER_TEMP/places/out/parts"
+          git init -q -b places-parts
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
+          git commit -q -m "Camp map places by state ($(TZ=America/Chicago date '+%Y-%m-%d'))"
+          git push -q -f "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" places-parts:places-parts
+      - name: Publish the map squares (tiles/ on main; GitHub Pages serves them)
+        run: |
+          rm -rf tiles
+          cp -r "$RUNNER_TEMP/places/out/tiles" tiles
+          git add -A tiles
+          if git diff --cached --quiet; then
+            echo "Nothing changed this week."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -q -m "Camp map places from OpenStreetMap ($(TZ=America/Chicago date '+%Y-%m-%d'))"
-          git push -q -f "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" places:places
+          for i in 1 2 3 4 5; do
+            git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0
+            sleep $((i * 15))
+          done
+          echo "Couldn't push the map squares."
+          exit 1
+      - name: Check that no state's data is getting old
+        run: python3 scripts/places_build.py check "$RUNNER_TEMP/places/out/tiles/index.json"
