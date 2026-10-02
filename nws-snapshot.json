@@ -1,6 +1,6 @@
 {
  "about": "Official weather for La Porte, Indiana, saved by a GitHub job for the Daily Scoop (laporteweathernow.com/daily-scoop). Copied from NWS, SPC and WPC as-is; see scripts/nws_snapshot.py.",
- "fetched": "2026-10-02T08:07:20-05:00",
+ "fetched": "2026-10-02T11:13:47-05:00",
  "place": "La Porte, IN",
  "lat": 41.6081,
  "lon": -86.7189,
@@ -23,36 +23,36 @@
  },
  "observation": {
   "station": "KPPO (La Porte Municipal Airport)",
-  "time": "2026-10-02T07:35:00-05:00",
-  "weather": "Cloudy",
-  "temperatureF": 57,
-  "dewpointF": 57,
-  "humidityPercent": 100,
+  "time": "2026-10-02T10:35:00-05:00",
+  "weather": "",
+  "temperatureF": 68,
+  "dewpointF": 50,
+  "humidityPercent": 53,
   "wind": {
-   "from": "NNE",
-   "degrees": 20,
-   "mph": 9,
+   "from": null,
+   "degrees": null,
+   "mph": null,
    "gustMph": null
   },
   "visibilityMiles": 10.0,
-  "pressureInHg": 30.13,
-  "metar": "KPPO 021235Z AUTO 02008KT 10SM BKN026 OVC032 14/14 A3013 RMK AO2"
+  "pressureInHg": 30.2,
+  "metar": ""
  },
  "forecast": {
-  "updated": "2026-10-02T10:30:31+00:00",
-  "generated": "2026-10-02T11:32:01+00:00",
+  "updated": "2026-10-02T15:45:23+00:00",
+  "generated": "2026-10-02T16:13:48+00:00",
   "timesNote": "Clock times in the forecast wording are already in America/Chicago (La Porte's real time). NWS writes them in America/Indiana/Indianapolis, which it has on file for La Porte by mistake.",
   "periods": [
    {
-    "name": "Today",
-    "start": "2026-10-02T07:00:00-04:00",
+    "name": "This Afternoon",
+    "start": "2026-10-02T12:00:00-04:00",
     "end": "2026-10-02T18:00:00-04:00",
     "isDaytime": true,
     "temperatureF": 64,
-    "rainChancePercent": 5,
-    "wind": "N 10 mph",
-    "short": "Mostly Sunny",
-    "detailed": "Mostly sunny, with a high near 64. North wind around 10 mph."
+    "rainChancePercent": 0,
+    "wind": "N 10 to 15 mph",
+    "short": "Sunny",
+    "detailed": "Sunny, with a high near 64. North wind 10 to 15 mph."
    },
    {
     "name": "Tonight",
@@ -71,7 +71,7 @@
     "end": "2026-10-03T18:00:00-04:00",
     "isDaytime": true,
     "temperatureF": 66,
-    "rainChancePercent": 0,
+    "rainChancePercent": 1,
     "wind": "E 5 mph",
     "short": "Sunny",
     "detailed": "Sunny, with a high near 66. East wind around 5 mph."
@@ -172,8 +172,8 @@
     "temperatureF": 48,
     "rainChancePercent": 15,
     "wind": "SW 5 mph",
-    "short": "Partly Cloudy then Slight Chance Rain Showers",
-    "detailed": "A slight chance of rain showers after 1am. Partly cloudy, with a low around 48."
+    "short": "Partly Cloudy",
+    "detailed": "Partly cloudy, with a low around 48."
    },
    {
     "name": "Thursday",
@@ -183,8 +183,8 @@
     "temperatureF": 71,
     "rainChancePercent": 15,
     "wind": "W 5 to 10 mph",
-    "short": "Slight Chance Rain Showers then Mostly Sunny",
-    "detailed": "A slight chance of rain showers before 7am. Mostly sunny, with a high near 71."
+    "short": "Mostly Sunny",
+    "detailed": "Mostly sunny, with a high near 71."
    },
    {
     "name": "Thursday Night",
@@ -205,7 +205,7 @@
   "next72hInches": 0.0,
   "byPeriod": [
    {
-    "name": "Today",
+    "name": "This Afternoon",
     "inches": 0.0
    },
    {
@@ -269,7 +269,7 @@
  },
  "discussion": {
   "issued": "2026-10-02T05:26:00-05:00",
-  "ageHours": 2.7,
+  "ageHours": 5.8,
   "text": "000\nFXUS63 KIWX 021026\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n626 AM EDT Fri Oct 2 2026\n\n.KEY MESSAGES...\n\n- Rain coming to an end across the area from northwest to\n  southeast through this afternoon.\n\n- Notably cooler today and through the weekend with highs in \n  the 60s.\n\n- Very crisp Tuesday morning with lows in the 30s (70% chance).\n\n&&\n\n.DISCUSSION...\nIssued at 319 AM EDT Fri Oct 2 2026\n\nA good soaking across the area with the rain band that has been\nslowly but steadily working its way through the area from the\nnorthwest to the southeast. Many locations have already seen\nnear to slightly above the 1 inch rainfall mark. Here at the\noffice by 2 AM around 1.28 inches of rainfall had fallen so far.\nThe front will continue to provide light to moderate rainfall\nacross the area and move southeastward bringing rainfall to an\nend over the northwestern portions of the CWA later this morning\nand march southeastward into the afternoon. Cooler temperatures\nwill also arrive behind the boundary and highs today will only\nreach the mid to upper 60s. This cooler and drier trend will \ncontinue through the weekend into next week. Highs will\ngenerally run in the mid to upper 60s with Sunday a brief and\nslight warmup with some locations especially south and east\ngetting into the lower 70s. Lows will also be cool with lows\ngenerally in the 40s but Tuesday morning looks to dip into the\nmid to upper 30s. Will have to watch carefully in the coming\ndays with a shot of clearing which will maximize the \nradiational cooling and perhaps some localized frost may be \npossible especially for the far northern and northeastern \nlocations. However with the still pretty warm ground temps would\nthink this may be averted. Will keep an eye on that \ndevelopment.\n\n&&\n\n.AVIATION /12Z TAFS THROUGH 12Z SATURDAY/...\nIssued at 621 AM EDT Fri Oct 2 2026\n\nCold front and associated rain band steadily progressing \nsoutheasterly through the area this morning with both TAF sites\nbeginning to dry out save a few scattered rain showers in the\nvicinity of KFWA which will continue to wane as the front\ncontinues to move southeast. Still expect MVFR to IFR cigs with\nvery moist low levels from the recent rainfall and moist\nsurface for both sites until further mixing commences upon\nsunrise. Rapid improvement expected later this morning with \nreturn to VFR and clearing skies by this afternoon after the 18z\nto 20z Fri time period as drier air ushers in behind the frontal\nboundary. Northerly winds look to gust near 20 kts for KSBN \nthis afternoon.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...Small Craft Advisory until 11 PM EDT this evening for LMZ043-\n     046.\n\n&&\n\n$$\n\nDISCUSSION...Andersen\nAVIATION...Andersen"
  },
  "hazardousWeatherOutlook": null,
@@ -338,14 +338,6 @@
     "date": "2026-10-02",
     "summary": "dry through work hours (6 a.m. to 6 p.m.)",
     "hours": [
-     {
-      "hour": 8,
-      "rainChancePercent": 3
-     },
-     {
-      "hour": 9,
-      "rainChancePercent": 0
-     },
      {
       "hour": 10,
       "rainChancePercent": 0
@@ -444,44 +436,52 @@
    "gfs_seamless": "American GFS",
    "ecmwf_ifs025": "European ECMWF"
   },
-  "bias": {},
+  "bias": {
+   "days": 5,
+   "ready": false,
+   "high": -2.0,
+   "highDays": 5,
+   "low": 2.2,
+   "lowDays": 5,
+   "note": "Average of (forecast minus airport reading) over the last 30 graded days; positive means we ran warm. Used to nudge the model blend once 14+ days are graded."
+  },
   "days": [
    {
     "date": "2026-10-02",
     "nws": {
      "high": 64,
      "low": null,
-     "rain": 5
+     "rain": 0
     },
     "models": {
      "ncep_nbm_conus": {
-      "high": 64,
+      "high": 63,
       "low": 48,
       "rain": 100
      },
      "ncep_hrrr_conus": {
       "high": 63,
-      "low": 50,
+      "low": 49,
       "rain": 100
      },
      "gfs_seamless": {
       "high": 63,
-      "low": 50,
+      "low": 49,
       "rain": 100
      },
      "ecmwf_ifs025": {
-      "high": 64,
+      "high": 63,
       "low": 50,
       "rain": 100
      }
     },
     "blend": {
-     "high": 64,
-     "low": 50
+     "high": 63,
+     "low": 49
     },
     "adjusted": {
-     "high": 64,
-     "low": 50
+     "high": 63,
+     "low": 49
     },
     "spread": {
      "high": 1,
@@ -494,43 +494,43 @@
     "nws": {
      "high": 66,
      "low": 41,
-     "rain": 0
+     "rain": 1
     },
     "models": {
      "ncep_nbm_conus": {
-      "high": 65,
-      "low": 42,
+      "high": 64,
+      "low": 43,
       "rain": 2
      },
      "ncep_hrrr_conus": {
       "high": 61,
-      "low": 44,
+      "low": 45,
       "rain": 2
      },
      "gfs_seamless": {
       "high": 61,
-      "low": 44,
+      "low": 45,
       "rain": 2
      },
      "ecmwf_ifs025": {
-      "high": 66,
+      "high": 65,
       "low": 45,
       "rain": 0
      }
     },
     "blend": {
-     "high": 65,
-     "low": 44
+     "high": 64,
+     "low": 45
     },
     "adjusted": {
-     "high": 65,
-     "low": 44
+     "high": 64,
+     "low": 45
     },
     "spread": {
      "high": 5,
      "low": 4
     },
-    "note": "our blend's low (44) differs from NWS (41) by 3 degrees"
+    "note": "our blend's low (45) differs from NWS (41) by 4 degrees"
    },
    {
     "date": "2026-10-04",
@@ -541,7 +541,7 @@
     },
     "models": {
      "ncep_nbm_conus": {
-      "high": 67,
+      "high": 66,
       "low": 44,
       "rain": 0
      },
@@ -550,13 +550,13 @@
      },
      "gfs_seamless": {
       "high": 68,
-      "low": 48,
+      "low": 47,
       "rain": 0
      },
      "ecmwf_ifs025": {
-      "high": 68,
+      "high": 67,
       "low": 47,
-      "rain": 2
+      "rain": 0
      }
     },
     "blend": {
@@ -568,8 +568,8 @@
      "low": 46
     },
     "spread": {
-     "high": 1,
-     "low": 5
+     "high": 2,
+     "low": 4
     },
     "note": "our blend's low (46) differs from NWS (43) by 3 degrees"
    },
@@ -582,8 +582,8 @@
     },
     "models": {
      "ncep_nbm_conus": {
-      "high": 62,
-      "low": 45,
+      "high": 60,
+      "low": 46,
       "rain": 0
      },
      "ncep_hrrr_conus": {
@@ -596,21 +596,21 @@
      },
      "ecmwf_ifs025": {
       "high": 64,
-      "low": 48,
+      "low": 46,
       "rain": 0
      }
     },
     "blend": {
      "high": 62,
-     "low": 45
+     "low": 46
     },
     "adjusted": {
      "high": 62,
-     "low": 45
+     "low": 46
     },
     "spread": {
-     "high": 2,
-     "low": 3
+     "high": 4,
+     "low": 1
     },
     "note": "NWS and the models agree within a few degrees"
    }
@@ -618,9 +618,9 @@
   "suggested": [
    {
     "date": "2026-10-03",
-    "high": 65,
-    "low": 44,
-    "rain": 0
+    "high": 64,
+    "low": 45,
+    "rain": 1
    },
    {
     "date": "2026-10-04",
