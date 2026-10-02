@@ -1,11 +1,17 @@
 {
-  "updated": "2026-09-30T19:26:05Z",
+  "updated": "2026-10-02T14:17:05Z",
   "source": "U.S. Bureau of Labor Statistics public data API (api.bls.gov)",
   "about": "Saved for laporteweathernow.com/markets. Each series keeps its latest monthly values, newest first, in BLS's own format.",
   "series": {
     "us": {
       "seriesID": "LNS14000000",
       "data": [
+        {
+          "year": "2026",
+          "period": "M09",
+          "periodName": "September",
+          "value": "4.2"
+        },
         {
           "year": "2026",
           "period": "M08",
@@ -148,12 +154,6 @@
           "year": "2024",
           "period": "M08",
           "periodName": "August",
-          "value": "4.2"
-        },
-        {
-          "year": "2024",
-          "period": "M07",
-          "periodName": "July",
           "value": "4.2"
         }
       ]
