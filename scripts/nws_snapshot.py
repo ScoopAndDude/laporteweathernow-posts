@@ -30,6 +30,8 @@ import urllib.parse
 import urllib.request
 from zoneinfo import ZoneInfo
 
+import consensus as second_opinion   # model blend, work-hour rain timing, morning log (scripts/consensus.py)
+
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "nws-snapshot.json")
 
 LAT, LON = 41.6081, -86.7189        # La Porte, Indiana (same point as the site's NWS forecast link)
@@ -437,12 +439,18 @@ def main():
         "hydrologicOutlook": attempt("NWS hydrologic outlook (ESF)", latest_product, "ESF", 96),
         "spc": [x for x in (attempt(f"SPC day {d} outlook", spc_day, d) for d in (1, 2, 3)) if x],
         "wpcExcessiveRain": attempt("WPC excessive rainfall outlook", wpc_excessive_rain),
+        "workdayRain": attempt("NWS hourly rain chances", second_opinion.workday_rain, pt, get_json) if pt.get("forecast") else None,
+        "consensus": attempt("Computer models (Open-Meteo)", second_opinion.consensus, (fc or {}).get("periods"), get_json) if fc else None,
         "links": LINKS,
         "errors": errors,
     }
     with open(OUT, "w", encoding="utf-8") as fh:
         json.dump(snap, fh, ensure_ascii=False, indent=1)
         fh.write("\n")
+    if fc:
+        row = attempt("Morning log", second_opinion.morning_record, started, fc.get("periods"), snap.get("consensus"))
+        if row:
+            print(f"Saved this morning's forecast to morning-log.json: {row}")
     print(f"Saved {os.path.basename(OUT)} at {snap['fetched']} with {len(errors)} source error(s).")
     for e in errors:
         print(f"   - {e['source']}: {e['error']}")

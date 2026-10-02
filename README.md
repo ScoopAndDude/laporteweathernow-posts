@@ -4,6 +4,10 @@ Daily Scoop posts for laporteweathernow.com. Every post and edit is saved here w
 - `scoop-posts.json`: the Daily Scoop posts, newest first (laporteweathernow.com/daily-scoop).
 - `nws-snapshot.json`: the official NWS, SPC and WPC weather each morning's post is written from, saved by the "NWS weather snapshot" job (clock times already in La Porte's Central time).
 - `scorecard.json`: every Scoop forecast graded against the La Porte airport (same rules as the Track Record page), saved with the snapshot. The homepage's "How we've done" line reads it.
+- Second opinions (added Oct. 2, 2026, `scripts/consensus.py`, run by the snapshot job):
+  - `nws-snapshot.json` → `consensus`: the NWS forecast next to four computer models from Open-Meteo (free, CC BY 4.0): NBM, HRRR, GFS and ECMWF. `blend` = the middle value of NWS and the models; `adjusted` = blend corrected by our own average past error at the La Porte airport (`scorecard.json` → `bias`) once 14+ days are graded, capped at 3 degrees. `suggested` is what the Daily Scoop's forecasts use. Rain chances stay NWS's.
+  - `nws-snapshot.json` → `workdayRain`: NWS hour-by-hour rain chances for today's and tomorrow's work hours (6 a.m.-6 p.m.) in plain words.
+  - `morning-log.json`: what NWS and the blend said for the same day at about 5 a.m. (when Hard Hat Weather makes its calls), saved once a day and never changed. `scorecard.json` → `morning` grades it.
 - `health.json`: the daily site health check (pages, files, version stamps, data freshness, on-time Scoops, failed jobs), saved by the "Site health check" job. `problems` lists everything; `urgent` lists what gets emailed.
 - `markets-data.json`: BLS jobs and prices for laporteweathernow.com/markets, saved twice a day by the "Markets numbers from BLS" job.
 - `world-watch.json`: El Niño status and climate facts for laporteweathernow.com/disasters, updated weekly.

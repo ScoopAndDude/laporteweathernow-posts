@@ -12,6 +12,13 @@ Same rules as the Track Record page (scorecard.js on the site), in plain words:
 - Rain: at 50% or higher it should have rained (0.01 in or more); at 20% or lower it
   should have stayed dry. 21-49% isn't scored.
 - Days the station has no data for aren't scored.
+Also (added Oct. 2, 2026):
+- "bias": our average error (forecast minus what the airport recorded) for highs and lows
+  over the last 30 graded days. consensus.py nudges the model blend by it once there are
+  14+ days. Positive = we ran too warm.
+- "morning": the SAME-DAY forecast saved at about 5 a.m. in morning-log.json (what
+  Hard Hat Weather's calls are made from), graded the same way: the high within 3 degrees,
+  and the rain call (the higher chance of the day and the night after it).
 Observations come from the Iowa Environmental Mesonet's archive of airport reports.
 """
 import datetime
@@ -25,6 +32,8 @@ from zoneinfo import ZoneInfo
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 POSTS = os.path.join(HERE, "..", "scoop-posts.json")
+MORNING_LOG = os.path.join(HERE, "..", "morning-log.json")
+BIAS_MIN_DAYS = 14   # same as consensus.py: the blend is nudged only after this many graded days
 OUT = os.path.join(HERE, "..", "scorecard.json")
 TZ = ZoneInfo("America/Chicago")
 MAIN = ("PPO", "IN_ASOS", "La Porte Municipal Airport (KPPO)")
@@ -187,12 +196,81 @@ def summarize(rows):
     return s
 
 
+def bias_of(rows):
+    out = {"days": 0, "ready": False}
+    for key in ("high", "low"):
+        errs = []
+        for r in rows:
+            sc = r["score"]
+            fr = fc_range(r.get(key))
+            if sc.get("status") == "scored" and fr and sc["observed"].get(key) is not None:
+                errs.append((fr[0] + fr[1]) / 2 - sc["observed"][key])
+        out[key] = round(sum(errs) / len(errs), 1) if errs else None
+        out[key + "Days"] = len(errs)
+    out["days"] = min(out["highDays"], out["lowDays"])
+    out["ready"] = out["days"] >= BIAS_MIN_DAYS
+    out["note"] = ("Average of (forecast minus airport reading) over the last 30 graded days; positive means we ran warm. "
+                   f"Used to nudge the model blend once {BIAS_MIN_DAYS}+ days are graded.")
+    return out
+
+
+def morning_grades(main_days, neighbors, today, start):
+    try:
+        log = json.load(open(MORNING_LOG, encoding="utf-8")).get("days") or []
+    except Exception:
+        return None
+    days = []
+    s = {"days": 0, "nwsHighs": [0, 0], "blendHighs": [0, 0], "rain": [0, 0]}
+    ne, be = [], []
+    for e in log:
+        date = e.get("date") or ""
+        if not date or date >= today:
+            continue
+        o = observed_on(date, main_days, neighbors)
+        row = {"date": date, "said": {"nwsHigh": (e.get("nws") or {}).get("high"),
+                                      "blendHigh": (e.get("blend") or {}).get("high"),
+                                      "rain": (e.get("nws") or {}).get("rain")}}
+        if o["missing"]:
+            row["status"] = "nodata"
+            days.append(row)
+            continue
+        nh = temp_check(row["said"]["nwsHigh"], o["high"])
+        bh = temp_check(row["said"]["blendHigh"], o["high"])
+        rc = rain_check(row["said"]["rain"], o["rained"])
+        row.update(status="scored", observed={"high": o["high"], "rained": o["rained"], "rainText": o["rainText"]},
+                   nwsHigh=nh, blendHigh=bh, rain=rc)
+        days.append(row)
+        if date < start:
+            continue
+        s["days"] += 1
+        for key, part, errs in (("nwsHighs", nh, ne), ("blendHighs", bh, be)):
+            if part:
+                s[key][1] += 1
+                s[key][0] += 1 if part["hit"] else 0
+                errs.append(part["off"])
+        if rc and rc["hit"] is not None:
+            s["rain"][1] += 1
+            s["rain"][0] += 1 if rc["hit"] else 0
+    s["nwsHighAvgOff"] = round(sum(ne) / len(ne), 1) if ne else None
+    s["blendHighAvgOff"] = round(sum(be) / len(be), 1) if be else None
+    return {"about": ("Same-morning forecasts (saved about 5 a.m., when Hard Hat Weather makes its calls), graded "
+                      "against the La Porte airport: today's high within 3 degrees, and the rain call (50%+ should "
+                      "rain, 20% or less should stay dry). nws = the NWS forecast; blend = our model blend (from Oct. 2, 2026)."),
+            "last30": s, "days": days[:60]}
+
+
 def main():
     posts = json.load(open(POSTS, encoding="utf-8")).get("posts") or []
     forecasts = collect_forecasts(posts)
     now = datetime.datetime.now(TZ)
     today = now.date().isoformat()
     past = [f for f in forecasts if f["date"] < today]
+    try:
+        for e in json.load(open(MORNING_LOG, encoding="utf-8")).get("days") or []:
+            if e.get("date") and e["date"] < today:
+                past.append({"date": e["date"]})      # so the airport data covers the morning log too
+    except Exception:
+        pass
     if not past:
         print("No forecasts to grade yet.")
         return
@@ -231,6 +309,8 @@ def main():
         "window": {"days": WINDOW, "from": start, "to": (now.date() - datetime.timedelta(days=1)).isoformat()},
         "last30": summarize(recent),
         "allTime": summarize(rows),
+        "bias": bias_of(recent),
+        "morning": morning_grades(main_days, neighbors, today, start),
         "latest": day_out(scored[0]) if scored else None,
         "days": [day_out(r) for r in rows[:60]],
     }

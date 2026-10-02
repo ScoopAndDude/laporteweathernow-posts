@@ -15,6 +15,7 @@ on:
     paths:
       - scripts/nws_snapshot.py
       - scripts/scorecard.py
+      - scripts/consensus.py
       - .github/workflows/nws-snapshot.yml
 
 permissions:
@@ -42,6 +43,7 @@ jobs:
         run: |
           files="nws-snapshot.json"
           [ -f scorecard.json ] && files="$files scorecard.json"
+          [ -f morning-log.json ] && files="$files morning-log.json"
           for f in $files; do cp "$f" "$RUNNER_TEMP/$f"; done
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
