@@ -1,6 +1,6 @@
 {
  "about": "Official weather for La Porte, Indiana, saved by a GitHub job for the Daily Scoop (laporteweathernow.com/daily-scoop). Copied from NWS, SPC and WPC as-is; see scripts/nws_snapshot.py.",
- "fetched": "2026-10-02T05:02:04-05:00",
+ "fetched": "2026-10-02T08:07:20-05:00",
  "place": "La Porte, IN",
  "lat": 41.6081,
  "lon": -86.7189,
@@ -23,36 +23,36 @@
  },
  "observation": {
   "station": "KPPO (La Porte Municipal Airport)",
-  "time": "2026-10-02T04:35:00-05:00",
+  "time": "2026-10-02T07:35:00-05:00",
   "weather": "Cloudy",
-  "temperatureF": 61,
-  "dewpointF": 61,
+  "temperatureF": 57,
+  "dewpointF": 57,
   "humidityPercent": 100,
   "wind": {
-   "from": "NNW",
-   "degrees": 330,
-   "mph": 7,
+   "from": "NNE",
+   "degrees": 20,
+   "mph": 9,
    "gustMph": null
   },
   "visibilityMiles": 10.0,
-  "pressureInHg": 30.04,
-  "metar": "KPPO 020935Z AUTO 33006KT 10SM SCT007 BKN012 OVC031 16/16 A3004 RMK AO2"
+  "pressureInHg": 30.13,
+  "metar": "KPPO 021235Z AUTO 02008KT 10SM BKN026 OVC032 14/14 A3013 RMK AO2"
  },
  "forecast": {
-  "updated": "2026-10-02T09:01:15+00:00",
-  "generated": "2026-10-02T10:02:04+00:00",
+  "updated": "2026-10-02T10:30:31+00:00",
+  "generated": "2026-10-02T11:32:01+00:00",
   "timesNote": "Clock times in the forecast wording are already in America/Chicago (La Porte's real time). NWS writes them in America/Indiana/Indianapolis, which it has on file for La Porte by mistake.",
   "periods": [
    {
     "name": "Today",
-    "start": "2026-10-02T06:00:00-04:00",
+    "start": "2026-10-02T07:00:00-04:00",
     "end": "2026-10-02T18:00:00-04:00",
     "isDaytime": true,
     "temperatureF": 64,
-    "rainChancePercent": 15,
+    "rainChancePercent": 5,
     "wind": "N 10 mph",
-    "short": "Slight Chance Rain Showers then Partly Sunny",
-    "detailed": "A slight chance of rain showers before 6am. Partly sunny, with a high near 64. North wind around 10 mph. Chance of precipitation is 20%."
+    "short": "Mostly Sunny",
+    "detailed": "Mostly sunny, with a high near 64. North wind around 10 mph."
    },
    {
     "name": "Tonight",
@@ -268,23 +268,23 @@
   "nearbyCountiesFullText": []
  },
  "discussion": {
-  "issued": "2026-10-02T02:32:00-05:00",
-  "ageHours": 2.5,
-  "text": "000\nFXUS63 KIWX 020732\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n332 AM EDT Fri Oct 2 2026\n\n.KEY MESSAGES...\n\n- Rain coming to an end across the area from northwest to\n  southeast through this afternoon.\n\n- Notably cooler today and through the weekend with highs in \n  the 60s.\n\n- Very crisp Tuesday morning with lows in the 30s (70% chance).\n\n&&\n\n.DISCUSSION...\nIssued at 319 AM EDT Fri Oct 2 2026\n\nA good soaking across the area with the rain band that has been\nslowly but steadily working its way through the area from the\nnorthwest to the southeast. Many locations have already seen\nnear to slightly above the 1 inch rainfall mark. Here at the\noffice by 2 AM around 1.28 inches of rainfall had fallen so far.\nThe front will continue to provide light to moderate rainfall\nacross the area and move southeastward bringing rainfall to an\nend over the northwestern portions of the CWA later this morning\nand march southeastward into the afternoon. Cooler temperatures\nwill also arrive behind the boundary and highs today will only\nreach the mid to upper 60s. This cooler and drier trend will \ncontinue through the weekend into next week. Highs will\ngenerally run in the mid to upper 60s with Sunday a brief and\nslight warmup with some locations especially south and east\ngetting into the lower 70s. Lows will also be cool with lows\ngenerally in the 40s but Tuesday morning looks to dip into the\nmid to upper 30s. Will have to watch carefully in the coming\ndays with a shot of clearing which will maximize the \nradiational cooling and perhaps some localized frost may be \npossible especially for the far northern and northeastern \nlocations. However with the still pretty warm ground temps would\nthink this may be averted. Will keep an eye on that \ndevelopment. \n\n\n&&\n\n.AVIATION /06Z TAFS THROUGH 06Z SATURDAY/...\nIssued at 119 AM EDT Fri Oct 2 2026\n\nCold front and associated rain band slowly progressing\nsoutheasterly across the area overnight and will bring \nperiods of scattered to widespread moderate rainfall. MVFR to IFR\ncigs are likely for much of the overnight period for both TAF\nsites with the boundary passage and very moist low levels. An\nembedded thunderstorm or two is possible but lack of instability\nshould mitigate development. Rapid improvement expected later\nthis morning with return to VFR and clearing skies by this  \nafternoon after the 20z Fri to 00z Sat time period however still\ntrapped moist lower levels could slow clearing.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...Small Craft Advisory from 8 AM this morning to 11 PM EDT this \n     evening for LMZ043-046.\n\n&&\n\n$$\n\nDISCUSSION...Andersen\nAVIATION...Andersen"
+  "issued": "2026-10-02T05:26:00-05:00",
+  "ageHours": 2.7,
+  "text": "000\nFXUS63 KIWX 021026\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n626 AM EDT Fri Oct 2 2026\n\n.KEY MESSAGES...\n\n- Rain coming to an end across the area from northwest to\n  southeast through this afternoon.\n\n- Notably cooler today and through the weekend with highs in \n  the 60s.\n\n- Very crisp Tuesday morning with lows in the 30s (70% chance).\n\n&&\n\n.DISCUSSION...\nIssued at 319 AM EDT Fri Oct 2 2026\n\nA good soaking across the area with the rain band that has been\nslowly but steadily working its way through the area from the\nnorthwest to the southeast. Many locations have already seen\nnear to slightly above the 1 inch rainfall mark. Here at the\noffice by 2 AM around 1.28 inches of rainfall had fallen so far.\nThe front will continue to provide light to moderate rainfall\nacross the area and move southeastward bringing rainfall to an\nend over the northwestern portions of the CWA later this morning\nand march southeastward into the afternoon. Cooler temperatures\nwill also arrive behind the boundary and highs today will only\nreach the mid to upper 60s. This cooler and drier trend will \ncontinue through the weekend into next week. Highs will\ngenerally run in the mid to upper 60s with Sunday a brief and\nslight warmup with some locations especially south and east\ngetting into the lower 70s. Lows will also be cool with lows\ngenerally in the 40s but Tuesday morning looks to dip into the\nmid to upper 30s. Will have to watch carefully in the coming\ndays with a shot of clearing which will maximize the \nradiational cooling and perhaps some localized frost may be \npossible especially for the far northern and northeastern \nlocations. However with the still pretty warm ground temps would\nthink this may be averted. Will keep an eye on that \ndevelopment.\n\n&&\n\n.AVIATION /12Z TAFS THROUGH 12Z SATURDAY/...\nIssued at 621 AM EDT Fri Oct 2 2026\n\nCold front and associated rain band steadily progressing \nsoutheasterly through the area this morning with both TAF sites\nbeginning to dry out save a few scattered rain showers in the\nvicinity of KFWA which will continue to wane as the front\ncontinues to move southeast. Still expect MVFR to IFR cigs with\nvery moist low levels from the recent rainfall and moist\nsurface for both sites until further mixing commences upon\nsunrise. Rapid improvement expected later this morning with \nreturn to VFR and clearing skies by this afternoon after the 18z\nto 20z Fri time period as drier air ushers in behind the frontal\nboundary. Northerly winds look to gust near 20 kts for KSBN \nthis afternoon.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...Small Craft Advisory until 11 PM EDT this evening for LMZ043-\n     046.\n\n&&\n\n$$\n\nDISCUSSION...Andersen\nAVIATION...Andersen"
  },
  "hazardousWeatherOutlook": null,
  "hydrologicOutlook": null,
  "spc": [
   {
    "day": 1,
-   "valid": "202610021200",
+   "valid": "202610021300",
    "expires": "202610031200",
    "riskAtLaPorte": "No thunderstorm or severe risk area",
    "riskAreasAnywhere": [
     "General Thunderstorms Risk"
    ],
    "summary": "Severe thunderstorm potential is low today and tonight.",
-   "text": "SPC AC 020448\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1148 PM CDT Thu Oct 01 2026\n\n   Valid 021200Z - 031200Z\n\n   ...NO SEVERE THUNDERSTORM AREAS FORECAST...\n\n   ...SUMMARY...\n   Severe thunderstorm potential is low today and tonight.\n\n   ...Mid-Atlantic vicinity...\n\n   An upper trough will develop eastward across the Northeast today,\n   bringing some modestly enhanced midlevel southwesterly flow across\n   the region ahead of a surface cold front. Showers and thunderstorms\n   are likely to be ongoing along the length of the front this morning\n   from the Ohio Valley to the Mid-South. Low-level warm advection\n   ahead of the eastward advancing font and band of convection will\n   result in persistent cloudiness across the warm sector.\n   Additionally, midlevel lapse rates are forecast to remain poor. As a\n   result, instability is expected to remain modest (500-750 MLCAPE)\n   despite 60s F dewpoints. Deep-layer flow will largely remain\n   parallel to the surface boundary, and stronger flow will lift\n   northeast with time. If pockets of stronger heating can occur, a few\n   strong wind gusts are possible during the afternoon from northern VA\n   into southern New England. However, overall severe potential appears\n   limited.\n\n   ..Leitman/Halbert.. 10/02/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 1300Z"
+   "text": "SPC AC 021236\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   0736 AM CDT Fri Oct 02 2026\n\n   Valid 021300Z - 031200Z\n\n   ...NO SEVERE THUNDERSTORM AREAS FORECAST...\n\n   ...SUMMARY...\n   Severe thunderstorm potential is low today and tonight.\n\n   ...Mid-Atlantic States/Cumberland Plateau...\n   A progressive stream of westerlies will continue to reside over the\n   northern third of the CONUS through tonight. An extensive\n   northeast/southwest-oriented cold front will continue\n   east-southeastward, reaching the coastal Northeast/Mid-Atlantic by\n   this evening, while otherwise crossing the Tennessee Valley and\n   lower Mississippi Valley. Scattered showers/thunderstorms will\n   accompany the front, while also being common across coastal areas of\n   the Gulf Coast and Southeast. \n\n   As the cold front approaches the coastal Mid-Atlantic/Delmarva later\n   this evening, semi-strong wind profiles (35+ kt effective shear)\n   will exist regionally, and to a lesser extent southwestward toward\n   the Appalachians and Cumberland Plateau. A couple of stronger storms\n   with gusty winds could materialize this afternoon near/ahead of the\n   front in these regions provided sufficient insolation/modest\n   destabilization. However, moist-profile/subsidence-related poor\n   lapse rates aloft should preclude organized severe storms.\n\n   ..Guyer/Dean.. 10/02/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 1630Z"
   },
   {
    "day": 2,
@@ -331,6 +331,305 @@
    "atLaPorte": []
   }
  ],
+ "workdayRain": {
+  "about": "NWS hour-by-hour rain chances for work hours, 6 a.m. to 6 p.m. Central (30-49% = possible, 50%+ = likely).",
+  "days": [
+   {
+    "date": "2026-10-02",
+    "summary": "dry through work hours (6 a.m. to 6 p.m.)",
+    "hours": [
+     {
+      "hour": 8,
+      "rainChancePercent": 3
+     },
+     {
+      "hour": 9,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 10,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 11,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 12,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 13,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 14,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 15,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 16,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 17,
+      "rainChancePercent": 0
+     }
+    ]
+   },
+   {
+    "date": "2026-10-03",
+    "summary": "dry through work hours (6 a.m. to 6 p.m.)",
+    "hours": [
+     {
+      "hour": 6,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 7,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 8,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 9,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 10,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 11,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 12,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 13,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 14,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 15,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 16,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 17,
+      "rainChancePercent": 0
+     }
+    ]
+   }
+  ]
+ },
+ "consensus": {
+  "about": "NWS next to four computer models (Open-Meteo, CC BY 4.0). blend = the middle value of NWS and the models; adjusted = blend corrected by our own average past error at the La Porte airport once 14+ days are graded (capped at 3 degrees). Rain chances are NWS's. suggested = what the Daily Scoop's forecasts use (tomorrow and the day after).",
+  "models": {
+   "ncep_nbm_conus": "National Blend of Models (NBM)",
+   "ncep_hrrr_conus": "HRRR (short range)",
+   "gfs_seamless": "American GFS",
+   "ecmwf_ifs025": "European ECMWF"
+  },
+  "bias": {},
+  "days": [
+   {
+    "date": "2026-10-02",
+    "nws": {
+     "high": 64,
+     "low": null,
+     "rain": 5
+    },
+    "models": {
+     "ncep_nbm_conus": {
+      "high": 64,
+      "low": 48,
+      "rain": 100
+     },
+     "ncep_hrrr_conus": {
+      "high": 63,
+      "low": 50,
+      "rain": 100
+     },
+     "gfs_seamless": {
+      "high": 63,
+      "low": 50,
+      "rain": 100
+     },
+     "ecmwf_ifs025": {
+      "high": 64,
+      "low": 50,
+      "rain": 100
+     }
+    },
+    "blend": {
+     "high": 64,
+     "low": 50
+    },
+    "adjusted": {
+     "high": 64,
+     "low": 50
+    },
+    "spread": {
+     "high": 1,
+     "low": 2
+    },
+    "note": "NWS and the models agree within a few degrees"
+   },
+   {
+    "date": "2026-10-03",
+    "nws": {
+     "high": 66,
+     "low": 41,
+     "rain": 0
+    },
+    "models": {
+     "ncep_nbm_conus": {
+      "high": 65,
+      "low": 42,
+      "rain": 2
+     },
+     "ncep_hrrr_conus": {
+      "high": 61,
+      "low": 44,
+      "rain": 2
+     },
+     "gfs_seamless": {
+      "high": 61,
+      "low": 44,
+      "rain": 2
+     },
+     "ecmwf_ifs025": {
+      "high": 66,
+      "low": 45,
+      "rain": 0
+     }
+    },
+    "blend": {
+     "high": 65,
+     "low": 44
+    },
+    "adjusted": {
+     "high": 65,
+     "low": 44
+    },
+    "spread": {
+     "high": 5,
+     "low": 4
+    },
+    "note": "our blend's low (44) differs from NWS (41) by 3 degrees"
+   },
+   {
+    "date": "2026-10-04",
+    "nws": {
+     "high": 68,
+     "low": 43,
+     "rain": 0
+    },
+    "models": {
+     "ncep_nbm_conus": {
+      "high": 67,
+      "low": 44,
+      "rain": 0
+     },
+     "ncep_hrrr_conus": {
+      "rain": 0
+     },
+     "gfs_seamless": {
+      "high": 68,
+      "low": 48,
+      "rain": 0
+     },
+     "ecmwf_ifs025": {
+      "high": 68,
+      "low": 47,
+      "rain": 2
+     }
+    },
+    "blend": {
+     "high": 68,
+     "low": 46
+    },
+    "adjusted": {
+     "high": 68,
+     "low": 46
+    },
+    "spread": {
+     "high": 1,
+     "low": 5
+    },
+    "note": "our blend's low (46) differs from NWS (43) by 3 degrees"
+   },
+   {
+    "date": "2026-10-05",
+    "nws": {
+     "high": 62,
+     "low": 45,
+     "rain": 0
+    },
+    "models": {
+     "ncep_nbm_conus": {
+      "high": 62,
+      "low": 45,
+      "rain": 0
+     },
+     "ncep_hrrr_conus": {
+      "rain": 0
+     },
+     "gfs_seamless": {
+      "high": 62,
+      "low": 45,
+      "rain": 0
+     },
+     "ecmwf_ifs025": {
+      "high": 64,
+      "low": 48,
+      "rain": 0
+     }
+    },
+    "blend": {
+     "high": 62,
+     "low": 45
+    },
+    "adjusted": {
+     "high": 62,
+     "low": 45
+    },
+    "spread": {
+     "high": 2,
+     "low": 3
+    },
+    "note": "NWS and the models agree within a few degrees"
+   }
+  ],
+  "suggested": [
+   {
+    "date": "2026-10-03",
+    "high": 65,
+    "low": 44,
+    "rain": 0
+   },
+   {
+    "date": "2026-10-04",
+    "high": 68,
+    "low": 46,
+    "rain": 0
+   }
+  ]
+ },
  "links": {
   "forecast": "https://forecast.weather.gov/MapClick.php?lat=41.6081&lon=-86.7189",
   "discussion": "https://forecast.weather.gov/product.php?site=IWX&issuedby=IWX&product=AFD",
