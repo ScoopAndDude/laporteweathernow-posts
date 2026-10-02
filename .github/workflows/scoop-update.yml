@@ -1,0 +1,52 @@
+# Daily Scoop updates (scripts/scoop_update.py, added Oct. 2, 2026): the Timer starts this every
+# 15 minutes. It checks NWS and changes today's Scoop only when something real changed: an
+# "Automatic update, <time>:" paragraph at the top of a written Scoop (alerts right away, forecast
+# or airport changes at most hourly), or a refresh of the automatic backup post with NWS's newest.
+# Official data in fixed sentences, no AI, no site publish. Safe to run twice.
+name: Daily Scoop updates
+
+on:
+  schedule:
+    - cron: "9,39 * * * *"   # second chance; the Timer starts it every 15 minutes
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/scoop_update.py
+      - .github/workflows/scoop-update.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scoop-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ask NWS for the latest
+        run: python3 scripts/scoop_update.py fetch "$RUNNER_TEMP/nws.json"
+      - name: Update today's Scoop if something changed
+        run: |
+          data="$RUNNER_TEMP/nws.json"
+          if [ ! -f "$data" ]; then echo "No NWS data this round."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3 4; do
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            rm -f "$data.msg"
+            python3 scripts/scoop_update.py apply "$data"
+            if [ ! -f "$data.msg" ]; then exit 0; fi
+            git add scoop-posts.json
+            if [ -f scoop-updates.json ]; then git add scoop-updates.json; fi
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -q -F "$data.msg"
+            if git push -q origin HEAD:main; then echo "Pushed."; exit 0; fi
+            sleep 5
+          done
+          exit 1
