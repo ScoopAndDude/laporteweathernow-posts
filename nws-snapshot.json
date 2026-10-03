@@ -1,6 +1,6 @@
 {
  "about": "Official weather for La Porte, Indiana, saved by a GitHub job for the Daily Scoop (laporteweathernow.com/daily-scoop). Copied from NWS, SPC and WPC as-is; see scripts/nws_snapshot.py.",
- "fetched": "2026-10-03T05:02:03-05:00",
+ "fetched": "2026-10-03T09:41:18-05:00",
  "place": "La Porte, IN",
  "lat": 41.6081,
  "lon": -86.7189,
@@ -23,40 +23,29 @@
  },
  "observation": {
   "station": "KPPO (La Porte Municipal Airport)",
-  "time": "2026-10-03T04:15:00-05:00",
+  "time": "2026-10-03T08:55:00-05:00",
   "weather": "Clear",
-  "temperatureF": 48,
-  "dewpointF": 48,
-  "humidityPercent": 100,
+  "temperatureF": 55,
+  "dewpointF": null,
+  "humidityPercent": null,
   "wind": {
-   "from": "NE",
-   "degrees": 50,
-   "mph": 6,
+   "from": "ESE",
+   "degrees": 110,
+   "mph": 5,
    "gustMph": null
   },
   "visibilityMiles": 10.0,
-  "pressureInHg": 30.29,
-  "metar": "KPPO 030915Z AUTO 05005KT 10SM CLR 09/09 A3029 RMK AO2"
+  "pressureInHg": 30.35,
+  "metar": "KPPO 031355Z AUTO 11004KT 10SM CLR 13/13 A3035 RMK AO2"
  },
  "forecast": {
-  "updated": "2026-10-03T08:00:56+00:00",
-  "generated": "2026-10-03T08:31:59+00:00",
+  "updated": "2026-10-03T10:30:19+00:00",
+  "generated": "2026-10-03T11:47:00+00:00",
   "timesNote": "Clock times in the forecast wording are already in America/Chicago (La Porte's real time). NWS writes them in America/Indiana/Indianapolis, which it has on file for La Porte by mistake.",
   "periods": [
    {
-    "name": "Overnight",
-    "start": "2026-10-03T04:00:00-04:00",
-    "end": "2026-10-03T06:00:00-04:00",
-    "isDaytime": false,
-    "temperatureF": 41,
-    "rainChancePercent": 0,
-    "wind": "NE 5 mph",
-    "short": "Mostly Clear",
-    "detailed": "Mostly clear, with a low around 41. Northeast wind around 5 mph."
-   },
-   {
-    "name": "Saturday",
-    "start": "2026-10-03T06:00:00-04:00",
+    "name": "Today",
+    "start": "2026-10-03T07:00:00-04:00",
     "end": "2026-10-03T18:00:00-04:00",
     "isDaytime": true,
     "temperatureF": 66,
@@ -66,7 +55,7 @@
     "detailed": "Sunny, with a high near 66. East wind around 5 mph."
    },
    {
-    "name": "Saturday Night",
+    "name": "Tonight",
     "start": "2026-10-03T18:00:00-04:00",
     "end": "2026-10-04T06:00:00-04:00",
     "isDaytime": false,
@@ -107,7 +96,7 @@
     "rainChancePercent": 0,
     "wind": "N 0 to 10 mph",
     "short": "Sunny",
-    "detailed": "Sunny, with a high near 63."
+    "detailed": "Sunny, with a high near 63. North wind 0 to 10 mph."
    },
    {
     "name": "Monday Night",
@@ -196,6 +185,17 @@
     "wind": "NW 5 mph",
     "short": "Sunny",
     "detailed": "Sunny, with a high near 70."
+   },
+   {
+    "name": "Friday Night",
+    "start": "2026-10-09T18:00:00-04:00",
+    "end": "2026-10-10T06:00:00-04:00",
+    "isDaytime": false,
+    "temperatureF": 48,
+    "rainChancePercent": 2,
+    "wind": "SE 5 mph",
+    "short": "Mostly Clear",
+    "detailed": "Mostly clear, with a low around 48."
    }
   ]
  },
@@ -205,15 +205,11 @@
   "next72hInches": 0.0,
   "byPeriod": [
    {
-    "name": "Overnight",
+    "name": "Today",
     "inches": 0.0
    },
    {
-    "name": "Saturday",
-    "inches": 0.0
-   },
-   {
-    "name": "Saturday Night",
+    "name": "Tonight",
     "inches": 0.0
    },
    {
@@ -259,6 +255,10 @@
    {
     "name": "Friday",
     "inches": 0
+   },
+   {
+    "name": "Friday Night",
+    "inches": 0
    }
   ]
  },
@@ -268,23 +268,23 @@
   "nearbyCountiesFullText": []
  },
  "discussion": {
-  "issued": "2026-10-03T02:01:00-05:00",
-  "ageHours": 3.0,
-  "text": "000\nFXUS63 KIWX 030701\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n301 AM EDT Sat Oct 3 2026\n\n.KEY MESSAGES...\n\n- Primarily dry conditions expected for the coming week.\n\n- Cool on Saturday with highs in the 60s. Trending slightly\n  warmer Sunday.\n\n- Very crisp Tuesday morning with lows in the 30s.\n\n&&\n\n.DISCUSSION...\nIssued at 240 AM EDT Sat Oct 3 2026\n\nMuch cooler this morning with clear skies and light northerly\nwinds allowing for ideal radiational cooling. Dew points in the\nlow to mid 40s across the area will keep lows close to these\nvalues. Some patchy mist/fog will be possible but should remain\nnear surface and the light winds will help to mix drier air\nkeeping any mist/fog very localized. \n\nHighs today with mostly sunny skies will again be in the mid\n60s. Lows tonight will run a degree or two cooler with slightly\ndrier air in place, however a weak trough moving eastward into\nthe region will allow for increased WAA ahead of the upper level\ntroughing and highs on Sunday will be warmer with highs slightly\nwarmer getting into the lower 70s across the area. In the wake\nof the weak disturbance a northwesterly to zonal flow will\nreturn across the region with synoptic cooling returning, lows\nMonday morning back into the low to mid 40s and highs on Monday\nonly in the low to mid 60s. This pattern also brings a shot of\ndrier airmass into the region and will bring a crisp morning on\nTuesday with lows in the mid to upper 30s, BRRRRRRR. Should make\nfor good sleeping weather, may also want to plan on protecting\nany very temperature sensitive plants/animals out of an\nabundance of caution. Still thinking that some isolated frost \non more elevated surfaces will be possible but with still very \nmoist and warm soils should keep any frost development at bay. \nWill continue to keep an eye on this situation. With a more \nnorthwesterly flow into the later part of the week and slightly \nhigher synoptic heights arriving dry conditions look to continue\nwith slight warming into the end of the week when highs \nWednesday and onward into the 70s.\n\n&&\n\n.AVIATION /06Z TAFS THROUGH 06Z SUNDAY/...\nIssued at 116 AM EDT Sat Oct 3 2026\n\nVFR conditions and light northerly winds expected through this \nTAF period.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...None.\n\n&&\n\n$$\n\nDISCUSSION...Andersen\nAVIATION...Andersen"
+  "issued": "2026-10-03T05:28:00-05:00",
+  "ageHours": 4.2,
+  "text": "000\nFXUS63 KIWX 031028\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n628 AM EDT Sat Oct 3 2026\n\n.KEY MESSAGES...\n\n- Primarily dry conditions expected for the coming week.\n\n- Cool on Saturday with highs in the 60s. Trending slightly\n  warmer Sunday.\n\n- Very crisp Tuesday morning with lows in the 30s.\n\n&&\n\n.DISCUSSION...\nIssued at 240 AM EDT Sat Oct 3 2026\n\nMuch cooler this morning with clear skies and light northerly\nwinds allowing for ideal radiational cooling. Dew points in the\nlow to mid 40s across the area will keep lows close to these\nvalues. Some patchy mist/fog will be possible but should remain\nnear surface and the light winds will help to mix drier air\nkeeping any mist/fog very localized. \n\nHighs today with mostly sunny skies will again be in the mid\n60s. Lows tonight will run a degree or two cooler with slightly\ndrier air in place, however a weak trough moving eastward into\nthe region will allow for increased WAA ahead of the upper level\ntroughing and highs on Sunday will be warmer with highs slightly\nwarmer getting into the lower 70s across the area. In the wake\nof the weak disturbance a northwesterly to zonal flow will\nreturn across the region with synoptic cooling returning, lows\nMonday morning back into the low to mid 40s and highs on Monday\nonly in the low to mid 60s. This pattern also brings a shot of\ndrier airmass into the region and will bring a crisp morning on\nTuesday with lows in the mid to upper 30s, BRRRRRRR. Should make\nfor good sleeping weather, may also want to plan on protecting\nany very temperature sensitive plants/animals out of an\nabundance of caution. Still thinking that some isolated frost \non more elevated surfaces will be possible but with still very \nmoist and warm soils should keep any frost development at bay. \nWill continue to keep an eye on this situation. With a more \nnorthwesterly flow into the later part of the week and slightly \nhigher synoptic heights arriving dry conditions look to continue\nwith slight warming into the end of the week when highs \nWednesday and onward into the 70s.\n\n&&\n\n.AVIATION /12Z TAFS THROUGH 12Z SUNDAY/...\nIssued at 628 AM EDT Sat Oct 3 2026\n\nVFR conditions and light northerly winds expected through this \nTAF period.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...None.\n\n&&\n\n$$\n\nDISCUSSION...Andersen\nAVIATION...Andersen"
  },
  "hazardousWeatherOutlook": null,
  "hydrologicOutlook": null,
  "spc": [
   {
    "day": 1,
-   "valid": "202610031200",
+   "valid": "202610031300",
    "expires": "202610041200",
    "riskAtLaPorte": "No thunderstorm or severe risk area",
    "riskAreasAnywhere": [
     "General Thunderstorms Risk"
    ],
-   "summary": "No severe thunderstorms are expected across the U.S. today.",
-   "text": "SPC AC 030531\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1231 AM CDT Sat Oct 03 2026\n\n   Valid 031200Z - 041200Z\n\n   ...NO SEVERE THUNDERSTORM AREAS FORECAST...\n\n   ...SUMMARY...\n   No severe thunderstorms are expected across the U.S. today.\n\n   ... Synopsis ...\n\n   A midlevel trough and attendant surface cold front are forecast to\n   move east across the upper Mississippi Valley today. Increasing\n   midlevel moisture with the large-scale ascent ahead of the trough,\n   coupled with conditionally unstable midlevel lapse rates, should\n   result in enough elevated buoyancy for thunderstorms across portions\n   of the region. Given the elevated nature of this convection and\n   otherwise limited instability, severe thunderstorms are not\n   anticipated. \n\n   Farther southeast, a slow-moving front extending from the Carolinas\n   southwestward toward the northwest Gulf will remain a focus for\n   thunderstorm development through the period. Although ample moisture\n   will support thunderstorms along and south of the boundary,\n   generally weak vertical shear and modest lapse rates within the\n   moist thermodynamic environment should limit prospects for organized\n   severe convection.\n\n   ..Marsh/Halbert.. 10/03/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 1300Z"
+   "summary": "Severe thunderstorms are not expected across the U.S. through tonight.",
+   "text": "SPC AC 031316\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   0816 AM CDT Sat Oct 03 2026\n\n   Valid 031300Z - 041200Z\n\n   ...NO SEVERE THUNDERSTORM AREAS FORECAST...\n\n   ...SUMMARY...\n   Severe thunderstorms are not expected across the U.S. through\n   tonight.\n\n   ...Synopsis...\n   Progressive westerlies will prevail over the northern half of the\n   CONUS through tonight, highlighted by fairly substantial shortwave\n   trough amplification over the northern Plains and Upper Midwest. As\n   a cold front shifts eastward across these regions, a modest increase\n   in moisture, steepening lapse rates and increasing forcing for\n   ascent will contribute to the potential for isolated thunderstorms,\n   such as have been ongoing across the Dakotas in the pre-dawn hours.\n   It is plausible that some stronger/convectively enhanced wind gusts\n   could occur this afternoon, but severe potential is expected to\n   remain virtually nil.\n\n   Across the Southeast/Deep South, a slow-moving front extending from\n   the Carolinas southwestward toward the coastal plain of Texas will\n   remain a focus for thunderstorm development through the period.\n   Although ample moisture will support thunderstorms along and south\n   of the front, weak vertical shear and modest lapse rates within the\n   moist thermodynamic environment should considerably limit the\n   potential for organized severe convection.\n\n   ..Guyer/Dean.. 10/03/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 1630Z"
   },
   {
    "day": 2,
@@ -338,18 +338,6 @@
     "date": "2026-10-03",
     "summary": "dry through work hours (6 a.m. to 6 p.m.)",
     "hours": [
-     {
-      "hour": 6,
-      "rainChancePercent": 0
-     },
-     {
-      "hour": 7,
-      "rainChancePercent": 0
-     },
-     {
-      "hour": 8,
-      "rainChancePercent": 0
-     },
      {
       "hour": 9,
       "rainChancePercent": 0
@@ -453,12 +441,12 @@
    "ecmwf_ifs025": "European ECMWF"
   },
   "bias": {
-   "days": 5,
+   "days": 6,
    "ready": false,
-   "high": -2.0,
-   "highDays": 5,
-   "low": 2.2,
-   "lowDays": 5,
+   "high": -2.5,
+   "highDays": 6,
+   "low": 2.7,
+   "lowDays": 6,
    "note": "Average of (forecast minus airport reading) over the last 30 graded days; positive means we ran warm. Used to nudge the model blend once 14+ days are graded."
   },
   "days": [
@@ -473,21 +461,21 @@
      "ncep_nbm_conus": {
       "high": 65,
       "low": 42,
-      "rain": 2
+      "rain": 1
      },
      "ncep_hrrr_conus": {
       "high": 63,
       "low": 44,
-      "rain": 2
+      "rain": 1
      },
      "gfs_seamless": {
       "high": 63,
       "low": 44,
-      "rain": 2
+      "rain": 1
      },
      "ecmwf_ifs025": {
-      "high": 66,
-      "low": 45,
+      "high": 65,
+      "low": 44,
       "rain": 0
      }
     },
@@ -501,7 +489,7 @@
     },
     "spread": {
      "high": 3,
-     "low": 3
+     "low": 2
     },
     "note": "NWS and the models agree within a few degrees"
    },
@@ -519,34 +507,34 @@
       "rain": 7
      },
      "ncep_hrrr_conus": {
-      "high": 66,
-      "low": 46,
+      "high": 65,
+      "low": 47,
       "rain": 7
      },
      "gfs_seamless": {
-      "high": 66,
-      "low": 46,
+      "high": 65,
+      "low": 47,
       "rain": 7
      },
      "ecmwf_ifs025": {
-      "high": 66,
+      "high": 67,
       "low": 47,
       "rain": 0
      }
     },
     "blend": {
-     "high": 66,
-     "low": 46
+     "high": 67,
+     "low": 47
     },
     "adjusted": {
-     "high": 66,
-     "low": 46
+     "high": 67,
+     "low": 47
     },
     "spread": {
-     "high": 3,
+     "high": 4,
      "low": 6
     },
-    "note": "our blend's high (66) differs from NWS (69) by 3 degrees; our blend's low (46) differs from NWS (41) by 5 degrees; the models disagree on the low by 6 degrees (less certain)"
+    "note": "our blend's low (47) differs from NWS (41) by 6 degrees; the models disagree on the low by 6 degrees (less certain)"
    },
    {
     "date": "2026-10-05",
@@ -565,26 +553,26 @@
       "rain": 7
      },
      "gfs_seamless": {
-      "high": 65,
+      "high": 66,
       "low": 49,
       "rain": 7
      },
      "ecmwf_ifs025": {
-      "high": 62,
-      "low": 46,
+      "high": 63,
+      "low": 47,
       "rain": 0
      }
     },
     "blend": {
-     "high": 62,
+     "high": 63,
      "low": 46
     },
     "adjusted": {
-     "high": 62,
+     "high": 63,
      "low": 46
     },
     "spread": {
-     "high": 3,
+     "high": 4,
      "low": 3
     },
     "note": "NWS and the models agree within a few degrees"
@@ -606,13 +594,13 @@
       "rain": 0
      },
      "gfs_seamless": {
-      "high": 68,
+      "high": 69,
       "low": 46,
       "rain": 0
      },
      "ecmwf_ifs025": {
       "high": 67,
-      "low": 40,
+      "low": 41,
       "rain": 0
      }
     },
@@ -625,7 +613,7 @@
      "low": 40
     },
     "spread": {
-     "high": 3,
+     "high": 4,
      "low": 8
     },
     "note": "the models disagree on the low by 8 degrees (less certain)"
@@ -634,13 +622,13 @@
   "suggested": [
    {
     "date": "2026-10-04",
-    "high": 66,
-    "low": 46,
+    "high": 67,
+    "low": 47,
     "rain": 2
    },
    {
     "date": "2026-10-05",
-    "high": 62,
+    "high": 63,
     "low": 46,
     "rain": 0
    }
