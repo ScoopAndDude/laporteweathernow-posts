@@ -1,0 +1,65 @@
+{
+  "about": "La Porte County weather radio for laporteweathernow.com (Alerts page). Official NWS information read by an open-source voice (Kokoro-82M, af_heart). Replaced whenever the broadcast changes.",
+  "place": "La Porte County, Indiana",
+  "recorded": "2026-10-03T18:04:00-05:00",
+  "written": "2026-10-03T18:02:00-05:00",
+  "hash": "31e0787410204b02",
+  "audio": "laporte-31e0787410204b02.mp3",
+  "duration": 79.3,
+  "voice": "Kokoro-82M af_heart",
+  "alertIds": [],
+  "scoopDate": null,
+  "observationTime": "2026-10-03T17:35:00-05:00",
+  "forecastUpdated": "2026-10-03T19:00:37+00:00",
+  "segments": [
+    {
+      "id": "intro",
+      "title": "Welcome",
+      "start": 0.0,
+      "end": 11.72,
+      "text": [
+        "Good evening. This is the La Porte Weather Now weather radio for La Porte County, Indiana, with the latest as of 6:02 p.m., Saturday, October 3."
+      ]
+    },
+    {
+      "id": "alerts",
+      "title": "Alerts",
+      "start": 11.72,
+      "end": 18.65,
+      "text": [
+        "Good news first: there are no watches, warnings or advisories for La Porte County right now."
+      ]
+    },
+    {
+      "id": "now",
+      "title": "Right now",
+      "start": 18.65,
+      "end": 27.93,
+      "text": [
+        "Right now at the La Porte airport, it's 68 degrees under clear skies. The wind is from the southeast at 8 mph."
+      ]
+    },
+    {
+      "id": "forecast",
+      "title": "Forecast",
+      "start": 27.93,
+      "end": 67.45,
+      "text": [
+        "Now, the forecast from the National Weather Service.",
+        "Tonight: Clear, with a low around 42. Southeast wind around 5 mph.",
+        "Sunday: Sunny, with a high near 68. West wind 5 to 10 mph.",
+        "Sunday night: Mostly clear, with a low around 46. Northwest wind 0 to 5 mph.",
+        "Looking further ahead. Monday: Sunny, high near 63. Monday night: Clear, low around 39. Tuesday: Sunny, high near 67. Tuesday night: Mostly clear, low around 47."
+      ]
+    },
+    {
+      "id": "outro",
+      "title": "Sign-off",
+      "start": 67.45,
+      "end": 79.3,
+      "text": [
+        "That's the latest from La Porte Weather Now. If a warning is issued, act on it right away, and keep your phone's emergency alerts turned on. Stay safe, La Porte County."
+      ]
+    }
+  ]
+}
