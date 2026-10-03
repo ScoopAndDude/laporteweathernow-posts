@@ -1,6 +1,17 @@
 {
- "about": "What NWS (and, from Oct. 2, 2026, our model blend) said for the SAME day at about 5 a.m., when Hard Hat Weather makes its calls. One entry per day, saved once and never changed. Graded in scorecard.json under \"morning\". Made by scripts/consensus.py. The first entries (\"backfilled\": true) were copied from the saved 5 a.m. snapshots in this repo's history.",
+ "about": "What NWS (and, from Oct. 2, 2026, our model blend) said for the SAME day at about 5 a.m., when Hard Hat Weather makes its calls. One entry per day, saved once and never changed. Graded in scorecard.json under \"morning\". Made by scripts/consensus.py.",
  "days": [
+  {
+   "date": "2026-10-03",
+   "saved": "2026-10-03T05:02:03-05:00",
+   "nws": {
+    "high": 66,
+    "rain": 3
+   },
+   "blend": {
+    "high": 65
+   }
+  },
   {
    "date": "2026-10-02",
    "saved": "2026-10-02T05:02:04-05:00",
