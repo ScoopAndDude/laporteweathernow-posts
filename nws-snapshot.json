@@ -1,6 +1,6 @@
 {
  "about": "Official weather for La Porte, Indiana, saved by a GitHub job for the Daily Scoop (laporteweathernow.com/daily-scoop). Copied from NWS, SPC and WPC as-is; see scripts/nws_snapshot.py.",
- "fetched": "2026-10-04T05:02:28-05:00",
+ "fetched": "2026-10-04T10:17:40-05:00",
  "place": "La Porte, IN",
  "lat": 41.6081,
  "lon": -86.7189,
@@ -23,36 +23,36 @@
  },
  "observation": {
   "station": "KPPO (La Porte Municipal Airport)",
-  "time": "2026-10-04T04:35:00-05:00",
+  "time": "2026-10-04T09:35:00-05:00",
   "weather": "Clear",
-  "temperatureF": 48,
-  "dewpointF": 48,
-  "humidityPercent": 100,
+  "temperatureF": 63,
+  "dewpointF": 52,
+  "humidityPercent": 68,
   "wind": {
-   "from": "SSW",
-   "degrees": 200,
-   "mph": 2,
+   "from": "WSW",
+   "degrees": 240,
+   "mph": 6,
    "gustMph": null
   },
   "visibilityMiles": 10.0,
   "pressureInHg": 30.15,
-  "metar": "KPPO 040935Z AUTO 20002KT 10SM CLR 09/09 A3015 RMK AO2"
+  "metar": "KPPO 041435Z AUTO 24005KT 10SM CLR 17/11 A3015 RMK AO2"
  },
  "forecast": {
-  "updated": "2026-10-04T07:45:49+00:00",
-  "generated": "2026-10-04T10:02:00+00:00",
+  "updated": "2026-10-04T10:15:18+00:00",
+  "generated": "2026-10-04T15:17:40+00:00",
   "timesNote": "Clock times in the forecast wording are already in America/Chicago (La Porte's real time). NWS writes them in America/Indiana/Indianapolis, which it has on file for La Porte by mistake.",
   "periods": [
    {
     "name": "Today",
-    "start": "2026-10-04T06:00:00-04:00",
+    "start": "2026-10-04T11:00:00-04:00",
     "end": "2026-10-04T18:00:00-04:00",
     "isDaytime": true,
     "temperatureF": 68,
-    "rainChancePercent": 2,
-    "wind": "W 5 to 10 mph",
+    "rainChancePercent": 0,
+    "wind": "NW 5 to 10 mph",
     "short": "Sunny",
-    "detailed": "Sunny, with a high near 68. West wind 5 to 10 mph."
+    "detailed": "Sunny, with a high near 68. Northwest wind 5 to 10 mph."
    },
    {
     "name": "Tonight",
@@ -268,24 +268,24 @@
   "nearbyCountiesFullText": []
  },
  "discussion": {
-  "issued": "2026-10-04T01:53:00-05:00",
-  "ageHours": 3.2,
-  "text": "000\nFXUS63 KIWX 040653\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n253 AM EDT Sun Oct 4 2026\n\n.KEY MESSAGES...\n\n- Primarily dry conditions are expected for the next several \n  days.\n\n- Sunday, notable temperature difference northwest to southeast\n  as a cold front moves through. Highs will range from the\n  mid-60s to mid-70s, respectively.\n\n- Cold Tuesday morning with lows in the 30s.\n\n&&\n\n.DISCUSSION...\nIssued at 231 AM EDT Sun Oct 4 2026\n\nWeak disturbance moving eastward across Lake Michigan this \nmorning with clouds and a few rain showers associated with it.\nDid add some light rain showers this morning over northern half\nof Berrien County in Michigan where a few showers may make it \nto the surface as it pushes through. Radar imagery does show\nsome returns especially over the lake but with the drier low\nlevels much of it is likely virga. Also, adjusted low\ntemperatures up this morning by a few degrees as WAA ahead of\nthis disturbance along with some moisture indicated by slightly\nhigher surface dew points. This and the addition of some clouds\nmoving through with the disturbance will keep temperatures a tad\nwarmer than originally expected this morning. Temperatures \ncurrently as of 2:30 AM EDT are still in the low 50s here at the\noffice. \n\nA cold front behind this disturbance will move through the area\nlater today and this will keep high temperatures a bit cooler\n(in the upper 60s) for northwestern areas while highs will warm\ninto the low 70s further south and east. Clearing skies will\nalso take place later today with the cooler and drier airmass\nmoving into the area behind the cool front. \n\nDry weather will then be expected through the remainder of the\nwork week into next weekend and a cooler start to the week with\nlows back into the 40s on Monday morning with highs then only\ngetting into the low to mid 60s. Then a reinforcing shot of\ndrier and cooler air arrives Monday night with temperatures\ndropping into the low 40s and even getting in some locations to\nthe upper 30s. Will still have to watch this carefully as\nclear skies and light winds will allow for good radiational \ncooling and if a bit drier air moves in would allow for a bit\ncolder temperatures perhaps into the mid 30s for some locations.\nStill would recommend if you have temperature sensitive plants\nor animals that you protect them Monday night into Tuesday \nmorning out of an abundance of caution. \n\nA northwesterly flow aloft envelopes the region by midweek\nbecoming more zonal late in the week with a high amplitude ridge\nbuilding eastward into the central CONUS by next weekend. This\nwill provide for a warming trend from Tuesday into next weekend\nwith highs by Saturday and Sunday getting into the mid to upper\n70s. Perhaps a few locations along the southern tier of our CWA\ncould see close to 80. The next chance of precipitation looks to\nbe late in the weekend with a southern stream disturbance from\nTexas moving northeastward into the region.\n\n&&\n\n.AVIATION /06Z TAFS THROUGH 06Z MONDAY/...\nIssued at 124 AM EDT Sun Oct 4 2026\n\nA weak cold front is currently approaching the area but very dry\nlow levels will limit the impact. Passing midlevel clouds and a\nwind shift will be the only noticeable effects. Otherwise, a \nfew diurnal cu/stratocu on Sunday but conditions will remain VFR\nwith northwest wind gusts generally less than 20 kts.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...None.\n\n&&\n\n$$\n\nDISCUSSION...Andersen\nAVIATION...AGD"
+  "issued": "2026-10-04T08:29:00-05:00",
+  "ageHours": 1.8,
+  "text": "000\nFXUS63 KIWX 041329\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n929 AM EDT Sun Oct 4 2026\n\n.KEY MESSAGES...\n\n- Primarily dry conditions are expected for the next several \n  days.\n\n- Today, notable temperature difference northwest to southeast \n  as a cold front moves through. Highs will range from the \n  mid-60s to mid-70s, respectively.\n\n- Cold Tuesday morning with lows dipping down to the 30s for\n  some locations.\n\n&&\n\n.DISCUSSION...\nIssued at 231 AM EDT Sun Oct 4 2026\n\nWeak disturbance moving eastward across Lake Michigan this \nmorning with clouds and a few rain showers associated with it.\nDid add some light rain showers this morning over northern half\nof Berrien County in Michigan where a few showers may make it \nto the surface as it pushes through. Radar imagery does show\nsome returns especially over the lake but with the drier low\nlevels much of it is likely virga. Also, adjusted low\ntemperatures up this morning by a few degrees as WAA ahead of\nthis disturbance along with some moisture indicated by slightly\nhigher surface dew points. This and the addition of some clouds\nmoving through with the disturbance will keep temperatures a tad\nwarmer than originally expected this morning. Temperatures \ncurrently as of 2:30 AM EDT are still in the low 50s here at the\noffice. \n\nA cold front behind this disturbance will move through the area\nlater today and this will keep high temperatures a bit cooler\n(in the upper 60s) for northwestern areas while highs will warm\ninto the low 70s further south and east. Clearing skies will\nalso take place later today with the cooler and drier airmass\nmoving into the area behind the cool front. \n\nDry weather will then be expected through the remainder of the\nwork week into next weekend and a cooler start to the week with\nlows back into the 40s on Monday morning with highs then only\ngetting into the low to mid 60s. Then a reinforcing shot of\ndrier and cooler air arrives Monday night with temperatures\ndropping into the low 40s and even getting in some locations to\nthe upper 30s. Will still have to watch this carefully as\nclear skies and light winds will allow for good radiational \ncooling and if a bit drier air moves in would allow for a bit\ncolder temperatures perhaps into the mid 30s for some locations.\nStill would recommend if you have temperature sensitive plants\nor animals that you protect them Monday night into Tuesday \nmorning out of an abundance of caution. \n\nA northwesterly flow aloft envelopes the region by midweek\nbecoming more zonal late in the week with a high amplitude ridge\nbuilding eastward into the central CONUS by next weekend. This\nwill provide for a warming trend from Tuesday into next weekend\nwith highs by Saturday and Sunday getting into the mid to upper\n70s. Perhaps a few locations along the southern tier of our CWA\ncould see close to 80. The next chance of precipitation looks to\nbe late in the weekend with a southern stream disturbance from\nTexas moving northeastward into the region.\n\n&&\n\n.AVIATION /12Z TAFS THROUGH 12Z MONDAY/...\nIssued at 603 AM EDT Sun Oct 4 2026\n\nA weak cold front will move through the area today but very dry\nlow levels will keep precipitation at bay. Passing midlevel \nclouds and a wind shift will be the main impacts but conditions \nwill remain VFR with northwesterly wind gusts generally less \nthan 20 kts.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...None.\n\n&&\n\n$$\n\nDISCUSSION...Andersen\nAVIATION...Andersen"
  },
  "hazardousWeatherOutlook": null,
  "hydrologicOutlook": null,
  "spc": [
   {
    "day": 1,
-   "valid": "202610041200",
+   "valid": "202610041300",
    "expires": "202610051200",
    "riskAtLaPorte": "No thunderstorm or severe risk area",
    "riskAreasAnywhere": [
     "General Thunderstorms Risk",
     "Marginal Risk"
    ],
-   "summary": "A few rotating thunderstorms will be possible across portions of the northern Gulf Coast today, otherwise severe thunderstorms are not expected.",
-   "text": "SPC AC 040547\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1247 AM CDT Sun Oct 04 2026\n\n   Valid 041200Z - 051200Z\n\n   ...THERE IS A MARGINAL RISK OF SEVERE THUNDERSTORMS ACROSS PORTIONS\n   OF THE FLORIDA PANHANDLE...\n\n   ...SUMMARY...\n   A few rotating thunderstorms will be possible across portions of the\n   northern Gulf Coast today, otherwise severe thunderstorms are not\n   expected.\n\n   ... Synopsis ...\n\n   A midlevel shortwave trough moving across the Great Lakes this\n   morning will help carve out/reinforce a larger-scale trough across\n   the eastern US. At the same time, a midlevel anticyclone will remain\n   in place across the western US. This pattern will favor\n   northwesterly flow across much of the eastern half of the country,\n   in turn supporting reinforcing shots of cooler air.\n\n   At the surface, weak cyclogenesis should support the development of\n   a cyclone across the far northern Gulf Coast or just inland across\n   southern Alabama and the Florida Panhandle. This weak low will\n   slowly move east during the day. \n\n\n   ... Portions of the Florida Panhandle and the Adjacent Coastal\n   Waters ...\n\n   A stalled surface front will be draped across the Southeast today,\n   with a very moist airmass in place along and south of it. Forecast\n   soundings across the area indicate nearly moist thermodynamic\n   profiles from surface to the tropopause, with the 20261004 00 UTC\n   HREF having mean precipitable water values around 2.5\" across most\n   of the Florida Panhandle. Given these moist vertical profiles,\n   conditional instability will be low today, with mean MUCAPE values\n   generally 500 J/kg or less. \n\n   Despite the meager instability, one consequence of the moist\n   vertical profiles will be that LCL heights will be very low --\n   generally at or below 500 meters. At the same time, forecast\n   soundings in areas to the east of the surface low show modest wind\n   curvature in the lowest 3 km. Thus, despite the meager instability,\n   forced convective showers/thunderstorms will have the potential to\n   exhibit brief, transient low-level circulations, especially over\n   coastal areas where surface friction is reduced. The threat should\n   slowly move east during the day as the surface low slowly moves\n   east.\n\n   ..Marsh/Wendt.. 10/04/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 1300Z"
+   "summary": "A few rotating thunderstorms are possible today across the coastal Florida Panhandle.",
+   "text": "SPC AC 041243\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   0743 AM CDT Sun Oct 04 2026\n\n   Valid 041300Z - 051200Z\n\n   ...THERE IS A MARGINAL RISK OF SEVERE THUNDERSTORMS ACROSS THE\n   FLORIDA PANHANDLE...\n\n   ...SUMMARY...\n   A few rotating thunderstorms are possible today across the coastal\n   Florida Panhandle.\n\n   ...Florida Panhandle...\n   A stalled/slow-southeastward-moving surface front will reside across\n   the Southeast and Deep South today, with a very moist airmass\n   persisting along and to its south, featuring Precipitable Water\n   values in excess of 2 inches. Scattered showers/thunderstorms are\n   common early today south of the front, including across the northern\n   half of the Gulf. There are some guidance indications, most notably\n   recent NAM runs, that weak offshore surface low development may\n   occur today, with a related developing enhancement to the low-level\n   flow/SRH. Should this trend materialize, showers/thunderstorms will\n   have the potential to exhibit brief, transient low-level\n   circulations, mainly near the coast, with a related waterspout/brief\n   tornado potential.\n\n   ..Guyer/Dean.. 10/04/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 1630Z"
   },
   {
    "day": 2,
@@ -339,22 +339,6 @@
     "date": "2026-10-04",
     "summary": "dry through work hours (6 a.m. to 6 p.m.)",
     "hours": [
-     {
-      "hour": 6,
-      "rainChancePercent": 1
-     },
-     {
-      "hour": 7,
-      "rainChancePercent": 2
-     },
-     {
-      "hour": 8,
-      "rainChancePercent": 0
-     },
-     {
-      "hour": 9,
-      "rainChancePercent": 0
-     },
      {
       "hour": 10,
       "rainChancePercent": 0
@@ -454,12 +438,12 @@
    "ecmwf_ifs025": "European ECMWF"
   },
   "bias": {
-   "days": 6,
+   "days": 7,
    "ready": false,
-   "high": -2.5,
-   "highDays": 6,
-   "low": 2.7,
-   "lowDays": 6,
+   "high": -2.9,
+   "highDays": 7,
+   "low": 1.7,
+   "lowDays": 7,
    "note": "Average of (forecast minus airport reading) over the last 30 graded days; positive means we ran warm. Used to nudge the model blend once 14+ days are graded."
   },
   "days": [
@@ -468,27 +452,27 @@
     "nws": {
      "high": 68,
      "low": null,
-     "rain": 2
+     "rain": 0
     },
     "models": {
      "ncep_nbm_conus": {
-      "high": 68,
+      "high": 67,
       "low": 48,
       "rain": 3
      },
      "ncep_hrrr_conus": {
       "high": 65,
-      "low": 48,
+      "low": 49,
       "rain": 3
      },
      "gfs_seamless": {
       "high": 65,
-      "low": 48,
+      "low": 49,
       "rain": 3
      },
      "ecmwf_ifs025": {
-      "high": 67,
-      "low": 49,
+      "high": 68,
+      "low": 48,
       "rain": 0
      }
     },
@@ -516,22 +500,22 @@
     "models": {
      "ncep_nbm_conus": {
       "high": 64,
-      "low": 47,
+      "low": 48,
       "rain": 0
      },
      "ncep_hrrr_conus": {
-      "high": 61,
-      "low": 46,
+      "high": 62,
+      "low": 47,
       "rain": 0
      },
      "gfs_seamless": {
-      "high": 61,
-      "low": 46,
+      "high": 62,
+      "low": 47,
       "rain": 0
      },
      "ecmwf_ifs025": {
       "high": 64,
-      "low": 47,
+      "low": 48,
       "rain": 0
      }
     },
@@ -544,7 +528,7 @@
      "low": 47
     },
     "spread": {
-     "high": 3,
+     "high": 2,
      "low": 1
     },
     "note": "NWS and the models agree within a few degrees"
@@ -558,21 +542,21 @@
     },
     "models": {
      "ncep_nbm_conus": {
-      "high": 68,
-      "low": 41,
+      "high": 67,
+      "low": 42,
       "rain": 0
      },
      "ncep_hrrr_conus": {
       "rain": 0
      },
      "gfs_seamless": {
-      "high": 70,
+      "high": 69,
       "low": 45,
       "rain": 0
      },
      "ecmwf_ifs025": {
-      "high": 68,
-      "low": 42,
+      "high": 69,
+      "low": 43,
       "rain": 0
      }
     },
@@ -585,7 +569,7 @@
      "low": 42
     },
     "spread": {
-     "high": 3,
+     "high": 2,
      "low": 5
     },
     "note": "NWS and the models agree within a few degrees"
@@ -601,20 +585,20 @@
      "ncep_nbm_conus": {
       "high": 70,
       "low": 54,
-      "rain": 1
+      "rain": 0
      },
      "ncep_hrrr_conus": {
-      "rain": 1
+      "rain": 0
      },
      "gfs_seamless": {
-      "high": 75,
-      "low": 55,
-      "rain": 1
+      "high": 76,
+      "low": 56,
+      "rain": 0
      },
      "ecmwf_ifs025": {
-      "high": 68,
+      "high": 70,
       "low": 55,
-      "rain": 0
+      "rain": 2
      }
     },
     "blend": {
@@ -627,7 +611,7 @@
     },
     "spread": {
      "high": 7,
-     "low": 4
+     "low": 5
     },
     "note": "the models disagree on the high by 7 degrees (less certain); our blend's low (54) differs from NWS (51) by 3 degrees"
    }
