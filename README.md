@@ -30,3 +30,4 @@ Daily Scoop posts for laporteweathernow.com. Every post and edit is saved here w
   - `tools/check_site.py SITE.zip`: run before every publish; it must say PASS (links, version stamps, menus, sitemap, and every page opened in English and Darja on a phone-sized screen with no script errors or sideways scrolling).
   - The daily site check lists `urgent` (readers would notice) and `stuck` (a job stopped) in health.json. Only the daily run started by the timer emails Scoop (it fails on purpose); checks run by hand just report.
   - `tools/lpwn-timer.gs`: the Google Apps Script that sends the timer's ticks and, once a day, emails if a job is stuck. Setup steps are at the top of the file.
+  - `tools/newsletter.gs`: the Thursday weekend email (sign-ups to a Brevo list and the Newsletter tab, a welcome email, the weekly send). It goes into the Hard Hat Weather sender Apps Script as a second file; setup steps are at the top.
