@@ -261,7 +261,7 @@ function nlBuildIssue_() {
   if (post && !post.auto) {
     scoopHtml = "<h2 style=\"font-size:18px;margin:24px 0 8px\">This morning's Daily Scoop</h2>" +
       "<p style=\"margin:0 0 8px\"><b>" + nlEsc_(post.title) + "</b></p>" +
-      "<p style=\"margin:0 0 8px\">" + nlEsc_((post.body || []).filter(function (t) { return !/^Update,/.test(t); })[1] || post.summary || "") + "</p>" +
+      "<p style=\"margin:0 0 8px\">" + nlEsc_((post.body || []).filter(function (t) { return !/^(Automatic update|Update),/.test(t); })[1] || post.summary || "") + "</p>" +
       "<p style=\"margin:0\"><a href=\"" + NL_SITE + "/daily-scoop\">Read the whole Scoop</a></p>";
   }
 
