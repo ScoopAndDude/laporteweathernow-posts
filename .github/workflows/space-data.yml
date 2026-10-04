@@ -1,0 +1,52 @@
+# Earth from space data (added Oct. 4, 2026): NASA FIRMS fires (last 24 hours) and CelesTrak
+# weather satellite orbits for "Earth from space" on laporteweathernow.com/disasters.
+# Writes fires.json and satellites.json to branch "space"; only the newest copy is kept (each run
+# replaces the branch). A source that doesn't answer keeps its last good file. The Timer starts
+# this every 3 hours; the schedule below is a second chance.
+name: Earth from space data
+
+on:
+  schedule:
+    - cron: "37 */3 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/space_data.py
+      - .github/workflows/space-data.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: space-data
+  cancel-in-progress: false
+
+jobs:
+  save:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Start from the last good copy
+        run: |
+          mkdir -p "$RUNNER_TEMP/space"
+          if git fetch -q --depth 1 origin space; then
+            for f in fires.json satellites.json; do
+              git show "FETCH_HEAD:$f" > "$RUNNER_TEMP/space/$f" 2>/dev/null || rm -f "$RUNNER_TEMP/space/$f"
+            done
+          fi
+          ls -la "$RUNNER_TEMP/space"
+      - name: Read NASA FIRMS and CelesTrak
+        run: python3 scripts/space_data.py "$RUNNER_TEMP/space"
+      - name: Replace the space branch with the new copy
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd "$RUNNER_TEMP/space"
+          git init -q -b space
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Earth from space data ($(TZ=America/Chicago date '+%Y-%m-%d %H:%M %Z'))"
+          git push -q -f "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" space:space
