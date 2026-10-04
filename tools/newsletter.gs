@@ -16,22 +16,26 @@
  *   - It never sends the weekly email without NL_MAILING_ADDRESS (U.S. law, CAN-SPAM, requires a
  *     real postal address in every marketing email; a P.O. box is fine), and never twice in a day.
  *
- * Set up (about 10 minutes), in laporteweathernow@gmail.com:
+ * Set up, in laporteweathernow@gmail.com (installed Oct. 4, 2026):
  *   1. Open the "Hard Hat Weather sender" project. Click + next to Files > Script, name it
- *      "newsletter", paste this whole file in place of the sample code, and save.
- *   2. Project Settings > Script properties > Add script property:
- *      NL_MAILING_ADDRESS = the business mailing address, on one line.
- *      If the script isn't attached to the Hard Hat Weather Sheet, also NL_SHEET_ID = that Sheet's ID
- *      (the long part of its web address between /d/ and /edit).
- *   3. Pick "nlSetUp" in the function menu and click Run (allow the permissions). It adds the
- *      "Newsletter" tab and the Brevo list, and writes what it did in the execution log.
- *   4. Backfill: paste the emails from Netlify (Forms > newsletter, and weekend-list) into the
+ *      "newsletter", paste this whole file in place of the sample code, and save. It needs no new
+ *      permissions: Code.gs already uses MailApp, UrlFetchApp, SpreadsheetApp and ScriptApp.
+ *   2. The Newsletter tab goes in the Hard Hat Weather Sheet (WA_SHEET_ID in Code.gs; a
+ *      NL_SHEET_ID script property overrides it). Before the weekly send, add the script property
+ *      NL_MAILING_ADDRESS = the business mailing address, on one line (Project Settings > Script
+ *      properties).
+ *   3. Pick "nlSetUp" in the function menu and click Run. It adds the "Newsletter" tab and the
+ *      Brevo list, and writes what it did in the execution log.
+ *   4. In Code.gs, waSignup (the Netlify forms, called by doPost), right after the bot-field line:
+ *          if (nlHandleNetlify(b)) return "newsletter";
+ *      Return a plain string there: doPost wraps it in HtmlService. A ContentService reply is a
+ *      redirect, which Netlify counts as a failed webhook (it turns the notification off after 6).
+ *      Then Deploy > Manage deployments > edit > Version: New version > Deploy (same URL).
+ *      Netlify's HTTP POST form notification (the same URL as workday-trial) has to cover the
+ *      "newsletter" and "weekend-list" forms too.
+ *   5. Backfill: paste the emails from Netlify (Forms > newsletter, and weekend-list) into the
  *      Newsletter tab's Email column, one per row (Town and Signed up if you like; leave Status
  *      empty). Run "nlAddPastedRows": each gets added and welcomed, and Status fills in.
- *   5. In the existing doPost, where it handles the other Netlify forms ("disaster-watch" and so on),
- *      add this one line before them, using whatever name doPost gives the parsed Netlify body:
- *          if (nlHandleNetlify(body)) return ContentService.createTextOutput("ok");
- *      Then Deploy > Manage deployments > edit > Version: New version > Deploy (same URL).
  *      A row whose Status says "Problem" can be retried: clear its Status and run nlAddPastedRows.
  *   6. Run "nlPreview": the email that would go out right now arrives in laporteweathernow@gmail.com
  *      only. When it looks right, run "nlInstallWeekly" (Thursdays, 3 PM Central).
@@ -111,20 +115,16 @@ function nlAddPastedRows() {
   Logger.log(done + " row(s) handled.");
 }
 
+// No lock of its own: doPost already holds the script lock while waSignup runs, the same way
+// the World Watch sign-ups work.
 function nlAddReader_(email, town, source) {
   email = String(email || "").trim();
   var tab = nlTab_();
-  var lock = LockService.getScriptLock();
-  lock.waitLock(20000);
-  try {
-    var known = tab.getRange(1, 2, Math.max(tab.getLastRow(), 1), 1).getValues()
-      .some(function (r) { return String(r[0]).trim().toLowerCase() === email.toLowerCase(); });
-    if (known) return;
-    var r = nlSubscribe_(email);
-    tab.appendRow([new Date(), email, town, source, r.status, r.note]);
-  } finally {
-    lock.releaseLock();
-  }
+  var known = tab.getRange(1, 2, Math.max(tab.getLastRow(), 1), 1).getValues()
+    .some(function (r) { return String(r[0]).trim().toLowerCase() === email.toLowerCase(); });
+  if (known) return;
+  var r = nlSubscribe_(email);
+  tab.appendRow([new Date(), email, town, source, r.status, r.note]);
 }
 
 function nlSubscribe_(email) {
@@ -299,8 +299,10 @@ function nlFrame_(inner, footer) {
 }
 
 function nlTab_() {
-  // The Hard Hat Weather Sheet: the script's own Sheet, or the NL_SHEET_ID script property.
-  var id = PropertiesService.getScriptProperties().getProperty("NL_SHEET_ID");
+  // The Hard Hat Weather Sheet: the NL_SHEET_ID script property if set, otherwise the Sheet the
+  // Hard Hat code uses (WA_SHEET_ID in Code.gs), otherwise the script's own Sheet.
+  var id = PropertiesService.getScriptProperties().getProperty("NL_SHEET_ID") ||
+    (typeof WA_SHEET_ID !== "undefined" ? WA_SHEET_ID : "");
   var ss = id ? SpreadsheetApp.openById(id) : SpreadsheetApp.getActiveSpreadsheet();
   if (!ss) throw new Error("add the NL_SHEET_ID script property (the Hard Hat Weather Sheet's ID)");
   var tab = ss.getSheetByName(NL_TAB);
