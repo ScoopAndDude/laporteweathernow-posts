@@ -243,14 +243,14 @@
   "hourlyFrom": "2026-10-05T05:47:00-05:00"
  },
  "published": {
-  "time": "2026-10-05T08:17:00-05:00",
+  "time": "2026-10-05T17:17:00-05:00",
   "alertKeys": [],
   "alerts": [],
   "changes": [],
   "off": [
-   "cool"
+   "warm"
   ],
-  "paragraph": "Automatic update, 8:17 a.m.: It's running cooler than NWS's earlier hour-by-hour forecast: at 7:35 a.m. the La Porte airport reported clear and 48 degrees, where that forecast had about 53. There are no watches, warnings, or advisories for La Porte County right now."
+  "paragraph": "Automatic update, 5:17 p.m.: It's running warmer than NWS's earlier hour-by-hour forecast: at 4:35 p.m. the La Porte airport reported clear and 66 degrees, where that forecast had about 61. There are no watches, warnings, or advisories for La Porte County right now."
  },
  "alertRows": [],
  "missing": [],
@@ -258,6 +258,10 @@
   {
    "time": "2026-10-05T08:17:00-05:00",
    "why": "airport running cool"
+  },
+  {
+   "time": "2026-10-05T17:17:00-05:00",
+   "why": "airport running warm"
   }
  ]
 }
