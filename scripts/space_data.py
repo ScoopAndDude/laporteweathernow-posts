@@ -174,7 +174,21 @@ def fires(folder):
     return True
 
 
+def fresh(folder, name, hours):
+    """True when FOLDER/NAME was saved less than HOURS ago (by its "updated" time)."""
+    try:
+        d = json.load(open(os.path.join(folder, name), encoding="utf-8"))
+        saved = datetime.datetime.fromisoformat(d["updated"].replace("Z", "+00:00"))
+        return datetime.datetime.now(datetime.timezone.utc) - saved < datetime.timedelta(hours=hours)
+    except Exception:
+        return False
+
+
 def satellites(folder):
+    # CelesTrak asks for the same data no more than once every 2 hours (it blocks addresses that do).
+    if fresh(folder, "satellites.json", 2):
+        say("Satellites: the saved orbits are less than 2 hours old; not asking CelesTrak again yet.")
+        return True
     sats, seen = [], set()
     for url in CELESTRAK:
         try:
