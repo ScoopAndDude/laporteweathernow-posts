@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<base href="https://laporteweathernow.com/" />
+<meta name="robots" content="noindex, nofollow" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- language:start -->
+<script>/* Language (i18n.js): with a language other than English picked, keep the page hidden until it's translated (3 seconds at most). */(function(){try{var m=/[?&]lang=([^&#]*)/.exec(location.search),c=m?decodeURIComponent(m[1]):localStorage.getItem("lpwn_lang");if(!c||/^en$/i.test(c))return;var d=document.documentElement,s=document.createElement("style");s.textContent=".lpwn-i18n-wait body{visibility:hidden}";document.head.appendChild(s);d.classList.add("lpwn-i18n-wait");setTimeout(function(){d.classList.remove("lpwn-i18n-wait")},3000)}catch(e){}})();</script>
+<script src="/i18n.js?v=d428588e5a" defer></script>
+<!-- language:end -->
+<title>World Disaster Watch &amp; El Ni&ntilde;o | La Porte Weather Now</title>
+<meta name="description" content="The El Ni&ntilde;o watch, live earthquakes, storms, floods, volcanoes and wildfires worldwide, the climate in plain words, and how to help. Free red-alert emails." />
+<meta property="og:title" content="World Disaster Watch | La Porte Weather Now" />
+<meta property="og:description" content="What's hitting the world right now, live from official alert systems. Free red-alert emails." />
+<meta property="og:image" content="https://laporteweathernow.com/og-image.png?v=2" />
+<link rel="stylesheet" href="leaflet.css?v=a783710282" />
+<style>
+.dw-filters { display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 16px; }
+.dw-chip { border:1px solid var(--line); background:var(--card); border-radius:999px; padding:7px 14px; font-weight:700; font-size:13.5px; cursor:pointer; color:var(--ink); }
+.dw-chip[aria-pressed="true"] { background:var(--forest); color:#fff; border-color:var(--forest); }
+.dw-map { height:340px; border-radius:var(--radius); box-shadow:var(--shadow); margin-bottom:18px; background:#dfe7ea; z-index:0; }
+.dw-list { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:14px; }
+.dw-item { background:var(--card); border-radius:var(--radius-sm); box-shadow:var(--shadow); padding:16px 18px; border-left:6px solid #2f7d4f; }
+.dw-item.dw-orange { border-left-color:#d98b00; }
+.dw-item.dw-red { border-left-color:#c62828; background:#fdecec; }
+.dw-item h3 { margin:8px 0 4px; font-size:17px; line-height:1.3; }
+.dw-item-top { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+.dw-type { font-size:12px; font-weight:800; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-soft); }
+.dw-where { font-size:14px; font-weight:600; }
+.dw-when { font-size:13px; color:var(--ink-soft); margin-top:4px; }
+.dw-more { display:inline-block; margin-top:8px; font-weight:700; font-size:13.5px; color:var(--forest); }
+.pill.dw-red { background:#c62828; color:#fff; }
+.pill.dw-orange { background:#f5c46b; color:#5a3500; }
+.pill.dw-green { background:var(--good-bg, #dff0e5); color:#1e5a37; }
+.dw-fine { font-size:13px; color:var(--ink-soft); margin-top:12px; }
+.dw-fine a { color:var(--forest); font-weight:700; }
+.dw-hero { padding-bottom:36px; }
+.dw-hero .lede { max-width:68ch; }
+.dw-hero-btns { display:flex; gap:10px; flex-wrap:wrap; margin-top:4px; }
+.ge { background:#05070d; color:#fff; }
+.section.ge .section-eyebrow { color:var(--amber-bright); }
+.section.ge h2 { color:#fff; }
+.section.ge p.lede { color:#cfd6e4; }
+.ge-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; max-width:900px; }
+.ge-disk { margin:0; text-align:center; min-width:0; }
+.ge-disk a { display:block; border-radius:50%; }
+.ge-disk a:focus-visible { outline:3px solid var(--amber); outline-offset:4px; }
+.ge-disk img { display:block; width:100%; height:auto; aspect-ratio:1; border-radius:50%; background:#000; }
+.ge-disk figcaption { font-size:13.5px; color:#cfd6e4; margin-top:10px; line-height:1.4; }
+.ge-disk figcaption b { display:block; color:#fff; }
+.ge-fallback { display:none; aspect-ratio:1; border-radius:50%; background:#11151f; color:#cfd6e4; font-size:13px; padding:0 14%; align-items:center; justify-content:center; }
+.ge-off img { display:none; }
+.ge-off .ge-fallback { display:flex; }
+.ge-actions { display:flex; flex-wrap:wrap; gap:10px; margin:22px 0 12px; }
+.section.ge p.dw-fine { color:#9aa3b5; }
+.section.ge p.dw-fine a { color:var(--amber-bright); }
+.dw-layer-note { margin:-8px 0 16px; }
+.leaflet-tooltip.ge-sat-label { background:rgba(5,7,13,.78); color:#fff; border:0; box-shadow:none; font:600 11px/1.2 system-ui,sans-serif; padding:2px 6px; }
+.leaflet-tooltip.ge-sat-label::before { display:none; }
+.btn.btn.dw-btn-ghost { background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,.45); }
+.btn.dw-btn-ghost:hover { border-color:#fff; }
+.dw-glance { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-top:28px; }
+.dw-stat { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:14px; padding:14px 16px; }
+.dw-stat-num { font-family:var(--serif); font-size:32px; font-weight:800; line-height:1.1; color:#fff; }
+.dw-stat-num.red { color:#ff8a80; } .dw-stat-num.orange { color:#ffc46b; }
+.dw-stat-label { font-size:12px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:#c9d1cc; margin-top:4px; }
+.dw-now { padding-top:34px; }
+.dw-note { font-size:14px; color:var(--ink-soft); margin:-12px 0 26px; max-width:90ch; }
+.dw-note a { color:var(--forest); font-weight:700; }
+.dw-head { display:flex; justify-content:space-between; align-items:flex-end; gap:12px; flex-wrap:wrap; }
+.dw-head h2 { margin:4px 0 0; }
+.dw-legend .pill { margin:0 4px 0 10px; } .dw-legend .pill:first-child { margin-left:0; }
+@media (max-width:720px) { .dw-glance { grid-template-columns:repeat(2,minmax(0,1fr)); } .dw-stat-num { font-size:26px; } }
+.dw-report { background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px 24px; margin:16px 0 18px; border-left:5px solid var(--forest); }
+.dw-report-kicker { font-size:12px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--amber-text); margin-bottom:8px; }
+.dw-report ul { margin:0; padding-left:18px; display:grid; gap:7px; font-size:15px; line-height:1.5; }
+.dw-linkbtn { background:none; border:0; padding:0; cursor:pointer; font:inherit; font-weight:700; font-size:13.5px; color:var(--forest); }
+@media (max-width:600px) { .dw-map { height:260px; } }
+.ww-enso { background:linear-gradient(135deg,#123247,#1c4a63); color:#fff; border-radius:var(--radius); padding:26px 28px; box-shadow:var(--shadow); }
+.ww-enso .section-eyebrow { color:var(--amber-bright); }
+.ww-enso h2 { color:#fff; }
+.ww-enso-head { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; align-items:flex-start; }
+.ww-enso .dw-fine, .ww-enso .dw-fine a { color:#cfe0e6; }
+.ww-reading { text-align:right; max-width:260px; }
+.ww-reading-num { font-family:var(--serif); font-size:52px; font-weight:800; line-height:1; color:#ffb74d; }
+.ww-reading-note { font-size:13px; color:#cfe0e6; margin-top:6px; }
+.ww-points { margin:18px 0 0; padding-left:20px; display:grid; gap:8px; font-size:15px; line-height:1.55; }
+.ww-climate { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:16px; }
+.ww-card { background:var(--card); border-radius:var(--radius-sm); box-shadow:var(--shadow); padding:18px 20px; border-top:3px solid var(--amber); }
+.ww-card p { margin:0; font-size:15px; line-height:1.5; }
+.ww-card .ww-do { margin-top:10px; font-size:14px; color:var(--ink-soft); }
+.ww-card .ww-do strong { color:var(--forest); }
+@media (max-width:600px) { .ww-reading { text-align:left; } .ww-enso { padding:20px; } }
+</style>
+<link rel="stylesheet" href="style.css?v=c697776a03" />
+<link rel="stylesheet" href="site-nav.css?v=b42ceda2a1" />
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#1a1a1a" />
+<link rel="apple-touch-icon" href="icon-192.png" />
+<link rel="icon" type="image/png" href="/icon-192.png" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="topbar">
+  <div class="wrap"><span>LA PORTE COUNTY&#39;S LOCAL WEATHER &middot; FREE FOR EVERYONE</span><div class="topbar-links"><a href="/emergency" class="emergency-link">&#9888;&#65039; Emergency</a><a href="/about">Our mission &rarr;</a><a href="https://www.paypal.com/donate/?business=19scoops87%40gmail.com&currency_code=USD" target="_blank" rel="noopener" class="topbar-donate">&#9829; Donate</a><button type="button" id="installAppBtn" class="install-btn">&#128242; Download App</button></div></div>
+</div>
+
+<script>window.lpwnTrack = window.lpwnTrack || function () { (window.__lpwnQueue = window.__lpwnQueue || []).push([].slice.call(arguments)); };</script>
+<script src="seasonal.js?v=bacec752d3" defer></script>
+<script src="pwa.js?v=dcad0f9e29" defer></script>
+<script src="track.js?v=0096f183bc" defer></script>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <div class="brand-mark">LPWN</div>
+      <div class="brand-text"><div class="t1">LA PORTE</div><div class="t2">WEATHER NOW</div></div>
+    </a>
+    <div class="navlinks">
+      <a href="/">WEATHER</a>
+      <a href="/emergency">ALERTS</a>
+      <a href="/daily-scoop">DAILY SCOOP</a>
+      <a href="/weekend">WEEKEND</a>
+      <details class="nav-more"><summary>MORE</summary>
+        <div class="nav-more-menu">
+          <div class="nav-grp"><div class="nav-group">Tools</div><a href="/golf">Golf Weather</a><a href="/hardhat/">Hard Hat Weather</a></div>
+          <div class="nav-grp"><div class="nav-group">Local</div><a href="/community">Local help &amp; events</a><a href="/history">La Porte history</a></div>
+          <div class="nav-grp"><div class="nav-group">Travel</div><a href="/trip-planner">Trip Planner</a><a href="/camp-map">The Chase</a><a href="/travel-guides">Travel Guides</a><a href="/global">Global weather</a></div>
+          <div class="nav-grp"><div class="nav-group">Learn</div><a href="/storm-patterns">Storm Patterns</a><a href="/track-record">Track Record</a></div>
+          <div class="nav-grp"><div class="nav-group">From Scoop</div><a href="/faith">Faith &amp; Ministry</a><a class="active" aria-current="page" href="/more-from-scoop">More from Scoop</a></div>
+          <div class="nav-grp"><div class="nav-group">About</div><a href="/about">Our mission</a><a href="/sources">Our sources</a><a href="/contact">Contact</a></div>
+        </div>
+      </details>
+    </div>
+  </div>
+</nav>
+<main id="main">
+
+<header class="hero dw-hero">
+  <div class="wrap">
+    <div class="hero-eyebrow">WORLD DISASTER WATCH</div>
+    <h1>What's hitting the world right now.</h1>
+    <p class="lede">Live disasters, the El Ni&ntilde;o watch and the climate in plain words, straight from official public sources: NOAA, NASA, the U.S. Geological Survey, the Smithsonian, and GDACS, the disaster alert system of the United Nations and European Commission.</p>
+    <div class="dw-hero-btns"><a class="btn btn-amber" href="#dw-signup">Get free alerts near you</a><a class="btn dw-btn-ghost" href="#earth-from-space">Earth from space</a><a class="btn dw-btn-ghost" href="#el-nino">El Ni&ntilde;o watch</a><a class="btn dw-btn-ghost" href="/amazon">Amazon Rainforest Watch</a><a class="btn dw-btn-ghost" href="/sources">Our sources</a></div>
+    <div class="dw-glance" aria-label="At a glance">
+      <div class="dw-stat"><div class="dw-stat-num" id="gRed">&ndash;</div><div class="dw-stat-label">Red alerts now</div></div>
+      <div class="dw-stat"><div class="dw-stat-num" id="gOrange">&ndash;</div><div class="dw-stat-label">Orange alerts now</div></div>
+      <div class="dw-stat"><div class="dw-stat-num" id="gQuakes">&ndash;</div><div class="dw-stat-label">Quakes 5.5+ this week</div></div>
+      <div class="dw-stat"><div class="dw-stat-num" id="gEnso">&ndash;</div><div class="dw-stat-label">El Ni&ntilde;o reading</div></div>
+    </div>
+  </div>
+</header>
+
+<section class="section ge" id="earth-from-space">
+  <span id="gods-eye"></span>
+  <div class="wrap">
+    <div class="section-eyebrow">EARTH FROM SPACE</div>
+    <h2>The whole planet, right now.</h2>
+    <p class="lede">Two NOAA weather satellites hang 22,236 miles above the equator, each watching its side of the Earth. These are their newest pictures of the whole planet, taken every 10 minutes. Hurricanes, big storm systems and wildfire smoke all show up here.</p>
+    <div class="ge-grid">
+      <figure class="ge-disk">
+        <a href="https://www.star.nesdis.noaa.gov/GOES/fulldisk.php?sat=G19" target="_blank" rel="noopener" aria-label="Open NOAA's full-size view">
+          <img id="geEast" src="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/FD/GEOCOLOR/678x678.jpg" data-goes="https://cdn.star.nesdis.noaa.gov/GOES19/ABI/FD/GEOCOLOR/678x678.jpg" alt="Newest full-Earth picture from NOAA's GOES-East satellite, showing the Americas and the Atlantic" width="678" height="678" decoding="async" onerror="this.closest('figure').classList.add('ge-off')">
+          <span class="ge-fallback">NOAA&rsquo;s picture isn&rsquo;t loading right now. Tap to see it on NOAA&rsquo;s site.</span>
+        </a>
+        <figcaption><b>The Americas and the Atlantic</b>NOAA GOES-East &middot; every 10 minutes</figcaption>
+      </figure>
+      <figure class="ge-disk">
+        <a href="https://www.star.nesdis.noaa.gov/GOES/fulldisk.php?sat=G18" target="_blank" rel="noopener" aria-label="Open NOAA's full-size view">
+          <img id="geWest" src="https://cdn.star.nesdis.noaa.gov/GOES18/ABI/FD/GEOCOLOR/678x678.jpg" data-goes="https://cdn.star.nesdis.noaa.gov/GOES18/ABI/FD/GEOCOLOR/678x678.jpg" alt="Newest full-Earth picture from NOAA's GOES-West satellite, showing the Pacific" width="678" height="678" decoding="async" onerror="this.closest('figure').classList.add('ge-off')">
+          <span class="ge-fallback">NOAA&rsquo;s picture isn&rsquo;t loading right now. Tap to see it on NOAA&rsquo;s site.</span>
+        </a>
+        <figcaption><b>The Pacific, Hawaii and Alaska</b>NOAA GOES-West &middot; every 10 minutes</figcaption>
+      </figure>
+    </div>
+    <div class="ge-actions">
+      <button type="button" class="btn btn-amber" id="geSat">See today&rsquo;s disasters on the satellite map</button>
+      <button type="button" class="btn dw-btn-ghost" id="geFires">&#128293; Fires seen from space</button>
+      <button type="button" class="btn dw-btn-ghost" id="geSats">&#128752; Weather satellites, live</button>
+      <a class="btn dw-btn-ghost" href="https://worldview.earthdata.nasa.gov/" target="_blank" rel="noopener">Explore NASA Worldview &#8599;</a>
+    </div>
+    <p class="dw-fine">Pictures: NOAA/NESDIS GOES-East and GOES-West GeoColor (public domain). On the night side you see city lights and cloud tops from infrared, not true color. The satellite map uses NASA&rsquo;s most recent full day of pictures (VIIRS, through NASA GIBS). Fires: every fire NASA&rsquo;s VIIRS cameras spotted in the last 24 hours, from <a href="https://firms.modaps.eosdis.nasa.gov/" target="_blank" rel="noopener">NASA FIRMS</a>, refreshed every 3 hours. Spots that showed heat on 5 or more of the last 7 days are marked in gray as steady heat sources, since those are almost always steel mills, refineries, gas flares or volcanoes. Weather satellites: worked out live in your browser from <a href="https://celestrak.org/" target="_blank" rel="noopener">CelesTrak</a>&rsquo;s orbits, good to within a few miles.</p>
+  </div>
+</section>
+
+<section class="section dw-now">
+  <div class="wrap">
+    <div class="alert-banner checking" id="dwBanner" role="status" aria-live="polite">
+      <div class="status"><span class="badge-dot" aria-hidden="true"></span><span id="dwBannerText">Checking the world's alert systems&hellip;</span></div>
+    </div>
+    <p class="dw-note"><strong>If you're in an affected area,</strong> follow your local authorities and official warnings first. We pass along what official alert systems report; we don't issue warnings. In the U.S., that's the <a href="https://www.weather.gov" target="_blank" rel="noopener">National Weather Service</a> and, for tsunamis, <a href="https://www.tsunami.gov" target="_blank" rel="noopener">tsunami.gov</a>.</p>
+
+    <div class="dw-head">
+      <div><div class="section-eyebrow">HAPPENING NOW</div><h2>Current events, biggest first</h2></div>
+      <p class="dw-fine" id="dwUpdated" style="margin:0;"></p>
+    </div>
+    <div class="dw-report">
+      <div class="dw-report-kicker">Today's world report</div>
+      <div id="dwReport"><p class="loading-text">Reading the world's alert systems&hellip;</p></div>
+      <p class="dw-fine" id="dwReportTime" style="margin:8px 0 0;"></p>
+    </div>
+    <div class="dw-filters" id="dwFilters" role="group" aria-label="Show only"></div>
+    <div id="dwMap" class="dw-map" aria-label="Map of current events"></div>
+    <p class="dw-fine dw-layer-note" id="dwLayerNote" role="status" aria-live="polite" hidden></p>
+    <div id="dwList" class="dw-list"><p class="loading-text">Loading&hellip;</p></div>
+    <p class="dw-fine dw-legend"><span class="pill dw-red">Red</span> GDACS expects a severe impact; international help may be needed. <span class="pill dw-orange">Orange</span> A significant impact is likely (GDACS), or a U.S. volcano at USGS watch level. <span class="pill dw-green">Watching</span> Being tracked. Earthquakes: magnitude 5.5 and up, last 7 days, colored by the USGS impact rating when there is one.</p>
+  </div>
+</section>
+
+<section class="section alt" id="el-nino">
+  <div class="wrap">
+    <div class="ww-enso" id="wwEnso">
+      <div class="ww-enso-head">
+        <div>
+          <div class="section-eyebrow">EL NI&Ntilde;O WATCH</div>
+          <h2 id="wwEnsoHead" style="margin:4px 0 8px;">A very strong El Ni&ntilde;o is building.</h2>
+          <div class="ww-status"><span class="pill dw-orange" id="wwEnsoStatus">El Ni&ntilde;o Advisory</span> <span id="wwEnsoUpdated" class="dw-fine" style="margin:0;"></span></div>
+        </div>
+        <div class="ww-reading"><div class="ww-reading-num" id="wwEnsoReading">&mdash;</div><div class="ww-reading-note" id="wwEnsoNote"></div></div>
+      </div>
+      <ul class="ww-points" id="wwEnsoPoints"></ul>
+      <p class="dw-fine" id="wwEnsoSources"></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="climate">
+  <div class="wrap">
+    <div class="section-eyebrow">THE BIGGER PICTURE</div>
+    <h2 id="wwClimateHead">The climate is warming. Here's what that means, calmly.</h2>
+    <p class="lede" style="max-width:70ch;">No panic, just facts from NOAA, NASA and the World Meteorological Organization, each with something you can do about it.</p>
+    <div class="ww-climate" id="wwClimate"></div>
+    <p class="dw-fine" id="wwClimateSources"></p>
+  </div>
+</section>
+
+<section class="section alt" id="help">
+  <div class="wrap">
+    <div class="section-eyebrow">HOW TO HELP</div>
+    <h2>Want to help when disaster hits?</h2>
+    <p class="lede" style="max-width:70ch;">Money to established relief groups helps most: they buy what's needed close to the disaster, and it arrives faster than donated goods. These are long-standing, highly rated organizations. We're not paid by any of them.</p>
+    <div class="article-grid">
+      <div class="article-card"><div class="tag">Worldwide</div><h3>International Red Cross and Red Crescent</h3><p>Local volunteers already on the ground in almost every country.</p><a class="more" href="https://www.ifrc.org/donate" target="_blank" rel="noopener">Give to the IFRC &#8599;</a></div>
+      <div class="article-card"><div class="tag">Medical supplies</div><h3>Direct Relief</h3><p>Medicine and supplies to clinics in disaster zones, in the U.S. and abroad.</p><a class="more" href="https://www.directrelief.org" target="_blank" rel="noopener">Give to Direct Relief &#8599;</a></div>
+      <div class="article-card"><div class="tag">Children</div><h3>UNICEF</h3><p>Clean water, food and safe spaces for children after disasters.</p><a class="more" href="https://www.unicef.org/take-action" target="_blank" rel="noopener">Give to UNICEF &#8599;</a></div>
+      <div class="article-card"><div class="tag">Emergency doctors</div><h3>Doctors Without Borders</h3><p>Emergency medical teams in crises worldwide.</p><a class="more" href="https://www.doctorswithoutborders.org" target="_blank" rel="noopener">Give to MSF &#8599;</a></div>
+      <div class="article-card"><div class="tag">Local groups</div><h3>GlobalGiving disaster funds</h3><p>Funds for each major disaster, passed to vetted local groups.</p><a class="more" href="https://www.globalgiving.org/disasters/" target="_blank" rel="noopener">See GlobalGiving funds &#8599;</a></div>
+      <div class="article-card"><div class="tag">Check first</div><h3>Charity Navigator</h3><p>Look up any charity before you give. Scammers show up after every big disaster.</p><a class="more" href="https://www.charitynavigator.org" target="_blank" rel="noopener">Check a charity &#8599;</a></div>
+    </div>
+    <p class="dw-fine">For a specific disaster, <a href="https://reliefweb.int/disasters" target="_blank" rel="noopener">ReliefWeb</a> lists the aid groups working there. Each red alert on this page links to it.</p>
+  </div>
+</section>
+
+<section class="newsletter" id="dw-signup">
+  <div class="wrap newsletter-inner">
+    <div>
+      <h3>Free disaster alerts, anywhere in the world.</h3>
+      <p>Every red alert worldwide: the rare, major disasters, usually a handful a year. Add your town, anywhere on Earth, and we'll also email you when a tropical storm, a serious flood or fire, an earthquake of magnitude 6 or more, or a U.S. volcano on watch is within about 300 miles. Free, and one click to stop.</p>
+      <p style="margin-top:8px;font-size:13px;">Your phone's own emergency alerts are faster for danger right where you are, so keep those on too.</p>
+    </div>
+    <form name="disaster-watch" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="dwSignup">
+      <input type="hidden" name="form-name" value="disaster-watch" />
+      <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
+      <input type="hidden" name="source" value="/disasters" />
+      <input type="hidden" name="lat" value="" />
+      <input type="hidden" name="lon" value="" />
+      <label class="visually-hidden" for="dw-email">Email address</label>
+      <input type="email" name="email" id="dw-email" placeholder="you@email.com" autocomplete="email" required />
+      <label class="visually-hidden" for="dw-town">Your town or city (optional)</label>
+      <input type="text" name="town" id="dw-town" placeholder="Your town (optional)" autocomplete="address-level2" style="padding:12px 16px;border-radius:999px;border:none;min-width:260px;font-size:14px;" />
+      <button class="btn btn-amber" type="submit">Email me alerts</button>
+      <p class="newsletter-status" id="dwSignupStatus" role="status" aria-live="polite"></p>
+      <p class="fineprint">We only use your email and town for these alerts. <a href="/privacy#world-watch">Privacy</a></p>
+    </form>
+  </div>
+</section>
+
+<section class="section tight alt" id="stop">
+  <div class="wrap">
+    <details id="dwStopBox">
+      <summary style="cursor:pointer;font-weight:700;">Stop getting red-alert emails</summary>
+      <form name="disaster-watch-stop" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="dwStopForm" style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+        <input type="hidden" name="form-name" value="disaster-watch-stop" />
+        <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
+        <input type="hidden" name="code" value="" />
+        <label for="dw-stop-email">Your email</label>
+        <input type="email" name="email" id="dw-stop-email" autocomplete="email" style="padding:10px 14px;border-radius:999px;border:1px solid var(--line);min-width:220px;" />
+        <button class="btn" type="submit" style="background:var(--forest);color:#fff;">Stop the emails</button>
+        <p class="dw-fine" id="dwStopStatus" role="status" aria-live="polite" style="flex-basis:100%;margin:0;"></p>
+      </form>
+    </details>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <div class="section-eyebrow">GO STRAIGHT TO THE SOURCE</div>
+    <h2>The official alert systems</h2>
+    <div class="article-grid">
+      <div class="article-card"><div class="tag">UN &amp; European Commission</div><h3>GDACS</h3><p>The Global Disaster Alert and Coordination System, used by aid agencies worldwide.</p><a class="more" href="https://www.gdacs.org" target="_blank" rel="noopener">Open GDACS &#8599;</a></div>
+      <div class="article-card"><div class="tag">U.S. Geological Survey</div><h3>Earthquakes</h3><p>Every significant earthquake worldwide, usually within minutes.</p><a class="more" href="https://earthquake.usgs.gov/earthquakes/map/" target="_blank" rel="noopener">Open the USGS map &#8599;</a></div>
+      <div class="article-card"><div class="tag">NOAA</div><h3>Tsunami warnings</h3><p>Official tsunami warnings for the U.S., the Pacific and the Caribbean.</p><a class="more" href="https://www.tsunami.gov" target="_blank" rel="noopener">Open tsunami.gov &#8599;</a></div>
+      <div class="article-card"><div class="tag">UN OCHA</div><h3>ReliefWeb</h3><p>Situation reports and ways to help, from the UN's humanitarian office.</p><a class="more" href="https://reliefweb.int/disasters" target="_blank" rel="noopener">Open ReliefWeb &#8599;</a></div>
+    </div>
+    <h3 style="font-family:var(--serif);font-size:22px;margin:30px 0 6px;">Weather services around the world</h3>
+    <p class="dw-fine" style="margin:0 0 14px;">Official warnings come from each country's own weather service. Start with the WMO map, which shows them all in one place.</p>
+    <div class="two-col">
+      <ul class="link-list">
+        <li><a href="https://severeweather.wmo.int/" target="_blank" rel="noopener">WMO Severe Weather Information Centre &#8599;</a><span class="sub">Official warnings from national weather services worldwide, on one map</span></li>
+        <li><a href="https://www.nhc.noaa.gov/" target="_blank" rel="noopener">National Hurricane Center (NOAA) &#8599;</a><span class="sub">Atlantic and eastern Pacific hurricanes</span></li>
+        <li><a href="https://www.metoc.navy.mil/jtwc/jtwc.html" target="_blank" rel="noopener">Joint Typhoon Warning Center &#8599;</a><span class="sub">Typhoons and cyclones in the Pacific and Indian Oceans</span></li>
+        <li><a href="https://charts.ecmwf.int/" target="_blank" rel="noopener">ECMWF forecast charts &#8599;</a><span class="sub">The European model, one of the world's most accurate</span></li>
+        <li><a href="https://www.meteoalarm.org/" target="_blank" rel="noopener">Meteoalarm &#8599;</a><span class="sub">Official weather warnings for all of Europe</span></li>
+      </ul>
+      <ul class="link-list">
+        <li><a href="https://www.jma.go.jp/jma/indexe.html" target="_blank" rel="noopener">Japan Meteorological Agency &#8599;</a><span class="sub">Typhoons, earthquakes and tsunami warnings for Japan</span></li>
+        <li><a href="https://mausam.imd.gov.in/" target="_blank" rel="noopener">India Meteorological Department &#8599;</a><span class="sub">Monsoon and cyclones in the Bay of Bengal and Arabian Sea</span></li>
+        <li><a href="https://www.bom.gov.au/" target="_blank" rel="noopener">Australia Bureau of Meteorology &#8599;</a><span class="sub">Cyclones, fire weather and its own El Ni&ntilde;o outlook</span></li>
+        <li><a href="https://weather.gc.ca/" target="_blank" rel="noopener">Environment Canada &#8599;</a><span class="sub">Warnings for our neighbors to the north</span></li>
+        <li><a href="https://www.metoffice.gov.uk/" target="_blank" rel="noopener">UK Met Office &#8599;</a><span class="sub">Forecasts and warnings for the United Kingdom</span></li>
+      </ul>
+    </div>
+    <p class="dw-fine" style="margin-top:18px;">Data: <a href="https://www.gdacs.org" target="_blank" rel="noopener">GDACS</a> (a cooperation of the United Nations and the European Commission) and the <a href="https://earthquake.usgs.gov" target="_blank" rel="noopener">U.S. Geological Survey</a>. La Porte Weather Now is not affiliated with either and does not issue warnings.</p>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand" style="margin-bottom:14px;">
+        <div class="brand-mark">LPWN</div>
+        <div class="brand-text"><div class="t1" style="color:#fff;">LA PORTE</div><div class="t2">WEATHER NOW</div></div>
+      </div>
+      <p style="max-width:320px; color:#9fab9c;">Local weather that started in La Porte County and is growing across the Midwest, built on free public data. Not a replacement for official NWS warnings.</p>
+      <p style="max-width:320px; color:#9fab9c; font-size:12.5px; font-style:italic; margin-top:6px;">Love God. Love people. Tell the truth. Be prepared. Care for all that lives. &middot; Matthew 22:37&ndash;39</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h4>Weather</h4>
+        <ul>
+          <li><a href="/">Right Now</a></li>
+          <li><a href="/emergency">Emergency view</a></li>
+          <li><a href="/daily-scoop">Daily Scoop</a></li>
+          <li><a href="/weekend">This Weekend</a></li>
+          <li><a href="/track-record">Track Record</a></li>
+          <li><a href="/storm-patterns">Storm Patterns</a></li>
+          <li><a href="/golf">Golf Weather</a></li>
+          <li><a href="/global">Global</a></li>
+          <li><a href="/hardhat/">Hard Hat Weather for crews</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Travel</h4>
+        <ul>
+          <li><a href="/trip-planner">Trip Planner</a></li>
+          <li><a href="/camp-map">The Chase</a></li>
+          <li><a href="/travel-guides">Travel Guides</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>La Porte</h4>
+        <ul>
+          <li><a href="/community">Community</a></li>
+          <li><a href="/faith">Faith &amp; Ministry</a></li>
+          <li><a href="/more-from-scoop">More from Scoop</a></li>
+          <li><a href="/history">History</a></li>
+          <li><a href="/about">Our Mission</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/sources">Our sources</a></li>
+          <li><a href="/privacy">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://pinterest.com/scoopanddude" target="_blank" rel="noopener">Pinterest</a></li>
+          <li><a href="https://www.instagram.com/laporteweathernow/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=61593704493345" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.facebook.com/groups/395203475619853" target="_blank" rel="noopener">Facebook group</a></li>
+          <li><a href="https://www.tiktok.com/@laporteweathernow" target="_blank" rel="noopener">TikTok</a></li>
+          <li><a href="https://www.youtube.com/@laporteweathernow" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://x.com/scoopanddude" target="_blank" rel="noopener">X (Twitter)</a></li>
+          <li><a href="https://www.etsy.com/shop/ScoopAndDude" target="_blank" rel="noopener">Etsy Shop</a></li>
+          <li><a href="https://www.weather.gov" target="_blank" rel="noopener">Verify with NWS &#8599;</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p style="width:100%; text-align:center; font-size:11px; color:#9aa197; margin-top:24px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.08);">Courthouse photo by MrHarman, <a href="https://creativecommons.org/licenses/by/3.0/deed.en" target="_blank" rel="noopener" style="color:#8a9089;">CC BY 3.0</a>, via Wikimedia Commons</p>
+  <p style="width:100%; text-align:center; margin-top:20px;"><a href="https://www.paypal.com/donate/?business=19scoops87%40gmail.com&currency_code=USD" target="_blank" rel="noopener" class="btn btn-amber" style="margin:6px;">&#9829; Support This Site &mdash; Donate</a></p>
+</footer>
+
+<script src="leaflet.js?v=db49d009c8"></script>
+<script src="newsletter.js?v=d5e1578281"></script>
+<script src="https://scoopanddude.github.io/laporteweathernow-posts/preview/disasters.js?v=294e618b8a"></script>
+<nav class="bottom-bar" aria-label="Quick links">
+  <a href="/"><span class="bi" aria-hidden="true">&#9728;&#65039;</span>Weather</a>
+  <a class="alerts-link" href="/emergency"><span class="bi" aria-hidden="true">&#9888;&#65039;</span>Alerts</a>
+  <a href="/daily-scoop"><span class="bi" aria-hidden="true">&#128240;</span>Scoop</a>
+  <a href="/weekend"><span class="bi" aria-hidden="true">&#128197;</span>Weekend</a>
+  <details><summary><span class="bi" aria-hidden="true">&#9776;</span>More</summary>
+    <div class="more-sheet">
+      <div class="sheet-grp"><div class="nav-group">Tools</div><a href="/golf">Golf Weather</a><a href="/hardhat/">Hard Hat Weather</a></div>
+      <div class="sheet-grp"><div class="nav-group">Local</div><a href="/community">Local help &amp; events</a><a href="/history">La Porte history</a></div>
+      <div class="sheet-grp"><div class="nav-group">Travel</div><a href="/trip-planner">Trip Planner</a><a href="/camp-map">The Chase</a><a href="/travel-guides">Travel Guides</a><a href="/global">Global weather</a></div>
+      <div class="sheet-grp"><div class="nav-group">Learn</div><a href="/storm-patterns">Storm Patterns</a><a href="/track-record">Track Record</a></div>
+      <div class="sheet-grp"><div class="nav-group">From Scoop</div><a href="/faith">Faith &amp; Ministry</a><a class="active" aria-current="page" href="/more-from-scoop">More from Scoop</a></div>
+      <div class="sheet-grp"><div class="nav-group">About</div><a href="/about">Our mission</a><a href="/sources">Our sources</a><a href="/contact">Contact</a></div>
+    </div>
+  </details>
+</nav>
+</body>
+</html>
