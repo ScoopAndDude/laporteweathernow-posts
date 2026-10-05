@@ -32,7 +32,7 @@ jobs:
         run: |
           mkdir -p "$RUNNER_TEMP/space"
           if git fetch -q --depth 1 origin space; then
-            for f in fires.json satellites.json; do
+            for f in fires.json satellites.json status.json; do
               git show "FETCH_HEAD:$f" > "$RUNNER_TEMP/space/$f" 2>/dev/null || rm -f "$RUNNER_TEMP/space/$f"
             done
           fi

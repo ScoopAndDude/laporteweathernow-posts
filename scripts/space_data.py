@@ -18,7 +18,8 @@ Writes two files into FOLDER, which the "Earth from space data" job publishes as
                    job runs every 3 hours.
 
 If a source doesn't answer or sends something that doesn't look right, that file is left as it was,
-so the page keeps showing the last good copy (with its time).
+so the page keeps showing the last good copy (with its time). status.json says what happened on the
+newest run (GitHub's job logs need a sign-in; this file doesn't).
 """
 import csv
 import datetime
@@ -39,13 +40,25 @@ CELESTRAK = [
     "https://celestrak.org/NORAD/elements/gp.php?CATNR=25544&FORMAT=tle",   # the space station
 ]
 CELL = 0.1          # degrees
+LOG = []
+
+
+def say(msg):
+    print(msg)
+    LOG.append(msg)
 MAX_SQUARES = 30000  # the strongest ones, if a huge fire season ever goes past this
 
 
-def get(url, timeout=120):
-    req = urllib.request.Request(url, headers={"User-Agent": UA})
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return r.read().decode("utf-8", "replace")
+def get(url, timeout=60, tries=2):
+    last = None
+    for _ in range(tries):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*"})
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                return r.read().decode("utf-8", "replace")
+        except Exception as e:
+            last = e
+    raise last
 
 
 def now_iso():
@@ -65,11 +78,11 @@ def fires(folder):
         try:
             text = get(url)
         except Exception as e:
-            print(f"Fires: {sat} didn't answer ({e}).")
+            say(f"Fires: {sat} didn't answer ({e}).")
             continue
         rows = list(csv.DictReader(io.StringIO(text)))
         if not rows or "latitude" not in rows[0] or "frp" not in rows[0]:
-            print(f"Fires: {sat}'s file doesn't look right; skipped.")
+            say(f"Fires: {sat}'s file doesn't look right; skipped.")
             continue
         used.append(sat)
         for r in rows:
@@ -92,7 +105,7 @@ def fires(folder):
             else:
                 squares[key] = [round(key[0] * CELL, 2), round(key[1] * CELL, 2), frp, 1, ts]
     if not used:
-        print("Fires: no NASA FIRMS file came through; keeping the last copy.")
+        say("Fires: no NASA FIRMS file came through; keeping the last copy.")
         return False
     out = sorted(squares.values(), key=lambda s: -s[2])[:MAX_SQUARES]
     for s in out:
@@ -106,7 +119,7 @@ def fires(folder):
         "detections": raw,
         "fires": out,
     })
-    print(f"Fires: {raw} detections from {', '.join(used)} in {len(out)} squares.")
+    say(f"Fires: {raw} detections from {', '.join(used)} in {len(out)} squares.")
     return True
 
 
@@ -116,7 +129,7 @@ def satellites(folder):
         try:
             lines = [l.rstrip() for l in get(url, 60).splitlines() if l.strip()]
         except Exception as e:
-            print(f"Satellites: CelesTrak didn't answer ({e}).")
+            say(f"Satellites: CelesTrak didn't answer ({e}).")
             continue
         for i in range(0, len(lines) - 2, 3):
             name, l1, l2 = lines[i].strip(), lines[i + 1], lines[i + 2]
@@ -128,7 +141,7 @@ def satellites(folder):
             seen.add(sid)
             sats.append({"name": name, "id": sid, "l1": l1, "l2": l2})
     if len(sats) < 10:
-        print(f"Satellites: only {len(sats)} orbits came through; keeping the last copy.")
+        say(f"Satellites: only {len(sats)} orbits came through; keeping the last copy.")
         return False
     write(folder, "satellites.json", {
         "about": "Orbits (two-line elements) of CelesTrak's weather satellites and the International Space Station, "
@@ -136,7 +149,7 @@ def satellites(folder):
         "updated": now_iso(),
         "sats": sats,
     })
-    print(f"Satellites: {len(sats)} orbits.")
+    say(f"Satellites: {len(sats)} orbits.")
     return True
 
 
@@ -145,6 +158,7 @@ def main(argv):
     os.makedirs(folder, exist_ok=True)
     ok_f = fires(folder)
     ok_s = satellites(folder)
+    write(folder, "status.json", {"updated": now_iso(), "fires": ok_f, "satellites": ok_s, "log": LOG})
     # Fail only when nothing at all came through, so a one-off outage doesn't count as a broken job.
     return 0 if (ok_f or ok_s) else 1
 
