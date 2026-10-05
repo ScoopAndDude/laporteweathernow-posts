@@ -10,6 +10,7 @@ Nothing goes live unless this says PASS. It checks:
     so visitors never keep an old copy
   - every page has the site menu (except the few that have their own, like Hard Hat)
   - the pages in sitemap.xml exist
+  - no redirect rule is one Netlify silently ignores ("/radar/*  /radar  301"; added Oct. 5, 2026)
   - with Playwright installed: every page opens in English and in Darja on a phone-sized screen
     with no script errors from the site's own code and no sideways scrolling
     (outside services are blocked during the test, so a missing map library is not an error)
@@ -82,6 +83,21 @@ def static_checks(root):
         for loc in re.findall(r"<loc>https://laporteweathernow\.com(/[^<]*)</loc>", open(os.path.join(root, sm), encoding="utf-8").read()):
             if not exists(loc):
                 problems.append(f"sitemap.xml lists {loc}, which doesn't exist")
+    # Netlify silently ignores a redirect like "/radar/*  /radar  301" (the * also matches /radar
+    # itself, so Netlify treats it as a loop), and the ignored rule also stops every later rule for
+    # those addresses. Found live on Oct. 5, 2026; checked against Netlify's own redirect engine.
+    rd = files.get("_redirects")
+    if rd:
+        for n, line in enumerate(open(os.path.join(root, rd), encoding="utf-8").read().splitlines(), 1):
+            parts = line.split()
+            if len(parts) < 2 or parts[0].startswith("#"):
+                continue
+            frm, to = parts[0], parts[1]
+            status = parts[2] if len(parts) > 2 else "301"
+            if frm.endswith("/*") and status.startswith("3") and not re.search(r"[#?]", to) and to.rstrip("/") == frm[:-2]:
+                base = frm[:-2]
+                problems.append(f"_redirects line {n}: Netlify ignores \"{frm}  {to}\" and every later rule for those addresses; "
+                                f"use \"{base}/:slug  {to}\" and \"{base}/:slug/*  {to}\" instead")
     return pages, problems
 
 
