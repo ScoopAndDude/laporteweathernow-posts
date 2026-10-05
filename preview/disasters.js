@@ -316,7 +316,7 @@
   function fireRadius(f, zoom) {
     const [frp, , , steady] = f;
     const r = steady ? 3 : frp > 5 ? Math.min(7, 2 + Math.log10(frp) * 1.6) : 2;
-    const k = zoom <= 2 ? 0.45 : zoom <= 3 ? 0.6 : zoom <= 4 ? 0.8 : 1;
+    const k = zoom <= 2 ? 0.35 : zoom <= 3 ? 0.55 : zoom <= 4 ? 0.8 : 1;
     return Math.max(1, r * k);
   }
 
