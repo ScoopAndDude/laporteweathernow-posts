@@ -1,6 +1,6 @@
 {
  "about": "Official weather for La Porte, Indiana, saved by a GitHub job for the Daily Scoop (laporteweathernow.com/daily-scoop). Copied from NWS, SPC and WPC as-is; see scripts/nws_snapshot.py.",
- "fetched": "2026-10-05T05:02:08-05:00",
+ "fetched": "2026-10-05T05:41:55-05:00",
  "place": "La Porte, IN",
  "lat": 41.6081,
  "lon": -86.7189,
@@ -23,7 +23,7 @@
  },
  "observation": {
   "station": "KPPO (La Porte Municipal Airport)",
-  "time": "2026-10-05T04:35:00-05:00",
+  "time": "2026-10-05T05:15:00-05:00",
   "weather": "Clear",
   "temperatureF": 45,
   "dewpointF": 45,
@@ -36,26 +36,15 @@
   },
   "visibilityMiles": 10.0,
   "pressureInHg": 30.23,
-  "metar": "KPPO 050935Z AUTO 31003KT 10SM CLR 07/07 A3023 RMK AO2"
+  "metar": "KPPO 051015Z AUTO 31003KT 10SM CLR 07/07 A3023 RMK AO2"
  },
  "forecast": {
   "updated": "2026-10-05T09:30:18+00:00",
-  "generated": "2026-10-05T09:47:03+00:00",
+  "generated": "2026-10-05T10:02:03+00:00",
   "timesNote": "Clock times in the forecast wording are already in America/Chicago (La Porte's real time). NWS writes them in America/Indiana/Indianapolis, which it has on file for La Porte by mistake.",
   "periods": [
    {
-    "name": "Overnight",
-    "start": "2026-10-05T05:00:00-04:00",
-    "end": "2026-10-05T06:00:00-04:00",
-    "isDaytime": false,
-    "temperatureF": 45,
-    "rainChancePercent": 0,
-    "wind": "NW 5 mph",
-    "short": "Clear",
-    "detailed": "Clear, with a low around 45. Northwest wind around 5 mph."
-   },
-   {
-    "name": "Monday",
+    "name": "Today",
     "start": "2026-10-05T06:00:00-04:00",
     "end": "2026-10-05T18:00:00-04:00",
     "isDaytime": true,
@@ -66,7 +55,7 @@
     "detailed": "Sunny, with a high near 66. North wind around 5 mph."
    },
    {
-    "name": "Monday Night",
+    "name": "Tonight",
     "start": "2026-10-05T18:00:00-04:00",
     "end": "2026-10-06T06:00:00-04:00",
     "isDaytime": false,
@@ -107,7 +96,7 @@
     "rainChancePercent": 0,
     "wind": "W 5 to 10 mph",
     "short": "Sunny",
-    "detailed": "Sunny, with a high near 72."
+    "detailed": "Sunny, with a high near 72. West wind 5 to 10 mph."
    },
    {
     "name": "Wednesday Night",
@@ -196,6 +185,17 @@
     "wind": "S 10 mph",
     "short": "Mostly Sunny",
     "detailed": "Mostly sunny, with a high near 76."
+   },
+   {
+    "name": "Sunday Night",
+    "start": "2026-10-11T18:00:00-04:00",
+    "end": "2026-10-12T06:00:00-04:00",
+    "isDaytime": false,
+    "temperatureF": 55,
+    "rainChancePercent": 9,
+    "wind": "S 5 to 10 mph",
+    "short": "Partly Cloudy",
+    "detailed": "Partly cloudy, with a low around 55."
    }
   ]
  },
@@ -205,15 +205,11 @@
   "next72hInches": 0.0,
   "byPeriod": [
    {
-    "name": "Overnight",
+    "name": "Today",
     "inches": 0.0
    },
    {
-    "name": "Monday",
-    "inches": 0.0
-   },
-   {
-    "name": "Monday Night",
+    "name": "Tonight",
     "inches": 0.0
    },
    {
@@ -259,6 +255,10 @@
    {
     "name": "Sunday",
     "inches": 0
+   },
+   {
+    "name": "Sunday Night",
+    "inches": 0
    }
   ]
  },
@@ -269,7 +269,7 @@
  },
  "discussion": {
   "issued": "2026-10-05T04:29:00-05:00",
-  "ageHours": 0.6,
+  "ageHours": 1.2,
   "text": "000\nFXUS63 KIWX 050929\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n529 AM EDT Mon Oct 5 2026\n\n.KEY MESSAGES...\n\n- Primarily dry conditions are expected through this work week.\n\n- After starting out with slightly below normal high temps,\n  highs slightly above normal take over for the end of the work\n  week.\n\n- Cold Tuesday morning with lows dipping down to the 30s for\n  some areas north of US-6.\n\n\n&&\n\n.DISCUSSION...\nIssued at 426 AM EDT Mon Oct 5 2026\n\nPretty uneventful period this week with the biggest impacts\nbeing the cool, brisk mornings with patches of light fog/mist\npossible each morning. The coldest morning is expected overnight\ntonight into Tuesday morning with lows in the low 40s to upper \n30s especially north of US-6. A few patches of light frost \nespecially on metal vehicles or roof tops may be possible in \nthese same areas but at this time dew points look to stay warm \nenough for mainly dew covering of surfaces. Will continue to \nmonitor as stated previously if a bit drier airmass is able to \npush far enough south into the area that lower lows would be \npossible. Still stressing that if you have temperature sensitive\nplants/animals it would be best to protect them out of an \nabundance of caution.\n\nDry conditions continue through the work week and next chances\nof precipitation look to come by late weekend. High \ntemperatures this week will start out below normal and trend \nwarmer through the week to more slightly above normal levels \n(low to mid 70s). Just for reference current normal high \ntemperatures at Fort Wayne is currently at 69 degrees and 67 for\nSouth Bend.\n\n&&\n\n.AVIATION /12Z TAFS THROUGH 12Z TUESDAY/... \nIssued at 529 AM EDT Mon Oct 5 2026\n\nVFR conditions are expected at the terminals. \n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...Small Craft Advisory until 11 AM EDT this morning for LMZ043-\n     046.\n\n&&\n\n$$\n\nDISCUSSION...Andersen\nAVIATION...MCD"
  },
  "hazardousWeatherOutlook": null,
@@ -477,12 +477,12 @@
      },
      "ncep_hrrr_conus": {
       "high": 62,
-      "low": 47,
+      "low": 46,
       "rain": 0
      },
      "gfs_seamless": {
       "high": 62,
-      "low": 47,
+      "low": 46,
       "rain": 0
      },
      "ecmwf_ifs025": {
@@ -501,7 +501,7 @@
     },
     "spread": {
      "high": 4,
-     "low": 2
+     "low": 3
     },
     "note": "NWS and the models agree within a few degrees"
    },
