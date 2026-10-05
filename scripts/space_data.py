@@ -11,7 +11,12 @@ Writes two files into FOLDER, which the "Earth from space data" job publishes as
                    Low-confidence detections are left out, and detections are merged into squares of
                    0.1 degree (about 7 miles), so the map stays quick: [lat, lon, power, count, time]
                    for each square, power = fire radiative power in megawatts (summed), time = newest
-                   detection (Unix seconds). NASA data is free to use, with credit to NASA FIRMS.
+                   detection (Unix seconds), steady = 1 when the square is a steady heat source (below).
+                   NASA data is free to use, with credit to NASA FIRMS.
+  steady.json      Squares that showed heat on 5 or more of the last 7 days in NOAA-20's 7-day file:
+                   almost always a steel mill, refinery, gas flare or volcano rather than a wildfire
+                   (the steel mills in Gary and Burns Harbor show up every day). Rebuilt once a day; the
+                   page shows these in gray as "steady heat sources" instead of calling them fires.
   satellites.json  Orbits (two-line elements) of the weather satellites CelesTrak lists, plus the
                    International Space Station, for the page to work out where each one is right now.
                    CelesTrak asks for no more than one download of the same data every 2 hours; this
@@ -39,14 +44,20 @@ CELESTRAK = [
     "https://celestrak.org/NORAD/elements/gp.php?GROUP=weather&FORMAT=tle",
     "https://celestrak.org/NORAD/elements/gp.php?CATNR=25544&FORMAT=tle",   # the space station
 ]
-CELL = 0.1          # degrees
+FIRMS_7D = "https://firms.modaps.eosdis.nasa.gov/data/active_fire/noaa-20-viirs-c2/csv/J1_VIIRS_C2_Global_7d.csv"
+CELL = 0.1           # degrees
+MAX_SQUARES = 30000  # the strongest ones, if a huge fire season ever goes past this
+STEADY_DAYS = 5      # of the last 7
 LOG = []
 
 
 def say(msg):
     print(msg)
     LOG.append(msg)
-MAX_SQUARES = 30000  # the strongest ones, if a huge fire season ever goes past this
+
+
+def square(lat, lon):
+    return (round(lat / CELL), round(lon / CELL))
 
 
 def get(url, timeout=60, tries=2):
@@ -72,7 +83,45 @@ def write(folder, name, data):
     os.replace(tmp, os.path.join(folder, name))
 
 
+def steady(folder):
+    """Rebuilds steady.json from NOAA-20's 7-day file when it's missing or a day old."""
+    path = os.path.join(folder, "steady.json")
+    try:
+        old = json.load(open(path, encoding="utf-8"))
+        age = datetime.datetime.now(datetime.timezone.utc) - datetime.datetime.fromisoformat(old["updated"].replace("Z", "+00:00"))
+        if age < datetime.timedelta(hours=20):
+            return {tuple(k) for k in old["squares"]}
+    except Exception:
+        old = None
+    try:
+        text = get(FIRMS_7D, timeout=120)
+        days = {}
+        for r in csv.DictReader(io.StringIO(text)):
+            if str(r.get("confidence", "")).strip().lower() in ("l", "low"):
+                continue
+            try:
+                key = square(float(r["latitude"]), float(r["longitude"]))
+            except (KeyError, ValueError):
+                continue
+            days.setdefault(key, set()).add(r.get("acq_date"))
+        if len(days) < 1000:
+            raise ValueError(f"only {len(days)} squares in the 7-day file")
+        keep = sorted(k for k, d in days.items() if len(d) >= STEADY_DAYS)
+        write(folder, "steady.json", {
+            "about": f"0.1-degree squares (latitude x10, longitude x10) where NOAA-20's VIIRS camera saw heat on {STEADY_DAYS} or more "
+                     "of the last 7 days: almost always factories, refineries, gas flares or volcanoes. Source: NASA FIRMS.",
+            "updated": now_iso(),
+            "squares": [list(k) for k in keep],
+        })
+        say(f"Steady heat sources: {len(keep)} squares (heat on {STEADY_DAYS}+ of 7 days).")
+        return set(keep)
+    except Exception as e:
+        say(f"Steady heat sources: couldn't rebuild ({e}); {'keeping the last copy' if old else 'none marked this time'}.")
+        return {tuple(k) for k in old["squares"]} if old else set()
+
+
 def fires(folder):
+    still = steady(folder)
     squares, used, raw = {}, [], 0
     for sat, url in FIRMS.items():
         try:
@@ -95,7 +144,7 @@ def fires(folder):
             except (KeyError, ValueError):
                 continue
             raw += 1
-            key = (round(lat / CELL), round(lon / CELL))
+            key = square(lat, lon)
             s = squares.get(key)
             ts = int(t.timestamp())
             if s:
@@ -103,7 +152,7 @@ def fires(folder):
                 s[3] += 1
                 s[4] = max(s[4], ts)
             else:
-                squares[key] = [round(key[0] * CELL, 2), round(key[1] * CELL, 2), frp, 1, ts]
+                squares[key] = [round(key[0] * CELL, 2), round(key[1] * CELL, 2), frp, 1, ts, 1 if key in still else 0]
     if not used:
         say("Fires: no NASA FIRMS file came through; keeping the last copy.")
         return False
@@ -112,14 +161,16 @@ def fires(folder):
         s[2] = round(s[2], 1)
     write(folder, "fires.json", {
         "about": "Fires spotted by NASA's VIIRS satellite cameras in the last 24 hours, merged into 0.1-degree squares: "
-                 "[latitude, longitude, fire radiative power in megawatts (summed), detections, newest detection in Unix seconds]. "
+                 "[latitude, longitude, fire radiative power in megawatts (summed), detections, newest detection in Unix seconds, "
+                 "steady (1 = heat on 5+ of the last 7 days: usually a factory, gas flare or volcano)]. "
                  "Low-confidence detections left out. Source: NASA FIRMS (https://firms.modaps.eosdis.nasa.gov).",
         "updated": now_iso(),
         "satellites": used,
         "detections": raw,
         "fires": out,
     })
-    say(f"Fires: {raw} detections from {', '.join(used)} in {len(out)} squares.")
+    say(f"Fires: {raw} detections from {', '.join(used)} in {len(squares)} squares; saved the {len(out)} strongest "
+        f"({sum(1 for s in out if s[5])} steady heat sources).")
     return True
 
 
