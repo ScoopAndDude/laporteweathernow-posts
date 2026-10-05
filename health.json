@@ -1,269 +1,297 @@
 {
  "about": "Daily health check for laporteweathernow.com (scripts/site_health.py). 'problems' lists anything to fix, in plain English.",
- "checked": "2026-10-05T09:12:10-05:00",
+ "checked": "2026-10-05T16:16:03-05:00",
  "ok": false,
  "problems": [
-  "GitHub job 'Weather radio' failed 1 time in the last 7 days.",
+  "Page /farm/ is missing the site menu.",
+  "GitHub job 'Daily Scoop updates' failed 3 times in the last 7 days.",
+  "GitHub job 'Weather radio' failed 3 times in the last 7 days.",
+  "GitHub job 'Homepage weather copy' failed 1 time in the last 7 days.",
+  "GitHub job 'Backup Daily Scoop' failed 2 times in the last 7 days.",
+  "GitHub job 'Timer' failed 2 times in the last 7 days.",
   "GitHub job 'NWS weather snapshot' failed 1 time in the last 7 days."
  ],
- "urgent": [],
+ "urgent": [
+  "Page /farm/ is missing the site menu."
+ ],
  "stuck": [],
  "pages": [
   {
    "path": "/",
    "status": 200,
-   "ms": 376,
-   "fingerprint": "8b71f463a3",
+   "ms": 324,
+   "fingerprint": "0bebbab568",
    "groupedMenu": true
   },
   {
    "path": "/daily-scoop",
    "status": 200,
-   "ms": 383,
-   "fingerprint": "902fbc2ac1",
+   "ms": 335,
+   "fingerprint": "1922fd4f48",
    "groupedMenu": true
   },
   {
    "path": "/emergency",
    "status": 200,
-   "ms": 470,
-   "fingerprint": "20f4063d8c",
+   "ms": 388,
+   "fingerprint": "9e64cea4dd",
    "groupedMenu": true
   },
   {
    "path": "/trip-planner",
    "status": 200,
-   "ms": 306,
-   "fingerprint": "250423af4c",
+   "ms": 256,
+   "fingerprint": "79f3dcc60b",
    "groupedMenu": true
   },
   {
    "path": "/camp-map",
    "status": 200,
-   "ms": 375,
-   "fingerprint": "af38db4d8b",
+   "ms": 341,
+   "fingerprint": "9bd39dee8c",
    "groupedMenu": true
   },
   {
    "path": "/storm-patterns",
    "status": 200,
-   "ms": 328,
-   "fingerprint": "ca2918aa93",
+   "ms": 335,
+   "fingerprint": "293a7dda6c",
    "groupedMenu": true
   },
   {
    "path": "/travel-guides",
    "status": 200,
-   "ms": 283,
-   "fingerprint": "bfe371df76",
+   "ms": 306,
+   "fingerprint": "d050f0ae0f",
    "groupedMenu": true
   },
   {
    "path": "/global",
    "status": 200,
-   "ms": 469,
-   "fingerprint": "9f4589e45e",
+   "ms": 299,
+   "fingerprint": "9a4d76fb63",
    "groupedMenu": true
   },
   {
    "path": "/disasters",
    "status": 200,
-   "ms": 315,
-   "fingerprint": "298ad29e41",
+   "ms": 308,
+   "fingerprint": "69c1a56d5e",
    "groupedMenu": true
   },
   {
    "path": "/amazon",
    "status": 200,
-   "ms": 454,
-   "fingerprint": "6bdf188716",
+   "ms": 385,
+   "fingerprint": "4da571025a",
    "groupedMenu": true
   },
   {
    "path": "/markets",
    "status": 200,
-   "ms": 208,
-   "fingerprint": "a5e2ab6364",
+   "ms": 245,
+   "fingerprint": "9dd63a4f69",
    "groupedMenu": true
   },
   {
    "path": "/ai-survival-guide",
    "status": 200,
-   "ms": 282,
-   "fingerprint": "3aa838d2be",
+   "ms": 216,
+   "fingerprint": "e045c04822",
    "groupedMenu": true
   },
   {
    "path": "/faith",
    "status": 200,
-   "ms": 355,
-   "fingerprint": "8c13a6b5c9",
+   "ms": 327,
+   "fingerprint": "9493906a6b",
    "groupedMenu": true
   },
   {
    "path": "/sources",
    "status": 200,
-   "ms": 487,
-   "fingerprint": "a0071df97a",
+   "ms": 298,
+   "fingerprint": "c460065be5",
    "groupedMenu": true
   },
   {
    "path": "/world-art",
    "status": 200,
-   "ms": 362,
-   "fingerprint": "a93ea1b57c",
+   "ms": 389,
+   "fingerprint": "974906c509",
    "groupedMenu": true
   },
   {
    "path": "/community",
    "status": 200,
-   "ms": 89,
-   "fingerprint": "8be7d06433",
+   "ms": 331,
+   "fingerprint": "d69d32b1f7",
    "groupedMenu": true
   },
   {
    "path": "/history",
    "status": 200,
-   "ms": 424,
-   "fingerprint": "3d6f40610b",
+   "ms": 234,
+   "fingerprint": "4eb9e0b734",
    "groupedMenu": true
   },
   {
    "path": "/media-kit",
    "status": 200,
-   "ms": 85,
-   "fingerprint": "27d54bb2c1",
+   "ms": 257,
+   "fingerprint": "ffe08ba779",
    "groupedMenu": true
   },
   {
    "path": "/about",
    "status": 200,
-   "ms": 242,
-   "fingerprint": "dc36dfd05a",
+   "ms": 268,
+   "fingerprint": "40f3fc1d76",
    "groupedMenu": true
   },
   {
    "path": "/friends",
    "status": 200,
-   "ms": 288,
-   "fingerprint": "378c9232c9",
+   "ms": 215,
+   "fingerprint": "985b2557d5",
    "groupedMenu": true
   },
   {
    "path": "/english",
    "status": 200,
-   "ms": 269,
-   "fingerprint": "81c8991784",
+   "ms": 238,
+   "fingerprint": "68afdf5d31",
    "groupedMenu": true
   },
   {
    "path": "/space-lab",
    "status": 200,
-   "ms": 334,
-   "fingerprint": "c3a08e497e",
+   "ms": 321,
+   "fingerprint": "21036979d2",
    "groupedMenu": true
   },
   {
    "path": "/more-from-scoop",
    "status": 200,
-   "ms": 275,
-   "fingerprint": "df748821e5",
+   "ms": 225,
+   "fingerprint": "ca17008eeb",
    "groupedMenu": true
   },
   {
    "path": "/contact",
    "status": 200,
-   "ms": 290,
-   "fingerprint": "872797e61a",
+   "ms": 244,
+   "fingerprint": "36cf5da051",
    "groupedMenu": true
   },
   {
    "path": "/golf",
    "status": 200,
-   "ms": 386,
-   "fingerprint": "c4bdf86b9a",
+   "ms": 231,
+   "fingerprint": "14536b5dc8",
    "groupedMenu": true
   },
   {
    "path": "/weekend",
    "status": 200,
-   "ms": 341,
-   "fingerprint": "dcb80d67c4",
+   "ms": 210,
+   "fingerprint": "6e31298ed7",
    "groupedMenu": true
   },
   {
    "path": "/privacy",
    "status": 200,
-   "ms": 280,
-   "fingerprint": "8ffdee813d",
+   "ms": 264,
+   "fingerprint": "15e14df6ca",
    "groupedMenu": true
   },
   {
    "path": "/track-record",
    "status": 200,
-   "ms": 365,
-   "fingerprint": "7efd92d3e3",
+   "ms": 319,
+   "fingerprint": "27b02c61ff",
    "groupedMenu": true
   },
   {
    "path": "/hardhat/",
    "status": 200,
-   "ms": 311,
-   "fingerprint": "5d24b5ad71",
+   "ms": 335,
+   "fingerprint": "724dd04dff",
    "groupedMenu": false
   },
   {
    "path": "/hardhat/dashboard",
    "status": 200,
-   "ms": 294,
-   "fingerprint": "86af0c4b9a",
+   "ms": 260,
+   "fingerprint": "07542ac7c4",
    "groupedMenu": false
   },
   {
    "path": "/hardhat/terms",
    "status": 200,
-   "ms": 138,
-   "fingerprint": "da23272f18",
+   "ms": 273,
+   "fingerprint": "d40a8033f3",
    "groupedMenu": false
   },
   {
    "path": "/hardhat/privacy",
    "status": 200,
-   "ms": 264,
-   "fingerprint": "5fbcc31b8f",
+   "ms": 172,
+   "fingerprint": "49bb498055",
    "groupedMenu": false
   },
   {
    "path": "/snow-day",
    "status": 200,
-   "ms": 259,
-   "fingerprint": "7f9916d12c",
+   "ms": 238,
+   "fingerprint": "75cc3f567d",
    "groupedMenu": true
   },
   {
    "path": "/weather-box",
    "status": 200,
-   "ms": 247,
-   "fingerprint": "0f18f3d496",
+   "ms": 281,
+   "fingerprint": "632139f7aa",
+   "groupedMenu": true
+  },
+  {
+   "path": "/farm/",
+   "status": 200,
+   "ms": 225,
+   "fingerprint": "f2e9045b1a",
+   "groupedMenu": false
+  },
+  {
+   "path": "/lake-michigan",
+   "status": 200,
+   "ms": 253,
+   "fingerprint": "0fc696ff59",
+   "groupedMenu": true
+  },
+  {
+   "path": "/radar",
+   "status": 200,
+   "ms": 244,
+   "fingerprint": "6f4695131b",
    "groupedMenu": true
   },
   {
    "path": "/hardhat/pay",
    "status": 200,
-   "ms": 231,
+   "ms": 279,
    "fingerprint": "f9a5bee5a4",
    "groupedMenu": false
   },
   {
    "path": "/hardhat/thanks",
    "status": 200,
-   "ms": 249,
-   "fingerprint": "271dc97654",
+   "ms": 220,
+   "fingerprint": "244007197a",
    "groupedMenu": false
   }
  ],
  "assets": {
-  "checked": 29,
+  "checked": 30,
   "notOk": []
  },
  "data": {
@@ -348,10 +376,10 @@
    ]
   },
   "nws-snapshot.json": {
-   "ageHours": 3.5
+   "ageHours": 2.0
   },
   "scorecard.json": {
-   "ageHours": 3.5
+   "ageHours": 2.0
   },
   "world-watch.json": {
    "updated": "2026-10-02",
@@ -359,11 +387,11 @@
   },
   "home.json": {
    "status": 200,
-   "ageHours": 0.2
+   "ageHours": 0.6
   },
   "radio.json": {
    "status": 200,
-   "ageHours": 0.2
+   "ageHours": 0.6
   },
   "fuel-prices.json": {
    "week": "2026-09-28",
@@ -372,7 +400,7 @@
   "tiles/index.json": {
    "made": "2026-10-01T17:50:39+00:00",
    "dataFrom": "2026-10-01T17:45:14+00:00",
-   "ageDays": 3.9
+   "ageDays": 4.1
   },
   "tiles on GitHub Pages": {
    "status": 200
@@ -380,10 +408,64 @@
  },
  "githubJobs": {
   "failedLast7days": {
-   "Weather radio": 1,
+   "Daily Scoop updates": 3,
+   "Weather radio": 3,
+   "Homepage weather copy": 1,
+   "Backup Daily Scoop": 2,
+   "Timer": 2,
    "NWS weather snapshot": 1
   },
   "failures": [
+   {
+    "name": "Daily Scoop updates",
+    "when": "2026-10-05T20:52:01Z",
+    "url": "https://github.com/ScoopAndDude/laporteweathernow-posts/actions/runs/37372373722"
+   },
+   {
+    "name": "Weather radio",
+    "when": "2026-10-05T20:51:59Z",
+    "url": "https://github.com/ScoopAndDude/laporteweathernow-posts/actions/runs/37372371270"
+   },
+   {
+    "name": "Homepage weather copy",
+    "when": "2026-10-05T20:51:58Z",
+    "url": "https://github.com/ScoopAndDude/laporteweathernow-posts/actions/runs/37372369253"
+   },
+   {
+    "name": "Backup Daily Scoop",
+    "when": "2026-10-05T20:31:25Z",
+    "url": "https://github.com/ScoopAndDude/laporteweathernow-posts/actions/runs/37370265350"
+   },
+   {
+    "name": "Timer",
+    "when": "2026-10-05T20:16:47Z",
+    "url": "https://github.com/ScoopAndDude/laporteweathernow-posts/actions/runs/37368741231"
+   },
+   {
+    "name": "Daily Scoop updates",
+    "when": "2026-10-05T20:07:02Z",
+    "url": "https://github.com/ScoopAndDude/laporteweathernow-posts/actions/runs/37367731123"
+   },
+   {
+    "name": "Weather radio",
+    "when": "2026-10-05T20:07:00Z",
+    "url": "https://github.com/ScoopAndDude/laporteweathernow-posts/actions/runs/37367728504"
+   },
+   {
+    "name": "Daily Scoop updates",
+    "when": "2026-10-05T19:52:28Z",
+    "url": "https://github.com/ScoopAndDude/laporteweathernow-posts/actions/runs/37366195306"
+   },
+   {
+    "name": "Backup Daily Scoop",
+    "when": "2026-10-05T19:43:04Z",
+    "url": "https://github.com/ScoopAndDude/laporteweathernow-posts/actions/runs/37365194380"
+   },
+   {
+    "name": "Timer",
+    "when": "2026-10-05T19:31:47Z",
+    "url": "https://github.com/ScoopAndDude/laporteweathernow-posts/actions/runs/37363988486"
+   },
    {
     "name": "Weather radio",
     "when": "2026-09-30T18:11:57Z",
@@ -395,6 +477,6 @@
     "url": "https://github.com/ScoopAndDude/laporteweathernow-posts/actions/runs/36714569804"
    }
   ],
-  "lastTick": "2026-10-05T14:01:48Z"
+  "lastTick": "2026-10-05T21:01:47Z"
  }
 }
