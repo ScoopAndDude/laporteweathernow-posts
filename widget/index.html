@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>La Porte weather | La Porte Weather Now</title>
+<meta name="robots" content="noindex" />
+<!--
+  The free La Porte weather box other websites can show (added Oct. 5, 2026).
+  Embed: <iframe src="https://scoopanddude.github.io/laporteweathernow-posts/widget/" ...>
+  Add ?theme=light for a white box. It reads home.json (the official NWS copy that a GitHub job
+  refreshes every 15 minutes), so showing it costs nothing and never touches Netlify.
+  Rules it follows: official NWS words only; it never says "no alerts" from an old or failed
+  check; if the copy is more than 3 hours old it says so.
+-->
+<style>
+  :root { --bg: #141414; --ink: #ffffff; --muted: #c4c4c4; --line: #2b2b2b; --accent: #ffb400; --badge-ink: #141414; }
+  :root[data-theme="light"] { --bg: #ffffff; --ink: #141414; --muted: #555b61; --line: #e2e2e2; --accent: #9a4f00; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { background: transparent; }
+  body { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ink); }
+  .w { background: var(--bg); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px 10px; display: flex; flex-direction: column; gap: 8px; min-height: 100vh; }
+  a { color: inherit; text-decoration: none; }
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .place { font-weight: 700; font-size: 14px; letter-spacing: .02em; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; color: var(--muted); }
+  .badge b { background: linear-gradient(135deg, #ffb400, #ff8a00); color: var(--badge-ink); border-radius: 6px; padding: 3px 5px; font-family: Georgia, "Times New Roman", serif; font-size: 11px; }
+  .now { display: flex; align-items: center; gap: 12px; }
+  .temp { font-family: Georgia, "Times New Roman", serif; font-size: 44px; font-weight: 700; line-height: 1; }
+  .cond b { display: block; font-size: 15px; }
+  .cond span { font-size: 12.5px; color: var(--muted); }
+  .fc { font-size: 13px; line-height: 1.4; }
+  .fc p + p { margin-top: 2px; }
+  .fc strong { color: var(--accent); font-weight: 700; }
+  .alert { display: block; border-radius: 8px; padding: 7px 10px; font-size: 13px; font-weight: 700; line-height: 1.3; color: #fff; background: #9a3412; }
+  .alert.warning { background: #b3261e; }
+  .alert.watch { background: #c2410c; }
+  .alert.note { background: transparent; color: var(--accent); border: 1px solid var(--line); font-weight: 600; }
+  .alert small { display: block; font-weight: 600; opacity: .9; margin-top: 1px; }
+  .foot { margin-top: auto; font-size: 11.5px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 2px 8px; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 7px; }
+  .foot a { color: var(--accent); font-weight: 700; }
+  .stale { color: var(--accent); font-weight: 700; }
+  .loading { font-size: 13px; color: var(--muted); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+</style>
+</head>
+<body>
+<div class="w" role="region" aria-label="La Porte weather from La Porte Weather Now">
+  <div class="top"><span class="place">La Porte, IN</span><span class="badge"><b>LPWN</b>La Porte Weather Now</span></div>
+  <div id="body"><p class="loading">Loading the National Weather Service forecast&hellip;</p></div>
+  <div class="foot"><a href="https://laporteweathernow.com/" target="_blank" rel="noopener">Full forecast &rarr;</a><span id="stamp">Data: National Weather Service</span></div>
+</div>
+<script>
+(function () {
+  var SRC = "https://raw.githubusercontent.com/ScoopAndDude/laporteweathernow-posts/live/home.json";
+  var SITE = "https://laporteweathernow.com/";
+  var TZ = "America/Chicago";
+  var STALE_MS = 3 * 60 * 60 * 1000;
+  try { if (/[?&]theme=light\b/.test(location.search)) document.documentElement.setAttribute("data-theme", "light"); } catch (e) {}
+
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function fmt(t, opts) { try { return new Intl.DateTimeFormat("en-US", Object.assign({ timeZone: TZ }, opts)).format(new Date(t)); } catch (e) { return ""; } }
+  function clock(t) { return fmt(t, { hour: "numeric", minute: "2-digit" }); }
+  function until(a) {
+    var t = a.ends || a.expires;
+    if (!t) return "";
+    var sameDay = fmt(t, { year: "numeric", month: "numeric", day: "numeric" }) === fmt(Date.now(), { year: "numeric", month: "numeric", day: "numeric" });
+    return "until " + (sameDay ? "" : fmt(t, { weekday: "short" }) + " ") + clock(t);
+  }
+  function stillOn(a) {
+    var t = a.ends || a.expires;
+    return !t || new Date(t).getTime() > Date.now();
+  }
+  function kind(ev) { return /warning/i.test(ev) ? "warning" : /watch/i.test(ev) ? "watch" : ""; }
+  function period(p) {
+    if (!p) return "";
+    var rain = p.probabilityOfPrecipitation && p.probabilityOfPrecipitation.value;
+    // The chance (NWS "probability of precipitation") rides next to NWS's own words, which already say rain or snow.
+    return "<p><strong>" + esc(p.name) + ":</strong> " + esc(p.shortForecast) + (rain >= 20 ? " (" + esc(rain) + "%)" : "") + ", " +
+      (p.isDaytime ? "high " : "low ") + esc(p.temperature) + "&deg;.</p>";
+  }
+
+  function render(d) {
+    var body = document.getElementById("body"), stamp = document.getElementById("stamp");
+    var fetched = d && d.fetched ? new Date(d.fetched).getTime() : 0;
+    var stale = !fetched || Date.now() - fetched > STALE_MS;
+    var html = "";
+    var c = d && d.current;
+    if (c && c.tempF != null) {
+      var bits = [];
+      if (c.windMph != null) bits.push("Wind " + esc(c.windMph) + " mph" + (c.gustMph ? ", gusts " + esc(c.gustMph) : ""));
+      if (c.humidity != null) bits.push("Humidity " + esc(c.humidity) + "%");
+      html += '<a class="now" href="' + SITE + '" target="_blank" rel="noopener"><div class="temp">' + esc(Math.round(c.tempF)) + '&deg;</div><div class="cond"><b>' + esc(c.text || "") + "</b><span>" + bits.join(" &middot; ") + "</span></div></a>";
+    }
+    var daily = (d && d.daily) || [];
+    var upcoming = daily.filter(function (p) { return new Date(p.endTime).getTime() > Date.now(); });
+    if (upcoming.length) html += '<div class="fc">' + period(upcoming[0]) + period(upcoming[1]) + "</div>";
+    // Alerts: only what the Weather Service has out now. An old or failed check never reads as "none".
+    var alerts = d && Array.isArray(d.alerts) ? d.alerts.filter(stillOn) : null;
+    if (alerts && alerts.length && !stale) {
+      alerts.sort(function (a, b) { return (kind(b.event) === "warning") - (kind(a.event) === "warning"); });
+      var a = alerts[0], more = alerts.length - 1;
+      html += '<a class="alert ' + kind(a.event) + '" href="' + SITE + 'emergency" target="_blank" rel="noopener">&#9888;&#65039; ' + esc(a.event) + " " + esc(until(a)) +
+        "<small>" + (more ? "+" + more + " more &middot; " : "") + "Tap for the official details and what to do</small></a>";
+    } else if (stale || alerts === null) {
+      html += '<a class="alert note" href="' + SITE + 'emergency" target="_blank" rel="noopener">Check current alerts at laporteweathernow.com</a>';
+    }
+    if (!d || (!c && !upcoming.length)) html = '<p class="loading">The forecast isn’t available right now.</p>' + html;
+    body.innerHTML = html;
+    stamp.innerHTML = fetched ? (stale ? '<span class="stale">Delayed: as of ' + esc(clock(fetched)) + "</span>" : "NWS data, " + esc(clock(fetched))) : "Data: National Weather Service";
+  }
+
+  function load() {
+    fetch(SRC + "?t=" + Math.floor(Date.now() / 300000), { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(render)
+      .catch(function () { render(null); });
+  }
+  load();
+  setInterval(load, 15 * 60 * 1000);
+})();
+</script>
+</body>
+</html>
