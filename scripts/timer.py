@@ -10,6 +10,8 @@ starts whichever jobs are due at that moment, in La Porte (Central) time:
                        (added Oct. 6, 2026; it only saves pages that changed), Snow totals (it only asks
                        for reports once an hour October-May and once a day in summer)
   5:00-5:14 AM         NWS weather snapshot (backup; the morning Scoop task starts its own)
+  5:30, 6:30 and 7:30 AM (each for 15 minutes)   The Shore Call (added Oct. 6, 2026; the first start
+                       makes the day's call, the later ones only try again if it couldn't)
   6:30-8:09 AM         Backup Daily Scoop (it posts only if today's Scoop isn't up)
   8:10-8:24 AM         Site health check
   9:15-9:29 AM, 4:45-4:59 PM   Markets numbers from BLS
@@ -38,6 +40,7 @@ EVERY_TICK = ["home-cache.yml", "radio.yml", "scoop-update.yml", "scoop-pages.ym
 # (workflow, [(from, to), ...], days): days are Python weekdays (Monday is 0); None means every day.
 WINDOWS = [
     ("nws-snapshot.yml", [("05:00", "05:14")], None),
+    ("shore-call.yml", [("05:30", "05:44"), ("06:30", "06:44"), ("07:30", "07:44")], None),
     ("backup-scoop.yml", [("06:30", "08:09")], None),
     ("site-health.yml", [("08:10", "08:24")], None),
     ("markets-data.yml", [("09:15", "09:29"), ("16:45", "16:59")], None),

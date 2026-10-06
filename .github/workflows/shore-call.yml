@@ -1,0 +1,53 @@
+# The Shore Call: La Porte Weather Now's morning call for the La Porte County shore (swim, piers,
+# small boats, and in winter the lake-effect snow band), made from NWS forecasts and graded the next
+# day against the Michigan City buoy and lighthouse (scripts/shore_call.py), saved in shore.json for
+# laporteweathernow.com/lake-michigan. Started by the Timer at 5:30, 6:30 and 7:30 AM Central; once
+# today's call is made, the later starts only grade.
+name: Shore Call
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Make today's call now if it isn't made yet, at any hour (a late call isn't scored)"
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - scripts/shore_call.py
+      - .github/workflows/shore-call.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: shore-call
+  cancel-in-progress: false
+
+jobs:
+  call:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Make today's call and grade earlier ones
+        env:
+          FORCE: ${{ (github.event_name == 'push' || github.event.inputs.force == 'true') && 'force' || '' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          python3 scripts/shore_call.py $FORCE
+          if git diff --quiet -- shore.json && ! git ls-files --others --exclude-standard | grep -q '^shore.json$'; then exit 0; fi
+          cp shore.json "$RUNNER_TEMP/shore.json"
+          for i in 1 2 3 4; do
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            cp "$RUNNER_TEMP/shore.json" shore.json
+            git add shore.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -q -m "Shore Call ($(TZ=America/Chicago date '+%b %-d, %-I:%M %p %Z'))"
+            if git push -q origin HEAD:main; then exit 0; fi
+            sleep 5
+          done
+          exit 1
