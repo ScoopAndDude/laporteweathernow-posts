@@ -64,8 +64,8 @@ ZONE_NAMES = {"INZ103": "La Porte County shore", "INZ203": "southern La Porte Co
               "LMZ046": "Michigan City to New Buffalo", "LMZ043": "New Buffalo to St. Joseph",
               "LMZ745": "Burns Harbor to Michigan City"}
 # NWS Northern Indiana forecast grid cells on the lake off Michigan City and Long Beach, tried in order
-# until one has wave heights (the town cells on the shore below are land).
-MARINE_CELLS = [(8, 65), (7, 65), (8, 66), (9, 66), (7, 64)]
+# until one has real wave heights (cells on land, or masked, carry zeros). The town cells are land.
+MARINE_CELLS = [(8, 66), (7, 66), (9, 67), (8, 67), (7, 67), (10, 67), (6, 66), (8, 65), (7, 65), (9, 66)]
 # name, NWS Northern Indiana grid cell (same as the home page's town forecasts), and the town's middle
 TOWNS = [
     ("Long Beach", 8, 64, 41.7456, -86.8514), ("Michigan City", 7, 63, 41.7344, -86.8731),
@@ -427,6 +427,9 @@ def hourly(field, conv):
     return out
 
 
+marine_tries = []   # what each grid cell had, saved in shore.json so a bad cell is easy to spot
+
+
 def marine_grid(cache):
     cells = [tuple(cache)] if cache else []
     cells += [c for c in MARINE_CELLS if c not in cells]
@@ -437,7 +440,10 @@ def marine_grid(cache):
             errors.append({"source": f"lake grid IWX/{x},{y}", "error": str(e)[:200]})
             continue
         waves = hourly(p.get("waveHeight"), to_ft)
-        if waves:
+        top = max(waves.values(), default=None)
+        marine_tries.append({"cell": [x, y], "hours": len(waves), "maxWaveFt": None if top is None else round(top, 1),
+                             "elevationM": (p.get("elevation") or {}).get("value")})
+        if waves and top >= 0.2:   # the lake is never forecast dead flat; all zeros means land or masked
             return [x, y], {"waves": waves, "wind": hourly(p.get("windSpeed"), to_kt),
                             "gust": hourly(p.get("windGust"), to_kt)}
     return None, None
@@ -896,6 +902,11 @@ def main():
             print("::warning title=Shore Call::Couldn't read the lake forecast or the alerts; no call yet. The next run will try again.")
     elif have_today:
         print("Today's call is already made.")
+        if force:
+            cell, _ = attempt("NWS lake forecast grid", marine_grid, None) or (None, None)
+            if cell != old.get("marineCell") or marine_tries:
+                old["marineCell"] = cell
+                changed = True
     else:
         print("No call due (the call is made between 5 a.m. and noon).")
 
@@ -907,7 +918,8 @@ def main():
     for c in calls[1:]:
         c.pop("hours", None)
     data = {"about": ABOUT, "updated": now.isoformat(timespec="seconds"), "score": score,
-            "marineCell": old.get("marineCell"), "calls": calls[:KEEP_CALLS], "errors": errors}
+            "marineCell": old.get("marineCell"), "marineCheck": marine_tries or old.get("marineCheck"),
+            "calls": calls[:KEEP_CALLS], "errors": errors}
     with open(OUT, "w", encoding="utf-8", newline="\n") as fh:
         fh.write(json.dumps(data, ensure_ascii=False, indent=1) + "\n")
     print(f"shore.json saved: {len(data['calls'])} call(s); score {score}.")
