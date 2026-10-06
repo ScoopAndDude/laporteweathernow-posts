@@ -1,0 +1,131 @@
+{
+  "about": "Trick-or-treat hours for every La Porte County, IN community, read by laporteweathernow.com/trick-or-treat (the page updates within about 10 minutes of a change here; no site publish needed). Rules: put hours under 'hours' only when the town itself (its website, council, police or official social page) or reliable local news has announced them for this year, with that source and status 'official' (the town or its police) or 'reported' (local news). Until then hours stays null and 'last' shows last year's hours with their source. Never copy last year's hours into 'hours'. Dates are YYYY-MM-DD and times are 24-hour Central Time. 'events' are extra trick-or-treat events with their own date, hours and source; drop or correct one if its organizer changes it.",
+  "year": 2026,
+  "updated": "2026-10-06T13:00:00-05:00",
+  "checked": "2026-10-06",
+  "usual": {"date": "2026-10-31", "start": "17:00", "end": "19:00"},
+  "towns": [
+    {
+      "id": "la-porte", "name": "La Porte", "lat": 41.6081, "lon": -86.7189,
+      "hours": {"date": "2026-10-31", "start": "17:00", "end": "19:00", "status": "official",
+        "note": "Turn your porch light on if you're handing out treats.",
+        "source": {"name": "City of La Porte events calendar", "url": "https://livinthelakelife.org/events/downtown-trick-or-treat/"}},
+      "last": {"date": "2025-10-31", "start": "17:00", "end": "19:00",
+        "source": {"name": "City of La Porte", "url": "https://livinthelakelife.org/events/trick-or-treat-in-the-city-of-la-porte/"}},
+      "announces": "The city's Board of Public Works and Safety sets the hours; they're posted on the city events calendar (livinthelakelife.org/events) and the city's Facebook page."
+    },
+    {
+      "id": "michigan-city", "name": "Michigan City", "lat": 41.7344, "lon": -86.8731,
+      "hours": null,
+      "last": {"date": "2025-10-31", "start": "17:00", "end": "19:00",
+        "source": {"name": "Michigan City Police, via WIMS", "url": "https://wimsradio.com/2025/10/18/mcpd-give-information-on-trick-or-treat-taking-place-oct-31/"}},
+      "announces": "The mayor's office and police department, usually in mid-October (michigancityin.gov/news)."
+    },
+    {
+      "id": "hanna", "name": "Hanna", "lat": 41.4119, "lon": -86.7794,
+      "hours": null, "last": null,
+      "announces": "No town government; past years' lists didn't include it, so watch local news and community posts."
+    },
+    {
+      "id": "kingsford-heights", "name": "Kingsford Heights", "lat": 41.4783, "lon": -86.6931,
+      "hours": null,
+      "last": {"date": "2025-10-31", "start": "17:00", "end": "19:00",
+        "source": {"name": "WNDU's 2025 list", "url": "https://www.wndu.com/2025/10/21/halloween-2025-official-trick-or-treat-times-across-michiana/"}},
+      "announces": "The town council."
+    },
+    {
+      "id": "la-crosse", "name": "La Crosse", "lat": 41.3178, "lon": -86.8897,
+      "hours": null,
+      "last": {"date": "2025-10-31", "start": "17:00", "end": "19:30",
+        "source": {"name": "WNDU's 2025 list", "url": "https://www.wndu.com/2025/10/21/halloween-2025-official-trick-or-treat-times-across-michiana/"}},
+      "announces": "The town council."
+    },
+    {
+      "id": "long-beach", "name": "Long Beach", "lat": 41.7456, "lon": -86.8514,
+      "hours": null,
+      "last": {"date": "2025-10-31", "start": "17:00", "end": "19:00",
+        "source": {"name": "WNDU's 2025 list", "url": "https://www.wndu.com/2025/10/21/halloween-2025-official-trick-or-treat-times-across-michiana/"}},
+      "announces": "The town website and the Town of Long Beach Facebook page."
+    },
+    {
+      "id": "michiana-shores", "name": "Michiana Shores", "lat": 41.7564, "lon": -86.8181,
+      "hours": null, "last": null,
+      "announces": "The town's events calendar (townofmichianashores.in.gov/events)."
+    },
+    {
+      "id": "pottawattamie-park", "name": "Pottawattamie Park", "lat": 41.7233, "lon": -86.8672,
+      "hours": {"date": "2026-10-25", "start": "15:00", "end": "17:00", "status": "official",
+        "note": "The town trick-or-treats the Sunday before Halloween, in daylight.",
+        "source": {"name": "Town of Pottawattamie Park", "url": "https://www.townofpottawattomieparkin.org/resident-info-resources-2"}},
+      "last": {"date": "2025-10-26", "start": "15:00", "end": "17:00",
+        "source": {"name": "WNDU's 2025 list", "url": "https://www.wndu.com/2025/10/21/halloween-2025-official-trick-or-treat-times-across-michiana/"}},
+      "announces": "The town website's Resident Info page."
+    },
+    {
+      "id": "rolling-prairie", "name": "Rolling Prairie", "lat": 41.6731, "lon": -86.6239,
+      "hours": null,
+      "last": {"date": "2025-10-31", "start": "17:00", "end": "19:00",
+        "source": {"name": "WNDU's 2025 list", "url": "https://www.wndu.com/2025/10/21/halloween-2025-official-trick-or-treat-times-across-michiana/"}},
+      "announces": "Local news lists (Rolling Prairie has no town government)."
+    },
+    {
+      "id": "trail-creek", "name": "Trail Creek", "lat": 41.6972, "lon": -86.8572,
+      "hours": null,
+      "last": {"date": "2025-10-31", "start": "17:00", "end": "19:00",
+        "source": {"name": "WNDU's 2025 list", "url": "https://www.wndu.com/2025/10/21/halloween-2025-official-trick-or-treat-times-across-michiana/"},
+        "note": "Another listing gave Oct. 29 last year, so wait for the town's own word."},
+      "announces": "The town (in.gov/towns/trailcreek) and its Facebook page."
+    },
+    {
+      "id": "union-mills", "name": "Union Mills", "lat": 41.4942, "lon": -86.7786,
+      "hours": null,
+      "last": {"date": "2025-10-31", "start": "17:00", "end": "19:00",
+        "source": {"name": "WNDU's 2025 list", "url": "https://www.wndu.com/2025/10/21/halloween-2025-official-trick-or-treat-times-across-michiana/"}},
+      "announces": "Local news lists (Union Mills has no town government)."
+    },
+    {
+      "id": "wanatah", "name": "Wanatah", "lat": 41.4303, "lon": -86.8819,
+      "hours": null,
+      "last": {"date": "2025-10-31", "start": "17:00", "end": "19:00",
+        "source": {"name": "WNDU's 2025 list", "url": "https://www.wndu.com/2025/10/21/halloween-2025-official-trick-or-treat-times-across-michiana/"}},
+      "announces": "The town (wanatah-in.gov)."
+    },
+    {
+      "id": "westville", "name": "Westville", "lat": 41.5375, "lon": -86.905,
+      "hours": null,
+      "last": {"date": "2025-10-31", "start": "17:00", "end": "19:00",
+        "source": {"name": "Westville Police, via WIMS", "url": "https://wimsradio.com/2025/10/13/westville-trick-or-treat-hours/"}},
+      "announces": "The Westville Police Department's Facebook page."
+    }
+  ],
+  "events": [
+    {
+      "id": "downtown-la-porte", "name": "Downtown La Porte Trick or Treat",
+      "date": "2026-10-10", "start": "13:00", "end": "15:00",
+      "place": "Downtown La Porte businesses", "lat": 41.6106, "lon": -86.7225,
+      "note": "Put on by the Downtown La Porte Events committee. It's separate from the city-wide trick-or-treat on Oct. 31.",
+      "source": {"name": "City of La Porte events calendar", "url": "https://livinthelakelife.org/events/downtown-trick-or-treat/"}
+    },
+    {
+      "id": "scairport", "name": "Trick or Treat at the Scairport",
+      "date": "2026-10-10", "start": "13:00", "end": "15:00",
+      "place": "La Porte Municipal Airport, 2341 State Road 39 S", "lat": 41.5725, "lon": -86.7345,
+      "note": "Free, but families must register ahead (the form is on the airport's page).",
+      "source": {"name": "La Porte Municipal Airport", "url": "https://laporteairport.com/events/trick-or-treat-at-the-scairport-2026/"}
+    },
+    {
+      "id": "boo-at-the-zoo", "name": "Boo at the Zoo",
+      "date": "2026-10-17", "start": "10:00", "end": "16:00",
+      "place": "Washington Park Zoo, 115 Lake Shore Dr., Michigan City", "lat": 41.7262, "lon": -86.9064,
+      "note": "Last entry 3:30 p.m. Adults $12, ages 2 to 11 $10, under 1 free. Rain or shine.",
+      "source": {"name": "City of Michigan City", "url": "https://michigancityin.gov/city-event/booatthezoo2026/"}
+    },
+    {
+      "id": "wolfies-night-out", "name": "Wolfie's Night Out Trick or Treat",
+      "date": "2026-10-28", "start": "18:30", "end": "20:00",
+      "place": "Ames Field, 2501 Franklin St., Michigan City", "lat": 41.7069, "lon": -86.8946,
+      "note": "Free, for Michigan City Area Schools students and their families.",
+      "source": {"name": "WIMS", "url": "https://wimsradio.com/2026/09/21/michigan-city-area-schools-invites-local-businesses-to-sponsor-wolfies-night-out-trick-or-treat-at-ames/"}
+    }
+  ]
+}

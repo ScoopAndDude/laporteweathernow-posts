@@ -1,6 +1,7 @@
 # Keeps a fresh copy of La Porte's official weather for the homepage (home.json on the
 # "live" branch), so the site can show real numbers with their time even when the Weather
 # Service is slow or down. Only the newest copy is kept: each run replaces the branch.
+# Also travel.json: every Indiana county's official travel status from IDHS's county map (Oct. 6, 2026).
 name: Homepage weather copy
 
 on:
@@ -33,10 +34,11 @@ jobs:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           mkdir -p "$RUNNER_TEMP/live" && cp home.json "$RUNNER_TEMP/live/home.json"
+          if [ -f travel.json ]; then cp travel.json "$RUNNER_TEMP/live/travel.json"; fi   # Indiana county travel status (Oct. 6, 2026)
           cd "$RUNNER_TEMP/live"
           git init -q -b live
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add home.json
+          git add home.json $(ls travel.json 2>/dev/null)
           git commit -q -m "La Porte weather for the homepage ($(TZ=America/Chicago date '+%Y-%m-%d %H:%M %Z'))"
           git push -q -f "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" live:live
