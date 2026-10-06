@@ -14,6 +14,10 @@ starts whichever jobs are due at that moment, in La Porte (Central) time:
                        makes the day's call, the later ones only try again if it couldn't)
   Sunday-Thursday 8:00 and 9:00 PM   The School Delay Watch's record (added Oct. 6, 2026; saves the call
                        for the next school morning; the 9:00 start only tries again if 8:00 couldn't)
+  5:20 and 6:20 AM (each for 15 minutes)   The Sky Devotion for La Porte (added Oct. 6, 2026; the first start
+                       picks today's devotion, the second does nothing once it's saved)
+  5:30, 6:30 and 7:30 AM (each for 15 minutes)   The Forecast Race (added Oct. 6, 2026; saves this morning's
+                       forecasts and grades yesterday's; later starts only fill in a racer that didn't answer)
   6:30-8:09 AM         Backup Daily Scoop (it posts only if today's Scoop isn't up)
   8:10-8:24 AM         Site health check
   9:15-9:29 AM, 4:45-4:59 PM   Markets numbers from BLS
@@ -43,6 +47,8 @@ EVERY_TICK = ["home-cache.yml", "radio.yml", "scoop-update.yml", "scoop-pages.ym
 WINDOWS = [
     ("nws-snapshot.yml", [("05:00", "05:14")], None),
     ("shore-call.yml", [("05:30", "05:44"), ("06:30", "06:44"), ("07:30", "07:44")], None),
+    ("sky-devotion.yml", [("05:20", "05:34"), ("06:20", "06:34")], None),
+    ("forecast-race.yml", [("05:30", "05:44"), ("06:30", "06:44"), ("07:30", "07:44")], None),
     ("school-call.yml", [("20:00", "20:14"), ("21:00", "21:14")], {6, 0, 1, 2, 3}),
     ("backup-scoop.yml", [("06:30", "08:09")], None),
     ("site-health.yml", [("08:10", "08:24")], None),

@@ -1,0 +1,58 @@
+# The Sky Devotion for La Porte: once each morning, picks today's devotion by what the sky is doing
+# (scripts/sky_devotion.js, using devotion/sky.js and devotion/library.json) and saves devotion.json for
+# the Faith page and the free church widget (devotion/index.html). Started by the Timer at 5:20 and
+# 6:20 AM Central (the second start does nothing once today's is saved).
+name: Sky Devotion
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Pick today's devotion again"
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - scripts/sky_devotion.js
+      - devotion/sky.js
+      - devotion/library.json
+      - .github/workflows/sky-devotion.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sky-devotion
+  cancel-in-progress: false
+
+jobs:
+  pick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Test the picker, then pick today's devotion
+        env:
+          FORCE: ${{ github.event.inputs.force == 'true' && 'force' || '' }}
+        run: |
+          node tools/devotion/test_sky.js > /dev/null
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/sky_devotion.js $FORCE
+          if git diff --quiet -- devotion.json && [ -z "$(git ls-files --others --exclude-standard -- devotion.json)" ]; then exit 0; fi
+          cp devotion.json "$RUNNER_TEMP/"
+          for i in 1 2 3 4; do
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            cp "$RUNNER_TEMP/devotion.json" .
+            git add devotion.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -q -m "Sky Devotion ($(TZ=America/Chicago date '+%b %-d, %-I:%M %p %Z'))"
+            if git push -q origin HEAD:main; then exit 0; fi
+            sleep 5
+          done
+          exit 1

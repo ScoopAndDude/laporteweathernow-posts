@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sky Devotion | La Porte Weather Now</title>
+<meta name="robots" content="noindex" />
+<!--
+  The Sky Devotion box (La Porte Weather Now, Oct. 6, 2026): a short devotion picked each day by what
+  the sky is doing, free for churches and anyone else to show on their own website.
+  Embed: <iframe src="https://scoopanddude.github.io/laporteweathernow-posts/devotion/?lat=41.61&lon=-86.72&name=La%20Porte"
+          title="Today's Sky Devotion" style="width:100%;max-width:520px;height:460px;border:0" loading="lazy"></iframe>
+  Options: lat, lon, name (the town shown), from (your church's name: "Shared by ..."), theme=dark.
+  With no lat/lon it shows La Porte, Indiana from devotion.json (picked each morning by a GitHub job).
+  Elsewhere it asks the National Weather Service (U.S. only) and runs the same picker (sky.js).
+  Safety rule: when the Weather Service has a watch or warning out, the box shows it first, in the
+  Weather Service's own words, with a link. It never says "no alerts".
+-->
+<style>
+  :root { --bg: #fffdf8; --ink: #1d1d1d; --muted: #5d5a55; --line: #e7e0d4; --accent: #8a4b00; --soft: #f6efe2; --warn-bg: #fff1e6; --warn-ink: #8a2c00; }
+  :root[data-theme="dark"] { --bg: #151515; --ink: #f6f3ee; --muted: #c9c3b9; --line: #2e2e2e; --accent: #ffb400; --soft: #1f1d1a; --warn-bg: #3a1d0c; --warn-ink: #ffd2b0; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { background: transparent; }
+  body { font-family: Georgia, "Iowan Old Style", "Times New Roman", serif; color: var(--ink); }
+  .w { background: var(--bg); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px 12px; display: flex; flex-direction: column; gap: 10px; min-height: 100vh; }
+  .eyebrow { font: 600 11px/1.3 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+  .from { font: 13px/1.4 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--muted); }
+  .sky { font: 14px/1.45 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--muted); background: var(--soft); border-radius: 10px; padding: 8px 10px; }
+  .sky b { color: var(--ink); }
+  .warn { font: 600 14px/1.45 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--warn-bg); color: var(--warn-ink); border-radius: 10px; padding: 9px 11px; }
+  .warn a { color: inherit; text-decoration: underline; }
+  blockquote { font-size: 19px; line-height: 1.5; font-style: italic; }
+  .ref { font: 600 13px/1.3 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--accent); margin-top: 4px; }
+  .text { font-size: 16.5px; line-height: 1.6; }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 2px; }
+  button { font: 600 13px/1 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; border: 1px solid var(--line); background: transparent; color: var(--ink); border-radius: 999px; padding: 8px 12px; cursor: pointer; }
+  button:hover { border-color: var(--accent); }
+  .foot { margin-top: auto; padding-top: 8px; border-top: 1px solid var(--line); font: 12px/1.45 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--muted); display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+  .foot a { color: inherit; }
+  .muted { color: var(--muted); }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main class="w" aria-live="polite">
+  <div class="eyebrow" id="eyebrow">Today's Sky Devotion</div>
+  <div class="from" id="from" hidden></div>
+  <div class="warn" id="warn" hidden></div>
+  <div class="sky" id="sky">Looking at today's sky&hellip;</div>
+  <div id="body" hidden>
+    <blockquote id="verse"></blockquote>
+    <div class="ref" id="ref"></div>
+  </div>
+  <p class="text" id="text"></p>
+  <div class="row">
+    <button type="button" id="share" hidden>Share</button>
+    <button type="button" id="here" hidden>Use my location</button>
+  </div>
+  <div class="foot">
+    <span>Scripture: King James Version &middot; Weather: National Weather Service</span>
+    <a href="https://laporteweathernow.com/sky-devotion" target="_blank" rel="noopener">Sky Devotion by La Porte Weather Now</a>
+  </div>
+</main>
+<script src="sky.js"></script>
+<script>
+(function () {
+  "use strict";
+  var q = new URLSearchParams(location.search);
+  if (q.get("theme") === "dark") document.documentElement.setAttribute("data-theme", "dark");
+  var $ = function (id) { return document.getElementById(id); };
+  var from = (q.get("from") || "").trim().slice(0, 60);
+  if (from) { $("from").textContent = "Shared by " + from; $("from").hidden = false; }
+  var lat = parseFloat(q.get("lat")), lon = parseFloat(q.get("lon"));
+  var place = (q.get("name") || "").trim().slice(0, 40);
+  var current = null;
+  var BIG = [].concat(SkyDevotion.ALERTS.severe, SkyDevotion.ALERTS.winter, SkyDevotion.ALERTS.flood, SkyDevotion.ALERTS.heat, SkyDevotion.ALERTS.cold);
+
+  function ymdLocal(d) {
+    return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+  }
+  function getJson(url) {
+    return fetch(url, { headers: { Accept: "application/geo+json" } }).then(function (r) {
+      if (!r.ok) throw new Error(r.status + " " + url);
+      return r.json();
+    });
+  }
+  function show(entry, skyText, placeName) {
+    current = { entry: entry, place: placeName };
+    $("verse").textContent = "“" + entry.kjv + "”";
+    $("ref").textContent = entry.ref + " (KJV)";
+    $("text").textContent = entry.text;
+    $("sky").innerHTML = "";
+    var b = document.createElement("b"); b.textContent = (placeName ? placeName + ": " : "") ;
+    $("sky").appendChild(b); $("sky").appendChild(document.createTextNode(skyText));
+    $("body").hidden = false;
+    $("share").hidden = false;
+  }
+  function showWarnings(features, link) {
+    var big = (features || []).filter(function (f) { return BIG.indexOf(f.properties.event) >= 0; });
+    if (!big.length) { $("warn").hidden = true; return; }
+    var names = []; big.forEach(function (f) { if (names.indexOf(f.properties.event) < 0) names.push(f.properties.event); });
+    $("warn").innerHTML = "";
+    $("warn").appendChild(document.createTextNode("⚠️ " + names.join(", ") + " in effect. Follow the National Weather Service's instructions first. "));
+    var a = document.createElement("a"); a.href = link; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Read the official alert";
+    $("warn").appendChild(a); $("warn").hidden = false;
+  }
+  function liveAlerts(la, lo, link) {
+    getJson("https://api.weather.gov/alerts/active?point=" + la.toFixed(4) + "," + lo.toFixed(4))
+      .then(function (al) { showWarnings(al.features, link); })
+      .catch(function () { /* never claim "no alerts": just show nothing extra */ });
+  }
+  function laPorte() {
+    Promise.all([fetch("../devotion.json", { cache: "no-cache" }).then(function (r) { return r.json(); }),
+                 fetch("library.json").then(function (r) { return r.json(); })])
+      .then(function (res) {
+        var d = res[0], lib = res[1];
+        var today = ymdLocal(new Date());
+        // If this morning's pick isn't saved yet, use the same picker on the saved forecast line's day.
+        var fresh = d.date === today;
+        var entry = fresh ? d.entry : SkyDevotion.pick(lib, "clear", today);
+        var skyText = fresh ? (d.reason || "") + (d.forecastLine ? ". " + d.forecastLine : "")
+                            : "This morning's sky reading comes in around 5:30 AM Central. Here's a devotion for today.";
+        show(entry, skyText, place || "La Porte, Indiana");
+        liveAlerts(d.lat || 41.6081, d.lon || -86.7189, "https://laporteweathernow.com/emergency");
+      })
+      .catch(function () { $("sky").textContent = "Today's devotion couldn't load. Please try again in a few minutes."; });
+  }
+  function anywhere(la, lo, name) {
+    $("sky").textContent = "Looking at the sky over " + (name || "your spot") + "…";
+    var lib;
+    fetch("library.json").then(function (r) { return r.json(); }).then(function (l) {
+      lib = l;
+      return getJson("https://api.weather.gov/points/" + la.toFixed(4) + "," + lo.toFixed(4));
+    }).then(function (pt) {
+      var p = pt.properties;
+      var label = name || (p.relativeLocation && p.relativeLocation.properties ? p.relativeLocation.properties.city + ", " + p.relativeLocation.properties.state : "");
+      return Promise.all([getJson(p.forecast), getJson("https://api.weather.gov/alerts/active?point=" + la.toFixed(4) + "," + lo.toFixed(4)).catch(function () { return { features: [] }; }), label]);
+    }).then(function (res) {
+      var periods = res[0].properties.periods, alerts = res[1].features || [], label = res[2];
+      var now = new Date();
+      var c = SkyDevotion.classify({ periods: periods, alerts: alerts.map(function (f) { return f.properties.event; }), month: now.getMonth() + 1 });
+      show(SkyDevotion.pick(lib, c.sky, ymdLocal(now)), c.reason + ". " + SkyDevotion.forecastLine(periods), label);
+      showWarnings(alerts, "https://forecast.weather.gov/MapClick.php?lat=" + la.toFixed(4) + "&lon=" + lo.toFixed(4));
+    }).catch(function () {
+      $("sky").textContent = "The Weather Service didn't answer for this spot (it covers the U.S. only). Here's today's devotion for La Porte, Indiana instead.";
+      laPorte();
+    });
+  }
+  $("share").addEventListener("click", function () {
+    if (!current) return;
+    var t = "“" + current.entry.kjv + "” " + current.entry.ref + " (KJV)\n\n" + current.entry.text + "\n\nToday's Sky Devotion: https://laporteweathernow.com/sky-devotion";
+    if (navigator.share) { navigator.share({ title: "Today's Sky Devotion", text: t }).catch(function () {}); return; }
+    (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function () {
+      $("share").textContent = "Copied"; setTimeout(function () { $("share").textContent = "Share"; }, 2000);
+    }).catch(function () {});
+  });
+  if ("geolocation" in navigator && q.get("here") !== "0") {
+    $("here").hidden = false;
+    $("here").addEventListener("click", function () {
+      $("here").disabled = true;
+      navigator.geolocation.getCurrentPosition(function (pos) {
+        $("here").disabled = false; anywhere(pos.coords.latitude, pos.coords.longitude, "");
+      }, function () { $("here").disabled = false; }, { timeout: 15000, maximumAge: 600000 });
+    });
+  }
+  if (isFinite(lat) && isFinite(lon)) anywhere(lat, lon, place); else laPorte();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+# The Forecast Race: NOAA's new AI weather model (AIGFS) against the National Weather Service's
+# forecasters and three other models (NOAA GFS, Europe's AIFS and ECMWF), graded every day at the
+# La Porte airport (scripts/forecast_race.py), saved in race.json for laporteweathernow.com/forecast-race.
+# Started by the Timer at 5:30, 6:30 and 7:30 AM Central: the first start saves this morning's forecasts
+# and grades yesterday's; the later ones only fill in a racer that didn't answer (saved forecasts never change).
+name: Forecast Race
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "normal, force (save this morning's forecasts at any hour), or backfill"
+        default: normal
+      from:
+        description: "backfill: first morning (YYYY-MM-DD)"
+        default: ""
+      to:
+        description: "backfill: last morning (YYYY-MM-DD)"
+        default: ""
+  push:
+    branches: [main]
+    paths:
+      - scripts/forecast_race.py
+      - .github/workflows/forecast-race.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: forecast-race
+  cancel-in-progress: false
+
+jobs:
+  race:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Save forecasts, grade, rebuild the leaderboard
+        env:
+          MODE: ${{ github.event.inputs.mode || 'normal' }}
+          FROM: ${{ github.event.inputs.from }}
+          TO: ${{ github.event.inputs.to }}
+        run: |
+          pip install --quiet pygrib numpy
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          case "$MODE" in
+            backfill) python3 scripts/forecast_race.py backfill "$FROM" "$TO" ;;
+            force) python3 scripts/forecast_race.py force ;;
+            *) python3 scripts/forecast_race.py ;;
+          esac
+          if git diff --quiet -- race.json && [ -z "$(git ls-files --others --exclude-standard -- race.json)" ]; then exit 0; fi
+          cp race.json "$RUNNER_TEMP/"
+          for i in 1 2 3 4; do
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            cp "$RUNNER_TEMP/race.json" .
+            git add race.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -q -m "Forecast Race ($(TZ=America/Chicago date '+%b %-d, %-I:%M %p %Z'))"
+            if git push -q origin HEAD:main; then exit 0; fi
+            sleep 5
+          done
+          exit 1
