@@ -1,6 +1,6 @@
 {
  "about": "The Forecast Race: NOAA's new AI weather model, the National Weather Service's own forecasters and three other computer models, graded every day against the La Porte airport (KPPO). Each morning we save what each racer says about tomorrow (temperatures at four checkpoints and the 24-hour rain total) and grade it the next day. Saved forecasts are never changed. Run by La Porte Weather Now (scripts/forecast_race.py).",
- "generated": "2026-10-06T17:32:16-05:00",
+ "generated": "2026-10-06T17:37:38-05:00",
  "started": "2026-10-06",
  "station": {
   "id": "KPPO",
@@ -1143,6 +1143,86 @@
      "run": "2026-10-05T00:00Z",
      "backfilled": true,
      "saved": "2026-10-06T22:35Z"
+    }
+   },
+   "status": "waiting"
+  },
+  {
+   "target": "2026-10-07",
+   "made": "2026-10-06",
+   "checkpoints": [
+    {
+     "utc": "2026-10-07T06:00Z",
+     "local": "1 AM"
+    },
+    {
+     "utc": "2026-10-07T12:00Z",
+     "local": "7 AM"
+    },
+    {
+     "utc": "2026-10-07T18:00Z",
+     "local": "1 PM"
+    },
+    {
+     "utc": "2026-10-08T00:00Z",
+     "local": "7 PM"
+    }
+   ],
+   "forecasts": {
+    "nws": {
+     "temps": [
+      56.0,
+      53.0,
+      73.0,
+      65.9
+     ],
+     "rainIn": 0.0,
+     "issued": "2026-10-06T10:17Z",
+     "saved": "2026-10-06T22:37Z"
+    },
+    "aigfs": {
+     "temps": [
+      56.6,
+      55.8,
+      75.7,
+      64.8
+     ],
+     "rainIn": 0.0,
+     "run": "2026-10-06T00:00Z",
+     "saved": "2026-10-06T22:37Z"
+    },
+    "gfs": {
+     "temps": [
+      55.6,
+      53.8,
+      72.4,
+      65.6
+     ],
+     "rainIn": 0.0,
+     "run": "2026-10-06T00:00Z",
+     "saved": "2026-10-06T22:37Z"
+    },
+    "aifs": {
+     "temps": [
+      57.3,
+      55.6,
+      73.5,
+      62.0
+     ],
+     "rainIn": 0.0,
+     "run": "2026-10-06T00:00Z",
+     "saved": "2026-10-06T22:38Z"
+    },
+    "ifs": {
+     "temps": [
+      57.6,
+      55.5,
+      70.0,
+      62.3
+     ],
+     "rainIn": 0.0,
+     "run": "2026-10-06T00:00Z",
+     "saved": "2026-10-06T22:38Z"
     }
    },
    "status": "waiting"
