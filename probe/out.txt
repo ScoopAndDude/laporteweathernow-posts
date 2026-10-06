@@ -1,60 +1,100 @@
-== AIGFS root: 200, 2895 bytes  https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigfs/prod/
-AIGFS dates: ['aigfs.20260927/', 'aigfs.20260928/', 'aigfs.20260929/', 'aigfs.20260930/', 'aigfs.20261001/', 'aigfs.20261002/', 'aigfs.20261003/', 'aigfs.20261004/', 'aigfs.20261005/', 'aigfs.20261006/']
-== AIGFS day: 200, 2420 bytes  https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigfs/prod/aigfs.20261005/
-cycles: ['/pub/data/nccf/com/aigfs/prod/', '00/', '06/', '12/', '18/']
-== AIGFS 00z grib2 dir: 200, 38849 bytes  https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigfs/prod/aigfs.20261005/00/model/atmos/grib2/
-files: 0 [] ... []
-== idx aigfs.t00z.sfc.f036.grib2.idx: 200, 342 bytes  https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigfs/prod/aigfs.20261005/00/model/atmos/grib2/aigfs.t00z.sfc.f036.grib2.idx
-1:0:d=2026100500:UGRD:10 m above ground:36 hour fcst:
-2:919784:d=2026100500:VGRD:10 m above ground:36 hour fcst:
-3:1840257:d=2026100500:TMP:2 m above ground:36 hour fcst:
-4:2350256:d=2026100500:PRMSL:mean sea level:36 hour fcst:
-5:3540954:d=2026100500:APCP:surface:30-36 hour acc fcst:
-6:3967782:d=2026100500:APCP:surface:0-36 hour acc fcst:
+PFMIWX latest length 41441
+first lines:
+
+034 
+FOUS53 KIWX 061957
+PFMIWX
 
-== idx aigfs.t00z.sfc.f042.grib2.idx: 200, 342 bytes  https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigfs/prod/aigfs.20261005/00/model/atmos/grib2/aigfs.t00z.sfc.f042.grib2.idx
-1:0:d=2026100500:UGRD:10 m above ground:42 hour fcst:
-2:920311:d=2026100500:VGRD:10 m above ground:42 hour fcst:
-3:1839968:d=2026100500:TMP:2 m above ground:42 hour fcst:
-4:2349652:d=2026100500:PRMSL:mean sea level:42 hour fcst:
-5:3543783:d=2026100500:APCP:surface:36-42 hour acc fcst:
-6:3971320:d=2026100500:APCP:surface:0-42 hour acc fcst:
+Point Forecast Matrices
+National Weather Service Northern Indiana
+357 PM EDT Tue Oct 6 2026
 
-== idx aigfs.t00z.sfc.f039.grib2.idx: FAILED HTTP Error 404: Not Found  https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigfs/prod/aigfs.20261005/00/model/atmos/grib2/aigfs.t00z.sfc.f039.grib2.idx
-== aigefs root: 200, 2248 bytes  https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigefs/prod/
-aigefs ['/pub/data/nccf/com/aigefs/', 'aigefs.20261005/', 'aigefs.20261006/']
-== hgefs root: 200, 2239 bytes  https://nomads.ncep.noaa.gov/pub/data/nccf/com/hgefs/prod/
-hgefs ['/pub/data/nccf/com/hgefs/', 'hgefs.20261005/', 'hgefs.20261006/']
-== GFS root: 200, 3801 bytes  https://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/
-GFS dates: ['gfs.20260927/', 'gfs.20260928/', 'gfs.20260929/', 'gfs.20260930/', 'gfs.20261001/', 'gfs.20261002/', 'gfs.20261003/', 'gfs.20261004/', 'gfs.20261005/', 'gfs.20261006/']
-== GFS filter f036: 200, 201 bytes  https://nomads.ncep.noaa.gov/cgi-bin/filter_gfs_0p25.pl?dir=%2Fgfs.20261005%2F00%2Fatmos&file=gfs.t00z.pgrb2.0p25.f036&var_TMP=on&lev_2_m_above_ground=on&subregion=&toplat=42&leftlon=273&rightlon=274&bottomlat=41
-== bucket noaa-gfs-bdp-pds: 200, 923 bytes  https://noaa-gfs-bdp-pds.s3.amazonaws.com/?list-type=2&max-keys=8&delimiter=/
-<?xml version="1.0" encoding="UTF-8"?>
-<ListBucketResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Name>noaa-gfs-bdp-pds</Name><Prefix></Prefix><NextContinuationToken>1275+F2kTEFvcARmHN2n8Pn3rkd/M2dl1Cy0P/QM7ssS49PNGZIKe6IPFJ4LUCMnD</NextContinuationToken><KeyCount>8</KeyCount><MaxKeys>8</MaxKeys><Delimiter>/</Delimiter><IsTruncated>true</IsTruncated><CommonPrefixes><Prefix>enkfgdas.20210212/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>enkfgdas.20210213/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>enkfgdas.20210214/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>enkfgdas.20210215/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>enkfgdas.20210216/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>enkfgdas.20210217/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>enkfgdas.20210218/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>enkfgdas.20210219/</Prefix></CommonPrefi
-== bucket noaa-nws-aigfs-pds: FAILED HTTP Error 404: Not Found  https://noaa-nws-aigfs-pds.s3.amazonaws.com/?list-type=2&max-keys=8&delimiter=/
-== bucket noaa-aigfs-pds: FAILED HTTP Error 404: Not Found  https://noaa-aigfs-pds.s3.amazonaws.com/?list-type=2&max-keys=8&delimiter=/
-== bucket noaa-ndfd-pds: 200, 1311 bytes  https://noaa-ndfd-pds.s3.amazonaws.com/?list-type=2&max-keys=8&delimiter=/
-<?xml version="1.0" encoding="UTF-8"?>
-<ListBucketResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Name>noaa-ndfd-pds</Name><Prefix></Prefix><KeyCount>7</KeyCount><MaxKeys>8</MaxKeys><Delimiter>/</Delimiter><IsTruncated>false</IsTruncated><Contents><Key>NDFDelem_fullres_201906.xls</Key><LastModified>2020-06-02T18:43:35.000Z</LastModified><ETag>&quot;cd9be2d5bc3a38fa6cc113c7c769e083&quot;</ETag><Size>754688</Size><StorageClass>STANDARD</StorageClass></Contents><Contents><Key>NDFDelem_fullres_202203.xls</Key><LastModified>2022-05-18T17:51:04.000Z</LastModified><ETag>&quot;252c75d021a0cc0274f5a6185d587ad1&quot;</ETag><Size>827392</Size><StorageClass>STANDARD</StorageClass></Contents><Contents><Key>NDFDelem_fullres_202206.xls</Key><LastModified>2022-07-13T13:56:01.000Z</LastModified><ETag>&quot;f92f30e7a500862af8c656f0282e4890&quot;</ETag><Size>827392</Size><StorageClass>STANDARD</Sto
-== bucket noaa-nws-ndfd-pds: FAILED HTTP Error 404: Not Found  https://noaa-nws-ndfd-pds.s3.amazonaws.com/?list-type=2&max-keys=8&delimiter=/
-== NDFD prefixes: 200, 1598 bytes  https://noaa-ndfd-pds.s3.amazonaws.com/?list-type=2&max-keys=20&delimiter=/&prefix=wmo/
-<?xml version="1.0" encoding="UTF-8"?>
-<ListBucketResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Name>noaa-ndfd-pds</Name><Prefix>wmo/</Prefix><NextContinuationToken>1XRK8tu5WSaMTJ/yLqhz8TjTqUXU1w2baLOthbg1oX0xZLvcJw6InPA==</NextContinuationToken><KeyCount>20</KeyCount><MaxKeys>20</MaxKeys><Delimiter>/</Delimiter><IsTruncated>true</IsTruncated><CommonPrefixes><Prefix>wmo/apt/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/cig/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/conhazo/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/critfireo/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/dryfireo/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/fret/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/fretdep/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/frettot/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/fwspd/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/heatrisk/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/iceaccum/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/llwsdir/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/llwshgt/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/llwsspd/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/maxrh/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/maxt/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/minrh/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/mint/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/p24less0025/</Prefi
-== ECMWF root: 200, 429699 bytes  https://data.ecmwf.int/forecasts/
-ECMWF dates: ['/forecasts/20261004/', '/forecasts/20261005/', '/forecasts/20261006/', '/forecasts/wis2/', 'https://github.com/ecmwf/open-ecpds', "' + base + '/"]
-== ECMWF day: 200, 429440 bytes  https://data.ecmwf.int/forecasts/20261005/00z/
-ECMWF 00z: ['/favicon.png', '/favicon.ico', '/bootstrap/css/bootstrap.min.css', '/bootstrap-icons/bootstrap-icons.min.css', '/datatables/css/dataTables.bootstrap5.min.css', '/', '/ecpds/logout', 'https://ecmwf.github.io/open-ecpds/', '#httpsFormats', '#httpsParallel', '#s3WriteExamples', '#s3Boto3', '/forecasts/20261005/', '/forecasts/20261005/', '#', '#', '#', '#', '/forecasts/20261005/00z/aifs-ens/', '/forecasts/20261005/00z/aifs-single/', '/forecasts/20261005/00z/ifs/', 'https://github.com/ecmwf/open-ecpds', "' + base + '/"]
-== ECMWF aifs-single: 200, 467539 bytes  https://data.ecmwf.int/forecasts/20261005/00z/aifs-single/0p25/oper/
-aifs files: 145 ['/favicon.png', '/favicon.ico', '/bootstrap/css/bootstrap.min.css', '/bootstrap-icons/bootstrap-icons.min.css', '/datatables/css/dataTables.bootstrap5.min.css', '/', '/ecpds/logout', 'https://ecmwf.github.io/open-ecpds/', '#httpsFormats', '#httpsParallel']
-aifs 36h index: ['/forecasts/20261005/00z/aifs-single/0p25/oper/20261005000000-336h-oper-fc.index', '/forecasts/20261005/00z/aifs-single/0p25/oper/20261005000000-36h-oper-fc.index']
-== aifs index: 200, 29700 bytes  https://data.ecmwf.int/forecasts/20261005/00z/aifs-single/0p25/oper/20261005000000-336h-oper-fc.index
-122 lines
-{"domain": "g", "date": "20261005", "time": "0000", "expver": "0001", "class": "ai", "type": "fc", "stream": "oper", "levtype": "sfc", "step": "336", "param": "tp", "model": "aifs-single", "_offset": 16163816, "_length": 992377}
-{"domain": "g", "date": "20261005", "time": "0000", "expver": "0001", "class": "ai", "type": "fc", "stream": "oper", "step": "336", "levtype": "sfc", "param": "2t", "model": "aifs-single", "_offset": 86399193, "_length": 524142}
-== ECMWF ifs: 200, 481230 bytes  https://data.ecmwf.int/forecasts/20261005/00z/ifs/0p25/oper/
-ifs files: 193 ['/favicon.png', '/favicon.ico', '/bootstrap/css/bootstrap.min.css', '/bootstrap-icons/bootstrap-icons.min.css', '/datatables/css/dataTables.bootstrap5.min.css', '/']
-== IEM obhistory: 200, 43245 bytes  https://mesonet.agron.iastate.edu/api/1/obhistory.json?station=PPO&network=IN_ASOS&date=2026-10-05
-obs rows: 72 [{"index": 0, "utc_valid": "2026-10-05T05:15Z", "local_valid": "2026-10-05T00:15", "tmpf": 48.2, "dwpf": 48.2, "sknt": 2.0, "drct": 280.0, "vsby": 10.0, "skyc1": "CLR", "skyl1": null, "skyc2": null, "skyl2": null, "skyc3": null, "skyl3": null, "skyc4": null, "skyl4": null, "relh": 100.0, "feel": 48.2, "alti": 30.22, "mslp": null, "p01i": 0.0, "p03i": null, "p24i": null, "raw": "KPPO 050515Z AUTO 28002KT 10SM CLR 09/09 A3022 RMK AO2", "p06i": null, "max_tmpf_6hr": null, "min_tmpf_6hr": null, "gust": null, "wxcodes": null, "snowdepth": null, "peak_wind_gust": null, "peak_wind_drct": null, "peak_wind_time": null}, {"index": 1, "utc_valid": "2026-10-05T05:35Z", "local_valid": "2026-10-05T00:35",
-point: IWX 13 58 https://api.weather.gov/gridpoints/IWX/13,58
-grid updateTime: 2026-10-06T20:01:05+00:00 temp uom: wmoUnit:degC first values: [{"validTime": "2026-10-06T14:00:00+00:00/PT1H", "value": 12.222222222222221}, {"validTime": "2026-10-06T15:00:00+00:00/PT1H", "value": 16.11111111111111}, {"validTime": "2026-10-06T16:00:00+00:00/PT1H", "value": 18.333333333333332}, {"validTime": "2026-10-06T17:00:00+00:00/PT1H", "value": 20}]
-GRIB OK: 2 metre temperature 2 2026-10-06 12:00:00 shape (5, 5) lats [41.   41.25 41.5  41.75 42.  ] lons [273.   273.25 273.5  273.75 274.  ] values K [[282.47, 282.47, 281.97, 281.57, 281.07], [282.37, 281.97, 281.87, 280.97, 280.87], [281.57, 281.17, 281.27, 280.77, 280.47], [284.77, 281.77, 280.87, 280.87, 280.37], [286.57, 285.47, 282.57, 280.27, 280.07]]
+INZ104-070800-
+South Bend Regional Aiport-St. Joseph IN
+41.71N  86.32W Elev. 799 ft
+357 PM EDT Tue Oct 6 2026
+
+Date           10/06/26      Wed 10/07/26            Thu 10/08/26            Fri
+EDT 3hrly     17 20 23 02 05 08 11 14 17 20 23 02 05 08 11 14 17 20 23 02 05 08
+UTC 3hrly     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+Min/Max                      54          73          53          66          44
+Temp          70 64 58 57 56 55 65 72 71 61 57 56 55 53 64 66 64 55 50 48 46 44
+Dewpt         48 47 45 45 44 45 53 57 55 54 52 51 50 50 50 46 44 45 45 45 43 43
+RH            45 54 62 64 64 69 65 59 57 78 83 83 83 89 60 48 48 69 83 89 89 96
+Wind dir       S  S  S SW SW SW  W  W NW  W  W  W  W  W NW NW NW NW  N  N  N  S
+Wind spd      12 10 11 10 11 10 10 10 10  3  5  5  6  5 10 12 11  3  0  0  0  2
+Clouds        CL FW FW SC SC FW FW SC FW FW FW SC SC B1 SC SC FW FW FW FW FW FW
+PoP 12hr                      5           0           0           0           0
+QPF 12hr                      0           0           0           0           0
+
+POINT LINE: South Bend Regional Aiport-St. Joseph IN
+POINT LINE: Michigan City Municipal Airport-La Porte IN
+LA PORTE block:
+ 12hr          0       0     0       5    30      10     5      20    30
+Rain shwrs                                 C  C                     S  C  C
+
+$$
+INZ003-070800-
+Michigan City Municipal Airport-La Porte IN
+41.70N  86.82W Elev. 655 ft
+357 PM EDT Tue Oct 6 2026
+
+Date           10/06/26      Wed 10/07/26            Thu 10/08/26            Fri
+EDT 3hrly     17 20 23 02 05 08 11 14 17 20 23 02 05 08 11 14 17 20 23 02 05 08
+UTC 3hrly     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+Min/Max                      57          72          56          65          47
+Temp          70 63 59 58 58 57 66 70 70 63 60 59 57 56 63 65 63 56 53 51 49 48
+Dewpt         51 49 48 46 46 47 57 59 58 56 54 52 51 50 52 49 47 48 47 46 45 44
+RH            51 60 67 64 64 69 73 68 66 78 81 78 80 80 67 56 56 74 80 83 86 86
+Wind dir       S  S  S SW SW SW  W  W NW  W  W  W  W NW NW NW NW  N NW  W SW  S
+Wind spd      10  6  9  8  8  8  8  6  4  1  3  4  5  5  9 10  6  1  1  2  2  2
+Wind gust              18 18                                                   
+Clouds        CL CL FW FW SC FW SC FW FW FW FW SC SC SC SC SC FW FW FW FW FW FW
+PoP 12hr                      0           0           0           0           0
+QPF 12hr                      0           0           0           0           0
+Snow 12hr                 00-00       00-00       00-00                        
+
+
+Date           10/09  Sat 10/10/26  Sun 10/11/26  Mon 10/12/26  Tue 10/13/26
+EDT 6hrly     14 20   02 08 14 20   02 08 14 20   02 08 14 20   02 08 14 20
+UTC 6hrly     18 00   06 12 18 00   06 12 18 00   06 12 18 00   06 12 18 00
+
+Max/Min          69      55    79      60    74      54    72      55    69
+Temp          67 62   57 56 76 71   64 60 72 66   57 55 70 65   58 56 67 62
+Dewpt         48 49   45 45 55 55   52 52 59 58   56 55 60 59   56 55 56 54
+PWind dir         S       S     S       S    SE       E     N       S     W
+Wind char        LT      LT    GN      LT    LT      LT    LT      LT    GN
+Avg clouds    FW FW   SC FW CL CL   SC SC SC SC   SC SC SC SC   SC SC B1 SC
+PoP 12hr          0       0     0       5    20       5     5      20    40
+Rain shwrs                                 S  S                     S  C  C
+
+$$
+INZ015-070800-
+Rochester Fulton County Airport-Fulton IN
+41.07N  86.18W Elev. 790 ft
+357 PM EDT Tue Oct 6 2026
+
+Date           10/06/26      Wed 10/07/26            Th
+archive Sept 27 09-12Z length 39586 issued lines: ['541 AM EDT Sun Sep 27 2026', '541 AM EDT Sun Sep 27 2026', '541 AM EDT Sun Sep 27 2026', '541 AM EDT Sun Sep 27 2026', '541 AM EDT Sun Sep 27 2026']
+NDFD temp keys Oct 5: 0
+AIGFS :TMP:2 m above ground: [('2t', '2 metre temperature', '2026-10-06 12:00:00', 281.2, 41.5, 273.25)]
+AIGFS :APCP:surface:30-36 hour acc [('tp', 'Total Precipitation', '2026-10-06 06:00:00', 0.0, 41.5, 273.25)]
+GFS [('t', 'Temperature', '2026-10-06 12:00:00', 280.007763671875, 41.5, 273.25), ('2t', '2 metre temperature', '2026-10-06 12:00:00', 281.1691162109375, 41.5, 273.25), ('tp', 'Total Precipitation', '2026-10-06 06:00:00', 0.0, 41.5, 273.25), ('tp', 'Total Precipitation', '2026-10-05 00:00:00', 0.0, 41.5, 273.25)]
+aifs-single 2t [('2t', '2 metre temperature', '2026-10-06 12:00:00', 280.4354705810547, 41.5, -86.75)]
+aifs-single tp [('tp', 'Total Precipitation', '2026-10-05 00:00:00', 0.0, 41.5, -86.75)]
+ifs 2t [('2t', '2 metre temperature', '2026-10-06 12:00:00', 280.2694396972656, 41.5, -86.75)]
+ifs tp [('tp', 'Total precipitation', '2026-10-05 00:00:00', 0.0, 41.5, -86.75)]
+obs 2026-10-06T11:15Z 42.8 0.0 KPPO 061115Z AUTO 04002KT 10SM SCT080 06/06 A3019 RMK AO2
+obs 2026-10-06T11:35Z 41.0 0.0 KPPO 061135Z AUTO 12001KT 10SM FEW080 05/05 A3019 RMK AO2
+obs 2026-10-06T11:55Z 41.0 0.0 KPPO 061155Z AUTO 10002KT 10SM CLR 05/05 A3018 RMK AO2 10070 20049 70000
+obs 2026-10-06T12:15Z 42.8 0.0 KPPO 061215Z AUTO 04002KT 10SM CLR 06/06 A3019 RMK AO2
+obs 2026-10-06T12:35Z 44.6 0.0 KPPO 061235Z AUTO 09001KT 10SM CLR 07/07 A3019 RMK AO2
+obs 2026-10-06T12:55Z 46.4 0.0 KPPO 061255Z AUTO 13002KT 10SM CLR 08/08 A3018 RMK AO2
+obs 2026-10-06T17:15Z 69.8 0.0 KPPO 061715Z AUTO 21011G15KT 10SM CLR 21/07 A3010 RMK AO2
+obs 2026-10-06T17:35Z 69.8 0.0 KPPO 061735Z AUTO 22009G16KT 10SM CLR 21/07 A3009 RMK AO2
+obs 2026-10-06T17:55Z 71.6 0.0 KPPO 061755Z AUTO 17009G14KT 10SM CLR 22/07 A3008 RMK AO2 10224 20051
+obs 2026-10-06T18:15Z 71.6 0.0 KPPO 061815Z AUTO 22011G16KT 10SM CLR 22/07 A3007 RMK AO2
+obs 2026-10-06T18:35Z 71.6 0.0 KPPO 061835Z AUTO 19009G16KT 160V220 10SM CLR 22/07 A3006 RMK AO2
+obs 2026-10-06T18:55Z 73.4 0.0 KPPO 061855Z AUTO 18010G16KT 10SM CLR 23/07 A3004 RMK AO2
