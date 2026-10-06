@@ -1,0 +1,45 @@
+# Daily Scoop pages: one plain web page per written Scoop, plus the archive and its sitemap, built from
+# scoop-posts.json (scripts/scoop_pages.py). laporteweathernow.com shows them at /scoop/<date>,
+# /scoop/latest, /scoop and /scoop-sitemap.xml through proxy rules in the site's _redirects, so a new
+# Scoop never needs a site publish. Started by the Timer every tick (posts saved by GitHub's own jobs,
+# like the automatic backup, don't start other jobs) and whenever the posts, script or template change.
+name: Daily Scoop pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scoop-posts.json
+      - scripts/scoop_pages.py
+      - scoop/template.html
+      - .github/workflows/scoop-pages.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scoop-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build the pages and save any that changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3 4; do
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            python3 scripts/scoop_pages.py
+            git add scoop
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -q -m "Daily Scoop pages ($(TZ=America/Chicago date '+%b %-d, %-I:%M %p %Z'))"
+            if git push -q origin HEAD:main; then exit 0; fi
+            sleep 5
+          done
+          exit 1

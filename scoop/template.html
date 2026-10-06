@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- language:start -->
+<script>/* Language (i18n.js): with a language other than English picked, keep the page hidden until it's translated (3 seconds at most). */(function(){try{var m=/[?&]lang=([^&#]*)/.exec(location.search),c=m?decodeURIComponent(m[1]):localStorage.getItem("lpwn_lang");if(!c||/^en$/i.test(c))return;if(m){var r=document.createElement("meta");r.name="robots";r.content="noindex, follow";document.head.appendChild(r)}var d=document.documentElement,s=document.createElement("style");s.textContent=".lpwn-i18n-wait body{visibility:hidden}";document.head.appendChild(s);d.classList.add("lpwn-i18n-wait");setTimeout(function(){d.classList.remove("lpwn-i18n-wait")},3000)}catch(e){}})();</script>
+<script src="/i18n.js?v=d428588e5a" defer></script>
+<!-- language:end -->
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESC}}" />
+<link rel="canonical" href="{{CANONICAL}}" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="La Porte Weather Now" />
+<meta property="og:title" content="{{OG_TITLE}}" />
+<meta property="og:description" content="{{DESC}}" />
+<meta property="og:url" content="{{CANONICAL}}" />
+<meta property="og:image" content="https://laporteweathernow.com/og-image.png?v=2" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="stylesheet" href="/style.css?v=c697776a03" />
+<link rel="stylesheet" href="/site-nav.css?v=b42ceda2a1" />
+<link rel="manifest" href="/manifest.json" />
+<meta name="theme-color" content="#1a1a1a" />
+<link rel="apple-touch-icon" href="/icon-192.png" />
+<link rel="icon" type="image/png" href="/icon-192.png" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+{{HEAD}}
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="topbar">
+  <div class="wrap"><span>LA PORTE COUNTY&#39;S LOCAL WEATHER &middot; FREE FOR EVERYONE</span><div class="topbar-links"><a href="/emergency" class="emergency-link">&#9888;&#65039; Emergency</a><a href="/about">Our mission &rarr;</a><a href="https://www.paypal.com/donate/?business=19scoops87%40gmail.com&currency_code=USD" target="_blank" rel="noopener" class="topbar-donate">&#9829; Donate</a><button type="button" id="installAppBtn" class="install-btn">&#128242; Download App</button></div></div>
+</div>
+
+<script>window.lpwnTrack = window.lpwnTrack || function () { (window.__lpwnQueue = window.__lpwnQueue || []).push([].slice.call(arguments)); };</script>
+<script src="/seasonal.js?v=bacec752d3" defer></script>
+<script src="/pwa.js?v=dcad0f9e29" defer></script>
+<script src="/track.js?v=0096f183bc" defer></script>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <div class="brand-mark">LPWN</div>
+      <div class="brand-text"><div class="t1">LA PORTE</div><div class="t2">WEATHER NOW</div></div>
+    </a>
+    <div class="navlinks">
+      <a href="/">WEATHER</a>
+      <a href="/emergency">ALERTS</a>
+      <a class="active" aria-current="page" href="/daily-scoop">DAILY SCOOP</a>
+      <a href="/weekend">WEEKEND</a>
+      <details class="nav-more"><summary>MORE</summary>
+        <div class="nav-more-menu">
+          <div class="nav-grp"><div class="nav-group">Tools</div><a href="/radar">Radar</a><a href="/golf">Golf Weather</a><a href="/hardhat/">Hard Hat Weather</a><a href="/farm/">Field Day Weather</a><a href="/snow-totals">Snow totals</a><a href="/game-night">Friday night forecast</a></div>
+          <div class="nav-grp"><div class="nav-group">Local</div><a href="/community">Local help &amp; events</a><a href="/towns">Towns</a><a href="/lake-michigan">Lake Michigan</a><a href="/history">La Porte history</a><a href="/snow-day">Snow day</a><a href="/eats">Local eats</a><a href="/visit">Visit La Porte</a><a href="/espanol" lang="es">En español</a></div>
+          <div class="nav-grp"><div class="nav-group">Travel</div><a href="/trip-planner">Trip Planner</a><a href="/camp-map">The Chase</a><a href="/travel-guides">Travel Guides</a><a href="/global">Global weather</a></div>
+          <div class="nav-grp"><div class="nav-group">Learn</div><a href="/storm-patterns">Storm Patterns</a><a href="/track-record">Track Record</a><a href="/weather-questions">Weather questions</a></div>
+          <div class="nav-grp"><div class="nav-group">From Scoop</div><a href="/faith">Faith &amp; Ministry</a><a href="/more-from-scoop">More from Scoop</a></div>
+          <div class="nav-grp"><div class="nav-group">About</div><a href="/about">Our mission</a><a href="/sources">Our sources</a><a href="/contact">Contact</a><a href="/weather-box">Free weather box</a></div>
+        </div>
+      </details>
+    </div>
+  </div>
+</nav>
+<main id="main">{{MAIN}}</main>
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand" style="margin-bottom:14px;">
+        <div class="brand-mark">LPWN</div>
+        <div class="brand-text"><div class="t1" style="color:#fff;">LA PORTE</div><div class="t2">WEATHER NOW</div></div>
+      </div>
+      <p style="max-width:320px; color:#9fab9c;">Local weather that started in La Porte County and is growing across the Midwest, built on free public data. Not a replacement for official NWS warnings.</p>
+      <p style="max-width:320px; color:#9fab9c; font-size:13px; margin-top:6px;">Run by Scoop, a <a href="/about#who" style="color:#c9d1c6;">National Weather Service SKYWARN-trained storm spotter</a>.</p>
+      <p style="max-width:320px; color:#9fab9c; font-size:12.5px; font-style:italic; margin-top:6px;">Love God. Love people. Tell the truth. Be prepared. Care for all that lives. &middot; Matthew 22:37&ndash;39</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h4>Weather</h4>
+        <ul>
+          <li><a href="/">Right Now</a></li>
+          <li><a href="/emergency">Emergency view</a></li>
+          <li><a class="active" aria-current="page" href="/daily-scoop">Daily Scoop</a></li>
+          <li><a href="/weekend">This Weekend</a></li>
+          <li><a href="/track-record">Track Record</a></li>
+          <li><a href="/storm-patterns">Storm Patterns</a></li>
+          <li><a href="/golf">Golf Weather</a></li>
+          <li><a href="/global">Global</a></li>
+          <li><a href="/hardhat/">Hard Hat Weather for crews</a></li>
+          <li><a href="/farm/">Field Day Weather for farms</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Travel</h4>
+        <ul>
+          <li><a href="/trip-planner">Trip Planner</a></li>
+          <li><a href="/camp-map">The Chase</a></li>
+          <li><a href="/travel-guides">Travel Guides</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>La Porte</h4>
+        <ul>
+          <li><a href="/community">Community</a></li>
+          <li><a href="/faith">Faith &amp; Ministry</a></li>
+          <li><a href="/more-from-scoop">More from Scoop</a></li>
+          <li><a href="/history">History</a></li>
+          <li><a href="/about">Our Mission</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/sources">Our sources</a></li>
+          <li><a href="/privacy">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://pinterest.com/scoopanddude" target="_blank" rel="noopener">Pinterest</a></li>
+          <li><a href="https://www.instagram.com/laporteweathernow/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=61593704493345" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.facebook.com/groups/395203475619853" target="_blank" rel="noopener">Facebook group</a></li>
+          <li><a href="https://www.tiktok.com/@laporteweathernow" target="_blank" rel="noopener">TikTok</a></li>
+          <li><a href="https://www.youtube.com/@laporteweathernow" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="https://x.com/scoopanddude" target="_blank" rel="noopener">X (Twitter)</a></li>
+          <li><a href="https://www.etsy.com/shop/ScoopAndDude" target="_blank" rel="noopener">Etsy Shop</a></li>
+          <li><a href="https://www.weather.gov" target="_blank" rel="noopener">Verify with NWS &#8599;</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p style="width:100%; text-align:center; font-size:11px; color:#9aa197; margin-top:24px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.08);">Courthouse photo by MrHarman, <a href="https://creativecommons.org/licenses/by/3.0/deed.en" target="_blank" rel="noopener" style="color:#8a9089;">CC BY 3.0</a>, via Wikimedia Commons</p>
+  <p style="width:100%; text-align:center; margin-top:20px;"><a href="https://www.paypal.com/donate/?business=19scoops87%40gmail.com&currency_code=USD" target="_blank" rel="noopener" class="btn btn-amber" style="margin:6px;">&#9829; Support This Site &mdash; Donate</a></p>
+</footer>
+
+<nav class="bottom-bar" aria-label="Quick links">
+  <a href="/"><span class="bi" aria-hidden="true">&#9728;&#65039;</span>Weather</a>
+  <a class="alerts-link" href="/emergency"><span class="bi" aria-hidden="true">&#9888;&#65039;</span>Alerts</a>
+  <a class="active" aria-current="page" href="/daily-scoop"><span class="bi" aria-hidden="true">&#128240;</span>Scoop</a>
+  <a href="/weekend"><span class="bi" aria-hidden="true">&#128197;</span>Weekend</a>
+  <details><summary><span class="bi" aria-hidden="true">&#9776;</span>More</summary>
+    <div class="more-sheet">
+      <div class="sheet-grp"><div class="nav-group">Tools</div><a href="/radar">Radar</a><a href="/golf">Golf Weather</a><a href="/hardhat/">Hard Hat Weather</a><a href="/farm/">Field Day Weather</a><a href="/snow-totals">Snow totals</a><a href="/game-night">Friday night forecast</a></div>
+      <div class="sheet-grp"><div class="nav-group">Local</div><a href="/community">Local help &amp; events</a><a href="/towns">Towns</a><a href="/lake-michigan">Lake Michigan</a><a href="/history">La Porte history</a><a href="/snow-day">Snow day</a><a href="/eats">Local eats</a><a href="/visit">Visit La Porte</a><a href="/espanol" lang="es">En español</a></div>
+      <div class="sheet-grp"><div class="nav-group">Travel</div><a href="/trip-planner">Trip Planner</a><a href="/camp-map">The Chase</a><a href="/travel-guides">Travel Guides</a><a href="/global">Global weather</a></div>
+      <div class="sheet-grp"><div class="nav-group">Learn</div><a href="/storm-patterns">Storm Patterns</a><a href="/track-record">Track Record</a><a href="/weather-questions">Weather questions</a></div>
+      <div class="sheet-grp"><div class="nav-group">From Scoop</div><a href="/faith">Faith &amp; Ministry</a><a href="/more-from-scoop">More from Scoop</a></div>
+      <div class="sheet-grp"><div class="nav-group">About</div><a href="/about">Our mission</a><a href="/sources">Our sources</a><a href="/contact">Contact</a><a href="/weather-box">Free weather box</a></div>
+    </div>
+  </details>
+</nav>
+</body>
+</html>

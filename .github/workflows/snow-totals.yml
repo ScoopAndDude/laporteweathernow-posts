@@ -1,0 +1,51 @@
+# Snow totals: saves snow.json, every NWS snow report for La Porte County grouped into storms, for
+# laporteweathernow.com/snow-totals (scripts/snow_totals.py). Started by the Timer every tick; the
+# script itself only asks for new reports once an hour October-May and once a day in summer.
+name: Snow totals
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Ask for new reports now, even if it isn't due"
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - scripts/snow_totals.py
+      - .github/workflows/snow-totals.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: snow-totals
+  cancel-in-progress: false
+
+jobs:
+  save:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ask for new snow reports and save them
+        env:
+          FORCE: ${{ (github.event_name == 'push' || github.event.inputs.force == 'true') && 'force' || '' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          python3 scripts/snow_totals.py $FORCE
+          if git diff --quiet -- snow.json; then exit 0; fi
+          cp snow.json "$RUNNER_TEMP/snow.json"
+          for i in 1 2 3 4; do
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            cp "$RUNNER_TEMP/snow.json" snow.json
+            git add snow.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -q -m "Snow totals ($(TZ=America/Chicago date '+%b %-d, %-I:%M %p %Z'))"
+            if git push -q origin HEAD:main; then exit 0; fi
+            sleep 5
+          done
+          exit 1

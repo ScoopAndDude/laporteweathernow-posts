@@ -5,7 +5,8 @@
 
 Nothing goes live unless this says PASS. It checks:
   - every page's links to the site's own pages and files point at something that exists
-    (Netlify matches file names without regard to capital letters, and so does this check)
+    (Netlify matches file names without regard to capital letters, and so does this check;
+    addresses served through a 200 rule in _redirects, like /scoop/<date>, count)
   - every versioned script and style (name.js?v=xxxxxxxxxx) has the stamp of its actual file,
     so visitors never keep an old copy
   - every page has the site menu (except the few that have their own, like Hard Hat)
@@ -55,9 +56,23 @@ def static_checks(root):
     files = all_files(root)
     problems = []
 
+    # Addresses served through a 200 rule in _redirects (a rewrite or proxy, like the Daily Scoop pages
+    # from the posts repository, added Oct. 6, 2026) count as existing.
+    proxies = []
+    if files.get("_redirects"):
+        for line in open(os.path.join(root, files["_redirects"]), encoding="utf-8").read().splitlines():
+            parts = line.split()
+            if len(parts) >= 3 and not parts[0].startswith("#") and parts[2].startswith("200"):
+                pat = re.sub(r":\w+", "[^/]+", re.escape(parts[0].rstrip("/") or "/")).replace("\\*", ".*")
+                proxies.append(re.compile("^" + pat + "/?$", re.I))
+
     def exists(url):
+        if "${" in url:      # put together by the page's own script when it runs
+            return True
         p = url.split("#")[0].split("?")[0].lstrip("/")
         if not p:
+            return True
+        if any(rx.match("/" + p) for rx in proxies):
             return True
         return any(c.lower() in files for c in (p, p + ".html", p.rstrip("/") + "/index.html"))
 

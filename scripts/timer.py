@@ -6,7 +6,9 @@ Sept. 29-30, 2026, a GitHub problem others report too. So a clock outside GitHub
 Script trigger in the business Google account) sends a "tick" every 15 minutes, and this script
 starts whichever jobs are due at that moment, in La Porte (Central) time:
 
-  every tick           Homepage weather copy, Weather radio, Daily Scoop updates
+  every tick           Homepage weather copy, Weather radio, Daily Scoop updates, Daily Scoop pages
+                       (added Oct. 6, 2026; it only saves pages that changed), Snow totals (it only asks
+                       for reports once an hour October-May and once a day in summer)
   5:00-5:14 AM         NWS weather snapshot (backup; the morning Scoop task starts its own)
   6:30-8:09 AM         Backup Daily Scoop (it posts only if today's Scoop isn't up)
   8:10-8:24 AM         Site health check
@@ -32,7 +34,7 @@ REPO = os.environ.get("GITHUB_REPOSITORY", "ScoopAndDude/laporteweathernow-posts
 TOKEN = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
 CENTRAL = ZoneInfo("America/Chicago")
 
-EVERY_TICK = ["home-cache.yml", "radio.yml", "scoop-update.yml"]
+EVERY_TICK = ["home-cache.yml", "radio.yml", "scoop-update.yml", "scoop-pages.yml", "snow-totals.yml"]
 # (workflow, [(from, to), ...], days): days are Python weekdays (Monday is 0); None means every day.
 WINDOWS = [
     ("nws-snapshot.yml", [("05:00", "05:14")], None),

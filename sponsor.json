@@ -1,5 +1,39 @@
 {
-  "about": "Who presents La Porte Weather Now's forecast: the line at the top of every Daily Scoop and under the home page's Next 24 hours (laporteweathernow.com). While the spot is open, sponsor stays null and both pages invite local businesses to sponsor. When a business signs on, fill in sponsor like the example; the pages update within about 10 minutes, no site publish needed. Never shown on the Emergency view or in alerts.",
-  "example": {"name": "Smith Roofing", "url": "https://example.com", "line": "Roofing and gutters across La Porte County", "until": "2026-12-31"},
-  "sponsor": null
+  "about": "Who presents La Porte Weather Now's forecast: the line at the top of every Daily Scoop and under the home page's Next 24 hours (laporteweathernow.com). While the spot is open, sponsor stays null and both pages invite local businesses to sponsor. When a business signs on, fill in sponsor like the example; the pages update within about 10 minutes, no site publish needed. Never shown on the Emergency view or in alerts. weatherSpots: weather-triggered spots on the home page, shown only on days the forecast matches 'when' (any of freeze, cold, snow, heat, wind, storms, rain), labeled as a sponsor, and never while a warning is in effect for La Porte County; one business of each kind; fill in like weatherSpotsExample. gameNight: who presents the Friday night forecasts (laporteweathernow.com/game-night); null while open.",
+  "example": {
+    "name": "Smith Roofing",
+    "url": "https://example.com",
+    "line": "Roofing and gutters across La Porte County",
+    "until": "2026-12-31"
+  },
+  "sponsor": null,
+  "weatherSpots": [],
+  "weatherSpotsExample": [
+    {
+      "name": "Smith Heating & Cooling",
+      "url": "https://example.com",
+      "line": "Furnace checks and repairs across La Porte County",
+      "when": [
+        "freeze",
+        "cold"
+      ],
+      "until": "2027-03-31"
+    },
+    {
+      "name": "Lakeshore Plowing",
+      "url": "https://example.com",
+      "line": "Driveway and lot plowing, La Porte and Michigan City",
+      "when": [
+        "snow"
+      ],
+      "until": "2027-03-31"
+    }
+  ],
+  "gameNight": null,
+  "gameNightExample": {
+    "name": "Smith Roofing",
+    "url": "https://example.com",
+    "line": "Proud to support La Porte County high school sports",
+    "until": "2026-11-30"
+  }
 }
