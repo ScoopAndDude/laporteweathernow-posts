@@ -1,0 +1,227 @@
+{
+ "about": "The Forecast Race: NOAA's new AI weather model, the National Weather Service's own forecasters and three other computer models, graded every day against the La Porte airport (KPPO). Each morning we save what each racer says about tomorrow (temperatures at four checkpoints and the 24-hour rain total) and grade it the next day. Saved forecasts are never changed. Run by La Porte Weather Now (scripts/forecast_race.py).",
+ "generated": "2026-10-06T17:31:17-05:00",
+ "started": "2026-10-06",
+ "station": {
+  "id": "KPPO",
+  "iem": "PPO",
+  "network": "IN_ASOS",
+  "name": "La Porte Municipal Airport",
+  "lat": 41.5725,
+  "lon": -86.7345
+ },
+ "rules": {
+  "checkpointsUtc": [
+   "06",
+   "12",
+   "18",
+   "00"
+  ],
+  "hitDegrees": 3,
+  "rainWindow": "06 UTC to 06 UTC (1 AM to 1 AM Central summer time; midnight to midnight in winter)",
+  "rainCall": "a racer 'calls rain' when it forecasts 0.01 inch or more for the 24 hours",
+  "minDaysToCall": 14
+ },
+ "racers": [
+  {
+   "id": "nws",
+   "name": "Weather Service forecasters",
+   "short": "Weather Service",
+   "kind": "people",
+   "about": "The National Weather Service's official forecast for the spot, made by its forecasters (Northern Indiana office), as it stood at 5:30 AM.",
+   "source": "NWS National Digital Forecast Database, NOAA Open Data on AWS",
+   "link": "https://registry.opendata.aws/noaa-ndfd/"
+  },
+  {
+   "id": "aigfs",
+   "name": "NOAA's AI model (AIGFS)",
+   "short": "NOAA AI",
+   "kind": "ai",
+   "about": "NOAA's Artificial Intelligence Global Forecast System, in use since Dec. 17, 2025. The run that starts at 7 PM Central the evening before.",
+   "source": "NOAA NOMADS",
+   "link": "https://nomads.ncep.noaa.gov/"
+  },
+  {
+   "id": "gfs",
+   "name": "NOAA's regular model (GFS)",
+   "short": "NOAA GFS",
+   "kind": "physics",
+   "about": "The Global Forecast System, NOAA's main physics-based computer model. Same run time as the AI.",
+   "source": "NOAA NOMADS",
+   "link": "https://nomads.ncep.noaa.gov/"
+  },
+  {
+   "id": "aifs",
+   "name": "Europe's AI model (AIFS)",
+   "short": "Europe AI",
+   "kind": "ai",
+   "about": "The European Centre for Medium-Range Weather Forecasts' AI model (AIFS Single). Same run time.",
+   "source": "ECMWF open data (CC BY 4.0)",
+   "link": "https://www.ecmwf.int/en/forecasts/datasets/open-data"
+  },
+  {
+   "id": "ifs",
+   "name": "Europe's regular model (ECMWF)",
+   "short": "Europe ECMWF",
+   "kind": "physics",
+   "about": "ECMWF's physics-based model (IFS), long rated one of the world's best. Same run time.",
+   "source": "ECMWF open data (CC BY 4.0)",
+   "link": "https://www.ecmwf.int/en/forecasts/datasets/open-data"
+  }
+ ],
+ "credits": "NOAA/National Weather Service (NDFD, AIGFS, GFS: public domain). ECMWF open data (AIFS, IFS) is used under the CC BY 4.0 licence: Copyright ECMWF. Observations: KPPO via the Iowa Environmental Mesonet.",
+ "leaderboard": {
+  "last30": [
+   {
+    "id": "nws",
+    "days": 0
+   },
+   {
+    "id": "aigfs",
+    "days": 0
+   },
+   {
+    "id": "gfs",
+    "days": 0
+   },
+   {
+    "id": "aifs",
+    "days": 0
+   },
+   {
+    "id": "ifs",
+    "days": 0
+   }
+  ],
+  "all": [
+   {
+    "id": "nws",
+    "days": 0
+   },
+   {
+    "id": "aigfs",
+    "days": 0
+   },
+   {
+    "id": "gfs",
+    "days": 0
+   },
+   {
+    "id": "aifs",
+    "days": 0
+   },
+   {
+    "id": "ifs",
+    "days": 0
+   }
+  ]
+ },
+ "headToHead": {
+  "aiVsNws": {
+   "a": "aigfs",
+   "b": "nws",
+   "days": 0,
+   "aBetter": 0,
+   "bBetter": 0,
+   "same": 0
+  },
+  "aiVsGfs": {
+   "a": "aigfs",
+   "b": "gfs",
+   "days": 0,
+   "aBetter": 0,
+   "bBetter": 0,
+   "same": 0
+  },
+  "europeAiVsNws": {
+   "a": "aifs",
+   "b": "nws",
+   "days": 0,
+   "aBetter": 0,
+   "bBetter": 0,
+   "same": 0
+  }
+ },
+ "days": [
+  {
+   "target": "2026-10-07",
+   "made": "2026-10-06",
+   "checkpoints": [
+    {
+     "utc": "2026-10-07T06:00Z",
+     "local": "1 AM"
+    },
+    {
+     "utc": "2026-10-07T12:00Z",
+     "local": "7 AM"
+    },
+    {
+     "utc": "2026-10-07T18:00Z",
+     "local": "1 PM"
+    },
+    {
+     "utc": "2026-10-08T00:00Z",
+     "local": "7 PM"
+    }
+   ],
+   "forecasts": {
+    "nws": {
+     "temps": [
+      56.0,
+      53.0,
+      73.0,
+      65.9
+     ],
+     "rainIn": 0.0,
+     "issued": "2026-10-06T10:17Z",
+     "saved": "2026-10-06T22:31Z"
+    },
+    "aigfs": {
+     "temps": [
+      56.6,
+      55.8,
+      75.7,
+      64.8
+     ],
+     "rainIn": 0.0,
+     "run": "2026-10-06T00:00Z",
+     "saved": "2026-10-06T22:31Z"
+    },
+    "gfs": {
+     "temps": [
+      55.6,
+      53.8,
+      72.4,
+      65.6
+     ],
+     "rainIn": 0.0,
+     "run": "2026-10-06T00:00Z",
+     "saved": "2026-10-06T22:31Z"
+    },
+    "aifs": {
+     "temps": [
+      57.3,
+      55.6,
+      73.5,
+      62.0
+     ],
+     "rainIn": 0.0,
+     "run": "2026-10-06T00:00Z",
+     "saved": "2026-10-06T22:31Z"
+    },
+    "ifs": {
+     "temps": [
+      57.6,
+      55.5,
+      70.0,
+      62.3
+     ],
+     "rainIn": 0.0,
+     "run": "2026-10-06T00:00Z",
+     "saved": "2026-10-06T22:32Z"
+    }
+   },
+   "status": "waiting"
+  }
+ ]
+}
