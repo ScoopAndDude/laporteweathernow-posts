@@ -45,6 +45,8 @@ jobs:
           pip install --quiet pygrib numpy
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Start from the newest race.json (a run started by hand is pinned to an older commit).
+          git fetch -q origin main && git reset -q --hard origin/main
           case "$MODE" in
             backfill) python3 scripts/forecast_race.py backfill "$FROM" "$TO" ;;
             force) python3 scripts/forecast_race.py force ;;

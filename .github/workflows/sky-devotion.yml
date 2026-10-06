@@ -42,6 +42,7 @@ jobs:
           node tools/devotion/test_sky.js > /dev/null
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch -q origin main && git reset -q --hard origin/main
           node scripts/sky_devotion.js $FORCE
           if git diff --quiet -- devotion.json && [ -z "$(git ls-files --others --exclude-standard -- devotion.json)" ]; then exit 0; fi
           cp devotion.json "$RUNNER_TEMP/"
