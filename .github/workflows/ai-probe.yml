@@ -1,23 +1,24 @@
-# One-time probe for the AI scoreboard (branch ai-probe only; delete after).
+# Test run of the Forecast Race on this branch only (backfill + today), before it goes on main.
 name: AI probe
 on:
   push:
     branches: [ai-probe]
-    paths: [tools/ai-probe/**, .github/workflows/ai-probe.yml]
+    paths: [scripts/forecast_race.py, .github/workflows/ai-probe.yml]
 permissions:
   contents: write
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
-      - name: Probe data sources
+      - name: Backfill and save today's forecasts (test)
         run: |
+          pip install --quiet pygrib numpy 2>&1 | tail -2
           mkdir -p probe
-          pip install --quiet pygrib numpy 2>&1 | tail -2; python3 tools/ai-probe/probe.py || true
-          true
+          ( python3 scripts/forecast_race.py backfill 2026-09-27 2026-10-05 && python3 scripts/forecast_race.py force ) > probe/race-log.txt 2>&1 || true
+          cp race.json probe/race.json 2>/dev/null || true
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add probe/
-          git commit -q -m "AI probe results" && git push -q origin HEAD:ai-probe || true
+          git commit -q -m "Forecast Race test results" && git push -q origin HEAD:ai-probe || true
