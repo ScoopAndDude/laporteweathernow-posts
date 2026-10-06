@@ -1,0 +1,60 @@
+== AIGFS root: 200, 2895 bytes  https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigfs/prod/
+AIGFS dates: ['aigfs.20260927/', 'aigfs.20260928/', 'aigfs.20260929/', 'aigfs.20260930/', 'aigfs.20261001/', 'aigfs.20261002/', 'aigfs.20261003/', 'aigfs.20261004/', 'aigfs.20261005/', 'aigfs.20261006/']
+== AIGFS day: 200, 2420 bytes  https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigfs/prod/aigfs.20261005/
+cycles: ['/pub/data/nccf/com/aigfs/prod/', '00/', '06/', '12/', '18/']
+== AIGFS 00z grib2 dir: 200, 38849 bytes  https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigfs/prod/aigfs.20261005/00/model/atmos/grib2/
+files: 0 [] ... []
+== idx aigfs.t00z.sfc.f036.grib2.idx: 200, 342 bytes  https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigfs/prod/aigfs.20261005/00/model/atmos/grib2/aigfs.t00z.sfc.f036.grib2.idx
+1:0:d=2026100500:UGRD:10 m above ground:36 hour fcst:
+2:919784:d=2026100500:VGRD:10 m above ground:36 hour fcst:
+3:1840257:d=2026100500:TMP:2 m above ground:36 hour fcst:
+4:2350256:d=2026100500:PRMSL:mean sea level:36 hour fcst:
+5:3540954:d=2026100500:APCP:surface:30-36 hour acc fcst:
+6:3967782:d=2026100500:APCP:surface:0-36 hour acc fcst:
+
+== idx aigfs.t00z.sfc.f042.grib2.idx: 200, 342 bytes  https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigfs/prod/aigfs.20261005/00/model/atmos/grib2/aigfs.t00z.sfc.f042.grib2.idx
+1:0:d=2026100500:UGRD:10 m above ground:42 hour fcst:
+2:920311:d=2026100500:VGRD:10 m above ground:42 hour fcst:
+3:1839968:d=2026100500:TMP:2 m above ground:42 hour fcst:
+4:2349652:d=2026100500:PRMSL:mean sea level:42 hour fcst:
+5:3543783:d=2026100500:APCP:surface:36-42 hour acc fcst:
+6:3971320:d=2026100500:APCP:surface:0-42 hour acc fcst:
+
+== idx aigfs.t00z.sfc.f039.grib2.idx: FAILED HTTP Error 404: Not Found  https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigfs/prod/aigfs.20261005/00/model/atmos/grib2/aigfs.t00z.sfc.f039.grib2.idx
+== aigefs root: 200, 2248 bytes  https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigefs/prod/
+aigefs ['/pub/data/nccf/com/aigefs/', 'aigefs.20261005/', 'aigefs.20261006/']
+== hgefs root: 200, 2239 bytes  https://nomads.ncep.noaa.gov/pub/data/nccf/com/hgefs/prod/
+hgefs ['/pub/data/nccf/com/hgefs/', 'hgefs.20261005/', 'hgefs.20261006/']
+== GFS root: 200, 3801 bytes  https://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/
+GFS dates: ['gfs.20260927/', 'gfs.20260928/', 'gfs.20260929/', 'gfs.20260930/', 'gfs.20261001/', 'gfs.20261002/', 'gfs.20261003/', 'gfs.20261004/', 'gfs.20261005/', 'gfs.20261006/']
+== GFS filter f036: 200, 201 bytes  https://nomads.ncep.noaa.gov/cgi-bin/filter_gfs_0p25.pl?dir=%2Fgfs.20261005%2F00%2Fatmos&file=gfs.t00z.pgrb2.0p25.f036&var_TMP=on&lev_2_m_above_ground=on&subregion=&toplat=42&leftlon=273&rightlon=274&bottomlat=41
+== bucket noaa-gfs-bdp-pds: 200, 923 bytes  https://noaa-gfs-bdp-pds.s3.amazonaws.com/?list-type=2&max-keys=8&delimiter=/
+<?xml version="1.0" encoding="UTF-8"?>
+<ListBucketResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Name>noaa-gfs-bdp-pds</Name><Prefix></Prefix><NextContinuationToken>1275+F2kTEFvcARmHN2n8Pn3rkd/M2dl1Cy0P/QM7ssS49PNGZIKe6IPFJ4LUCMnD</NextContinuationToken><KeyCount>8</KeyCount><MaxKeys>8</MaxKeys><Delimiter>/</Delimiter><IsTruncated>true</IsTruncated><CommonPrefixes><Prefix>enkfgdas.20210212/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>enkfgdas.20210213/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>enkfgdas.20210214/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>enkfgdas.20210215/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>enkfgdas.20210216/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>enkfgdas.20210217/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>enkfgdas.20210218/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>enkfgdas.20210219/</Prefix></CommonPrefi
+== bucket noaa-nws-aigfs-pds: FAILED HTTP Error 404: Not Found  https://noaa-nws-aigfs-pds.s3.amazonaws.com/?list-type=2&max-keys=8&delimiter=/
+== bucket noaa-aigfs-pds: FAILED HTTP Error 404: Not Found  https://noaa-aigfs-pds.s3.amazonaws.com/?list-type=2&max-keys=8&delimiter=/
+== bucket noaa-ndfd-pds: 200, 1311 bytes  https://noaa-ndfd-pds.s3.amazonaws.com/?list-type=2&max-keys=8&delimiter=/
+<?xml version="1.0" encoding="UTF-8"?>
+<ListBucketResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Name>noaa-ndfd-pds</Name><Prefix></Prefix><KeyCount>7</KeyCount><MaxKeys>8</MaxKeys><Delimiter>/</Delimiter><IsTruncated>false</IsTruncated><Contents><Key>NDFDelem_fullres_201906.xls</Key><LastModified>2020-06-02T18:43:35.000Z</LastModified><ETag>&quot;cd9be2d5bc3a38fa6cc113c7c769e083&quot;</ETag><Size>754688</Size><StorageClass>STANDARD</StorageClass></Contents><Contents><Key>NDFDelem_fullres_202203.xls</Key><LastModified>2022-05-18T17:51:04.000Z</LastModified><ETag>&quot;252c75d021a0cc0274f5a6185d587ad1&quot;</ETag><Size>827392</Size><StorageClass>STANDARD</StorageClass></Contents><Contents><Key>NDFDelem_fullres_202206.xls</Key><LastModified>2022-07-13T13:56:01.000Z</LastModified><ETag>&quot;f92f30e7a500862af8c656f0282e4890&quot;</ETag><Size>827392</Size><StorageClass>STANDARD</Sto
+== bucket noaa-nws-ndfd-pds: FAILED HTTP Error 404: Not Found  https://noaa-nws-ndfd-pds.s3.amazonaws.com/?list-type=2&max-keys=8&delimiter=/
+== NDFD prefixes: 200, 1598 bytes  https://noaa-ndfd-pds.s3.amazonaws.com/?list-type=2&max-keys=20&delimiter=/&prefix=wmo/
+<?xml version="1.0" encoding="UTF-8"?>
+<ListBucketResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Name>noaa-ndfd-pds</Name><Prefix>wmo/</Prefix><NextContinuationToken>1XRK8tu5WSaMTJ/yLqhz8TjTqUXU1w2baLOthbg1oX0xZLvcJw6InPA==</NextContinuationToken><KeyCount>20</KeyCount><MaxKeys>20</MaxKeys><Delimiter>/</Delimiter><IsTruncated>true</IsTruncated><CommonPrefixes><Prefix>wmo/apt/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/cig/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/conhazo/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/critfireo/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/dryfireo/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/fret/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/fretdep/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/frettot/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/fwspd/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/heatrisk/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/iceaccum/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/llwsdir/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/llwshgt/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/llwsspd/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/maxrh/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/maxt/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/minrh/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/mint/</Prefix></CommonPrefixes><CommonPrefixes><Prefix>wmo/p24less0025/</Prefi
+== ECMWF root: 200, 429699 bytes  https://data.ecmwf.int/forecasts/
+ECMWF dates: ['/forecasts/20261004/', '/forecasts/20261005/', '/forecasts/20261006/', '/forecasts/wis2/', 'https://github.com/ecmwf/open-ecpds', "' + base + '/"]
+== ECMWF day: 200, 429440 bytes  https://data.ecmwf.int/forecasts/20261005/00z/
+ECMWF 00z: ['/favicon.png', '/favicon.ico', '/bootstrap/css/bootstrap.min.css', '/bootstrap-icons/bootstrap-icons.min.css', '/datatables/css/dataTables.bootstrap5.min.css', '/', '/ecpds/logout', 'https://ecmwf.github.io/open-ecpds/', '#httpsFormats', '#httpsParallel', '#s3WriteExamples', '#s3Boto3', '/forecasts/20261005/', '/forecasts/20261005/', '#', '#', '#', '#', '/forecasts/20261005/00z/aifs-ens/', '/forecasts/20261005/00z/aifs-single/', '/forecasts/20261005/00z/ifs/', 'https://github.com/ecmwf/open-ecpds', "' + base + '/"]
+== ECMWF aifs-single: 200, 467539 bytes  https://data.ecmwf.int/forecasts/20261005/00z/aifs-single/0p25/oper/
+aifs files: 145 ['/favicon.png', '/favicon.ico', '/bootstrap/css/bootstrap.min.css', '/bootstrap-icons/bootstrap-icons.min.css', '/datatables/css/dataTables.bootstrap5.min.css', '/', '/ecpds/logout', 'https://ecmwf.github.io/open-ecpds/', '#httpsFormats', '#httpsParallel']
+aifs 36h index: ['/forecasts/20261005/00z/aifs-single/0p25/oper/20261005000000-336h-oper-fc.index', '/forecasts/20261005/00z/aifs-single/0p25/oper/20261005000000-36h-oper-fc.index']
+== aifs index: 200, 29700 bytes  https://data.ecmwf.int/forecasts/20261005/00z/aifs-single/0p25/oper/20261005000000-336h-oper-fc.index
+122 lines
+{"domain": "g", "date": "20261005", "time": "0000", "expver": "0001", "class": "ai", "type": "fc", "stream": "oper", "levtype": "sfc", "step": "336", "param": "tp", "model": "aifs-single", "_offset": 16163816, "_length": 992377}
+{"domain": "g", "date": "20261005", "time": "0000", "expver": "0001", "class": "ai", "type": "fc", "stream": "oper", "step": "336", "levtype": "sfc", "param": "2t", "model": "aifs-single", "_offset": 86399193, "_length": 524142}
+== ECMWF ifs: 200, 481230 bytes  https://data.ecmwf.int/forecasts/20261005/00z/ifs/0p25/oper/
+ifs files: 193 ['/favicon.png', '/favicon.ico', '/bootstrap/css/bootstrap.min.css', '/bootstrap-icons/bootstrap-icons.min.css', '/datatables/css/dataTables.bootstrap5.min.css', '/']
+== IEM obhistory: 200, 43245 bytes  https://mesonet.agron.iastate.edu/api/1/obhistory.json?station=PPO&network=IN_ASOS&date=2026-10-05
+obs rows: 72 [{"index": 0, "utc_valid": "2026-10-05T05:15Z", "local_valid": "2026-10-05T00:15", "tmpf": 48.2, "dwpf": 48.2, "sknt": 2.0, "drct": 280.0, "vsby": 10.0, "skyc1": "CLR", "skyl1": null, "skyc2": null, "skyl2": null, "skyc3": null, "skyl3": null, "skyc4": null, "skyl4": null, "relh": 100.0, "feel": 48.2, "alti": 30.22, "mslp": null, "p01i": 0.0, "p03i": null, "p24i": null, "raw": "KPPO 050515Z AUTO 28002KT 10SM CLR 09/09 A3022 RMK AO2", "p06i": null, "max_tmpf_6hr": null, "min_tmpf_6hr": null, "gust": null, "wxcodes": null, "snowdepth": null, "peak_wind_gust": null, "peak_wind_drct": null, "peak_wind_time": null}, {"index": 1, "utc_valid": "2026-10-05T05:35Z", "local_valid": "2026-10-05T00:35",
+point: IWX 13 58 https://api.weather.gov/gridpoints/IWX/13,58
+grid updateTime: 2026-10-06T20:01:05+00:00 temp uom: wmoUnit:degC first values: [{"validTime": "2026-10-06T14:00:00+00:00/PT1H", "value": 12.222222222222221}, {"validTime": "2026-10-06T15:00:00+00:00/PT1H", "value": 16.11111111111111}, {"validTime": "2026-10-06T16:00:00+00:00/PT1H", "value": 18.333333333333332}, {"validTime": "2026-10-06T17:00:00+00:00/PT1H", "value": 20}]
+GRIB OK: 2 metre temperature 2 2026-10-06 12:00:00 shape (5, 5) lats [41.   41.25 41.5  41.75 42.  ] lons [273.   273.25 273.5  273.75 274.  ] values K [[282.47, 282.47, 281.97, 281.57, 281.07], [282.37, 281.97, 281.87, 280.97, 280.87], [281.57, 281.17, 281.27, 280.77, 280.47], [284.77, 281.77, 280.87, 280.87, 280.37], [286.57, 285.47, 282.57, 280.27, 280.07]]
