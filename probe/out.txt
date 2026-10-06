@@ -1,100 +1,55 @@
-PFMIWX latest length 41441
-first lines:
-
-034 
-FOUS53 KIWX 061957
-PFMIWX
-
-Point Forecast Matrices
-National Weather Service Northern Indiana
-357 PM EDT Tue Oct 6 2026
-
-INZ104-070800-
-South Bend Regional Aiport-St. Joseph IN
-41.71N  86.32W Elev. 799 ft
-357 PM EDT Tue Oct 6 2026
-
-Date           10/06/26      Wed 10/07/26            Thu 10/08/26            Fri
-EDT 3hrly     17 20 23 02 05 08 11 14 17 20 23 02 05 08 11 14 17 20 23 02 05 08
-UTC 3hrly     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
-
-Min/Max                      54          73          53          66          44
-Temp          70 64 58 57 56 55 65 72 71 61 57 56 55 53 64 66 64 55 50 48 46 44
-Dewpt         48 47 45 45 44 45 53 57 55 54 52 51 50 50 50 46 44 45 45 45 43 43
-RH            45 54 62 64 64 69 65 59 57 78 83 83 83 89 60 48 48 69 83 89 89 96
-Wind dir       S  S  S SW SW SW  W  W NW  W  W  W  W  W NW NW NW NW  N  N  N  S
-Wind spd      12 10 11 10 11 10 10 10 10  3  5  5  6  5 10 12 11  3  0  0  0  2
-Clouds        CL FW FW SC SC FW FW SC FW FW FW SC SC B1 SC SC FW FW FW FW FW FW
-PoP 12hr                      5           0           0           0           0
-QPF 12hr                      0           0           0           0           0
-
-POINT LINE: South Bend Regional Aiport-St. Joseph IN
-POINT LINE: Michigan City Municipal Airport-La Porte IN
-LA PORTE block:
- 12hr          0       0     0       5    30      10     5      20    30
-Rain shwrs                                 C  C                     S  C  C
-
-$$
-INZ003-070800-
+MGC rows 72
+   2026-09-30T05:15Z 64.4 p01i 0.0 KMGC 300515Z AUTO 18005KT 10SM CLR 18/10 A2997 RMK AO2
+   2026-09-30T05:35Z 64.4 p01i 0.0 KMGC 300535Z AUTO 19006KT 10SM CLR 18/10 A2997 RMK AO2
+   2026-09-30T05:55Z 64.4 p01i 0.0 KMGC 300555Z AUTO 18006KT 10SM CLR 18/10 A2996 RMK AO2
+  daily 2026-09-27 64.4 41.0 None
+  daily 2026-09-28 68.0 44.6 None
+  daily 2026-09-29 77.0 46.4 None
+  daily 2026-09-30 68.0 60.8 None
+PPO rows 62
+   2026-09-30T05:15Z 60.8 p01i 0.0 KPPO 300515Z AUTO 17004KT 10SM CLR 16/16 A2997 RMK AO2
+   2026-09-30T05:35Z 62.6 p01i 0.0 KPPO 300535Z AUTO 18004KT 10SM CLR 17/16 A2997 RMK AO2
+   2026-09-30T05:55Z 62.6 p01i 0.0 KPPO 300555Z AUTO 18003KT 10SM CLR 17/16 A2997 RMK AO2 10195 20140
+   2026-09-30T15:55Z 62.6 p01i 0.01 KPPO 301555Z AUTO 15004KT 10SM -RA SCT085 17/17 A3000 RMK AO2 P0001
+   2026-09-30T16:55Z 62.6 p01i 0.01 KPPO 301655Z AUTO 16005KT 6SM -RA BR OVC070 17/17 A2998 RMK AO2 P0001
+   2026-09-30T17:55Z 62.6 p01i 0.02 KPPO 301755Z AUTO 16006KT 7SM -RA FEW060 OVC075 17/17 A2997 RMK AO2 P0002 10176 20153
+   2026-09-30T18:55Z 62.6 p01i 0.05 KPPO 301855Z AUTO 16005KT 4SM -RA BR CLR 17/17 A2996 RMK AO2 P0005
+   2026-09-30T19:55Z 64.4 p01i 0.04 KPPO 301955Z AUTO VRB06KT 7SM -RA BR FEW055 18/18 A2993 RMK AO2 P0004
+   2026-09-30T20:55Z 64.4 p01i 0.02 KPPO 302055Z AUTO 17006KT 150V210 6SM -RA BR SCT043 BKN070 BKN080 18/18 A2993 RMK AO2 P0002
+  daily 2026-09-27 69.8 42.8 None
+  daily 2026-09-28 73.4 46.4 None
+  daily 2026-09-29 78.8 46.4 None
+  daily 2026-09-30 64.4 59.0 0.4
+meta MGC Michigan City [-86.8212, 41.7033] 1977-01-26
+meta PPO La Porte [-86.7345, 41.5725] 2012-04-03
+meta SBN SOUTH BEND [-86.3164, 41.7072] 1929-12-02
+meta VPZ VALPARAISO [-87.0071, 41.454] 1997-11-30
+NDFD wmo/temp/ ['wmo/temp/', 'wmo/temp/2020/', 'wmo/temp/2021/', 'wmo/temp/2022/', 'wmo/temp/2023/', 'wmo/temp/2024/', 'wmo/temp/2025/', 'wmo/temp/2026/'] []
+NDFD wmo/temp/2026/ ['wmo/temp/2026/', 'wmo/temp/2026/01/', 'wmo/temp/2026/02/', 'wmo/temp/2026/03/', 'wmo/temp/2026/04/', 'wmo/temp/2026/05/', 'wmo/temp/2026/06/', 'wmo/temp/2026/07/', 'wmo/temp/2026/08/', 'wmo/temp/2026/09/', 'wmo/temp/2026/10/'] []
+NDFD wmo/temp/2026/10/ ['wmo/temp/2026/10/', 'wmo/temp/2026/10/01/', 'wmo/temp/2026/10/02/', 'wmo/temp/2026/10/03/', 'wmo/temp/2026/10/04/', 'wmo/temp/2026/10/05/', 'wmo/temp/2026/10/06/'] []
+NDFD opnl/ ['opnl/', 'opnl/AR.alaska/', 'opnl/AR.conus/', 'opnl/AR.guam/', 'opnl/AR.hawaii/', 'opnl/AR.nhemi/', 'opnl/AR.npacocn/', 'opnl/AR.oceanic/', 'opnl/AR.puertori/'] []
+PFM 2026-09-30T08:00Z issuances ['611 AM EDT Wed Sep 30 2026', '611 AM EDT Wed Sep 30 2026', '611 AM EDT Wed Sep 30 2026']
 Michigan City Municipal Airport-La Porte IN
 41.70N  86.82W Elev. 655 ft
-357 PM EDT Tue Oct 6 2026
+611 AM EDT Wed Sep 30 2026
 
-Date           10/06/26      Wed 10/07/26            Thu 10/08/26            Fri
-EDT 3hrly     17 20 23 02 05 08 11 14 17 20 23 02 05 08 11 14 17 20 23 02 05 08
-UTC 3hrly     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+Date             Wed 09/30/26            Thu 10/01/26            Fri 10/02/26
+EDT 3hrly     05 08 11 14 17 20 23 02 05 08 11 14 17 20 23 02 05 08 11 14 17 20
+UTC 3hrly     09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00
 
-Min/Max                      57          72          56          65          47
-Temp          70 63 59 58 58 57 66 70 70 63 60 59 57 56 63 65 63 56 53 51 49 48
-Dewpt         51 49 48 46 46 47 57 59 58 56 54 52 51 50 52 49 47 48 47 46 45 44
-RH            51 60 67 64 64 69 73 68 66 78 81 78 80 80 67 56 56 74 80 83 86 86
-Wind dir       S  S  S SW SW SW  W  W NW  W  W  W  W NW NW NW NW  N NW  W SW  S
-Wind spd      10  6  9  8  8  8  8  6  4  1  3  4  5  5  9 10  6  1  1  2  2  2
-Wind gust              18 18                                                   
-Clouds        CL CL FW FW SC FW SC FW FW FW FW SC SC SC SC SC FW FW FW FW FW FW
-PoP 12hr                      0           0           0           0           0
-QPF 12hr                      0           0           0           0           0
+Max/Min                      69          62          72          56          63
+Temp             62 64 66 65 64 64 64 63 64 68 71 70 65 63 61 58 56 60 62 60 54
+Dewpt            52 56 58 60 61 61 61 61 61 64 66 66 65 63 61 58 54 54 51 50 50
+RH               70 75 75 84 90 90 90 93 90 87 84 87100100100100 93 81 67 69 86
+Wind dir          S SW  S  S  S  S  S  S  S  S SW SW SW  N  N  N  N  N  N  N  N
+Wind spd          6  8  9  9  8  5  3  3  4  5  6  5  4  3  4  6  6  8 10 10  6
+Clouds           OV B2 B2 OV OV B2 B2 B2 B1 B2 B2 OV OV OV OV OV B2 B1 SC FW FW
+PoP 12hr                     90          50          80          90          10
+QPF 12hr                   0.22        0.04        0.33        0.57           0
 Snow 12hr                 00-00       00-00       00-00                        
+Rain shwrs        S  C  D  C  C  C  C  C  C  C  L  D  D  D  L  L               
+Tstms                                              S                           
 
 
-Date           10/09  Sat 10/10/26  Sun 10/11/26  Mon 10/12/26  Tue 10/13/26
-EDT 6hrly     14 20   02 08 14 20   02 08 14 20   02 08 14 20   02 08 14 20
-UTC 6hrly     18 00   06 12 18 00   06 12 18 00   06 12 18 00   06 12 18 00
-
-Max/Min          69      55    79      60    74      54    72      55    69
-Temp          67 62   57 56 76 71   64 60 72 66   57 55 70 65   58 56 67 62
-Dewpt         48 49   45 45 55 55   52 52 59 58   56 55 60 59   56 55 56 54
-PWind dir         S       S     S       S    SE       E     N       S     W
-Wind char        LT      LT    GN      LT    LT      LT    LT      LT    GN
-Avg clouds    FW FW   SC FW CL CL   SC SC SC SC   SC SC SC SC   SC SC B1 SC
-PoP 12hr          0       0     0       5    20       5     5      20    40
-Rain shwrs                                 S  S                     S  C  C
-
-$$
-INZ015-070800-
-Rochester Fulton County Airport-Fulton IN
-41.07N  86.18W Elev. 790 ft
-357 PM EDT Tue Oct 6 2026
-
-Date           10/06/26      Wed 10/07/26            Th
-archive Sept 27 09-12Z length 39586 issued lines: ['541 AM EDT Sun Sep 27 2026', '541 AM EDT Sun Sep 27 2026', '541 AM EDT Sun Sep 27 2026', '541 AM EDT Sun Sep 27 2026', '541 AM EDT Sun Sep 27 2026']
-NDFD temp keys Oct 5: 0
-AIGFS :TMP:2 m above ground: [('2t', '2 metre temperature', '2026-10-06 12:00:00', 281.2, 41.5, 273.25)]
-AIGFS :APCP:surface:30-36 hour acc [('tp', 'Total Precipitation', '2026-10-06 06:00:00', 0.0, 41.5, 273.25)]
-GFS [('t', 'Temperature', '2026-10-06 12:00:00', 280.007763671875, 41.5, 273.25), ('2t', '2 metre temperature', '2026-10-06 12:00:00', 281.1691162109375, 41.5, 273.25), ('tp', 'Total Precipitation', '2026-10-06 06:00:00', 0.0, 41.5, 273.25), ('tp', 'Total Precipitation', '2026-10-05 00:00:00', 0.0, 41.5, 273.25)]
-aifs-single 2t [('2t', '2 metre temperature', '2026-10-06 12:00:00', 280.4354705810547, 41.5, -86.75)]
-aifs-single tp [('tp', 'Total Precipitation', '2026-10-05 00:00:00', 0.0, 41.5, -86.75)]
-ifs 2t [('2t', '2 metre temperature', '2026-10-06 12:00:00', 280.2694396972656, 41.5, -86.75)]
-ifs tp [('tp', 'Total precipitation', '2026-10-05 00:00:00', 0.0, 41.5, -86.75)]
-obs 2026-10-06T11:15Z 42.8 0.0 KPPO 061115Z AUTO 04002KT 10SM SCT080 06/06 A3019 RMK AO2
-obs 2026-10-06T11:35Z 41.0 0.0 KPPO 061135Z AUTO 12001KT 10SM FEW080 05/05 A3019 RMK AO2
-obs 2026-10-06T11:55Z 41.0 0.0 KPPO 061155Z AUTO 10002KT 10SM CLR 05/05 A3018 RMK AO2 10070 20049 70000
-obs 2026-10-06T12:15Z 42.8 0.0 KPPO 061215Z AUTO 04002KT 10SM CLR 06/06 A3019 RMK AO2
-obs 2026-10-06T12:35Z 44.6 0.0 KPPO 061235Z AUTO 09001KT 10SM CLR 07/07 A3019 RMK AO2
-obs 2026-10-06T12:55Z 46.4 0.0 KPPO 061255Z AUTO 13002KT 10SM CLR 08/08 A3018 RMK AO2
-obs 2026-10-06T17:15Z 69.8 0.0 KPPO 061715Z AUTO 21011G15KT 10SM CLR 21/07 A3010 RMK AO2
-obs 2026-10-06T17:35Z 69.8 0.0 KPPO 061735Z AUTO 22009G16KT 10SM CLR 21/07 A3009 RMK AO2
-obs 2026-10-06T17:55Z 71.6 0.0 KPPO 061755Z AUTO 17009G14KT 10SM CLR 22/07 A3008 RMK AO2 10224 20051
-obs 2026-10-06T18:15Z 71.6 0.0 KPPO 061815Z AUTO 22011G16KT 10SM CLR 22/07 A3007 RMK AO2
-obs 2026-10-06T18:35Z 71.6 0.0 KPPO 061835Z AUTO 19009G16KT 160V220 10SM CLR 22/07 A3006 RMK AO2
-obs 2026-10-06T18:55Z 73.4 0.0 KPPO 061855Z AUTO 18010G16KT 10SM CLR 23/07 A3004 RMK AO2
+Date          Sat 10/03/26  Sun 10/04/26  Mon 10/05/26  Tue 10/06/26
+EDT 6hrly     02 08 14 20   02
