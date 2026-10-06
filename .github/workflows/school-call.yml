@@ -33,7 +33,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Save the call and grade earlier ones
         env:
-          FORCE: ${{ (github.event.inputs.force == 'true' || (github.event_name == 'push' && contains(toJSON(github.event.commits), 'school_call.py'))) && 'force' || '' }}
+          FORCE: ${{ github.event.inputs.force == 'true' && 'force' || github.event_name == 'push' && 'push' || '' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

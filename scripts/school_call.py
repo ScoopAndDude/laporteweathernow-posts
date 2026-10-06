@@ -22,6 +22,8 @@ delay we didn't see coming counts once it's logged). A line saying "no school" m
 
   python3 scripts/school_call.py          save the call when it's due (8 p.m. before a school day) and grade
   python3 scripts/school_call.py force    save the call for the next school morning now, if it isn't saved yet
+  python3 scripts/school_call.py push     after a change to this repository: grade, and if there's no school.json
+                                          yet, save the first call now
 
 LEVEL RULES (from the home page's School Delay Watch, Oct. 1, 2026), for 6 to 8 a.m.:
   closing possible: a Blizzard, Winter Storm, Ice Storm, Lake Effect Snow, Extreme Cold or Wind Chill
@@ -255,7 +257,8 @@ def grade(call, outcome):
 
 
 def main():
-    force = len(sys.argv) > 1 and sys.argv[1] == "force"
+    mode = sys.argv[1] if len(sys.argv) > 1 else ""
+    force = mode == "force" or (mode == "push" and not os.path.exists(OUT))
     now = now_utc().astimezone(CENTRAL)
     today = now.date()
     old = json.load(open(OUT, encoding="utf-8")) if os.path.exists(OUT) else {}
