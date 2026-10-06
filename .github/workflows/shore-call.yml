@@ -38,13 +38,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           python3 scripts/shore_call.py $FORCE
-          if git diff --quiet -- shore.json && ! git ls-files --others --exclude-standard | grep -q '^shore.json$'; then exit 0; fi
-          cp shore.json "$RUNNER_TEMP/shore.json"
+          if git diff --quiet -- shore.json shore-today.json && [ -z "$(git ls-files --others --exclude-standard -- shore.json shore-today.json)" ]; then exit 0; fi
+          cp shore.json shore-today.json "$RUNNER_TEMP/"
           for i in 1 2 3 4; do
             git fetch -q origin main
             git reset -q --hard origin/main
-            cp "$RUNNER_TEMP/shore.json" shore.json
-            git add shore.json
+            cp "$RUNNER_TEMP/shore.json" "$RUNNER_TEMP/shore-today.json" .
+            git add shore.json shore-today.json
             if git diff --cached --quiet; then exit 0; fi
             git commit -q -m "Shore Call ($(TZ=America/Chicago date '+%b %-d, %-I:%M %p %Z'))"
             if git push -q origin HEAD:main; then exit 0; fi

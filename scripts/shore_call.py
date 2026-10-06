@@ -51,6 +51,7 @@ from zoneinfo import ZoneInfo
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "shore.json")
+TODAY_OUT = os.path.join(HERE, "..", "shore-today.json")   # just the newest call, small, for the home page
 SNOW = os.path.join(HERE, "..", "snow.json")
 CENTRAL = ZoneInfo("America/Chicago")
 EASTERN = ZoneInfo("America/Indiana/Indianapolis")   # NWS Northern Indiana dates its products in Eastern time
@@ -922,6 +923,15 @@ def main():
             "calls": calls[:KEEP_CALLS], "errors": errors}
     with open(OUT, "w", encoding="utf-8", newline="\n") as fh:
         fh.write(json.dumps(data, ensure_ascii=False, indent=1) + "\n")
+    newest = calls[0] if calls else None
+    small = {"about": "The newest Shore Call (the whole record is in shore.json).", "updated": data["updated"],
+             "call": None if not newest else {
+                 "date": newest["date"], "made": newest.get("made"), "headline": newest.get("headline"),
+                 "swim": (newest.get("swim") or {}).get("call"), "piers": (newest.get("piers") or {}).get("call"),
+                 "boats": (newest.get("boats") or {}).get("call"), "window": (newest.get("boats") or {}).get("windowText"),
+                 "band": (newest.get("band") or {}).get("headline")}}
+    with open(TODAY_OUT, "w", encoding="utf-8", newline="\n") as fh:
+        fh.write(json.dumps(small, ensure_ascii=False, indent=1) + "\n")
     print(f"shore.json saved: {len(data['calls'])} call(s); score {score}.")
     return 0
 

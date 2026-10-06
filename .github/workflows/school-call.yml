@@ -1,0 +1,53 @@
+# The School Delay Watch's record: saves the home page watch's call for each school morning at 8 p.m.
+# the night before (scripts/school_call.py) and grades it against what the districts did, from
+# school-outcomes.txt, in school.json. Started by the Timer at 8:00 and 9:00 PM Central; it also runs
+# when school-outcomes.txt changes, so a logged morning is graded right away.
+name: School Delay Watch record
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Save the call for the next school morning now, if it isn't saved yet"
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - scripts/school_call.py
+      - school-outcomes.txt
+      - .github/workflows/school-call.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: school-call
+  cancel-in-progress: false
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Save the call and grade earlier ones
+        env:
+          FORCE: ${{ (github.event.inputs.force == 'true' || (github.event_name == 'push' && contains(toJSON(github.event.commits), 'school_call.py'))) && 'force' || '' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          python3 scripts/school_call.py $FORCE
+          if git diff --quiet -- school.json && [ -z "$(git ls-files --others --exclude-standard -- school.json)" ]; then exit 0; fi
+          cp school.json "$RUNNER_TEMP/school.json"
+          for i in 1 2 3 4; do
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            cp "$RUNNER_TEMP/school.json" school.json
+            git add school.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -q -m "School Delay Watch record ($(TZ=America/Chicago date '+%b %-d, %-I:%M %p %Z'))"
+            if git push -q origin HEAD:main; then exit 0; fi
+            sleep 5
+          done
+          exit 1
