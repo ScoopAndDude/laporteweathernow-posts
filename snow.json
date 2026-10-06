@@ -1,9 +1,288 @@
 {
- "about": "La Porte County, Indiana snow reports for laporteweathernow.com/snow-totals. Filled in by the 'Snow totals' job (scripts/snow_totals.py).",
- "updated": null,
- "source": {"label": "NWS local storm reports (Iowa Environmental Mesonet archive)", "url": "https://mesonet.agron.iastate.edu/lsr/"},
+ "about": "La Porte County, Indiana snow reports for laporteweathernow.com/snow-totals: every snow report in the National Weather Service's local storm reports from NWS Northern Indiana (IWX), from the Iowa Environmental Mesonet's archive, grouped into storms (a new storm starts after 36 hours without a report). Reports are from trained spotters, volunteer CoCoRaHS observers, NWS observers and the public, as the Weather Service logged them. Saved by the 'Snow totals' job (scripts/snow_totals.py).",
+ "updated": "2026-10-06T07:56:26-05:00",
+ "source": {
+  "label": "NWS local storm reports (Iowa Environmental Mesonet archive)",
+  "url": "https://mesonet.agron.iastate.edu/lsr/"
+ },
  "season": "2026-27",
  "seasonStart": "2026-10-01",
  "storms": [],
- "lastSeason": null
+ "lastSeason": {
+  "season": "2025-26",
+  "storms": [
+   {
+    "id": "2026-01-31",
+    "start": "2026-01-31T04:15-06:00",
+    "end": "2026-01-31T09:00-06:00",
+    "label": "Jan. 31, 2026",
+    "max": {
+     "place": "1 NE Westville",
+     "inches": 7.0
+    },
+    "count": 5,
+    "reports": [
+     {
+      "place": "1 NE Westville",
+      "inches": 7.0,
+      "time": "2026-01-31T06:30-06:00",
+      "source": "Public",
+      "remark": "",
+      "lat": 41.55,
+      "lon": -86.9
+     },
+     {
+      "place": "South Wanatah",
+      "inches": 7.0,
+      "time": "2026-01-31T09:00-06:00",
+      "source": "Public",
+      "remark": "",
+      "lat": 41.41,
+      "lon": -86.9
+     },
+     {
+      "place": "Michigan City",
+      "inches": 6.0,
+      "time": "2026-01-31T04:15-06:00",
+      "source": "Public",
+      "remark": "",
+      "lat": 41.71,
+      "lon": -86.88
+     },
+     {
+      "place": "1 WSW Michigan City",
+      "inches": 6.0,
+      "time": "2026-01-31T07:50-06:00",
+      "source": "Public",
+      "remark": "",
+      "lat": 41.71,
+      "lon": -86.9
+     },
+     {
+      "place": "Westville",
+      "inches": 6.0,
+      "time": "2026-01-31T08:00-06:00",
+      "source": "Public",
+      "remark": "",
+      "lat": 41.54,
+      "lon": -86.91
+     }
+    ]
+   },
+   {
+    "id": "2026-01-25",
+    "start": "2026-01-25T23:58-06:00",
+    "end": "2026-01-26T09:58-06:00",
+    "label": "Jan. 25-26, 2026",
+    "max": {
+     "place": "3 NNE Fish Lake",
+     "inches": 12.4
+    },
+    "count": 5,
+    "reports": [
+     {
+      "place": "3 NNE Fish Lake",
+      "inches": 12.4,
+      "time": "2026-01-26T06:45-06:00",
+      "source": "Cocorahs",
+      "remark": "Cocorahs station IN-LP-73 Mill Creek 1.9 NNE.",
+      "lat": 41.61,
+      "lon": -86.52
+     },
+     {
+      "place": "1 WNW La Porte",
+      "inches": 9.2,
+      "time": "2026-01-25T23:58-06:00",
+      "source": "CO-OP Observer",
+      "remark": "CO-OP Observer station LAPI3 0.8 W La Porte.",
+      "lat": 41.61,
+      "lon": -86.73
+     },
+     {
+      "place": "Rolling Prarie",
+      "inches": 8.0,
+      "time": "2026-01-26T05:20-06:00",
+      "source": "Broadcast Media",
+      "remark": "Lake effect snow overnight.",
+      "lat": 41.67,
+      "lon": -86.62
+     },
+     {
+      "place": "2 WSW La Porte",
+      "inches": 8.0,
+      "time": "2026-01-26T09:58-06:00",
+      "source": "Public",
+      "remark": "Event total.",
+      "lat": 41.59,
+      "lon": -86.75
+     },
+     {
+      "place": "2 SW La Porte",
+      "inches": 6.5,
+      "time": "2026-01-26T07:00-06:00",
+      "source": "Cocorahs",
+      "remark": "Cocorahs station IN-LP-7 La Porte 1.6 SW.",
+      "lat": 41.59,
+      "lon": -86.73
+     }
+    ]
+   },
+   {
+    "id": "2026-01-15",
+    "start": "2026-01-15T06:50-06:00",
+    "end": "2026-01-15T06:50-06:00",
+    "label": "Jan. 15, 2026",
+    "max": {
+     "place": "3 NNE Fish Lake",
+     "inches": 20.0
+    },
+    "count": 1,
+    "reports": [
+     {
+      "place": "3 NNE Fish Lake",
+      "inches": 20.0,
+      "time": "2026-01-15T06:50-06:00",
+      "source": "Cocorahs",
+      "remark": "Cocorahs station IN-LP-73 Mill Creek 1.9 NNE.",
+      "lat": 41.61,
+      "lon": -86.52
+     }
+    ]
+   },
+   {
+    "id": "2025-11-29",
+    "start": "2025-11-29T19:29-06:00",
+    "end": "2025-11-30T07:00-06:00",
+    "label": "Nov. 29-30, 2025",
+    "max": {
+     "place": "2 SW La Porte",
+     "inches": 10.3
+    },
+    "count": 5,
+    "reports": [
+     {
+      "place": "2 SW La Porte",
+      "inches": 10.3,
+      "time": "2025-11-30T07:00-06:00",
+      "source": "Cocorahs",
+      "remark": "Cocorahs station IN-LP-7 La Porte 1.6 SW.",
+      "lat": 41.59,
+      "lon": -86.73
+     },
+     {
+      "place": "La Porte",
+      "inches": 7.3,
+      "time": "2025-11-29T19:59-06:00",
+      "source": "Public",
+      "remark": "",
+      "lat": 41.61,
+      "lon": -86.72
+     },
+     {
+      "place": "La Porte",
+      "inches": 7.3,
+      "time": "2025-11-29T20:40-06:00",
+      "source": "Public",
+      "remark": "Storm total at ob time, snow ongoing.",
+      "lat": 41.61,
+      "lon": -86.71
+     },
+     {
+      "place": "2 SW La Porte",
+      "inches": 6.5,
+      "time": "2025-11-29T19:29-06:00",
+      "source": "Public",
+      "remark": "Reported by Trained Spotter.",
+      "lat": 41.59,
+      "lon": -86.73
+     },
+     {
+      "place": "Rolling Prarie",
+      "inches": 6.0,
+      "time": "2025-11-29T21:55-06:00",
+      "source": "Public",
+      "remark": "",
+      "lat": 41.67,
+      "lon": -86.62
+     }
+    ]
+   },
+   {
+    "id": "2025-11-09",
+    "start": "2025-11-09T20:21-06:00",
+    "end": "2025-11-10T09:00-06:00",
+    "label": "Nov. 9-10, 2025",
+    "max": {
+     "place": "Hesston",
+     "inches": 13.0
+    },
+    "count": 7,
+    "reports": [
+     {
+      "place": "Hesston",
+      "inches": 13.0,
+      "time": "2025-11-10T07:12-06:00",
+      "source": "Public",
+      "remark": "Storm total.",
+      "lat": 41.75,
+      "lon": -86.65
+     },
+     {
+      "place": "Union Mills",
+      "inches": 11.0,
+      "time": "2025-11-10T07:15-06:00",
+      "source": "Public",
+      "remark": "Storm total snowfall.",
+      "lat": 41.5,
+      "lon": -86.78
+     },
+     {
+      "place": "1 S Springville",
+      "inches": 8.5,
+      "time": "2025-11-10T03:50-06:00",
+      "source": "Public",
+      "remark": "",
+      "lat": 41.67,
+      "lon": -86.74
+     },
+     {
+      "place": "3 NNW La Porte",
+      "inches": 8.5,
+      "time": "2025-11-10T09:00-06:00",
+      "source": "Public",
+      "remark": "Storm total snowfall.",
+      "lat": 41.64,
+      "lon": -86.75
+     },
+     {
+      "place": "1 S Springville",
+      "inches": 7.0,
+      "time": "2025-11-09T23:27-06:00",
+      "source": "Public",
+      "remark": "",
+      "lat": 41.67,
+      "lon": -86.74
+     },
+     {
+      "place": "1 WNW La Porte",
+      "inches": 5.8,
+      "time": "2025-11-09T23:58-06:00",
+      "source": "CO-OP Observer",
+      "remark": "CO-OP Observer station LAPI3 0.8 W La Porte.",
+      "lat": 41.61,
+      "lon": -86.73
+     },
+     {
+      "place": "1 S Springville",
+      "inches": 4.5,
+      "time": "2025-11-09T20:21-06:00",
+      "source": "Public",
+      "remark": "",
+      "lat": 41.67,
+      "lon": -86.74
+     }
+    ]
+   }
+  ]
+ }
 }
