@@ -98,7 +98,7 @@ def check_pages():
                "groupedMenu": 'class="nav-group"' in text}
         if status != 200:
             problem(f"Page {p} didn't load (status {status}).", True)
-        elif not p.startswith("/hardhat") and '<nav class="nav"' not in text:
+        elif not p.startswith(("/hardhat", "/farm")) and '<nav class="nav"' not in text:   # Hard Hat and Field Day pages have their own header
             problem(f"Page {p} is missing the site menu.", True)
         for ref, stamp in ASSET_RE.findall(text):
             base = p if p.endswith("/") else p.rsplit("/", 1)[0] + "/"
