@@ -1,0 +1,30 @@
+# One-time probe for the AI scoreboard (branch ai-probe only; delete after).
+name: AI probe
+on:
+  push:
+    branches: [ai-probe]
+    paths: [tools/ai-probe/**, .github/workflows/ai-probe.yml]
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe data sources
+        run: |
+          mkdir -p probe
+          python3 tools/ai-probe/probe.py || true
+          pip install --quiet pygrib 2>&1 | tail -2 || true
+          python3 - <<'PY' >> probe/out.txt 2>&1 || true
+          import pygrib
+          g = pygrib.open("probe/gfs_f036.grb2")
+          for m in g:
+              v, lats, lons = m.data()
+              print("GRIB OK:", m.name, m.level, m.validDate, "shape", v.shape, "lats", lats[:,0], "lons", lons[0,:], "values K", v.round(2).tolist())
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add probe/
+          git commit -q -m "AI probe results" && git push -q origin HEAD:ai-probe || true
