@@ -217,7 +217,7 @@ def post_page(p, older, newer, template, latest=False):
                "datePublished": p.get("posted") or p["date"], "dateModified": p.get("updated") or p.get("posted") or p["date"],
                "author": AUTHOR if not auto else {"@id": f"{SITE}/#org"}, "publisher": {"@id": f"{SITE}/#org"},
                "mainEntityOfPage": url, "isPartOf": {"@id": f"{SITE}/#website"}, "inLanguage": "en-US",
-               "image": f"{SITE}/og-image.png?v=2", "contentLocation": {"@type": "Place", "name": "La Porte, Indiana"}}
+               "image": f"{SITE}/og-image.png?v=3", "contentLocation": {"@type": "Place", "name": "La Porte, Indiana"}}
     head = STYLE + "\n" + jsonld([article, crumbs([("Home", "/"), ("Daily Scoop", "/daily-scoop"), (label, f"/scoop/{slug(p)}")])])
     if auto or latest:
         # Backups are NWS's words; "latest" is a copy of a dated page.
