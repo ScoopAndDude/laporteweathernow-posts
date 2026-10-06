@@ -12,7 +12,12 @@ def get(url, rng=None, timeout=120):
         return r.read()
 def lst(prefix, delim=True, n=200):
     x = get(f"https://noaa-ndfd-pds.s3.amazonaws.com/?list-type=2&max-keys={n}{'&delimiter=/' if delim else ''}&prefix={prefix}").decode()
-    return re.findall(r"<Prefix>([^<]+)</Prefix>", x), re.findall(r"<Key>([^<]+)</Key><LastModified>([^<]+)</LastModified><ETag>[^<]*</ETag><Size>(\d+)</Size>", x)
+    keys = []
+    for blk in re.findall(r"<Contents>(.*?)</Contents>", x, re.S):
+        k = re.search(r"<Key>([^<]+)</Key>", blk).group(1); lm = re.search(r"<LastModified>([^<]+)</LastModified>", blk).group(1)
+        sz = re.search(r"<Size>(\d+)</Size>", blk).group(1); keys.append((k, lm, sz))
+    if not keys: say("RAW", x[:800])
+    return re.findall(r"<Prefix>([^<]+)</Prefix>", x), keys
 for el in ("temp", "qpf", "pop12", "maxt", "mint"):
     try:
         p, k = lst(f"wmo/{el}/2026/10/05/")
