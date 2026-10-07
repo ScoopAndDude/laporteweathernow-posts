@@ -1,6 +1,6 @@
 {
  "about": "The Forecast Race: NOAA's new AI weather model, the National Weather Service's own forecasters and three other computer models, graded every day against the La Porte airport (KPPO). Each morning we save what each racer says about tomorrow (temperatures at four checkpoints and the 24-hour rain total) and grade it the next day. Saved forecasts are never changed. Run by La Porte Weather Now (scripts/forecast_race.py).",
- "generated": "2026-10-07T07:32:24-05:00",
+ "generated": "2026-10-07T08:51:32-05:00",
  "started": "2026-10-06",
  "station": {
   "id": "KPPO",
@@ -37,7 +37,7 @@
    "name": "NOAA's AI model (AIGFS)",
    "short": "NOAA AI",
    "kind": "ai",
-   "about": "NOAA's Artificial Intelligence Global Forecast System, in use since Dec. 17, 2025. The run that starts at 7 PM Central the evening before.",
+   "about": "NOAA's Artificial Intelligence Global Forecast System, in use since Dec. 17, 2025. The run that starts at 7 PM Central the evening before (6 PM in winter).",
    "source": "NOAA NOMADS",
    "link": "https://nomads.ncep.noaa.gov/"
   },
@@ -69,7 +69,7 @@
    "link": "https://www.ecmwf.int/en/forecasts/datasets/open-data"
   }
  ],
- "credits": "NOAA/National Weather Service (NDFD, AIGFS, GFS: public domain). ECMWF open data (AIFS, IFS) is used under the CC BY 4.0 licence: Copyright ECMWF. Observations: KPPO via the Iowa Environmental Mesonet.",
+ "credits": "NOAA/National Weather Service (NDFD, AIGFS, GFS: public domain). Observations: the La Porte Municipal Airport's automated weather station (KPPO) via the Iowa Environmental Mesonet. This service is based on data and products of the European Centre for Medium-Range Weather Forecasts (ECMWF) (AIFS and IFS open data). Source: www.ecmwf.int. Licence: Creative Commons Attribution 4.0 International (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/. ECMWF does not accept any liability whatsoever for any error or omission in the data, their availability, or for any loss or damage arising from their use. Changes: we read single forecast values for one spot from ECMWF's files.",
  "leaderboard": {
   "last30": [
    {
