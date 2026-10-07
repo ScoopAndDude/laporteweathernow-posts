@@ -41,7 +41,7 @@ ENTRIES = [
   ("gray", "2 Corinthians 4:18",
    "Clouds remind us that what we can see isn't the whole story. Paul said the unseen things last longest: faith, hope and love. Spend a few minutes today on something that will outlast the weather."),
   ("gray", "Psalm 139:12",
-   "A dark, cloudy day doesn't hide anything from God. He sees as clearly through the gray as through the sunshine. Whatever you're carrying today, He already sees it, and He cares."),
+   "A dark, cloudy day doesn't hide anything from God. He sees as clearly through the gray as through the sunshine. Tell Him whatever you're carrying today; He already sees it, and He cares."),
   ("gray", "Psalm 30:5",
    "Gray days pass, and so do hard seasons. The psalmist promises that joy comes in the morning, even when the night feels long. Hold on today, and help someone else hold on too."),
   ("gray", "Isaiah 60:1",
@@ -65,7 +65,7 @@ ENTRIES = [
    "Rain falls on every yard on the street, the kind neighbors' and the grumpy ones'. Jesus said our Father gives like that, and asks us to love like that. Do a good turn today for someone you find hard to love."),
   # ---------- storm (thunderstorms in the forecast) ----------
   ("storm", "Mark 4:39",
-   "Storms that frighten us don't frighten Jesus; His friends learned that on a lake in a sudden storm. When thunder roars, go indoors, and let His words settle your heart: Peace, be still."),
+   "Storms that frighten us don't frighten Jesus. His friends learned that on a lake in a sudden storm. When thunder roars, go indoors, and let His words settle your heart: Peace, be still."),
   ("storm", "Psalm 107:29",
    "Every storm has an end, and the psalm says God is the One who brings the calm. Thunder is loud, but it isn't the last word. Stay inside while it passes, and thank Him for the quiet afterward."),
   ("storm", "Psalm 29:3",
@@ -110,11 +110,11 @@ ENTRIES = [
    "Frost on the grass is God's handiwork, scattered overnight like ashes. The first one of the season is a good nudge to get ready for winter. Check the furnace and the neighbors, and make sure outdoor animals have shelter and water that won't freeze."),
   # ---------- frost ----------
   ("frost", "Job 38:29",
-   "God asked Job where the frost comes from, and Job had no answer. Some mornings quietly remind us that we didn't make the world. Look closely at the frost today, then thank the One who did."),
+   "God asked Job where the frost comes from, and Job had no answer. Frost quietly reminds us that we didn't make the world. When it whitens the grass, look closely, then thank the One who did."),
   ("frost", "Proverbs 12:10",
    "Frosty nights are hard on animals that live outside. Scripture says a good person looks after the life of their animals. Make sure pets and livestock have shelter, bedding and water that hasn't frozen."),
   ("frost", "Psalm 36:6",
-   "On a frosty morning, God is still the One who keeps people and animals alive, and we get to share in that care. Cover the garden, bring the pets in, and keep an eye out for any creature that needs help."),
+   "On frosty nights and mornings, God is still the One who keeps people and animals alive. We get to share in that care. Cover the garden, bring the pets in, and keep an eye out for any creature that needs help."),
   # ---------- cold (bitter cold, or a cold-weather alert) ----------
   ("cold", "James 2:15-16",
    "James says warm words don't warm anybody. On a bitter cold day, faith looks like a coat, a ride, a hot meal, or a call to someone who's alone. Find one person who needs warmth today, and help."),
@@ -155,7 +155,7 @@ ENTRIES = [
   ("ice", "Psalm 121:3",
    "On icy days every step needs care. The psalm promises that God watches over us and never sleeps. Take small steps, salt your neighbor's steps too, and trust the One who keeps you."),
   ("ice", "Job 37:10",
-   "Job's friend said frost and ice come by the breath of God, freezing the waters fast. Even a frozen world is in His hands. Be patient with slow roads today, and patient with the people on them."),
+   "Elihu told Job that frost and ice come by the breath of God, freezing the waters fast. Even a frozen world is in His hands. Be patient with slow roads today, and patient with the people on them."),
   # ---------- heat ----------
   ("heat", "Psalm 121:5-6",
    "On a hot day shade is a gift, and the psalm says God Himself is our shade. Take care of your body; it's His, too. Drink water, rest in the shade, and check on older neighbors who may not have air conditioning."),

@@ -58,7 +58,7 @@ RACERS = [
      "about": "The National Weather Service's official forecast for the spot, made by its forecasters (Northern Indiana office), as it stood at 5:30 AM.",
      "source": "NWS National Digital Forecast Database, NOAA Open Data on AWS", "link": "https://registry.opendata.aws/noaa-ndfd/"},
     {"id": "aigfs", "name": "NOAA's AI model (AIGFS)", "short": "NOAA AI", "kind": "ai",
-     "about": "NOAA's Artificial Intelligence Global Forecast System, in use since Dec. 17, 2025. The run that starts at 7 PM Central the evening before.",
+     "about": "NOAA's Artificial Intelligence Global Forecast System, in use since Dec. 17, 2025. The run that starts at 7 PM Central the evening before (6 PM in winter).",
      "source": "NOAA NOMADS", "link": "https://nomads.ncep.noaa.gov/"},
     {"id": "gfs", "name": "NOAA's regular model (GFS)", "short": "NOAA GFS", "kind": "physics",
      "about": "The Global Forecast System, NOAA's main physics-based computer model. Same run time as the AI.",
@@ -542,9 +542,16 @@ def main(argv):
                   "rainCall": "a racer 'calls rain' when it forecasts 0.01 inch or more for the 24 hours",
                   "minDaysToCall": 14},
         "racers": RACERS,
-        "credits": ("NOAA/National Weather Service (NDFD, AIGFS, GFS: public domain). ECMWF open data (AIFS, IFS) "
-                    "is used under the CC BY 4.0 licence: Copyright ECMWF. Observations: KPPO via the Iowa "
-                    "Environmental Mesonet."),
+        # ECMWF's terms ask for this exact attribution for a service built on its open data (checked Oct. 7, 2026,
+        # apps.ecmwf.int/datasets/licences/general): the statement, the source, the licence, the disclaimer, the changes.
+        "credits": ("NOAA/National Weather Service (NDFD, AIGFS, GFS: public domain). Observations: the La Porte "
+                    "Municipal Airport's automated weather station (KPPO) via the Iowa Environmental Mesonet. "
+                    "This service is based on data and products of the European Centre for Medium-Range Weather "
+                    "Forecasts (ECMWF) (AIFS and IFS open data). Source: www.ecmwf.int. Licence: Creative Commons "
+                    "Attribution 4.0 International (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/. "
+                    "ECMWF does not accept any liability whatsoever for any error or omission in the data, their "
+                    "availability, or for any loss or damage arising from their use. Changes: we read single "
+                    "forecast values for one spot from ECMWF's files."),
         "leaderboard": {"last30": board(last30), "all": board(scored)},
         "headToHead": {"aiVsNws": head_to_head(scored, "aigfs", "nws"), "aiVsGfs": head_to_head(scored, "aigfs", "gfs"),
                        "europeAiVsNws": head_to_head(scored, "aifs", "nws")},

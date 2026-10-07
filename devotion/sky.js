@@ -3,11 +3,15 @@
   One file for every place it runs: the free widget (devotion/index.html), the Faith page on
   laporteweathernow.com, and the daily La Porte job (scripts/sky_devotion.js, which runs it in Node).
 
-  classify({periods, alerts, month, state}) -> {sky, reason, alert}
-    periods: the next two National Weather Service forecast periods (the NWS API's own periods, or
-             the morning snapshot's), alerts: names of the NWS alerts in effect ("Tornado Watch"),
+  classify({periods, alerts, month, state, now}) -> {sky, reason, alert}
+    periods: the National Weather Service forecast periods (the NWS API's own periods, or the morning
+             snapshot's); a period that's over or ends within the hour is skipped (so a 5:30 AM pick
+             reads today and tonight, not the night that just ended), then the next two are used.
+             alerts: names of the NWS alerts in effect ("Tornado Watch"),
     month:   1-12, state: optional {firstFrostSeen, firstSnowSeen, yesterdaySky} (only the La Porte
              job keeps these; without them "first frost/snow" and "after the storm" are never picked).
+    now:     optional time to judge "over" by (a Date or milliseconds; the default is right now).
+  forecastLine(periods, now) -> "Today: Sunny, high near 73°. Tonight: Clear, low around 52°."
   pick(library, sky, ymd) -> the day's devotion for that sky (the same one for everyone that day).
 
   Safety first: on days with a Weather Service watch or warning the pick says so, and every place
@@ -44,8 +48,18 @@
       pop: num(pop) || 0,
       short: p.shortForecast || p.short || "",
       detailed: p.detailedForecast || p.detailed || "",
-      wind: p.windSpeed || p.wind || ""
+      wind: p.windSpeed || p.wind || "",
+      end: Date.parse(p.endTime || p.end || "") || null
     };
+  }
+
+  // The periods still ahead: drops any that are over or end within the hour (the NWS sometimes still
+  // lists "Overnight" after it ends). If that would leave nothing, keeps them all.
+  function upcoming(periods, now) {
+    var t = now === undefined || now === null ? Date.now() : +now;
+    var all = (periods || []).map(normPeriod);
+    var ahead = all.filter(function (p) { return p.end === null || p.end > t + 3600000; });
+    return ahead.length ? ahead : all;
   }
 
   function windMax(p) {
@@ -62,7 +76,7 @@
 
   function classify(input) {
     input = input || {};
-    var periods = (input.periods || []).slice(0, 2).map(normPeriod);
+    var periods = upcoming(input.periods, input.now).slice(0, 2);
     var alerts = (input.alerts || []).map(function (a) { return String(a && a.event ? a.event : a); });
     var month = input.month || (new Date().getMonth() + 1);
     var st = input.state || {};
@@ -81,7 +95,7 @@
     if ((a = first(WINTER, alerts))) return out("winter-storm", a + " in effect", a);
     if ((a = first(FLOOD, alerts))) return out("flood", a + " in effect", a);
     if ((a = first(HEAT, alerts)) || (high !== null && high >= 92))
-      return out("heat", a ? a + " in effect" : "Hot, with a high near " + high + "°", a);
+      return out("heat", a ? a + " in effect" : "A hot day", a);
     if ((a = first(COLD, alerts)) || (high !== null && high <= 20) || (lowT !== null && lowT <= 0))
       return out("cold", a ? a + " in effect" : "Bitter cold", a);
     if ((a = first(ICE, alerts)) || (/freezing rain|freezing drizzle|sleet|ice pellets/.test(allText) && maxPop >= 30))
@@ -99,7 +113,7 @@
     if (/thunder|t-storm/.test(allText) && maxPop >= 30) return out("storm", "Thunderstorms in the forecast");
     if (/rain|showers|drizzle/.test(shortText) && maxPop >= 40) return out("rain", "Rain in the forecast");
     if (/fog/.test(shortText) || (a = first(FOG, alerts))) return out("fog", a ? a + " in effect" : "Fog", a);
-    if (frosty) return out("frost", frostAlert ? frostAlert + " in effect" : "Frost, with a low near " + lowT + "°", frostAlert);
+    if (frosty) return out("frost", frostAlert ? frostAlert + " in effect" : "Frost tonight", frostAlert);
     if ((a = first(WIND, alerts)) || wind >= 20 || gust >= 30 || /breezy|windy|blustery/.test(shortText))
       return out("wind", a ? a + " in effect" : "Windy", a);
     var dshort = low(day ? day.short : (night ? night.short : ""));
@@ -107,7 +121,7 @@
     if (sunny && st.yesterdaySky && STORMY.indexOf(st.yesterdaySky) >= 0 && maxPop < 30)
       return out("after-storm", "Clearing after the storm");
     if (sunny && high !== null && high >= 62 && high <= 82 && wind < 15 && maxPop < 20)
-      return out("beautiful", "Sunny and mild, with a high near " + high + "°");
+      return out("beautiful", "Sunny and mild");
     if (sunny || /partly cloudy/.test(dshort)) return out("clear", /clear/.test(dshort) ? "Clear skies" : "Sunshine");
     if (/cloud|overcast|partly sunny|gr[ae]y/.test(dshort) || /cloud|overcast|rain|showers|drizzle/.test(shortText))
       return out("gray", "Cloudy");
@@ -129,14 +143,14 @@
     return library.entries[0];
   }
 
-  function forecastLine(periods) {
-    return (periods || []).slice(0, 2).map(normPeriod).map(function (p) {
+  function forecastLine(periods, now) {
+    return upcoming(periods, now).slice(0, 2).map(function (p) {
       var t = p.temp === null ? "" : (p.isDaytime ? ", high near " : ", low around ") + p.temp + "°";
       return p.name + ": " + p.short + t + ".";
     }).join(" ");
   }
 
-  var api = { classify: classify, pick: pick, forecastLine: forecastLine, normPeriod: normPeriod, dayNumber: dayNumber,
+  var api = { classify: classify, pick: pick, forecastLine: forecastLine, normPeriod: normPeriod, upcoming: upcoming, dayNumber: dayNumber,
     ALERTS: { severe: SEVERE, winter: WINTER, flood: FLOOD, heat: HEAT, cold: COLD } };
   root.SkyDevotion = api;
   if (typeof module !== "undefined" && module.exports) module.exports = api;

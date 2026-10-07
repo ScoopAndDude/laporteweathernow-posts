@@ -78,6 +78,14 @@
   function ymdLocal(d) {
     return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
   }
+  // Today's date in La Porte (its devotion is saved by La Porte's date, whatever the visitor's clock says).
+  function ymdLaPorte(d) {
+    try {
+      var p = {}; new Intl.DateTimeFormat("en-US", { timeZone: "America/Chicago", year: "numeric", month: "2-digit", day: "2-digit" })
+        .formatToParts(d).forEach(function (x) { p[x.type] = x.value; });
+      return p.year + "-" + p.month + "-" + p.day;
+    } catch (e) { return ymdLocal(d); }
+  }
   function getJson(url) {
     return fetch(url, { headers: { Accept: "application/geo+json" } }).then(function (r) {
       if (!r.ok) throw new Error(r.status + " " + url);
@@ -109,18 +117,19 @@
       .then(function (al) { showWarnings(al.features, link); })
       .catch(function () { /* never claim "no alerts": just show nothing extra */ });
   }
-  function laPorte() {
+  function laPorte(note) {
     Promise.all([fetch("../devotion.json", { cache: "no-cache" }).then(function (r) { return r.json(); }),
                  fetch("library.json").then(function (r) { return r.json(); })])
       .then(function (res) {
         var d = res[0], lib = res[1];
-        var today = ymdLocal(new Date());
+        var today = ymdLaPorte(new Date());
         // If this morning's pick isn't saved yet, use the same picker on the saved forecast line's day.
         var fresh = d.date === today;
         var entry = fresh ? d.entry : SkyDevotion.pick(lib, "clear", today);
         var skyText = fresh ? (d.reason || "") + (d.forecastLine ? ". " + d.forecastLine : "")
                             : "This morning's sky reading comes in around 5:30 AM Central. Here's a devotion for today.";
-        show(entry, skyText, place || "La Porte, Indiana");
+        // After a failed lookup for another town, say plainly that this is La Porte's (never label La Porte's sky with that town's name).
+        show(entry, skyText + (note ? " " + note : ""), note ? "La Porte, Indiana" : (place || "La Porte, Indiana"));
         liveAlerts(d.lat || 41.6081, d.lon || -86.7189, "https://laporteweathernow.com/emergency");
       })
       .catch(function () { $("sky").textContent = "Today's devotion couldn't load. Please try again in a few minutes."; });
@@ -143,7 +152,7 @@
       showWarnings(alerts, "https://forecast.weather.gov/MapClick.php?lat=" + la.toFixed(4) + "&lon=" + lo.toFixed(4));
     }).catch(function () {
       $("sky").textContent = "The Weather Service didn't answer for this spot (it covers the U.S. only). Here's today's devotion for La Porte, Indiana instead.";
-      laPorte();
+      laPorte("(The Weather Service didn't answer for " + (name || "your spot") + " just now, so this is La Porte's.)");
     });
   }
   $("share").addEventListener("click", function () {

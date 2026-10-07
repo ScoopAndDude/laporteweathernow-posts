@@ -55,5 +55,18 @@ for (const sky of ["severe","winter-storm","flood","heat","cold","ice","first-sn
   const e = S.pick(lib, sky, "2026-10-06"); if (!e || !e.kjv || !e.text) { fails++; console.log("FAIL no entry for", sky); }
 }
 console.log("forecastLine:", S.forecastLine(api));
+// Periods that are over (or end within the hour) are skipped (Oct. 7, 2026: the 5:30 AM pick showed
+// "Overnight: ... low around 55°", the night that had just ended, because the NWS still listed it).
+const snap = [{ name: "Overnight", start: "2026-10-07T05:00:00-04:00", end: "2026-10-07T06:00:00-04:00", isDaytime: false, temperatureF: 55, rainChancePercent: 70, short: "Showers Likely", wind: "W 5 mph" },
+              { name: "Wednesday", start: "2026-10-07T06:00:00-04:00", end: "2026-10-07T18:00:00-04:00", isDaytime: true, temperatureF: 73, rainChancePercent: 2, short: "Sunny", wind: "W 10 mph" },
+              { name: "Wednesday Night", start: "2026-10-07T18:00:00-04:00", end: "2026-10-08T06:00:00-04:00", isDaytime: false, temperatureF: 53, rainChancePercent: 1, short: "Mostly Clear", wind: "NW 5 mph" }];
+const at530 = new Date("2026-10-07T10:30:00Z"), at3am = new Date("2026-10-07T08:00:00Z");
+function same(label, got, want) { if (got !== want) { fails++; console.log("FAIL", label, "got", JSON.stringify(got), "want", JSON.stringify(want)); } else console.log("ok  ", label); }
+same("5:30 AM line skips the night that ended", S.forecastLine(snap, at530), "Wednesday: Sunny, high near 73°. Wednesday Night: Mostly Clear, low around 53°.");
+same("5:30 AM sky ignores the showers that ended", S.classify({ periods: snap, month: oct, now: at530 }).sky, "beautiful");
+same("3 AM still reads the night", S.forecastLine(snap, at3am).slice(0, 10), "Overnight:");
+same("all over: keeps them rather than nothing", S.upcoming(snap, new Date("2026-10-09T00:00:00Z")).length, 3);
+same("no end times: nothing skipped", S.upcoming(api, at530).length, 2);
+same("beautiful reason has no repeated high", S.classify({ periods: snap, month: oct, now: at530 }).reason, "Sunny and mild");
 console.log(fails ? `${fails} FAILED` : "ALL PASSED");
 process.exit(fails ? 1 : 0);

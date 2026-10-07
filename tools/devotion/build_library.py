@@ -67,7 +67,7 @@ lib = {
     "about": ("The Sky Devotion: a short devotion chosen each day by what the sky is doing. Written by "
               "La Porte Weather Now (laporteweathernow.com). Scripture: King James Version (public domain), "
               "each verse checked against two independent KJV texts. Free to share with credit."),
-    "version": "2026-10-06",
+    "version": "2026-10-07",   # Oct. 7 wording fixes: gray-1, gray-5, storm-1, wind-4, frost-1, frost-3, ice-3
     "skies": skies,
     "entries": out,
 }

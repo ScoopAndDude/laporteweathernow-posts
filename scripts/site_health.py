@@ -232,12 +232,17 @@ def check_actions():
         problem(f"GitHub job '{name}' failed {n} time{'s' if n != 1 else ''} in the last 7 days.")
     # The outside clock (Apps Script "LPWN timer") sends a tick every 15 minutes. Once it has
     # started, a long silence means it stopped (usually an expired GitHub key).
-    status, body, _ = fetch(f"https://api.github.com/repos/{REPO_NAME}/actions/workflows/timer.yml/runs?event=repository_dispatch&per_page=1", headers=auth)
+    # Read the timer's plain run list and pick out the ticks here: GitHub's filtered list
+    # (?event=repository_dispatch) can lag hours behind, which sent a false "stuck" email on Oct. 7, 2026
+    # (it said 6.8 hours while the clock was ticking every 15 minutes).
+    status, body, _ = fetch(f"https://api.github.com/repos/{REPO_NAME}/actions/workflows/timer.yml/runs?per_page=30", headers=auth)
     last_tick = None
     try:
-        tick_runs = json.loads(body).get("workflow_runs") or [] if status == 200 else []
+        if status != 200:
+            raise ValueError(f"GitHub answered {status}")
+        tick_runs = [r for r in json.loads(body).get("workflow_runs") or [] if r.get("event") == "repository_dispatch"]
         if tick_runs:
-            last_tick = tick_runs[0]["created_at"]
+            last_tick = max(r["created_at"] for r in tick_runs)
             h = round((datetime.datetime.now(datetime.timezone.utc) - datetime.datetime.fromisoformat(last_tick.replace("Z", "+00:00"))).total_seconds() / 3600, 1)
             if h > 2:
                 stuck_job(f"The outside clock (Apps Script 'LPWN timer') last ticked {h} hours ago; its GitHub key may have expired.")

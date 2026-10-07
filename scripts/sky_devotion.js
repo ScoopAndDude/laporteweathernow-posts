@@ -73,9 +73,10 @@ async function weather(now) {
 
   const w = await weather(now);
   const state = { firstFrostSeen: !!season.firstFrost, firstSnowSeen: !!season.firstSnow, yesterdaySky: yesterday ? yesterday.sky : null };
-  const c = Sky.classify({ periods: w.periods, alerts: w.alerts, month: lp.month, state });
+  const c = Sky.classify({ periods: w.periods, alerts: w.alerts, month: lp.month, state, now });
   // Frost or snow days also count as the season's first, even when a louder sky (a warning) won the pick.
-  const lowTonight = w.periods.slice(0, 2).map(Sky.normPeriod).filter((p) => !p.isDaytime).map((p) => p.temp)[0];
+  // (Only periods still ahead count: a 5:30 AM run reads today and tonight, not the night that just ended.)
+  const lowTonight = Sky.upcoming(w.periods, now).slice(0, 2).filter((p) => !p.isDaytime).map((p) => p.temp)[0];
   if (!season.firstFrost && (c.sky === "first-frost" || c.sky === "frost" || (lowTonight != null && lowTonight <= 32 && lp.month >= 8))) season.firstFrost = lp.ymd;
   if (!season.firstSnow && (c.sky === "first-snow" || c.sky === "snow" || c.sky === "winter-storm")) season.firstSnow = lp.ymd;
   const e = Sky.pick(library, c.sky, lp.ymd);
@@ -87,7 +88,7 @@ async function weather(now) {
     place: "La Porte, Indiana",
     lat: LAT, lon: LON,
     sky: c.sky, reason: c.reason, alert: c.alert,
-    forecastLine: Sky.forecastLine(w.periods),
+    forecastLine: Sky.forecastLine(w.periods, now),
     weatherSource: w.source,
     entry: { id: e.id, sky: e.sky, ref: e.ref, kjv: e.kjv, text: e.text },
     season,
