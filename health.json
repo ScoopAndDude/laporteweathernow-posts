@@ -1,14 +1,13 @@
 {
  "about": "Daily health check for laporteweathernow.com (scripts/site_health.py). 'problems' lists anything to fix, in plain English.",
- "checked": "2026-10-07T14:19:29-05:00",
+ "checked": "2026-10-07T20:23:27-05:00",
  "ok": false,
  "problems": [
   "GitHub job 'Timer' failed 4 times in the last 7 days.",
   "GitHub job 'Daily Scoop updates' failed 3 times in the last 7 days.",
-  "GitHub job 'Weather radio' failed 3 times in the last 7 days.",
+  "GitHub job 'Weather radio' failed 2 times in the last 7 days.",
   "GitHub job 'Homepage weather copy' failed 1 time in the last 7 days.",
-  "GitHub job 'Backup Daily Scoop' failed 2 times in the last 7 days.",
-  "GitHub job 'NWS weather snapshot' failed 1 time in the last 7 days."
+  "GitHub job 'Backup Daily Scoop' failed 2 times in the last 7 days."
  ],
  "urgent": [],
  "stuck": [],
@@ -16,405 +15,384 @@
   {
    "path": "/",
    "status": 200,
-   "ms": 331,
-   "fingerprint": "c826b8c427",
+   "ms": 132,
+   "fingerprint": "7264fd2970",
    "groupedMenu": true
   },
   {
    "path": "/daily-scoop",
    "status": 200,
-   "ms": 501,
-   "fingerprint": "998e83b3aa",
+   "ms": 178,
+   "fingerprint": "1774d85a25",
    "groupedMenu": true
   },
   {
    "path": "/emergency",
    "status": 200,
-   "ms": 201,
-   "fingerprint": "3eefd42a54",
+   "ms": 122,
+   "fingerprint": "d53d2e8286",
    "groupedMenu": true
   },
   {
    "path": "/trip-planner",
    "status": 200,
-   "ms": 387,
-   "fingerprint": "1f9c6046e0",
-   "groupedMenu": true
-  },
-  {
-   "path": "/camp-map",
-   "status": 200,
-   "ms": 501,
-   "fingerprint": "89af1cb156",
+   "ms": 135,
+   "fingerprint": "82b1997e9f",
    "groupedMenu": true
   },
   {
    "path": "/storm-patterns",
    "status": 200,
-   "ms": 291,
-   "fingerprint": "924c028b2e",
+   "ms": 278,
+   "fingerprint": "a139d492ad",
    "groupedMenu": true
   },
   {
    "path": "/weather-questions",
    "status": 200,
-   "ms": 291,
-   "fingerprint": "d883c097da",
-   "groupedMenu": true
-  },
-  {
-   "path": "/travel-guides",
-   "status": 200,
-   "ms": 292,
-   "fingerprint": "f5eef9b50e",
+   "ms": 182,
+   "fingerprint": "9a2de5bd78",
    "groupedMenu": true
   },
   {
    "path": "/global",
    "status": 200,
-   "ms": 288,
-   "fingerprint": "5654624b7e",
+   "ms": 76,
+   "fingerprint": "bf26864d8b",
    "groupedMenu": true
   },
   {
    "path": "/sources",
    "status": 200,
-   "ms": 254,
-   "fingerprint": "4933242e0a",
+   "ms": 105,
+   "fingerprint": "c7f93beda0",
    "groupedMenu": true
   },
   {
    "path": "/community",
    "status": 200,
-   "ms": 258,
-   "fingerprint": "dac870da3a",
+   "ms": 143,
+   "fingerprint": "87fd5b6975",
    "groupedMenu": true
   },
   {
    "path": "/history",
    "status": 200,
-   "ms": 273,
-   "fingerprint": "eec71cc980",
+   "ms": 260,
+   "fingerprint": "ec591f5469",
    "groupedMenu": true
   },
   {
    "path": "/media-kit",
    "status": 200,
-   "ms": 293,
-   "fingerprint": "04caf5d99f",
+   "ms": 137,
+   "fingerprint": "4155324667",
    "groupedMenu": true
   },
   {
    "path": "/about",
    "status": 200,
-   "ms": 229,
-   "fingerprint": "788fc9aeb1",
-   "groupedMenu": true
-  },
-  {
-   "path": "/more-from-scoop",
-   "status": 200,
-   "ms": 250,
-   "fingerprint": "058d416315",
+   "ms": 267,
+   "fingerprint": "b3f642c1af",
    "groupedMenu": true
   },
   {
    "path": "/contact",
    "status": 200,
-   "ms": 267,
-   "fingerprint": "cb36c1e77b",
+   "ms": 68,
+   "fingerprint": "152740a354",
    "groupedMenu": true
   },
   {
    "path": "/golf",
    "status": 200,
-   "ms": 299,
-   "fingerprint": "b9ff577ac0",
+   "ms": 73,
+   "fingerprint": "3492565b06",
    "groupedMenu": true
   },
   {
    "path": "/weekend",
    "status": 200,
-   "ms": 305,
-   "fingerprint": "a4bc4becc2",
+   "ms": 51,
+   "fingerprint": "1fc305b9e7",
    "groupedMenu": true
   },
   {
    "path": "/privacy",
    "status": 200,
-   "ms": 349,
-   "fingerprint": "b22b3060e0",
+   "ms": 41,
+   "fingerprint": "4a4cf890af",
    "groupedMenu": true
   },
   {
    "path": "/track-record",
    "status": 200,
-   "ms": 296,
-   "fingerprint": "8d20d81aa0",
+   "ms": 175,
+   "fingerprint": "a3d7ad8459",
    "groupedMenu": true
   },
   {
    "path": "/hardhat/",
    "status": 200,
-   "ms": 316,
-   "fingerprint": "556a332ea7",
+   "ms": 101,
+   "fingerprint": "b2efa7919a",
    "groupedMenu": false
   },
   {
    "path": "/hardhat/dashboard",
    "status": 200,
-   "ms": 159,
-   "fingerprint": "ca3e5aa9f1",
+   "ms": 193,
+   "fingerprint": "054869b2bf",
    "groupedMenu": false
   },
   {
    "path": "/hardhat/terms",
    "status": 200,
-   "ms": 173,
-   "fingerprint": "286ee59150",
+   "ms": 269,
+   "fingerprint": "7f8819eea7",
    "groupedMenu": false
   },
   {
    "path": "/hardhat/privacy",
    "status": 200,
-   "ms": 168,
-   "fingerprint": "60baa90b11",
+   "ms": 236,
+   "fingerprint": "7bd9a8cff0",
    "groupedMenu": false
   },
   {
    "path": "/snow-day",
    "status": 200,
-   "ms": 235,
-   "fingerprint": "263948b0d8",
+   "ms": 121,
+   "fingerprint": "fcd57ebe8b",
    "groupedMenu": true
   },
   {
    "path": "/weather-box",
    "status": 200,
-   "ms": 250,
-   "fingerprint": "f608e644da",
+   "ms": 156,
+   "fingerprint": "a471c846cb",
    "groupedMenu": true
   },
   {
    "path": "/farm/",
    "status": 200,
-   "ms": 314,
-   "fingerprint": "70fa06bb74",
+   "ms": 193,
+   "fingerprint": "77701f764f",
    "groupedMenu": false
   },
   {
    "path": "/lake-michigan",
    "status": 200,
-   "ms": 294,
-   "fingerprint": "98afeea06c",
+   "ms": 243,
+   "fingerprint": "655567ff9a",
    "groupedMenu": true
   },
   {
    "path": "/radar",
    "status": 200,
-   "ms": 244,
-   "fingerprint": "b8220cf0fe",
+   "ms": 135,
+   "fingerprint": "df3558c717",
    "groupedMenu": true
   },
   {
    "path": "/visit",
    "status": 200,
-   "ms": 259,
-   "fingerprint": "52005eea4f",
+   "ms": 276,
+   "fingerprint": "ba119b673e",
    "groupedMenu": true
   },
   {
    "path": "/eats",
    "status": 200,
-   "ms": 388,
-   "fingerprint": "f6dbf74088",
+   "ms": 222,
+   "fingerprint": "f14b2674d6",
    "groupedMenu": true
   },
   {
    "path": "/towns",
    "status": 200,
-   "ms": 315,
-   "fingerprint": "5917b21983",
+   "ms": 121,
+   "fingerprint": "85748b33a9",
    "groupedMenu": true
   },
   {
    "path": "/towns/michigan-city",
    "status": 200,
-   "ms": 148,
-   "fingerprint": "6ff3d2150e",
+   "ms": 173,
+   "fingerprint": "fdbbca6907",
    "groupedMenu": true
   },
   {
    "path": "/towns/westville",
    "status": 200,
-   "ms": 162,
-   "fingerprint": "ef2ecad9c3",
+   "ms": 147,
+   "fingerprint": "c0633f3527",
    "groupedMenu": true
   },
   {
    "path": "/towns/rolling-prairie",
    "status": 200,
-   "ms": 127,
-   "fingerprint": "7c65692be8",
+   "ms": 221,
+   "fingerprint": "a443f23059",
    "groupedMenu": true
   },
   {
    "path": "/towns/kingsford-heights",
    "status": 200,
-   "ms": 129,
-   "fingerprint": "f292023bb4",
+   "ms": 119,
+   "fingerprint": "cb98aa70d0",
    "groupedMenu": true
   },
   {
    "path": "/towns/long-beach",
    "status": 200,
-   "ms": 177,
-   "fingerprint": "7a061cea37",
+   "ms": 382,
+   "fingerprint": "fc68394976",
    "groupedMenu": true
   },
   {
    "path": "/towns/wanatah",
    "status": 200,
-   "ms": 144,
-   "fingerprint": "07eccf4761",
+   "ms": 135,
+   "fingerprint": "45cdc113ba",
    "groupedMenu": true
   },
   {
    "path": "/towns/hanna",
    "status": 200,
-   "ms": 389,
-   "fingerprint": "7294536484",
+   "ms": 244,
+   "fingerprint": "e043e5d95a",
    "groupedMenu": true
   },
   {
    "path": "/towns/union-mills",
    "status": 200,
-   "ms": 261,
-   "fingerprint": "14f7684fab",
+   "ms": 155,
+   "fingerprint": "e2141b7b87",
    "groupedMenu": true
   },
   {
    "path": "/towns/trail-creek",
    "status": 200,
-   "ms": 145,
-   "fingerprint": "a4246ac59e",
+   "ms": 306,
+   "fingerprint": "da397cfa71",
    "groupedMenu": true
   },
   {
    "path": "/towns/la-crosse",
    "status": 200,
-   "ms": 132,
-   "fingerprint": "1fb6f4c99a",
+   "ms": 127,
+   "fingerprint": "447e98eb3c",
    "groupedMenu": true
   },
   {
    "path": "/storm-patterns/lake-effect-snow-la-porte",
    "status": 200,
-   "ms": 130,
-   "fingerprint": "ab190b52c7",
+   "ms": 149,
+   "fingerprint": "c33b034ea6",
    "groupedMenu": true
   },
   {
    "path": "/storm-patterns/tornado-alley-northwest-indiana",
    "status": 200,
-   "ms": 123,
-   "fingerprint": "972f33c81d",
+   "ms": 142,
+   "fingerprint": "9c6f958f95",
    "groupedMenu": true
   },
   {
    "path": "/storm-patterns/derecho",
    "status": 200,
-   "ms": 226,
-   "fingerprint": "59b9542e1a",
+   "ms": 138,
+   "fingerprint": "bd24b6e000",
    "groupedMenu": true
   },
   {
    "path": "/storm-patterns/flooding-northwest-indiana",
    "status": 200,
-   "ms": 152,
-   "fingerprint": "4cc0ebc071",
+   "ms": 131,
+   "fingerprint": "e76178679b",
    "groupedMenu": true
   },
   {
    "path": "/guides/school-closings-snow-days",
    "status": 200,
-   "ms": 161,
-   "fingerprint": "bb6a32aa7c",
+   "ms": 160,
+   "fingerprint": "982542e13e",
    "groupedMenu": true
   },
   {
    "path": "/guides/washington-park-mount-baldy-swim-safety",
    "status": 200,
-   "ms": 125,
-   "fingerprint": "7dab00ce8b",
+   "ms": 172,
+   "fingerprint": "d1d74ef517",
    "groupedMenu": true
   },
   {
    "path": "/guides/toll-road-i-94-wind-whiteouts",
    "status": 200,
-   "ms": 137,
-   "fingerprint": "87e4a7ce23",
+   "ms": 129,
+   "fingerprint": "eaad7b925e",
    "groupedMenu": true
   },
   {
    "path": "/snow-totals",
    "status": 200,
-   "ms": 242,
-   "fingerprint": "f69a9cde7c",
+   "ms": 238,
+   "fingerprint": "f10350bdee",
    "groupedMenu": true
   },
   {
    "path": "/game-night",
    "status": 200,
-   "ms": 273,
-   "fingerprint": "a353cbbc89",
+   "ms": 190,
+   "fingerprint": "4ee563c5bb",
    "groupedMenu": true
   },
   {
    "path": "/espanol",
    "status": 200,
-   "ms": 236,
-   "fingerprint": "22be2697bf",
+   "ms": 150,
+   "fingerprint": "cf9eace263",
    "groupedMenu": true
   },
   {
    "path": "/trick-or-treat",
    "status": 200,
-   "ms": 142,
-   "fingerprint": "2e166419d9",
+   "ms": 151,
+   "fingerprint": "52b77422e1",
    "groupedMenu": true
   },
   {
    "path": "/forecast-race",
    "status": 200,
-   "ms": 261,
-   "fingerprint": "a655327578",
+   "ms": 221,
+   "fingerprint": "04a095f673",
    "groupedMenu": true
   },
   {
    "path": "/sky-devotion",
    "status": 200,
-   "ms": 233,
-   "fingerprint": "8008d75bd6",
+   "ms": 50,
+   "fingerprint": "34517ebc3f",
    "groupedMenu": true
   },
   {
    "path": "/hardhat/pay",
    "status": 200,
-   "ms": 229,
-   "fingerprint": "2d700375f9",
+   "ms": 135,
+   "fingerprint": "2135d83e13",
    "groupedMenu": false
   },
   {
    "path": "/hardhat/thanks",
    "status": 200,
-   "ms": 291,
-   "fingerprint": "5cb596ac30",
+   "ms": 135,
+   "fingerprint": "417f7953d7",
    "groupedMenu": false
   }
  ],
  "assets": {
-  "checked": 30,
+  "checked": 29,
   "notOk": []
  },
  "data": {
@@ -501,10 +479,10 @@
    ]
   },
   "nws-snapshot.json": {
-   "ageHours": 1.9
+   "ageHours": 8.0
   },
   "scorecard.json": {
-   "ageHours": 1.9
+   "ageHours": 8.0
   },
   "world-watch.json": {
    "updated": "2026-10-02",
@@ -512,11 +490,11 @@
   },
   "home.json": {
    "status": 200,
-   "ageHours": 0.0
+   "ageHours": 0.1
   },
   "radio.json": {
    "status": 200,
-   "ageHours": 0.5
+   "ageHours": 0.3
   },
   "fuel-prices.json": {
    "week": "2026-10-05",
@@ -525,7 +503,7 @@
   "tiles/index.json": {
    "made": "2026-10-01T17:50:39+00:00",
    "dataFrom": "2026-10-01T17:45:14+00:00",
-   "ageDays": 6.1
+   "ageDays": 6.3
   },
   "tiles on GitHub Pages": {
    "status": 200
@@ -535,10 +513,9 @@
   "failedLast7days": {
    "Timer": 4,
    "Daily Scoop updates": 3,
-   "Weather radio": 3,
+   "Weather radio": 2,
    "Homepage weather copy": 1,
-   "Backup Daily Scoop": 2,
-   "NWS weather snapshot": 1
+   "Backup Daily Scoop": 2
   },
   "failures": [
    {
@@ -600,18 +577,8 @@
     "name": "Timer",
     "when": "2026-10-05T19:31:47Z",
     "url": "https://github.com/ScoopAndDude/laporteweathernow-posts/actions/runs/37363988486"
-   },
-   {
-    "name": "Weather radio",
-    "when": "2026-09-30T18:11:57Z",
-    "url": "https://github.com/ScoopAndDude/laporteweathernow-posts/actions/runs/36756847040"
-   },
-   {
-    "name": "NWS weather snapshot",
-    "when": "2026-09-30T12:24:57Z",
-    "url": "https://github.com/ScoopAndDude/laporteweathernow-posts/actions/runs/36714569804"
    }
   ],
-  "lastTick": "2026-10-07T19:16:48Z"
+  "lastTick": "2026-10-08T01:16:49Z"
  }
 }
