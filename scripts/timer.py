@@ -18,6 +18,8 @@ starts whichever jobs are due at that moment, in La Porte (Central) time:
                        picks today's devotion, the second does nothing once it's saved)
   5:30, 6:30 and 7:30 AM (each for 15 minutes)   The Forecast Race (added Oct. 6, 2026; saves this morning's
                        forecasts and grades yesterday's; later starts only fill in a racer that didn't answer)
+  6:00 and 6:45 AM (each for 15 minutes)   The Daily Video (added Oct. 8, 2026; the first start makes and
+                       posts the day's forecast video, the second does nothing once it's made)
   6:30-8:09 AM         Backup Daily Scoop (it posts only if today's Scoop isn't up)
   8:10-8:24 AM         Site health check
   9:15-9:29 AM, 4:45-4:59 PM   Markets numbers from BLS
@@ -50,6 +52,7 @@ WINDOWS = [
     ("sky-devotion.yml", [("05:20", "05:34"), ("06:20", "06:34")], None),
     ("forecast-race.yml", [("05:30", "05:44"), ("06:30", "06:44"), ("07:30", "07:44")], None),
     ("school-call.yml", [("20:00", "20:14"), ("21:00", "21:14")], {6, 0, 1, 2, 3}),
+    ("daily-video.yml", [("06:00", "06:14"), ("06:45", "06:59")], None),
     ("backup-scoop.yml", [("06:30", "08:09")], None),
     ("site-health.yml", [("08:10", "08:24")], None),
     ("markets-data.yml", [("09:15", "09:29"), ("16:45", "16:59")], None),

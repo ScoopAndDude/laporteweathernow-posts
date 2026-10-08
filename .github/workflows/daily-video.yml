@@ -1,0 +1,129 @@
+# The Daily Video (added Oct. 8, 2026): a short La Porte forecast video for Facebook and Instagram
+# Reels, made every morning from the official NWS forecast and alerts and read by the weather radio's
+# voice. scripts/daily_video.py plans it and records the voice, scripts/video_render.py draws it, and
+# scripts/video_post.py posts it once the META_TOKEN secret is set (steps in video/README.md).
+#
+# The newest video, its cover picture and video.json (what it said, where it was posted) go to the
+# "video" branch, which keeps only the newest, plus NOAA's normals and the radar map between runs.
+# Started by the Timer at 6:00 AM Central (6:45 as a second chance; one video a day).
+# By hand: Actions > Daily video > Run workflow.
+#   preview: make one now without posting (it goes to the "video-preview" branch instead)
+#   force:   make one now and post it (once per platform per day)
+name: Daily video
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "auto (the morning run), preview (make one now, don't post), force (make one now and post it)"
+        type: choice
+        options: [auto, preview, force]
+        default: auto
+      radar:
+        description: "preview only: always show the radar scene, even on a dry morning (to check it)"
+        type: boolean
+        default: false
+  schedule:
+    - cron: "10 11 * * *"   # backups in case the Timer's tick doesn't come; the script only makes
+    - cron: "10 12 * * *"   # the day's video between 5:45 and 9:30 AM Central, once
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-video
+  cancel-in-progress: false
+
+jobs:
+  video:
+    name: Daily video
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Get ready
+        run: |
+          pip install -q pillow pyshp
+          echo "MODE=${{ inputs.mode || 'auto' }}" >> "$GITHUB_ENV"
+          echo "OUT=$RUNNER_TEMP/video" >> "$GITHUB_ENV"
+          echo "LAST=$RUNNER_TEMP/last" >> "$GITHUB_ENV"
+
+      - name: The last video's record (and the saved normals and map)
+        run: |
+          mkdir -p "$LAST"
+          if git fetch -q --depth=1 origin video 2>/dev/null; then git archive FETCH_HEAD | tar -x -C "$LAST"; fi
+          ls "$LAST"
+
+      - name: Plan today's video
+        id: plan
+        env:
+          VIDEO_RADAR: ${{ inputs.radar && 'always' || 'auto' }}
+        run: python3 scripts/daily_video.py plan "$OUT" --last "$LAST" --mode "$MODE"
+
+      - name: Voice cache
+        if: steps.plan.outputs.build == 'true'
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.cache/huggingface
+          key: kokoro-voice-${{ runner.os }}-py312-v1
+
+      - name: Install the voice
+        if: steps.plan.outputs.build == 'true'
+        run: |
+          sudo apt-get install -y -qq espeak-ng ffmpeg > /dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq espeak-ng ffmpeg > /dev/null)
+          pip install -q torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -q "kokoro>=0.9.4" soundfile numpy
+          python3 -m spacy download en_core_web_sm -q || true
+
+      - name: Record the voice
+        if: steps.plan.outputs.build == 'true'
+        run: python3 scripts/daily_video.py voice "$OUT"
+
+      - name: Draw the video
+        if: steps.plan.outputs.build == 'true'
+        run: python3 scripts/daily_video.py render "$OUT"
+
+      - name: Post it
+        id: post
+        if: steps.plan.outputs.build == 'true' && env.MODE != 'preview'
+        continue-on-error: true
+        env:
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+        run: python3 scripts/daily_video.py post "$OUT"
+
+      - name: Save it to the video branch
+        if: steps.plan.outputs.build == 'true'
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          BRANCH=video
+          if [ "$MODE" = "preview" ]; then BRANCH=video-preview; fi
+          PUB="$RUNNER_TEMP/publish"
+          mkdir -p "$PUB"
+          cp "$OUT"/laporte-*.mp4 "$OUT"/cover.jpg "$OUT"/video.json "$OUT"/plan.json "$PUB"/
+          for f in normals.json basemap.json basemap-under.png basemap-over.png; do
+            if [ -f "$OUT/$f" ]; then cp "$OUT/$f" "$PUB/"; elif [ -f "$LAST/$f" ]; then cp "$LAST/$f" "$PUB/"; fi
+          done
+          cd "$PUB"
+          git init -q -b "$BRANCH"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Daily video $(TZ=America/Chicago date '+%Y-%m-%d %H:%M %Z') ($MODE)"
+          git push -q --force "https://x-access-token:${TOKEN}@github.com/${{ github.repository }}.git" "$BRANCH:$BRANCH"
+          echo "Saved to the $BRANCH branch: $(ls *.mp4) ($(du -h *.mp4 | cut -f1))."
+          python3 -c "import json; r=json.load(open('video.json')); print(r.get('postNote') or 'Not posted (preview).'); [print(k, v.get('permalink') or v.get('id')) for k, v in (r.get('posted') or {}).items()]"
+
+      - name: Say so if posting failed
+        if: steps.post.outcome == 'failure'
+        run: |
+          echo "The video was made and saved, but posting failed; see video.json on the video branch."
+          exit 1
