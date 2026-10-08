@@ -1,6 +1,6 @@
 {
  "about": "The School Delay Watch's record for laporteweathernow.com: the watch's call for each La Porte County school morning as it stood at 8 p.m. the night before (from the National Weather Service forecast for La Porte), and what the districts did, from school-outcomes.txt. Our estimate, never an announcement: only the districts decide. Saved by the 'School Delay Watch record' job (scripts/school_call.py).",
- "updated": "2026-10-06T08:48:39-05:00",
+ "updated": "2026-10-07T20:02:06-05:00",
  "score": {
   "scored": 0,
   "hit": 0,
@@ -9,6 +9,22 @@
   "since": null
  },
  "calls": [
+  {
+   "morning": "2026-10-08",
+   "made": "2026-10-07T20:02:06-05:00",
+   "level": 0,
+   "words": "Delays unlikely",
+   "why": [
+    "No snow, ice, dense fog or dangerous cold in the forecast."
+   ],
+   "forecast": {
+    "snowIn": 0.0,
+    "iceIn": 0.0,
+    "windChillF": null,
+    "visibilityMi": 10.0
+   },
+   "grade": null
+  },
   {
    "morning": "2026-10-07",
    "made": "2026-10-06T08:48:39-05:00",
