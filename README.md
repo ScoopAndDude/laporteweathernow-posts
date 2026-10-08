@@ -1,1 +1,1 @@
-Temporary branch that keeps the site package now live on Netlify (published Oct. 7, 2026, 9:03 AM, deploy 6ac6514067c01d36e6be08ea). Safe to delete.
+Temporary branch that keeps the site package for laporteweathernow.com: laporteweathernow-2026-10-07-move.zip (Oct. 7, 2026 evening: site review fixes; the non-weather pages moved to scoopanddude.com). Safe to delete.
