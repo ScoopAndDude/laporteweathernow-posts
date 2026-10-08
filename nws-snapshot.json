@@ -1,6 +1,6 @@
 {
  "about": "Official weather for La Porte, Indiana, saved by a GitHub job for the Daily Scoop (laporteweathernow.com/daily-scoop). Copied from NWS, SPC and WPC as-is; see scripts/nws_snapshot.py.",
- "fetched": "2026-10-08T05:02:11-05:00",
+ "fetched": "2026-10-08T05:41:20-05:00",
  "place": "La Porte, IN",
  "lat": 41.6081,
  "lon": -86.7189,
@@ -23,28 +23,39 @@
  },
  "observation": {
   "station": "KPPO (La Porte Municipal Airport)",
-  "time": "2026-10-08T04:35:00-05:00",
+  "time": "2026-10-08T05:15:00-05:00",
   "weather": "Clear",
-  "temperatureF": 50,
-  "dewpointF": 50,
+  "temperatureF": 48,
+  "dewpointF": 48,
   "humidityPercent": 100,
   "wind": {
-   "from": "W",
-   "degrees": 260,
-   "mph": 3,
+   "from": "WNW",
+   "degrees": 290,
+   "mph": 1,
    "gustMph": null
   },
   "visibilityMiles": 10.0,
-  "pressureInHg": 29.98,
-  "metar": "KPPO 080935Z AUTO 26003KT 10SM CLR 10/10 A2998 RMK AO2"
+  "pressureInHg": 30.0,
+  "metar": "KPPO 081015Z AUTO 29001KT 10SM CLR 09/09 A3000 RMK AO2"
  },
  "forecast": {
   "updated": "2026-10-08T08:00:52+00:00",
-  "generated": "2026-10-08T10:02:11+00:00",
+  "generated": "2026-10-08T08:17:01+00:00",
   "timesNote": "Clock times in the forecast wording are already in America/Chicago (La Porte's real time). NWS writes them in America/Indiana/Indianapolis, which it has on file for La Porte by mistake.",
   "periods": [
    {
-    "name": "Today",
+    "name": "Overnight",
+    "start": "2026-10-08T04:00:00-04:00",
+    "end": "2026-10-08T06:00:00-04:00",
+    "isDaytime": false,
+    "temperatureF": 52,
+    "rainChancePercent": 0,
+    "wind": "NW 5 mph",
+    "short": "Mostly Clear",
+    "detailed": "Mostly clear, with a low around 52. Northwest wind around 5 mph."
+   },
+   {
+    "name": "Thursday",
     "start": "2026-10-08T06:00:00-04:00",
     "end": "2026-10-08T18:00:00-04:00",
     "isDaytime": true,
@@ -55,7 +66,7 @@
     "detailed": "Sunny, with a high near 68. Northwest wind 5 to 10 mph."
    },
    {
-    "name": "Tonight",
+    "name": "Thursday Night",
     "start": "2026-10-08T18:00:00-04:00",
     "end": "2026-10-09T06:00:00-04:00",
     "isDaytime": false,
@@ -96,7 +107,7 @@
     "rainChancePercent": 0,
     "wind": "S 10 mph",
     "short": "Mostly Sunny",
-    "detailed": "Mostly sunny, with a high near 79. South wind around 10 mph."
+    "detailed": "Mostly sunny, with a high near 79."
    },
    {
     "name": "Saturday Night",
@@ -162,7 +173,7 @@
     "rainChancePercent": 51,
     "wind": "NW 10 to 15 mph",
     "short": "Chance Rain Showers",
-    "detailed": "A chance of rain showers. Partly sunny, with a high near 65. Chance of precipitation is 50%."
+    "detailed": "A chance of rain showers. Partly sunny, with a high near 65."
    },
    {
     "name": "Tuesday Night",
@@ -185,17 +196,6 @@
     "wind": "SE 5 to 10 mph",
     "short": "Mostly Sunny",
     "detailed": "Mostly sunny, with a high near 62."
-   },
-   {
-    "name": "Wednesday Night",
-    "start": "2026-10-14T18:00:00-04:00",
-    "end": "2026-10-15T06:00:00-04:00",
-    "isDaytime": false,
-    "temperatureF": 46,
-    "rainChancePercent": 15,
-    "wind": "SE 5 mph",
-    "short": "Partly Cloudy then Slight Chance Rain Showers",
-    "detailed": "A slight chance of rain showers after 1am. Partly cloudy, with a low around 46."
    }
   ]
  },
@@ -205,11 +205,15 @@
   "next72hInches": 0.02,
   "byPeriod": [
    {
-    "name": "Today",
+    "name": "Overnight",
     "inches": 0.0
    },
    {
-    "name": "Tonight",
+    "name": "Thursday",
+    "inches": 0.0
+   },
+   {
+    "name": "Thursday Night",
     "inches": 0.0
    },
    {
@@ -255,10 +259,6 @@
    {
     "name": "Wednesday",
     "inches": 0
-   },
-   {
-    "name": "Wednesday Night",
-    "inches": 0
    }
   ]
  },
@@ -285,9 +285,9 @@
   "nearbyCountiesFullText": []
  },
  "discussion": {
-  "issued": "2026-10-08T01:51:00-05:00",
-  "ageHours": 3.2,
-  "text": "000\nFXUS63 KIWX 080651\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n251 AM EDT Thu Oct 8 2026\n\n.KEY MESSAGES...\n\n- Dry conditions expected today with highs around 70 and low\n  afternoon humidities.\n\n- A few sprinkles are possible near Lake Michigan Friday evening.\n\n- More widespread light rain is expected early Sunday,\n  especially east of I-69, associated with the remnants of\n  Isaias. No significant impacts are anticipated.\n\n&&\n\n.DISCUSSION...\nIssued at 250 AM EDT Thu Oct 8 2026\n\nLarge surface high on the upwind/subsident side of deep eastern \nCanada trough will slide across our area today and ensure another \npleasant weather day. Expect just some passing high clouds and highs \naround 70F. There are some nonzero fire wx concerns today. Forecast \nsoundings show relatively deep mixing into a very dry airmass. \nSurface dewpoints likely crash into the upper 30s this afternoon \nyielding RH values around 30 percent. Surface gradient is not \nparticularly strong but deep mixing may yield some gusts up to 20 \nmph. These values are still safely below red flag criteria and ten \nhour fuel moistures are still above 10 percent but we often see a \nfew field/combine fires across the area in these conditions during \nharvest time.\n\nSurface high slides to the southeast tonight and return flow ramps \nup during the day Friday. Several solutions still show some light \nrain showers developing on the nose of the best LLJ/theta-e surge \nset to clip our far NW CWA Fri evening. Added some low chance PoP's \nto account for this but the low level moisture surge will be \nsignificantly impacted by antecedent dry conditions and any rain \namounts will be very light. SW flow/WAA will push highs well into \nthe 70s on Fri and to around 80F on Sat. Clouds increase late Sat \nbut dry conditions will hold through the daytime hours.\n\nAttention then turns to the remnants of Isaias still set to lift \ninto the Ohio Valley Sat night into Sunday. While exact details \nregarding the track and subsequent rainfall amounts in our CWA still \nshow some variability, there is increasing concensus that the \nheaviest rain will lift through central and eastern Ohio while our \nCWA only receives a glancing blow of light rain. The only area to \nwatch for some brief moderate rain will be our far SE around \nPortland to Lima but even there not expecting enough to cause any \nimpacts. The remnants of Isaias look to get quickly absorbed into \nthe mean westerlies with the best tropical moisture plume riding \nalong and east of the Appalachians. The main circulation weakens \nsubstantially by the time it reaches Ohio and even wind gusts look \nto remain below 30 mph. Will obviously continue to watch this period \nclosely but overall little/no impacts anticipated for our CWA.\n\nRain exits late in the day Sunday but another cold front arrives \nwith our next chance of rain Mon night. After one more day near 80F \non Monday, highs drop back into the 60s for the middle of next week \nwith lows well into the 40s.\n\n&&\n\n.AVIATION /06Z TAFS THROUGH 06Z FRIDAY/...\nIssued at 143 AM EDT Thu Oct 8 2026\n\nVFR conditions with light westerly flow expected through the\nday, becoming variable/calm overnight.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...None.\n\n&&\n\n$$\n\nDISCUSSION...AGD\nAVIATION...MCD"
+  "issued": "2026-10-08T05:07:00-05:00",
+  "ageHours": 0.6,
+  "text": "000\nFXUS63 KIWX 081007\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n607 AM EDT Thu Oct 8 2026\n\n.KEY MESSAGES...\n\n- Dry conditions expected today with highs around 70 and low\n  afternoon humidities.\n\n- A few sprinkles are possible near Lake Michigan Friday evening.\n\n- More widespread light rain is expected early Sunday,\n  especially east of I-69, associated with the remnants of\n  Isaias. No significant impacts are anticipated.\n\n&&\n\n.DISCUSSION...\nIssued at 250 AM EDT Thu Oct 8 2026\n\nLarge surface high on the upwind/subsident side of deep eastern \nCanada trough will slide across our area today and ensure another \npleasant weather day. Expect just some passing high clouds and highs \naround 70F. There are some nonzero fire wx concerns today. Forecast \nsoundings show relatively deep mixing into a very dry airmass. \nSurface dewpoints likely crash into the upper 30s this afternoon \nyielding RH values around 30 percent. Surface gradient is not \nparticularly strong but deep mixing may yield some gusts up to 20 \nmph. These values are still safely below red flag criteria and ten \nhour fuel moistures are still above 10 percent but we often see a \nfew field/combine fires across the area in these conditions during \nharvest time.\n\nSurface high slides to the southeast tonight and return flow ramps \nup during the day Friday. Several solutions still show some light \nrain showers developing on the nose of the best LLJ/theta-e surge \nset to clip our far NW CWA Fri evening. Added some low chance PoP's \nto account for this but the low level moisture surge will be \nsignificantly impacted by antecedent dry conditions and any rain \namounts will be very light. SW flow/WAA will push highs well into \nthe 70s on Fri and to around 80F on Sat. Clouds increase late Sat \nbut dry conditions will hold through the daytime hours.\n\nAttention then turns to the remnants of Isaias still set to lift \ninto the Ohio Valley Sat night into Sunday. While exact details \nregarding the track and subsequent rainfall amounts in our CWA still \nshow some variability, there is increasing concensus that the \nheaviest rain will lift through central and eastern Ohio while our \nCWA only receives a glancing blow of light rain. The only area to \nwatch for some brief moderate rain will be our far SE around \nPortland to Lima but even there not expecting enough to cause any \nimpacts. The remnants of Isaias look to get quickly absorbed into \nthe mean westerlies with the best tropical moisture plume riding \nalong and east of the Appalachians. The main circulation weakens \nsubstantially by the time it reaches Ohio and even wind gusts look \nto remain below 30 mph. Will obviously continue to watch this period \nclosely but overall little/no impacts anticipated for our CWA.\n\nRain exits late in the day Sunday but another cold front arrives \nwith our next chance of rain Mon night. After one more day near 80F \non Monday, highs drop back into the 60s for the middle of next week \nwith lows well into the 40s.\n\n&&\n\n.AVIATION /12Z TAFS THROUGH 12Z FRIDAY/...\nIssued at 606 AM EDT Thu Oct 8 2026\n\nVFR conditions are expected at the terminals, with light west-\nnorthwest flow becoming calm/variable tonight.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...None.\n\n&&\n\n$$\n\nDISCUSSION...AGD\nAVIATION...MCD"
  },
  "hazardousWeatherOutlook": null,
  "hydrologicOutlook": null,
@@ -474,12 +474,12 @@
    "ecmwf_ifs025": "European ECMWF"
   },
   "bias": {
-   "days": 9,
+   "days": 10,
    "ready": false,
    "high": -2.8,
-   "highDays": 9,
+   "highDays": 10,
    "low": 1.8,
-   "lowDays": 9,
+   "lowDays": 10,
    "note": "Average of (forecast minus airport reading) over the last 30 graded days; positive means we ran warm. Used to nudge the model blend once 14+ days are graded."
   },
   "days": [
