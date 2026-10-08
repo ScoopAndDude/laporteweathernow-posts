@@ -1,0 +1,203 @@
+{
+  "about": "The Daily Video for La Porte Weather Now (scripts/daily_video.py): official NWS weather, read aloud.",
+  "date": "2026-10-08",
+  "planned": "2026-10-08T18:26:00-05:00",
+  "source": "nws",
+  "forecastUpdated": "2026-10-08T22:45:26+00:00",
+  "observationTime": "2026-10-08T17:55:00-05:00",
+  "alerts": [],
+  "shortFused": [],
+  "hook": {
+    "kind": "weekend",
+    "score": 46,
+    "big": "Saturday",
+    "small": "is the pick of the weekend",
+    "say": "Saturday is the pick of the weekend: mostly sunny, with a high near 78°.",
+    "when": "Saturday"
+  },
+  "hookOptions": [
+    {
+      "kind": "weekend",
+      "score": 46,
+      "say": "Saturday is the pick of the weekend: mostly sunny, with a high near 78°."
+    },
+    {
+      "kind": "plain",
+      "score": 10,
+      "say": "Friday in La Porte: a chance of showers, high near 71°."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "hook",
+      "label": "LA PORTE · THURSDAY, OCT. 8",
+      "big": "Saturday",
+      "small": "is the pick of the weekend",
+      "icon": "sun-small-cloud",
+      "tone": "warm",
+      "hookKind": "weekend",
+      "say": "Saturday is the pick of the weekend: mostly sunny, with a high near 78°.",
+      "spoken": "Saturday is the pick of the weekend: mostly sunny, with a high near seventy-eight degrees.",
+      "voiceFile": "voice/hook.wav",
+      "voiceSeconds": 5.67,
+      "start": 0.0,
+      "duration": 6.07,
+      "voiceAt": 0.04
+    },
+    {
+      "id": "tonight",
+      "sun": {
+        "set": "6:17 p.m.",
+        "rise": "6:52 a.m."
+      },
+      "kind": "period",
+      "title": "TONIGHT",
+      "date": "Thursday, Oct. 8",
+      "temp": 47,
+      "tempLabel": "LOW",
+      "icon": "moon-small-cloud",
+      "text": "Mostly clear",
+      "sentence": "Mostly clear",
+      "rain": null,
+      "note": null,
+      "hours": [
+        {
+          "label": "6 PM",
+          "temp": 63,
+          "pop": 0
+        },
+        {
+          "label": "8 PM",
+          "temp": 55,
+          "pop": 1
+        },
+        {
+          "label": "10 PM",
+          "temp": 51,
+          "pop": 1
+        },
+        {
+          "label": "12 AM",
+          "temp": 49,
+          "pop": 2
+        },
+        {
+          "label": "2 AM",
+          "temp": 48,
+          "pop": 0
+        },
+        {
+          "label": "4 AM",
+          "temp": 48,
+          "pop": 0
+        }
+      ],
+      "say": "Tonight: mostly clear. Low 47.",
+      "spoken": "Tonight: mostly clear. Low forty-seven.",
+      "voiceFile": "voice/tonight.wav",
+      "voiceSeconds": 3.0,
+      "start": 6.07,
+      "duration": 3.4,
+      "voiceAt": 6.17
+    },
+    {
+      "id": "friday",
+      "sun": null,
+      "kind": "period",
+      "title": "FRIDAY",
+      "date": "Friday, Oct. 9",
+      "temp": 71,
+      "tempLabel": "HIGH",
+      "icon": "sun-rain",
+      "text": "A chance of showers",
+      "sentence": "A 30% chance of showers after 10 a.m.",
+      "rain": {
+        "pct": 30,
+        "what": "rain",
+        "window": "after 10 a.m."
+      },
+      "note": null,
+      "hours": [],
+      "say": "Friday: a 30% chance of showers after 10 a.m. High 71.",
+      "spoken": "Friday: a thirty percent chance of showers after ten in the morning High seventy-one.",
+      "voiceFile": "voice/friday.wav",
+      "voiceSeconds": 5.33,
+      "start": 9.47,
+      "duration": 5.73,
+      "voiceAt": 9.57
+    },
+    {
+      "id": "days",
+      "kind": "days",
+      "title": "NEXT 3 DAYS",
+      "days": [
+        {
+          "name": "Sat",
+          "day": "Saturday",
+          "hi": 78,
+          "lo": 59,
+          "pop": null,
+          "icon": "sun-small-cloud",
+          "text": "Mostly sunny",
+          "short": "Mostly Sunny",
+          "star": true
+        },
+        {
+          "name": "Sun",
+          "day": "Sunday",
+          "hi": 70,
+          "lo": 56,
+          "pop": 20,
+          "icon": "sun-rain",
+          "text": "A slight chance of showers",
+          "short": "Slight Chance Rain Showers",
+          "star": false
+        },
+        {
+          "name": "Mon",
+          "day": "Monday",
+          "hi": 77,
+          "lo": 60,
+          "pop": null,
+          "icon": "sun-small-cloud",
+          "text": "Mostly sunny",
+          "short": "Mostly Sunny",
+          "star": false
+        }
+      ],
+      "say": "Sunday: a slight chance of showers, 70. Monday: mostly sunny, 77.",
+      "spoken": "Sunday: a slight chance of showers, seventy. Monday: mostly sunny, seventy-seven.",
+      "voiceFile": "voice/days.wav",
+      "voiceSeconds": 5.58,
+      "start": 15.2,
+      "duration": 5.98,
+      "voiceAt": 15.3
+    },
+    {
+      "id": "end",
+      "kind": "end",
+      "say": "Free forecast every morning at laporteweathernow.com.",
+      "spoken": "Free forecast every morning at La Port Weather Now dot com.",
+      "voiceFile": "voice/end.wav",
+      "voiceSeconds": 3.77,
+      "start": 21.18,
+      "duration": 4.17,
+      "voiceAt": 21.28
+    }
+  ],
+  "caption": "La Porte weather for Thursday, Oct. 8, from the National Weather Service:\nTonight: Mostly clear. Low 47.\nFriday: A 30% chance of showers after 10 a.m. High 71.\nSaturday: Mostly sunny, high 78. Sunday: A slight chance of showers, high 70. Monday: Mostly sunny, high 77.\nToday's Daily Scoop: Sunny and dry, high near 68; a few showers possible Friday evening and early Sunday\nFree forecast every morning: laporteweathernow.com\nNo hype. Just the forecast.\n#LaPorte #LaPorteIndiana #LaPorteCounty #IndianaWeather #NWIndiana",
+  "words": 56,
+  "mode": "preview",
+  "normalsStation": {
+    "id": "USC00124837",
+    "name": "LAPORTE, IN US",
+    "km": 1.0
+  },
+  "seconds": 25.35,
+  "voice": "Kokoro-82M af_heart, speed 1.1",
+  "video": "laporte-2026-10-08.mp4",
+  "cover": "cover.jpg",
+  "bytes": 10467300,
+  "rendered": "2026-10-08T18:28:38-05:00"
+}
