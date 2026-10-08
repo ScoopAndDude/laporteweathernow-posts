@@ -1,6 +1,6 @@
 {
  "about": "Daily Scoop forecasts graded against the La Porte airport (KPPO), same rules as laporteweathernow.com/track-record: temperatures count if within 3 degrees F; rain calls count at 50%+ (should rain) and 20% or less (should stay dry). Made by scripts/scorecard.py.",
- "generated": "2026-10-08T05:41:23-05:00",
+ "generated": "2026-10-08T12:21:47-05:00",
  "station": "La Porte Municipal Airport (KPPO)",
  "tolerance": 3,
  "since": "2026-09-27",
@@ -298,13 +298,24 @@
  },
  "days": [
   {
-   "date": "2026-10-09",
-   "fromPost": "2026-10-07",
+   "date": "2026-10-10",
+   "fromPost": "2026-10-08",
    "leadDays": 2,
    "forecast": {
-    "high": 69,
-    "low": 46,
-    "rain": 0
+    "high": 78,
+    "low": 57,
+    "rain": 40
+   },
+   "status": "pending"
+  },
+  {
+   "date": "2026-10-09",
+   "fromPost": "2026-10-08",
+   "leadDays": 1,
+   "forecast": {
+    "high": 71,
+    "low": 48,
+    "rain": 30
    },
    "status": "pending"
   },
