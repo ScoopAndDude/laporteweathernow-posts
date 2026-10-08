@@ -30,6 +30,11 @@ Meta's own Graph API is free for posting to your own Page and Instagram. It need
 6. On GitHub: **ScoopAndDude/laporteweathernow-posts > Settings > Secrets and variables > Actions > New repository secret.** Name: `META_TOKEN`. Secret: paste the Page token. **Add secret.**
 7. Check it: Actions > **Daily video** > Run workflow, mode `check`. It finds the Page and the Instagram account and posts nothing (or tell Claude the key is in and Claude runs it).
 
+## YouTube Shorts (one time, about 5 minutes, Scoop)
+YouTube's own API is free, and since 2026 uploads from new, unverified projects are no longer held as private. A small Google Apps Script in the business Google account uploads each morning's video to youtube.com/@laporteweathernow as a Short (6:00-9:30 AM, once a day, with the same alert checks as above). The code and the steps are at the top of `tools/video/youtube-upload.gs`: new project at script.google.com, paste, add the "YouTube Data API v3" service, run `setup`, and Allow.
+
+TikTok and X aren't automatic: TikTok keeps posts from new apps private until TikTok audits the app, and X's posting API isn't free. Today's video is on the `video` branch each morning for posting by hand.
+
 To stop posting on one platform, set it to `false` in `video/config.json` (the video is still made). To stop the video entirely, take the `daily-video.yml` line out of `scripts/timer.py` and disable the workflow in Actions.
 
 ## By hand
