@@ -28,7 +28,7 @@ Meta's own Graph API is free for posting to your own Page and Instagram. It need
 4. **Tools > Graph API Explorer.** Pick the app. Under permissions add: `pages_show_list`, `pages_read_engagement`, `pages_manage_posts`, `instagram_basic`, `instagram_content_publish`, `business_management`. Click **Generate Access Token** and allow it for the La Porte Weather Now Page and its Instagram.
 5. Make it last: **Tools > Access Token Debugger**, paste that token, click **Extend Access Token**, and copy the new one. Back in the Graph API Explorer, paste the new token in the token box and run `me/accounts`. In the answer, copy the `access_token` next to "La Porte Weather Now" (a Page token made this way doesn't expire).
 6. On GitHub: **ScoopAndDude/laporteweathernow-posts > Settings > Secrets and variables > Actions > New repository secret.** Name: `META_TOKEN`. Secret: paste the Page token. **Add secret.**
-7. Tell Claude the key is in. Claude runs a test that finds the Page and the Instagram account without posting anything.
+7. Check it: Actions > **Daily video** > Run workflow, mode `check`. It finds the Page and the Instagram account and posts nothing (or tell Claude the key is in and Claude runs it).
 
 To stop posting on one platform, set it to `false` in `video/config.json` (the video is still made). To stop the video entirely, take the `daily-video.yml` line out of `scripts/timer.py` and disable the workflow in Actions.
 
@@ -36,6 +36,7 @@ To stop posting on one platform, set it to `false` in `video/config.json` (the v
 Actions > **Daily video** > Run workflow:
 - `preview`: makes one now without posting; it goes to the `video-preview` branch. Tick "radar" to show the radar scene even on a dry morning (for checking it).
 - `force`: makes one now and posts it (still once per platform per day).
+- `check`: tests the Meta key (which Page and Instagram account it reaches); posts nothing.
 
 ## Files
 - `config.json`: which platforms to post on, Meta's Graph API version, the voice speed.

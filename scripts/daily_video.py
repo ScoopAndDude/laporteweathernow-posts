@@ -55,7 +55,7 @@ AP_MONTHS = bs.AP_MONTHS
 NCEI = "https://www.ncei.noaa.gov/access/services"
 HASHTAGS = "#LaPorte #LaPorteIndiana #LaPorteCounty #IndianaWeather #NWIndiana"
 CUTOFFS = {"hook": 2.4, "period": 3.2, "radar": 3.8, "days": 3.6, "end": 2.6}   # shortest each scene can be (s)
-LEAD, TAIL = 0.10, 0.42                     # voice starts this far into a scene; the scene runs this long after it
+LEAD, TAIL = 0.10, 0.30                     # voice starts this far into a scene; the scene runs this long after it
 
 
 # ---------------------------------------------------------------------------------------------
@@ -128,6 +128,8 @@ def friendly(short):
         p = re.sub(r"^slight chance (of )?", "a slight chance of ", p)
         p = re.sub(r"^chance (of )?", "a chance of ", p)
         p = re.sub(r"\bt-?storms\b", "thunderstorms", p)
+        if not re.search(r"snow|sleet|freezing", p):
+            p = p.replace("rain showers", "showers")      # NWS's "Rain Showers" (it says "Snow Showers" for snow)
         parts.append(p)
     return upper_first(", then ".join(parts))
 
@@ -808,7 +810,7 @@ def cmd_voice(outdir):
     from kokoro import KPipeline
     plan = load_json(os.path.join(outdir, "plan.json"))
     pipe = KPipeline(lang_code="a", repo_id="hexgrad/Kokoro-82M")
-    speed = float(config().get("voiceSpeed", 1.06))
+    speed = float(config().get("voiceSpeed", 1.1))
 
     def speak(text):
         for word, sounds in rb.PRONOUNCE.items():

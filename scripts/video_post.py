@@ -237,7 +237,27 @@ def post(outdir, dry_run=False):
     return 1 if failed else 0
 
 
+def check():
+    """Checks the Meta key without posting: which Page and Instagram account it reaches."""
+    token = os.environ.get("META_TOKEN", "").strip()
+    if not token:
+        print("The META_TOKEN secret isn't set (video/README.md has the steps).")
+        return 1
+    v = dv.config().get("graphVersion", "v25.0")
+    page_id, page_name, page_token, ig_id, user_token = accounts(token, v)
+    print(f"Facebook Page: {page_name} ({page_id}). The key is a {'Page' if page_token == token else 'user'} key.")
+    if not ig_id:
+        print("No Instagram account is connected to this Page, so only Facebook would get the video.")
+        return 1
+    ig = call("GET", f"{GRAPH}/{v}/{ig_id}", user_token, {"fields": "username,name"})
+    print(f"Instagram: @{ig.get('username')} ({ig_id}).")
+    print("The key works. Nothing was posted.")
+    return 0
+
+
 if __name__ == "__main__":
+    if len(sys.argv) >= 2 and sys.argv[1] == "--check":
+        sys.exit(check())
     if len(sys.argv) >= 2:
         sys.exit(post(sys.argv[1], dry_run="--dry-run" in sys.argv))
     print(__doc__)

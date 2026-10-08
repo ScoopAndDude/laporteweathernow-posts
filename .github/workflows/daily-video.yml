@@ -15,9 +15,9 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "auto (the morning run), preview (make one now, don't post), force (make one now and post it)"
+        description: "auto (the morning run), preview (make one now, don't post), force (make one now and post it), check (test the Meta key, post nothing)"
         type: choice
-        options: [auto, preview, force]
+        options: [auto, preview, force, check]
         default: auto
       radar:
         description: "preview only: always show the radar scene, even on a dry morning (to check it)"
@@ -53,7 +53,15 @@ jobs:
           echo "OUT=$RUNNER_TEMP/video" >> "$GITHUB_ENV"
           echo "LAST=$RUNNER_TEMP/last" >> "$GITHUB_ENV"
 
+      - name: Check the Meta key (posts nothing)
+        if: env.MODE == 'check'
+        env:
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+        run: python3 scripts/video_post.py --check
+
       - name: The last video's record (and the saved normals and map)
+        if: env.MODE != 'check'
         run: |
           mkdir -p "$LAST"
           if git fetch -q --depth=1 origin video 2>/dev/null; then git archive FETCH_HEAD | tar -x -C "$LAST"; fi
@@ -61,6 +69,7 @@ jobs:
 
       - name: Plan today's video
         id: plan
+        if: env.MODE != 'check'
         env:
           VIDEO_RADAR: ${{ inputs.radar && 'always' || 'auto' }}
         run: python3 scripts/daily_video.py plan "$OUT" --last "$LAST" --mode "$MODE"
