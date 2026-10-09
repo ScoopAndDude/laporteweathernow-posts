@@ -1,1 +1,1 @@
-Temporary branch that keeps the site package for laporteweathernow.com: laporteweathernow-2026-10-07-move.zip (Oct. 7, 2026 evening: site review fixes; the non-weather pages moved to scoopanddude.com). Safe to delete.
+Temporary branch that keeps the site package for laporteweathernow.com: laporteweathernow-2026-10-09-mock-fixes.zip (published Oct. 9, 2026, 12:59 PM, deploy 6ac92b9d91cc7738da2bce1c: the Hard Hat Weather and Field Day Weather mock-test fixes; sha256 39259c8fbd80a80b...). Safe to delete.
