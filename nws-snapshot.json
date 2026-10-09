@@ -1,6 +1,6 @@
 {
  "about": "Official weather for La Porte, Indiana, saved by a GitHub job for the Daily Scoop (laporteweathernow.com/daily-scoop). Copied from NWS, SPC and WPC as-is; see scripts/nws_snapshot.py.",
- "fetched": "2026-10-09T05:41:46-05:00",
+ "fetched": "2026-10-09T11:57:18-05:00",
  "place": "La Porte, IN",
  "lat": 41.6081,
  "lon": -86.7189,
@@ -23,69 +23,69 @@
  },
  "observation": {
   "station": "KPPO (La Porte Municipal Airport)",
-  "time": "2026-10-09T05:15:00-05:00",
-  "weather": "Mostly Cloudy",
-  "temperatureF": 46,
+  "time": "2026-10-09T11:15:00-05:00",
+  "weather": "Partly Cloudy",
+  "temperatureF": 63,
   "dewpointF": 46,
-  "humidityPercent": 100,
+  "humidityPercent": 55,
   "wind": {
-   "from": "ENE",
-   "degrees": 60,
-   "mph": 2,
+   "from": "SSE",
+   "degrees": 160,
+   "mph": 9,
    "gustMph": null
   },
   "visibilityMiles": 10.0,
-  "pressureInHg": 30.15,
-  "metar": "KPPO 091015Z AUTO 06002KT 10SM SCT060 BKN070 BKN110 08/08 A3015 RMK AO2"
+  "pressureInHg": 30.19,
+  "metar": "KPPO 091615Z AUTO 16008KT 10SM SCT090 17/08 A3019 RMK AO2"
  },
  "forecast": {
-  "updated": "2026-10-09T07:45:15+00:00",
-  "generated": "2026-10-09T10:41:46+00:00",
+  "updated": "2026-10-09T15:30:10+00:00",
+  "generated": "2026-10-09T16:32:03+00:00",
   "timesNote": "Clock times in the forecast wording are already in America/Chicago (La Porte's real time). NWS writes them in America/Indiana/Indianapolis, which it has on file for La Porte by mistake.",
   "periods": [
    {
-    "name": "Today",
-    "start": "2026-10-09T06:00:00-04:00",
+    "name": "This Afternoon",
+    "start": "2026-10-09T12:00:00-04:00",
     "end": "2026-10-09T18:00:00-04:00",
     "isDaytime": true,
-    "temperatureF": 71,
-    "rainChancePercent": 17,
-    "wind": "S 0 to 5 mph",
-    "short": "Mostly Cloudy then Slight Chance Rain Showers",
-    "detailed": "A slight chance of rain showers after 4pm. Mostly cloudy, with a high near 71. South wind 0 to 5 mph. Chance of precipitation is 20%."
+    "temperatureF": 72,
+    "rainChancePercent": 19,
+    "wind": "S 5 mph",
+    "short": "Slight Chance Rain Showers",
+    "detailed": "A slight chance of rain showers after 2pm. Cloudy, with a high near 72. South wind around 5 mph. Chance of precipitation is 20%."
    },
    {
     "name": "Tonight",
     "start": "2026-10-09T18:00:00-04:00",
     "end": "2026-10-10T06:00:00-04:00",
     "isDaytime": false,
-    "temperatureF": 56,
-    "rainChancePercent": 22,
+    "temperatureF": 57,
+    "rainChancePercent": 17,
     "wind": "SE 5 to 10 mph",
     "short": "Slight Chance Rain Showers then Partly Cloudy",
-    "detailed": "A slight chance of rain showers before 7pm. Partly cloudy, with a low around 56. Southeast wind 5 to 10 mph. Chance of precipitation is 20%."
+    "detailed": "A slight chance of rain showers before 7pm. Partly cloudy, with a low around 57. Southeast wind 5 to 10 mph. Chance of precipitation is 20%."
    },
    {
     "name": "Saturday",
     "start": "2026-10-10T06:00:00-04:00",
     "end": "2026-10-10T18:00:00-04:00",
     "isDaytime": true,
-    "temperatureF": 77,
-    "rainChancePercent": 2,
-    "wind": "SE 10 mph",
+    "temperatureF": 78,
+    "rainChancePercent": 0,
+    "wind": "S 10 mph",
     "short": "Partly Sunny",
-    "detailed": "Partly sunny, with a high near 77. Southeast wind around 10 mph."
+    "detailed": "Partly sunny, with a high near 78. South wind around 10 mph."
    },
    {
     "name": "Saturday Night",
     "start": "2026-10-10T18:00:00-04:00",
     "end": "2026-10-11T06:00:00-04:00",
     "isDaytime": false,
-    "temperatureF": 57,
-    "rainChancePercent": 25,
-    "wind": "SE 10 mph",
-    "short": "Mostly Cloudy then Chance Rain Showers",
-    "detailed": "A chance of rain showers after 1am. Mostly cloudy, with a low around 57. Southeast wind around 10 mph. Chance of precipitation is 30%."
+    "temperatureF": 58,
+    "rainChancePercent": 26,
+    "wind": "SE 5 to 10 mph",
+    "short": "Cloudy then Chance Rain Showers",
+    "detailed": "A chance of rain showers after 2am. Cloudy, with a low around 58. Southeast wind 5 to 10 mph. Chance of precipitation is 30%."
    },
    {
     "name": "Sunday",
@@ -93,7 +93,7 @@
     "end": "2026-10-11T18:00:00-04:00",
     "isDaytime": true,
     "temperatureF": 70,
-    "rainChancePercent": 25,
+    "rainChancePercent": 26,
     "wind": "E 5 mph",
     "short": "Chance Rain Showers",
     "detailed": "A chance of rain showers before 1pm. Mostly cloudy, with a high near 70. East wind around 5 mph. Chance of precipitation is 30%."
@@ -103,33 +103,33 @@
     "start": "2026-10-11T18:00:00-04:00",
     "end": "2026-10-12T06:00:00-04:00",
     "isDaytime": false,
-    "temperatureF": 53,
+    "temperatureF": 54,
     "rainChancePercent": 1,
-    "wind": "SE 0 to 5 mph",
+    "wind": "W 0 to 5 mph",
     "short": "Partly Cloudy",
-    "detailed": "Partly cloudy, with a low around 53."
+    "detailed": "Partly cloudy, with a low around 54."
    },
    {
     "name": "Columbus Day",
     "start": "2026-10-12T06:00:00-04:00",
     "end": "2026-10-12T18:00:00-04:00",
     "isDaytime": true,
-    "temperatureF": 79,
+    "temperatureF": 81,
     "rainChancePercent": 2,
-    "wind": "SW 0 to 10 mph",
+    "wind": "S 5 to 10 mph",
     "short": "Mostly Sunny",
-    "detailed": "Mostly sunny, with a high near 79."
+    "detailed": "Mostly sunny, with a high near 81."
    },
    {
     "name": "Monday Night",
     "start": "2026-10-12T18:00:00-04:00",
     "end": "2026-10-13T06:00:00-04:00",
     "isDaytime": false,
-    "temperatureF": 60,
-    "rainChancePercent": 37,
+    "temperatureF": 62,
+    "rainChancePercent": 48,
     "wind": "SW 5 to 10 mph",
     "short": "Chance Showers And Thunderstorms",
-    "detailed": "A chance of showers and thunderstorms after 7pm. Partly cloudy, with a low around 60. Chance of precipitation is 40%."
+    "detailed": "A chance of showers and thunderstorms between 7pm and 1am, then a chance of showers and thunderstorms. Partly cloudy, with a low around 62. Chance of precipitation is 50%."
    },
    {
     "name": "Tuesday",
@@ -137,10 +137,10 @@
     "end": "2026-10-13T18:00:00-04:00",
     "isDaytime": true,
     "temperatureF": 72,
-    "rainChancePercent": 37,
+    "rainChancePercent": 48,
     "wind": "NW 10 mph",
-    "short": "Chance Showers And Thunderstorms",
-    "detailed": "A chance of showers and thunderstorms before 1pm. Mostly sunny, with a high near 72. Chance of precipitation is 40%."
+    "short": "Chance Showers And Thunderstorms then Slight Chance Showers And Thunderstorms",
+    "detailed": "A chance of showers and thunderstorms before 7am, then a slight chance of showers and thunderstorms between 7am and 1pm. Mostly sunny, with a high near 72. Chance of precipitation is 50%."
    },
    {
     "name": "Tuesday Night",
@@ -202,10 +202,10 @@
  "rain": {
   "note": "NWS forecast grid rain totals (QPF) for the La Porte grid point; the forecast text's own wording comes first.",
   "next24hInches": 0.0,
-  "next72hInches": 0.0,
+  "next72hInches": 0.03,
   "byPeriod": [
    {
-    "name": "Today",
+    "name": "This Afternoon",
     "inches": 0.0
    },
    {
@@ -218,11 +218,11 @@
    },
    {
     "name": "Saturday Night",
-    "inches": 0.0
+    "inches": 0.02
    },
    {
     "name": "Sunday",
-    "inches": 0.0
+    "inches": 0.01
    },
    {
     "name": "Sunday Night",
@@ -234,7 +234,7 @@
    },
    {
     "name": "Monday Night",
-    "inches": 0
+    "inches": 0.0
    },
    {
     "name": "Tuesday",
@@ -268,25 +268,25 @@
   "nearbyCountiesFullText": []
  },
  "discussion": {
-  "issued": "2026-10-09T01:41:00-05:00",
-  "ageHours": 4.0,
-  "text": "000\nFXUS63 KIWX 090641\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n241 AM EDT Fri Oct 9 2026\n\n.KEY MESSAGES...\n\n- A few sprinkles are possible toward Lake Michigan today.\n\n- More widespread light rain is expected Saturday night into early\n  Sunday, especially east of I-69, associated with the remnants\n  of Isaias. No significant impacts are anticipated.\n\n- Generally above normal temperatures expected through much of\n  next week before a more pronounced drop in temps is expected\n  later Friday into the weekend. \n  \n\n&&\n\n.DISCUSSION...\nIssued at 238 AM EDT Fri Oct 9 2026\n\nDry airmass in place across the region with a warm front well \nto the southwest from SE Nebraska to SW Missouri. This front is \ncurrently aiding scattered showers and storms across portions of\nIowa. While the front will make slow progress NE over the next \n24 hours, the area of precip will try to work NE well ahead of \nit, but run into increasingly dry air with some saturation \nstarting in the mid levels. Given the dry airmass, suspect more \nof a sprinkle vs light rain risk, but for now have just lowered \npops to slgt chc category. \n\nFocus then shifts to warmer temperatures on Saturday and\neventually some impacts from what will be left of Hurricane\nIsaias late in the weekend. Highs will climb into the 70s and\nmaybe a few 80s in far SW areas on Saturday prior to the arrival\nof a spoke of energy and inverted trough that pushes north\nSaturday night into early Sunday. The main sfc and upper level\nremnants will track along the Ohio River, reaching West Virginia\nby 6Z/12. An area of generally light rainfall will impact the \nsoutheast third to maybe half of the area. Bit higher rainfall\namounts are likely in far SE sections (SE of I-69) where some\nlocations could see up to a half inch. Wind gusts will pick up\nsomewhat as well in this window in the same areas. \n\nUpper level ridging will try to take hold into mid week, but a \nweak northern stream trough will drop in for Monday night into \nTuesday with another brief warmup Monday (maybe more locations \ntouching 80). Mid to late week will then feature likely phasing \nof northern and southern stream systems, carving out a deeper \ntrough with the sfc reflection remaining well NW of the area. A \nstrong cold front looks to bring a much more fall like air mass \nin its wake just outside the current period with 850 mb temps \ndropping below 0 C. \n\n&&\n\n.AVIATION /06Z TAFS THROUGH 06Z SATURDAY/...\nIssued at 123 AM EDT Fri Oct 9 2026\n\nVFR conditions are expected at the terminals, with calm/variable\nwinds strengthening out of the S-SE through the period.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...None.\n\n&&\n\n$$\n\nDISCUSSION...Fisher\nAVIATION...MCD"
+  "issued": "2026-10-09T05:43:00-05:00",
+  "ageHours": 6.2,
+  "text": "000\nFXUS63 KIWX 091043\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n643 AM EDT Fri Oct 9 2026\n\n.KEY MESSAGES...\n\n- A few sprinkles are possible toward Lake Michigan today.\n\n- More widespread light rain is expected Saturday night into early\n  Sunday, especially east of I-69, associated with the remnants\n  of Isaias. No significant impacts are anticipated.\n\n- Generally above normal temperatures expected through much of\n  next week before a more pronounced drop in temps is expected\n  later Friday into the weekend. \n  \n\n&&\n\n.DISCUSSION...\nIssued at 238 AM EDT Fri Oct 9 2026\n\nDry airmass in place across the region with a warm front well \nto the southwest from SE Nebraska to SW Missouri. This front is \ncurrently aiding scattered showers and storms across portions of\nIowa. While the front will make slow progress NE over the next \n24 hours, the area of precip will try to work NE well ahead of \nit, but run into increasingly dry air with some saturation \nstarting in the mid levels. Given the dry airmass, suspect more \nof a sprinkle vs light rain risk, but for now have just lowered \npops to slgt chc category. \n\nFocus then shifts to warmer temperatures on Saturday and\neventually some impacts from what will be left of Hurricane\nIsaias late in the weekend. Highs will climb into the 70s and\nmaybe a few 80s in far SW areas on Saturday prior to the arrival\nof a spoke of energy and inverted trough that pushes north\nSaturday night into early Sunday. The main sfc and upper level\nremnants will track along the Ohio River, reaching West Virginia\nby 6Z/12. An area of generally light rainfall will impact the \nsoutheast third to maybe half of the area. Bit higher rainfall\namounts are likely in far SE sections (SE of I-69) where some\nlocations could see up to a half inch. Wind gusts will pick up\nsomewhat as well in this window in the same areas. \n\nUpper level ridging will try to take hold into mid week, but a \nweak northern stream trough will drop in for Monday night into \nTuesday with another brief warmup Monday (maybe more locations \ntouching 80). Mid to late week will then feature likely phasing \nof northern and southern stream systems, carving out a deeper \ntrough with the sfc reflection remaining well NW of the area. A \nstrong cold front looks to bring a much more fall like air mass \nin its wake just outside the current period with 850 mb temps \ndropping below 0 C.\n\n&&\n\n.AVIATION /12Z TAFS THROUGH 12Z SATURDAY/...\nIssued at 642 AM EDT Fri Oct 9 2026\n\nVFR conditions are expected at the terminals, with calm/variable\nwinds strengthening out of the S-SE through the period. A few\nsprinkles are possible at KSBN this afternoon/evening, but no\nimpacts are expected. Left out of TAF for now given low\nconfidence-there is a lot of dry air to overcome. Otherwise, \nexpect mid-high level clouds and dry conditions. \n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...None.\n\n&&\n\n$$\n\nDISCUSSION...Fisher\nAVIATION...MCD"
  },
  "hazardousWeatherOutlook": null,
  "hydrologicOutlook": null,
  "spc": [
   {
    "day": 1,
-   "valid": "202610091200",
+   "valid": "202610091630",
    "expires": "202610101200",
-   "riskAtLaPorte": "General Thunderstorms Risk",
+   "riskAtLaPorte": "No thunderstorm or severe risk area",
    "riskAreasAnywhere": [
     "General Thunderstorms Risk",
     "Marginal Risk",
     "Slight Risk"
    ],
-   "summary": "Thunderstorms associated with Hurricane Isaias will have potential to produce tornadoes from this afternoon into the overnight period from the Florida Panhandle into southeast Alabama and southwest Georgia.",
-   "text": "SPC AC 090537\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1237 AM CDT Fri Oct 09 2026\n\n   Valid 091200Z - 101200Z\n\n   ...THERE IS A SLIGHT RISK OF SEVERE THUNDERSTORMS ACROSS PARTS OF\n   THE FLORIDA PANHANDLE...SOUTHEAST ALABAMA AND SOUTHWEST GEORGIA...\n\n   ...SUMMARY...\n   Thunderstorms associated with Hurricane Isaias will have potential\n   to produce tornadoes from this afternoon into the overnight period\n   from the Florida Panhandle into southeast Alabama and southwest\n   Georgia.\n\n   ...Florida Panhandle/Southeast Alabama/Southwest Georgia...\n   The National Hurricane Center is forecasting Isaias to make landfall\n   near Pensacola early this evening. As the center of Isaias\n   approaches the Gulf Coast this afternoon, rainbands will spread\n   across the Florida Panhandle. Within these bands, thunderstorms will\n   develop and move inland. The airmass ahead of these bands is\n   forecast to be very moist and unstable. Surface dewpoints in the mid\n   to upper 70s will contribute to moderate instability, with MLCAPE\n   likely peaking in the 1500 to 2000 J/kg range along parts of the\n   coast. RAP forecast soundings in the Florida Panhandle to the east\n   of Isaias' center early this evening suggest that 0-3 km\n   storm-relative helicity will increase to around 200 m2/s2, which\n   will support rotating storms with potential to produce tornadoes.\n   The tornado threat is expected to persist into the overnight period\n   as the rainbands associated with Isaias move northward into southern\n   Alabama and southwest Georgia.\n\n   ..Broyles/Chalmers.. 10/09/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 1300Z"
+   "summary": "With the approach of Hurricane Isaias, tornado potential will steadily increase this afternoon and continue tonight, especially across the Florida Panhandle into southeast Alabama and southwest Georgia.",
+   "text": "SPC AC 091613\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1113 AM CDT Fri Oct 09 2026\n\n   Valid 091630Z - 101200Z\n\n   ...THERE IS A SLIGHT RISK OF SEVERE THUNDERSTORMS ACROSS THE FLORIDA\n   PANHANDLE INTO NORTHERN FLORIDA...SOUTHEAST ALABAMA...AND SOUTHWEST\n   GEORGIA...\n\n   ...SUMMARY...\n   With the approach of Hurricane Isaias, tornado potential will\n   steadily increase this afternoon and continue tonight, especially\n   across the Florida Panhandle into southeast Alabama and southwest\n   Georgia.\n\n   ...Florida Panhandle into northern Florida/southern Alabama/southern\n   Georgia...\n   Reference the National Hurricane Center for the latest forecast\n   track/intensity details regarding Hurricane Isaias. The latest\n   discussion indicates that Isaias has reached major hurricane status\n   as it moves north-northeastward toward the western Florida\n   Panhandle/far southern Alabama.\n\n   As Isaias approaches the coast, rainbands on its eastern periphery\n   will spread northward toward the Big Bend of the Florida Panhandle,\n   far southeastern Alabama and southwestern Georgia this afternoon\n   into tonight. Throughout the day, a more unstable airmass over the\n   eastern Gulf will advance northward, resulting in destabilization\n   over the coastal areas of the Florida Panhandle. The current VAD\n   profile at KTLH is already supportive of tornado potential (i.e.,\n   0-1 SRH over 250 m2/s2), and low-level winds and SRH will strengthen\n   significantly this afternoon and evening. Once the mid 70s F\n   dewpoints come onshore, persistent, deeper updrafts will be possible\n   with the propensity to rotate and have the potential to produce\n   tornadoes, particularly across the Florida Panhandle into\n   southeastern Alabama and southwestern Georgia.\n\n   Additionally, some enhancement to the wind field, potentially\n   including a convective influence, may occur across southern Alabama\n   in vicinity of the evolving inverted surface trough late this\n   afternoon into tonight.\n\n   ..Jirak/Smith.. 10/09/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 2000Z"
   },
   {
    "day": 2,
@@ -344,52 +344,32 @@
     "summary": "dry through work hours (6 a.m. to 6 p.m.)",
     "hours": [
      {
-      "hour": 6,
-      "rainChancePercent": 1
-     },
-     {
-      "hour": 7,
-      "rainChancePercent": 2
-     },
-     {
-      "hour": 8,
-      "rainChancePercent": 3
-     },
-     {
-      "hour": 9,
+      "hour": 11,
       "rainChancePercent": 4
      },
      {
-      "hour": 10,
-      "rainChancePercent": 6
-     },
-     {
-      "hour": 11,
-      "rainChancePercent": 6
-     },
-     {
       "hour": 12,
-      "rainChancePercent": 5
+      "rainChancePercent": 4
      },
      {
       "hour": 13,
-      "rainChancePercent": 7
-     },
-     {
-      "hour": 14,
       "rainChancePercent": 8
      },
      {
+      "hour": 14,
+      "rainChancePercent": 15
+     },
+     {
       "hour": 15,
-      "rainChancePercent": 9
+      "rainChancePercent": 19
      },
      {
       "hour": 16,
-      "rainChancePercent": 17
+      "rainChancePercent": 19
      },
      {
       "hour": 17,
-      "rainChancePercent": 22
+      "rainChancePercent": 17
      }
     ]
    },
@@ -399,7 +379,7 @@
     "hours": [
      {
       "hour": 6,
-      "rainChancePercent": 1
+      "rainChancePercent": 0
      },
      {
       "hour": 7,
@@ -470,123 +450,39 @@
    {
     "date": "2026-10-09",
     "nws": {
-     "high": 71,
+     "high": 72,
      "low": null,
-     "rain": 22
+     "rain": 19
     },
     "models": {
      "ncep_nbm_conus": {
-      "high": 71,
+      "high": 72,
       "low": 49,
-      "rain": 10
+      "rain": 9
      },
      "ncep_hrrr_conus": {
-      "high": 74,
-      "low": 43,
-      "rain": 10
+      "high": 72,
+      "low": 46,
+      "rain": 9
      },
      "gfs_seamless": {
-      "high": 74,
-      "low": 43,
-      "rain": 10
+      "high": 72,
+      "low": 46,
+      "rain": 9
      },
      "ecmwf_ifs025": {
       "high": 74,
-      "low": 50,
-      "rain": 43
+      "low": 47,
+      "rain": 12
      }
     },
     "blend": {
-     "high": 74,
+     "high": 72,
      "low": 46
     },
     "adjusted": {
-     "high": 74,
+     "high": 72,
      "low": 46
-    },
-    "spread": {
-     "high": 3,
-     "low": 7
-    },
-    "note": "our blend's high (74) differs from NWS (71) by 3 degrees; the models disagree on the low by 7 degrees (less certain)"
-   },
-   {
-    "date": "2026-10-10",
-    "nws": {
-     "high": 77,
-     "low": 56,
-     "rain": 25
-    },
-    "models": {
-     "ncep_nbm_conus": {
-      "high": 77,
-      "low": 57,
-      "rain": 2
-     },
-     "ncep_hrrr_conus": {
-      "high": 80,
-      "low": 51,
-      "rain": 2
-     },
-     "gfs_seamless": {
-      "high": 80,
-      "low": 51,
-      "rain": 2
-     },
-     "ecmwf_ifs025": {
-      "high": 77,
-      "low": 57,
-      "rain": 10
-     }
-    },
-    "blend": {
-     "high": 77,
-     "low": 56
-    },
-    "adjusted": {
-     "high": 77,
-     "low": 56
-    },
-    "spread": {
-     "high": 3,
-     "low": 6
-    },
-    "note": "the models disagree on the low by 6 degrees (less certain)"
-   },
-   {
-    "date": "2026-10-11",
-    "nws": {
-     "high": 70,
-     "low": 57,
-     "rain": 25
-    },
-    "models": {
-     "ncep_nbm_conus": {
-      "high": 69,
-      "low": 58,
-      "rain": 36
-     },
-     "ncep_hrrr_conus": {
-      "rain": 36
-     },
-     "gfs_seamless": {
-      "high": 69,
-      "low": 57,
-      "rain": 36
-     },
-     "ecmwf_ifs025": {
-      "high": 68,
-      "low": 55,
-      "rain": 51
-     }
-    },
-    "blend": {
-     "high": 69,
-     "low": 57
-    },
-    "adjusted": {
-     "high": 69,
-     "low": 57
     },
     "spread": {
      "high": 2,
@@ -595,42 +491,126 @@
     "note": "NWS and the models agree within a few degrees"
    },
    {
-    "date": "2026-10-12",
+    "date": "2026-10-10",
     "nws": {
-     "high": 79,
-     "low": 53,
-     "rain": 37
+     "high": 78,
+     "low": 57,
+     "rain": 26
     },
     "models": {
      "ncep_nbm_conus": {
-      "high": 79,
-      "low": 55,
-      "rain": 20
+      "high": 77,
+      "low": 58,
+      "rain": 4
      },
      "ncep_hrrr_conus": {
-      "rain": 20
+      "high": 79,
+      "low": 52,
+      "rain": 4
      },
      "gfs_seamless": {
-      "high": 81,
-      "low": 56,
-      "rain": 20
+      "high": 79,
+      "low": 52,
+      "rain": 4
      },
      "ecmwf_ifs025": {
-      "high": 83,
-      "low": 52,
-      "rain": 19
+      "high": 75,
+      "low": 56,
+      "rain": 2
      }
     },
     "blend": {
-     "high": 80,
-     "low": 54
+     "high": 78,
+     "low": 56
     },
     "adjusted": {
-     "high": 80,
-     "low": 54
+     "high": 78,
+     "low": 56
     },
     "spread": {
      "high": 4,
+     "low": 6
+    },
+    "note": "the models disagree on the low by 6 degrees (less certain)"
+   },
+   {
+    "date": "2026-10-11",
+    "nws": {
+     "high": 70,
+     "low": 58,
+     "rain": 26
+    },
+    "models": {
+     "ncep_nbm_conus": {
+      "high": 70,
+      "low": 58,
+      "rain": 34
+     },
+     "ncep_hrrr_conus": {
+      "rain": 34
+     },
+     "gfs_seamless": {
+      "high": 67,
+      "low": 57,
+      "rain": 34
+     },
+     "ecmwf_ifs025": {
+      "high": 70,
+      "low": 56,
+      "rain": 39
+     }
+    },
+    "blend": {
+     "high": 70,
+     "low": 58
+    },
+    "adjusted": {
+     "high": 70,
+     "low": 58
+    },
+    "spread": {
+     "high": 3,
+     "low": 2
+    },
+    "note": "NWS and the models agree within a few degrees"
+   },
+   {
+    "date": "2026-10-12",
+    "nws": {
+     "high": 81,
+     "low": 54,
+     "rain": 48
+    },
+    "models": {
+     "ncep_nbm_conus": {
+      "high": 80,
+      "low": 56,
+      "rain": 23
+     },
+     "ncep_hrrr_conus": {
+      "rain": 23
+     },
+     "gfs_seamless": {
+      "high": 82,
+      "low": 58,
+      "rain": 23
+     },
+     "ecmwf_ifs025": {
+      "high": 83,
+      "low": 55,
+      "rain": 23
+     }
+    },
+    "blend": {
+     "high": 82,
+     "low": 56
+    },
+    "adjusted": {
+     "high": 82,
+     "low": 56
+    },
+    "spread": {
+     "high": 3,
      "low": 4
     },
     "note": "NWS and the models agree within a few degrees"
@@ -639,15 +619,15 @@
   "suggested": [
    {
     "date": "2026-10-10",
-    "high": 77,
+    "high": 78,
     "low": 56,
-    "rain": 25
+    "rain": 26
    },
    {
     "date": "2026-10-11",
-    "high": 69,
-    "low": 57,
-    "rain": 25
+    "high": 70,
+    "low": 58,
+    "rain": 26
    }
   ]
  },
