@@ -1,6 +1,6 @@
 {
  "about": "Official weather for La Porte, Indiana, saved by a GitHub job for the Daily Scoop (laporteweathernow.com/daily-scoop). Copied from NWS, SPC and WPC as-is; see scripts/nws_snapshot.py.",
- "fetched": "2026-10-09T05:02:10-05:00",
+ "fetched": "2026-10-09T05:41:46-05:00",
  "place": "La Porte, IN",
  "lat": 41.6081,
  "lon": -86.7189,
@@ -23,24 +23,24 @@
  },
  "observation": {
   "station": "KPPO (La Porte Municipal Airport)",
-  "time": "2026-10-09T04:15:00-05:00",
-  "weather": "Cloudy",
-  "temperatureF": 48,
-  "dewpointF": 48,
+  "time": "2026-10-09T05:15:00-05:00",
+  "weather": "Mostly Cloudy",
+  "temperatureF": 46,
+  "dewpointF": 46,
   "humidityPercent": 100,
   "wind": {
-   "from": "N",
-   "degrees": 0,
-   "mph": 0,
+   "from": "ENE",
+   "degrees": 60,
+   "mph": 2,
    "gustMph": null
   },
   "visibilityMiles": 10.0,
-  "pressureInHg": 30.13,
-  "metar": "KPPO 090915Z AUTO 00000KT 10SM BKN070 BKN080 OVC110 09/09 A3013 RMK AO2"
+  "pressureInHg": 30.15,
+  "metar": "KPPO 091015Z AUTO 06002KT 10SM SCT060 BKN070 BKN110 08/08 A3015 RMK AO2"
  },
  "forecast": {
   "updated": "2026-10-09T07:45:15+00:00",
-  "generated": "2026-10-09T10:02:05+00:00",
+  "generated": "2026-10-09T10:41:46+00:00",
   "timesNote": "Clock times in the forecast wording are already in America/Chicago (La Porte's real time). NWS writes them in America/Indiana/Indianapolis, which it has on file for La Porte by mistake.",
   "periods": [
    {
@@ -269,7 +269,7 @@
  },
  "discussion": {
   "issued": "2026-10-09T01:41:00-05:00",
-  "ageHours": 3.4,
+  "ageHours": 4.0,
   "text": "000\nFXUS63 KIWX 090641\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n241 AM EDT Fri Oct 9 2026\n\n.KEY MESSAGES...\n\n- A few sprinkles are possible toward Lake Michigan today.\n\n- More widespread light rain is expected Saturday night into early\n  Sunday, especially east of I-69, associated with the remnants\n  of Isaias. No significant impacts are anticipated.\n\n- Generally above normal temperatures expected through much of\n  next week before a more pronounced drop in temps is expected\n  later Friday into the weekend. \n  \n\n&&\n\n.DISCUSSION...\nIssued at 238 AM EDT Fri Oct 9 2026\n\nDry airmass in place across the region with a warm front well \nto the southwest from SE Nebraska to SW Missouri. This front is \ncurrently aiding scattered showers and storms across portions of\nIowa. While the front will make slow progress NE over the next \n24 hours, the area of precip will try to work NE well ahead of \nit, but run into increasingly dry air with some saturation \nstarting in the mid levels. Given the dry airmass, suspect more \nof a sprinkle vs light rain risk, but for now have just lowered \npops to slgt chc category. \n\nFocus then shifts to warmer temperatures on Saturday and\neventually some impacts from what will be left of Hurricane\nIsaias late in the weekend. Highs will climb into the 70s and\nmaybe a few 80s in far SW areas on Saturday prior to the arrival\nof a spoke of energy and inverted trough that pushes north\nSaturday night into early Sunday. The main sfc and upper level\nremnants will track along the Ohio River, reaching West Virginia\nby 6Z/12. An area of generally light rainfall will impact the \nsoutheast third to maybe half of the area. Bit higher rainfall\namounts are likely in far SE sections (SE of I-69) where some\nlocations could see up to a half inch. Wind gusts will pick up\nsomewhat as well in this window in the same areas. \n\nUpper level ridging will try to take hold into mid week, but a \nweak northern stream trough will drop in for Monday night into \nTuesday with another brief warmup Monday (maybe more locations \ntouching 80). Mid to late week will then feature likely phasing \nof northern and southern stream systems, carving out a deeper \ntrough with the sfc reflection remaining well NW of the area. A \nstrong cold front looks to bring a much more fall like air mass \nin its wake just outside the current period with 850 mb temps \ndropping below 0 C. \n\n&&\n\n.AVIATION /06Z TAFS THROUGH 06Z SATURDAY/...\nIssued at 123 AM EDT Fri Oct 9 2026\n\nVFR conditions are expected at the terminals, with calm/variable\nwinds strengthening out of the S-SE through the period.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...None.\n\n&&\n\n$$\n\nDISCUSSION...Fisher\nAVIATION...MCD"
  },
  "hazardousWeatherOutlook": null,
@@ -458,12 +458,12 @@
    "ecmwf_ifs025": "European ECMWF"
   },
   "bias": {
-   "days": 10,
+   "days": 11,
    "ready": false,
-   "high": -2.8,
-   "highDays": 10,
-   "low": 1.8,
-   "lowDays": 10,
+   "high": -2.9,
+   "highDays": 11,
+   "low": 2.1,
+   "lowDays": 11,
    "note": "Average of (forecast minus airport reading) over the last 30 graded days; positive means we ran warm. Used to nudge the model blend once 14+ days are graded."
   },
   "days": [
@@ -478,17 +478,17 @@
      "ncep_nbm_conus": {
       "high": 71,
       "low": 49,
-      "rain": 13
+      "rain": 10
      },
      "ncep_hrrr_conus": {
       "high": 74,
       "low": 43,
-      "rain": 13
+      "rain": 10
      },
      "gfs_seamless": {
       "high": 74,
       "low": 43,
-      "rain": 13
+      "rain": 10
      },
      "ecmwf_ifs025": {
       "high": 74,
