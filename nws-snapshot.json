@@ -1,6 +1,6 @@
 {
  "about": "Official weather for La Porte, Indiana, saved by a GitHub job for the Daily Scoop (laporteweathernow.com/daily-scoop). Copied from NWS, SPC and WPC as-is; see scripts/nws_snapshot.py.",
- "fetched": "2026-10-10T05:41:40-05:00",
+ "fetched": "2026-10-10T10:50:41-05:00",
  "place": "La Porte, IN",
  "lat": 41.6081,
  "lon": -86.7189,
@@ -39,17 +39,17 @@
   "metar": "KPPO 100106Z AUTO 12005KT 10SM BKN080 OVC095 18/12 A3011 RMK AO2"
  },
  "forecast": {
-  "updated": "2026-10-10T10:00:51+00:00",
-  "generated": "2026-10-10T10:32:00+00:00",
+  "updated": "2026-10-10T13:30:40+00:00",
+  "generated": "2026-10-10T15:02:02+00:00",
   "timesNote": "Clock times in the forecast wording are already in America/Chicago (La Porte's real time). NWS writes them in America/Indiana/Indianapolis, which it has on file for La Porte by mistake.",
   "periods": [
    {
     "name": "Today",
-    "start": "2026-10-10T06:00:00-04:00",
+    "start": "2026-10-10T11:00:00-04:00",
     "end": "2026-10-10T18:00:00-04:00",
     "isDaytime": true,
     "temperatureF": 77,
-    "rainChancePercent": 1,
+    "rainChancePercent": 0,
     "wind": "S 10 mph",
     "short": "Partly Sunny",
     "detailed": "Partly sunny, with a high near 77. South wind around 10 mph."
@@ -60,7 +60,7 @@
     "end": "2026-10-11T06:00:00-04:00",
     "isDaytime": false,
     "temperatureF": 57,
-    "rainChancePercent": 5,
+    "rainChancePercent": 10,
     "wind": "SE 5 to 10 mph",
     "short": "Mostly Cloudy",
     "detailed": "Mostly cloudy, with a low around 57. Southeast wind 5 to 10 mph."
@@ -71,7 +71,7 @@
     "end": "2026-10-11T18:00:00-04:00",
     "isDaytime": true,
     "temperatureF": 73,
-    "rainChancePercent": 11,
+    "rainChancePercent": 14,
     "wind": "NE 5 mph",
     "short": "Partly Sunny",
     "detailed": "Partly sunny, with a high near 73. Northeast wind around 5 mph."
@@ -234,7 +234,7 @@
    },
    {
     "name": "Tuesday Night",
-    "inches": 0
+    "inches": 0.0
    },
    {
     "name": "Wednesday",
@@ -266,16 +266,16 @@
  "alertsNearby": {
   "indiana": [
    {
-    "id": "urn:oid:2.49.0.1.840.0.12818affe94c5986e5dab9fc2b43a318d005ea7c.001.1",
+    "id": "urn:oid:2.49.0.1.840.0.c306d35d72b676fc5af7227fddf5034440f4be64.001.1",
     "event": "Special Weather Statement",
-    "headline": "Special Weather Statement issued October 10 at 12:00AM EDT by NWS Louisville KY",
-    "nwsHeadline": "Gusty Winds Expected Saturday with the Remnants of Hurricane Isaias",
+    "headline": "Special Weather Statement issued October 10 at 11:00AM EDT by NWS Louisville KY",
+    "nwsHeadline": "Gusty easterly winds this afternoon",
     "area": "Scott; Jefferson; Harrison; Floyd; Clark; Breckinridge; Meade; Ohio; Grayson; Hardin; Bullitt; Jefferson; Oldham; Trimble; Henry; Shelby; Franklin; Scott; Harrison; Spencer; Anderson; Woodford; Fayette; Bourbon; Nicholas; Nelson; Washington; Mercer; Jessamine; Clark; Larue; Marion; Boyle; Garrard; Madison; Butler; Edmonson; Hart; Green; Taylor; Casey; Lincoln; Logan; Warren; Simpson; Allen; Barren; Monroe; Metcalfe; Adair; Russell; Cumberland; Clinton",
     "sender": "NWS Louisville KY",
-    "sent": "2026-10-10T00:00:00-04:00",
-    "onset": "2026-10-10T00:00:00-04:00",
+    "sent": "2026-10-10T11:00:00-04:00",
+    "onset": "2026-10-10T11:00:00-04:00",
     "ends": null,
-    "expires": "2026-10-10T11:00:00-04:00",
+    "expires": "2026-10-10T19:00:00-04:00",
     "messageType": "Alert",
     "severity": "Moderate",
     "certainty": "Observed",
@@ -286,7 +286,7 @@
  },
  "discussion": {
   "issued": "2026-10-10T05:35:00-05:00",
-  "ageHours": 0.1,
+  "ageHours": 5.3,
   "text": "000\nFXUS63 KIWX 101035\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n635 AM EDT Sat Oct 10 2026\n\n.KEY MESSAGES...\n\n- Periods of light rain expected this evening into Sunday \n  morning, especially east of Interstate 69 where up to a half \n  an inch of rain may fall. \n\n- An active pattern sets up for the second half of next week\n  with gusty winds, showers and possible thunderstorms, then \n  turning colder into next weekend.\n\n&&\n\n.DISCUSSION...\nIssued at 208 AM EDT Sat Oct 10 2026\n\nAnother day of well above normal temperatures is in store as some \nWAA continues. Remnants of \"Isaias\" will continue slowly north \nthrough the day and eventually more northeast tonight into Sunday. \nBands of cirrus will work across the area, generally thin in nature \nuntil the circulation edges closer. Scattered showers may quickly \nmove north across much of the area near/after 3Z Sun then steadier \nprecip arriving after 6Z and lingering along and east of Interstate \n69. QPF is somewhat lower than past days with amounts possibly at \nmost less than one half inch. Model blends still keeping some slgt \nchc pops for thunder. Lapse rates not overly impressive, but some \nelevated instability is noted (negative Showalters). Will leave in \nfor the time being. \n\nWith regards to temps on Sunday, some guidance suggests high temps \ncould be several degrees cooler (mainly east) which could have some \nvalidity with the extensive cloud cover and precip. These temps seem \nto be in the lower percentile range, so have left previous highs \nalone and pass onto the next shift. \n\nLull in precip chances arrives Sunday night into Monday, before a \nseries of weak waves and fronts arrive for mid week. Thereafter, med \nrange models have sort of diverged some on the degree of phasing of \na weaker northern and stronger southern stream wave. Pops remain in \nplace with signs still pointing towards cooling for the weekend, but \nthe degree of cooling and amount of precip is in question with these \nvariations.\n\n&&\n\n.AVIATION /12Z TAFS THROUGH 12Z SUNDAY/...\nIssued at 635 AM EDT Sat Oct 10 2026\n\nMid/upper level clouds will continue to increase today but\nrelatively dry low levels will maintain VFR conditions. Light\nrain showers expected at KFWA after 06Z tonight with some MVFR \nceilings likely closer to 12Z Sunday as tropical moisture plume\nlifts north. There is also a low (20%) chance of an embedded \nthunderstorm but not worth including in the TAF at this point.\nDry/VFR conditions expected to persist at KSBN given eastward\ndisplacement of better moisture.\n\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...None.\n\n&&\n\n$$\n\nDISCUSSION...Fisher\nAVIATION...AGD"
  },
  "hazardousWeatherOutlook": null,
@@ -294,7 +294,7 @@
  "spc": [
   {
    "day": 1,
-   "valid": "202610101200",
+   "valid": "202610101300",
    "expires": "202610111200",
    "riskAtLaPorte": "No thunderstorm or severe risk area",
    "riskAreasAnywhere": [
@@ -302,8 +302,8 @@
     "Marginal Risk",
     "Slight Risk"
    ],
-   "summary": "Thunderstorms associated with a tornado threat will be possible today from the eastern Florida Panhandle northeastward into the Carolinas. A few severe wind gusts may also occur in parts of the Desert Southwest.",
-   "text": "SPC AC 100554\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1254 AM CDT Sat Oct 10 2026\n\n   Valid 101200Z - 111200Z\n\n   ...THERE IS A SLIGHT RISK OF SEVERE THUNDERSTORMS ACROSS PARTS OF\n   THE EASTERN FLORIDA PANHANDLE...GEORGIA AND SOUTH CAROLINA...\n\n   ...SUMMARY...\n   Thunderstorms associated with a tornado threat will be possible\n   today from the eastern Florida Panhandle northeastward into the\n   Carolinas. A few severe wind gusts may also occur in parts of the\n   Desert Southwest.\n\n   ...Eastern Florida Panhandle/Georgia/Carolinas...\n   The remnants of Isaias are forecast to move northward into the\n   Tennessee Valley today. The eastern extent of the system will move\n   north-northeastward across Georgia and South Carolina today, where\n   isolated to scattered thunderstorms will develop as surface\n   temperatures warm. From eastern Georgia into South Carolina, surface\n   dewpoints in the mid to upper 70s F will contribute to moderate\n   instability, with MLCAPE likely peaking in the 1500 to 2000 J/kg\n   range. RAP forecast soundings along and near the axis of instability\n   this afternoon have veering winds with height below 850 mb and 30 to\n   40 knot of flow in the low to mid-levels. 0-3 km storm-relative\n   helicity is forecast to peak near 225 m2/s2. This will support a\n   tornado threat with supercells that remain semi-discrete. The\n   tornado threat is expected to persist into the evening as the\n   eastern periphery of Isaias moves into the Carolinas. \n\n   ...Western and Southern Arizona/Southeast California...\n   A mid-level shortwave trough will move northeastward toward Baja\n   California today, with the system interacting with Tropical Storm\n   Rachel. Ahead of the system, low-level moisture advection will\n   increase surface dewpoints into the 60s F over much of western and\n   southern Arizona by this evening. In response, MLCAPE is forecast to\n   increase to near 1000 J/kg over parts of southwest Arizona. This\n   combined with large-scale ascent ahead of the system and lift\n   associated with a low-level jet will provide support for scattered\n   thunderstorm development. In addition, the exit region of a\n   mid-level jet is forecast to overspread southwest Arizona during the\n   evening. This feature will create moderate to strong deep-layer\n   shear, which will be sufficient for supercells. If a supercell can\n   develop, then isolated severe wind gusts would be possible.\n\n   ..Broyles/Chalmers.. 10/10/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 1300Z"
+   "summary": "Thunderstorms associated with a tornado threat will be possible today from eastern Georgia into western/southern South Carolina. A few severe wind gusts may also occur in parts of the Desert Southwest.",
+   "text": "SPC AC 101248\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   0748 AM CDT Sat Oct 10 2026\n\n   Valid 101300Z - 111200Z\n\n   ...THERE IS A SLIGHT RISK OF SEVERE THUNDERSTORMS FROM EASTERN\n   GEORGIA INTO WESTERN/SOUTHERN SOUTH CAROLINA...\n\n   ...SUMMARY...\n   Thunderstorms associated with a tornado threat will be possible\n   today from eastern Georgia into western/southern South Carolina. A\n   few severe wind gusts may also occur in parts of the Desert\n   Southwest.\n\n   ...Eastern Florida Panhandle/Georgia/Carolinas...\n   Isaias underwent a rapid transition to a post-tropical cyclone after\n   landfall Friday evening, with a notable baroclinic zone now in place\n   throughout its eastern periphery. The low-level center of this\n   system is currently over southeast AL, with a warm front extending\n   east-northeastward from this center across central GA, central SC,\n   and eastern NC. General expectation is for this former tropical\n   cyclone to spend the first half of the period completing its\n   transition to a mid-latitude cyclone over MS/AL before then\n   progressing northeastward across the TN Valley later tonight. The\n   surface low is expected to drift northeastward as the system\n   matures, centering over northern AL by 00Z. As it does, its warm\n   sector, which is characterized by low to mid 70s dewpoints, will\n   expand northwestward into more of GA and the Carolinas. This\n   increase in low-level moisture will support moderate buoyancy (i.e.\n   MLCAPE around 1500 J/kg) despite widespread cloudiness and limited\n   heating. Low-level confluence within the warm sector, augmented by\n   modest but persistent large-scale ascent, is expected to support\n   thunderstorm development throughout the period, particularly during\n   the afternoon.\n\n   The stronger low to mid-level flow will be displaced west of the\n   greater low-level moisture and associated buoyancy. Even so,\n   southeasterly low-level flow veering to southerly in the mid/upper\n   levels will result in moderate vertical shear and the potential for\n   occasional organization/intensification of the predominantly\n   multicellular structures. Several brief tornadoes could result\n   within any of these more organized storms. Convectively augmented\n   damaging wind gusts are possible as well. Greatest severe potential\n   is expected along the GA/SC border vicinity between 21Z and 00Z.\n\n   ...Lower CO River Valley into South-Central AZ...\n   Complex synoptic evolution is anticipated over the eastern Pacific\n   Ocean, just upstream of southern CA and the Baja Peninsula, as\n   Tropical Storm Rachel interacts with a compact mid-latitude cyclone.\n   The interaction will increase the northeastward motion of the\n   tropical cyclone, while also resulting an expanded low to mid-level\n   wind field. Additionally, this evolution will favor advection of\n   notable low-level moisture into the Lower CO River Valley and\n   adjacent southern/central AZ. Overall thunderstorm coverage is\n   expected to increase throughout the day into tonight. Deep-layer\n   vertical shear will be stronger enough for supercells, a few of\n   which could produce strong wind gusts. Additionally, surface low\n   associated with the tropical cyclone is forecast to move into the\n   Lower CO River Valley region after 06Z. Increase low-level winds and\n   moisture will support a low-probability tornado threat.\n\n   ..Mosier/Wendt.. 10/10/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 1630Z"
   },
   {
    "day": 2,
@@ -360,22 +360,6 @@
     "summary": "dry through work hours (6 a.m. to 6 p.m.)",
     "hours": [
      {
-      "hour": 6,
-      "rainChancePercent": 1
-     },
-     {
-      "hour": 7,
-      "rainChancePercent": 0
-     },
-     {
-      "hour": 8,
-      "rainChancePercent": 0
-     },
-     {
-      "hour": 9,
-      "rainChancePercent": 0
-     },
-     {
       "hour": 10,
       "rainChancePercent": 0
      },
@@ -415,31 +399,31 @@
     "hours": [
      {
       "hour": 6,
-      "rainChancePercent": 8
-     },
-     {
-      "hour": 7,
-      "rainChancePercent": 7
-     },
-     {
-      "hour": 8,
       "rainChancePercent": 11
      },
      {
+      "hour": 7,
+      "rainChancePercent": 14
+     },
+     {
+      "hour": 8,
+      "rainChancePercent": 13
+     },
+     {
       "hour": 9,
-      "rainChancePercent": 1
+      "rainChancePercent": 13
      },
      {
       "hour": 10,
-      "rainChancePercent": 0
+      "rainChancePercent": 10
      },
      {
       "hour": 11,
-      "rainChancePercent": 0
+      "rainChancePercent": 8
      },
      {
       "hour": 12,
-      "rainChancePercent": 0
+      "rainChancePercent": 4
      },
      {
       "hour": 13,
@@ -488,27 +472,27 @@
     "nws": {
      "high": 77,
      "low": null,
-     "rain": 5
+     "rain": 10
     },
     "models": {
      "ncep_nbm_conus": {
       "high": 76,
       "low": 57,
-      "rain": 3
+      "rain": 2
      },
      "ncep_hrrr_conus": {
-      "high": 80,
+      "high": 78,
       "low": 56,
-      "rain": 3
+      "rain": 2
      },
      "gfs_seamless": {
-      "high": 80,
+      "high": 78,
       "low": 56,
-      "rain": 3
+      "rain": 2
      },
      "ecmwf_ifs025": {
       "high": 76,
-      "low": 57,
+      "low": 55,
       "rain": 1
      }
     },
@@ -521,8 +505,8 @@
      "low": 56
     },
     "spread": {
-     "high": 4,
-     "low": 1
+     "high": 2,
+     "low": 2
     },
     "note": "NWS and the models agree within a few degrees"
    },
@@ -531,40 +515,40 @@
     "nws": {
      "high": 73,
      "low": 57,
-     "rain": 11
+     "rain": 14
     },
     "models": {
      "ncep_nbm_conus": {
       "high": 72,
-      "low": 58,
-      "rain": 9
+      "low": 57,
+      "rain": 7
      },
      "ncep_hrrr_conus": {
-      "high": 73,
-      "low": 56,
-      "rain": 9
+      "high": 74,
+      "low": 55,
+      "rain": 7
      },
      "gfs_seamless": {
-      "high": 73,
-      "low": 56,
-      "rain": 9
+      "high": 74,
+      "low": 55,
+      "rain": 7
      },
      "ecmwf_ifs025": {
-      "high": 73,
+      "high": 74,
       "low": 56,
-      "rain": 31
+      "rain": 8
      }
     },
     "blend": {
-     "high": 73,
+     "high": 74,
      "low": 56
     },
     "adjusted": {
-     "high": 73,
+     "high": 74,
      "low": 56
     },
     "spread": {
-     "high": 1,
+     "high": 2,
      "low": 2
     },
     "note": "NWS and the models agree within a few degrees"
@@ -579,33 +563,33 @@
     "models": {
      "ncep_nbm_conus": {
       "high": 82,
-      "low": 58,
-      "rain": 25
+      "low": 56,
+      "rain": 3
      },
      "ncep_hrrr_conus": {
-      "rain": 25
+      "rain": 3
      },
      "gfs_seamless": {
-      "high": 85,
+      "high": 82,
       "low": 58,
-      "rain": 25
+      "rain": 3
      },
      "ecmwf_ifs025": {
-      "high": 84,
+      "high": 82,
       "low": 56,
-      "rain": 16
+      "rain": 5
      }
     },
     "blend": {
-     "high": 83,
-     "low": 57
+     "high": 82,
+     "low": 56
     },
     "adjusted": {
-     "high": 83,
-     "low": 57
+     "high": 82,
+     "low": 56
     },
     "spread": {
-     "high": 3,
+     "high": 0,
      "low": 3
     },
     "note": "NWS and the models agree within a few degrees"
@@ -619,50 +603,50 @@
     },
     "models": {
      "ncep_nbm_conus": {
-      "high": 74,
-      "low": 59,
-      "rain": 25
+      "high": 77,
+      "low": 61,
+      "rain": 14
      },
      "ncep_hrrr_conus": {
-      "rain": 25
+      "rain": 14
      },
      "gfs_seamless": {
-      "high": 69,
-      "low": 56,
-      "rain": 25
+      "high": 79,
+      "low": 60,
+      "rain": 14
      },
      "ecmwf_ifs025": {
-      "high": 83,
-      "low": 61,
-      "rain": 18
+      "high": 81,
+      "low": 59,
+      "rain": 10
      }
     },
     "blend": {
-     "high": 74,
+     "high": 78,
      "low": 60
     },
     "adjusted": {
-     "high": 74,
+     "high": 78,
      "low": 60
     },
     "spread": {
-     "high": 14,
-     "low": 6
+     "high": 8,
+     "low": 3
     },
-    "note": "the models disagree on the high by 14 degrees (less certain); the models disagree on the low by 6 degrees (less certain)"
+    "note": "our blend's high (78) differs from NWS (73) by 5 degrees; the models disagree on the high by 8 degrees (less certain)"
    }
   ],
   "suggested": [
    {
     "date": "2026-10-11",
-    "high": 73,
+    "high": 74,
     "low": 56,
-    "rain": 11
+    "rain": 14
    },
    {
     "date": "2026-10-12",
-    "high": 83,
-    "low": 57,
+    "high": 82,
+    "low": 56,
     "rain": 31
    }
   ]
