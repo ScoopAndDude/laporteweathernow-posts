@@ -242,8 +242,31 @@
   },
   "hourlyFrom": "2026-10-09T05:47:00-05:00"
  },
- "published": null,
+ "published": {
+  "time": "2026-10-09T19:17:00-05:00",
+  "alertKeys": [],
+  "alerts": [],
+  "changes": [
+   {
+    "k": "night 2026-10-09",
+    "was": "Tonight",
+    "now": "Tonight",
+    "shortWas": "Slight Chance Rain Showers then Partly Cloudy",
+    "shortNow": "Partly Cloudy",
+    "field": "rain",
+    "from": 20,
+    "to": 0
+   }
+  ],
+  "off": [],
+  "paragraph": "Automatic update, 7:17 p.m.: Since the Scoop below was written, NWS has taken the rain out of its forecast for tonight (it had 20%). There are no watches, warnings, or advisories for La Porte County right now."
+ },
  "alertRows": [],
  "missing": [],
- "updates": []
+ "updates": [
+  {
+   "time": "2026-10-09T19:17:00-05:00",
+   "why": "NWS forecast night 2026-10-09 rain 20->0"
+  }
+ ]
 }
