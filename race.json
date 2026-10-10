@@ -1,6 +1,6 @@
 {
  "about": "The Forecast Race: NOAA's new AI weather model, the National Weather Service's own forecasters and three other computer models, graded every day against the La Porte airport (KPPO). Each morning we save what each racer says about tomorrow (temperatures at four checkpoints and the 24-hour rain total) and grade it the next day. Saved forecasts are never changed. Run by La Porte Weather Now (scripts/forecast_race.py).",
- "generated": "2026-10-09T07:32:21-05:00",
+ "generated": "2026-10-10T05:32:17-05:00",
  "started": "2026-10-06",
  "station": {
   "id": "KPPO",
@@ -73,32 +73,32 @@
  "leaderboard": {
   "last30": [
    {
+    "id": "nws",
+    "days": 12,
+    "avgMiss": 3.0,
+    "hitPct": 57,
+    "rainRight": 9,
+    "rainCalls": 10,
+    "wins": 4,
+    "ties": 1,
+    "rank": 1
+   },
+   {
     "id": "aigfs",
-    "days": 11,
+    "days": 12,
     "avgMiss": 3.1,
-    "hitPct": 58,
+    "hitPct": 55,
     "rainRight": 10,
     "rainCalls": 10,
     "wins": 3,
     "ties": 0,
-    "rank": 1
-   },
-   {
-    "id": "nws",
-    "days": 11,
-    "avgMiss": 3.1,
-    "hitPct": 56,
-    "rainRight": 9,
-    "rainCalls": 10,
-    "wins": 3,
-    "ties": 1,
     "rank": 2
    },
    {
     "id": "gfs",
-    "days": 11,
+    "days": 12,
     "avgMiss": 3.7,
-    "hitPct": 49,
+    "hitPct": 51,
     "rainRight": 10,
     "rainCalls": 10,
     "wins": 2,
@@ -107,9 +107,9 @@
    },
    {
     "id": "aifs",
-    "days": 4,
-    "avgMiss": 3.0,
-    "hitPct": 60,
+    "days": 5,
+    "avgMiss": 2.9,
+    "hitPct": 63,
     "rainRight": 3,
     "rainCalls": 3,
     "wins": 2,
@@ -118,9 +118,9 @@
    },
    {
     "id": "ifs",
-    "days": 4,
-    "avgMiss": 4.6,
-    "hitPct": 33,
+    "days": 5,
+    "avgMiss": 4.3,
+    "hitPct": 37,
     "rainRight": 3,
     "rainCalls": 3,
     "wins": 0,
@@ -130,32 +130,32 @@
   ],
   "all": [
    {
+    "id": "nws",
+    "days": 12,
+    "avgMiss": 3.0,
+    "hitPct": 57,
+    "rainRight": 9,
+    "rainCalls": 10,
+    "wins": 4,
+    "ties": 1,
+    "rank": 1
+   },
+   {
     "id": "aigfs",
-    "days": 11,
+    "days": 12,
     "avgMiss": 3.1,
-    "hitPct": 58,
+    "hitPct": 55,
     "rainRight": 10,
     "rainCalls": 10,
     "wins": 3,
     "ties": 0,
-    "rank": 1
-   },
-   {
-    "id": "nws",
-    "days": 11,
-    "avgMiss": 3.1,
-    "hitPct": 56,
-    "rainRight": 9,
-    "rainCalls": 10,
-    "wins": 3,
-    "ties": 1,
     "rank": 2
    },
    {
     "id": "gfs",
-    "days": 11,
+    "days": 12,
     "avgMiss": 3.7,
-    "hitPct": 49,
+    "hitPct": 51,
     "rainRight": 10,
     "rainCalls": 10,
     "wins": 2,
@@ -164,9 +164,9 @@
    },
    {
     "id": "aifs",
-    "days": 4,
-    "avgMiss": 3.0,
-    "hitPct": 60,
+    "days": 5,
+    "avgMiss": 2.9,
+    "hitPct": 63,
     "rainRight": 3,
     "rainCalls": 3,
     "wins": 2,
@@ -175,9 +175,9 @@
    },
    {
     "id": "ifs",
-    "days": 4,
-    "avgMiss": 4.6,
-    "hitPct": 33,
+    "days": 5,
+    "avgMiss": 4.3,
+    "hitPct": 37,
     "rainRight": 3,
     "rainCalls": 3,
     "wins": 0,
@@ -190,9 +190,9 @@
   "aiVsNws": {
    "a": "aigfs",
    "b": "nws",
-   "days": 11,
+   "days": 12,
    "aBetter": 5,
-   "bBetter": 6,
+   "bBetter": 7,
    "same": 0,
    "aAvgMiss": 3.1,
    "bAvgMiss": 3.0
@@ -200,22 +200,22 @@
   "aiVsGfs": {
    "a": "aigfs",
    "b": "gfs",
-   "days": 11,
+   "days": 12,
    "aBetter": 8,
-   "bBetter": 3,
+   "bBetter": 4,
    "same": 0,
    "aAvgMiss": 3.1,
-   "bAvgMiss": 3.7
+   "bAvgMiss": 3.6
   },
   "europeAiVsNws": {
    "a": "aifs",
    "b": "nws",
-   "days": 4,
+   "days": 5,
    "aBetter": 2,
-   "bBetter": 1,
+   "bBetter": 2,
    "same": 1,
-   "aAvgMiss": 3.0,
-   "bAvgMiss": 2.8
+   "aAvgMiss": 2.8,
+   "bAvgMiss": 2.7
   }
  },
  "days": [
@@ -1532,7 +1532,52 @@
      "saved": "2026-10-08T10:33Z"
     }
    },
-   "status": "waiting"
+   "status": "scored",
+   "observed": {
+    "temps": [
+     46.4,
+     48.2,
+     68.0,
+     64.4
+    ],
+    "rainIn": null,
+    "rainHours": 19
+   },
+   "scores": {
+    "nws": {
+     "avgMiss": 2.1,
+     "hits": 3,
+     "checks": 4,
+     "worst": 3.5
+    },
+    "aigfs": {
+     "avgMiss": 3.4,
+     "hits": 1,
+     "checks": 4,
+     "worst": 6.6
+    },
+    "gfs": {
+     "avgMiss": 3.1,
+     "hits": 3,
+     "checks": 4,
+     "worst": 6.7
+    },
+    "aifs": {
+     "avgMiss": 2.4,
+     "hits": 3,
+     "checks": 4,
+     "worst": 3.8
+    },
+    "ifs": {
+     "avgMiss": 3.0,
+     "hits": 2,
+     "checks": 4,
+     "worst": 5.5
+    }
+   },
+   "winners": [
+    "nws"
+   ]
   },
   {
    "target": "2026-10-10",
@@ -1610,6 +1655,86 @@
      "rainIn": 0.0,
      "run": "2026-10-09T00:00Z",
      "saved": "2026-10-09T10:33Z"
+    }
+   },
+   "status": "waiting"
+  },
+  {
+   "target": "2026-10-11",
+   "made": "2026-10-10",
+   "checkpoints": [
+    {
+     "utc": "2026-10-11T06:00Z",
+     "local": "1 AM"
+    },
+    {
+     "utc": "2026-10-11T12:00Z",
+     "local": "7 AM"
+    },
+    {
+     "utc": "2026-10-11T18:00Z",
+     "local": "1 PM"
+    },
+    {
+     "utc": "2026-10-12T00:00Z",
+     "local": "7 PM"
+    }
+   ],
+   "forecasts": {
+    "nws": {
+     "temps": [
+      61.1,
+      56.9,
+      71.0,
+      65.9
+     ],
+     "rainIn": 0.0,
+     "issued": "2026-10-10T10:17Z",
+     "saved": "2026-10-10T10:32Z"
+    },
+    "aigfs": {
+     "temps": [
+      60.9,
+      57.5,
+      72.3,
+      63.2
+     ],
+     "rainIn": 0.0,
+     "run": "2026-10-10T00:00Z",
+     "saved": "2026-10-10T10:32Z"
+    },
+    "gfs": {
+     "temps": [
+      60.3,
+      55.5,
+      71.2,
+      63.8
+     ],
+     "rainIn": 0.0,
+     "run": "2026-10-10T00:00Z",
+     "saved": "2026-10-10T10:32Z"
+    },
+    "aifs": {
+     "temps": [
+      61.5,
+      57.9,
+      73.1,
+      67.7
+     ],
+     "rainIn": 30.34,
+     "run": "2026-10-10T00:00Z",
+     "saved": "2026-10-10T10:32Z"
+    },
+    "ifs": {
+     "temps": [
+      62.1,
+      55.9,
+      70.5,
+      61.2
+     ],
+     "rainIn": 0.02,
+     "run": "2026-10-10T00:00Z",
+     "saved": "2026-10-10T10:33Z"
     }
    },
    "status": "waiting"
