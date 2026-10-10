@@ -1,10 +1,10 @@
 {
  "about": "The Shore Call: La Porte Weather Now's morning call for the La Porte County shore (Washington Park, Long Beach, Mount Baldy, the Michigan City harbor), made by fixed rules from National Weather Service forecasts and graded the next day against the Michigan City buoy (NDBC 45170), the Michigan City lighthouse station (MCYI3) and NWS snow reports. Our call, not a warning: NWS alerts always win. Rules: laporteweathernow.com/lake-michigan#shore-rules. Saved by the 'Shore Call' job (scripts/shore_call.py).",
- "updated": "2026-10-09T05:32:07-05:00",
+ "updated": "2026-10-10T05:32:06-05:00",
  "score": {
   "since": "2026-10-06",
-  "graded": 3,
-  "hit": 0,
+  "graded": 4,
+  "hit": 1,
   "close": 3,
   "miss": 0
  },
@@ -18,12 +18,155 @@
     8,
     66
    ],
-   "hours": 174,
+   "hours": 171,
    "maxWaveFt": 5.0,
    "elevationM": 175.8696
   }
  ],
  "calls": [
+  {
+   "date": "2026-10-10",
+   "made": "2026-10-10T05:32:06-05:00",
+   "counts": true,
+   "lake": "calm",
+   "swim": {
+    "call": null,
+    "why": "No swim forecast: the Weather Service's beach forecast runs from just before Memorial Day weekend through September, and there are no lifeguards out of season."
+   },
+   "piers": {
+    "call": "OK",
+    "why": "Waves up to 2 feet in the Weather Service's lake forecast. Piers are slick and the water is cold: stay back from the edge."
+   },
+   "boats": {
+    "window": [
+     "06:00",
+     "20:00"
+    ],
+    "windowText": "6 a.m. to 8 p.m.",
+    "after": null,
+    "call": "GO",
+    "why": "Weather Service lake forecast for today: South winds 10 to 15 knots becoming southeast. Mostly sunny. Waves 2 feet or less."
+   },
+   "band": null,
+   "alerts": [],
+   "forecast": {
+    "waveMaxFt": 2,
+    "windMaxKt": 15,
+    "gustKt": null,
+    "waterF": 62
+   },
+   "nws": {
+    "lake": {
+     "issued": "2026-10-10T02:49-05:00",
+     "period": "Today",
+     "today": "South winds 10 to 15 knots becoming southeast. Mostly sunny. Waves 2 feet or less.",
+     "tonight": "Southeast winds 5 to 15 knots. Mostly cloudy. Waves 1 foot or less."
+    },
+    "beach": null
+   },
+   "hours": [
+    {
+     "hour": 6,
+     "status": "go",
+     "waveFt": 0.0,
+     "windKt": 12,
+     "gustKt": 17
+    },
+    {
+     "hour": 7,
+     "status": "go",
+     "waveFt": 0.0,
+     "windKt": 12,
+     "gustKt": 16
+    },
+    {
+     "hour": 8,
+     "status": "go",
+     "waveFt": 0.0,
+     "windKt": 12,
+     "gustKt": 17
+    },
+    {
+     "hour": 9,
+     "status": "go",
+     "waveFt": 0.0,
+     "windKt": 12,
+     "gustKt": 17
+    },
+    {
+     "hour": 10,
+     "status": "go",
+     "waveFt": 0.0,
+     "windKt": 12,
+     "gustKt": 17
+    },
+    {
+     "hour": 11,
+     "status": "go",
+     "waveFt": 0.0,
+     "windKt": 12,
+     "gustKt": 17
+    },
+    {
+     "hour": 12,
+     "status": "go",
+     "waveFt": 0.0,
+     "windKt": 11,
+     "gustKt": 17
+    },
+    {
+     "hour": 13,
+     "status": "go",
+     "waveFt": 0.0,
+     "windKt": 10,
+     "gustKt": 16
+    },
+    {
+     "hour": 14,
+     "status": "go",
+     "waveFt": 0.0,
+     "windKt": 10,
+     "gustKt": 16
+    },
+    {
+     "hour": 15,
+     "status": "go",
+     "waveFt": 0.0,
+     "windKt": 10,
+     "gustKt": 15
+    },
+    {
+     "hour": 16,
+     "status": "go",
+     "waveFt": 0.0,
+     "windKt": 10,
+     "gustKt": 15
+    },
+    {
+     "hour": 17,
+     "status": "go",
+     "waveFt": 0.0,
+     "windKt": 10,
+     "gustKt": 15
+    },
+    {
+     "hour": 18,
+     "status": "go",
+     "waveFt": 0.0,
+     "windKt": 11,
+     "gustKt": 16
+    },
+    {
+     "hour": 19,
+     "status": "go",
+     "waveFt": 0.0,
+     "windKt": 11,
+     "gustKt": 16
+    }
+   ],
+   "grade": null,
+   "headline": "Calm lake: piers OK, small boats GO 6 a.m. to 8 p.m."
+  },
   {
    "date": "2026-10-09",
    "made": "2026-10-09T05:32:07-05:00",
@@ -64,107 +207,26 @@
     },
     "beach": null
    },
-   "hours": [
-    {
-     "hour": 6,
-     "status": "go",
-     "waveFt": 0.0,
-     "windKt": 4,
-     "gustKt": 6
+   "grade": {
+    "waves": {
+     "called": "calm",
+     "calledFt": 1,
+     "measuredFt": 1.0,
+     "measured": "calm",
+     "where": "Michigan City buoy",
+     "result": "hit"
     },
-    {
-     "hour": 7,
-     "status": "go",
-     "waveFt": 0.0,
-     "windKt": 5,
-     "gustKt": 7
+    "wind": {
+     "called": "light",
+     "calledKt": 10,
+     "measuredKt": 12,
+     "measured": "light",
+     "where": "Michigan City buoy",
+     "result": "hit"
     },
-    {
-     "hour": 8,
-     "status": "go",
-     "waveFt": 0.0,
-     "windKt": 5,
-     "gustKt": 7
-    },
-    {
-     "hour": 9,
-     "status": "go",
-     "waveFt": 0.0,
-     "windKt": 5,
-     "gustKt": 8
-    },
-    {
-     "hour": 10,
-     "status": "go",
-     "waveFt": 0.0,
-     "windKt": 5,
-     "gustKt": 8
-    },
-    {
-     "hour": 11,
-     "status": "go",
-     "waveFt": 0.0,
-     "windKt": 5,
-     "gustKt": 9
-    },
-    {
-     "hour": 12,
-     "status": "go",
-     "waveFt": 0.0,
-     "windKt": 5,
-     "gustKt": 9
-    },
-    {
-     "hour": 13,
-     "status": "go",
-     "waveFt": 0.0,
-     "windKt": 5,
-     "gustKt": 10
-    },
-    {
-     "hour": 14,
-     "status": "go",
-     "waveFt": 0.0,
-     "windKt": 5,
-     "gustKt": 9
-    },
-    {
-     "hour": 15,
-     "status": "go",
-     "waveFt": 0.0,
-     "windKt": 5,
-     "gustKt": 9
-    },
-    {
-     "hour": 16,
-     "status": "go",
-     "waveFt": 0.0,
-     "windKt": 5,
-     "gustKt": 9
-    },
-    {
-     "hour": 17,
-     "status": "go",
-     "waveFt": 0.0,
-     "windKt": 6,
-     "gustKt": 9
-    },
-    {
-     "hour": 18,
-     "status": "go",
-     "waveFt": 0.0,
-     "windKt": 7,
-     "gustKt": 11
-    },
-    {
-     "hour": 19,
-     "status": "go",
-     "waveFt": 0.0,
-     "windKt": 8,
-     "gustKt": 12
-    }
-   ],
-   "grade": null,
+    "result": "hit",
+    "graded": "2026-10-10T05:32-05:00"
+   },
    "headline": "Calm lake: piers OK, small boats GO 6 a.m. to 8 p.m."
   },
   {
