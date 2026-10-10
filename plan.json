@@ -1,0 +1,204 @@
+{
+  "about": "The Daily Video for La Porte Weather Now (scripts/daily_video.py): official NWS weather, read aloud.",
+  "date": "2026-10-10",
+  "planned": "2026-10-10T06:02:00-05:00",
+  "source": "nws",
+  "forecastUpdated": "2026-10-10T10:30:09+00:00",
+  "observationTime": "2026-10-09T20:06:00-05:00",
+  "alerts": [],
+  "shortFused": [],
+  "hook": {
+    "kind": "normal",
+    "score": 62,
+    "big": "77°",
+    "small": "Today. 12° above normal.",
+    "say": "Today: 77°, about 12° above normal for Oct. 10.",
+    "when": "today"
+  },
+  "hookOptions": [
+    {
+      "kind": "normal",
+      "score": 62,
+      "say": "Today: 77°, about 12° above normal for Oct. 10."
+    },
+    {
+      "kind": "nice",
+      "score": 40,
+      "say": "Partly sunny and 77° today in La Porte."
+    },
+    {
+      "kind": "plain",
+      "score": 10,
+      "say": "Today in La Porte: partly sunny, high near 77°."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "hook",
+      "label": "LA PORTE · SATURDAY, OCT. 10",
+      "big": "77°",
+      "small": "Today. 12° above normal.",
+      "icon": "sun-cloud",
+      "tone": "warm",
+      "hookKind": "normal",
+      "say": "Today: 77°, about 12° above normal for Oct. 10.",
+      "spoken": "Today: seventy-seven degrees, about twelve degrees above normal for October tenth.",
+      "voiceFile": "voice/hook.wav",
+      "voiceSeconds": 5.35,
+      "start": 0.0,
+      "duration": 5.75,
+      "voiceAt": 0.04
+    },
+    {
+      "id": "today",
+      "sun": null,
+      "kind": "period",
+      "title": "TODAY",
+      "date": "Saturday, Oct. 10",
+      "temp": 77,
+      "tempLabel": "HIGH",
+      "icon": "sun-cloud",
+      "text": "Partly sunny",
+      "sentence": "Partly sunny",
+      "rain": null,
+      "note": null,
+      "hours": [
+        {
+          "label": "6 AM",
+          "temp": 58,
+          "pop": 1
+        },
+        {
+          "label": "8 AM",
+          "temp": 59,
+          "pop": 0
+        },
+        {
+          "label": "10 AM",
+          "temp": 67,
+          "pop": 0
+        },
+        {
+          "label": "12 PM",
+          "temp": 74,
+          "pop": 0
+        },
+        {
+          "label": "2 PM",
+          "temp": 76,
+          "pop": 0
+        },
+        {
+          "label": "4 PM",
+          "temp": 75,
+          "pop": 0
+        }
+      ],
+      "say": "Today: partly sunny. High 77.",
+      "spoken": "Today: partly sunny. High seventy-seven.",
+      "voiceFile": "voice/today.wav",
+      "voiceSeconds": 3.12,
+      "start": 5.75,
+      "duration": 3.52,
+      "voiceAt": 5.85
+    },
+    {
+      "id": "tonight",
+      "sun": {
+        "set": "6:13 p.m.",
+        "rise": "6:55 a.m."
+      },
+      "kind": "period",
+      "title": "TONIGHT",
+      "date": "Saturday, Oct. 10",
+      "temp": 57,
+      "tempLabel": "LOW",
+      "icon": "cloud",
+      "text": "Mostly cloudy",
+      "sentence": "Mostly cloudy",
+      "rain": null,
+      "note": null,
+      "hours": [],
+      "say": "Tonight: mostly cloudy. Low 57.",
+      "spoken": "Tonight: mostly cloudy. Low fifty-seven.",
+      "voiceFile": "voice/tonight.wav",
+      "voiceSeconds": 3.15,
+      "start": 9.27,
+      "duration": 3.55,
+      "voiceAt": 9.37
+    },
+    {
+      "id": "days",
+      "kind": "days",
+      "title": "NEXT 3 DAYS",
+      "days": [
+        {
+          "name": "Sun",
+          "day": "Sunday",
+          "hi": 73,
+          "lo": 55,
+          "pop": null,
+          "icon": "sun-cloud",
+          "text": "Partly sunny",
+          "short": "Partly Sunny",
+          "star": false
+        },
+        {
+          "name": "Mon",
+          "day": "Monday",
+          "hi": 82,
+          "lo": 62,
+          "pop": null,
+          "icon": "sun-small-cloud",
+          "text": "Mostly sunny",
+          "short": "Mostly Sunny",
+          "star": false
+        },
+        {
+          "name": "Tue",
+          "day": "Tuesday",
+          "hi": 73,
+          "lo": 52,
+          "pop": 30,
+          "icon": "storm",
+          "text": "A chance of showers and thunderstorms",
+          "short": "Chance Showers And Thunderstorms",
+          "star": false
+        }
+      ],
+      "say": "Sunday: partly sunny, 73. Monday: mostly sunny, 82.",
+      "spoken": "Sunday: partly sunny, seventy-three. Monday: mostly sunny, eighty-two.",
+      "voiceFile": "voice/days.wav",
+      "voiceSeconds": 4.62,
+      "start": 12.82,
+      "duration": 5.02,
+      "voiceAt": 12.92
+    },
+    {
+      "id": "end",
+      "kind": "end",
+      "say": "Free forecast every morning at laporteweathernow.com.",
+      "spoken": "Free forecast every morning at La Port Weather Now dot com.",
+      "voiceFile": "voice/end.wav",
+      "voiceSeconds": 3.77,
+      "start": 17.84,
+      "duration": 4.17,
+      "voiceAt": 17.94
+    }
+  ],
+  "caption": "La Porte weather for Saturday, Oct. 10, from the National Weather Service:\nToday: Partly sunny. High 77.\nTonight: Mostly cloudy. Low 57.\nSunday: Partly sunny, high 73. Monday: Mostly sunny, high 82. Tuesday: A chance of showers and thunderstorms, high 73.\nToday's Daily Scoop: Warm and dry, high near 77; Sunday stays dry, Columbus Day near 82\nFree forecast every morning: laporteweathernow.com\nNo hype. Just the forecast.\n#LaPorte #LaPorteIndiana #LaPorteCounty #IndianaWeather #NWIndiana",
+  "words": 40,
+  "mode": "auto",
+  "normalsStation": {
+    "id": "USC00124837",
+    "name": "LAPORTE, IN US",
+    "km": 1.0
+  },
+  "seconds": 22.01,
+  "voice": "Kokoro-82M af_heart, speed 1.1",
+  "video": "laporte-2026-10-10.mp4",
+  "cover": "cover.jpg",
+  "bytes": 9219183,
+  "rendered": "2026-10-10T06:04:26-05:00"
+}
