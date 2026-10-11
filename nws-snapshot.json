@@ -1,6 +1,6 @@
 {
  "about": "Official weather for La Porte, Indiana, saved by a GitHub job for the Daily Scoop (laporteweathernow.com/daily-scoop). Copied from NWS, SPC and WPC as-is; see scripts/nws_snapshot.py.",
- "fetched": "2026-10-11T11:16:09-05:00",
+ "fetched": "2026-10-11T13:11:16-05:00",
  "place": "La Porte, IN",
  "lat": 41.6081,
  "lon": -86.7189,
@@ -23,36 +23,36 @@
  },
  "observation": {
   "station": "KPPO (La Porte Municipal Airport)",
-  "time": "2026-10-11T10:35:00-05:00",
+  "time": "2026-10-11T12:35:00-05:00",
   "weather": "Clear",
-  "temperatureF": 66,
-  "dewpointF": null,
-  "humidityPercent": null,
+  "temperatureF": 72,
+  "dewpointF": 61,
+  "humidityPercent": 69,
   "wind": {
-   "from": "SE",
-   "degrees": 140,
-   "mph": 5,
+   "from": null,
+   "degrees": null,
+   "mph": 2,
    "gustMph": null
   },
-  "visibilityMiles": 10.0,
-  "pressureInHg": 30.03,
-  "metar": "KPPO 111535Z AUTO 14004KT 10SM CLR 19/18 A3003 RMK AO2"
+  "visibilityMiles": 9.0,
+  "pressureInHg": 29.99,
+  "metar": "KPPO 111735Z AUTO VRB02KT 9SM CLR 22/16 A2999 RMK AO2"
  },
  "forecast": {
-  "updated": "2026-10-11T15:15:36+00:00",
-  "generated": "2026-10-11T15:47:02+00:00",
+  "updated": "2026-10-11T17:15:22+00:00",
+  "generated": "2026-10-11T17:32:01+00:00",
   "timesNote": "Clock times in the forecast wording are already in America/Chicago (La Porte's real time). NWS writes them in America/Indiana/Indianapolis, which it has on file for La Porte by mistake.",
   "periods": [
    {
-    "name": "Today",
-    "start": "2026-10-11T11:00:00-04:00",
+    "name": "This Afternoon",
+    "start": "2026-10-11T13:00:00-04:00",
     "end": "2026-10-11T18:00:00-04:00",
     "isDaytime": true,
-    "temperatureF": 74,
+    "temperatureF": 75,
     "rainChancePercent": 2,
-    "wind": "NE 0 to 5 mph",
+    "wind": "N 0 to 5 mph",
     "short": "Mostly Sunny",
-    "detailed": "Mostly sunny, with a high near 74. Northeast wind 0 to 5 mph."
+    "detailed": "Mostly sunny, with a high near 75. North wind 0 to 5 mph."
    },
    {
     "name": "Tonight",
@@ -205,7 +205,7 @@
   "next72hInches": 0.03,
   "byPeriod": [
    {
-    "name": "Today",
+    "name": "This Afternoon",
     "inches": 0.0
    },
    {
@@ -268,16 +268,16 @@
   "nearbyCountiesFullText": []
  },
  "discussion": {
-  "issued": "2026-10-11T05:45:00-05:00",
-  "ageHours": 5.5,
-  "text": "000\nFXUS63 KIWX 111045\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n645 AM EDT Sun Oct 11 2026\n\n.KEY MESSAGES...\n\n- A few light showers may occur in areas mainly along and east\n  of Interstate 69 this morning.\n\n- Warm on Monday and Tuesday with highs generally in the 80s.  \n\n- Low chances (10-30%) for a few showers and storms late Monday\n  night into Tuesday morning north of the Toll Road. \n\n- Additional chances (40-60%) of showers arrives Wednesday into\n  Thursday.\n\n&&\n\n.DISCUSSION...\nIssued at 212 AM EDT Sun Oct 11 2026\n\nUpper low from remnants of TC Isaias centered across western TN with \nthe bulk of the moisture surging northeast. Across the area, \ninverted trough/weak deformation zone has allowed for rather \nlackluster development of showers with a few spots seeing trace \namounts or maybe a few hundredths. While a small window still exists \nover the next 6 to 9 hours for a bit more coverage, doesn't look \noverly promising with pops lowered into chc range. Any precip should \nexit by afternoon, but clouds are likely to linger in eastern areas \nwhich will limit high temperatures in these areas. \n\n925 mb moisture will be slow to depart this evening and into the \novernight hours. If clearing can happen fast enough overnight in \neastern areas, overnight lows should drop below crossover temps with \nat least some patchy fog developing. Although these factors seem \nlogical, lack of rainfall may limit the boundary layer moisture \nsomewhat. Will leave patchy mention for now. \n\nYet another strong surge of WAA commences Monday and Tuesday ahead \nof a wave. Main sfc low tracks north of the area with a cool front \ntrying to move into northern areas, which will bring somewhat of a \ntemp gradient with temps well in the 80s south and 70s north. Given \nthe low track will be north and moisture somewhat limited, any low \nend pops will be confined mainly in lower MI. The frontal boundary \nwill drift south Wed into Thur which may bring slightly better \nchances for showers as waves travel west to east. Models continue to \nvary on whether northern and southern stream troughs will phase with \nGFS/Canadian phasing while EC keep main southern stream wave cutoff \nto the west. This not only brings uncertainty to precip chances, but \nalso the degree of CAA in the wake of the cold front on Friday.\n\n&&\n\n.AVIATION /12Z TAFS THROUGH 12Z MONDAY/...\nIssued at 645 AM EDT Sun Oct 11 2026\n\nMVFR ceilings will continue through the morning at KSBN and\nthrough the afternoon at KFWA as tropical moisture plume moves\nacross the region. Brief IFR is also possible at KFWA based on\nforecast guidance and upstream obs. Confidence is lower at KSBN\nas they are right on the edge of the better low level moisture.\nClearing skies expected at both terminals by the evening and\nthis will set the stage for some possible fog at KFWA given\nlight winds and residual near-surface moisture. Confidence in \ndense fog is low given high degree of variability in the \nguidance but worth at least an MVFR BR mention for now.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...None.\n\n&&\n\n$$\n\nDISCUSSION...Fisher\nAVIATION...AGD"
+  "issued": "2026-10-11T12:15:00-05:00",
+  "ageHours": 0.9,
+  "text": "000\nFXUS63 KIWX 111715\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n115 PM EDT Sun Oct 11 2026\n\n.KEY MESSAGES...\n\n- Warm on Monday and Tuesday with highs generally in the 80s.  \n\n- Low chances (10-30%) for a few showers and storms along and\n  north of the Michigan stateline Monday night. \n\n- Additional chances (40-70%) of showers arrives Tuesday night\n  through Thursday. \n\n&&\n\n.DISCUSSION...\nIssued at 115 PM EDT Sun Oct 11 2026\n\nRidging through the column will provide a trend toward mostly clear \nskies and light winds tonight. This may allow for patchy fog/stratus \ndevelopment overnight into early Monday, especially over ne IN and \nnw OH where lows will likely dip below xover values. \n\nReturn flow and associated strong WAA on the backside of the exiting \nridge will set the stage for breezy ssw winds and highs into the 80s \nMonday into Tuesday. A low amplitude, mid level impulse has \nconsistently been modeled to track east through the Upper Midwest \nand central Great Lakes Monday night into Tuesday morning. \nAssociated theta-e advection and slight graze of mid level ascent \nsupport retaining low chances (10-30%) for a few showers/storms in \nthe far north during this time.  \n\nA west to east oriented frontal zone tied to the aforementioned \nshortwave sags south into the area later Tuesday afternoon into \nWednesday. An additional surge of deeper moisture and several upper \nlevel waves ejecting east out of an Intermountain West upper low \nlikely activates the front with increasing rain/embedded thunder \nchances. Highest PoPs (60-70%) favor areas south of the US 30 \ncorridor. Cooler, yet, still above normal temps otherwise into \nWednesday. \n\nEnsemble and deterministic model solutions continue to differ on \nwhether a stronger storm system develops into the Great Lakes in \nresponse to potential phasing (or not) of southern and northern \nstream waves Thursday into Friday. This brings inherent uncertainty \nregarding precip chances and the magnitude of winds and CAA behind a \ncold front Friday into Saturday. \n\n&&\n\n.AVIATION /18Z TAFS THROUGH 18Z MONDAY/...\nIssued at 1220 PM EDT Sun Oct 11 2026\n\nClouds from the remnants of Hurricane Isaias can be seen on\nsatellite starting to depart from west to east. KFWA is still \nreporting IFR ceilings, but VFR ceilings are anticipated to \nreturn tonight as ceilings gradually rise over the next several \nhours. Clouds will be completely out of the area by 00-03Z. Winds\nwill be light and variable through this evening and overnight. \nWith moisture lingering near the surface alongside light winds \nand clear skies overnight, patchy dense fog is expected to \ndevelop. For now, have kept MVFR visibilities at KFWA but I \nwouldn't be surprised if visibilities drop to IFR by early \nMonday morning depending on how dense the fog is. NBM \nprobabilities show 20-30% chances for visibilities less than 2 \nmiles.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...None.\n\n&&\n\n$$\n\nDISCUSSION...Steinwedel\nAVIATION...Johnson"
  },
  "hazardousWeatherOutlook": null,
  "hydrologicOutlook": null,
  "spc": [
   {
    "day": 1,
-   "valid": "202610111300",
+   "valid": "202610111630",
    "expires": "202610121200",
    "riskAtLaPorte": "No thunderstorm or severe risk area",
    "riskAreasAnywhere": [
@@ -285,8 +285,8 @@
     "Marginal Risk",
     "Slight Risk"
    ],
-   "summary": "Thunderstorms capable of producing isolated severe wind gusts and a tornado or two will be possible today across parts of the Mid-Atlantic. Additional storms with isolated severe gusts will be possible in parts of the Desert Southwest and Four Corners region.",
-   "text": "SPC AC 111243\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   0743 AM CDT Sun Oct 11 2026\n\n   Valid 111300Z - 121200Z\n\n   ...THERE IS A SLIGHT RISK OF SEVERE THUNDERSTORMS ACROSS PARTS OF\n   NORTH CAROLINA AND VIRGINIA...\n\n   ...SUMMARY...\n   Thunderstorms capable of producing isolated severe wind gusts and a\n   tornado or two will be possible today across parts of the\n   Mid-Atlantic. Additional storms with isolated severe gusts will be\n   possible in parts of the Desert Southwest and Four Corners region.\n\n   ...Mid-Atlantic...\n   The remnants of Isaias are now a vertically stacked cyclone centered\n   over Middle TN this morning. Warm sector associated with this\n   cyclone is displaced east of the primary cyclone center, and is\n   delineated well by the 64 deg F isodrosotherm. This isodrosotherm\n   currently extends from the southern Delmarva Peninsula southwestward\n   to a triple point low over the TN/NC border and then southward\n   across central/south-central GA and the far eastern FL Panhandle.\n   Moderate low to mid-level southerly/southwesterly flow currently\n   extends throughout the eastern periphery of the cyclone over the\n   warm sector.\n\n   Primary core of the cyclone is forecast to progress northeastward\n   across the central Appalachians this afternoon/evening before\n   continuing northeastward across VA to the Mid-Atlantic coast\n   overnight into early tomorrow. The occluded surface and triple point\n   lows associated with this system will shift northeastward as well.\n   This progression will result in northward advection of the warm\n   sector into more of eastern NC and southeast VA while the cold front\n   pushes eastward/northeastward. Abundant cloud cover will limit\n   heating and lapse rates will remain poor, but abundant low-level\n   moisture will still support moderate buoyancy across the warm\n   sector. This buoyancy will support thunderstorm development along\n   and ahead of the cold front as it moves northeastward across the\n   region. Moderate low to mid-level southerly/southwesterly flow will\n   persist across the warm sector, supporting the potential for\n   rotation/organization with any deep and persistent updrafts. As a\n   result, isolated damaging gusts and a few brief tornadoes are\n   possible across the region. The best overlap between buoyancy and\n   shear is expected between 18Z and 00Z from north-central/northeast\n   NC into central/southeast VA.\n\n   ...Desert Southwest/Eastern Great Basin... \n   Remnants of tropical cyclone Rachel are currently centered in the\n   CA/NV/AZ border vicinity, at the base of a broad upper trough\n   covering much of the western CONUS. These remnants are forecast to\n   progress northeastward today, moving quickly through the Great Basin\n   and ending the period over central/eastern MT. At the same time,\n   another cyclone will shift southward across the Pacific Northwest.\n   Dynamic response to this evolution will support a belt of strong\n   mid-level southwesterly flow from southern CA/AZ through WY into the\n   northern High Plains. Low to mid-level moisture associated with the\n   remnants of Rachel will spread northeastward as well. \n\n   Persistent large-scale forcing for ascent and the aforementioned\n   moisture will support scattered thunderstorms. Strong low to\n   mid-level southwesterly flow will result in occasionally intense\n   bowing segments capable of strong gusts, particularly in any areas\n   that can experience filtered daytime heating. A low-probability\n   tornado risk will also exist from this morning into the early\n   afternoon across near the surface low over the CA/NV/AZ border\n   intersection vicinity. Here, moist low-level southerly will elongate\n   hodographs (as shown in current ESX VAD), resulting in a kinematic\n   environment supportive of tornadoes. Limited buoyancy should keep\n   any tornado threat isolated and brief.\n\n   ..Mosier/Wendt.. 10/11/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 1630Z"
+   "summary": "A few tornadoes are possible across parts of North Carolina and Virginia through the late afternoon. Additional storms with isolated severe gusts will be possible in parts of the Desert Southwest and Four Corners region.",
+   "text": "SPC AC 111629\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1129 AM CDT Sun Oct 11 2026\n\n   Valid 111630Z - 121200Z\n\n   ...THERE IS A SLIGHT RISK OF SEVERE THUNDERSTORMS ACROSS PARTS OF\n   NORTH CAROLINA AND VIRGINIA...\n\n   ...SUMMARY...\n   A few tornadoes are possible across parts of North Carolina and\n   Virginia through the late afternoon.  Additional storms with\n   isolated severe gusts will be possible in parts of the Desert\n   Southwest and Four Corners region.\n\n   ...NC/VA vicinity...\n   Midday water-vapor imagery shows a dry slot/vorticity lobe wrapping\n   through the base of the larger-scale remnants/cyclone associated\n   with Isaias and progressing eastward across the southern\n   Appalachians/Carolinas.  Surface analysis places a triple point over\n   northwest NC with a maritime warm frontal zone draped east-northeast\n   into the DelMarVa.  Despite considerable cloud cover according to\n   visible-satellite imagery, surface temperatures are gradually\n   warming into the mid to upper 70s across eastern NC and far\n   southeast VA.  This modest heating has led to the development of\n   around 1000 J/kg MLCAPE across eastern NC and weaker buoyancy\n   farther north near Richmond, VA (a few hundred J/kg).  The forced\n   band of broken thunderstorm activity moving east across NC will\n   likely be the primary feature for severe weather across this general\n   region through the late afternoon.  A few supercells embedded within\n   the north-south oriented band will potentially pose a risk for a few\n   additional tornadoes and perhaps an isolated risk for strong to\n   locally severe gusts (see MCD 2361 for short-term details).  Have\n   added a level-1 intensity highlight for the area of greatest\n   tornadic supercell potential through mid afternoon.  By late this\n   afternoon, it is possible (albeit uncertain) that a narrow corridor\n   adequately destabilizes ahead of triple point as it develops\n   northeastward into central VA.  If sufficient destabilization occurs\n   and sustained/robust storms also develop, a localized tornado/wind\n   threat could ensue prior to sunset.\n\n   ...Desert Southwest/Eastern Great Basin...\n   Remnants of tropical cyclone Rachel are currently centered in the\n   CA/NV/AZ border vicinity, at the base of a broad upper trough\n   covering much of the western CONUS.  These remnants are forecast to\n   progress northeastward today, moving quickly through the Great Basin\n   and ending the period over central/eastern MT.  Persistent\n   large-scale forcing for ascent and the aforementioned moisture will\n   support scattered thunderstorms.  Strong low to mid-level\n   southwesterly flow will result in occasionally intense bowing\n   segments capable of strong gusts, particularly in any areas\n   that can experience filtered daytime heating.\n\n   ..Smith/Barnes.. 10/11/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 2000Z"
   },
   {
    "day": 2,
@@ -297,7 +297,7 @@
     "General Thunderstorms Risk"
    ],
    "summary": "No severe weather is expected Monday through Monday night.",
-   "text": "SPC AC 110455\n\n   Day 2 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1155 PM CDT Sat Oct 10 2026\n\n   Valid 121200Z - 131200Z\n\n   ...NO SEVERE THUNDERSTORM AREAS FORECAST...\n\n   ...SUMMARY...\n   No severe weather is expected Monday through Monday night.\n\n   ...Synopsis...\n\n   An upper low initially over the Columbia Basin will develop south to\n   the Sierra Nevada, while an embedded vorticity maximum progresses\n   through the basal portion that feature from central/southern CA\n   through the lower-CO Valley into the Great Basin. Downstream from\n   those developments, a low-amplitude short-wave trough is forecast to\n   translate from the northern or central High Plains into the upper\n   Midwest and neighboring Upper Great Lakes regions by Monday night.\n   At the surface, an area of low pressure initially over central NE\n   will develop along a boundary into southern MN by late afternoon or\n   early evening before reaching central WI Monday night.\n\n\n   ...Upper Midwest...\n\n   A plume of steep midlevel lapse rates will overspread the region on\n   Monday, atop a moistening boundary layer, yielding a moderately\n   unstable but capped air mass by afternoon along and south of the\n   surface boundary and approaching cyclone. Elevated thunderstorms are\n   expected to develop to the north of the surface warm sector over the\n   northern Plains Monday morning within a zone of forcing for ascent\n   preceding the short-wave trough. That convective regime is expected\n   to spread into portions of MN and WI late Monday afternoon into\n   night, amidst a thermodynamic environment featuring MUCAPE generally\n   less than 1000 J/kg. While a few instances of hail approaching one\n   inch appear possible, larger sizes are expected to be limited by the\n   marginal instability and generally less than 30-35 kt of effective\n   bulk shear.\n\n\n   ...Lower Colorado Valley into the Great Basin...\n\n   Increased forcing for ascent ahead of the vorticity maximum is\n   expected to foster an areal increase in low-topped thunderstorms\n   Monday afternoon, which are likely to continue into Monday night.\n   Generally weak instability should limit severe weather potential;\n   however, in areas where low-level lapse rates can sufficiently\n   steepen, the downward transfer of stronger winds aloft could yield a\n   few gusts approaching 58 mph. Some small hail may also accompany the\n   strongest updrafts.\n\n   ..Mead.. 10/11/2026\n\n   CLICK TO GET WUUS02 PTSDY2 PRODUCT\n\n   NOTE: THE NEXT DAY 2 OUTLOOK IS SCHEDULED BY 1730Z"
+   "text": "SPC AC 111703\n\n   Day 2 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1203 PM CDT Sun Oct 11 2026\n\n   Valid 121200Z - 131200Z\n\n   ...NO SEVERE THUNDERSTORM AREAS FORECAST...\n\n   ...SUMMARY...\n   No severe weather is expected Monday through Monday night.\n\n   ...Upper Midwest/Great Lakes...\n\n   An upper shortwave trough will develop northeast from the central\n   High Plains to the Great Lakes on Monday. This will bring a belt of\n   mildly enhanced westerly mid/upper flow across the region, with an\n   increasing southwesterly low-level jet expected by Monday evening\n   from the Mid-MS Valley into MI. At the surface, low pressure will\n   shift east across MN/WI/MI, with a trailing cold front surging\n   east/southeast across the central Plains and Upper Midwest. A warm\n   front will be oriented west to east across northern WI to northern\n   Lower MI. Elevated thunderstorms may develop by 00z near and north\n   of this boundary on the edge of the increasing low-level jet and\n   stronger warm advection ahead of the surface low/cold front. Cooling\n   aloft will result in a plume of steep midlevel lapse rates\n   supporting modest elevated instability. Small hail may occur with\n   stronger updrafts within the modestly sheared environment across\n   northern WI/the U.P. of MI and portions of northern Lower MI during\n   the evening and overnight hours. Overall severe potential is\n   expected to remain limited by modest instability and capping across\n   the warm sector, precluding severe probabilities.\n\n   ...Southwest/Great Basin...\n\n   Lingering moisture across the Southwest and Great Basin will support\n   scattered showers and thunderstorms within enhanced deep-layer\n   southwesterly flow ahead of an approaching upper low and attendant\n   trough. Meager destabilization will limit severe potential, though\n   some gusty winds are possible given stronger synoptic flow.\n\n   ...Southern High Plains...\n\n   A few thunderstorms will be possible along a surface trough/dryline\n   across western TX/eastern NM as low-level moisture returns north and\n   west across the southern Plains. Modest vertical shear and weak\n   instability should limit severe potential, though some locally gusty\n   outflow winds are possible given steepened low-level lapse rates due\n   to daytime heating into the upper 80s/low 90s.\n\n   ..Leitman.. 10/11/2026\n\n   CLICK TO GET WUUS02 PTSDY2 PRODUCT\n\n   NOTE: THE NEXT DAY 2 OUTLOOK IS SCHEDULED BY 0600Z"
   },
   {
    "day": 3,
@@ -342,18 +342,6 @@
     "date": "2026-10-11",
     "summary": "dry through work hours (6 a.m. to 6 p.m.)",
     "hours": [
-     {
-      "hour": 10,
-      "rainChancePercent": 2
-     },
-     {
-      "hour": 11,
-      "rainChancePercent": 2
-     },
-     {
-      "hour": 12,
-      "rainChancePercent": 1
-     },
      {
       "hour": 13,
       "rainChancePercent": 0
@@ -453,7 +441,7 @@
    {
     "date": "2026-10-11",
     "nws": {
-     "high": 74,
+     "high": 75,
      "low": null,
      "rain": 2
     },
@@ -594,7 +582,7 @@
       "rain": 57
      },
      "gfs_seamless": {
-      "high": 67,
+      "high": 68,
       "low": 56,
       "rain": 57
      },
@@ -613,10 +601,10 @@
      "low": 56
     },
     "spread": {
-     "high": 6,
+     "high": 5,
      "low": 1
     },
-    "note": "the models disagree on the high by 6 degrees (less certain)"
+    "note": "NWS and the models agree within a few degrees"
    }
   ],
   "suggested": [
