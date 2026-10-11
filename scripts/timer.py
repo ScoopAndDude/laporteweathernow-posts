@@ -20,6 +20,8 @@ starts whichever jobs are due at that moment, in La Porte (Central) time:
                        forecasts and grades yesterday's; later starts only fill in a racer that didn't answer)
   6:00 and 6:45 AM (each for 15 minutes)   The Daily Video (added Oct. 8, 2026; the first start makes and
                        posts the day's forecast video, the second does nothing once it's made)
+  4:45, 5:15, 5:45, 6:15 and 6:45 AM (each for 15 minutes)   The Hard Hat sender watch (added Oct. 11,
+                       2026; asks the 5 AM sender whether it's running and whether any morning call is late)
   6:30-8:09 AM         Backup Daily Scoop (it posts only if today's Scoop isn't up)
   8:10-8:24 AM         Site health check
   9:15-9:29 AM, 4:45-4:59 PM   Markets numbers from BLS
@@ -53,6 +55,7 @@ WINDOWS = [
     ("forecast-race.yml", [("05:30", "05:44"), ("06:30", "06:44"), ("07:30", "07:44")], None),
     ("school-call.yml", [("20:00", "20:14"), ("21:00", "21:14")], {6, 0, 1, 2, 3}),
     ("daily-video.yml", [("06:00", "06:14"), ("06:45", "06:59")], None),
+    ("sender-watch.yml", [("04:45", "04:59"), ("05:15", "05:29"), ("05:45", "05:59"), ("06:15", "06:29"), ("06:45", "06:59")], None),
     ("backup-scoop.yml", [("06:30", "08:09")], None),
     ("site-health.yml", [("08:10", "08:24")], None),
     ("markets-data.yml", [("09:15", "09:29"), ("16:45", "16:59")], None),

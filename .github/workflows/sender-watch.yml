@@ -1,0 +1,39 @@
+# The watchdog outside Google for the Hard Hat Weather sender (Oct. 11, 2026; scripts/sender_watch.py).
+# Asks the sender's web app (?health: times and counts only) whether its 5-minute check is running and
+# whether any morning call is late, and opens a GitHub issue here (GitHub emails it to Scoop) when the
+# check has stopped for 25 minutes, a morning call is late, or the web app doesn't answer. Closes the
+# issue when all is well again.
+# The Timer starts it at 4:45, 5:15, 5:45, 6:15 and 6:45 AM Central; GitHub's own clock, every hour,
+# is the backup for when the Timer (also a Google Apps Script) isn't ticking.
+name: Hard Hat sender watch
+
+on:
+  workflow_dispatch:
+    inputs:
+      test_alert:
+        description: "Open (and close) a test issue, so you see the email (nothing is wrong)"
+        type: boolean
+        default: false
+  schedule:
+    - cron: "17 * * * *"
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: sender-watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    name: Is the 5 AM sender running?
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ask the sender
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          TEST_ALERT: ${{ github.event.inputs.test_alert }}
+        run: python3 scripts/sender_watch.py
