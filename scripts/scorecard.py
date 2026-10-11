@@ -12,6 +12,11 @@ Same rules as the Track Record page (scorecard.js on the site), in plain words:
 - Rain: at 50% or higher it should have rained (0.01 in or more); at 20% or lower it
   should have stayed dry. 21-49% isn't scored.
 - Days the station has no data for aren't scored.
+- Days the station barely reported aren't scored either (added Oct. 11, 2026): a day counts
+  only if the airport sent temperatures in at least MIN_HOURS of its 24 hours. On Oct. 10,
+  2026 it sent 4 readings, all after 11 PM, and the archive's daily summary made that last
+  hour look like the whole day. Those days are listed in scorecard.json's "thinDays" so the
+  Track Record page skips them too.
 Also (added Oct. 2, 2026):
 - "bias": our average error (forecast minus what the airport recorded) for highs and lows
   over the last 30 graded days. consensus.py nudges the model blend by it once there are
@@ -39,6 +44,7 @@ TZ = ZoneInfo("America/Chicago")
 MAIN = ("PPO", "IN_ASOS", "La Porte Municipal Airport (KPPO)")
 NEIGHBORS = [("SBN", "IN_ASOS", "South Bend airport"), ("VPZ", "IN_ASOS", "Valparaiso airport")]
 TOLERANCE = 3
+MIN_HOURS = 18      # hours of the day (of 24) with at least one temperature report, or the day isn't graded
 WINDOW = 30
 UA = "LaPorteWeatherNow/1.0 (+https://laporteweathernow.com)"
 
@@ -120,10 +126,47 @@ def station_days(station, months):
     return days
 
 
+def hours_reported(date):
+    """How many of the date's 24 local hours have at least one temperature report from the airport."""
+    sid, net, _ = MAIN
+    data = get_json(f"https://mesonet.agron.iastate.edu/api/1/obhistory.json?station={sid}&network={net}&date={date}&full=1")
+    hours = set()
+    for r in data.get("data") or []:
+        lv = (r or {}).get("local_valid") or ""
+        if r.get("tmpf") is not None and lv[:10] == date:
+            hours.add(lv[11:13])
+    return len(hours)
+
+
+def check_coverage(dates, today):
+    """{date: hours reported} for each date. Days at least 3 days old come from the last
+    scorecard.json when it has them (the archive rarely changes after that)."""
+    try:
+        cache = json.load(open(OUT, encoding="utf-8")).get("coverage") or {}
+    except Exception:
+        cache = {}
+    settled = (datetime.date.fromisoformat(today) - datetime.timedelta(days=3)).isoformat()
+    out = {}
+    for d in sorted(set(dates)):
+        if d <= settled and isinstance(cache.get(d), int):
+            out[d] = cache[d]
+            continue
+        try:
+            out[d] = hours_reported(d)
+        except Exception as e:
+            print(f"!! hours reported on {d}: {e}", file=sys.stderr)   # unknown: graded as before
+    for d, h in cache.items():
+        out.setdefault(d, h)
+    return out
+
+
 def observed_on(date, main, neighbors):
     row = main.get(date)
     if not row or row.get("max_tmpf") is None or row.get("min_tmpf") is None:
         return {"missing": True}
+    hours = row.get("_hours")
+    if isinstance(hours, int) and hours < MIN_HOURS:
+        return {"missing": True, "readingHours": hours}
     out = {"missing": False, "high": jround(row["max_tmpf"]), "low": jround(row["min_tmpf"])}
     precip = row.get("precip")
     if precip is not None and precip >= 0.01:
@@ -164,7 +207,7 @@ def score(f, main, neighbors, today):
         return {"status": "pending"}
     o = observed_on(f["date"], main, neighbors)
     if o["missing"]:
-        return {"status": "nodata"}
+        return {"status": "nodata", **({"readingHours": o["readingHours"]} if "readingHours" in o else {})}
     high, low, rain = temp_check(f["high"], o["high"]), temp_check(f["low"], o["low"]), rain_check(f["rain"], o["rained"])
     parts = [x for x in (high, low, rain if rain and rain["hit"] is not None else None) if x]
     misses = sum(1 for x in parts if not x["hit"])
@@ -232,6 +275,8 @@ def morning_grades(main_days, neighbors, today, start):
                                       "rain": (e.get("nws") or {}).get("rain")}}
         if o["missing"]:
             row["status"] = "nodata"
+            if "readingHours" in o:
+                row["readingHours"] = o["readingHours"]
             days.append(row)
             continue
         nh = temp_check(row["said"]["nwsHigh"], o["high"])
@@ -276,6 +321,10 @@ def main():
         return
     months = months_between(min(f["date"] for f in past), max(f["date"] for f in past))
     main_days = station_days(MAIN, months)          # failure here = no scorecard; keep the old file
+    coverage = check_coverage([f["date"] for f in past], today)
+    for d, h in coverage.items():
+        if d in main_days and isinstance(h, int):
+            main_days[d]["_hours"] = h
     neighbors = []
     for n in NEIGHBORS:
         try:
@@ -292,6 +341,8 @@ def main():
         sc = r["score"]
         out = {"date": r["date"], "fromPost": r["post"], "leadDays": r["leadDays"],
                "forecast": {"high": r["high"], "low": r["low"], "rain": r["rain"]}, "status": sc["status"]}
+        if "readingHours" in sc:
+            out["readingHours"] = sc["readingHours"]
         if sc["status"] == "scored":
             o = sc["observed"]
             out.update(observed={"high": o["high"], "low": o["low"], "rained": o["rained"], "rainText": o["rainText"]},
@@ -313,6 +364,11 @@ def main():
         "morning": morning_grades(main_days, neighbors, today, start),
         "latest": day_out(scored[0]) if scored else None,
         "days": [day_out(r) for r in rows[:60]],
+        "readingRule": (f"A day is graded only if the airport reported temperatures in at least {MIN_HOURS} of its "
+                        "24 hours. thinDays lists the days that fell short (date: hours reported); coverage keeps "
+                        "every checked day's count."),
+        "thinDays": {d: h for d, h in sorted(coverage.items()) if isinstance(h, int) and h < MIN_HOURS},
+        "coverage": {d: h for d, h in sorted(coverage.items()) if isinstance(h, int)},
     }
     with open(OUT, "w", encoding="utf-8") as fh:
         json.dump(card, fh, ensure_ascii=False, indent=1)
