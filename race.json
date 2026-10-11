@@ -1,6 +1,6 @@
 {
  "about": "The Forecast Race: NOAA's new AI weather model, the National Weather Service's own forecasters and three other computer models, graded every day against the La Porte airport (KPPO). Each morning we save what each racer says about tomorrow (temperatures at four checkpoints and the 24-hour rain total) and grade it the next day. Saved forecasts are never changed. Run by La Porte Weather Now (scripts/forecast_race.py).",
- "generated": "2026-10-10T07:32:15-05:00",
+ "generated": "2026-10-11T05:32:14-05:00",
  "started": "2026-10-06",
  "station": {
   "id": "KPPO",
@@ -1657,7 +1657,19 @@
      "saved": "2026-10-09T10:33Z"
     }
    },
-   "status": "waiting"
+   "status": "no-observations",
+   "observed": {
+    "temps": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "rainIn": null,
+    "rainHours": 2
+   },
+   "scores": {},
+   "winners": []
   },
   {
    "target": "2026-10-11",
@@ -1735,6 +1747,86 @@
      "rainIn": 0.02,
      "run": "2026-10-10T00:00Z",
      "saved": "2026-10-10T10:33Z"
+    }
+   },
+   "status": "waiting"
+  },
+  {
+   "target": "2026-10-12",
+   "made": "2026-10-11",
+   "checkpoints": [
+    {
+     "utc": "2026-10-12T06:00Z",
+     "local": "1 AM"
+    },
+    {
+     "utc": "2026-10-12T12:00Z",
+     "local": "7 AM"
+    },
+    {
+     "utc": "2026-10-12T18:00Z",
+     "local": "1 PM"
+    },
+    {
+     "utc": "2026-10-13T00:00Z",
+     "local": "7 PM"
+    }
+   ],
+   "forecasts": {
+    "nws": {
+     "temps": [
+      58.9,
+      58.0,
+      81.1,
+      78.0
+     ],
+     "rainIn": 0.0,
+     "issued": "2026-10-11T10:17Z",
+     "saved": "2026-10-11T10:32Z"
+    },
+    "aigfs": {
+     "temps": [
+      60.2,
+      60.7,
+      81.5,
+      73.3
+     ],
+     "rainIn": 0.0,
+     "run": "2026-10-11T00:00Z",
+     "saved": "2026-10-11T10:32Z"
+    },
+    "gfs": {
+     "temps": [
+      60.4,
+      61.4,
+      80.8,
+      73.7
+     ],
+     "rainIn": 0.01,
+     "run": "2026-10-11T00:00Z",
+     "saved": "2026-10-11T10:32Z"
+    },
+    "aifs": {
+     "temps": [
+      59.8,
+      60.4,
+      82.2,
+      77.9
+     ],
+     "rainIn": 14.81,
+     "run": "2026-10-11T00:00Z",
+     "saved": "2026-10-11T10:32Z"
+    },
+    "ifs": {
+     "temps": [
+      59.6,
+      59.5,
+      80.7,
+      75.7
+     ],
+     "rainIn": 0.0,
+     "run": "2026-10-11T00:00Z",
+     "saved": "2026-10-11T10:33Z"
     }
    },
    "status": "waiting"
