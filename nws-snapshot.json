@@ -1,6 +1,6 @@
 {
  "about": "Official weather for La Porte, Indiana, saved by a GitHub job for the Daily Scoop (laporteweathernow.com/daily-scoop). Copied from NWS, SPC and WPC as-is; see scripts/nws_snapshot.py.",
- "fetched": "2026-10-12T05:02:08-05:00",
+ "fetched": "2026-10-12T05:41:13-05:00",
  "place": "La Porte, IN",
  "lat": 41.6081,
  "lon": -86.7189,
@@ -23,29 +23,29 @@
  },
  "observation": {
   "station": "KPPO (La Porte Municipal Airport)",
-  "time": "2026-10-12T04:35:00-05:00",
+  "time": "2026-10-12T05:15:00-05:00",
   "weather": "Fog",
   "temperatureF": 54,
   "dewpointF": 54,
   "humidityPercent": 100,
   "wind": {
-   "from": "S",
-   "degrees": 180,
-   "mph": 2,
+   "from": "SSE",
+   "degrees": 160,
+   "mph": 3,
    "gustMph": null
   },
   "visibilityMiles": 0.2,
   "pressureInHg": 29.94,
-  "metar": "KPPO 120935Z AUTO 18002KT 1/4SM FG VV002 12/12 A2994 RMK AO2"
+  "metar": "KPPO 121015Z AUTO 16003KT 1/4SM FG VV002 12/12 A2994 RMK AO2"
  },
  "forecast": {
   "updated": "2026-10-12T08:15:54+00:00",
-  "generated": "2026-10-12T09:47:02+00:00",
+  "generated": "2026-10-12T08:47:03+00:00",
   "timesNote": "Clock times in the forecast wording are already in America/Chicago (La Porte's real time). NWS writes them in America/Indiana/Indianapolis, which it has on file for La Porte by mistake.",
   "periods": [
    {
     "name": "Overnight",
-    "start": "2026-10-12T05:00:00-04:00",
+    "start": "2026-10-12T04:00:00-04:00",
     "end": "2026-10-12T06:00:00-04:00",
     "isDaytime": false,
     "temperatureF": 54,
@@ -366,7 +366,7 @@
  },
  "discussion": {
   "issued": "2026-10-12T01:05:00-05:00",
-  "ageHours": 4.0,
+  "ageHours": 4.6,
   "text": "000\nFXUS63 KIWX 120605\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n205 AM EDT Mon Oct 12 2026\n\n.KEY MESSAGES...\n\n- Unseasonably warm today and Tuesday with highs generally in \n  the 80s.\n\n- Low chances (<20%) for a few showers and storms along and\n  north of the Michigan stateline this evening. \n\n- Additional chances (40-70%) of showers arrives Tuesday night\n  through Thursday.\n\n&&\n\n.DISCUSSION...\nIssued at 203 AM EDT Mon Oct 12 2026\n\nPockets of fog, locally dense, have been observed in several \nlocations as xover temps are exceeded. These pockets appear to \nbe somewhat shallow in nature and should begin to lessen some as\ncombination of high clouds and a slight increase in boundary \nlayer winds occurs. Not planning any headlines, but will monitor\ntrends if highlighted factors don't impact the coverage. \n\nAny fog will quickly burn off as plenty of sunshine and warming \ntemperatures end the threat. Low pressure and a frontal boundary \nwill remain well north of the area, with an increasing SW flow \nresulting in strong WAA. This will set the stage for well above \nnormal (possible near record) high temperatures into the 80s. Model \nblends hint at a few 90 degrees highs on Tuesday. Any precip chances \nappear to remain in MI. \n\nThe frontal boundary will slowly push south into the area Wed and \nThur as a series of waves move along it with chances for showers and \nthunderstorms. Some uncertainty exists exactly how much progress the \nfront makes each day given the lack of upper level energy to help \npush it along. Periods of likely to cat pops remain. \n\nThursday night into Friday, models continue to vary on interactions \n(or lack thereof) with northern and southern stream waves. That \nbeing said, there may be some agreement starting as an initial, \nweaker southern stream wave tries to phase with the northern stream \ntrough, with an orphaned upper low sticking around in the SW US.  As \na result, picture remains unclear as to exact potential impacts for \nthis period and into the weekend. In the wake of the system, at \nleast a brief shot of colder (below normal) air arrives. \n\n\n&&\n\n.AVIATION /06Z TAFS THROUGH 06Z TUESDAY/...\nIssued at 130 AM EDT Mon Oct 12 2026\n\nChallenging fog forecast this morning given current clear skies\nand light winds but highly marginal near-surface moisture \nprofiles. Gradient wind and high clouds will also steadily\nincrease through daybreak, leading to even lower confidence.\nExpect visibilities may vary quite a bit for the next several\nhours (particularly at KFWA where moisture profiles are a \nlittle better) but expect a general improving trend closer to \n12Z. The rest of the period will be quiet/VFR as dry SSW flow \ndevelops.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...None.\n\n&&\n\n$$\n\nDISCUSSION...Fisher\nAVIATION...AGD"
  },
  "hazardousWeatherOutlook": null,
@@ -570,12 +570,12 @@
    "ecmwf_ifs025": "European ECMWF"
   },
   "bias": {
-   "days": 12,
+   "days": 13,
    "ready": false,
    "high": -2.8,
-   "highDays": 12,
+   "highDays": 13,
    "low": 2.2,
-   "lowDays": 12,
+   "lowDays": 13,
    "note": "Average of (forecast minus airport reading) over the last 30 graded days; positive means we ran warm. Used to nudge the model blend once 14+ days are graded."
   },
   "days": [
