@@ -137,7 +137,7 @@ function nlSubscribe_(email) {
       sender: NL_SENDER,
       replyTo: { email: NL_OWNER, name: "La Porte Weather Now" },
       to: [{ email: email }],
-      subject: "You're on the La Porte weekend email",
+      subject: "You're on the La Porte weekend email (and here's your free planner)",
       htmlContent: nlWelcomeHtml_(),
     });
     return { status: "Added + welcomed", note: "" };
@@ -152,6 +152,12 @@ function nlWelcomeHtml_() {
     "<p>Every Thursday afternoon you'll get the weekend outlook for La Porte: the National Weather " +
     "Service forecast for Friday through Sunday, any watches or warnings for La Porte County, and that " +
     "morning's Daily Scoop.</p>" +
+    // The free planner the sign-up boxes promise (added Oct. 12, 2026).
+    "<p><strong>Your free planner:</strong> the <a href=\"" + NL_SITE + "/la-porte-county-winter-storm-planner.pdf\">La Porte " +
+    "County Winter Storm Prep Planner</a> (a PDF to print and keep on the fridge), also <a href=\"" + NL_SITE +
+    "/la-porte-county-winter-storm-planner-es.pdf\">en español</a>. The <a href=\"" + NL_SITE +
+    "/winter-planner?utm_source=welcome-email&amp;utm_campaign=winter-planner\">planner page</a> has a Winter Ready checklist, " +
+    "and when a winter weather alert is out for La Porte County, it moves the part you need to the top.</p>" +
     "<p>Between emails, the forecast and official alerts are always at " +
     "<a href=\"" + NL_SITE + "\">laporteweathernow.com</a>, and the Daily Scoop is posted every morning at " +
     "<a href=\"" + NL_SITE + "/daily-scoop\">laporteweathernow.com/daily-scoop</a>.</p>" +
