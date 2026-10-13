@@ -136,6 +136,22 @@ def run():
     check(p["hook"]["kind"] == "rain", f"rain likely -> hook 'rain' (got {p['hook']['kind']})")
     check("after 1 p.m." in p["hook"]["small"], f"rain timing from the hour-by-hour forecast: {p['hook']['small']}")
     check(numbers_ok(p, d, NORMALS)[0], f"rain: every number is from the data {numbers_ok(p, d, NORMALS)[1]}")
+    lead = p["scenes"][1]["say"]
+    check(lead == "Today: showers likely. High 62. Tonight: low 48.", f"today's voice doesn't repeat the opening line's chance: {lead}")
+
+    # 2b. Rain today under a different opening line: the voice gives the chance in a few words; the screen
+    #     and the caption keep NWS's full wording and timing.
+    frost_adv0 = {"id": "x0", "event": "Frost Advisory", "area": "Northern La Porte; Southern La Porte", "messageType": "Alert",
+                  "severity": "Minor", "onset": "2026-10-09T23:00:00-05:00", "ends": "2026-10-10T09:00:00-05:00",
+                  "expires": "2026-10-09T15:00:00-05:00"}
+    d = data(periods(today=("Chance Showers And Thunderstorms then Mostly Cloudy", 69, 30, "")),
+             hs=hours([30, 30, 25, 20, 10, 5, 0, 0, 0, 0, 0, 0]), alerts=[frost_adv0])
+    p = plan_for(d)
+    lead = p["scenes"][1]
+    check(lead["say"] == "Today: a 30% chance of rain. High 69. Tonight: low 48.", f"short voice for a rain chance: {lead['say']}")
+    check(lead["text"].startswith("A chance of showers and thunderstorms") and lead["rain"]["window"],
+          f"the screen keeps NWS's words and the timing: {lead['text']} / {lead['rain']}")
+    check("A 30% chance of showers and thunderstorms until" in p["caption"], "the caption keeps the full sentence")
 
     # 3. A freeze tonight beats a nice day.
     d = data(periods(tonight=("Clear", 30, 0)))

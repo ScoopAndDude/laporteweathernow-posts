@@ -559,7 +559,7 @@ def with_chance(text, chance, window):
     return upper_first(f"{head}, a {chance}% chance" + (f" {window}" if window else "") + tail)
 
 
-def period_scene(p, now, hours, hook, with_hours):
+def period_scene(p, now, hours, hook, with_hours, brief=False):
     name = day_name(p, now)
     title = name.upper()
     temp = p.get("temperatureF")
@@ -572,7 +572,16 @@ def period_scene(p, now, hours, hook, with_hours):
         what = bs.precip_word(p.get("short"))
         rain = {"pct": chance, "what": what, "window": window}
         sentence = with_chance(text, chance, window)
-    spoken = sentence if not (rain and hook["kind"] in ("rain", "storms") and name == "today") else text
+    covered = rain and hook["kind"] in ("rain", "storms") and name == "today"     # the opening line said it
+    if brief:
+        # The voice keeps it short (Oct. 13, 2026); the screen and the caption keep NWS's full wording and timing.
+        if rain and not covered:
+            spoken = f"a {chance}% chance of {rain['what']}"
+        else:
+            dry = [x for x in text.split(", then ") if not re.search(PRECIP, x, re.I)]
+            spoken = dry[-1] if covered and dry else card_words(p.get("short"))
+    else:
+        spoken = sentence if not covered else text
     say = bs.end_sentence(f"{upper_first(name)}: {lower_first(spoken)}") + f" {'High' if p.get('isDaytime') else 'Low'} {temp}."
     note = None
     g = gust_of(p)
@@ -628,7 +637,7 @@ def days_scene(data, now, start_after, hook):
         return None
     # The voice reads one day (the cards show all three), skipping the one the opening line was about.
     told = [x for x in days if not x["star"]][:1]
-    say = " ".join(bs.end_sentence(f"{x['day']}: {lower_first(friendly(x['short']))}, {x['hi']}") for x in told)
+    say = " ".join(bs.end_sentence(f"{x['day']}: {lower_first(card_words(x['short']))}, {x['hi']}") for x in told)
     return {"id": "days", "kind": "days", "title": f"NEXT {len(days)} DAYS", "days": days, "say": say}
 
 
@@ -677,7 +686,7 @@ def build_plan(data, now, normals, radar_ok=None):
     # One scene for the first period (usually today). The next one (usually tonight) rides along as a line
     # on screen and a few words, which keeps the video near 15 seconds. Since Oct. 13, 2026: Facebook
     # flagged view completion on the 20-30 second version, which gave tonight a scene of its own.
-    lead = period_scene(first, now, hours, hook, with_hours=True)
+    lead = period_scene(first, now, hours, hook, with_hours=True, brief=True)
     then = period_scene(second, now, hours, hook, with_hours=False)
     cap_lead = dict(lead)                       # the caption still gives each period its own line
     then_name = day_name(second, now)
