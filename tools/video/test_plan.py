@@ -114,6 +114,21 @@ def run():
     check(numbers_ok(p, d, NORMALS)[0], "nice day: every number is from the data")
     check(spoken_clean(p), "nice day: the voice gets words, not digits or symbols")
 
+    # 1b. The short version (Oct. 13, 2026): today carries tonight, the voice reads one day, ~15 seconds.
+    kinds = [s["kind"] for s in p["scenes"]]
+    check(kinds == ["hook", "period", "days", "end"], f"scenes: hook, today, next days, end (got {kinds})")
+    lead = p["scenes"][1]
+    check("Tonight: low 48." in lead["say"] and lead.get("next", {}).get("temp") == 48,
+          f"today's scene carries tonight's low: {lead['say']}")
+    days_say = p["scenes"][2]["say"]
+    check(days_say.startswith("Saturday:") and "Sunday" not in days_say, f"the voice reads one day: {days_say}")
+    check("Tonight: Mostly clear. Low 48." in p["caption"], "the caption still has tonight on its own line")
+    timed = json.loads(json.dumps(p))
+    for s in timed["scenes"]:
+        s["voiceSeconds"] = round(len(s["spoken"].split()) / 2.75, 2)
+    dv.timeline(timed)
+    check(timed["seconds"] <= 16, f"about 15 seconds at reading speed (got {timed['seconds']})")
+
     # 2. Rain likely, mostly in the afternoon (hours from 6 a.m.: dry until 1 p.m., then 60-70%).
     d = data(periods(today=("Rain Showers Likely", 62, 70, "Rain showers likely, mainly after 1pm. High near 62.")),
              hs=hours([0, 0, 5, 10, 10, 15, 20, 60, 70, 70, 70, 65, 60]))
@@ -141,6 +156,15 @@ def run():
     check(p["hook"]["kind"] == "alert" and p["hook"]["big"] == "Freeze Warning", f"alert first (got {p['hook']['kind']})")
     check("until 9 a.m. Saturday" in p["hook"]["say"], f"alert end time in Central: {p['hook']['say']}")
     check("Freeze Warning" in p["caption"], "the caption lists the alert")
+
+    # 5b. Frost tonight under a different opening line still gets said and shown on today's scene.
+    frost_adv = dict(alert, id="x3", event="Frost Advisory")
+    d = data(periods(tonight=("Patchy Frost", 35, 0, "Patchy frost after 2am. Otherwise, clear, with a low around 35.")),
+             alerts=[frost_adv])
+    p = plan_for(d)
+    lead = p["scenes"][1]
+    check(p["hook"]["kind"] == "alert" and lead.get("note") == "Patchy frost possible tonight"
+          and "Patchy frost is possible tonight." in lead["say"], f"frost tonight on today's scene: {lead.get('note')} / {lead['say']}")
 
     # 6. A short-fused warning: no video.
     tor = dict(alert, id="x2", event="Severe Thunderstorm Warning", onset=None, ends=None, expires="2026-10-09T06:45:00-05:00")

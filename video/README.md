@@ -1,13 +1,13 @@
 # The Daily Video
 
-A short La Porte forecast video (about 20 to 30 seconds, vertical 1080x1920) made by itself every morning and posted as a Reel on the La Porte Weather Now Facebook Page and Instagram, as a YouTube Short, and on TikTok and X. Added Oct. 8, 2026 (Scoop: "Make it automatic"); TikTok and X added Oct. 12, 2026 (Scoop: "LPWN on autopilot").
+A short La Porte forecast video (about 15 seconds since Oct. 13, 2026; it was 20 to 30; vertical 1080x1920) made by itself every morning and posted as a Reel on the La Porte Weather Now Facebook Page and Instagram, as a YouTube Short, and on TikTok and X. Added Oct. 8, 2026 (Scoop: "Make it automatic"); TikTok and X added Oct. 12, 2026 (Scoop: "LPWN on autopilot").
 
 ## What happens each morning
 1. **6:00 AM Central**, the Timer starts the "Daily video" job (`.github/workflows/daily-video.yml`; 6:45 is a second chance, and two GitHub schedules back it up). One video a day, made only between 5:45 and 9:30 AM.
 2. `scripts/daily_video.py plan` asks the National Weather Service for La Porte's forecast, hour-by-hour forecast and La Porte County alerts, and picks the opening line by fixed rules (an alert first, then a freeze or frost, snow, the Storm Prediction Center's risk, heat, wind, likely rain, a big change from yesterday at the airport, a temperature far from NOAA's 1991-2020 normal, the weekend's best day, a nice day, or just the forecast).
 3. `daily_video.py voice` records it with the weather radio's voice (Kokoro-82M, af_heart, free and open source).
-4. `scripts/video_render.py` draws it: the opening line, today (with an hour-by-hour strip), tonight (with sunset and sunrise), the radar when there's rain or snow on it (NOAA's MRMS radar over a U.S. Census county map), the next three days, and the La Porte Weather Now card.
-5. `scripts/video_post.py` posts it to Facebook and Instagram (once the Meta key is in; see below).
+4. `scripts/video_render.py` draws it: the opening line, today (with an hour-by-hour strip and tonight's low on one line), the radar when there's rain or snow on it (NOAA's MRMS radar over a U.S. Census county map), the next three days (the voice reads one), and the La Porte Weather Now card. Shortened Oct. 13, 2026, after Facebook flagged view completion on the longer version: tonight no longer gets a scene of its own, and the closing line is just the website.
+5. `scripts/video_post.py` posts it to Facebook and Instagram (once the Meta key is in; see below), tagged with La Porte, Indiana as the location (`place` in `config.json`). If Facebook or Instagram turns the tag down, it posts without it. Facebook's posting API has no way to add topics, so the automatic Reels go out without one.
 6. The video, its cover picture and `video.json` (what it said, the caption, where it was posted) go to the `video` branch. Only the newest is kept.
 7. `scripts/buffer_post.py` sends that same video to TikTok and X through Buffer (once the Buffer key is in; see below), and adds where it went to `video.json` on the branch. If Buffer or TikTok has a hiccup, the 6:45 run tries once more. YouTube picks the video up from the branch on its own (see YouTube Shorts below).
 
@@ -57,4 +57,4 @@ Actions > **Daily video** > Run workflow:
 - `fonts/`: Inter (SIL Open Font License, see `fonts/LICENSE-OFL.txt`).
 - `logo-512.png`, `logo-mark.png`: the LPWN logo.
 - `basemap-fallback.json`: a simple county map, used only if the Census Bureau's detailed map can't be downloaded.
-- Tests: `python3 tools/video/test_plan.py` and `python3 tools/video/test_buffer.py` (no network needed).
+- Tests: `python3 tools/video/test_plan.py`, `python3 tools/video/test_buffer.py` and `python3 tools/video/test_post.py` (no network needed).

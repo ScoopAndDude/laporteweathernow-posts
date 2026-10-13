@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The Daily Video: a short La Porte forecast video (about 20 seconds, 1080x1920) for Facebook and
+"""The Daily Video: a short La Porte forecast video (about 15 seconds, 1080x1920) for Facebook and
 Instagram Reels, made every morning from the National Weather Service and read by the weather radio's
 voice. Added Oct. 8, 2026 (Scoop: "Make it automatic").
 
@@ -54,7 +54,7 @@ SHORT_DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 AP_MONTHS = bs.AP_MONTHS
 NCEI = "https://www.ncei.noaa.gov/access/services"
 HASHTAGS = "#LaPorte #LaPorteIndiana #LaPorteCounty #IndianaWeather #NWIndiana"
-CUTOFFS = {"hook": 2.4, "period": 3.2, "radar": 3.8, "days": 3.6, "end": 2.6}   # shortest each scene can be (s)
+CUTOFFS = {"hook": 2.4, "period": 3.0, "radar": 3.2, "days": 3.2, "end": 2.0}   # shortest each scene can be (s)
 LEAD, TAIL = 0.10, 0.30                     # voice starts this far into a scene; the scene runs this long after it
 
 
@@ -626,8 +626,8 @@ def days_scene(data, now, start_after, hook):
             break
     if len(days) < 2:
         return None
-    # The voice reads two days, skipping the one the opening line was about.
-    told = [x for x in days if not x["star"]][:2]
+    # The voice reads one day (the cards show all three), skipping the one the opening line was about.
+    told = [x for x in days if not x["star"]][:1]
     say = " ".join(bs.end_sentence(f"{x['day']}: {lower_first(friendly(x['short']))}, {x['hi']}") for x in told)
     return {"id": "days", "kind": "days", "title": f"NEXT {len(days)} DAYS", "days": days, "say": say}
 
@@ -674,14 +674,29 @@ def build_plan(data, now, normals, radar_ok=None):
     if hook["kind"] == "alert" and len(alerts) > 1:
         scenes[0]["more"] = [a["event"] for a in alerts[1:4]]
     first, second = ps[0], ps[1]
-    scenes.append(period_scene(first, now, hours, hook, with_hours=True))
-    scenes.append(period_scene(second, now, hours, hook, with_hours=False))
+    # One scene for the first period (usually today). The next one (usually tonight) rides along as a line
+    # on screen and a few words, which keeps the video near 15 seconds. Since Oct. 13, 2026: Facebook
+    # flagged view completion on the 20-30 second version, which gave tonight a scene of its own.
+    lead = period_scene(first, now, hours, hook, with_hours=True)
+    then = period_scene(second, now, hours, hook, with_hours=False)
+    cap_lead = dict(lead)                       # the caption still gives each period its own line
+    then_name = day_name(second, now)
+    then_word = "high" if second.get("isDaytime") else "low"
+    lead["next"] = {"name": upper_first(then_name), "temp": second.get("temperatureF"), "tempLabel": then_word.upper()}
+    lead["say"] += f" {upper_first(then_name)}: {then_word} {second.get('temperatureF')}."
+    fw = frost_words(second)
+    if fw and hook["kind"] not in ("frost", "freeze"):
+        lead["note"] = f"{fw} possible {then_name}"
+        lead["say"] += f" {fw} is possible {then_name}."
+    elif then.get("note") and not lead.get("note"):
+        lead["note"] = f"{then['note']} {then_name}"
+    scenes.append(lead)
     if radar_ok:
         scenes.append({"id": "radar", "kind": "radar", "title": "RADAR", "say": "Here's the radar right now."})
     nxt = days_scene(data, now, local(second["end"]), hook)
     if nxt:
         scenes.append(nxt)
-    scenes.append({"id": "end", "kind": "end", "say": "Free forecast every morning at laporteweathernow.com."})
+    scenes.append({"id": "end", "kind": "end", "say": "laporteweathernow.com."})
     for s in scenes:
         s["spoken"] = rb.for_ear(s["say"])
     obs = data.get("observation") or {}
@@ -697,7 +712,7 @@ def build_plan(data, now, normals, radar_ok=None):
         "hook": {k: hook[k] for k in ("kind", "score", "big", "small", "say", "when")},
         "hookOptions": [{"kind": h["kind"], "score": h["score"], "say": h["say"]} for h in options[:6]],
         "scenes": scenes,
-        "caption": caption(scenes, hook, data, now, alerts),
+        "caption": caption([cap_lead, then] + [s for s in scenes if s["kind"] == "days"], hook, data, now, alerts),
         "words": sum(len(s["spoken"].split()) for s in scenes),
     }
 

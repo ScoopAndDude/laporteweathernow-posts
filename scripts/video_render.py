@@ -658,6 +658,10 @@ def period_scene(s, plan):
     text = fit_para(s.get("text") or "", "bold", 68, INK, CW, max_lines=2, min_size=46)
     layers = [Layer(label, X0, 330, delay=0.0), Layer(ic, X0 - 14, 400, delay=0.05),
               Layer(temp, XR - temp.width, 420, delay=0.10), Layer(tl, XR - tl.width, 420 + temp.height + 22, delay=0.14)]
+    nx = s.get("next")                   # the next period (usually tonight), one line under the big number
+    if nx and nx.get("temp") is not None:
+        line = text_img(f"{nx['name'].upper()} · {nx['tempLabel']} {deg(nx['temp'])}", "bold", 40, SOFT, tracking=2)
+        layers.append(Layer(line, XR - line.width, 420 + temp.height + 22 + tl.height + 26, delay=0.18))
     y = 790
     layers.append(Layer(text, X0, y, delay=0.18))
     y += text.height + 40

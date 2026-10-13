@@ -88,11 +88,27 @@ def accounts(token, v):
     return pick["id"], pick.get("name"), pick["access_token"], (pick.get("instagram_business_account") or {}).get("id"), token
 
 
-def post_instagram(path, caption, ig_id, token, v, cover_ms=1000):
+def place_tag():
+    """The location the Reels are tagged with (video/config.json "place"): Facebook's La Porte, Indiana
+    page. Added Oct. 13, 2026. If Facebook or Instagram turns the tag down, the Reel posts without it."""
+    p = dv.config().get("place") or {}
+    return p if str(p.get("id") or "").isdigit() else None
+
+
+def post_instagram(path, caption, ig_id, token, v, cover_ms=1000, place=None):
     size = os.path.getsize(path)
-    box = call("POST", f"{GRAPH}/{v}/{ig_id}/media", token,
-               {"media_type": "REELS", "upload_type": "resumable", "caption": caption, "share_to_feed": "true",
-                "thumb_offset": str(cover_ms)})
+    params = {"media_type": "REELS", "upload_type": "resumable", "caption": caption, "share_to_feed": "true",
+              "thumb_offset": str(cover_ms)}
+    tagged = None
+    if place:
+        try:
+            box = call("POST", f"{GRAPH}/{v}/{ig_id}/media", token, dict(params, location_id=place["id"]))
+            tagged = place.get("name")
+        except MetaError as e:
+            print(f"Instagram turned down the location tag ({str(e)[:160]}); posting without it.", file=sys.stderr)
+            box = call("POST", f"{GRAPH}/{v}/{ig_id}/media", token, params)
+    else:
+        box = call("POST", f"{GRAPH}/{v}/{ig_id}/media", token, params)
     cid = box.get("id")
     uri = box.get("uri") or f"https://rupload.facebook.com/ig-api-upload/{v}/{cid}"
     if not cid:
@@ -120,10 +136,10 @@ def post_instagram(path, caption, ig_id, token, v, cover_ms=1000):
         link = call("GET", f"{GRAPH}/{v}/{mid}", token, {"fields": "permalink"}).get("permalink")
     except MetaError:
         pass
-    return {"id": mid, "permalink": link}
+    return {"id": mid, "permalink": link, "place": tagged}
 
 
-def post_facebook(path, caption, page_id, page_token, v):
+def post_facebook(path, caption, page_id, page_token, v, place=None):
     size = os.path.getsize(path)
     start = call("POST", f"{GRAPH}/{v}/{page_id}/video_reels", page_token, {"upload_phase": "start"})
     vid = start.get("video_id")
@@ -135,8 +151,17 @@ def post_facebook(path, caption, page_id, page_token, v):
                                                                        "Content-Type": "application/octet-stream"}, timeout=600)
     if res.get("success") is False:
         raise MetaError(f"Facebook upload failed: {res}")
-    fin = call("POST", f"{GRAPH}/{v}/{page_id}/video_reels", page_token,
-               {"upload_phase": "finish", "video_id": vid, "video_state": "PUBLISHED", "description": caption})
+    params = {"upload_phase": "finish", "video_id": vid, "video_state": "PUBLISHED", "description": caption}
+    tagged = None
+    if place:
+        try:
+            fin = call("POST", f"{GRAPH}/{v}/{page_id}/video_reels", page_token, dict(params, place=place["id"]))
+            tagged = place.get("name")
+        except MetaError as e:
+            print(f"Facebook turned down the location tag ({str(e)[:160]}); posting without it.", file=sys.stderr)
+            fin = call("POST", f"{GRAPH}/{v}/{page_id}/video_reels", page_token, params)
+    else:
+        fin = call("POST", f"{GRAPH}/{v}/{page_id}/video_reels", page_token, params)
     if not fin.get("success", True):
         raise MetaError(f"Facebook didn't publish it: {fin}")
     link = None
@@ -156,7 +181,7 @@ def post_facebook(path, caption, page_id, page_token, v):
         time.sleep(5)
     if link and link.startswith("/"):
         link = "https://www.facebook.com" + link
-    return {"id": vid, "permalink": link}
+    return {"id": vid, "permalink": link, "place": tagged}
 
 
 def still_true(record, now):
@@ -215,14 +240,15 @@ def post(outdir, dry_run=False):
         print("Dry run: nothing posted.")
         return 0
     failed = []
+    place = place_tag()
     for k in todo:
         try:
             if k == "instagram":
                 if not ig_id:
                     raise MetaError("no Instagram account is connected to the Page")
-                res = post_instagram(path, caption, ig_id, user_token, v)
+                res = post_instagram(path, caption, ig_id, user_token, v, place=place)
             else:
-                res = post_facebook(path, caption, page_id, page_token, v)
+                res = post_facebook(path, caption, page_id, page_token, v, place=place)
             res["at"] = dv.bs.now_local().isoformat()
             record["posted"][k] = res
             print(f"Posted on {k}: {res.get('permalink') or res.get('id')}")
@@ -251,6 +277,19 @@ def check():
         return 1
     ig = call("GET", f"{GRAPH}/{v}/{ig_id}", user_token, {"fields": "username,name"})
     print(f"Instagram: @{ig.get('username')} ({ig_id}).")
+    place = place_tag()
+    if place:
+        try:
+            info = call("GET", f"{GRAPH}/{v}/{place['id']}", page_token, {"fields": "name,location"})
+            loc = info.get("location") or {}
+            msg = (f"Location tag: {info.get('name')} ({place['id']}): {loc.get('city')}, {loc.get('state')}, "
+                   f"{loc.get('latitude')}, {loc.get('longitude')}.")
+        except MetaError as e:
+            msg = (f"Location tag {place['id']} couldn't be read ({str(e)[:160]}). Posts still try it and post "
+                   f"without it if Facebook or Instagram says no.")
+        print(msg)
+        if os.environ.get("GITHUB_ACTIONS"):
+            print(f"::notice title=Location tag::{msg}")
     print("The key works. Nothing was posted.")
     return 0
 
