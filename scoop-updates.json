@@ -242,8 +242,31 @@
   },
   "hourlyFrom": "2026-10-13T05:47:00-05:00"
  },
- "published": null,
+ "published": {
+  "time": "2026-10-13T13:17:00-05:00",
+  "alertKeys": [],
+  "alerts": [],
+  "changes": [
+   {
+    "k": "day 2026-10-13",
+    "was": "Tuesday",
+    "now": "This Afternoon",
+    "shortWas": "Sunny",
+    "shortNow": "Slight Chance Showers And Thunderstorms",
+    "field": "rain",
+    "from": 0,
+    "to": 20
+   }
+  ],
+  "off": [],
+  "paragraph": "Automatic update, 1:17 p.m.: Since the Scoop below was written, NWS has added a 20% chance of rain for this afternoon. Over the next 12 hours, NWS's hour-by-hour forecast has rain possible from midnight to 1 a.m. (up to 43%) and rain likely from 1 a.m. to 2 a.m. (up to 64%). There are no watches, warnings, or advisories for La Porte County right now."
+ },
  "alertRows": [],
  "missing": [],
- "updates": []
+ "updates": [
+  {
+   "time": "2026-10-13T13:17:00-05:00",
+   "why": "NWS forecast day 2026-10-13 rain 0->20"
+  }
+ ]
 }
