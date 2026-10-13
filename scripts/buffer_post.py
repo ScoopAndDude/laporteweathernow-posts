@@ -275,9 +275,18 @@ def save_if_changed(path, before, record):
         dv.save_json(path, record)
 
 
+def say(text, level="notice"):
+    """Prints a line; on GitHub it also goes at the top of the run's page (an annotation), so the result is
+    easy to see without opening the log."""
+    print(text)
+    if os.environ.get("GITHUB_ACTIONS") == "true":
+        clean = str(text).replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+        print(f"::{level} title=TikTok and X (Buffer)::{clean}")
+
+
 def note(record, text):
     record["bufferNote"] = text
-    print(text)
+    say(text, "warning" if text.startswith("Not posted") else "notice")
 
 
 def log_error(record, k, msg):
@@ -447,22 +456,28 @@ def run(vdir, sha, dry_run=False, now=None, key=None):
 def check():
     key = os.environ.get("BUFFER_API_KEY", "").strip()
     if not key:
-        print("The BUFFER_API_KEY secret isn't set yet, so TikTok and X are off (video/README.md has the steps).")
+        say("The BUFFER_API_KEY secret isn't set yet, so TikTok and X are off (video/README.md has the steps).", "warning")
         return 0
     cfg = dv.config()
-    accounts = find_accounts(key, cfg)
-    bad = 0
+    try:
+        accounts = find_accounts(key, cfg)
+    except Exception as e:
+        say(f"Buffer check failed: {str(e)[:300]}", "error")
+        return 1
+    bad, lines = 0, []
     for k in SERVICE:
         ch = accounts.get(k)
         on = (cfg.get("post") or {}).get(k)
         if not ch:
-            print(f"{NAMES[k]}: no account connected in Buffer." + ("" if on else " (Turned off in video/config.json.)"))
+            lines.append(f"{NAMES[k]}: no account named {account_names(cfg).get(k)!r} connected in Buffer"
+                         + ("." if on else " (turned off in video/config.json)."))
             bad += 1 if on else 0
         else:
             state = "needs reconnecting in Buffer" if ch.get("isDisconnected") or ch.get("isLocked") else "connected"
-            print(f"{NAMES[k]}: @{ch['name'].strip()} ({state}){'' if on else ', turned off in video/config.json'}.")
+            lines.append(f"{NAMES[k]}: @{ch['name'].strip()} ({state}){'' if on else ', turned off in video/config.json'}.")
             bad += 1 if (on and state != "connected") else 0
-    print("The key works. Nothing was posted." if not bad else "The key works, but fix the account(s) above.")
+    lines.append("The key works. Nothing was posted." if not bad else "The key works, but fix the account(s) above.")
+    say(" ".join(lines), "error" if bad else "notice")
     return 1 if bad else 0
 
 
