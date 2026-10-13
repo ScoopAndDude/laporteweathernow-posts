@@ -2,6 +2,9 @@
 # Reels, made every morning from the official NWS forecast and alerts and read by the weather radio's
 # voice. scripts/daily_video.py plans it and records the voice, scripts/video_render.py draws it, and
 # scripts/video_post.py posts it once the META_TOKEN secret is set (steps in video/README.md).
+# Since Oct. 12, 2026, scripts/buffer_post.py also sends it to TikTok and X through Buffer once the
+# BUFFER_API_KEY secret is set (same alert checks; once per platform per day). YouTube gets it from
+# tools/video/youtube-upload.gs.
 #
 # The newest video, its cover picture and video.json (what it said, where it was posted) go to the
 # "video" branch, which keeps only the newest, plus NOAA's normals and the radar map between runs.
@@ -15,7 +18,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "auto (the morning run), preview (make one now, don't post), force (make one now and post it), check (test the Meta key, post nothing)"
+        description: "auto (the morning run), preview (make one now, don't post), force (make one now and post it), check (test the Meta and Buffer keys, post nothing)"
         type: choice
         options: [auto, preview, force, check]
         default: auto
@@ -59,6 +62,12 @@ jobs:
           META_TOKEN: ${{ secrets.META_TOKEN }}
           META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
         run: python3 scripts/video_post.py --check
+
+      - name: Check the Buffer key for TikTok and X (posts nothing)
+        if: ${{ !cancelled() && env.MODE == 'check' }}
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+        run: python3 scripts/buffer_post.py --check
 
       - name: The last video's record (and the saved normals and map)
         if: env.MODE != 'check'
@@ -131,8 +140,31 @@ jobs:
           echo "Saved to the $BRANCH branch: $(ls *.mp4) ($(du -h *.mp4 | cut -f1))."
           python3 -c "import json; r=json.load(open('video.json')); print(r.get('postNote') or 'Not posted (preview).'); [print(k, v.get('permalink') or v.get('id')) for k, v in (r.get('posted') or {}).items()]"
 
-      - name: Say so if posting failed
-        if: steps.post.outcome == 'failure'
+      - name: Send it to TikTok and X (Buffer)
+        id: buffer
+        if: env.MODE == 'auto' || env.MODE == 'force'
+        continue-on-error: true
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          TOKEN: ${{ github.token }}
         run: |
-          echo "The video was made and saved, but posting failed; see video.json on the video branch."
+          # Works on the video branch as it stands now: the video just made, or this morning's when this is
+          # the 6:45 second chance. It posts only what's still missing today, and Buffer fetches the video
+          # from this exact commit. What it posted goes into video.json on the branch (one small commit).
+          VB="$RUNNER_TEMP/video-branch"
+          if ! git fetch -q --depth=1 origin video 2>/dev/null; then echo "No video branch yet."; exit 0; fi
+          git worktree add -q --detach "$VB" FETCH_HEAD
+          STATUS=0
+          python3 scripts/buffer_post.py "$VB" --sha "$(git -C "$VB" rev-parse HEAD)" || STATUS=$?
+          if ! git -C "$VB" diff --quiet; then
+            git -C "$VB" -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -q -a -m "Daily video: TikTok and X (Buffer), $(TZ=America/Chicago date '+%Y-%m-%d %H:%M %Z')"
+            git -C "$VB" push -q "https://x-access-token:${TOKEN}@github.com/${{ github.repository }}.git" HEAD:video
+          fi
+          exit $STATUS
+
+      - name: Say so if posting failed
+        if: steps.post.outcome == 'failure' || steps.buffer.outcome == 'failure'
+        run: |
+          echo "Posting failed somewhere (Facebook/Instagram or TikTok/X); see postNote, bufferNote and errors in video.json on the video branch."
           exit 1

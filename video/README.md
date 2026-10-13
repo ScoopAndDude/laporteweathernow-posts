@@ -1,6 +1,6 @@
 # The Daily Video
 
-A short La Porte forecast video (about 20 to 30 seconds, vertical 1080x1920) made by itself every morning and posted as a Reel on the La Porte Weather Now Facebook Page and Instagram. Added Oct. 8, 2026 (Scoop: "Make it automatic").
+A short La Porte forecast video (about 20 to 30 seconds, vertical 1080x1920) made by itself every morning and posted as a Reel on the La Porte Weather Now Facebook Page and Instagram, as a YouTube Short, and on TikTok and X. Added Oct. 8, 2026 (Scoop: "Make it automatic"); TikTok and X added Oct. 12, 2026 (Scoop: "LPWN on autopilot").
 
 ## What happens each morning
 1. **6:00 AM Central**, the Timer starts the "Daily video" job (`.github/workflows/daily-video.yml`; 6:45 is a second chance, and two GitHub schedules back it up). One video a day, made only between 5:45 and 9:30 AM.
@@ -9,6 +9,7 @@ A short La Porte forecast video (about 20 to 30 seconds, vertical 1080x1920) mad
 4. `scripts/video_render.py` draws it: the opening line, today (with an hour-by-hour strip), tonight (with sunset and sunrise), the radar when there's rain or snow on it (NOAA's MRMS radar over a U.S. Census county map), the next three days, and the La Porte Weather Now card.
 5. `scripts/video_post.py` posts it to Facebook and Instagram (once the Meta key is in; see below).
 6. The video, its cover picture and `video.json` (what it said, the caption, where it was posted) go to the `video` branch. Only the newest is kept.
+7. `scripts/buffer_post.py` sends that same video to TikTok and X through Buffer (once the Buffer key is in; see below), and adds where it went to `video.json` on the branch. If Buffer or TikTok has a hiccup, the 6:45 run tries once more. YouTube picks the video up from the branch on its own (see YouTube Shorts below).
 
 Watch today's video: `https://raw.githubusercontent.com/ScoopAndDude/laporteweathernow-posts/video/video.json` names the file; the MP4 is next to it on the `video` branch.
 
@@ -33,7 +34,15 @@ Meta's own Graph API is free for posting to your own Page and Instagram. It need
 ## YouTube Shorts (one time, about 5 minutes, Scoop)
 YouTube's own API is free, and since 2026 uploads from new, unverified projects are no longer held as private. A small Google Apps Script in the business Google account uploads each morning's video to youtube.com/@laporteweathernow as a Short (6:00-9:30 AM, once a day, with the same alert checks as above). The code and the steps are at the top of `tools/video/youtube-upload.gs`: new project at script.google.com, paste, add the "YouTube Data API v3" service, run `setup`, and Allow.
 
-TikTok and X aren't automatic: TikTok keeps posts from new apps private until TikTok audits the app, and X's posting API isn't free. Today's video is on the `video` branch each morning for posting by hand.
+## TikTok and X through Buffer (one time, about 3 minutes, Scoop)
+TikTok keeps posts from new, unaudited apps private, and X's own posting API isn't free, so these two go through Buffer, which already has the La Porte Weather Now TikTok (@laporteweathernow) and X (@ScoopAndDude) connected. Buffer's API is free on the Free plan (one key, 3,000 requests a month; this uses about 30 a day at most). It needs one key, saved as a GitHub secret. Never paste the key into a chat.
+
+1. Go to **publish.buffer.com/settings/api** and log in to Buffer.
+2. Create a new API key (name it `LPWN Daily Video`) and copy it.
+3. On GitHub: **ScoopAndDude/laporteweathernow-posts > Settings > Secrets and variables > Actions > New repository secret.** Name: `BUFFER_API_KEY`. Secret: paste the key. **Add secret.**
+4. Check it: Actions > **Daily video** > Run workflow, mode `check`. It lists the TikTok and X accounts it reaches and posts nothing (or tell Claude the key is in and Claude runs it).
+
+TikTok gets the same caption as Facebook and Instagram. X gets a short version under 280 characters: the first line, any official alerts (never cut in the middle), today and tonight, and the link. The accounts are named in `video/config.json` under `buffer.accounts`; if one is reconnected under a new name in Buffer, change it there. If the key stops working (Buffer answers 401), make a new one and replace the secret.
 
 To stop posting on one platform, set it to `false` in `video/config.json` (the video is still made). To stop the video entirely, take the `daily-video.yml` line out of `scripts/timer.py` and disable the workflow in Actions.
 
@@ -41,11 +50,11 @@ To stop posting on one platform, set it to `false` in `video/config.json` (the v
 Actions > **Daily video** > Run workflow:
 - `preview`: makes one now without posting; it goes to the `video-preview` branch. Tick "radar" to show the radar scene even on a dry morning (for checking it).
 - `force`: makes one now and posts it (still once per platform per day).
-- `check`: tests the Meta key (which Page and Instagram account it reaches); posts nothing.
+- `check`: tests the Meta key (which Page and Instagram account it reaches) and the Buffer key (which TikTok and X accounts); posts nothing.
 
 ## Files
 - `config.json`: which platforms to post on, Meta's Graph API version, the voice speed.
 - `fonts/`: Inter (SIL Open Font License, see `fonts/LICENSE-OFL.txt`).
 - `logo-512.png`, `logo-mark.png`: the LPWN logo.
 - `basemap-fallback.json`: a simple county map, used only if the Census Bureau's detailed map can't be downloaded.
-- Tests: `python3 tools/video/test_plan.py` (no network needed).
+- Tests: `python3 tools/video/test_plan.py` and `python3 tools/video/test_buffer.py` (no network needed).
