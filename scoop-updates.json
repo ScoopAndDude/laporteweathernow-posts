@@ -243,7 +243,7 @@
   "hourlyFrom": "2026-10-14T05:47:00-05:00"
  },
  "published": {
-  "time": "2026-10-14T15:17:00-05:00",
+  "time": "2026-10-14T16:17:00-05:00",
   "alertKeys": [],
   "alerts": [],
   "changes": [
@@ -255,7 +255,7 @@
     "shortNow": "Mostly Cloudy",
     "field": "rain",
     "from": 40,
-    "to": 20
+    "to": 0
    },
    {
     "k": "day 2026-10-15",
@@ -268,8 +268,10 @@
     "to": 65
    }
   ],
-  "off": [],
-  "paragraph": "Automatic update, 3:17 p.m.: Since the Scoop below was written, NWS has lowered its chance of rain for this afternoon to 20% (from 40% for the whole day) and raised its high for Thursday to 65 (from 61). At 2:35 p.m. the La Porte airport reported 68 degrees. There are no watches, warnings, or advisories for La Porte County right now."
+  "off": [
+   "warm"
+  ],
+  "paragraph": "Automatic update, 4:17 p.m.: Since the Scoop below was written, NWS has taken the rain out of its forecast for this afternoon (it had 40% for the whole day) and raised its high for Thursday to 65 (from 61). It's running warmer than NWS's earlier hour-by-hour forecast: at 3:35 p.m. the La Porte airport reported clear and 68 degrees, where that forecast had about 63. There are no watches, warnings, or advisories for La Porte County right now."
  },
  "alertRows": [],
  "missing": [],
@@ -297,6 +299,10 @@
   {
    "time": "2026-10-14T15:17:00-05:00",
    "why": "NWS forecast day 2026-10-14 rain 40->20; day 2026-10-15 temp 61->65"
+  },
+  {
+   "time": "2026-10-14T16:17:00-05:00",
+   "why": "NWS forecast day 2026-10-14 rain 40->0; day 2026-10-15 temp 61->65; airport running warm"
   }
  ]
 }
