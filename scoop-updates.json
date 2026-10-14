@@ -243,9 +243,17 @@
   "hourlyFrom": "2026-10-13T05:47:00-05:00"
  },
  "published": {
-  "time": "2026-10-13T20:47:00-05:00",
-  "alertKeys": [],
-  "alerts": [],
+  "time": "2026-10-13T22:32:00-05:00",
+  "alertKeys": [
+   "Special Weather Statement | northern La Porte County | no set end"
+  ],
+  "alerts": [
+   {
+    "key": "Special Weather Statement | northern La Porte County | no set end",
+    "event": "Special Weather Statement",
+    "where": "northern La Porte County"
+   }
+  ],
   "changes": [
    {
     "k": "day 2026-10-14",
@@ -258,12 +266,21 @@
     "to": 20
    }
   ],
-  "off": [
-   "cool"
-  ],
-  "paragraph": "Automatic update, 8:47 p.m.: Since the Scoop below was written, NWS has lowered its chance of rain for Wednesday to 20% (from 40%). It's running cooler than NWS's earlier hour-by-hour forecast: at 8:15 p.m. the La Porte airport reported clear and 64 degrees, where that forecast had about 70. Over the next 12 hours, NWS's hour-by-hour forecast has rain possible from midnight to 1 a.m. (up to 42%), rain likely from 1 a.m. to 3 a.m. (up to 71%) and rain possible from 3 a.m. to 4 a.m. (up to 42%). There are no watches, warnings, or advisories for La Porte County right now."
+  "off": [],
+  "paragraph": "Automatic update, 10:32 p.m.: NWS has a Special Weather Statement for northern La Porte County. We pass these along as NWS issues them; details are at weather.gov/iwx. Since the Scoop below was written, NWS has lowered its chance of rain for Wednesday to 20% (from 40%). At 9:55 p.m. the La Porte airport reported clear and 64 degrees. Over the next 12 hours, NWS's hour-by-hour forecast has rain possible from midnight to 1 a.m. (up to 43%), rain likely from 1 a.m. to 4 a.m. (up to 72%) and rain possible from 4 a.m. to 5 a.m. (up to 45%)."
  },
- "alertRows": [],
+ "alertRows": [
+  {
+   "id": "urn:oid:2.49.0.1.840.0.37039cc33c19f430c7bbc20ac1fba8bcd4e81df5.001.1",
+   "event": "Special Weather Statement",
+   "area": "Northern La Porte; Eastern St. Joseph; Western St. Joseph; Cass; St. Joseph; Northern Berrien; Southern Berrien",
+   "onset": "2026-10-13T23:18:00-04:00",
+   "ends": null,
+   "expires": "2026-10-14T00:00:00-04:00",
+   "sent": "2026-10-13T23:18:00-04:00",
+   "messageType": "Alert"
+  }
+ ],
  "missing": [],
  "updates": [
   {
@@ -281,6 +298,10 @@
   {
    "time": "2026-10-13T20:47:00-05:00",
    "why": "airport running cool"
+  },
+  {
+   "time": "2026-10-13T22:32:00-05:00",
+   "why": "alerts changed (Special Weather Statement | northern La Porte County | no set end)"
   }
  ]
 }
