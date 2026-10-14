@@ -1,6 +1,6 @@
 {
  "about": "Official weather for La Porte, Indiana, saved by a GitHub job for the Daily Scoop (laporteweathernow.com/daily-scoop). Copied from NWS, SPC and WPC as-is; see scripts/nws_snapshot.py.",
- "fetched": "2026-10-14T05:02:07-05:00",
+ "fetched": "2026-10-14T05:41:37-05:00",
  "place": "La Porte, IN",
  "lat": 41.6081,
  "lon": -86.7189,
@@ -23,24 +23,24 @@
  },
  "observation": {
   "station": "KPPO (La Porte Municipal Airport)",
-  "time": "2026-10-14T04:15:00-05:00",
+  "time": "2026-10-14T05:15:00-05:00",
   "weather": "Fog/Mist",
   "temperatureF": 64,
   "dewpointF": 64,
   "humidityPercent": 100,
   "wind": {
-   "from": "ENE",
-   "degrees": 60,
-   "mph": 3,
+   "from": "NNE",
+   "degrees": 30,
+   "mph": 2,
    "gustMph": null
   },
   "visibilityMiles": 1.0,
   "pressureInHg": 29.91,
-  "metar": "KPPO 140915Z AUTO 06003KT 1SM BR OVC003 18/18 A2991 RMK AO2 PRESFR"
+  "metar": "KPPO 141015Z AUTO 03002KT 1SM BR OVC003 18/18 A2991 RMK AO2 VIS 3/4V1 1/2"
  },
  "forecast": {
   "updated": "2026-10-14T06:29:58+00:00",
-  "generated": "2026-10-14T10:02:07+00:00",
+  "generated": "2026-10-14T10:02:05+00:00",
   "timesNote": "Clock times in the forecast wording are already in America/Chicago (La Porte's real time). NWS writes them in America/Indiana/Indianapolis, which it has on file for La Porte by mistake.",
   "periods": [
    {
@@ -268,9 +268,9 @@
   "nearbyCountiesFullText": []
  },
  "discussion": {
-  "issued": "2026-10-14T02:29:00-05:00",
-  "ageHours": 2.6,
-  "text": "000\nFXUS63 KIWX 140729\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n329 AM EDT Wed Oct 14 2026\n\n.KEY MESSAGES...\n\n- A cold front will continue sliding southeastward today with\n  some showers possible as it does so.\n\n- A lull in greater rain chances is expected later this\n  afternoon into tonight, but another round of showers and \n  storms is expected Thursday and Thursday night.\n\n- There is a Marginal Risk of severe storms (mainly wind) along\n  and south of US Route 24 for Thursday evening. Confidence in \n  severe weather is low.\n\n- Turning much cooler and windy for Friday with some lake effect\n  rain showers.\n\n&&\n\n.DISCUSSION...\nIssued at 326 AM EDT Wed Oct 14 2026\n\nWith a ridge across SE TX and surface high pressure in the SE CONUS, \nwaves are forecast to ride atop the ridge and then work to break \ndown the ridge during this mid to late week period. As such, the \nshortwave that helped to force the overnight showers and storms \nmoves quickly eastward toward the northeast, which allows a cold \nfront to slide southeastward into the Ohio River Valley pushing \nshowers southeastward out of the area early this morning. The \nsubsidence behind this wave is expected to quell any substantial \ndevelopment behind it for the rest of the day, today. Meanwhile, an \narea of low pressure rides northward along the stalled front \nstretched down into the southern Plains and allows the portion of \nthe front stalled to our southwest to ride northeastward as a warm \nfront as early as late tonight into early Thursday. So, while dew \npoints fall below 60F across the whole area tonight, they are \nexpected to moisten back above 60F again Thursday afternoon and \nnight. It is interesting to see a stronger wave on the ECMWF bring \nan inch of rain accums over 6hrs right up to our doorstep Thursday \nmorning and this appears to be from some stronger large scale \nascent. This large scale ascent continues through the area during \nthe afternoon. This is different on the GFS as it splits the \nstronger area of large scale ascent into two separate smaller areas \nto the north and south and then the large scale ascent during the \nafternoon is more diffuse or non-existent. This provides some \nuncertainty on our marginal chances for severe weather Thursday \nafternoon/evening, especially on its location. Instability appears \nto get into areas south of US-24 on both the ECMWF and the NAM (500 \nJ/kg or less), but not the GFS. Instability is elevated and the \ncolumn looks very moist so this would likely be a heavy rain \nscenario with some potential for gusty to damaging wind if it is \nable to get through the inversion. Models handle the forcing during \nthis period differently so placement of rain bulls-eyes and \nintensity of them are all over the place across the area. The GFS \nhas nearly rain during the 00-06z timeframe Thursday night, \nwhereas the ECMWF has a bulls-eye over 0.5\" nearby. \n\nNow, at the same time as an upper low washes out as it moves \nnortheastward towards the area Thursday, a deep mid level trough \ndives southward and pushes the remnant energy northeastward quickly \nand swings through later Friday through Friday night. This is \nfollowed by a strong 1040 mb surface high diving into the \nsoutheastern US. So we quickly have rain (with minimal convective \ncomponent by this point) overtaken by lake enhanced rain during the \nday Friday. NAM Bufkit soundings indicate delta-Ts as much as 20 to \n30F degrees using lake temps around 62 degrees. Lake induced \ninversions rise up to 700 mb on these forecast soundings, which \nfairly incredible. Deeper moisture profiles arrive Thursday night \nand continue into early Friday morning before drier surface air \nbegins to work in and cut off better rain formation. Given the \nstrength of the surface high, much cooler air is able to enter the \narea and low temps Friday night and Saturday night will fall into \nthe 30s. This turns the mind to frost possibilities, but Friday \nnight looks like there will still be a bit of gradient around and \nprobably the wind is still slackening at this point. Plus, we'll \nstill have lake clouds dissipating. A slightly better chance for \nfrost occurs Saturday night, but we'll have to see if winds are able \nto slacken enough at that point. \n\nFrom Saturday night, flow across the CONUS appears to slacken and \nthere is a period where nearly zonal flow is established until early \nthe following weak as another deep trough enters the western CONUS. \nBecause return flow becomes reestablished, expect a warming trend \nwith a return to seasonable highs at least by Sunday, if not by \nMonday.\n\n&&\n\n.AVIATION /06Z TAFS THROUGH 06Z THURSDAY/...\nIssued at 128 AM EDT Wed Oct 14 2026\n\nSlow moving front will remain the focus for showers and\nthunderstorms at KSBN over at least the next 2 to 4 hours. Have\nwent with temp thunder through 8Z, but this may need to be\nextended. No changes to KFWA for now, leaving thunder mention\nout but based on some of the upstream trends could need to\nintroduce. \n\nConvection will depart by morning with stratus building in with\nMVFR cigs. Improving conditions after 00Z.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...None.\n\n&&\n\n$$\n\nDISCUSSION...Roller\nAVIATION...Fisher"
+  "issued": "2026-10-14T05:14:00-05:00",
+  "ageHours": 0.5,
+  "text": "000\nFXUS63 KIWX 141014\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n614 AM EDT Wed Oct 14 2026\n\n.KEY MESSAGES...\n\n- A cold front will continue sliding southeastward today with\n  some showers possible as it does so.\n\n- A lull in greater rain chances is expected later this\n  afternoon into tonight, but another round of showers and \n  storms is expected Thursday and Thursday night.\n\n- There is a Marginal Risk of severe storms (mainly wind) along\n  and south of US Route 24 for Thursday evening. Confidence in \n  severe weather is low.\n\n- Turning much cooler and windy for Friday with some lake effect\n  rain showers.\n\n&&\n\n.DISCUSSION...\nIssued at 326 AM EDT Wed Oct 14 2026\n\nWith a ridge across SE TX and surface high pressure in the SE CONUS, \nwaves are forecast to ride atop the ridge and then work to break \ndown the ridge during this mid to late week period. As such, the \nshortwave that helped to force the overnight showers and storms \nmoves quickly eastward toward the northeast, which allows a cold \nfront to slide southeastward into the Ohio River Valley pushing \nshowers southeastward out of the area early this morning. The \nsubsidence behind this wave is expected to suppress any \nsubstantial development behind it for the rest of the day, \ntoday. However, some isolated to scattered light rain cannot be\nruled out, especially south of US-24. Meanwhile, an area of low\npressure rides northward along the stalled front stretched down\ninto the southern Plains and allows the portion of the front \nstalled to our southwest to ride northeastward as a warm front \nas early as late tonight into early Thursday. So, while dew \npoints fall below 60F across the whole area tonight, they are \nexpected to moisten back above 60F again Thursday afternoon and \nnight. It is interesting to see a stronger wave on the ECMWF \nbring an inch of rain accums over 6hrs right up to our doorstep \nThursday morning and this appears to be from some stronger large\nscale ascent. This large scale ascent continues through the \narea during the afternoon. This is different on the GFS as it \nsplits the stronger area of large scale ascent into two separate\nsmaller areas to the north and south and then the large scale \nascent during the afternoon is more diffuse or non- existent. \nThis provides some uncertainty on our marginal chances for \nsevere weather Thursday afternoon/evening, especially on its \nlocation. Instability appears to get into areas south of US-24 \non both the ECMWF and the NAM (500 J/kg or less), but not the \nGFS. Instability is elevated and the column looks very moist so \nthis would likely be a heavy rain scenario with some potential \nfor gusty to damaging wind if it is able to get through the \ninversion. Models handle the forcing during this period \ndifferently so placement of rain bulls-eyes and intensity of \nthem are all over the place across the area. The GFS has nearly \nrain during the 00-06z timeframe Thursday night, whereas the \nECMWF has a bulls-eye over 0.5\" nearby. \n\nNow, at the same time as an upper low washes out as it moves \nnortheastward towards the area Thursday, a deep mid level trough \ndives southward and pushes the remnant energy northeastward quickly \nand swings through later Friday through Friday night. This is \nfollowed by a strong 1040 mb surface high diving into the \nsoutheastern US. So we quickly have rain (with minimal convective \ncomponent by this point) overtaken by lake enhanced rain during the \nday Friday. NAM Bufkit soundings indicate delta-Ts as much as 20 to \n30F degrees using lake temps around 62 degrees. Lake induced \ninversions rise up to 700 mb on these forecast soundings, which \nfairly incredible. Deeper moisture profiles arrive Thursday night \nand continue into early Friday morning before drier surface air \nbegins to work in and cut off better rain formation. Given the \nstrength of the surface high, much cooler air is able to enter the \narea and low temps Friday night and Saturday night will fall into \nthe 30s. This turns the mind to frost possibilities, but Friday \nnight looks like there will still be a bit of gradient around and \nprobably the wind is still slackening at this point. Plus, we'll \nstill have lake clouds dissipating. A slightly better chance for \nfrost occurs Saturday night, but we'll have to see if winds are able \nto slacken enough at that point. \n\nFrom Saturday night, flow across the CONUS appears to slacken and \nthere is a period where nearly zonal flow is established until early \nthe following weak as another deep trough enters the western CONUS. \nBecause return flow becomes reestablished, expect a warming trend \nwith a return to seasonable highs at least by Sunday, if not by \nMonday.\n\n&&\n\n.AVIATION /12Z TAFS THROUGH 12Z THURSDAY/...\nIssued at 600 AM EDT Wed Oct 14 2026\n\nShowers and storms have cleared both locations. Some pockets of\nstratus and fog have developed at KSBN and could materialize at\nKFWA. Beyond the first few hours confidence on MVFR cigs is\nsomewhat low as upstream obs not showing a whole lot of impacts.\nWill keep with higher end MVFR for the time being.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...None.\n\n&&\n\n$$\n\nDISCUSSION...Roller\nAVIATION...Fisher"
  },
  "hazardousWeatherOutlook": null,
  "hydrologicOutlook": null,
@@ -474,12 +474,12 @@
    "ecmwf_ifs025": "European ECMWF"
   },
   "bias": {
-   "days": 14,
+   "days": 15,
    "ready": true,
    "high": -2.9,
-   "highDays": 14,
-   "low": 2.4,
-   "lowDays": 14,
+   "highDays": 15,
+   "low": 2.3,
+   "lowDays": 15,
    "note": "Average of (forecast minus airport reading) over the last 30 graded days; positive means we ran warm. Used to nudge the model blend once 14+ days are graded."
   },
   "days": [
@@ -497,12 +497,12 @@
       "rain": 44
      },
      "ncep_hrrr_conus": {
-      "high": 66,
+      "high": 65,
       "low": 55,
       "rain": 44
      },
      "gfs_seamless": {
-      "high": 66,
+      "high": 65,
       "low": 55,
       "rain": 44
      },
@@ -521,10 +521,10 @@
      "low": 54
     },
     "spread": {
-     "high": 6,
+     "high": 7,
      "low": 4
     },
-    "note": "our blend's high (69) differs from NWS (66) by 3 degrees; the models disagree on the high by 6 degrees (less certain)"
+    "note": "our blend's high (69) differs from NWS (66) by 3 degrees; the models disagree on the high by 7 degrees (less certain)"
    },
    {
     "date": "2026-10-15",
