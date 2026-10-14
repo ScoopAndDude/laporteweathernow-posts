@@ -1,0 +1,186 @@
+{
+  "about": "The Daily Video for La Porte Weather Now (scripts/daily_video.py): official NWS weather, read aloud.",
+  "date": "2026-10-13",
+  "planned": "2026-10-13T19:00:00-05:00",
+  "source": "nws",
+  "forecastUpdated": "2026-10-13T23:44:44+00:00",
+  "observationTime": "2026-10-13T18:35:00-05:00",
+  "alerts": [],
+  "shortFused": [],
+  "hook": {
+    "kind": "storms",
+    "score": 70,
+    "big": "Storms",
+    "small": "possible until 6 a.m. · 20%",
+    "say": "Thunderstorms are possible until 6 a.m., a 20% chance.",
+    "when": "Wednesday"
+  },
+  "hookOptions": [
+    {
+      "kind": "storms",
+      "score": 70,
+      "say": "Thunderstorms are possible until 6 a.m., a 20% chance."
+    },
+    {
+      "kind": "change",
+      "score": 62,
+      "say": "About 19° cooler than yesterday, with a high near 69°."
+    },
+    {
+      "kind": "plain",
+      "score": 10,
+      "say": "Wednesday in La Porte: a slight chance of showers and thunderstorms, then mostly cloudy, high near 69°."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "hook",
+      "label": "LA PORTE · TUESDAY, OCT. 13",
+      "big": "Storms",
+      "small": "possible until 6 a.m. · 20%",
+      "icon": "storm",
+      "tone": "storm",
+      "hookKind": "storms",
+      "say": "Thunderstorms are possible until 6 a.m., a 20% chance.",
+      "spoken": "Thunderstorms are possible until six in the morning, a twenty percent chance.",
+      "voiceFile": "voice/hook.wav",
+      "voiceSeconds": 4.5,
+      "start": 0.0,
+      "duration": 4.9,
+      "voiceAt": 0.04
+    },
+    {
+      "id": "tonight",
+      "sun": {
+        "set": "6:09 p.m.",
+        "rise": "6:58 a.m."
+      },
+      "kind": "period",
+      "title": "TONIGHT",
+      "date": "Tuesday, Oct. 13",
+      "temp": 61,
+      "tempLabel": "LOW",
+      "icon": "storm",
+      "text": "Mostly cloudy, then a slight chance of showers and thunderstorms",
+      "sentence": "Mostly cloudy, then a 70% chance of showers and thunderstorms from 1 a.m. to 2 a.m.",
+      "rain": {
+        "pct": 70,
+        "what": "rain",
+        "window": "from 1 a.m. to 2 a.m."
+      },
+      "note": null,
+      "hours": [
+        {
+          "label": "7 PM",
+          "temp": 74,
+          "pop": 8
+        },
+        {
+          "label": "9 PM",
+          "temp": 69,
+          "pop": 12
+        },
+        {
+          "label": "11 PM",
+          "temp": 66,
+          "pop": 22
+        },
+        {
+          "label": "1 AM",
+          "temp": 65,
+          "pop": 71
+        },
+        {
+          "label": "3 AM",
+          "temp": 64,
+          "pop": 42
+        }
+      ],
+      "say": "Tonight: a 70% chance of rain. Low 61. Wednesday: high 69.",
+      "next": {
+        "name": "Wednesday",
+        "temp": 69,
+        "tempLabel": "HIGH"
+      },
+      "spoken": "Tonight: a seventy percent chance of rain. Low sixty-one. Wednesday: high sixty-nine.",
+      "voiceFile": "voice/tonight.wav",
+      "voiceSeconds": 5.7,
+      "start": 4.9,
+      "duration": 6.1,
+      "voiceAt": 5.0
+    },
+    {
+      "id": "days",
+      "kind": "days",
+      "title": "NEXT 3 DAYS",
+      "days": [
+        {
+          "name": "Thu",
+          "day": "Thursday",
+          "hi": 65,
+          "lo": 48,
+          "pop": 90,
+          "icon": "storm",
+          "text": "Showers and thunderstorms",
+          "short": "Showers And Thunderstorms",
+          "star": false
+        },
+        {
+          "name": "Fri",
+          "day": "Friday",
+          "hi": 56,
+          "lo": 39,
+          "pop": 50,
+          "icon": "sun-rain",
+          "text": "A chance of showers",
+          "short": "Chance Rain Showers",
+          "star": false
+        },
+        {
+          "name": "Sat",
+          "day": "Saturday",
+          "hi": 58,
+          "lo": 36,
+          "pop": null,
+          "icon": "sun",
+          "text": "Sunny",
+          "short": "Sunny",
+          "star": false
+        }
+      ],
+      "say": "Thursday: showers and thunderstorms, 65.",
+      "spoken": "Thursday: showers and thunderstorms, sixty-five.",
+      "voiceFile": "voice/days.wav",
+      "voiceSeconds": 3.35,
+      "start": 11.0,
+      "duration": 3.75,
+      "voiceAt": 11.1
+    },
+    {
+      "id": "end",
+      "kind": "end",
+      "say": "laporteweathernow.com.",
+      "spoken": "La Port Weather Now dot com.",
+      "voiceFile": "voice/end.wav",
+      "voiceSeconds": 2.02,
+      "start": 14.75,
+      "duration": 2.42,
+      "voiceAt": 14.85
+    }
+  ],
+  "caption": "La Porte weather for Tuesday, Oct. 13, from the National Weather Service:\nTonight: Mostly cloudy, then a 70% chance of showers and thunderstorms from 1 a.m. to 2 a.m. Low 61.\nWednesday: A 20% chance of showers and thunderstorms until 6 a.m., then mostly cloudy. High 69.\nThursday: Showers and thunderstorms, high 65. Friday: A chance of showers, high 56. Saturday: Sunny, high 58.\nToday's Daily Scoop: One more summer-like day near 83, then showers and storms late tonight\nFree forecast every morning: laporteweathernow.com\nNo hype. Just the forecast.\n#LaPorte #LaPorteIndiana #LaPorteCounty #IndianaWeather #NWIndiana",
+  "words": 35,
+  "mode": "preview",
+  "normalsStation": {
+    "id": "USC00124837",
+    "name": "LAPORTE, IN US",
+    "km": 1.0
+  },
+  "seconds": 17.17,
+  "voice": "Kokoro-82M af_heart, speed 1.1",
+  "video": "laporte-2026-10-13.mp4",
+  "cover": "cover.jpg",
+  "bytes": 7572277,
+  "rendered": "2026-10-13T19:01:40-05:00"
+}
