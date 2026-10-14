@@ -243,12 +243,23 @@
   "hourlyFrom": "2026-10-13T05:47:00-05:00"
  },
  "published": {
-  "time": "2026-10-13T15:02:00-05:00",
+  "time": "2026-10-13T19:32:00-05:00",
   "alertKeys": [],
   "alerts": [],
-  "changes": [],
+  "changes": [
+   {
+    "k": "day 2026-10-14",
+    "was": "Wednesday",
+    "now": "Wednesday",
+    "shortWas": "Chance Showers And Thunderstorms then Mostly Cloudy",
+    "shortNow": "Slight Chance Showers And Thunderstorms then Mostly Cloudy",
+    "field": "rain",
+    "from": 40,
+    "to": 20
+   }
+  ],
   "off": [],
-  "paragraph": "Automatic update, 3:02 p.m.: NWS's forecast is back in line with the Scoop below. At 2:35 p.m. the La Porte airport reported clear and 82 degrees. Over the next 12 hours, NWS's hour-by-hour forecast has rain possible from 11 p.m. to 1 a.m. (up to 43%) and rain likely from 1 a.m. to 4 a.m. (up to 64%). There are no watches, warnings, or advisories for La Porte County right now."
+  "paragraph": "Automatic update, 7:32 p.m.: Since the Scoop below was written, NWS has lowered its chance of rain for Wednesday to 20% (from 40%). Over the next 12 hours, NWS's hour-by-hour forecast has rain possible from midnight to 1 a.m. (up to 42%), rain likely from 1 a.m. to 3 a.m. (up to 71%) and rain possible from 3 a.m. to 4 a.m. (up to 42%). There are no watches, warnings, or advisories for La Porte County right now."
  },
  "alertRows": [],
  "missing": [],
@@ -260,6 +271,10 @@
   {
    "time": "2026-10-13T15:02:00-05:00",
    "why": "NWS forecast back in line with the Scoop"
+  },
+  {
+   "time": "2026-10-13T19:32:00-05:00",
+   "why": "NWS forecast day 2026-10-14 rain 40->20"
   }
  ]
 }
