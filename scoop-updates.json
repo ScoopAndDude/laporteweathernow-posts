@@ -243,9 +243,17 @@
   "hourlyFrom": "2026-10-15T05:47:00-05:00"
  },
  "published": {
-  "time": "2026-10-15T11:17:00-05:00",
-  "alertKeys": [],
-  "alerts": [],
+  "time": "2026-10-15T12:32:00-05:00",
+  "alertKeys": [
+   "Wind Advisory | La Porte County | 2026-10-16 22:00"
+  ],
+  "alerts": [
+   {
+    "key": "Wind Advisory | La Porte County | 2026-10-16 22:00",
+    "event": "Wind Advisory",
+    "where": "La Porte County"
+   }
+  ],
   "changes": [
    {
     "k": "night 2026-10-15",
@@ -269,14 +277,29 @@
    }
   ],
   "off": [],
-  "paragraph": "Automatic update, 11:17 a.m.: Since the Scoop below was written, NWS has lowered its low for tonight to 47 (from 52) and raised its chance of rain for tonight to 90% (from 60%). Over the next 12 hours, NWS's hour-by-hour forecast has rain possible from 1 p.m. to 2 p.m. (up to 39%), rain likely from 2 p.m. to 9 p.m. (up to 93%) and rain possible from 9 p.m. to 11 p.m. (up to 46%). There are no watches, warnings, or advisories for La Porte County right now."
+  "paragraph": "Automatic update, 12:32 p.m.: NWS has a Wind Advisory for La Porte County from 1 p.m. Friday until 10 p.m. Friday. We pass these along as NWS issues them; details are at weather.gov/iwx. Since the Scoop below was written, NWS has lowered its low for tonight to 47 (from 52) and raised its chance of rain for tonight to 90% (from 60%). Over the next 12 hours, NWS's hour-by-hour forecast has rain possible from 1 p.m. to 2 p.m. (up to 39%), rain likely from 2 p.m. to 9 p.m. (up to 93%), rain possible from 9 p.m. to 11 p.m. (up to 46%) and rain possible from midnight to 1 a.m. (up to 48%)."
  },
- "alertRows": [],
+ "alertRows": [
+  {
+   "id": "urn:oid:2.49.0.1.840.0.1eee3d35f3e04f5fd2577f3f4609dfc51454a471.001.1",
+   "event": "Wind Advisory",
+   "area": "Northern La Porte; Southern La Porte; Northern Berrien; Southern Berrien",
+   "onset": "2026-10-16T14:00:00-04:00",
+   "ends": "2026-10-16T23:00:00-04:00",
+   "expires": "2026-10-16T01:30:00-04:00",
+   "sent": "2026-10-15T13:20:00-04:00",
+   "messageType": "Alert"
+  }
+ ],
  "missing": [],
  "updates": [
   {
    "time": "2026-10-15T11:17:00-05:00",
    "why": "NWS forecast night 2026-10-15 temp 52->47; night 2026-10-15 rain 60->90"
+  },
+  {
+   "time": "2026-10-15T12:32:00-05:00",
+   "why": "alerts changed (Wind Advisory | La Porte County | 2026-10-16 22:00)"
   }
  ]
 }
