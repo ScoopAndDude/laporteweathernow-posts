@@ -1,6 +1,6 @@
 {
  "about": "Official weather for La Porte, Indiana, saved by a GitHub job for the Daily Scoop (laporteweathernow.com/daily-scoop). Copied from NWS, SPC and WPC as-is; see scripts/nws_snapshot.py.",
- "fetched": "2026-10-16T05:02:06-05:00",
+ "fetched": "2026-10-16T09:45:45-05:00",
  "place": "La Porte, IN",
  "lat": 41.6081,
  "lon": -86.7189,
@@ -23,29 +23,29 @@
  },
  "observation": {
   "station": "KPPO (La Porte Municipal Airport)",
-  "time": "2026-10-16T04:15:00-05:00",
-  "weather": "Cloudy",
-  "temperatureF": 55,
-  "dewpointF": 55,
-  "humidityPercent": 100,
+  "time": "2026-10-16T09:15:00-05:00",
+  "weather": "",
+  "temperatureF": 54,
+  "dewpointF": 52,
+  "humidityPercent": 94,
   "wind": {
    "from": "WNW",
    "degrees": 300,
-   "mph": 13,
-   "gustMph": 22
+   "mph": 16,
+   "gustMph": null
   },
   "visibilityMiles": 10.0,
-  "pressureInHg": 29.88,
-  "metar": "KPPO 160915Z AUTO 30011G19KT 10SM BKN022 OVC028 13/13 A2988 RMK AO2"
+  "pressureInHg": 29.98,
+  "metar": ""
  },
  "forecast": {
-  "updated": "2026-10-16T09:15:24+00:00",
-  "generated": "2026-10-16T10:02:07+00:00",
+  "updated": "2026-10-16T12:30:12+00:00",
+  "generated": "2026-10-16T13:17:05+00:00",
   "timesNote": "Clock times in the forecast wording are already in America/Chicago (La Porte's real time). NWS writes them in America/Indiana/Indianapolis, which it has on file for La Porte by mistake.",
   "periods": [
    {
     "name": "Today",
-    "start": "2026-10-16T06:00:00-04:00",
+    "start": "2026-10-16T09:00:00-04:00",
     "end": "2026-10-16T18:00:00-04:00",
     "isDaytime": true,
     "temperatureF": 55,
@@ -202,7 +202,7 @@
  "rain": {
   "note": "NWS forecast grid rain totals (QPF) for the La Porte grid point; the forecast text's own wording comes first.",
   "next24hInches": 0.57,
-  "next72hInches": 0.58,
+  "next72hInches": 0.57,
   "byPeriod": [
    {
     "name": "Today",
@@ -285,6 +285,22 @@
  "alertsNearby": {
   "indiana": [
    {
+    "id": "urn:oid:2.49.0.1.840.0.55fbd1ad965fa78614fd99380226b0dd10df96f6.004.1",
+    "event": "Wind Advisory",
+    "headline": "Wind Advisory issued October 16 at 9:23AM CDT until October 16 at 10:00PM CDT by NWS Chicago IL",
+    "nwsHeadline": "WIND ADVISORY REMAINS IN EFFECT FROM 1 PM THIS AFTERNOON TO 10 PM CDT THIS EVENING ALONG THE LAKE MICHIGAN SHORE",
+    "area": "Porter",
+    "sender": "NWS Chicago IL",
+    "sent": "2026-10-16T09:23:00-05:00",
+    "onset": "2026-10-16T13:00:00-05:00",
+    "ends": "2026-10-16T22:00:00-05:00",
+    "expires": "2026-10-16T19:30:00-05:00",
+    "messageType": "Update",
+    "severity": "Moderate",
+    "certainty": "Likely",
+    "urgency": "Expected"
+   },
+   {
     "id": "urn:oid:2.49.0.1.840.0.7a6b54b4efa90bfa487fa4359d60d2afd8afcecf.001.1",
     "event": "Wind Advisory",
     "headline": "Wind Advisory issued October 16 at 4:54AM EDT until October 16 at 11:00PM EDT by NWS Northern Indiana",
@@ -299,36 +315,20 @@
     "severity": "Moderate",
     "certainty": "Likely",
     "urgency": "Expected"
-   },
-   {
-    "id": "urn:oid:2.49.0.1.840.0.a809bf5bff37f0d107bbda8e339a8335a5ae0656.005.1",
-    "event": "Wind Advisory",
-    "headline": "Wind Advisory issued October 16 at 1:28AM CDT until October 16 at 10:00PM CDT by NWS Chicago IL",
-    "nwsHeadline": "WIND ADVISORY REMAINS IN EFFECT FROM 1 PM THIS AFTERNOON TO 10 PM CDT THIS EVENING ALONG THE LAKE MICHIGAN SHORE",
-    "area": "Porter",
-    "sender": "NWS Chicago IL",
-    "sent": "2026-10-16T01:28:00-05:00",
-    "onset": "2026-10-16T13:00:00-05:00",
-    "ends": "2026-10-16T22:00:00-05:00",
-    "expires": "2026-10-16T11:30:00-05:00",
-    "messageType": "Update",
-    "severity": "Moderate",
-    "certainty": "Likely",
-    "urgency": "Expected"
    }
   ],
   "nearbyCountiesFullText": [
    {
-    "id": "urn:oid:2.49.0.1.840.0.a809bf5bff37f0d107bbda8e339a8335a5ae0656.005.1",
+    "id": "urn:oid:2.49.0.1.840.0.55fbd1ad965fa78614fd99380226b0dd10df96f6.004.1",
     "event": "Wind Advisory",
-    "headline": "Wind Advisory issued October 16 at 1:28AM CDT until October 16 at 10:00PM CDT by NWS Chicago IL",
+    "headline": "Wind Advisory issued October 16 at 9:23AM CDT until October 16 at 10:00PM CDT by NWS Chicago IL",
     "nwsHeadline": "WIND ADVISORY REMAINS IN EFFECT FROM 1 PM THIS AFTERNOON TO 10 PM CDT THIS EVENING ALONG THE LAKE MICHIGAN SHORE",
     "area": "Porter",
     "sender": "NWS Chicago IL",
-    "sent": "2026-10-16T01:28:00-05:00",
+    "sent": "2026-10-16T09:23:00-05:00",
     "onset": "2026-10-16T13:00:00-05:00",
     "ends": "2026-10-16T22:00:00-05:00",
-    "expires": "2026-10-16T11:30:00-05:00",
+    "expires": "2026-10-16T19:30:00-05:00",
     "messageType": "Update",
     "severity": "Moderate",
     "certainty": "Likely",
@@ -340,7 +340,7 @@
  },
  "discussion": {
   "issued": "2026-10-16T04:43:00-05:00",
-  "ageHours": 0.3,
+  "ageHours": 5.0,
   "text": "000\nFXUS63 KIWX 160943\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n543 AM EDT Fri Oct 16 2026\n\n.KEY MESSAGES...\n\n- Turning much cooler and windy for today with lake effect rain\n  showers expected. The strongest wind gusts are expected \n  downwind of Lake Michigan across Berrien and La Porte Counties\n  where gusts to 45 mph are likely Friday afternoon and \n  evening. A wind advisory has been hoisted as a result.\n\n- Chances for frost are best on Saturday night, however some \n  frost cannot be ruled out tonight.\n\n- After below normal temperatures this weekend, temperatures\n  will warm back above normal early next week. Additionally, dry\n  weather looks to persist through much of next week.\n\n&&\n\n.DISCUSSION...\nIssued at 257 AM EDT Fri Oct 16 2026\n\nAs a mid level trough digs across the Central US, an upper low gets \nshoved northeastward pushing a surface low into southeast \nCanada/Northeast US. At the same time, a 1040 mb surface high slides \nsoutheastward into the Central CONUS. The presence of this strong \nsurface high often indicates the arrival of a cooler airmass and \nthat is the case this time. Given our departure of above normal \ntemperatures and the arrival of this cool airmass, we'll have some \nhazards to contend with today and this weekend. First, yesterday's \ncold front shifts eastward and the vigorous vort max associated with \nthe mid level trough dives through Lk MI late this afternoon into \nthis evening. Given the warm lake and the 850 mb temps dipping to \naround or below 0C, lake enhancement is expected to cause rain.\nA surface trough is expected to swing through the southeast \narea of Lk MI around 18z with ample low level moisture, low \nlevel wind convergence, and building lake enhanced instability. \nGiven the movement of this trough and swiveling trajectories \nfrom northwest to north, the area with the best chance to see \n\"higher\" QPF is southern Berrien into LaPorte where 0.25 to 0.5\"\nis forecast, tapering off the farther away from the lake you \nare. The heaviest of the rain appears to get into Berrien county\nmidday (15 or 16z) and continues swiveling southward through \nthe afternoon and into the evening. The other hazard is wind \ngusts, which look to get underway along lk MI- adjacent \nlocations around 19 or 20z before pulling away around 3z. Given \nthe surface trough, there could be some isentropic downglide \nenough to work an isolated 45 kt gust down to the surface. \nOtherwise, it appears that frequent gusts between 30 and 40 mph \nwill be possible during that time as low level lapse rates \nbecome conducive. The strongest of the gusts are adjacent to the\nlake, tapering off the farther away you get. This is why the \nwind advisory was hoisted for Lk MI- adjacent locales. \n\nThe mention of the cold air also brings to mind the chance for \nfrost. Especially with overnight lows dropping into the 30s from \nfrom tonight/Sat AM to Sunday night/Mon AM and potentially \nagain Tue AM. The main issue with Friday night/Sat AM is the \ngradient which could keep winds strong enough to eliminate \nformation of frost. A lesser possibility is lake clouds hang on,\nbut would probably lean towards subsidence on the eastern side \nof the lake clouds removing them. Clouds appear to already be \ndissipating on the NAM by around 6 to 9z for maybe all of our \ncounties (lowest confidence on LaPorte to White county line).\nThis would give areas along or about IN-15 north of US-24 on \ninto MI the best chance to see frost tonight. Surface high \npressure continues to poke into the area Saturday morning with \nthe stronger gradient lurking to our north. So, cloud cover \nappears less of factor. It's often that as return flow begins to\noccur that we get our best frost chances as winds slacken, but \nthe boundary layer is able to get back to what it was the \nprevious night or potentially colder. So, Saturday night has the\nbest chance for frost. There is also the possibility of a \nfreeze primarily along and south of US-24 Sun AM with a couple \nhours of temps right around there then.\n\nSurface high pressure then becomes stagnant across the eastern CONUS \nas blocking builds across the Atlantic. The NAO/AO both drop \nnegative during this time. The upper jet also retreats back up into \nCanada. A slow moving trough moves into the western CONUS, but takes \nits time arriving into the area potentially continuing to provide \ndry weather into next weekend. Temperatures trend warmer with highs \nreturning to the 70s during the next work week and lows warming \nslowly through the 40s.\n\n&&\n\n.AVIATION /06Z TAFS THROUGH 06Z SATURDAY/...\nIssued at 543 AM EDT Fri Oct 16 2026\n\nPost-frontal cold advection will keep mainly MVFR cigs and gusty \nwest-northwest winds going today. A digging upper level trough and \nassociated secondary low level trough sink south through the area \nthis afternoon bringing increasing chances for showers and vis \nrestrictions, particularly at KSBN where there will be lake \nenhancement. This transitions to pure lake effect this evening at \nKSBN with additional shower chances and high MVFR cigs. Winds remain \ngusty and veer more northerly otherwise later this afternoon and \nevening.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...Wind Advisory from 1 PM this afternoon to 10 PM CDT this \n     evening for INZ103-203.\nOH...None.\nMI...Wind Advisory from 2 PM this afternoon to 11 PM EDT this \n     evening for MIZ177-277.\nMARINE...Small Craft Advisory until 11 AM EDT this morning for LMZ043-\n     046.\n     Gale Warning from 11 AM this morning to 2 AM EDT Saturday for \n     LMZ043-046.\n\n&&\n\n$$\n\nDISCUSSION...Roller\nAVIATION...Steinwedel"
  },
  "hazardousWeatherOutlook": null,
@@ -348,7 +348,7 @@
  "spc": [
   {
    "day": 1,
-   "valid": "202610161200",
+   "valid": "202610161300",
    "expires": "202610171200",
    "riskAtLaPorte": "General Thunderstorms Risk",
    "riskAreasAnywhere": [
@@ -356,8 +356,8 @@
     "Marginal Risk",
     "Slight Risk"
    ],
-   "summary": "Thunderstorms with wind-damage and localized brief-tornado potential are expected across parts of the Mid-Atlantic into southern New England, mainly this afternoon and early evening.",
-   "text": "SPC AC 160556\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1256 AM CDT Fri Oct 16 2026\n\n   Valid 161200Z - 171200Z\n\n   ...THERE IS A SLIGHT RISK OF SEVERE THUNDERSTORMS FOR PARTS OF THE\n   MID-ATLANTIC INTO SOUTHERN NEW ENGLAND...\n\n   ...SUMMARY...\n   Thunderstorms with wind-damage and localized brief-tornado potential\n   are expected across parts of the Mid-Atlantic into southern New\n   England, mainly this afternoon and early evening.\n\n   ...Mid-Atlantic into southern New England...\n   A deep, positive-tilt mid/upper-level trough is forecast to further\n   amplify as it spreads over the eastern CONUS today. A surface low\n   initially near the lower Great Lakes will move quickly eastward\n   toward northern New England by evening. A trailing cold front will\n   sweep through the Mid-Atlantic and Northeast from this afternoon\n   into tonight. \n\n   In the wake of early-day clouds and precipitation, seasonably rich\n   low-level moisture and modest diurnal heating will result in\n   sufficient destabilization for storm development along the front.\n   Very weak lapse rates above 500 mb will constrain MLCAPE magnitudes\n   to the 500-1000 J/kg range, and result in rather low-topped\n   convection. However, in areas where temperatures can rise to\n   near/above 70 F, relatively robust buoyancy near/below 500 mb\n   (characterized by lifted indices in the -4 to -6 C range) will\n   develop prior to the frontal passage. This buoyancy will be\n   sufficient for development of occasionally organized storm\n   structures, in the presence of strengthening deep-layer flow/shear.\n   35-45 kt of flow in the 1-2 km AGL layer will support potential for\n   strong/damaging gusts with any sufficiently robust convection.  \n\n   Generally front-parallel flow may result in a primarily linear mode\n   as convective coverage increases, though 40+ kt of effective shear\n   will support potential for embedded low-topped supercells. A\n   localized wind-damage threat may develop early this afternoon from\n   WV/western PA into southern NY, with initial frontal development.\n   The wind-damage threat is expected to increase through the afternoon\n   as storms spread eastward into a somewhat warmer and more unstable\n   environment across eastern PA, NJ, and vicinity. Rather strong\n   low-level shear will also support some brief-tornado potential with\n   QLCS circulations and/or embedded supercell structures. \n\n   Some wind-damage potential could spread into southern New England by\n   this evening, though marine-influenced low-level stability should\n   eventually constrain the eastward extent of the threat.\n\n   ..Dean/Chalmers.. 10/16/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 1300Z"
+   "summary": "Thunderstorms capable of producing damaging winds and perhaps a tornado or two are expected across parts of the Mid-Atlantic into southern New England, mainly this afternoon and early evening.",
+   "text": "SPC AC 161242\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   0742 AM CDT Fri Oct 16 2026\n\n   Valid 161300Z - 171200Z\n\n   ...THERE IS A SLIGHT RISK OF SEVERE THUNDERSTORMS ACROSS PARTS OF\n   THE MID-ATLANTIC INTO SOUTHERN NEW ENGLAND...\n\n   ...SUMMARY...\n   Thunderstorms capable of producing damaging winds and perhaps a\n   tornado or two are expected across parts of the Mid-Atlantic into\n   southern New England, mainly this afternoon and early evening.\n\n   ...Mid-Atlantic into Southern New England...\n   Recent water vapor satellite imagery shows a prominent and\n   positively tilted upper trough extending from eastern Canada into\n   the Upper Midwest. This upper trough will advance eastward while\n   amplifying over the eastern CONUS through the period, with enhanced\n   west-southwesterly low/mid-level flow expected to overspread much of\n   the Mid-Atlantic and Northeast. A related surface low over southern\n   Ontario will develop east-northeastward today into southern Quebec,\n   as a trailing cold front sweeps east-southeastward across the\n   eastern states. Low-level moisture is forecast to gradually increase\n   ahead of the front through the afternoon, and MLCAPE should\n   gradually increase into the 500-1000 J/kg range with filtered\n   daytime heating. But, lapse rates through low/mid levels are likely\n   to remain quite poor (reference BUF/PIT/IAD 12Z observed soundings).\n   This should temper overall updraft strength to some extent, and\n   low-topped convection which develops along/near the front may\n   produce little lighting, especially with northward extent into\n   southern New England.\n\n   Even with the potential thermodynamic limitations, favorable\n   deep-layer shear will support some updraft organization. Given the\n   strength of the low/mid-level flow, isolated strong/gusty winds may\n   occur this morning with ongoing convection along/near the front\n   across western PA/NY, even though instability remains very limited.\n   Latest short-term guidance continues to suggest that a low-topped\n   convective line will further develop across central into eastern PA\n   and southern NY by 17-21Z. Convectively augmented wind gusts capable\n   of producing scattered damaging winds will likely be the main severe\n   risk as this activity spreads quickly eastward across the northern\n   Mid-Atlantic and southern New England through early evening. The\n   greatest coverage of damaging winds should focus across parts of\n   eastern PA into NJ and southern NY, where locally greater\n   instability is forecast. \n\n   The potential for line-embedded mesocirculations is less clear.\n   While some low-level shear will be present, the enhanced low-level\n   flow is forecast to gradually veer to west-southwesterly through the\n   afternoon/evening, which may reduce effective SRH somewhat. Still,\n   at least an isolated threat for damaging winds and perhaps a tornado\n   should spread towards the coast before convection weakens this\n   evening due to marine layer influences and nocturnal cooling.\n   Overall, the ongoing forecast aligns reasonably well with recent\n   short-term guidance/observational trends, and therefore only minor\n   changes have been made to severe probabilities with this update.\n\n   ..Gleason/Kerr.. 10/16/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 1630Z"
   },
   {
    "day": 2,
@@ -409,20 +409,8 @@
   "days": [
    {
     "date": "2026-10-16",
-    "summary": "mostly dry 6 a.m.-12 p.m.; rain possible 12 p.m.-1 p.m. (up to 36%); rain likely 1 p.m.-6 p.m. (up to 87%)",
+    "summary": "mostly dry 9 a.m.-12 p.m.; rain possible 12 p.m.-1 p.m. (up to 36%); rain likely 1 p.m.-6 p.m. (up to 87%)",
     "hours": [
-     {
-      "hour": 6,
-      "rainChancePercent": 9
-     },
-     {
-      "hour": 7,
-      "rainChancePercent": 11
-     },
-     {
-      "hour": 8,
-      "rainChancePercent": 14
-     },
      {
       "hour": 9,
       "rainChancePercent": 13
@@ -526,12 +514,12 @@
    "ecmwf_ifs025": "European ECMWF"
   },
   "bias": {
-   "days": 16,
+   "days": 17,
    "ready": true,
-   "high": -2.4,
-   "highDays": 16,
-   "low": 2.1,
-   "lowDays": 16,
+   "high": -2.6,
+   "highDays": 17,
+   "low": 1.6,
+   "lowDays": 17,
    "note": "Average of (forecast minus airport reading) over the last 30 graded days; positive means we ran warm. Used to nudge the model blend once 14+ days are graded."
   },
   "days": [
@@ -545,38 +533,38 @@
     "models": {
      "ncep_nbm_conus": {
       "high": 65,
-      "low": 44,
-      "rain": 65
+      "low": 43,
+      "rain": 67
      },
      "ncep_hrrr_conus": {
       "high": 66,
-      "low": 43,
-      "rain": 65
+      "low": 42,
+      "rain": 67
      },
      "gfs_seamless": {
       "high": 66,
-      "low": 43,
-      "rain": 65
+      "low": 42,
+      "rain": 67
      },
      "ecmwf_ifs025": {
-      "high": 65,
-      "low": 46,
+      "high": 69,
+      "low": 47,
       "rain": 100
      }
     },
     "blend": {
-     "high": 65,
-     "low": 44
-    },
-    "adjusted": {
-     "high": 67,
+     "high": 66,
      "low": 42
     },
-    "spread": {
-     "high": 11,
-     "low": 3
+    "adjusted": {
+     "high": 69,
+     "low": 40
     },
-    "note": "our blend's high (67) differs from NWS (55) by 12 degrees; the models disagree on the high by 11 degrees (less certain)"
+    "spread": {
+     "high": 14,
+     "low": 5
+    },
+    "note": "our blend's high (69) differs from NWS (55) by 14 degrees; the models disagree on the high by 14 degrees (less certain)"
    },
    {
     "date": "2026-10-17",
@@ -589,37 +577,37 @@
      "ncep_nbm_conus": {
       "high": 56,
       "low": 37,
-      "rain": 15
+      "rain": 2
      },
      "ncep_hrrr_conus": {
-      "high": 48,
-      "low": 36,
-      "rain": 15
+      "high": 49,
+      "low": 37,
+      "rain": 2
      },
      "gfs_seamless": {
-      "high": 48,
-      "low": 36,
-      "rain": 15
+      "high": 49,
+      "low": 37,
+      "rain": 2
      },
      "ecmwf_ifs025": {
-      "high": 56,
+      "high": 55,
       "low": 39,
       "rain": 79
      }
     },
     "blend": {
      "high": 55,
-     "low": 36
+     "low": 37
     },
     "adjusted": {
-     "high": 57,
-     "low": 34
+     "high": 58,
+     "low": 35
     },
     "spread": {
-     "high": 8,
+     "high": 7,
      "low": 3
     },
-    "note": "the models disagree on the high by 8 degrees (less certain)"
+    "note": "our blend's high (58) differs from NWS (55) by 3 degrees; the models disagree on the high by 7 degrees (less certain)"
    },
    {
     "date": "2026-10-18",
@@ -639,28 +627,28 @@
      },
      "gfs_seamless": {
       "high": 60,
-      "low": 38,
+      "low": 37,
       "rain": 0
      },
      "ecmwf_ifs025": {
       "high": 62,
-      "low": 39,
+      "low": 40,
       "rain": 0
      }
     },
     "blend": {
      "high": 62,
-     "low": 37
+     "low": 36
     },
     "adjusted": {
-     "high": 64,
-     "low": 35
+     "high": 65,
+     "low": 34
     },
     "spread": {
      "high": 2,
-     "low": 4
+     "low": 5
     },
-    "note": "NWS and the models agree within a few degrees"
+    "note": "our blend's high (65) differs from NWS (62) by 3 degrees"
    },
    {
     "date": "2026-10-19",
@@ -685,7 +673,7 @@
      },
      "ecmwf_ifs025": {
       "high": 64,
-      "low": 38,
+      "low": 39,
       "rain": 0
      }
     },
@@ -694,7 +682,7 @@
      "low": 38
     },
     "adjusted": {
-     "high": 68,
+     "high": 69,
      "low": 36
     },
     "spread": {
@@ -707,14 +695,14 @@
   "suggested": [
    {
     "date": "2026-10-17",
-    "high": 57,
-    "low": 34,
+    "high": 58,
+    "low": 35,
     "rain": 18
    },
    {
     "date": "2026-10-18",
-    "high": 64,
-    "low": 35,
+    "high": 65,
+    "low": 34,
     "rain": 0
    }
   ]
