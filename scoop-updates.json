@@ -1,313 +1,33 @@
 {
  "about": "State for scripts/scoop_update.py, the automatic updates to today's Daily Scoop: the forecast the Scoop was written from (baseline), what was last published, the alerts last seen, and today's updates. Replaced each day. Safe to delete: the job starts over from the current post.",
- "date": "2026-10-15",
- "post": "2026-10-15T05:42:00-05:00",
- "kind": "written",
- "baseline": {
-  "from": "2026-10-15T05:41:29-05:00",
-  "source": "nws-snapshot.json (what the Scoop was written from)",
-  "periods": {
-   "day 2026-10-15": {
-    "name": "Today",
-    "temp": 66,
-    "rain": 60,
-    "short": "Rain Showers Likely"
-   },
-   "night 2026-10-15": {
-    "name": "Tonight",
-    "temp": 52,
-    "rain": 60,
-    "short": "Rain Showers Likely"
-   },
-   "day 2026-10-16": {
-    "name": "Friday",
-    "temp": 54,
-    "rain": 80,
-    "short": "Rain Showers"
-   },
-   "night 2026-10-16": {
-    "name": "Friday Night",
-    "temp": 38,
-    "rain": 80,
-    "short": "Rain Showers"
-   },
-   "day 2026-10-17": {
-    "name": "Saturday",
-    "temp": 55,
-    "rain": 0,
-    "short": "Sunny"
-   },
-   "night 2026-10-17": {
-    "name": "Saturday Night",
-    "temp": 36,
-    "rain": 0,
-    "short": "Clear"
-   },
-   "day 2026-10-18": {
-    "name": "Sunday",
-    "temp": 64,
-    "rain": 0,
-    "short": "Areas Of Frost then Sunny"
-   },
-   "night 2026-10-18": {
-    "name": "Sunday Night",
-    "temp": 39,
-    "rain": 0,
-    "short": "Mostly Clear"
-   },
-   "day 2026-10-19": {
-    "name": "Monday",
-    "temp": 66,
-    "rain": 0,
-    "short": "Sunny"
-   },
-   "night 2026-10-19": {
-    "name": "Monday Night",
-    "temp": 42,
-    "rain": 0,
-    "short": "Partly Cloudy"
-   },
-   "day 2026-10-20": {
-    "name": "Tuesday",
-    "temp": 68,
-    "rain": 0,
-    "short": "Mostly Sunny"
-   },
-   "night 2026-10-20": {
-    "name": "Tuesday Night",
-    "temp": 43,
-    "rain": 0,
-    "short": "Mostly Clear"
-   },
-   "day 2026-10-21": {
-    "name": "Wednesday",
-    "temp": 69,
-    "rain": 0,
-    "short": "Sunny"
-   },
-   "night 2026-10-21": {
-    "name": "Wednesday Night",
-    "temp": 46,
-    "rain": 0,
-    "short": "Mostly Clear"
-   }
-  },
-  "alerts": [],
-  "alertRows": [],
-  "hourly": {
-   "2026-10-15T05": {
-    "temp": 54,
-    "rain": 15
-   },
-   "2026-10-15T06": {
-    "temp": 54,
-    "rain": 14
-   },
-   "2026-10-15T07": {
-    "temp": 54,
-    "rain": 15
-   },
-   "2026-10-15T08": {
-    "temp": 55,
-    "rain": 17
-   },
-   "2026-10-15T09": {
-    "temp": 56,
-    "rain": 20
-   },
-   "2026-10-15T10": {
-    "temp": 57,
-    "rain": 22
-   },
-   "2026-10-15T11": {
-    "temp": 59,
-    "rain": 25
-   },
-   "2026-10-15T12": {
-    "temp": 60,
-    "rain": 27
-   },
-   "2026-10-15T13": {
-    "temp": 61,
-    "rain": 45
-   },
-   "2026-10-15T14": {
-    "temp": 62,
-    "rain": 63
-   },
-   "2026-10-15T15": {
-    "temp": 63,
-    "rain": 64
-   },
-   "2026-10-15T16": {
-    "temp": 63,
-    "rain": 58
-   },
-   "2026-10-15T17": {
-    "temp": 64,
-    "rain": 51
-   },
-   "2026-10-15T18": {
-    "temp": 64,
-    "rain": 54
-   },
-   "2026-10-15T19": {
-    "temp": 65,
-    "rain": 50
-   },
-   "2026-10-15T20": {
-    "temp": 66,
-    "rain": 59
-   },
-   "2026-10-15T21": {
-    "temp": 67,
-    "rain": 58
-   },
-   "2026-10-15T22": {
-    "temp": 67,
-    "rain": 37
-   },
-   "2026-10-15T23": {
-    "temp": 67,
-    "rain": 31
-   },
-   "2026-10-16T00": {
-    "temp": 65,
-    "rain": 29
-   },
-   "2026-10-16T01": {
-    "temp": 63,
-    "rain": 33
-   },
-   "2026-10-16T02": {
-    "temp": 60,
-    "rain": 34
-   },
-   "2026-10-16T03": {
-    "temp": 58,
-    "rain": 25
-   },
-   "2026-10-16T04": {
-    "temp": 56,
-    "rain": 33
-   },
-   "2026-10-16T05": {
-    "temp": 54,
-    "rain": 24
-   },
-   "2026-10-16T06": {
-    "temp": 53,
-    "rain": 25
-   },
-   "2026-10-16T07": {
-    "temp": 53,
-    "rain": 26
-   },
-   "2026-10-16T08": {
-    "temp": 52,
-    "rain": 25
-   },
-   "2026-10-16T09": {
-    "temp": 52,
-    "rain": 20
-   },
-   "2026-10-16T10": {
-    "temp": 51,
-    "rain": 27
-   },
-   "2026-10-16T11": {
-    "temp": 51,
-    "rain": 29
-   },
-   "2026-10-16T12": {
-    "temp": 52,
-    "rain": 39
-   },
-   "2026-10-16T13": {
-    "temp": 53,
-    "rain": 70
-   },
-   "2026-10-16T14": {
-    "temp": 53,
-    "rain": 77
-   },
-   "2026-10-16T15": {
-    "temp": 53,
-    "rain": 83
-   },
-   "2026-10-16T16": {
-    "temp": 52,
-    "rain": 84
-   }
-  },
-  "hourlyFrom": "2026-10-15T05:47:00-05:00"
- },
+ "date": "2026-10-16",
+ "post": "2026-10-16T06:32:00-05:00",
+ "kind": "backup",
  "published": {
-  "time": "2026-10-15T23:47:00-05:00",
+  "time": "2026-10-16T06:47:00-05:00",
   "alertKeys": [
    "Wind Advisory | La Porte County | 2026-10-16 22:00"
   ],
-  "alerts": [
-   {
-    "key": "Wind Advisory | La Porte County | 2026-10-16 22:00",
-    "event": "Wind Advisory",
-    "where": "La Porte County"
-   }
-  ],
-  "changes": [
-   {
-    "k": "night 2026-10-15",
-    "was": "Tonight",
-    "now": "Overnight",
-    "shortWas": "Rain Showers Likely",
-    "shortNow": "Chance Rain Showers",
-    "field": "temp",
-    "from": 52,
-    "to": 49
-   },
-   {
-    "k": "night 2026-10-15",
-    "was": "Tonight",
-    "now": "Overnight",
-    "shortWas": "Rain Showers Likely",
-    "shortNow": "Chance Rain Showers",
-    "field": "rain",
-    "from": 60,
-    "to": 40
-   }
-  ],
-  "off": [],
-  "paragraph": "Automatic update, 11:47 p.m.: NWS has a Wind Advisory for La Porte County from 1 p.m. Friday until 10 p.m. Friday. We pass these along as NWS issues them; details are at weather.gov/iwx. Since the Scoop below was written, NWS has lowered its low for tonight to 49 (from 52) and lowered its chance of rain for tonight to 40% (from 60%). At 11:15 p.m. the La Porte airport reported cloudy and 68 degrees. Over the next 12 hours, NWS's hour-by-hour forecast has rain possible from 11 p.m. to 1 a.m. (up to 41%)."
+  "obsTime": "2026-10-16T06:15:00-05:00",
+  "forecastUpdated": "2026-10-16T09:15:24+00:00"
  },
  "alertRows": [
   {
-   "id": "urn:oid:2.49.0.1.840.0.9125aa1b3a6e536ad3559f4488d69a8f02126cac.001.1",
+   "id": "urn:oid:2.49.0.1.840.0.7a6b54b4efa90bfa487fa4359d60d2afd8afcecf.001.1",
    "event": "Wind Advisory",
    "area": "Northern La Porte; Southern La Porte; Northern Berrien; Southern Berrien",
    "onset": "2026-10-16T14:00:00-04:00",
    "ends": "2026-10-16T23:00:00-04:00",
-   "expires": "2026-10-16T10:45:00-04:00",
-   "sent": "2026-10-15T22:40:00-04:00",
+   "expires": "2026-10-16T23:00:00-04:00",
+   "sent": "2026-10-16T04:54:00-04:00",
    "messageType": "Update"
   }
  ],
  "missing": [],
  "updates": [
   {
-   "time": "2026-10-15T11:17:00-05:00",
-   "why": "NWS forecast night 2026-10-15 temp 52->47; night 2026-10-15 rain 60->90"
-  },
-  {
-   "time": "2026-10-15T12:32:00-05:00",
-   "why": "alerts changed (Wind Advisory | La Porte County | 2026-10-16 22:00)"
-  },
-  {
-   "time": "2026-10-15T16:02:00-05:00",
-   "why": "NWS forecast night 2026-10-15 temp 52->49"
-  },
-  {
-   "time": "2026-10-15T23:47:00-05:00",
-   "why": "NWS forecast night 2026-10-15 temp 52->49; night 2026-10-15 rain 60->40"
+   "time": "2026-10-16T06:47:00-05:00",
+   "why": "alerts changed"
   }
  ]
 }
