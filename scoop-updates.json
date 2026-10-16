@@ -243,7 +243,7 @@
   "hourlyFrom": "2026-10-15T05:47:00-05:00"
  },
  "published": {
-  "time": "2026-10-15T16:02:00-05:00",
+  "time": "2026-10-15T23:47:00-05:00",
   "alertKeys": [
    "Wind Advisory | La Porte County | 2026-10-16 22:00"
   ],
@@ -258,27 +258,37 @@
    {
     "k": "night 2026-10-15",
     "was": "Tonight",
-    "now": "Tonight",
+    "now": "Overnight",
     "shortWas": "Rain Showers Likely",
-    "shortNow": "Showers And Thunderstorms Likely",
+    "shortNow": "Chance Rain Showers",
     "field": "temp",
     "from": 52,
     "to": 49
+   },
+   {
+    "k": "night 2026-10-15",
+    "was": "Tonight",
+    "now": "Overnight",
+    "shortWas": "Rain Showers Likely",
+    "shortNow": "Chance Rain Showers",
+    "field": "rain",
+    "from": 60,
+    "to": 40
    }
   ],
   "off": [],
-  "paragraph": "Automatic update, 4:02 p.m.: NWS has a Wind Advisory for La Porte County from 1 p.m. Friday until 10 p.m. Friday. We pass these along as NWS issues them; details are at weather.gov/iwx. Since the Scoop below was written, NWS has lowered its low for tonight to 49 (from 52). At 3:15 p.m. the La Porte airport reported cloudy and 66 degrees. Over the next 12 hours, NWS's hour-by-hour forecast has rain likely from 4 p.m. to 9 p.m. (up to 60%) and rain possible from 9 p.m. to 11 p.m. (up to 47%)."
+  "paragraph": "Automatic update, 11:47 p.m.: NWS has a Wind Advisory for La Porte County from 1 p.m. Friday until 10 p.m. Friday. We pass these along as NWS issues them; details are at weather.gov/iwx. Since the Scoop below was written, NWS has lowered its low for tonight to 49 (from 52) and lowered its chance of rain for tonight to 40% (from 60%). At 11:15 p.m. the La Porte airport reported cloudy and 68 degrees. Over the next 12 hours, NWS's hour-by-hour forecast has rain possible from 11 p.m. to 1 a.m. (up to 41%)."
  },
  "alertRows": [
   {
-   "id": "urn:oid:2.49.0.1.840.0.1eee3d35f3e04f5fd2577f3f4609dfc51454a471.001.1",
+   "id": "urn:oid:2.49.0.1.840.0.9125aa1b3a6e536ad3559f4488d69a8f02126cac.001.1",
    "event": "Wind Advisory",
    "area": "Northern La Porte; Southern La Porte; Northern Berrien; Southern Berrien",
    "onset": "2026-10-16T14:00:00-04:00",
    "ends": "2026-10-16T23:00:00-04:00",
-   "expires": "2026-10-16T01:30:00-04:00",
-   "sent": "2026-10-15T13:20:00-04:00",
-   "messageType": "Alert"
+   "expires": "2026-10-16T10:45:00-04:00",
+   "sent": "2026-10-15T22:40:00-04:00",
+   "messageType": "Update"
   }
  ],
  "missing": [],
@@ -294,6 +304,10 @@
   {
    "time": "2026-10-15T16:02:00-05:00",
    "why": "NWS forecast night 2026-10-15 temp 52->49"
+  },
+  {
+   "time": "2026-10-15T23:47:00-05:00",
+   "why": "NWS forecast night 2026-10-15 temp 52->49; night 2026-10-15 rain 60->40"
   }
  ]
 }
