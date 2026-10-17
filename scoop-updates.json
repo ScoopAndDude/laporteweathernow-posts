@@ -1,92 +1,33 @@
 {
  "about": "State for scripts/scoop_update.py, the automatic updates to today's Daily Scoop: the forecast the Scoop was written from (baseline), what was last published, the alerts last seen, and today's updates. Replaced each day. Safe to delete: the job starts over from the current post.",
- "date": "2026-10-16",
- "post": "2026-10-16T06:32:00-05:00",
+ "date": "2026-10-17",
+ "post": "2026-10-17T06:32:00-05:00",
  "kind": "backup",
  "published": {
-  "time": "2026-10-16T23:57:00-05:00",
-  "alertKeys": [],
-  "obsTime": "2026-10-16T23:15:00-05:00",
-  "forecastUpdated": "2026-10-17T04:15:30+00:00"
+  "time": "2026-10-17T06:47:00-05:00",
+  "alertKeys": [
+   "Frost Advisory | La Porte County | 2026-10-18 08:00"
+  ],
+  "obsTime": "2026-10-17T06:15:00-05:00",
+  "forecastUpdated": "2026-10-17T09:15:09+00:00"
  },
- "alertRows": [],
+ "alertRows": [
+  {
+   "id": "urn:oid:2.49.0.1.840.0.1a1122dea573fe8c61731805a6947c875ff72916.004.1",
+   "event": "Frost Advisory",
+   "area": "Starke; Pulaski; Fulton; White; Cass; Northern La Porte; Southern La Porte",
+   "onset": "2026-10-18T03:00:00-04:00",
+   "ends": "2026-10-18T09:00:00-04:00",
+   "expires": "2026-10-17T17:00:00-04:00",
+   "sent": "2026-10-17T01:34:00-04:00",
+   "messageType": "Alert"
+  }
+ ],
  "missing": [],
  "updates": [
   {
-   "time": "2026-10-16T06:47:00-05:00",
+   "time": "2026-10-17T06:47:00-05:00",
    "why": "alerts changed"
-  },
-  {
-   "time": "2026-10-16T07:47:00-05:00",
-   "why": "hourly refresh"
-  },
-  {
-   "time": "2026-10-16T08:47:00-05:00",
-   "why": "hourly refresh"
-  },
-  {
-   "time": "2026-10-16T09:47:00-05:00",
-   "why": "hourly refresh"
-  },
-  {
-   "time": "2026-10-16T10:47:00-05:00",
-   "why": "hourly refresh"
-  },
-  {
-   "time": "2026-10-16T11:47:00-05:00",
-   "why": "hourly refresh"
-  },
-  {
-   "time": "2026-10-16T12:47:00-05:00",
-   "why": "hourly refresh"
-  },
-  {
-   "time": "2026-10-16T13:47:00-05:00",
-   "why": "hourly refresh"
-  },
-  {
-   "time": "2026-10-16T14:47:00-05:00",
-   "why": "hourly refresh"
-  },
-  {
-   "time": "2026-10-16T15:47:00-05:00",
-   "why": "hourly refresh"
-  },
-  {
-   "time": "2026-10-16T16:47:00-05:00",
-   "why": "hourly refresh"
-  },
-  {
-   "time": "2026-10-16T17:47:00-05:00",
-   "why": "hourly refresh"
-  },
-  {
-   "time": "2026-10-16T18:47:00-05:00",
-   "why": "hourly refresh"
-  },
-  {
-   "time": "2026-10-16T19:47:00-05:00",
-   "why": "hourly refresh"
-  },
-  {
-   "time": "2026-10-16T20:47:00-05:00",
-   "why": "hourly refresh"
-  },
-  {
-   "time": "2026-10-16T21:47:00-05:00",
-   "why": "hourly refresh"
-  },
-  {
-   "time": "2026-10-16T22:02:00-05:00",
-   "why": "alerts changed"
-  },
-  {
-   "time": "2026-10-16T23:01:00-05:00",
-   "why": "hourly refresh"
-  },
-  {
-   "time": "2026-10-16T23:57:00-05:00",
-   "why": "hourly refresh"
   }
  ]
 }
