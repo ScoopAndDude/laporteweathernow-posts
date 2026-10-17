@@ -4,25 +4,12 @@
  "post": "2026-10-16T06:32:00-05:00",
  "kind": "backup",
  "published": {
-  "time": "2026-10-16T21:47:00-05:00",
-  "alertKeys": [
-   "Wind Advisory | La Porte County | 2026-10-16 22:00"
-  ],
-  "obsTime": "2026-10-16T20:55:00-05:00",
+  "time": "2026-10-16T22:02:00-05:00",
+  "alertKeys": [],
+  "obsTime": "2026-10-16T21:35:00-05:00",
   "forecastUpdated": "2026-10-17T02:15:47+00:00"
  },
- "alertRows": [
-  {
-   "id": "urn:oid:2.49.0.1.840.0.86b65f2aab1867ae45820306e8ffa3d83c1bc8e8.003.1",
-   "event": "Wind Advisory",
-   "area": "Northern La Porte; Southern La Porte; Northern Berrien; Southern Berrien",
-   "onset": "2026-10-16T14:00:00-04:00",
-   "ends": "2026-10-16T23:00:00-04:00",
-   "expires": "2026-10-16T23:00:00-04:00",
-   "sent": "2026-10-16T13:43:00-04:00",
-   "messageType": "Update"
-  }
- ],
+ "alertRows": [],
  "missing": [],
  "updates": [
   {
@@ -88,6 +75,10 @@
   {
    "time": "2026-10-16T21:47:00-05:00",
    "why": "hourly refresh"
+  },
+  {
+   "time": "2026-10-16T22:02:00-05:00",
+   "why": "alerts changed"
   }
  ]
 }
