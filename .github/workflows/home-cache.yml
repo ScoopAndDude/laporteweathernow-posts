@@ -2,7 +2,8 @@
 # "live" branch), so the site can show real numbers with their time even when the Weather
 # Service is slow or down. Only the newest copy is kept: each run replaces the branch.
 # Also travel.json: every Indiana county's official travel status from IDHS's county map (Oct. 6, 2026),
-# and air.json: EPA AirNow's official air quality near La Porte (Oct. 17, 2026; secret AIRNOW_API_KEY).
+# and air.json: EPA AirNow's official air quality near La Porte (Oct. 17, 2026; secret AIRNOW_API_KEY),
+# and uv.json: EPA's daily and hourly UV Index for 46350 (Oct. 17, 2026; no key).
 name: Homepage weather copy
 
 on:
@@ -14,6 +15,7 @@ on:
     paths:
       - scripts/home_cache.py
       - scripts/air_now.py
+      - scripts/uv_epa.py
       - .github/workflows/home-cache.yml
 
 permissions:
@@ -35,6 +37,8 @@ jobs:
         env:
           AIRNOW_API_KEY: ${{ secrets.AIRNOW_API_KEY }}
         run: python3 scripts/air_now.py
+      - name: Ask EPA for La Porte's UV Index
+        run: python3 scripts/uv_epa.py
       - name: Replace the live branch with the new copy
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -42,10 +46,11 @@ jobs:
           mkdir -p "$RUNNER_TEMP/live" && cp home.json "$RUNNER_TEMP/live/home.json"
           if [ -f travel.json ]; then cp travel.json "$RUNNER_TEMP/live/travel.json"; fi   # Indiana county travel status (Oct. 6, 2026)
           if [ -f air.json ]; then cp air.json "$RUNNER_TEMP/live/air.json"; fi   # AirNow air quality (Oct. 17, 2026)
+          if [ -f uv.json ]; then cp uv.json "$RUNNER_TEMP/live/uv.json"; fi   # EPA UV Index (Oct. 17, 2026)
           cd "$RUNNER_TEMP/live"
           git init -q -b live
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add home.json $(ls travel.json air.json 2>/dev/null)
+          git add home.json $(ls travel.json air.json uv.json 2>/dev/null)
           git commit -q -m "La Porte weather for the homepage ($(TZ=America/Chicago date '+%Y-%m-%d %H:%M %Z'))"
           git push -q -f "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" live:live
