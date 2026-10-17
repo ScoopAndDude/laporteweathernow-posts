@@ -499,6 +499,16 @@ def wind_word(kt):
     return "light" if kt < 15 else "breezy" if kt < 22 else "strong"
 
 
+def uniq(events):
+    """Each alert name once, in order: NWS often issues the same alert twice for neighboring zones
+    (Oct. 17, 2026: "a Small Craft Advisory and a Small Craft Advisory are out")."""
+    seen = []
+    for e in events:
+        if e not in seen:
+            seen.append(e)
+    return seen
+
+
 def window_text(w, day):
     return f"{clock(at(day, w[0]))} to {clock(at(day, w[1]))}"
 
@@ -507,7 +517,7 @@ def swim_call(beach, today_alerts):
     if not beach:
         return {"call": None, "why": "No swim forecast: the Weather Service's beach forecast runs from just before "
                                      "Memorial Day weekend through September, and there are no lifeguards out of season."}
-    stay = [a["event"] for a in today_alerts if a["event"] in SWIM_STAY_OUT]
+    stay = uniq(a["event"] for a in today_alerts if a["event"] in SWIM_STAY_OUT)
     risk = beach["risk"]
     call = "STAY OUT" if stay or risk == "High" else "CAUTION" if risk == "Moderate" else "OK"
     why = f"The Weather Service's beach forecast has a {risk.lower()} swim risk"
@@ -519,8 +529,8 @@ def swim_call(beach, today_alerts):
 
 def pier_call(lake, today_alerts, beach):
     ft = lake.get("waveMaxFt") if lake else None
-    stay = [a["event"] for a in today_alerts if a["event"] in SHORE_STAY_OFF or (a["event"] in WIND_STAY_OFF and on_lake(a))]
-    caution = [a["event"] for a in today_alerts if a["event"] in SHORE_CAUTION or (a["event"] == "Small Craft Advisory" and on_lake(a))]
+    stay = uniq(a["event"] for a in today_alerts if a["event"] in SHORE_STAY_OFF or (a["event"] in WIND_STAY_OFF and on_lake(a)))
+    caution = [e for e in uniq(a["event"] for a in today_alerts if a["event"] in SHORE_CAUTION or (a["event"] == "Small Craft Advisory" and on_lake(a))) if e not in stay]
     if stay or (ft is not None and ft >= 5):
         call = "STAY OFF"
     elif caution or (ft is not None and ft >= 3) or (beach and beach["risk"] == "Moderate"):
@@ -543,8 +553,8 @@ def pier_call(lake, today_alerts, beach):
 
 
 def boat_call(lake, today_alerts, rows, day):
-    stay = [a["event"] for a in today_alerts if a["event"] in BOATS_STAY_IN and on_lake(a)]
-    caution = [a["event"] for a in today_alerts if a["event"] in BOATS_CAUTION and on_lake(a)]
+    stay = uniq(a["event"] for a in today_alerts if a["event"] in BOATS_STAY_IN and on_lake(a))
+    caution = [e for e in uniq(a["event"] for a in today_alerts if a["event"] in BOATS_CAUTION and on_lake(a)) if e not in stay]
     ft = lake.get("waveMaxFt") if lake else None
     kt = lake.get("windMaxKt") if lake else None
     gust = lake.get("gustKt") if lake else None
