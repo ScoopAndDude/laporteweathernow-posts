@@ -1,0 +1,202 @@
+{
+  "about": "The Daily Video for La Porte Weather Now (scripts/daily_video.py): official NWS weather, read aloud.",
+  "date": "2026-10-17",
+  "planned": "2026-10-17T06:02:00-05:00",
+  "source": "nws",
+  "forecastUpdated": "2026-10-17T09:15:09+00:00",
+  "observationTime": "2026-10-17T05:35:00-05:00",
+  "alerts": [
+    {
+      "event": "Frost Advisory",
+      "ends": "2026-10-18T09:00:00-04:00",
+      "id": "urn:oid:2.49.0.1.840.0.1a1122dea573fe8c61731805a6947c875ff72916.004.1"
+    }
+  ],
+  "shortFused": [],
+  "hook": {
+    "kind": "alert",
+    "score": 110,
+    "big": "Frost Advisory",
+    "small": "for La Porte County from 2 a.m. Sunday until 8 a.m. Sunday",
+    "say": "The National Weather Service has a Frost Advisory for La Porte County from 2 a.m. Sunday until 8 a.m. Sunday.",
+    "when": "now"
+  },
+  "hookOptions": [
+    {
+      "kind": "alert",
+      "score": 110,
+      "say": "The National Weather Service has a Frost Advisory for La Porte County from 2 a.m. Sunday until 8 a.m. Sunday."
+    },
+    {
+      "kind": "frost",
+      "score": 90,
+      "say": "Areas of frost is possible tonight, with a low around 34°."
+    },
+    {
+      "kind": "plain",
+      "score": 10,
+      "say": "Today in La Porte: patchy frost, then sunny, high near 55°."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "hook",
+      "label": "NATIONAL WEATHER SERVICE",
+      "big": "Frost Advisory",
+      "small": "for La Porte County from 2 a.m. Sunday until 8 a.m. Sunday",
+      "icon": "alert",
+      "tone": "alert",
+      "hookKind": "alert",
+      "say": "The National Weather Service has a Frost Advisory for La Porte County from 2 a.m. Sunday until 8 a.m. Sunday.",
+      "spoken": "The National Weather Service has a Frost Advisory for La Port County from two Sunday morning until eight Sunday morning.",
+      "voiceFile": "voice/hook.wav",
+      "voiceSeconds": 7.5,
+      "start": 0.0,
+      "duration": 7.9,
+      "voiceAt": 0.04
+    },
+    {
+      "id": "today",
+      "sun": null,
+      "kind": "period",
+      "title": "TODAY",
+      "date": "Saturday, Oct. 17",
+      "temp": 55,
+      "tempLabel": "HIGH",
+      "icon": "sun",
+      "text": "Patchy frost, then sunny",
+      "sentence": "Patchy frost, then sunny",
+      "rain": null,
+      "note": "Areas of frost possible tonight",
+      "hours": [
+        {
+          "label": "6 AM",
+          "temp": 38,
+          "pop": 3
+        },
+        {
+          "label": "8 AM",
+          "temp": 39,
+          "pop": 0
+        },
+        {
+          "label": "10 AM",
+          "temp": 45,
+          "pop": 0
+        },
+        {
+          "label": "12 PM",
+          "temp": 50,
+          "pop": 0
+        },
+        {
+          "label": "2 PM",
+          "temp": 53,
+          "pop": 0
+        },
+        {
+          "label": "4 PM",
+          "temp": 53,
+          "pop": 0
+        }
+      ],
+      "say": "Today: patchy frost, then sunny. High 55. Patchy frost is possible. Tonight: low 34. Areas of frost is possible tonight.",
+      "next": {
+        "name": "Tonight",
+        "temp": 34,
+        "tempLabel": "LOW"
+      },
+      "spoken": "Today: patchy frost, then sunny. High fifty-five. Patchy frost is possible. Tonight: low thirty-four. Areas of frost is possible tonight.",
+      "voiceFile": "voice/today.wav",
+      "voiceSeconds": 8.95,
+      "start": 7.9,
+      "duration": 9.35,
+      "voiceAt": 8.0
+    },
+    {
+      "id": "radar",
+      "kind": "radar",
+      "title": "RADAR",
+      "say": "Here's the radar right now.",
+      "spoken": "Here's the radar right now.",
+      "voiceFile": "voice/radar.wav",
+      "voiceSeconds": 1.98,
+      "start": 17.25,
+      "duration": 3.2,
+      "voiceAt": 17.35
+    },
+    {
+      "id": "days",
+      "kind": "days",
+      "title": "NEXT 3 DAYS",
+      "days": [
+        {
+          "name": "Sun",
+          "day": "Sunday",
+          "hi": 62,
+          "lo": 36,
+          "pop": null,
+          "icon": "sun",
+          "text": "Areas of frost, then sunny",
+          "short": "Areas Of Frost then Sunny",
+          "star": false
+        },
+        {
+          "name": "Mon",
+          "day": "Monday",
+          "hi": 66,
+          "lo": 39,
+          "pop": null,
+          "icon": "sun",
+          "text": "Patchy frost, then sunny",
+          "short": "Patchy Frost then Sunny",
+          "star": false
+        },
+        {
+          "name": "Tue",
+          "day": "Tuesday",
+          "hi": 69,
+          "lo": 43,
+          "pop": null,
+          "icon": "sun",
+          "text": "Sunny",
+          "short": "Sunny",
+          "star": false
+        }
+      ],
+      "say": "Sunday: areas of frost, then sunny, 62.",
+      "spoken": "Sunday: areas of frost, then sunny, sixty-two.",
+      "voiceFile": "voice/days.wav",
+      "voiceSeconds": 3.33,
+      "start": 20.45,
+      "duration": 3.73,
+      "voiceAt": 20.55
+    },
+    {
+      "id": "end",
+      "kind": "end",
+      "say": "laporteweathernow.com.",
+      "spoken": "La Port Weather Now dot com.",
+      "voiceFile": "voice/end.wav",
+      "voiceSeconds": 2.02,
+      "start": 24.18,
+      "duration": 2.42,
+      "voiceAt": 24.28
+    }
+  ],
+  "caption": "La Porte weather for Saturday, Oct. 17, from the National Weather Service:\nOfficial alerts for La Porte County: Frost Advisory until 8 a.m. Sunday.\nToday: Patchy frost, then sunny. High 55. Patchy frost possible.\nTonight: Clear, then areas of frost. Low 34. Areas of frost possible.\nSunday: Areas of frost, then sunny, high 62. Monday: Patchy frost, then sunny, high 66. Tuesday: Sunny, high 69.\nFree forecast every morning: laporteweathernow.com\nNo hype. Just the forecast.\n#LaPorte #LaPorteIndiana #LaPorteCounty #IndianaWeather #NWIndiana",
+  "words": 58,
+  "mode": "auto",
+  "normalsStation": {
+    "id": "USC00124837",
+    "name": "LAPORTE, IN US",
+    "km": 1.0
+  },
+  "seconds": 26.6,
+  "voice": "Kokoro-82M af_heart, speed 1.1",
+  "video": "laporte-2026-10-17.mp4",
+  "cover": "cover.jpg",
+  "bytes": 10920612,
+  "rendered": "2026-10-17T06:04:15-05:00"
+}
