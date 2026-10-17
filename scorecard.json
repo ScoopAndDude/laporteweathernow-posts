@@ -1,93 +1,119 @@
 {
  "about": "Daily Scoop forecasts graded against the La Porte airport (KPPO), same rules as laporteweathernow.com/track-record: temperatures count if within 3 degrees F; rain calls count at 50%+ (should rain) and 20% or less (should stay dry). Made by scripts/scorecard.py.",
- "generated": "2026-10-16T09:45:50-05:00",
+ "generated": "2026-10-17T05:02:16-05:00",
  "station": "La Porte Municipal Airport (KPPO)",
  "tolerance": 3,
  "since": "2026-09-27",
  "window": {
   "days": 30,
-  "from": "2026-09-16",
-  "to": "2026-10-15"
+  "from": "2026-09-17",
+  "to": "2026-10-16"
  },
  "last30": {
-  "days": 17,
+  "days": 18,
   "highs": [
-   8,
-   17
+   9,
+   18
   ],
   "lows": [
    10,
-   17
+   18
   ],
   "rainLikely": [
-   1,
-   3
+   2,
+   4
   ],
   "rainDry": [
    9,
    9
   ],
   "rain": [
-   10,
-   12
+   11,
+   13
   ],
-  "highAvgOff": 4.2,
+  "highAvgOff": 4.1,
   "lowAvgOff": 3.1
  },
  "allTime": {
-  "days": 17,
+  "days": 18,
   "highs": [
-   8,
-   17
+   9,
+   18
   ],
   "lows": [
    10,
-   17
+   18
   ],
   "rainLikely": [
-   1,
-   3
+   2,
+   4
   ],
   "rainDry": [
    9,
    9
   ],
   "rain": [
-   10,
-   12
+   11,
+   13
   ],
-  "highAvgOff": 4.2,
+  "highAvgOff": 4.1,
   "lowAvgOff": 3.1
  },
  "bias": {
-  "days": 17,
+  "days": 18,
   "ready": true,
   "high": -2.6,
-  "highDays": 17,
-  "low": 1.6,
-  "lowDays": 17,
+  "highDays": 18,
+  "low": 1.3,
+  "lowDays": 18,
   "note": "Average of (forecast minus airport reading) over the last 30 graded days; positive means we ran warm. Used to nudge the model blend once 14+ days are graded."
  },
  "morning": {
   "about": "Same-morning forecasts (saved about 5 a.m., when Hard Hat Weather makes its calls), graded against the La Porte airport: today's high within 3 degrees, and the rain call (50%+ should rain, 20% or less should stay dry). nws = the NWS forecast; blend = our model blend (from Oct. 2, 2026).",
   "last30": {
-   "days": 14,
+   "days": 15,
    "nwsHighs": [
     8,
-    14
+    15
    ],
    "blendHighs": [
-    9,
-    12
+    10,
+    13
    ],
    "rain": [
-    9,
-    12
+    10,
+    13
    ],
-   "nwsHighAvgOff": 2.7,
-   "blendHighAvgOff": 2.5
+   "nwsHighAvgOff": 3.3,
+   "blendHighAvgOff": 2.4
   },
   "days": [
+   {
+    "date": "2026-10-16",
+    "said": {
+     "nwsHigh": 55,
+     "blendHigh": 67,
+     "rain": 87
+    },
+    "status": "scored",
+    "observed": {
+     "high": 66,
+     "rained": true,
+     "rainText": "0.19 in of rain"
+    },
+    "nwsHigh": {
+     "off": 11.0,
+     "hit": false
+    },
+    "blendHigh": {
+     "off": 1.0,
+     "hit": true
+    },
+    "rain": {
+     "hit": true,
+     "kind": "likely"
+    }
+   },
    {
     "date": "2026-10-15",
     "said": {
@@ -459,34 +485,34 @@
   ]
  },
  "latest": {
-  "date": "2026-10-15",
-  "fromPost": "2026-10-14",
+  "date": "2026-10-16",
+  "fromPost": "2026-10-15",
   "leadDays": 1,
   "forecast": {
    "high": 64,
-   "low": 52,
+   "low": 42,
    "rain": 80
   },
   "status": "scored",
   "observed": {
-   "high": 70,
-   "low": 57,
-   "rained": false,
-   "rainText": "no rain recorded"
+   "high": 66,
+   "low": 46,
+   "rained": true,
+   "rainText": "0.19 in of rain"
   },
   "high": {
-   "off": 6.0,
-   "hit": false
+   "off": 2.0,
+   "hit": true
   },
   "low": {
-   "off": 5.0,
+   "off": 4.0,
    "hit": false
   },
   "rain": {
-   "hit": false,
+   "hit": true,
    "kind": "likely"
   },
-  "verdict": "miss"
+  "verdict": "close"
  },
  "days": [
   {
@@ -509,7 +535,26 @@
     "low": 42,
     "rain": 80
    },
-   "status": "pending"
+   "status": "scored",
+   "observed": {
+    "high": 66,
+    "low": 46,
+    "rained": true,
+    "rainText": "0.19 in of rain"
+   },
+   "high": {
+    "off": 2.0,
+    "hit": true
+   },
+   "low": {
+    "off": 4.0,
+    "hit": false
+   },
+   "rain": {
+    "hit": true,
+    "kind": "likely"
+   },
+   "verdict": "close"
   },
   {
    "date": "2026-10-15",
@@ -1057,6 +1102,7 @@
   "2026-10-12": 24,
   "2026-10-13": 24,
   "2026-10-14": 24,
-  "2026-10-15": 24
+  "2026-10-15": 24,
+  "2026-10-16": 24
  }
 }
