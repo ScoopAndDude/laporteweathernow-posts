@@ -1,25 +1,25 @@
 {
  "about": "Today's Sky Devotion for La Porte, Indiana, picked each morning by what the sky is doing (devotion/sky.js). By La Porte Weather Now. Scripture: KJV (public domain). Weather: National Weather Service.",
- "date": "2026-10-16",
- "generated": "2026-10-16T10:32:16.426Z",
+ "date": "2026-10-17",
+ "generated": "2026-10-17T10:32:11.617Z",
  "place": "La Porte, Indiana",
  "lat": 41.6081,
  "lon": -86.7189,
- "sky": "storm",
- "reason": "Thunderstorms in the forecast",
- "alert": null,
- "forecastLine": "Today: Showers And Thunderstorms, high near 55°. Tonight: Showers And Thunderstorms, low around 36°.",
- "weatherSource": "NWS snapshot 2026-10-16T05:02:06-05:00",
+ "sky": "first-frost",
+ "reason": "The first frost of the season",
+ "alert": "Frost Advisory",
+ "forecastLine": "Today: Patchy Frost then Sunny, high near 55°. Tonight: Clear then Areas Of Frost, low around 34°.",
+ "weatherSource": "NWS snapshot 2026-10-17T05:02:05-05:00",
  "entry": {
-  "id": "storm-4",
-  "sky": "storm",
-  "ref": "Isaiah 25:4",
-  "kjv": "For thou hast been a strength to the poor, a strength to the needy in his distress, a refuge from the storm, a shadow from the heat, when the blast of the terrible ones is as a storm against the wall.",
-  "text": "Isaiah calls God a refuge from the storm, especially for the poor and the needy. Some neighbors have less shelter than others when the weather turns. Check today on someone who might need a ride, a call, or a safe place."
+  "id": "first-frost-2",
+  "sky": "first-frost",
+  "ref": "Psalm 147:16",
+  "kjv": "He giveth snow like wool: he scattereth the hoarfrost like ashes.",
+  "text": "Frost on the grass is God's handiwork, scattered overnight like ashes. The first one of the season is a good nudge to get ready for winter. Check the furnace and the neighbors, and make sure outdoor animals have shelter and water that won't freeze."
  },
  "season": {
   "year": 2026,
-  "firstFrost": null,
+  "firstFrost": "2026-10-17",
   "firstSnow": null
  },
  "history": [
@@ -77,6 +77,11 @@
    "date": "2026-10-16",
    "sky": "storm",
    "id": "storm-4"
+  },
+  {
+   "date": "2026-10-17",
+   "sky": "first-frost",
+   "id": "first-frost-2"
   }
  ]
 }
