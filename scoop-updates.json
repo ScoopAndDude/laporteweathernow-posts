@@ -4,22 +4,22 @@
  "post": "2026-10-17T06:32:00-05:00",
  "kind": "backup",
  "published": {
-  "time": "2026-10-17T08:47:00-05:00",
+  "time": "2026-10-17T09:47:00-05:00",
   "alertKeys": [
    "Frost Advisory | La Porte County | 2026-10-18 08:00"
   ],
-  "obsTime": "2026-10-17T08:15:00-05:00",
-  "forecastUpdated": "2026-10-17T13:15:10+00:00"
+  "obsTime": "2026-10-17T09:15:00-05:00",
+  "forecastUpdated": "2026-10-17T14:15:58+00:00"
  },
  "alertRows": [
   {
-   "id": "urn:oid:2.49.0.1.840.0.c9e160a1a422ecf845e397e68afd581e560c6cdc.006.1",
+   "id": "urn:oid:2.49.0.1.840.0.8fe8a86437d91551e7c988ab4c13744c51b78fb8.002.1",
    "event": "Frost Advisory",
-   "area": "Starke; Pulaski; Fulton; White; Cass; Northern La Porte; Southern La Porte",
+   "area": "Elkhart; Starke; Pulaski; Marshall; Fulton; White; Cass; Northern La Porte; Eastern St. Joseph; Southern La Porte; Western St. Joseph; Cass; St. Joseph; Branch; Hillsdale; Northern Berrien; Southern Berrien",
    "onset": "2026-10-18T03:00:00-04:00",
    "ends": "2026-10-18T09:00:00-04:00",
-   "expires": "2026-10-17T21:00:00-04:00",
-   "sent": "2026-10-17T08:58:00-04:00",
+   "expires": "2026-10-18T09:00:00-04:00",
+   "sent": "2026-10-17T10:06:00-04:00",
    "messageType": "Update"
   }
  ],
@@ -35,6 +35,10 @@
   },
   {
    "time": "2026-10-17T08:47:00-05:00",
+   "why": "hourly refresh"
+  },
+  {
+   "time": "2026-10-17T09:47:00-05:00",
    "why": "hourly refresh"
   }
  ]
