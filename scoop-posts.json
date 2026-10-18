@@ -4,15 +4,15 @@
     {
       "type": "daily",
       "date": "2026-10-18",
-      "posted": "2026-10-18T06:32:00-05:00",
-      "updated": "2026-10-18T08:02:00-05:00",
-      "title": "Automatic NWS update: Areas of frost then sunny, high near 62",
-      "summary": "The Daily Scoop is running late, so here is the official NWS forecast for La Porte, posted automatically at 6:32 a.m. and refreshed at 8:02 a.m.",
+      "posted": "2026-10-18T08:33:00-05:00",
+      "updated": "2026-10-18T08:33:00-05:00",
+      "title": "Frosty start, then sunny near 62; dry all week, highs near 70 by Wednesday",
+      "summary": "A frosty start gives way to a sunny Sunday near 62, then a dry, sunny week with highs warming to 70 or 71 by Wednesday, patchy frost possible tonight, and no watches, warnings or advisories for La Porte County.",
       "body": [
-        "This is an automatic update, refreshed through the day (latest at 8:02 a.m.). The Daily Scoop didn't post by 6:30 a.m., so here is the official National Weather Service forecast for La Porte, in NWS's own words. If Scoop's write-up comes in later today, it will replace this.",
-        "Today: Areas of frost before 8 a.m. Sunny, with a high near 62. South wind 5 to 15 mph, with gusts as high as 25 mph. Tonight: Mostly clear, with a low around 38. South wind 5 to 10 mph. At 7:35 a.m. the La Porte airport reported clear and 37 degrees. NWS last updated this forecast at 4:15 a.m.",
-        "The next few days, from the same NWS forecast: Monday: Sunny, high near 66. Monday Night: Mostly clear, low around 38. Tuesday: Sunny, high near 68. Tuesday Night: Mostly clear, low around 42. Wednesday: Sunny, high near 70. Wednesday Night: Mostly clear, low around 45.",
-        "Right now there are no watches, warnings, or advisories for La Porte County (checked at 8:02 a.m.)."
+        "A frosty start, then a sunny, pleasant Sunday. The Frost Advisory for La Porte County ended at 8 a.m. NWS says sunny today, high near 62, south wind 5 to 15 mph with gusts as high as 25 mph, and its hour-by-hour forecast keeps the day dry. Tonight: mostly clear, low around 38. The La Porte airport at 7:55 a.m.: clear and 39. Keep the plant covers handy: NWS Northern Indiana forecasters say patchy frost is possible again tonight.",
+        "Monday: sunny, high near 66; Monday night mostly clear, low around 38. Tuesday: sunny, near 68. Then sunny and dry the rest of the week, highs 70 to 71 Wednesday through Saturday and lows 42 to 46; NWS has no rain chance above 2% through Saturday night. NWS says lows of 38 tonight and Monday night and a high of 68 Tuesday; the computer models we also check run closer to 37, 40 and 70, so our forecast says 37 tonight, 66 Monday, 40 Monday night and 70 Tuesday. The models disagree on Monday's high and Monday night's low, so those are less certain.",
+        "What changed since Thursday's Scoop: the frost we said was most possible Sunday morning came with a Frost Advisory; today's NWS high is 62 (from 64), Monday night's low is around 38 (from 42), and the dry stretch now runs through next Saturday (from at least Thursday). NWS Northern Indiana forecasters say patchy frost is possible tonight and maybe Monday night, then lows trend warmer and highs reach near or just above normal, and this week's cold fronts should pass through dry. For Saturday, our Oct. 15 Scoop said a high of 56 and a low of 36; the La Porte airport got 57 and 36.",
+        "Right now there are no watches, warnings or advisories for La Porte County or for Porter and Lake counties next door. SPC shows no thunderstorm or severe risk here through Tuesday night, and WPC shows no flooding-rain risk at La Porte through Thursday."
       ],
       "sources": [
         {
@@ -20,14 +20,42 @@
           "url": "https://forecast.weather.gov/MapClick.php?lat=41.6081&lon=-86.7189"
         },
         {
+          "label": "NWS Northern Indiana forecast discussion (we used the 5:01 AM EDT Oct. 18 issue; the link opens the newest one)",
+          "url": "https://forecast.weather.gov/product.php?site=IWX&issuedby=IWX&product=AFD"
+        },
+        {
+          "label": "Storm Prediction Center convective outlooks",
+          "url": "https://www.spc.noaa.gov/products/outlook/"
+        },
+        {
+          "label": "Weather Prediction Center excessive rainfall outlooks",
+          "url": "https://www.wpc.ncep.noaa.gov/qpf/excessive_rainfall_outlook_ero.php"
+        },
+        {
           "label": "NWS Northern Indiana current hazards",
           "url": "https://www.weather.gov/iwx/"
+        },
+        {
+          "label": "Computer model forecasts from Open-Meteo (CC BY 4.0)",
+          "url": "https://open-meteo.com/"
         }
       ],
       "author": "La Porte Weather Now",
-      "forecasts": [],
-      "corrections": [],
-      "auto": true
+      "forecasts": [
+        {
+          "date": "2026-10-19",
+          "high": 66,
+          "low": 37,
+          "rain": 0
+        },
+        {
+          "date": "2026-10-20",
+          "high": 70,
+          "low": 40,
+          "rain": 0
+        }
+      ],
+      "corrections": []
     },
     {
       "type": "daily",
