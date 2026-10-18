@@ -1,6 +1,6 @@
 {
  "about": "Official weather for La Porte, Indiana, saved by a GitHub job for the Daily Scoop (laporteweathernow.com/daily-scoop). Copied from NWS, SPC and WPC as-is; see scripts/nws_snapshot.py.",
- "fetched": "2026-10-17T08:38:51-05:00",
+ "fetched": "2026-10-18T05:02:12-05:00",
  "place": "La Porte, IN",
  "lat": 41.6081,
  "lon": -86.7189,
@@ -23,47 +23,36 @@
  },
  "observation": {
   "station": "KPPO (La Porte Municipal Airport)",
-  "time": "2026-10-17T08:15:00-05:00",
+  "time": "2026-10-18T04:35:00-05:00",
   "weather": "Clear",
-  "temperatureF": 41,
+  "temperatureF": 37,
   "dewpointF": 34,
-  "humidityPercent": 75,
+  "humidityPercent": 87,
   "wind": {
-   "from": "NE",
-   "degrees": 50,
-   "mph": 7,
+   "from": null,
+   "degrees": null,
+   "mph": 5,
    "gustMph": null
   },
   "visibilityMiles": 10.0,
-  "pressureInHg": 30.51,
-  "metar": "KPPO 171315Z AUTO 05006KT 10SM CLR 05/01 A3051 RMK AO2"
+  "pressureInHg": 30.46,
+  "metar": "KPPO 180935Z AUTO VRB04KT 10SM CLR 03/01 A3046 RMK AO2"
  },
  "forecast": {
-  "updated": "2026-10-17T11:44:58+00:00",
-  "generated": "2026-10-17T13:01:58+00:00",
+  "updated": "2026-10-18T09:15:02+00:00",
+  "generated": "2026-10-18T09:47:00+00:00",
   "timesNote": "Clock times in the forecast wording are already in America/Chicago (La Porte's real time). NWS writes them in America/Indiana/Indianapolis, which it has on file for La Porte by mistake.",
   "periods": [
    {
-    "name": "Today",
-    "start": "2026-10-17T09:00:00-04:00",
-    "end": "2026-10-17T18:00:00-04:00",
-    "isDaytime": true,
-    "temperatureF": 55,
-    "rainChancePercent": 0,
-    "wind": "SE 0 to 5 mph",
-    "short": "Sunny",
-    "detailed": "Sunny, with a high near 55. Southeast wind 0 to 5 mph."
-   },
-   {
-    "name": "Tonight",
-    "start": "2026-10-17T18:00:00-04:00",
+    "name": "Overnight",
+    "start": "2026-10-18T05:00:00-04:00",
     "end": "2026-10-18T06:00:00-04:00",
     "isDaytime": false,
     "temperatureF": 34,
     "rainChancePercent": 0,
-    "wind": "SW 5 mph",
-    "short": "Clear then Areas Of Frost",
-    "detailed": "Areas of frost after 4am. Clear, with a low around 34. Southwest wind around 5 mph."
+    "wind": "S 5 mph",
+    "short": "Areas Of Frost",
+    "detailed": "Areas of frost. Clear, with a low around 34. South wind around 5 mph."
    },
    {
     "name": "Sunday",
@@ -72,20 +61,20 @@
     "isDaytime": true,
     "temperatureF": 62,
     "rainChancePercent": 0,
-    "wind": "SW 5 to 15 mph",
+    "wind": "S 5 to 15 mph",
     "short": "Areas Of Frost then Sunny",
-    "detailed": "Areas of frost before 8am. Sunny, with a high near 62. Southwest wind 5 to 15 mph."
+    "detailed": "Areas of frost before 8am. Sunny, with a high near 62. South wind 5 to 15 mph, with gusts as high as 25 mph."
    },
    {
     "name": "Sunday Night",
     "start": "2026-10-18T18:00:00-04:00",
     "end": "2026-10-19T06:00:00-04:00",
     "isDaytime": false,
-    "temperatureF": 36,
+    "temperatureF": 38,
     "rainChancePercent": 0,
     "wind": "S 5 to 10 mph",
-    "short": "Clear",
-    "detailed": "Clear, with a low around 36. South wind 5 to 10 mph."
+    "short": "Mostly Clear",
+    "detailed": "Mostly clear, with a low around 38. South wind 5 to 10 mph."
    },
    {
     "name": "Monday",
@@ -94,108 +83,119 @@
     "isDaytime": true,
     "temperatureF": 66,
     "rainChancePercent": 0,
-    "wind": "S 5 mph",
-    "short": "Patchy Frost then Sunny",
-    "detailed": "Patchy frost between 6am and 7am. Sunny, with a high near 66. South wind around 5 mph."
+    "wind": "S 0 to 5 mph",
+    "short": "Sunny",
+    "detailed": "Sunny, with a high near 66. South wind 0 to 5 mph."
    },
    {
     "name": "Monday Night",
     "start": "2026-10-19T18:00:00-04:00",
     "end": "2026-10-20T06:00:00-04:00",
     "isDaytime": false,
-    "temperatureF": 39,
+    "temperatureF": 38,
     "rainChancePercent": 0,
-    "wind": "SE 5 mph",
+    "wind": "0 mph",
     "short": "Mostly Clear",
-    "detailed": "Mostly clear, with a low around 39."
+    "detailed": "Mostly clear, with a low around 38. East wind around 0 mph."
    },
    {
     "name": "Tuesday",
     "start": "2026-10-20T06:00:00-04:00",
     "end": "2026-10-20T18:00:00-04:00",
     "isDaytime": true,
-    "temperatureF": 69,
+    "temperatureF": 68,
     "rainChancePercent": 0,
-    "wind": "E 0 to 5 mph",
+    "wind": "0 mph",
     "short": "Sunny",
-    "detailed": "Sunny, with a high near 69."
+    "detailed": "Sunny, with a high near 68."
    },
    {
     "name": "Tuesday Night",
     "start": "2026-10-20T18:00:00-04:00",
     "end": "2026-10-21T06:00:00-04:00",
     "isDaytime": false,
-    "temperatureF": 43,
+    "temperatureF": 42,
     "rainChancePercent": 0,
-    "wind": "E 0 to 5 mph",
+    "wind": "0 mph",
     "short": "Mostly Clear",
-    "detailed": "Mostly clear, with a low around 43."
+    "detailed": "Mostly clear, with a low around 42."
    },
    {
     "name": "Wednesday",
     "start": "2026-10-21T06:00:00-04:00",
     "end": "2026-10-21T18:00:00-04:00",
     "isDaytime": true,
-    "temperatureF": 72,
+    "temperatureF": 70,
     "rainChancePercent": 0,
     "wind": "SE 0 to 5 mph",
     "short": "Sunny",
-    "detailed": "Sunny, with a high near 72."
+    "detailed": "Sunny, with a high near 70."
    },
    {
     "name": "Wednesday Night",
     "start": "2026-10-21T18:00:00-04:00",
     "end": "2026-10-22T06:00:00-04:00",
     "isDaytime": false,
-    "temperatureF": 46,
+    "temperatureF": 45,
     "rainChancePercent": 2,
-    "wind": "SE 0 to 5 mph",
+    "wind": "0 mph",
     "short": "Mostly Clear",
-    "detailed": "Mostly clear, with a low around 46."
+    "detailed": "Mostly clear, with a low around 45."
    },
    {
     "name": "Thursday",
     "start": "2026-10-22T06:00:00-04:00",
     "end": "2026-10-22T18:00:00-04:00",
     "isDaytime": true,
-    "temperatureF": 74,
-    "rainChancePercent": 4,
-    "wind": "SW 0 to 5 mph",
+    "temperatureF": 71,
+    "rainChancePercent": 2,
+    "wind": "NE 0 to 5 mph",
     "short": "Sunny",
-    "detailed": "Sunny, with a high near 74."
+    "detailed": "Sunny, with a high near 71."
    },
    {
     "name": "Thursday Night",
     "start": "2026-10-22T18:00:00-04:00",
     "end": "2026-10-23T06:00:00-04:00",
     "isDaytime": false,
-    "temperatureF": 47,
-    "rainChancePercent": 1,
-    "wind": "E 0 to 5 mph",
+    "temperatureF": 45,
+    "rainChancePercent": 0,
+    "wind": "NE 0 to 5 mph",
     "short": "Mostly Clear",
-    "detailed": "Mostly clear, with a low around 47."
+    "detailed": "Mostly clear, with a low around 45."
    },
    {
     "name": "Friday",
     "start": "2026-10-23T06:00:00-04:00",
     "end": "2026-10-23T18:00:00-04:00",
     "isDaytime": true,
-    "temperatureF": 74,
-    "rainChancePercent": 2,
+    "temperatureF": 71,
+    "rainChancePercent": 0,
     "wind": "SE 0 to 5 mph",
-    "short": "Mostly Sunny",
-    "detailed": "Mostly sunny, with a high near 74."
+    "short": "Sunny",
+    "detailed": "Sunny, with a high near 71."
    },
    {
     "name": "Friday Night",
     "start": "2026-10-23T18:00:00-04:00",
     "end": "2026-10-24T06:00:00-04:00",
     "isDaytime": false,
-    "temperatureF": 48,
-    "rainChancePercent": 1,
+    "temperatureF": 44,
+    "rainChancePercent": 0,
     "wind": "SE 5 mph",
     "short": "Mostly Clear",
-    "detailed": "Mostly clear, with a low around 48."
+    "detailed": "Mostly clear, with a low around 44."
+   },
+   {
+    "name": "Saturday",
+    "start": "2026-10-24T06:00:00-04:00",
+    "end": "2026-10-24T18:00:00-04:00",
+    "isDaytime": true,
+    "temperatureF": 71,
+    "rainChancePercent": 1,
+    "wind": "SE 5 mph",
+    "short": "Sunny",
+    "detailed": "Sunny, with a high near 71."
    }
   ]
  },
@@ -205,11 +205,7 @@
   "next72hInches": 0.0,
   "byPeriod": [
    {
-    "name": "Today",
-    "inches": 0.0
-   },
-   {
-    "name": "Tonight",
+    "name": "Overnight",
     "inches": 0.0
    },
    {
@@ -234,11 +230,11 @@
    },
    {
     "name": "Tuesday Night",
-    "inches": 0
+    "inches": 0.0
    },
    {
     "name": "Wednesday",
-    "inches": 0
+    "inches": 0.0
    },
    {
     "name": "Wednesday Night",
@@ -259,203 +255,159 @@
    {
     "name": "Friday Night",
     "inches": 0
+   },
+   {
+    "name": "Saturday",
+    "inches": 0
    }
   ]
  },
  "alertsLaPorteCounty": [
   {
-   "id": "urn:oid:2.49.0.1.840.0.c9e160a1a422ecf845e397e68afd581e560c6cdc.006.1",
+   "id": "urn:oid:2.49.0.1.840.0.a99b39b69a3a49b382f84e300693983b1ff7916d.002.1",
    "event": "Frost Advisory",
-   "headline": "Frost Advisory issued October 17 at 8:58AM EDT until October 18 at 9:00AM EDT by NWS Northern Indiana",
+   "headline": "Frost Advisory issued October 17 at 9:40PM EDT until October 18 at 9:00AM EDT by NWS Northern Indiana",
    "nwsHeadline": "FROST ADVISORY REMAINS IN EFFECT FROM 3 AM EDT /2 AM CDT/ TO 9 AM EDT /8 AM CDT/ SUNDAY",
-   "area": "Starke; Pulaski; Fulton; White; Cass; Northern La Porte; Southern La Porte",
+   "area": "Elkhart; Starke; Pulaski; Marshall; Fulton; White; Cass; Northern La Porte; Eastern St. Joseph; Southern La Porte; Western St. Joseph; Cass; St. Joseph; Branch; Hillsdale; Northern Berrien; Southern Berrien",
    "sender": "NWS Northern Indiana",
-   "sent": "2026-10-17T08:58:00-04:00",
+   "sent": "2026-10-17T21:40:00-04:00",
    "onset": "2026-10-18T03:00:00-04:00",
    "ends": "2026-10-18T09:00:00-04:00",
-   "expires": "2026-10-17T21:00:00-04:00",
+   "expires": "2026-10-18T09:00:00-04:00",
    "messageType": "Update",
    "severity": "Minor",
    "certainty": "Likely",
    "urgency": "Expected",
-   "description": "* WHAT...Temperatures as low as 33 will result in frost formation.\n\n* WHERE...Cass IN, Fulton IN, Northern La Porte, Pulaski, Southern La\nPorte, Starke, and White Counties.\n\n* WHEN...From 3 AM EDT /2 AM CDT/ to 9 AM EDT /8 AM CDT/ Sunday.\n\n* IMPACTS...Frost could harm sensitive outdoor vegetation. Sensitive\noutdoor plants may be killed if left uncovered.",
+   "description": "* WHAT...Temperatures as low as 33 will result in frost formation.\n\n* WHERE...Portions of northern Indiana and southwest Michigan.\n\n* WHEN...From 3 AM EDT /2 AM CDT/ to 9 AM EDT /8 AM CDT/ Sunday.\n\n* IMPACTS...Frost could harm sensitive outdoor vegetation. Sensitive\noutdoor plants may be killed if left uncovered.",
    "instruction": "Take steps now to protect tender plants from the cold."
   }
  ],
  "alertsNearby": {
   "indiana": [
    {
-    "id": "urn:oid:2.49.0.1.840.0.c9e160a1a422ecf845e397e68afd581e560c6cdc.004.1",
+    "id": "urn:oid:2.49.0.1.840.0.74d17aec641026e131b6e2b20e82bd667914c77f.001.1",
     "event": "Freeze Warning",
-    "headline": "Freeze Warning issued October 17 at 8:58AM EDT until October 18 at 9:00AM EDT by NWS Northern Indiana",
-    "nwsHeadline": "FREEZE WARNING REMAINS IN EFFECT FROM 3 AM TO 9 AM EDT SUNDAY",
-    "area": "Allen; Miami; Wabash; Huntington; Wells; Adams; Grant; Blackford; Jay; Williams; Fulton; Defiance; Henry; Paulding; Putnam; Van Wert; Allen",
-    "sender": "NWS Northern Indiana",
-    "sent": "2026-10-17T08:58:00-04:00",
-    "onset": "2026-10-18T03:00:00-04:00",
-    "ends": "2026-10-18T09:00:00-04:00",
-    "expires": "2026-10-17T21:00:00-04:00",
-    "messageType": "Update",
-    "severity": "Severe",
-    "certainty": "Likely",
-    "urgency": "Expected"
-   },
-   {
-    "id": "urn:oid:2.49.0.1.840.0.c9e160a1a422ecf845e397e68afd581e560c6cdc.003.2",
-    "event": "Frost Advisory",
-    "headline": "Frost Advisory issued October 17 at 8:58AM EDT until October 18 at 9:00AM EDT by NWS Northern Indiana",
-    "nwsHeadline": "FROST ADVISORY WILL EXPIRE AT 9 AM EDT THIS MORNING... ...FROST ADVISORY REMAINS IN EFFECT FROM 3 AM TO 9 AM EDT SUNDAY",
-    "area": "Elkhart; Marshall; Eastern St. Joseph; Western St. Joseph",
-    "sender": "NWS Northern Indiana",
-    "sent": "2026-10-17T08:58:00-04:00",
-    "onset": "2026-10-18T03:00:00-04:00",
-    "ends": "2026-10-18T09:00:00-04:00",
-    "expires": "2026-10-17T21:00:00-04:00",
-    "messageType": "Update",
-    "severity": "Minor",
-    "certainty": "Likely",
-    "urgency": "Expected"
-   },
-   {
-    "id": "urn:oid:2.49.0.1.840.0.c9e160a1a422ecf845e397e68afd581e560c6cdc.001.2",
-    "event": "Freeze Warning",
-    "headline": "Freeze Warning issued October 17 at 8:58AM EDT until October 18 at 9:00AM EDT by NWS Northern Indiana",
-    "nwsHeadline": "FROST ADVISORY WILL EXPIRE AT 9 AM EDT THIS MORNING... ...FREEZE WARNING REMAINS IN EFFECT FROM 3 AM TO 9 AM EDT SUNDAY",
-    "area": "Lagrange; Steuben; Noble; De Kalb; Whitley; Northern Kosciusko; Southern Kosciusko",
-    "sender": "NWS Northern Indiana",
-    "sent": "2026-10-17T08:58:00-04:00",
-    "onset": "2026-10-18T03:00:00-04:00",
-    "ends": "2026-10-18T09:00:00-04:00",
-    "expires": "2026-10-17T21:00:00-04:00",
-    "messageType": "Update",
-    "severity": "Severe",
-    "certainty": "Likely",
-    "urgency": "Expected"
-   },
-   {
-    "id": "urn:oid:2.49.0.1.840.0.c9e160a1a422ecf845e397e68afd581e560c6cdc.006.1",
-    "event": "Frost Advisory",
-    "headline": "Frost Advisory issued October 17 at 8:58AM EDT until October 18 at 9:00AM EDT by NWS Northern Indiana",
-    "nwsHeadline": "FROST ADVISORY REMAINS IN EFFECT FROM 3 AM EDT /2 AM CDT/ TO 9 AM EDT /8 AM CDT/ SUNDAY",
-    "area": "Starke; Pulaski; Fulton; White; Cass; Northern La Porte; Southern La Porte",
-    "sender": "NWS Northern Indiana",
-    "sent": "2026-10-17T08:58:00-04:00",
-    "onset": "2026-10-18T03:00:00-04:00",
-    "ends": "2026-10-18T09:00:00-04:00",
-    "expires": "2026-10-17T21:00:00-04:00",
-    "messageType": "Update",
-    "severity": "Minor",
-    "certainty": "Likely",
-    "urgency": "Expected"
-   },
-   {
-    "id": "urn:oid:2.49.0.1.840.0.d0d19063c2810bcaf292a102e5b15b5616c6ddc6.003.1",
-    "event": "Frost Advisory",
-    "headline": "Frost Advisory issued October 17 at 7:56AM CDT until October 18 at 8:00AM CDT by NWS Chicago IL",
-    "nwsHeadline": "FROST ADVISORY REMAINS IN EFFECT FROM 3 AM CDT /4 AM EDT/ TO 8 AM CDT /9 AM EDT/ SUNDAY",
-    "area": "Kankakee; Livingston; Iroquois; Ford; Eastern Will; Lake; Porter; Newton; Jasper; Benton",
-    "sender": "NWS Chicago IL",
-    "sent": "2026-10-17T07:56:00-05:00",
-    "onset": "2026-10-18T03:00:00-05:00",
-    "ends": "2026-10-18T08:00:00-05:00",
-    "expires": "2026-10-17T18:00:00-05:00",
-    "messageType": "Update",
-    "severity": "Minor",
-    "certainty": "Likely",
-    "urgency": "Expected"
-   },
-   {
-    "id": "urn:oid:2.49.0.1.840.0.fed07f8c2bb229e53db538b23e07c77afb08e79c.002.1",
-    "event": "Frost Advisory",
-    "headline": "Frost Advisory issued October 17 at 6:52AM EDT until October 18 at 9:00AM EDT by NWS Indianapolis IN",
-    "nwsHeadline": "FROST ADVISORY REMAINS IN EFFECT FROM 2 AM TO 9 AM EDT SUNDAY",
-    "area": "Carroll; Warren; Tippecanoe; Fountain; Vermillion; Parke; Putnam; Marion; Vigo; Clay; Owen; Morgan; Johnson; Sullivan; Greene; Monroe; Brown; Bartholomew; Knox; Daviess; Martin; Lawrence; Jackson; Jennings",
-    "sender": "NWS Indianapolis IN",
-    "sent": "2026-10-17T06:52:00-04:00",
-    "onset": "2026-10-18T02:00:00-04:00",
-    "ends": "2026-10-18T09:00:00-04:00",
-    "expires": "2026-10-17T15:00:00-04:00",
-    "messageType": "Update",
-    "severity": "Minor",
-    "certainty": "Likely",
-    "urgency": "Expected"
-   },
-   {
-    "id": "urn:oid:2.49.0.1.840.0.fed07f8c2bb229e53db538b23e07c77afb08e79c.001.1",
-    "event": "Freeze Warning",
-    "headline": "Freeze Warning issued October 17 at 6:52AM EDT until October 18 at 9:00AM EDT by NWS Indianapolis IN",
-    "nwsHeadline": "FREEZE WARNING REMAINS IN EFFECT FROM 2 AM TO 9 AM EDT SUNDAY",
+    "headline": "Freeze Warning issued October 18 at 4:25AM EDT until October 18 at 9:00AM EDT by NWS Indianapolis IN",
+    "nwsHeadline": "FREEZE WARNING REMAINS IN EFFECT UNTIL 9 AM EDT THIS MORNING",
     "area": "Clinton; Howard; Montgomery; Boone; Tipton; Hamilton; Madison; Delaware; Randolph; Hendricks; Hancock; Henry; Shelby; Rush; Decatur",
     "sender": "NWS Indianapolis IN",
-    "sent": "2026-10-17T06:52:00-04:00",
-    "onset": "2026-10-18T02:00:00-04:00",
+    "sent": "2026-10-18T04:25:00-04:00",
+    "onset": "2026-10-18T04:25:00-04:00",
     "ends": "2026-10-18T09:00:00-04:00",
-    "expires": "2026-10-17T15:00:00-04:00",
+    "expires": "2026-10-18T09:00:00-04:00",
     "messageType": "Update",
     "severity": "Severe",
     "certainty": "Likely",
     "urgency": "Expected"
    },
    {
-    "id": "urn:oid:2.49.0.1.840.0.60cb798ac79f728675378e6a73c828fb61800da6.001.1",
+    "id": "urn:oid:2.49.0.1.840.0.74d17aec641026e131b6e2b20e82bd667914c77f.002.1",
     "event": "Frost Advisory",
-    "headline": "Frost Advisory issued October 17 at 12:00AM CDT until October 18 at 8:00AM CDT by NWS Paducah KY",
-    "nwsHeadline": "FROST ADVISORY IN EFFECT FROM 9 PM CDT /10 PM EDT/ THIS EVENING TO 8 AM CDT /9 AM EDT/ SUNDAY",
-    "area": "Jefferson; Wayne; Edwards; Wabash; Perry; Franklin; Hamilton; White; Jackson; Williamson; Saline; Gallatin; Union; Johnson; Pope; Hardin; Alexander; Pulaski; Massac; Gibson; Pike; Posey; Vanderburgh; Warrick; Spencer; Fulton; Hickman; Carlisle; Ballard; McCracken; Graves; Livingston; Marshall; Calloway; Crittenden; Lyon; Trigg; Caldwell; Union; Webster; Hopkins; Christian; Henderson; Daviess; McLean; Muhlenberg; Todd; Perry; Bollinger; Cape Girardeau; Wayne; Carter; Ripley; Butler; Stoddard; Scott; Mississippi; New Madrid",
-    "sender": "NWS Paducah KY",
-    "sent": "2026-10-17T00:00:00-05:00",
-    "onset": "2026-10-17T21:00:00-05:00",
-    "ends": "2026-10-18T08:00:00-05:00",
-    "expires": "2026-10-17T15:00:00-05:00",
-    "messageType": "Alert",
-    "severity": "Minor",
-    "certainty": "Likely",
-    "urgency": "Expected"
-   },
-   {
-    "id": "urn:oid:2.49.0.1.840.0.c6702765bd6ebeaf32f5c928b2a8a24465ab41d0.002.1",
-    "event": "Frost Advisory",
-    "headline": "Frost Advisory issued October 17 at 12:57AM EDT until October 18 at 9:00AM EDT by NWS Louisville KY",
-    "nwsHeadline": "FROST ADVISORY IN EFFECT FROM 1 AM EDT /MIDNIGHT CDT/ TO 9 AM EDT /8 AM CDT/ SUNDAY",
-    "area": "Orange; Washington; Scott; Jefferson; Dubois; Crawford; Perry; Harrison; Floyd; Clark; Hancock; Breckinridge; Meade; Ohio; Grayson; Hardin; Bullitt; Jefferson; Oldham; Trimble; Henry; Shelby; Franklin; Spencer; Anderson; Woodford; Nelson; Washington; Mercer; Jessamine; Larue; Marion; Boyle; Garrard; Madison; Butler; Edmonson; Hart; Green; Taylor; Casey; Lincoln; Logan; Warren; Simpson; Allen; Barren; Monroe; Metcalfe; Adair; Russell; Cumberland; Clinton",
-    "sender": "NWS Louisville KY",
-    "sent": "2026-10-17T00:57:00-04:00",
-    "onset": "2026-10-18T01:00:00-04:00",
+    "headline": "Frost Advisory issued October 18 at 4:25AM EDT until October 18 at 9:00AM EDT by NWS Indianapolis IN",
+    "nwsHeadline": "FROST ADVISORY REMAINS IN EFFECT UNTIL 9 AM EDT THIS MORNING",
+    "area": "Carroll; Warren; Tippecanoe; Fountain; Vermillion; Parke; Putnam; Marion; Vigo; Clay; Owen; Morgan; Johnson; Sullivan; Greene; Monroe; Brown; Bartholomew; Knox; Daviess; Martin; Lawrence; Jackson; Jennings",
+    "sender": "NWS Indianapolis IN",
+    "sent": "2026-10-18T04:25:00-04:00",
+    "onset": "2026-10-18T04:25:00-04:00",
     "ends": "2026-10-18T09:00:00-04:00",
-    "expires": "2026-10-17T16:00:00-04:00",
-    "messageType": "Alert",
+    "expires": "2026-10-18T09:00:00-04:00",
+    "messageType": "Update",
     "severity": "Minor",
     "certainty": "Likely",
     "urgency": "Expected"
    },
    {
-    "id": "urn:oid:2.49.0.1.840.0.db18c22708737a87b0f81e4586ff793f66f69eb4.001.2",
+    "id": "urn:oid:2.49.0.1.840.0.aa47f6942491e49f37910ba84b76fd6b97963d63.001.1",
+    "event": "Frost Advisory",
+    "headline": "Frost Advisory issued October 18 at 2:39AM CDT until October 18 at 8:00AM CDT by NWS Chicago IL",
+    "nwsHeadline": "FROST ADVISORY REMAINS IN EFFECT UNTIL 8 AM CDT THIS MORNING",
+    "area": "Kankakee; Livingston; Iroquois; Ford; Eastern Will; Lake; Porter; Newton; Jasper; Benton",
+    "sender": "NWS Chicago IL",
+    "sent": "2026-10-18T02:39:00-05:00",
+    "onset": "2026-10-18T03:00:00-05:00",
+    "ends": "2026-10-18T08:00:00-05:00",
+    "expires": "2026-10-18T08:00:00-05:00",
+    "messageType": "Update",
+    "severity": "Minor",
+    "certainty": "Likely",
+    "urgency": "Expected"
+   },
+   {
+    "id": "urn:oid:2.49.0.1.840.0.11f595b0f9d2d563144d642aa8b8ed03947faf3f.001.1",
     "event": "Freeze Warning",
-    "headline": "Freeze Warning issued October 17 at 12:18AM EDT until October 18 at 9:00AM EDT by NWS Wilmington OH",
-    "nwsHeadline": "FREEZE WARNING IN EFFECT FROM 1 AM TO 9 AM EDT SUNDAY",
+    "headline": "Freeze Warning issued October 18 at 2:57AM EDT until October 18 at 9:00AM EDT by NWS Wilmington OH",
+    "nwsHeadline": "FREEZE WARNING REMAINS IN EFFECT UNTIL 9 AM EDT THIS MORNING",
     "area": "Wayne; Fayette; Union; Franklin; Ripley; Dearborn; Ohio; Switzerland; Carroll; Gallatin; Boone; Kenton; Campbell; Owen; Grant; Pendleton; Bracken; Robertson; Mason; Lewis; Hardin; Mercer; Auglaize; Darke; Shelby; Logan; Union; Delaware; Miami; Champaign; Clark; Madison; Franklin; Licking; Preble; Montgomery; Greene; Fayette; Pickaway; Fairfield; Butler; Warren; Clinton; Ross; Hocking; Hamilton; Clermont; Brown; Highland; Adams; Pike; Scioto",
     "sender": "NWS Wilmington OH",
-    "sent": "2026-10-17T00:18:00-04:00",
-    "onset": "2026-10-18T01:00:00-04:00",
+    "sent": "2026-10-18T02:57:00-04:00",
+    "onset": "2026-10-18T02:57:00-04:00",
     "ends": "2026-10-18T09:00:00-04:00",
-    "expires": "2026-10-17T16:00:00-04:00",
-    "messageType": "Alert",
+    "expires": "2026-10-18T09:00:00-04:00",
+    "messageType": "Update",
     "severity": "Severe",
     "certainty": "Likely",
     "urgency": "Expected"
    },
    {
-    "id": "urn:oid:2.49.0.1.840.0.c9e160a1a422ecf845e397e68afd581e560c6cdc.005.1",
+    "id": "urn:oid:2.49.0.1.840.0.4451cb2414d4a955b96c0b5166db54e7758ee67b.002.1",
     "event": "Frost Advisory",
-    "headline": "Frost Advisory issued October 17 at 8:58AM EDT until October 18 at 9:00AM EDT by NWS Northern Indiana",
-    "nwsHeadline": "FROST ADVISORY IN EFFECT FROM 3 AM TO 9 AM EDT SUNDAY",
-    "area": "Northern Berrien; Southern Berrien",
+    "headline": "Frost Advisory issued October 18 at 2:54AM EDT until October 18 at 9:00AM EDT by NWS Louisville KY",
+    "nwsHeadline": "FROST ADVISORY REMAINS IN EFFECT UNTIL 9 AM EDT /8 AM CDT/ THIS MORNING",
+    "area": "Orange; Washington; Scott; Jefferson; Dubois; Crawford; Perry; Harrison; Floyd; Clark; Hancock; Breckinridge; Meade; Ohio; Grayson; Hardin; Bullitt; Jefferson; Oldham; Trimble; Henry; Shelby; Franklin; Spencer; Anderson; Woodford; Nelson; Washington; Mercer; Jessamine; Larue; Marion; Boyle; Garrard; Madison; Butler; Edmonson; Hart; Green; Taylor; Casey; Lincoln; Logan; Warren; Simpson; Allen; Barren; Monroe; Metcalfe; Adair; Russell; Cumberland; Clinton",
+    "sender": "NWS Louisville KY",
+    "sent": "2026-10-18T02:54:00-04:00",
+    "onset": "2026-10-18T02:54:00-04:00",
+    "ends": "2026-10-18T09:00:00-04:00",
+    "expires": "2026-10-18T09:00:00-04:00",
+    "messageType": "Update",
+    "severity": "Minor",
+    "certainty": "Likely",
+    "urgency": "Expected"
+   },
+   {
+    "id": "urn:oid:2.49.0.1.840.0.a99b39b69a3a49b382f84e300693983b1ff7916d.002.1",
+    "event": "Frost Advisory",
+    "headline": "Frost Advisory issued October 17 at 9:40PM EDT until October 18 at 9:00AM EDT by NWS Northern Indiana",
+    "nwsHeadline": "FROST ADVISORY REMAINS IN EFFECT FROM 3 AM EDT /2 AM CDT/ TO 9 AM EDT /8 AM CDT/ SUNDAY",
+    "area": "Elkhart; Starke; Pulaski; Marshall; Fulton; White; Cass; Northern La Porte; Eastern St. Joseph; Southern La Porte; Western St. Joseph; Cass; St. Joseph; Branch; Hillsdale; Northern Berrien; Southern Berrien",
     "sender": "NWS Northern Indiana",
-    "sent": "2026-10-17T08:58:00-04:00",
+    "sent": "2026-10-17T21:40:00-04:00",
     "onset": "2026-10-18T03:00:00-04:00",
     "ends": "2026-10-18T09:00:00-04:00",
-    "expires": "2026-10-17T21:00:00-04:00",
-    "messageType": "Alert",
+    "expires": "2026-10-18T09:00:00-04:00",
+    "messageType": "Update",
+    "severity": "Minor",
+    "certainty": "Likely",
+    "urgency": "Expected"
+   },
+   {
+    "id": "urn:oid:2.49.0.1.840.0.a99b39b69a3a49b382f84e300693983b1ff7916d.001.1",
+    "event": "Freeze Warning",
+    "headline": "Freeze Warning issued October 17 at 9:40PM EDT until October 18 at 9:00AM EDT by NWS Northern Indiana",
+    "nwsHeadline": "FREEZE WARNING REMAINS IN EFFECT FROM 3 AM TO 9 AM EDT SUNDAY",
+    "area": "Lagrange; Steuben; Noble; De Kalb; Whitley; Allen; Miami; Wabash; Huntington; Wells; Adams; Grant; Blackford; Jay; Northern Kosciusko; Southern Kosciusko; Williams; Fulton; Defiance; Henry; Paulding; Putnam; Van Wert; Allen",
+    "sender": "NWS Northern Indiana",
+    "sent": "2026-10-17T21:40:00-04:00",
+    "onset": "2026-10-18T03:00:00-04:00",
+    "ends": "2026-10-18T09:00:00-04:00",
+    "expires": "2026-10-18T09:00:00-04:00",
+    "messageType": "Update",
+    "severity": "Severe",
+    "certainty": "Likely",
+    "urgency": "Expected"
+   },
+   {
+    "id": "urn:oid:2.49.0.1.840.0.423d6c5cf025b50ca0e96dde83e8c896b3f7d758.001.1",
+    "event": "Frost Advisory",
+    "headline": "Frost Advisory issued October 17 at 1:13PM CDT until October 18 at 8:00AM CDT by NWS Paducah KY",
+    "nwsHeadline": "FROST ADVISORY NOW IN EFFECT FROM 1 AM CDT /2 AM EDT/ TO 8 AM CDT /9 AM EDT/ SUNDAY",
+    "area": "Jefferson; Wayne; Edwards; Wabash; Perry; Franklin; Hamilton; White; Jackson; Williamson; Saline; Gallatin; Union; Johnson; Pope; Hardin; Alexander; Pulaski; Massac; Gibson; Pike; Posey; Vanderburgh; Warrick; Spencer; Fulton; Hickman; Carlisle; Ballard; McCracken; Graves; Livingston; Marshall; Calloway; Crittenden; Lyon; Trigg; Caldwell; Union; Webster; Hopkins; Christian; Henderson; Daviess; McLean; Muhlenberg; Todd; Perry; Bollinger; Cape Girardeau; Wayne; Carter; Ripley; Butler; Stoddard; Scott; Mississippi; New Madrid",
+    "sender": "NWS Paducah KY",
+    "sent": "2026-10-17T13:13:00-05:00",
+    "onset": "2026-10-18T01:00:00-05:00",
+    "ends": "2026-10-18T08:00:00-05:00",
+    "expires": "2026-10-18T08:00:00-05:00",
+    "messageType": "Update",
     "severity": "Minor",
     "certainty": "Likely",
     "urgency": "Expected"
@@ -463,101 +415,65 @@
   ],
   "nearbyCountiesFullText": [
    {
-    "id": "urn:oid:2.49.0.1.840.0.c9e160a1a422ecf845e397e68afd581e560c6cdc.003.2",
+    "id": "urn:oid:2.49.0.1.840.0.aa47f6942491e49f37910ba84b76fd6b97963d63.001.1",
     "event": "Frost Advisory",
-    "headline": "Frost Advisory issued October 17 at 8:58AM EDT until October 18 at 9:00AM EDT by NWS Northern Indiana",
-    "nwsHeadline": "FROST ADVISORY WILL EXPIRE AT 9 AM EDT THIS MORNING... ...FROST ADVISORY REMAINS IN EFFECT FROM 3 AM TO 9 AM EDT SUNDAY",
-    "area": "Elkhart; Marshall; Eastern St. Joseph; Western St. Joseph",
-    "sender": "NWS Northern Indiana",
-    "sent": "2026-10-17T08:58:00-04:00",
-    "onset": "2026-10-18T03:00:00-04:00",
-    "ends": "2026-10-18T09:00:00-04:00",
-    "expires": "2026-10-17T21:00:00-04:00",
-    "messageType": "Update",
-    "severity": "Minor",
-    "certainty": "Likely",
-    "urgency": "Expected",
-    "description": "* WHAT...Temperatures as low as 33 will result in frost formation.\n\n* WHERE...Eastern St. Joseph IN, Elkhart, Marshall, and Western St.\nJoseph IN Counties.\n\n* WHEN...From 3 AM to 9 AM EDT Sunday.\n\n* IMPACTS...Frost could harm sensitive outdoor vegetation. Sensitive\noutdoor plants may be killed if left uncovered.",
-    "instruction": "Take steps now to protect tender plants from the cold."
-   },
-   {
-    "id": "urn:oid:2.49.0.1.840.0.d0d19063c2810bcaf292a102e5b15b5616c6ddc6.003.1",
-    "event": "Frost Advisory",
-    "headline": "Frost Advisory issued October 17 at 7:56AM CDT until October 18 at 8:00AM CDT by NWS Chicago IL",
-    "nwsHeadline": "FROST ADVISORY REMAINS IN EFFECT FROM 3 AM CDT /4 AM EDT/ TO 8 AM CDT /9 AM EDT/ SUNDAY",
+    "headline": "Frost Advisory issued October 18 at 2:39AM CDT until October 18 at 8:00AM CDT by NWS Chicago IL",
+    "nwsHeadline": "FROST ADVISORY REMAINS IN EFFECT UNTIL 8 AM CDT THIS MORNING",
     "area": "Kankakee; Livingston; Iroquois; Ford; Eastern Will; Lake; Porter; Newton; Jasper; Benton",
     "sender": "NWS Chicago IL",
-    "sent": "2026-10-17T07:56:00-05:00",
+    "sent": "2026-10-18T02:39:00-05:00",
     "onset": "2026-10-18T03:00:00-05:00",
     "ends": "2026-10-18T08:00:00-05:00",
-    "expires": "2026-10-17T18:00:00-05:00",
+    "expires": "2026-10-18T08:00:00-05:00",
     "messageType": "Update",
     "severity": "Minor",
     "certainty": "Likely",
     "urgency": "Expected",
-    "description": "* WHAT...Low temperatures in the low to mid 30s will result in frost\nformation.\n\n* WHERE...In Illinois, Livingston, Ford, Iroquois, Eastern Will, and\nKankakee Counties. In Indiana, Benton, Jasper, Lake IN, Newton, and\nPorter Counties.\n\n* WHEN...From 3 AM CDT /4 AM EDT/ to 8 AM CDT /9 AM EDT/ Sunday.\n\n* IMPACTS...Frost could harm sensitive outdoor vegetation. Sensitive\noutdoor plants may be killed if left uncovered.",
-    "instruction": "Take steps now to protect tender plants from the cold."
-   },
-   {
-    "id": "urn:oid:2.49.0.1.840.0.c9e160a1a422ecf845e397e68afd581e560c6cdc.005.1",
-    "event": "Frost Advisory",
-    "headline": "Frost Advisory issued October 17 at 8:58AM EDT until October 18 at 9:00AM EDT by NWS Northern Indiana",
-    "nwsHeadline": "FROST ADVISORY IN EFFECT FROM 3 AM TO 9 AM EDT SUNDAY",
-    "area": "Northern Berrien; Southern Berrien",
-    "sender": "NWS Northern Indiana",
-    "sent": "2026-10-17T08:58:00-04:00",
-    "onset": "2026-10-18T03:00:00-04:00",
-    "ends": "2026-10-18T09:00:00-04:00",
-    "expires": "2026-10-17T21:00:00-04:00",
-    "messageType": "Alert",
-    "severity": "Minor",
-    "certainty": "Likely",
-    "urgency": "Expected",
-    "description": "* WHAT...Temperatures as low as 34 will result in frost formation.\n\n* WHERE...Northern Berrien and Southern Berrien Counties.\n\n* WHEN...From 3 AM to 9 AM EDT Sunday.\n\n* IMPACTS...Frost could harm sensitive outdoor vegetation. Sensitive\noutdoor plants may be killed if left uncovered.",
+    "description": "* WHAT...Low temperatures in the low to mid 30s will result in frost\nformation.\n\n* WHERE...In Illinois, Livingston, Ford, Iroquois, Eastern Will, and\nKankakee Counties. In Indiana, Benton, Jasper, Lake IN, Newton, and\nPorter Counties.\n\n* WHEN...Until 8 AM CDT this morning.\n\n* IMPACTS...Frost could harm sensitive outdoor vegetation. Sensitive\noutdoor plants may be killed if left uncovered.",
     "instruction": "Take steps now to protect tender plants from the cold."
    }
   ]
  },
  "discussion": {
-  "issued": "2026-10-17T04:20:00-05:00",
-  "ageHours": 4.3,
-  "text": "000\nFXUS63 KIWX 170920\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n520 AM EDT Sat Oct 17 2026\n\n.KEY MESSAGES...\n\n- Widespread frost is expected Saturday night into Sunday\n  morning with a potential of temperatures dropping to the\n  freezing mark, especially east of IN-15. A frost advisory and\n  freeze warning have both been hoisted.\n\n- After the below normal temperatures this weekend, temperatures\n  rebound back above normal for much of next work week with dry\n  weather expected.\n\n&&\n\n.DISCUSSION...\nIssued at 304 AM EDT Sat Oct 17 2026\n\nSurface high pressure continues to build in causing low level \nmoisture to dissipate, lake induced instability to wane, and low \nlevel trajectories to become more southerly. As lake enhanced rain \ndissipates early this morning, dry air takes over and we're in this \ndry pattern for the foreseeable future. This is as the upper jet \nretreats into MI and upper ridging builds into areas east of the \nRockies. An area of low pressure washes out between Wednesday and \nThursday as a cold front pushes southeastward ahead of another \nsurface high. The ECMWF has rain approaching the area, but that's \nreally the only model that does so. \n\nOtherwise, the temperatures are the most noteworthy piece of \nweather that should be discussed here. Morning temps fell back \ninto the 30s this morning, but lingering wind and limited \ndecoupling restricted frost formation to patchy at best despite \ntemperatures falling into the mid 30s and even some low 30s in \nsome outlying spots. 850 mb temps this morning reached around \n-2C and, even as that aforementioned return flow takes over, we \nhave our lowest temperatures of this young cool season as \nfreezing temperatures look to settle in along and south of \nUS-24. The give and take between surface high pressure-affected \nweak flow and encroaching strengthening gradient to our north \nand west once again lessens confidence on frost formation on the\nnorthern side of our freeze watch for Sunday AM. There are \nsigns in forecast soundings of a decoupling boundary layer Sun \nAM and again Mon AM, although lesser confidence in frost occurs \nMonday and even lesser for Tuesday. While WAA doesn't appear to \nbe established in the following days, temperatures are forecast \nto trend warmer, rising above 40 degrees by Wednesday AM. Highs \nsurpass 70 degrees again Tuesday morning, although a few areas \nin White, Pulaski, Cass, and Fulton could achieve 70F Monday as \nwell.\n\n&&\n\n.AVIATION /12Z TAFS THROUGH 12Z SUNDAY/...\nIssued at 520 AM EDT Sat Oct 17 2026\n\nHigh pressure builds in with VFR conditions, light winds and\nmainly clear skies this weekend into much of next week. \n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...Frost Advisory until 9 AM EDT this morning for INZ005>009-014-\n     017-104-116-204-216.\n     Frost Advisory from 3 AM EDT /2 AM CDT/ to 9 AM EDT /8 AM CDT/ \n     Sunday for INZ005-012>015-020-022-103-104-203-204.\n     Freeze Warning from 3 AM to 9 AM EDT Sunday for INZ006>009-017-\n     018-023>027-032>034-116-216.\nOH...Freeze Warning from 3 AM to 9 AM EDT Sunday for OHZ001-002-004-\n     005-015-016-024-025.\nMI...Frost Advisory until 9 AM EDT this morning for MIZ078>081.\nMARINE...Small Craft Advisory until 11 AM EDT this morning for LMZ043-\n     046.\n\n&&\n\n$$\n\nDISCUSSION...Roller\nAVIATION...Steinwedel"
+  "issued": "2026-10-18T04:01:00-05:00",
+  "ageHours": 1.0,
+  "text": "000\nFXUS63 KIWX 180901\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n501 AM EDT Sun Oct 18 2026\n\n.KEY MESSAGES...\n\n- After a possible period of patchy frost tonight and maybe\n  Monday night, lows trend warmer, away from frost potential.\n  Highs also moderate to near or just above normal.\n\n- Dry weather remains across the area through this week.\n\n&&\n\n.DISCUSSION...\nIssued at 214 AM EDT Sun Oct 18 2026\n\nSurface high pressure slowly slides eastward today from the southern \nGreat Lakes and then a couple more surface high pressure systems \npass by to the north of the Great Lakes Tuesday and Thursday. \nMeanwhile, mid level ridging continues to keep the area within a \nlarge scale area of subsidence quelling any large scale area of rain \nthrough this week and probably through next weekend. This is even as \na cold front stalls around the area Monday night/Tuesday and another \ncold front moves through later Wednesday/Thursday AM time frame. \nThese FROPAs will be dry FROPAs. Troughs attempt to make their way \neastward but continue to run into the stout mid level ridge east of \nthe Rockies through this work week. As such, various vort \nmaxes/surface lows take a northeast trek from the Plains into the \nwestern Great Lakes/southcentral Canada area. Attempts by WAA \nto affect the area cause a slow warming trend through the 60s \ntoday and Monday, reaching the 70s for highs on Tuesday \nsouthwest of US-30 through this week. Daily lows look to trend \nwarmer as well beyond this morning. There's a marginal chance \nfor frost Monday morning with about 3 hours of 38 degree temps \nor less, especially south of US-24. However, another \nfrost/freeze issuance will depend on if the growing season \ncontinues or if this morning's temps ended things. The area is \nfairly dry with MinRH values dipping into the 20s and 30s of \npercents today through Tuesday, but low level lapse rates aren't\nas strong as they could be, and even more of a factor, wind \ngusts are below considerable thresholds. Future dry days are \npossible beyond Tuesday, but wind gusts don't look respectable \nat this time. It is also possible our forecast dew points are \ntoo high as currently constituted beyond Tuesday.\n\n&&\n\n.AVIATION /12Z TAFS THROUGH 12Z MONDAY/... \nIssued at 500 AM EDT Sun Oct 18 2026\n\nDry and stable air mass will continue to promote VFR conditions\nand clear skies. Return south-southwest flow on the backside of\nsfc high pressure may support a few gusts up to 20 knots this \nafternoon at KSBN otherwise.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...Frost Advisory until 9 AM EDT /8 AM CDT/ this morning for \n     INZ005-012>015-020-022-103-104-203-204.\n     Freeze Warning until 9 AM EDT this morning for INZ006>009-017-\n     018-023>027-032>034-116-216.\nOH...Freeze Warning until 9 AM EDT this morning for OHZ001-002-004-\n     005-015-016-024-025.\nMI...Frost Advisory until 9 AM EDT this morning for MIZ078>081-177-\n     277.\nMARINE...None.\n\n&&\n\n$$\n\nDISCUSSION...Roller\nAVIATION...Steinwedel"
  },
  "hazardousWeatherOutlook": null,
  "hydrologicOutlook": null,
  "spc": [
   {
    "day": 1,
-   "valid": "202610171300",
-   "expires": "202610181200",
-   "riskAtLaPorte": "No thunderstorm or severe risk area",
-   "riskAreasAnywhere": [
-    "General Thunderstorms Risk"
-   ],
-   "summary": "Organized severe thunderstorms are not forecast through tonight.",
-   "text": "SPC AC 171158\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   0658 AM CDT Sat Oct 17 2026\n\n   Valid 171300Z - 181200Z\n\n   ...NO SEVERE THUNDERSTORM AREAS FORECAST...\n\n   ...SUMMARY...\n   Organized severe thunderstorms are not forecast through tonight.\n\n   ...Synopsis and Discussion...\n   Highly amplified upper troughing over the eastern CONUS this morning\n   will move eastward off the Atlantic Coast today, while a closed\n   mid/upper-level low eventually develops over the NC Outer Banks and\n   adjacent western Atlantic. An expansive area of surface high\n   pressure and related dry and/or stable conditions across much of the\n   central/eastern states will greatly limit thunderstorm potential\n   today, with two exceptions. One area will be across parts of the FL\n   Peninsula along/south of a cold front, where sufficient instability\n   may support isolated to scattered thunderstorms this afternoon in a\n   weak deep-layer shear environment. While gusty winds could occur\n   with the strongest cores that develop, overall severe potential is\n   expected to remain low. A second area of isolated thunderstorm\n   potential will exist across parts of southern AZ, on the northeast\n   periphery of a weak mid/upper-level low centered over the eastern\n   Pacific and Baja Peninsula.\n\n   ..Gleason/Kerr.. 10/17/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 1630Z"
-  },
-  {
-   "day": 2,
    "valid": "202610181200",
    "expires": "202610191200",
    "riskAtLaPorte": "No thunderstorm or severe risk area",
    "riskAreasAnywhere": [
     "General Thunderstorms Risk"
    ],
-   "summary": "Severe thunderstorms are not expected tomorrow (Sunday).",
-   "text": "SPC AC 170545\n\n   Day 2 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1245 AM CDT Sat Oct 17 2026\n\n   Valid 181200Z - 191200Z\n\n   ...NO SEVERE THUNDERSTORM AREAS FORECAST...\n\n   ...SUMMARY...\n   Severe thunderstorms are not expected tomorrow (Sunday).\n\n   ...Synopsis...\n   A mid-level ridge will remain over the central U.S. while a 500 mb\n   cut-off low meanders off of the Atlantic Coast and broad upper\n   troughing dominates the western CONUS tomorrow (Sunday). A\n   relatively cool and stable low-level airmass will overspread much of\n   the CONUS, inhibiting thunderstorm development. A few thunderstorms\n   may occur over the southern FL Peninsula, where the heating of\n   remnant low-level moisture will promote localized lift and buoyancy.\n   A couple of lightning flashes may also occur over portions of the\n   Desert Southwest, where cooler temperatures aloft and modest ascent\n   will accompany a weak mid-level impulse.\n\n   ..Squitieri.. 10/17/2026\n\n   CLICK TO GET WUUS02 PTSDY2 PRODUCT\n\n   NOTE: THE NEXT DAY 2 OUTLOOK IS SCHEDULED BY 1730Z"
+   "summary": "Severe thunderstorms are not forecast in the U.S. today or tonight.",
+   "text": "SPC AC 180551\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1251 AM CDT Sun Oct 18 2026\n\n   Valid 181200Z - 191200Z\n\n   ...NO SEVERE THUNDERSTORM AREAS FORECAST...\n\n   ...SUMMARY...\n   Severe thunderstorms are not forecast in the U.S. today or tonight.\n\n   ...DISCUSSION...\n   A mid-level anticyclonic flow pattern, and an associated surface\n   high pressure system will be in place today over the central and\n   eastern U.S. Dry and cool conditions will be in place over much of\n   the nation, and thunderstorms will be unlikely. The exceptions will\n   be over south Florida and in the Desert Southwest where scattered\n   thunderstorms will be possible from today into tonight. No severe\n   threat is expected across the continental U.S. through daybreak on\n   Monday.\n\n   ..Broyles/Chalmers.. 10/18/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 1300Z"
   },
   {
-   "day": 3,
+   "day": 2,
    "valid": "202610191200",
    "expires": "202610201200",
    "riskAtLaPorte": "No thunderstorm or severe risk area",
    "riskAreasAnywhere": [
     "General Thunderstorms Risk"
    ],
-   "summary": "Severe thunderstorms are not expected on Monday.",
-   "text": "SPC AC 170716\n\n   Day 3 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   0216 AM CDT Sat Oct 17 2026\n\n   Valid 191200Z - 201200Z\n\n   ...NO SEVERE THUNDERSTORM AREAS FORECAST...\n\n   ...SUMMARY...\n   Severe thunderstorms are not expected on Monday.\n\n   ...Synopsis...\n   A mid-level cut-off low will continue to meander off of the Atlantic\n   Coast while an upper trough deepens over the Interior West and an\n   upper ridge remains in place over the central U.S. on Monday. A cool\n   and/or stable low-level airmass will remain in place over most of\n   the U.S., limiting thunderstorm development. However, the\n   amplification of the western upper trough will promote low-level\n   moisture return beneath cooling temperatures aloft over the Desert\n   Southwest, increasing the chance for thunderstorms in this area. A\n   thunderstorm or two may also occur over the far southern FL\n   Peninsula, in tandem with the heating of some residual low-level\n   moisture.\n\n   ..Squitieri.. 10/17/2026\n\n   CLICK TO GET WUUS03 PTSDY3 PRODUCT\n\n   NOTE: THE NEXT DAY 3 OUTLOOK IS SCHEDULED BY 1930Z"
+   "summary": "Severe thunderstorms are not expected tomorrow (Monday).",
+   "text": "SPC AC 180550\n\n   Day 2 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1250 AM CDT Sun Oct 18 2026\n\n   Valid 191200Z - 201200Z\n\n   ...NO SEVERE THUNDERSTORM AREAS FORECAST...\n\n   ...SUMMARY...\n   Severe thunderstorms are not expected tomorrow (Monday).\n\n   ...Synopsis...\n   A mid-level cut-off low will continue to meander off of the East\n   Coast while an upper trough amplifies over the western U.S. and an\n   upper ridge dominates the central CONUS tomorrow (Monday). Surface\n   high pressure and accompanying subsidence should limit thunderstorm\n   development over most locales east of the Rockies. A couple of\n   thunderstorms may develop over the FL Keys given adequate surface\n   heating of a moist low-level airmass. A few thunderstorms may also\n   occur over the Desert Southwest to the Four Corners, where cooler\n   temperatures aloft with a mid-level impulse overspreads modest\n   low-level moisture.\n\n   ..Squitieri.. 10/18/2026\n\n   CLICK TO GET WUUS02 PTSDY2 PRODUCT\n\n   NOTE: THE NEXT DAY 2 OUTLOOK IS SCHEDULED BY 1730Z"
+  },
+  {
+   "day": 3,
+   "valid": "202610201200",
+   "expires": "202610211200",
+   "riskAtLaPorte": "No thunderstorm or severe risk area",
+   "riskAreasAnywhere": [
+    "General Thunderstorms Risk"
+   ],
+   "summary": "No severe thunderstorms are expected on Tuesday.",
+   "text": "SPC AC 180729\n\n   Day 3 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   0229 AM CDT Sun Oct 18 2026\n\n   Valid 201200Z - 211200Z\n\n   ...NO SEVERE THUNDERSTORM AREAS FORECAST...\n\n   ...SUMMARY...\n   No severe thunderstorms are expected on Tuesday.\n\n   ...Synopsis...\n   An upper trough will amplify while progressing into the Interior\n   West on Tuesday. As this occurs, deep-layer ascent and cooler\n   temperatures aloft will encourage at least isolated thunderstorm\n   development over multiple locales. Preceding the main upper trough,\n   a 500 mb wind maximum accompanying multiple low-amplitude impulses\n   will overspread low-level moisture over the Desert Southwest, as\n   well as portions of the Great Basin, resulting in thunderstorms by\n   Tuesday afternoon. By later Tuesday night into Wednesday morning,\n   deep-layer ascent associated with the approach of the primary upper\n   trough will overspread parts of CA. Cooler temperatures aloft will\n   overspread a marine boundary layer, encouraging lightning flashes\n   along the CA shoreline late in the period.\n\n   ..Squitieri.. 10/18/2026\n\n   CLICK TO GET WUUS03 PTSDY3 PRODUCT\n\n   NOTE: THE NEXT DAY 3 OUTLOOK IS SCHEDULED BY 1930Z"
   }
  ],
  "wpcExcessiveRain": [
@@ -586,9 +502,17 @@
   "about": "NWS hour-by-hour rain chances for work hours, 6 a.m. to 6 p.m. Central (30-49% = possible, 50%+ = likely).",
   "days": [
    {
-    "date": "2026-10-17",
+    "date": "2026-10-18",
     "summary": "dry through work hours (6 a.m. to 6 p.m.)",
     "hours": [
+     {
+      "hour": 6,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 7,
+      "rainChancePercent": 0
+     },
      {
       "hour": 8,
       "rainChancePercent": 0
@@ -632,7 +556,7 @@
     ]
    },
    {
-    "date": "2026-10-18",
+    "date": "2026-10-19",
     "summary": "dry through work hours (6 a.m. to 6 p.m.)",
     "hours": [
      {
@@ -706,69 +630,26 @@
   },
   "days": [
    {
-    "date": "2026-10-17",
+    "date": "2026-10-18",
     "nws": {
-     "high": 55,
+     "high": 62,
      "low": null,
      "rain": 0
     },
     "models": {
      "ncep_nbm_conus": {
-      "high": 57,
-      "low": 38,
-      "rain": 32
-     },
-     "ncep_hrrr_conus": {
-      "high": 52,
-      "low": 36,
-      "rain": 32
-     },
-     "gfs_seamless": {
-      "high": 52,
-      "low": 36,
-      "rain": 32
-     },
-     "ecmwf_ifs025": {
-      "high": 53,
-      "low": 38,
-      "rain": 54
-     }
-    },
-    "blend": {
-     "high": 53,
-     "low": 37
-    },
-    "adjusted": {
-     "high": 56,
-     "low": 36
-    },
-    "spread": {
-     "high": 5,
-     "low": 2
-    },
-    "note": "NWS and the models agree within a few degrees"
-   },
-   {
-    "date": "2026-10-18",
-    "nws": {
-     "high": 62,
-     "low": 34,
-     "rain": 0
-    },
-    "models": {
-     "ncep_nbm_conus": {
-      "high": 64,
+      "high": 65,
       "low": 38,
       "rain": 0
      },
      "ncep_hrrr_conus": {
-      "high": 60,
-      "low": 38,
+      "high": 58,
+      "low": 36,
       "rain": 0
      },
      "gfs_seamless": {
-      "high": 60,
-      "low": 38,
+      "high": 58,
+      "low": 36,
       "rain": 0
      },
      "ecmwf_ifs025": {
@@ -779,70 +660,113 @@
     },
     "blend": {
      "high": 61,
-     "low": 38
+     "low": 37
     },
     "adjusted": {
      "high": 64,
-     "low": 37
+     "low": 36
     },
     "spread": {
-     "high": 4,
-     "low": 5
+     "high": 7,
+     "low": 3
     },
-    "note": "our blend's low (37) differs from NWS (34) by 3 degrees"
+    "note": "the models disagree on the high by 7 degrees (less certain)"
    },
    {
     "date": "2026-10-19",
     "nws": {
      "high": 66,
-     "low": 36,
+     "low": 38,
      "rain": 0
     },
     "models": {
      "ncep_nbm_conus": {
-      "high": 67,
-      "low": 38,
+      "high": 68,
+      "low": 40,
+      "rain": 0
+     },
+     "ncep_hrrr_conus": {
+      "high": 62,
+      "low": 37,
+      "rain": 0
+     },
+     "gfs_seamless": {
+      "high": 62,
+      "low": 37,
+      "rain": 0
+     },
+     "ecmwf_ifs025": {
+      "high": 63,
+      "low": 39,
+      "rain": 0
+     }
+    },
+    "blend": {
+     "high": 63,
+     "low": 38
+    },
+    "adjusted": {
+     "high": 66,
+     "low": 37
+    },
+    "spread": {
+     "high": 6,
+     "low": 3
+    },
+    "note": "the models disagree on the high by 6 degrees (less certain)"
+   },
+   {
+    "date": "2026-10-20",
+    "nws": {
+     "high": 68,
+     "low": 38,
+     "rain": 0
+    },
+    "models": {
+     "ncep_nbm_conus": {
+      "high": 70,
+      "low": 41,
       "rain": 0
      },
      "ncep_hrrr_conus": {
       "rain": 0
      },
      "gfs_seamless": {
-      "high": 65,
-      "low": 44,
+      "high": 66,
+      "low": 46,
       "rain": 0
      },
      "ecmwf_ifs025": {
-      "high": 64,
-      "low": 39,
+      "high": 65,
+      "low": 41,
       "rain": 0
      }
     },
     "blend": {
-     "high": 66,
-     "low": 38
+     "high": 67,
+     "low": 41
     },
     "adjusted": {
-     "high": 69,
-     "low": 37
+     "high": 70,
+     "low": 40
     },
     "spread": {
-     "high": 3,
+     "high": 5,
      "low": 8
     },
-    "note": "our blend's high (69) differs from NWS (66) by 3 degrees; the models disagree on the low by 8 degrees (less certain)"
+    "note": "the models disagree on the low by 8 degrees (less certain)"
    },
    {
-    "date": "2026-10-20",
+    "date": "2026-10-21",
     "nws": {
-     "high": 69,
-     "low": 39,
-     "rain": 0
+     "high": 70,
+     "low": 42,
+     "rain": 2
     },
     "models": {
      "ncep_nbm_conus": {
-      "high": 70,
-      "low": 40,
+      "high": 71,
+      "low": 44,
       "rain": 0
      },
      "ncep_hrrr_conus": {
@@ -856,35 +780,35 @@
      "ecmwf_ifs025": {
       "high": 66,
       "low": 42,
-      "rain": 2
+      "rain": 1
      }
     },
     "blend": {
      "high": 68,
-     "low": 41
+     "low": 43
     },
     "adjusted": {
      "high": 71,
-     "low": 40
+     "low": 42
     },
     "spread": {
-     "high": 4,
-     "low": 7
+     "high": 5,
+     "low": 4
     },
-    "note": "the models disagree on the low by 7 degrees (less certain)"
+    "note": "NWS and the models agree within a few degrees"
    }
   ],
   "suggested": [
    {
-    "date": "2026-10-18",
-    "high": 64,
+    "date": "2026-10-19",
+    "high": 66,
     "low": 37,
     "rain": 0
    },
    {
-    "date": "2026-10-19",
-    "high": 69,
-    "low": 37,
+    "date": "2026-10-20",
+    "high": 70,
+    "low": 40,
     "rain": 0
    }
   ]
