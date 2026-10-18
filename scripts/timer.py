@@ -51,7 +51,8 @@ TOKEN = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
 CENTRAL = ZoneInfo("America/Chicago")
 
 EVERY_TICK = ["home-cache.yml", "radio.yml", "scoop-update.yml", "scoop-pages.yml", "snow-totals.yml",
-              "reports.yml"]   # reports.yml (Oct. 17, 2026): readers' reports queue; does nothing until set up
+              "reports.yml",   # reports.yml (Oct. 17, 2026): readers' reports queue; does nothing until set up
+              "morning-email.yml"]   # morning email (Oct. 17, 2026): sends to whoever's 6 AM it is, U.S.-wide
 # (workflow, [(from, to), ...], days): days are Python weekdays (Monday is 0); None means every day.
 WINDOWS = [
     ("nws-snapshot.yml", [("05:00", "05:14")], None),
@@ -63,9 +64,6 @@ WINDOWS = [
     # does nothing outside Nov.-Mar.), plus 8:00 PM Sunday-Thursday to learn the pages and start the day empty.
     ("closings.yml", [("04:30", "08:29")], {0, 1, 2, 3, 4}),
     ("closings.yml", [("20:00", "20:14")], {6, 0, 1, 2, 3}),
-    # Morning forecast email (Oct. 17, 2026): schedules the 6 AM send at 5:30-5:59; a start after 6 sends
-    # right away (until 6:44). Does nothing until it's set up (morning-email.json "enabled").
-    ("morning-email.yml", [("05:30", "06:44")], None),
     ("daily-video.yml", [("06:00", "06:14"), ("06:45", "06:59")], None),
     ("sender-watch.yml", [("04:45", "04:59"), ("05:15", "05:29"), ("05:45", "05:59"), ("06:15", "06:29"), ("06:45", "06:59")], None),
     ("backup-scoop.yml", [("06:30", "08:09")], None),

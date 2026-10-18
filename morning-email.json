@@ -1,5 +1,5 @@
 {
- "about": "Settings for the 6 AM morning forecast email (scripts/morning_email.py, added Oct. 17, 2026). Scoop fills in mailingAddress (a real postal address; a P.O. box is fine; U.S. law, CAN-SPAM, requires it in every email) and sets enabled to true when he's ready. listId and doiTemplateId are filled in by the 'Morning email' workflow's setup run. Nothing is sent and the sign-up box stays hidden until all of them are set and the Brevo key is in place.",
+ "about": "Settings for the 6 AM morning forecast email (scripts/morning_email.py, added Oct. 17, 2026). Scoop fills in mailingAddress (a real postal address; a P.O. box is fine; U.S. law, CAN-SPAM, requires it in every email) and sets enabled to true when he's ready. listId and doiTemplateId are filled in by the 'Morning email' workflow's setup run. Nothing is sent and the sign-up box stays hidden until all of them are set and the Brevo key is in place. \"towns\": La Porte County quick picks on the sign-up form (name: [lat, lon, ZIP]); anyone in the U.S. can also type a ZIP code or town.",
  "enabled": true,
  "mailingAddress": "703 A St., La Porte, IN 46350",
  "senderName": "La Porte Weather Now",
@@ -8,5 +8,82 @@
  "listId": 6,
  "doiTemplateId": 7,
  "sendAt": "06:00",
- "confirmedUrl": "https://laporteweathernow.com/morning-email?confirmed=1"
+ "confirmedUrl": "https://laporteweathernow.com/morning-email?confirmed=1",
+ "towns": {
+  "La Porte": [
+   41.6081,
+   -86.7189,
+   "46350"
+  ],
+  "Hanna": [
+   41.4119,
+   -86.7794,
+   "46340"
+  ],
+  "Hudson Lake": [
+   41.712,
+   -86.537,
+   "46552"
+  ],
+  "Kingsbury": [
+   41.5278,
+   -86.6975,
+   "46345"
+  ],
+  "Kingsford Heights": [
+   41.4783,
+   -86.6931,
+   "46346"
+  ],
+  "La Crosse": [
+   41.3178,
+   -86.8897,
+   "46348"
+  ],
+  "Long Beach": [
+   41.7456,
+   -86.8514,
+   "46360"
+  ],
+  "Michiana Shores": [
+   41.757,
+   -86.8167,
+   "46360"
+  ],
+  "Michigan City": [
+   41.7075,
+   -86.895,
+   "46360"
+  ],
+  "Mill Creek": [
+   41.5758,
+   -86.5464,
+   "46365"
+  ],
+  "Rolling Prairie": [
+   41.6731,
+   -86.6239,
+   "46371"
+  ],
+  "Trail Creek": [
+   41.6972,
+   -86.8572,
+   "46360"
+  ],
+  "Union Mills": [
+   41.4942,
+   -86.7786,
+   "46382"
+  ],
+  "Wanatah": [
+   41.4303,
+   -86.8819,
+   "46390"
+  ],
+  "Westville": [
+   41.5375,
+   -86.905,
+   "46391"
+  ]
+ }
 }

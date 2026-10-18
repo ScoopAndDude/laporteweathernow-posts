@@ -1,14 +1,17 @@
-# The 6 AM morning forecast email, sent with Brevo (added Oct. 17, 2026; scripts/morning_email.py).
+# The 6 AM morning forecast email, sent with Brevo (added Oct. 17, 2026; any U.S. place the same night;
+# scripts/morning_email.py).
 #
-# The Timer starts it every tick from 5:30 to 6:44 AM Central: the first start schedules today's email for
-# 6:00 (or sends it right away if GitHub ran late), later starts see it's done. It does nothing until
-# morning-email.json has "enabled": true and a mailingAddress, the setup run has saved the Brevo list and
-# template ids, and the BREVO_API_KEY secret exists.
+# The Timer starts it every tick (15 minutes). Each run sends to the subscribers whose own local time is
+# 5:30-6:59 AM and who haven't had today's email (scheduled in Brevo for 6:00 their time, or right away if
+# it's later). Who already got today's email is kept as keyed hashes (no addresses) on the
+# "morning-email-state" branch. It does nothing until morning-email.json has "enabled": true and a
+# mailingAddress, the setup run has saved the Brevo ids, and the BREVO_API_KEY secret exists.
 #
 # Run it by hand (Actions > Morning email > Run workflow):
-#   setup    find or make the Brevo list "Morning Forecast" and the confirmation email; saves their ids
-#   preview  build today's email (download it from the run's "morning-email-preview" artifact); tick
-#            "test" to also email it to laporteweathernow@gmail.com only
+#   setup    find or make the Brevo list "Morning Forecast", the contact attributes (ZIP, LAT, LON,
+#            GRIDPOINT, TOWN, TZ) and the confirmation email; saves the ids
+#   preview  build sample emails (the run's "morning-email-preview" artifact); tick "test" to also send ONE
+#            to laporteweathernow@gmail.com only, for that address's own place
 name: Morning email
 
 on:
@@ -20,7 +23,7 @@ on:
         options: [send, preview, setup]
         default: send
       test:
-        description: "With preview: also email it to laporteweathernow@gmail.com only"
+        description: "With preview: also email ONE to laporteweathernow@gmail.com only"
         type: boolean
         default: false
 
@@ -34,15 +37,48 @@ concurrency:
 jobs:
   email:
     runs-on: ubuntu-24.04
-    timeout-minutes: 5
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
+      - name: Get who already got today's email
+        run: |
+          mkdir -p "$RUNNER_TEMP/me"
+          if git fetch -q --depth 1 origin morning-email-state 2>/dev/null; then
+            git show FETCH_HEAD:morning-email-state.json > "$RUNNER_TEMP/me/morning-email-state.json" || true
+          fi
+          cp "$RUNNER_TEMP/me/morning-email-state.json" "$RUNNER_TEMP/me/before.json" 2>/dev/null || true
+      - name: Time zones from the map
+        run: pip install -q timezonefinder==9.0.0
       - name: Morning email
         env:
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
           MODE: ${{ github.event.inputs.mode || 'send' }}
           TEST_TO_OWNER: ${{ github.event.inputs.test == 'true' && '1' || '' }}
+          MORNING_STATE: ${{ runner.temp }}/me/morning-email-state.json
         run: python3 scripts/morning_email.py "$MODE"
+      - name: Save who got it
+        if: always() && (github.event.inputs.mode || 'send') == 'send'
+        run: |
+          S="$RUNNER_TEMP/me/morning-email-state.json"
+          [ -f "$S" ] || exit 0
+          python3 - "$S" "$RUNNER_TEMP/me/before.json" <<'PY' || exit 0
+          import json, sys
+          a = json.load(open(sys.argv[1])).get("sent", {})
+          try:
+              b = json.load(open(sys.argv[2])).get("sent", {})
+          except Exception:
+              b = None
+          sys.exit(0 if a != b else 1)
+          PY
+          D=$(mktemp -d) && cp "$S" "$D/" && cd "$D"
+          git init -q -b morning-email-state
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" add morning-email-state.json
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "Morning email: who got today's (keyed hashes, no addresses)"
+          for i in 1 2 3; do
+            git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" morning-email-state:morning-email-state && exit 0
+            sleep 4
+          done
+          exit 1
       - name: Save the Brevo ids
         if: github.event.inputs.mode == 'setup'
         run: |
@@ -60,4 +96,6 @@ jobs:
         if: github.event.inputs.mode == 'preview'
         with:
           name: morning-email-preview
-          path: morning-email-preview.html
+          path: |
+            morning-email-preview.html
+            previews/
