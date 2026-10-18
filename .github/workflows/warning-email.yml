@@ -1,0 +1,64 @@
+# Warning emails (added Oct. 17, 2026; scripts/morning_email.py warn).
+#
+# The Timer starts it every tick (15 minutes). Each run asks the National Weather Service for the warnings
+# in effect at each morning-email subscriber's spot (once per forecast area) and emails each person once
+# when a NEW Warning is issued there (only events named "... Warning"; watches and advisories don't count),
+# any hour. Updates and extensions of the same warning aren't resent. Who got which warning is kept as keyed
+# hashes (no addresses) on the "warning-email-state" branch; the very first run only notes the warnings
+# already in effect. Subscribers who tapped "Stop warning emails" (Brevo attribute WARN = "no") are skipped.
+# Budget guard: it never uses the Brevo sends kept back for the next morning emails; when it would have to,
+# or Brevo is getting low, the run fails on purpose so GitHub emails Scoop.
+# Separate from the "Morning email" job (its own state branch), so it can't hold up the 6 AM email.
+name: Warning email
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: warning-email
+  cancel-in-progress: false
+
+jobs:
+  warn:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get who already got which warning
+        run: |
+          mkdir -p "$RUNNER_TEMP/we"
+          if git fetch -q --depth 1 origin warning-email-state 2>/dev/null; then
+            git show FETCH_HEAD:warning-email-state.json > "$RUNNER_TEMP/we/warning-email-state.json" || rm -f "$RUNNER_TEMP/we/warning-email-state.json"
+          fi
+          cp "$RUNNER_TEMP/we/warning-email-state.json" "$RUNNER_TEMP/we/before.json" 2>/dev/null || true
+      - name: Warning emails
+        env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          WARN_STATE: ${{ runner.temp }}/we/warning-email-state.json
+        run: python3 scripts/morning_email.py warn
+      - name: Save who got which warning
+        if: always()
+        run: |
+          S="$RUNNER_TEMP/we/warning-email-state.json"
+          [ -f "$S" ] || exit 0
+          python3 - "$S" "$RUNNER_TEMP/we/before.json" <<'PY' || exit 0
+          import json, sys
+          a = json.load(open(sys.argv[1])).get("sent", {})
+          try:
+              b = json.load(open(sys.argv[2])).get("sent", {})
+          except Exception:
+              b = None
+          sys.exit(0 if a != b else 1)
+          PY
+          D=$(mktemp -d) && cp "$S" "$D/" && cd "$D"
+          git init -q -b warning-email-state
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" add warning-email-state.json
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "Warning email: who got which warning (keyed hashes, no addresses)"
+          for i in 1 2 3; do
+            git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" warning-email-state:warning-email-state && exit 0
+            sleep 4
+          done
+          exit 1

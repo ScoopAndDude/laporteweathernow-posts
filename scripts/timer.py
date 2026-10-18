@@ -31,8 +31,9 @@ starts whichever jobs are due at that moment, in La Porte (Central) time:
                        (saved only when EIA has a new week)
   4:30-8:30 AM weekdays, 8:00 PM Sunday-Thursday   School closings (added Oct. 17, 2026; checks the
                        school sites Nov.-Mar. only, 3 times per tick)
-  5:30-6:44 AM         Morning forecast email (added Oct. 17, 2026; once it's set up)
   every tick           Readers' reports queue (added Oct. 17, 2026; once it's set up)
+  every tick           Morning forecast email (U.S.-wide, 6 AM each subscriber's time) and Warning emails
+                       (a new NWS warning at a subscriber's spot), both added Oct. 17, 2026
   every 3 hours from 12:35 AM (12:35, 3:35, 6:35 ...)   Earth from space data (NASA FIRMS fires,
                        CelesTrak weather satellites) for the disasters page
 
@@ -52,7 +53,8 @@ CENTRAL = ZoneInfo("America/Chicago")
 
 EVERY_TICK = ["home-cache.yml", "radio.yml", "scoop-update.yml", "scoop-pages.yml", "snow-totals.yml",
               "reports.yml",   # reports.yml (Oct. 17, 2026): readers' reports queue; does nothing until set up
-              "morning-email.yml"]   # morning email (Oct. 17, 2026): sends to whoever's 6 AM it is, U.S.-wide
+              "morning-email.yml",   # morning email (Oct. 17, 2026): sends to whoever's 6 AM it is, U.S.-wide
+              "warning-email.yml"]   # warning emails (Oct. 17, 2026): a NEW NWS warning at a subscriber's spot
 # (workflow, [(from, to), ...], days): days are Python weekdays (Monday is 0); None means every day.
 WINDOWS = [
     ("nws-snapshot.yml", [("05:00", "05:14")], None),
