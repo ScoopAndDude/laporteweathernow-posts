@@ -34,6 +34,8 @@ jobs:
             git show FETCH_HEAD:warning-email-state.json > "$RUNNER_TEMP/we/warning-email-state.json" || rm -f "$RUNNER_TEMP/we/warning-email-state.json"
           fi
           cp "$RUNNER_TEMP/we/warning-email-state.json" "$RUNNER_TEMP/we/before.json" 2>/dev/null || true
+      - name: Time zones from the map
+        run: pip install -q timezonefinder==9.0.0
       - name: Warning emails
         env:
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
