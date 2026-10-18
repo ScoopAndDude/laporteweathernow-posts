@@ -222,7 +222,18 @@ def post_page(p, older, newer, template, latest=False):
     if auto or latest:
         # Backups are NWS's words; "latest" is a copy of a dated page.
         head = ('<meta name="robots" content="noindex, follow" />\n' if auto else "") + head
-    return fill(template, page_title, desc, url, head, main, og_title=f"Daily Scoop, {label}: {title}")
+    return fill(template, page_title, meta_desc(f"La Porte, IN, {short_date(p['date'])}: ", desc), url, head, main,
+                og_title=f"Daily Scoop, {label}: {title}")
+
+
+def meta_desc(lead, text, limit=158):
+    """The search/share description (Oct. 18, 2026): place first, at most 158 characters, cut at a word.
+    Only the meta tags use it; the page and its Article data keep the full summary."""
+    d = lead + text
+    if len(d) <= limit:
+        return d
+    cut = d[:limit - 1].rsplit(" ", 1)[0].rstrip(" ,;:.-")
+    return cut + "…"
 
 
 def archive_page(posts, template):
@@ -253,8 +264,8 @@ def archive_page(posts, template):
          "isPartOf": {"@id": f"{SITE}/#website"}, "about": {"@type": "Place", "name": "La Porte, Indiana"}},
         crumbs([("Home", "/"), ("Daily Scoop", "/daily-scoop"), ("Archive", "/scoop")])])
     return fill(template, "La Porte, IN Daily Weather Briefings: Daily Scoop Archive",
-                "Every Daily Scoop: the plain-English La Porte County, Indiana weather briefing written each morning from "
-                "the National Weather Service forecast, newest first.", url, head, main, og_title="Daily Scoop archive: La Porte, IN")
+                "La Porte, Indiana's Daily Scoop archive: every plain-English La Porte County weather briefing, written "
+                "each morning from the Weather Service forecast.", url, head, main, og_title="Daily Scoop archive: La Porte, IN")
 
 
 def sitemap(posts):
