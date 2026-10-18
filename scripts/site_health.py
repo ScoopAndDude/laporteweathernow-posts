@@ -130,7 +130,7 @@ def check_data():
         if latest.get("date") != today and now().hour >= 7:
             problem(f"There's no Daily Scoop for today ({today}); the newest is {latest.get('date')}.", True)
         elif latest.get("date") == today and latest.get("auto"):
-            problem("Today's Daily Scoop is the automatic NWS backup: the morning Scoop task didn't post by 6:30 AM.", True)
+            problem("Today's Daily Scoop is the automatic NWS backup: the Daily Scoop writer didn't post by 6:30 AM.", True)
         record = []
         for i in range(14):
             d = (now().date() - datetime.timedelta(days=i)).isoformat()

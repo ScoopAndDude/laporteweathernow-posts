@@ -1,0 +1,91 @@
+# The Daily Scoop, written by fixed rules with no AI (scripts/scoop_writer.py), added Oct. 18, 2026.
+# It writes and posts the morning Scoop from the 5 a.m. NWS snapshot. The Timer starts it every 15 minutes
+# from 5:30 to 6:14 a.m., and again at 7:00 and 9:00 a.m. in case NWS was down. Nothing happens once
+# today's written Scoop is up. If the snapshot isn't from this morning, the job saves a fresh one first.
+# The automatic NWS backup (backup-scoop.yml) still covers 6:30 a.m. if this can't post, and a later run
+# here replaces it.
+name: Daily Scoop writer
+
+on:
+  workflow_dispatch:
+    inputs:
+      preview:
+        description: "Only show what today's Scoop would say (posts nothing)"
+        type: boolean
+        default: false
+  schedule:
+    - cron: "40 10,11 * * *"   # 5:40 and 6:40 a.m. Central in summer (4:40 and 5:40 in winter), backup only
+  push:
+    branches: [main]
+    paths:
+      - scripts/scoop_writer.py
+      - .github/workflows/scoop-writer.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scoop-writer
+  cancel-in-progress: false
+
+jobs:
+  write:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tests (no network)
+        run: python3 tools/scoop-writer/test_writer.py
+      - name: Make sure the NWS snapshot is from this morning
+        id: snap
+        run: |
+          fresh=$(python3 -c "
+          import datetime, json, sys
+          sys.path.insert(0, 'scripts')
+          import scoop_writer as sw
+          snap, why = sw.fresh_snapshot(sw.bs.now_local())
+          print('yes' if snap else 'no')")
+          echo "fresh=$fresh" >> "$GITHUB_OUTPUT"
+          if [ "$fresh" = "no" ]; then
+            echo "The snapshot isn't from this morning; asking NWS, SPC and WPC now."
+            python3 scripts/nws_snapshot.py
+            python3 scripts/scorecard.py || echo "Scorecard didn't update; keeping the last one."
+          fi
+      - name: Preview only (posts nothing)
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.preview == 'true'
+        run: |
+          python3 scripts/scoop_writer.py preview > "$RUNNER_TEMP/preview.json"
+          cat "$RUNNER_TEMP/preview.json"
+          { echo '```json'; cat "$RUNNER_TEMP/preview.json"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          python3 -c "import json, os; d = json.load(open(os.environ['RUNNER_TEMP'] + '/preview.json')); p = d['post']; print('::notice title=Scoop preview (' + str(d['words']) + ' words)::' + p['title'] + ' | ' + ' '.join(p['body'])[:1500])"
+      - name: Write today's Scoop if it's due
+        if: github.event_name != 'workflow_dispatch' || github.event.inputs.preview != 'true'
+        run: python3 scripts/scoop_writer.py build "$RUNNER_TEMP/scoop.json"
+      - name: Post it, unless a written Scoop got there first
+        if: github.event_name != 'workflow_dispatch' || github.event.inputs.preview != 'true'
+        run: |
+          post="$RUNNER_TEMP/scoop.json"
+          if [ ! -f "$post" ]; then echo "Nothing to post."; exit 0; fi
+          extra=""
+          if [ "${{ steps.snap.outputs.fresh }}" = "no" ]; then
+            for f in nws-snapshot.json scorecard.json morning-log.json; do
+              [ -f "$f" ] && cp "$f" "$RUNNER_TEMP/$f" && extra="$extra $f"
+            done
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3 4; do
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            for f in $extra; do cp "$RUNNER_TEMP/$f" "$f"; done
+            python3 scripts/scoop_writer.py insert "$post"
+            git add scoop-posts.json $extra
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -q -F "$post.msg"
+            if git push -q origin HEAD:main; then
+              echo "::notice title=Daily Scoop posted::$(python3 -c "import json; print(json.load(open('$post'))['title'])")"
+              exit 0
+            fi
+            sleep 5
+          done
+          exit 1

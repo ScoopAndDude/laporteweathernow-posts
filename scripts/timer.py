@@ -22,6 +22,8 @@ starts whichever jobs are due at that moment, in La Porte (Central) time:
                        posts the day's forecast video, the second does nothing once it's made)
   4:45, 5:15, 5:45, 6:15 and 6:45 AM (each for 15 minutes)   The Hard Hat sender watch (added Oct. 11,
                        2026; asks the 5 AM sender whether it's running and whether any morning call is late)
+  5:30-6:14 AM (every tick), 7:00 and 9:00 AM (each for 15 minutes)   The Daily Scoop writer (added Oct. 18,
+                       2026; no AI: it posts today's Scoop once, and does nothing after that)
   6:30-8:09 AM         Backup Daily Scoop (it posts only if today's Scoop isn't up)
   8:10-8:24 AM         Site health check
   9:15-9:29 AM, 4:45-4:59 PM   Markets numbers from BLS
@@ -68,6 +70,8 @@ WINDOWS = [
     ("closings.yml", [("20:00", "20:14")], {6, 0, 1, 2, 3}),
     ("daily-video.yml", [("06:00", "06:14"), ("06:45", "06:59")], None),
     ("sender-watch.yml", [("04:45", "04:59"), ("05:15", "05:29"), ("05:45", "05:59"), ("06:15", "06:29"), ("06:45", "06:59")], None),
+    # The Daily Scoop writer (Oct. 18, 2026): no AI; posts once, after the 5 a.m. snapshot, and does nothing after that.
+    ("scoop-writer.yml", [("05:30", "06:14"), ("07:00", "07:14"), ("09:00", "09:14")], None),
     ("backup-scoop.yml", [("06:30", "08:09")], None),
     ("site-health.yml", [("08:10", "08:24")], None),
     ("markets-data.yml", [("09:15", "09:29"), ("16:45", "16:59")], None),
