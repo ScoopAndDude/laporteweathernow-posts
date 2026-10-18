@@ -57,7 +57,8 @@ def now_central():
 def brevo(path, method="GET", body=None):
     req = urllib.request.Request(f"{BREVO}{path}", method=method,
                                  data=json.dumps(body).encode() if body is not None else None,
-                                 headers={"api-key": KEY, "accept": "application/json", "content-type": "application/json"})
+                                 headers={"api-key": KEY, "accept": "application/json", "content-type": "application/json",
+                                          "User-Agent": "LaPorteWeatherNow-morning-email/1.0 (+https://laporteweathernow.com/morning-email)"})
     try:
         with urllib.request.urlopen(req, timeout=40) as r:
             b = r.read()
