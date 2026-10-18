@@ -848,7 +848,8 @@ def warn(cfg, now):
     jobs = []
     for h, email, a, p in due[:room]:
         try:
-            local = now.astimezone(ZoneInfo(a.get("TZ") or "America/Chicago"))
+            # TZ is blank for a moment after a confirmed place change (the morning run fills it in): look it up
+            local = now.astimezone(ZoneInfo(a.get("TZ") or tz_at(a["LAT"], a["LON"]) or "America/Chicago"))
         except Exception:
             local = now
         subject, body, pv = build_warning(p, cfg, a, local)
