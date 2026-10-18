@@ -69,7 +69,14 @@ LABELS = {"new report": ("fbca04", "A reader's report waiting for Scoop"),
           "approve": ("0e8a16", "Publish this report on laporteweathernow.com/reports"),
           "reject": ("b60205", "Never publish this report"),
           "published": ("1d76db", "This report is on the site"),
-          "unpublish": ("5319e7", "Take this report back off the site")}
+          "unpublish": ("5319e7", "Take this report back off the site"),
+          "yuyu-question": ("a2eeef", "A science question from Yuyu's Space Lab (private, never published)")}
+# Oct. 18, 2026: "Ask Uncle Scoop" on scoopanddude.com/space-lab posts to the Netlify form "yuyu-question"
+# (a hidden copy lives on laporteweathernow.com/contact). Each question becomes a private issue here, labeled
+# yuyu-question. They carry their own marker (yuyu-question:<id>), so the approve/reject/unpublish steps
+# below never see them and nothing about them ever reaches the public reports branch or this job's log.
+YUYU_FORM = "yuyu-question"
+MAX_YUYU = 10
 
 
 def api(url, token, method="GET", body=None, auth="Bearer", accept="application/json", raw=False):
@@ -253,6 +260,30 @@ def main():
             gh(f"/repos/{QUEUE}/issues", "POST",
                {"title": title[:120], "body": issue_body(sub, d, photo_path, form["id"]), "labels": ["new report"]})
             opened += 1
+    # 1b) Yuyu's science questions (private issues only; the log shows a count, never the words).
+    asked = {m.group(1) for i in issues for m in [re.search(r"yuyu-question:([0-9a-f]+)", i.get("body") or "")] if m}
+    yform = next((f for f in forms if f.get("name") == YUYU_FORM), None)
+    yuyu = 0
+    if yform:
+        subs = api(f"{NETLIFY_API}/forms/{yform['id']}/submissions?per_page=100", NETLIFY)
+        cutoff = now - datetime.timedelta(days=14)
+        for sub in sorted(subs, key=lambda s: s.get("created_at", "")):
+            if sub["id"] in asked or yuyu >= MAX_YUYU:
+                continue
+            created = datetime.datetime.fromisoformat(sub["created_at"].replace("Z", "+00:00"))
+            d = sub.get("data") or {}
+            q = clean(d.get("question"), 500)
+            if created < cutoff or d.get("bot-field") or len(q) < 3:
+                continue
+            body = "\n".join([f"<!-- yuyu-question:{sub['id']} -->",
+                               "Yuyu asked a science question on [Yuyu's Space Lab](https://www.scoopanddude.com/space-lab/#ask).", "",
+                               f"> {q}", "",
+                               f"- Sent {fmt(created)} ({created.astimezone(ZoneInfo('Asia/Manila')).strftime('%b %-d, %-I:%M %p')} in Cebu)",
+                               f"- Netlify submission {sub['id']}: https://app.netlify.com/sites/scoopanddude/forms/{yform['id']}",
+                               "", "Private: this is never published anywhere. Close the issue when you've answered."])
+            gh(f"/repos/{QUEUE}/issues", "POST", {"title": ("Yuyu asks: " + q)[:120], "body": body, "labels": ["yuyu-question"]})
+            yuyu += 1
+    print(f"Yuyu's questions: {yuyu} new.")
     # 2) Scoop's decisions.
     pub = load_public()
     reports = pub.get("reports", [])
