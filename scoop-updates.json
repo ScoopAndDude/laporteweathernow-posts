@@ -242,8 +242,39 @@
   },
   "hourlyFrom": "2026-10-18T08:47:00-05:00"
  },
- "published": null,
- "alertRows": [],
+ "published": {
+  "time": "2026-10-18T12:17:00-05:00",
+  "alertKeys": [
+   "Frost Advisory | La Porte County | 2026-10-19 08:00"
+  ],
+  "alerts": [
+   {
+    "key": "Frost Advisory | La Porte County | 2026-10-19 08:00",
+    "event": "Frost Advisory",
+    "where": "La Porte County"
+   }
+  ],
+  "changes": [],
+  "off": [],
+  "paragraph": "Automatic update, 12:17 p.m.: NWS has a Frost Advisory for La Porte County from midnight Monday until 8 a.m. Monday. We pass these along as NWS issues them; details are at weather.gov/iwx."
+ },
+ "alertRows": [
+  {
+   "id": "urn:oid:2.49.0.1.840.0.8afc651c5214cee1e275cdff2579ee6a594185f8.001.1",
+   "event": "Frost Advisory",
+   "area": "Elkhart; Lagrange; Steuben; Noble; De Kalb; Starke; Pulaski; Marshall; Fulton; Whitley; Allen; White; Cass; Miami; Wabash; Huntington; Wells; Adams; Grant; Blackford; Jay; Northern La Porte; Eastern St. Joseph; Northern Kosciusko; Southern La Porte; Western St. Joseph; Southern Kosciusko; Williams; Fulton; Defiance; Henry; Paulding; Putnam; Van Wert; Allen",
+   "onset": "2026-10-19T01:00:00-04:00",
+   "ends": "2026-10-19T09:00:00-04:00",
+   "expires": "2026-10-19T09:00:00-04:00",
+   "sent": "2026-10-18T13:04:00-04:00",
+   "messageType": "Alert"
+  }
+ ],
  "missing": [],
- "updates": []
+ "updates": [
+  {
+   "time": "2026-10-18T12:17:00-05:00",
+   "why": "alerts changed (Frost Advisory | La Porte County | 2026-10-19 08:00)"
+  }
+ ]
 }
