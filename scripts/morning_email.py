@@ -121,7 +121,7 @@ def build(home, closings, cfg, now):
     alerts = home.get("alerts") or []
     headline = ""
     if day:
-        headline = f"{day.get('shortForecast', '')}, high {day.get('temperature')}°"
+        headline = f"{day.get('shortForecast', '')}, {'high' if day.get('isDaytime', True) else 'low'} {day.get('temperature')}°"
     alert_names = []
     for a in alerts:
         ev = a.get("event")

@@ -1,6 +1,6 @@
 {
  "about": "Settings for the 6 AM morning forecast email (scripts/morning_email.py, added Oct. 17, 2026). Scoop fills in mailingAddress (a real postal address; a P.O. box is fine; U.S. law, CAN-SPAM, requires it in every email) and sets enabled to true when he's ready. listId and doiTemplateId are filled in by the 'Morning email' workflow's setup run. Nothing is sent and the sign-up box stays hidden until all of them are set and the Brevo key is in place.",
- "enabled": false,
+ "enabled": true,
  "mailingAddress": "703 A St., La Porte, IN 46350",
  "senderName": "La Porte Weather Now",
  "senderEmail": "alerts@laporteweathernow.com",
