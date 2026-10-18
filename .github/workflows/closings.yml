@@ -1,0 +1,46 @@
+# School delays and closings for laporteweathernow.com/closings (added Oct. 17, 2026; scripts/closings_check.py).
+#
+# Started by the Timer: every 15-minute tick from 4:30 to 8:30 AM Central on weekdays (each run checks
+# 3 times, 5 minutes apart; outside Nov. 1 - Mar. 31 it does nothing), and at 8:00 PM Sunday-Thursday,
+# when it learns what each page normally says and starts the next day empty.
+# Scoop's own entries: the "School closings: add an entry" workflow (closings-entry.yml).
+#
+# A flag (something that looks like a delay or closing but isn't in exact words about today) makes the
+# run fail on purpose, so GitHub emails Scoop. The run's summary shows the school's words.
+name: School closings
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "check = check the school sites now (outside 4:30-8:30 AM on winter weekdays it only rebuilds); once = one check at any time; baseline/seed = learn the pages"
+        type: choice
+        options: [check, once, baseline, seed, rebuild]
+        default: check
+
+permissions:
+  contents: write
+
+concurrency:
+  group: closings-check
+  cancel-in-progress: false
+
+jobs:
+  closings:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get the saved state
+        run: |
+          mkdir -p "$RUNNER_TEMP/closings"
+          if git fetch -q --depth 1 origin closings 2>/dev/null; then
+            git show FETCH_HEAD:closings-state.json > "$RUNNER_TEMP/closings/closings-state.json" || true
+          fi
+      - name: Check the school sites
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CLOSINGS_DIR: ${{ runner.temp }}/closings
+          CLOSINGS_PUBLISH: "1"
+          MODE: ${{ github.event.inputs.mode || 'check' }}
+        run: python3 scripts/closings_check.py "$MODE"

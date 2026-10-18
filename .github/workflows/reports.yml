@@ -1,0 +1,71 @@
+# Readers' weather reports for laporteweathernow.com/reports (added Oct. 17, 2026; scripts/reports_queue.py).
+#
+# Every 15-minute tick (started by the Timer): new reports from the Netlify form go into the PRIVATE
+# repository ScoopAndDude/laporteweathernow-reports as issues, and the ones Scoop labeled "approve" go on
+# the public "reports" branch here (reports.json and photos/), which the map on /reports reads.
+# Nothing happens until the two secrets below exist; then the form on /reports appears by itself.
+#   NETLIFY_FORMS_TOKEN   Netlify personal access token
+#   REPORTS_QUEUE_TOKEN   GitHub fine-grained token: only laporteweathernow-reports, Contents + Issues read/write
+name: Readers' reports
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reports
+  cancel-in-progress: false
+
+jobs:
+  queue:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - name: Set up yet?
+        id: ready
+        env:
+          A: ${{ secrets.NETLIFY_FORMS_TOKEN }}
+          B: ${{ secrets.REPORTS_QUEUE_TOKEN }}
+        run: |
+          if [ -n "$A" ] && [ -n "$B" ]; then echo "ok=1" >> "$GITHUB_OUTPUT"; else echo "Not set up yet (needs NETLIFY_FORMS_TOKEN and REPORTS_QUEUE_TOKEN); nothing to do."; fi
+      - uses: actions/checkout@v4
+        if: steps.ready.outputs.ok == '1'
+      - name: Get the published reports
+        if: steps.ready.outputs.ok == '1'
+        run: |
+          mkdir -p "$RUNNER_TEMP/reports"
+          if git fetch -q --depth 1 origin reports 2>/dev/null; then
+            git --work-tree="$RUNNER_TEMP/reports" checkout FETCH_HEAD -- . 2>/dev/null || true
+            git reset -q
+          fi
+          ls -la "$RUNNER_TEMP/reports"
+      - name: Queue new reports and publish approved ones
+        if: steps.ready.outputs.ok == '1'
+        env:
+          NETLIFY_FORMS_TOKEN: ${{ secrets.NETLIFY_FORMS_TOKEN }}
+          REPORTS_QUEUE_TOKEN: ${{ secrets.REPORTS_QUEUE_TOKEN }}
+          REPORTS_DIR: ${{ runner.temp }}/reports
+        run: |
+          pip install -q pillow
+          python3 scripts/reports_queue.py
+      - name: Save the reports branch
+        if: steps.ready.outputs.ok == '1'
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd "$RUNNER_TEMP/reports"
+          [ -f reports.json ] || exit 0
+          rm -rf .git
+          git init -q -b reports
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Readers' reports ($(TZ=America/Chicago date '+%Y-%m-%d %H:%M %Z'))"
+          OLD=$(git ls-remote "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" refs/heads/reports | cut -f1)
+          NEW_TREE=$(git rev-parse HEAD^{tree})
+          if [ -n "$OLD" ]; then
+            git fetch -q --depth 1 "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" reports && [ "$(git rev-parse FETCH_HEAD^{tree})" = "$NEW_TREE" ] && { echo "No change."; exit 0; }
+          fi
+          git push -q -f "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" reports:reports

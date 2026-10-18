@@ -1,0 +1,70 @@
+# Scoop's own school delay or closing entry for laporteweathernow.com/closings (added Oct. 17, 2026).
+#
+# From the GitHub app: this repository > Actions > "School closings: add an entry" > Run workflow,
+# pick the school and what it said, and tap Run. It shows on the site within a few minutes (GitHub's
+# file copies can take up to 5) and lasts for today only. "remove" takes today's entry for that school
+# down, ours or the checker's. Also runs when closings-manual.txt is edited by hand.
+name: "School closings: add an entry"
+
+on:
+  workflow_dispatch:
+    inputs:
+      school:
+        description: "School"
+        type: choice
+        options: [lpcsc (La Porte), mcas (Michigan City), npusc (New Prairie), scentral (South Central), tritownship (Wanatah), westville (Westville), marquette (Marquette Catholic), pnw (Purdue Northwest), lalumiere (La Lumiere), queenofallsaints (Queen of All Saints), ststanislaus (St. Stanislaus), notredame (Notre Dame), stjohnslutheran (St. John's Lutheran)]
+        default: lpcsc (La Porte)
+      status:
+        description: "What the school said (remove = take today's entry down)"
+        type: choice
+        options: [2-hour delay, 3-hour delay, 1-hour delay, delay, closed, e-learning day, open, remove]
+        default: 2-hour delay
+      note:
+        description: "Note to show (optional), e.g. No morning preschool"
+        type: string
+        required: false
+  push:
+    branches: [main]
+    paths:
+      - closings-manual.txt
+
+permissions:
+  contents: write
+
+concurrency:
+  group: closings-entry
+  cancel-in-progress: false
+
+jobs:
+  entry:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get the saved state
+        run: |
+          mkdir -p "$RUNNER_TEMP/closings"
+          if git fetch -q --depth 1 origin closings 2>/dev/null; then
+            git show FETCH_HEAD:closings-state.json > "$RUNNER_TEMP/closings/closings-state.json" || true
+          fi
+      - name: Add the entry and update the page
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CLOSINGS_DIR: ${{ runner.temp }}/closings
+          CLOSINGS_PUBLISH: "1"
+          EVENT: ${{ github.event_name }}
+          SCHOOL: ${{ github.event.inputs.school }}
+          STATUS: ${{ github.event.inputs.status }}
+          NOTE: ${{ github.event.inputs.note }}
+        run: |
+          if [ "$EVENT" = "push" ]; then python3 scripts/closings_check.py rebuild; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          python3 scripts/closings_check.py entry "${SCHOOL%% *}" "$STATUS" "$NOTE"
+          git add closings-manual.txt
+          git commit -q -m "School closings: ${SCHOOL%% *} $STATUS ($(TZ=America/Chicago date '+%b %-d, %-I:%M %p %Z'))"
+          for i in 1 2 3 4; do
+            if git push -q origin HEAD:main; then exit 0; fi
+            git pull -q --rebase origin main || exit 1
+          done
+          exit 1

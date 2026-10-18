@@ -1,0 +1,63 @@
+# The 6 AM morning forecast email, sent with Brevo (added Oct. 17, 2026; scripts/morning_email.py).
+#
+# The Timer starts it every tick from 5:30 to 6:44 AM Central: the first start schedules today's email for
+# 6:00 (or sends it right away if GitHub ran late), later starts see it's done. It does nothing until
+# morning-email.json has "enabled": true and a mailingAddress, the setup run has saved the Brevo list and
+# template ids, and the BREVO_API_KEY secret exists.
+#
+# Run it by hand (Actions > Morning email > Run workflow):
+#   setup    find or make the Brevo list "Morning Forecast" and the confirmation email; saves their ids
+#   preview  build today's email (download it from the run's "morning-email-preview" artifact); tick
+#            "test" to also email it to laporteweathernow@gmail.com only
+name: Morning email
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "send (what the Timer does), preview, or setup"
+        type: choice
+        options: [send, preview, setup]
+        default: send
+      test:
+        description: "With preview: also email it to laporteweathernow@gmail.com only"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: morning-email
+  cancel-in-progress: false
+
+jobs:
+  email:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Morning email
+        env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          MODE: ${{ github.event.inputs.mode || 'send' }}
+          TEST_TO_OWNER: ${{ github.event.inputs.test == 'true' && '1' || '' }}
+        run: python3 scripts/morning_email.py "$MODE"
+      - name: Save the Brevo ids
+        if: github.event.inputs.mode == 'setup'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add morning-email.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -q -m "Morning email: Brevo list and confirmation template ids"
+          for i in 1 2 3 4; do
+            if git push -q origin HEAD:main; then exit 0; fi
+            git pull -q --rebase origin main || exit 1
+          done
+          exit 1
+      - uses: actions/upload-artifact@v4
+        if: github.event.inputs.mode == 'preview'
+        with:
+          name: morning-email-preview
+          path: morning-email-preview.html
