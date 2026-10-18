@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Relay</title>
+</head>
+<body>
+<script>
+// Fetch relay for Scoop's Gumroad editor. Gumroad's CSP blocks fetch() to raw.githubusercontent.com,
+// so the editor page loads this page in a hidden iframe and asks it for files by message.
+// It answers only messages from https://gumroad.com, and only fetches this repository's raw files.
+// The files it relays are encrypted; the key never comes through here.
+(function () {
+  var PARENT = 'https://gumroad.com';
+  var ALLOWED = 'https://raw.githubusercontent.com/ScoopAndDude/laporteweathernow-posts/';
+  window.addEventListener('message', function (e) {
+    if (e.origin !== PARENT || e.source !== window.parent) return;
+    var m = e.data || {};
+    if (m.type !== 'relay-fetch' || !Array.isArray(m.urls)) return;
+    var urls = m.urls.map(String);
+    if (!urls.length || urls.some(function (u) { return u.indexOf(ALLOWED) !== 0 || u.indexOf('..') !== -1; })) {
+      window.parent.postMessage({type: 'relay-result', id: m.id, error: 'url not allowed'}, PARENT);
+      return;
+    }
+    Promise.all(urls.map(function (u) {
+      return fetch(u, {cache: 'no-store'}).then(function (r) {
+        if (!r.ok) throw new Error(r.status + ' ' + u);
+        return r.arrayBuffer();
+      });
+    })).then(function (bufs) {
+      window.parent.postMessage({type: 'relay-result', id: m.id, bufs: bufs}, PARENT, bufs);
+    }, function (err) {
+      window.parent.postMessage({type: 'relay-result', id: m.id, error: String(err && err.message || err)}, PARENT);
+    });
+  });
+  if (window.parent !== window) window.parent.postMessage({type: 'relay-ready'}, PARENT);
+})();
+</script>
+</body>
+</html>
