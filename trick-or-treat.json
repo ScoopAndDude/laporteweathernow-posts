@@ -1,8 +1,8 @@
 {
   "about": "Trick-or-treat hours for every La Porte County, IN community, read by laporteweathernow.com/trick-or-treat (the page updates within about 10 minutes of a change here; no site publish needed). Rules: put hours under 'hours' only when the town itself (its website, council, police or official social page) or reliable local news has announced them for this year, with that source and status 'official' (the town or its police) or 'reported' (local news). Until then hours stays null and 'last' shows last year's hours with their source. Never copy last year's hours into 'hours'. Dates are YYYY-MM-DD and times are 24-hour Central Time. 'events' are extra trick-or-treat events with their own date, hours and source; drop or correct one if its organizer changes it.",
   "year": 2026,
-  "updated": "2026-10-06T13:00:00-05:00",
-  "checked": "2026-10-06",
+  "updated": "2026-10-18T10:26:00-05:00",
+  "checked": "2026-10-18",
   "usual": {"date": "2026-10-31", "start": "17:00", "end": "19:00"},
   "towns": [
     {
@@ -16,7 +16,8 @@
     },
     {
       "id": "michigan-city", "name": "Michigan City", "lat": 41.7344, "lon": -86.8731,
-      "hours": null,
+      "hours": {"date": "2026-10-31", "start": "17:00", "end": "19:00", "status": "official",
+        "source": {"name": "City of Michigan City", "url": "https://michigancityin.gov/halloween26/"}},
       "last": {"date": "2025-10-31", "start": "17:00", "end": "19:00",
         "source": {"name": "Michigan City Police, via WIMS", "url": "https://wimsradio.com/2025/10/18/mcpd-give-information-on-trick-or-treat-taking-place-oct-31/"}},
       "announces": "The mayor's office and police department, usually in mid-October (michigancityin.gov/news)."
@@ -28,21 +29,24 @@
     },
     {
       "id": "kingsford-heights", "name": "Kingsford Heights", "lat": 41.4783, "lon": -86.6931,
-      "hours": null,
+      "hours": {"date": "2026-10-31", "start": "17:00", "end": "19:00", "status": "reported",
+        "source": {"name": "WNDU's 2026 list", "url": "https://www.wndu.com/2026/10/16/heres-list-trick-or-treat-times-communities-across-michiana-halloween-2026/"}},
       "last": {"date": "2025-10-31", "start": "17:00", "end": "19:00",
         "source": {"name": "WNDU's 2025 list", "url": "https://www.wndu.com/2025/10/21/halloween-2025-official-trick-or-treat-times-across-michiana/"}},
       "announces": "The town council."
     },
     {
       "id": "la-crosse", "name": "La Crosse", "lat": 41.3178, "lon": -86.8897,
-      "hours": null,
+      "hours": {"date": "2026-10-31", "start": "17:00", "end": "19:30", "status": "reported",
+        "source": {"name": "WNDU's 2026 list", "url": "https://www.wndu.com/2026/10/16/heres-list-trick-or-treat-times-communities-across-michiana-halloween-2026/"}},
       "last": {"date": "2025-10-31", "start": "17:00", "end": "19:30",
         "source": {"name": "WNDU's 2025 list", "url": "https://www.wndu.com/2025/10/21/halloween-2025-official-trick-or-treat-times-across-michiana/"}},
       "announces": "The town council."
     },
     {
       "id": "long-beach", "name": "Long Beach", "lat": 41.7456, "lon": -86.8514,
-      "hours": null,
+      "hours": {"date": "2026-10-31", "start": "17:00", "end": "19:00", "status": "reported",
+        "source": {"name": "WNDU's 2026 list", "url": "https://www.wndu.com/2026/10/16/heres-list-trick-or-treat-times-communities-across-michiana-halloween-2026/"}},
       "last": {"date": "2025-10-31", "start": "17:00", "end": "19:00",
         "source": {"name": "WNDU's 2025 list", "url": "https://www.wndu.com/2025/10/21/halloween-2025-official-trick-or-treat-times-across-michiana/"}},
       "announces": "The town website and the Town of Long Beach Facebook page."
@@ -63,14 +67,16 @@
     },
     {
       "id": "rolling-prairie", "name": "Rolling Prairie", "lat": 41.6731, "lon": -86.6239,
-      "hours": null,
+      "hours": {"date": "2026-10-31", "start": "17:00", "end": "19:00", "status": "reported",
+        "source": {"name": "WNDU's 2026 list", "url": "https://www.wndu.com/2026/10/16/heres-list-trick-or-treat-times-communities-across-michiana-halloween-2026/"}},
       "last": {"date": "2025-10-31", "start": "17:00", "end": "19:00",
         "source": {"name": "WNDU's 2025 list", "url": "https://www.wndu.com/2025/10/21/halloween-2025-official-trick-or-treat-times-across-michiana/"}},
       "announces": "Local news lists (Rolling Prairie has no town government)."
     },
     {
       "id": "trail-creek", "name": "Trail Creek", "lat": 41.6972, "lon": -86.8572,
-      "hours": null,
+      "hours": {"date": "2026-10-31", "start": "17:00", "end": "19:00", "status": "reported",
+        "source": {"name": "WNDU's 2026 list", "url": "https://www.wndu.com/2026/10/16/heres-list-trick-or-treat-times-communities-across-michiana-halloween-2026/"}},
       "last": {"date": "2025-10-31", "start": "17:00", "end": "19:00",
         "source": {"name": "WNDU's 2025 list", "url": "https://www.wndu.com/2025/10/21/halloween-2025-official-trick-or-treat-times-across-michiana/"},
         "note": "Another listing gave Oct. 29 last year, so wait for the town's own word."},
@@ -78,21 +84,24 @@
     },
     {
       "id": "union-mills", "name": "Union Mills", "lat": 41.4942, "lon": -86.7786,
-      "hours": null,
+      "hours": {"date": "2026-10-31", "start": "17:00", "end": "19:00", "status": "reported",
+        "source": {"name": "WNDU's 2026 list", "url": "https://www.wndu.com/2026/10/16/heres-list-trick-or-treat-times-communities-across-michiana-halloween-2026/"}},
       "last": {"date": "2025-10-31", "start": "17:00", "end": "19:00",
         "source": {"name": "WNDU's 2025 list", "url": "https://www.wndu.com/2025/10/21/halloween-2025-official-trick-or-treat-times-across-michiana/"}},
       "announces": "Local news lists (Union Mills has no town government)."
     },
     {
       "id": "wanatah", "name": "Wanatah", "lat": 41.4303, "lon": -86.8819,
-      "hours": null,
+      "hours": {"date": "2026-10-31", "start": "17:00", "end": "19:00", "status": "reported",
+        "source": {"name": "WNDU's 2026 list", "url": "https://www.wndu.com/2026/10/16/heres-list-trick-or-treat-times-communities-across-michiana-halloween-2026/"}},
       "last": {"date": "2025-10-31", "start": "17:00", "end": "19:00",
         "source": {"name": "WNDU's 2025 list", "url": "https://www.wndu.com/2025/10/21/halloween-2025-official-trick-or-treat-times-across-michiana/"}},
       "announces": "The town (wanatah-in.gov)."
     },
     {
       "id": "westville", "name": "Westville", "lat": 41.5375, "lon": -86.905,
-      "hours": null,
+      "hours": {"date": "2026-10-31", "start": "17:00", "end": "19:00", "status": "reported",
+        "source": {"name": "WNDU's 2026 list", "url": "https://www.wndu.com/2026/10/16/heres-list-trick-or-treat-times-communities-across-michiana-halloween-2026/"}},
       "last": {"date": "2025-10-31", "start": "17:00", "end": "19:00",
         "source": {"name": "Westville Police, via WIMS", "url": "https://wimsradio.com/2025/10/13/westville-trick-or-treat-hours/"}},
       "announces": "The Westville Police Department's Facebook page."
