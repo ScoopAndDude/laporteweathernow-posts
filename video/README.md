@@ -35,7 +35,7 @@ Meta's own Graph API is free for posting to your own Page and Instagram. It need
 YouTube's own API is free, and since 2026 uploads from new, unverified projects are no longer held as private. A small Google Apps Script in the business Google account uploads each morning's video to youtube.com/@laporteweathernow as a Short (6:00-9:30 AM, once a day, with the same alert checks as above). The code and the steps are at the top of `tools/video/youtube-upload.gs`: new project at script.google.com, paste, add the "YouTube Data API v3" service, run `setup`, and Allow.
 
 ## TikTok and X through Buffer (one time, about 3 minutes, Scoop)
-TikTok keeps posts from new, unaudited apps private, and X's own posting API isn't free, so these two go through Buffer, which already has the La Porte Weather Now TikTok (@laporteweathernow) and X (@ScoopAndDude) connected. Buffer's API is free on the Free plan (one key, 3,000 requests a month; this uses about 30 a day at most). It needs one key, saved as a GitHub secret. Never paste the key into a chat.
+TikTok keeps posts from new, unaudited apps private, and X's own posting API isn't free, so these two go through Buffer, which has Scoop's personal TikTok (@scoopanddude; since Oct. 18, 2026, Scoop: "they can go out at the personal tik tok"; before that the La Porte Weather Now TikTok, @laporteweathernow) and X (@ScoopAndDude) connected. Buffer's API is free on the Free plan (one key, 3,000 requests a month; this uses about 30 a day at most). It needs one key, saved as a GitHub secret. Never paste the key into a chat.
 
 1. Go to **publish.buffer.com/settings/api** and log in to Buffer.
 2. Create a new API key (name it `LPWN Daily Video`) and copy it.

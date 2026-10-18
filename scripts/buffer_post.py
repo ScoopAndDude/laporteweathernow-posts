@@ -5,9 +5,10 @@ Added Oct. 12, 2026 (Scoop: "LPWN on autopilot").
 
 It needs one repository secret, BUFFER_API_KEY: an API key from Buffer (publish.buffer.com/settings/api;
 Buffer's Free plan includes one, good for 3,000 requests a month, and this uses about 30 a day at most). Without it
-nothing is posted here and the video still goes everywhere else. The TikTok account (@laporteweathernow) and
-the X account (@ScoopAndDude) are already connected in Buffer; video/config.json names them ("buffer") and
-turns either one off ("post": "tiktok", "x"). Setup steps: video/README.md.
+nothing is posted here and the video still goes everywhere else. The TikTok account (@scoopanddude, Scoop's
+personal TikTok, since Oct. 18, 2026; before that @laporteweathernow) and the X account (@ScoopAndDude) are
+connected in Buffer; video/config.json names them ("buffer") and turns either one off ("post": "tiktok", "x").
+Setup steps: video/README.md.
 
   python3 scripts/buffer_post.py DIR --sha SHA [--dry-run]
       DIR is the "video" branch as it stands (video.json, plan.json and the MP4), SHA its commit: Buffer
@@ -44,7 +45,7 @@ REPO = os.environ.get("GITHUB_REPOSITORY") or "ScoopAndDude/laporteweathernow-po
 UA = "LaPorteWeatherNow/1.0 (+https://laporteweathernow.com)"
 SERVICE = {"tiktok": "tiktok", "x": "twitter"}         # our name -> Buffer's name for the service
 NAMES = {"tiktok": "TikTok", "x": "X"}
-DEFAULT_ACCOUNTS = {"tiktok": "laporteweathernow", "x": "ScoopAndDude"}
+DEFAULT_ACCOUNTS = {"tiktok": "scoopanddude", "x": "ScoopAndDude"}
 TIKTOK_LIMIT = 2200                                     # TikTok caption with a video (Buffer's limit)
 X_LIMIT = 280                                           # X's weighted count (Premium allows more; 280 reads best)
 X_TAGS = "#LaPorte #INwx"

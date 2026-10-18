@@ -58,7 +58,7 @@ class FakeBuffer:
             return {"account": {"organizations": [{"id": "org1", "name": "My organization"}]}}
         if query == bp.Q_CHANNELS:
             chans = [
-                {"id": "ch-tt", "service": "tiktok", "name": "laporteweathernow", "displayName": "laporteweathernow", "isDisconnected": False, "isLocked": False},
+                {"id": "ch-tt", "service": "tiktok", "name": "scoopanddude", "displayName": "scoopanddude", "isDisconnected": False, "isLocked": False},
                 {"id": "ch-yt", "service": "youtube", "name": "LaPorteWeatherNow ", "displayName": "LaPorteWeatherNow ", "isDisconnected": False, "isLocked": False},
                 {"id": "ch-x", "service": "twitter", "name": "ScoopAndDude", "displayName": "ScoopAndDude", "isDisconnected": False, "isLocked": False}]
             for c in chans:
