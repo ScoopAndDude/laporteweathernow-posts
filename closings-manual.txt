@@ -1,0 +1,16 @@
+# Scoop's own school delay and closing entries for laporteweathernow.com/closings (added Oct. 17, 2026).
+# They win over anything the checker finds, for that school and that day only, and the page shows only
+# today's (Central time). The easy way to add one from your phone: GitHub app > this repository >
+# Actions > "School closings" > Run workflow > mode "entry", pick the school and what it said.
+# Or add a line here by hand:
+#
+#   DATE        SCHOOL      WHAT                  | NOTE (optional)
+#   2026-12-10  lpcsc       2-hour delay          | No morning preschool
+#   2026-12-10  mcas        closed
+#   2026-12-10  npusc       e-learning day
+#   2026-12-10  lpcsc       remove                (takes down today's entry for that school, ours or the checker's)
+#
+# Schools: lpcsc (La Porte), mcas (Michigan City), npusc (New Prairie), scentral (South Central),
+# tritownship (Tri-Township), westville (New Durham / Westville), marquette, pnw (Purdue Northwest),
+# lalumiere, queenofallsaints, ststanislaus, notredame, stjohnslutheran
+# What: 1-hour delay, 2-hour delay, 3-hour delay, delay, closed, e-learning day, open, remove
