@@ -28,9 +28,27 @@ emails Scoop (time for a paid Brevo plan). Every email carries the mailing addre
   python3 scripts/morning_email.py preview   build sample emails into previews/ (and morning-email-preview.html,
                                              La Porte); with TEST_TO_OWNER=1 also send ONE test to
                                              laporteweathernow@gmail.com, for that address's own place
+  python3 scripts/morning_email.py warn      (the "Warning email" job, every tick) email each subscriber once when a
+                                             NEW Weather Service warning is issued for their own spot
   python3 scripts/morning_email.py setup     find or make the Brevo list, contact attributes and confirmation
                                              email; saves the ids in morning-email.json
 Needs the repository secret BREVO_API_KEY (preview without TEST_TO_OWNER doesn't).
+
+Added Oct. 17, 2026 (late), all approved by Scoop:
+- A note from Scoop at the top: morning-note.json (see its "about"). Shown only on the date it's dated, in the
+  subscriber's own time zone, to "all" subscribers or only "laporte" (La Porte County ZIPs). Nothing is ever
+  written in Scoop's name by this script; with no note for today, nothing is shown.
+- A sponsor line: sponsor.json "morningEmail". A sponsor shows to La Porte County subscribers (to everyone
+  if "everywhere": true), labeled as a sponsor; while it's empty, a small house ad for the $75/month
+  sponsor spot. Neither shows while a Warning is in effect at the subscriber's spot.
+- A share line (forward, or /morning-email?ref=email) in every email.
+- Warning emails (mode warn): a NEW National Weather Service Warning (only events named "... Warning",
+  status Actual; watches and advisories don't count) at a subscriber's spot gets them one email right away,
+  any hour. One per warning per person (the warning's VTEC event, so updates and extensions aren't resent),
+  kept as keyed hashes on the "warning-email-state" branch. On by default; each email has its own "stop
+  warning emails" link (Brevo attribute WARN = "no"), separate from the morning email's unsubscribe.
+  Budget guard: warnings never use the sends kept back for the next morning emails (one per subscriber plus
+  25); when they'd have to, the rest wait and the run fails so GitHub emails Scoop.
 """
 import base64
 import concurrent.futures
@@ -70,6 +88,11 @@ LPC_ZIPS = {"46340", "46345", "46346", "46348", "46350", "46352", "46360", "4636
 US_ZONES = ("America/New_York", "America/Chicago", "America/Denver", "America/Phoenix", "America/Los_Angeles",
             "America/Anchorage", "America/Adak", "Pacific/Honolulu")
 WINDOW = ("05:30", "06:59")
+NOTE = os.path.join(os.path.dirname(HERE), "morning-note.json")
+SPONSOR = os.path.join(os.path.dirname(HERE), "sponsor.json")
+WARN_STATE = os.environ.get("WARN_STATE", "warning-email-state.json")
+SHARE_URL = SITE + "/morning-email?ref=email"
+RESERVE_EXTRA = 25
 
 
 def now_central():
@@ -158,6 +181,15 @@ def unsub_token(email):
     return f"{b64(email)}.{sign('unsub|' + email)}"
 
 
+def nowarn_token(email):
+    email = email.strip().lower()
+    return f"{b64(email)}.{sign('nowarn|' + email)}"
+
+
+def warns_on(contact):
+    return str((contact.get("attributes") or {}).get("WARN") or "").strip().lower() != "no"
+
+
 def sent_key(day, email):
     return sign(f"sent|{day}|{email.strip().lower()}")[:20]
 
@@ -243,7 +275,64 @@ def pick_periods(daily, today, tz):
     return day, night
 
 
-def build(wx, closings, cfg, now, a, unsub_url):
+def _local_json(path):
+    try:
+        return json.load(open(path, encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+def note_html(a, today, note=None):
+    """Scoop's own note for today, exactly as he wrote it, or "" (never made up)."""
+    try:
+        n = note if note is not None else _local_json(NOTE)
+        text = str(n.get("text") or "").strip()
+        if not text or str(n.get("date") or "").strip() != today.isoformat():
+            return ""
+        who = str(n.get("for") or "all").strip().lower()
+        if who == "laporte" and not local_county(a):
+            return ""
+        body = "<br>".join(esc(line) for line in text[:1200].splitlines())
+        return ('<div style="background:#fff7e6;border-left:4px solid #ff8a00;padding:10px 14px;margin:0 0 16px;font-size:15px;line-height:1.55;color:#1f2a1f;">'
+                f'<strong style="display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#a35600;margin-bottom:4px;">A note from Scoop</strong>{body}</div>')
+    except Exception:
+        return ""
+
+
+def sponsor_html(a, today, warned, sp=None):
+    """Labeled sponsor line, or the house ad for the spot; nothing while a Warning is in effect."""
+    try:
+        if warned:
+            return ""
+        sp = sp if sp is not None else _local_json(SPONSOR)
+        s = sp.get("morningEmail") if isinstance(sp, dict) else None
+        box = 'margin:18px 0 0;padding:10px 14px;border:1px solid #e5e1d5;border-radius:8px;font-size:13px;line-height:1.5;color:#5b665b;'
+        if isinstance(s, dict) and s.get("name") and str(s.get("until") or "9999") >= today.isoformat():
+            if not (local_county(a) or s.get("everywhere")):
+                return ""
+            name = esc(s["name"])
+            if str(s.get("url") or "").startswith("https://"):
+                name = f'<a href="{esc(s["url"])}" style="color:#1a1a1a;font-weight:700;">{name}</a>'
+            line = f" &middot; {esc(s['line'])}" if s.get("line") else ""
+            return (f'<p style="{box}"><span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Sponsor</span><br>'
+                    f'This morning forecast is presented by {name}{line}. Sponsors never see or shape the forecast.</p>')
+        return (f'<p style="{box}">Sponsor this morning forecast: $75/month (founding price). '
+                f'<a href="{SITE}/media-kit" style="color:#1a1a1a;font-weight:700;">See the sponsor spots</a></p>')
+    except Exception:
+        return ""
+
+
+def share_html(kind="morning"):
+    what = "the free 6 AM forecast email" if kind == "morning" else "free Weather Service warning emails"
+    subj = urllib.parse.quote("A free morning weather email")
+    text = urllib.parse.quote("I get a free email with the National Weather Service forecast for my ZIP code every "
+                              f"morning at 6, plus warnings. Sign up here: {SHARE_URL}")
+    return ('<p style="margin:16px 0 0;font-size:14px;line-height:1.5;color:#1f2a1f;">Know someone who\'d like '
+            f'{what}? Forward this email, or <a href="mailto:?subject={subj}&amp;body={text}" style="color:#1a1a1a;font-weight:700;">'
+            f'email them the link</a>: <a href="{SHARE_URL}" style="color:#1a1a1a;">laporteweathernow.com/morning-email</a></p>')
+
+
+def build(wx, closings, cfg, now, a, unsub_url, warn_on=True, note=None, sp=None):
     """Subject, HTML and preview text for one place. now is the subscriber's local time."""
     tz = now.tzinfo
     town = a.get("TOWN") or "La Porte, IN"
@@ -276,6 +365,9 @@ def build(wx, closings, cfg, now, a, unsub_url):
     h2 = lambda s: f'<h2 style="margin:22px 0 8px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#a35600;">{s}</h2>'
     parts = [f'<h1 style="margin:0 0 4px;font-family:Georgia,serif;font-size:26px;color:#1a1a1a;">Good morning, {esc(short)}</h1>',
              f'<p style="margin:0 0 18px;font-size:14px;color:#5b665b;">{esc(now.strftime("%A, %B %-d, %Y"))} · {esc(town)}</p>']
+    nh = note_html(a, today, note)
+    if nh:
+        parts.append(nh)
     if alerts:
         rows = []
         for al in alerts:
@@ -321,12 +413,18 @@ def build(wx, closings, cfg, now, a, unsub_url):
     else:
         parts.append(f'<p style="margin:18px 0 0;"><a href="{nws_page}" style="{btn}background:#ff8a00;color:#1a1a1a;">Your full forecast</a>'
                      f'<a href="{SITE}/" style="{btn}background:#1a1a1a;color:#ffffff;">La Porte Weather Now</a></p>')
+    parts.append(sponsor_html(a, today, any(str(n).endswith("Warning") for n in names), sp))
+    parts.append(share_html())
     foot = (f"From the National Weather Service forecast for {esc(town)}, as of {esc(saved)}. Forecasts change; for warnings, "
             f"trust the National Weather Service and local officials. La Porte Weather Now is free, made in La Porte, Indiana, "
             f'and run by Scoop. <a href="{SITE}/" style="color:#5b665b;">laporteweathernow.com</a><br><br>'
             f"You're getting this because you signed up for the morning forecast for {esc(town)} at laporteweathernow.com and "
             f'confirmed your email. <a href="{SITE}/morning-email#change" style="color:#5b665b;">Change your place</a> · '
-            f'<a href="{esc(unsub_url)}" style="color:#5b665b;">Unsubscribe</a> anytime, in one click.<br><br>'
+            f'<a href="{esc(unsub_url)}" style="color:#5b665b;">Unsubscribe</a> anytime, in one click.'
+            + (" You also get an email right away when the Weather Service issues a warning for your spot: "
+               '<a href="__NOWARN__" style="color:#5b665b;">Stop warning emails</a> (keeps the morning email).' if warn_on else
+               f' Warning emails are off; <a href="{SITE}/morning-email#warnings" style="color:#5b665b;">turn them back on</a>.')
+            + '<br><br>'
             f"La Porte Weather Now · {esc(cfg.get('mailingAddress') or '[MAILING ADDRESS GOES HERE]')}")
     body = ('<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
             f'<title>{esc(subject)}</title></head><body style="margin:0;background:#f4f1e8;">'
@@ -341,12 +439,16 @@ def build(wx, closings, cfg, now, a, unsub_url):
     return subject, body, preview_text
 
 
-def message(cfg, email, subject, body, preview_text, send_at=None, test=False):
+def message(cfg, email, subject, body, preview_text, send_at=None, test=False, kind="morning"):
     unsub = f"{SIGNUP_API}?unsub={unsub_token(email)}"
+    nowarn = f"{SIGNUP_API}?nowarn={nowarn_token(email)}"
+    # A warning email's one-click unsubscribe stops warning emails only; the morning email's stops the morning email.
+    one = nowarn if kind == "warning" else unsub
     m = {"sender": {"name": cfg["senderName"], "email": cfg["senderEmail"]}, "to": [{"email": email}],
-         "subject": ("[TEST] " if test else "") + subject, "htmlContent": body.replace("__UNSUB__", esc(unsub)),
-         "headers": {"List-Unsubscribe": f"<{unsub}>", "List-Unsubscribe-Post": "List-Unsubscribe=One-Click"},
-         "tags": ["morning-forecast"]}
+         "subject": ("[TEST] " if test else "") + subject,
+         "htmlContent": body.replace("__UNSUB__", esc(unsub)).replace("__NOWARN__", esc(nowarn)),
+         "headers": {"List-Unsubscribe": f"<{one}>", "List-Unsubscribe-Post": "List-Unsubscribe=One-Click"},
+         "tags": ["warning-email" if kind == "warning" else "morning-forecast"]}
     if send_at:
         m["scheduledAt"] = send_at.isoformat()
     return m
@@ -392,7 +494,7 @@ def setup(cfg):
         print(f"Found the Brevo list \"{cfg['listName']}\" (id {lst['id']}).")
     cfg["listId"] = lst["id"]
     have = {a.get("name") for a in brevo("/contacts/attributes").get("attributes", []) or [] if a.get("category") == "normal"}
-    for name in ATTRS:
+    for name in ATTRS + ("WARN",):
         if name not in have:
             brevo(f"/contacts/attributes/normal/{name}", "POST", {"type": "text"})
             print(f"Made the contact attribute {name}.")
@@ -491,11 +593,12 @@ def send(cfg, closings, now):
         print(f"It isn't 5:30-6:59 AM in any U.S. time zone ({now:%-I:%M %p %Z}).")
         return 0
     st = load_state()
-    due = []
+    due, c_warn = [], {}
     for c in list_members(cfg["listId"]):
         if c.get("emailBlacklisted"):
             continue
         email = c["email"].strip().lower()
+        c_warn[email] = warns_on(c)
         a = place_of(c)
         try:
             a, changed = fill_point(a)
@@ -543,7 +646,7 @@ def send(cfg, closings, now):
             continue
         send_at = datetime.datetime.combine(local.date(), datetime.time(6, 0), local.tzinfo)
         when = send_at if local < send_at - datetime.timedelta(minutes=2) else None
-        subject, body, pv = build(wx, closings, cfg, local, a, "__UNSUB__")
+        subject, body, pv = build(wx, closings, cfg, local, a, "__UNSUB__", warn_on=c_warn.get(email, True))
         jobs.append((email, day, message(cfg, email, subject, body, pv, when), a))
 
     def go(job):
@@ -568,12 +671,216 @@ def send(cfg, closings, now):
     return rc
 
 
+# ---------- warning emails (mode warn) ----------
+def warning_key(p):
+    """One warning = one VTEC event (office, phenomenon, significance, number, year), so NWS's updates and
+    extensions of it aren't new. None for a cancel/expire/upgrade-away message. Falls back to the alert id."""
+    for v in (p.get("parameters") or {}).get("VTEC") or []:
+        parts = v.strip("/").split(".")
+        if len(parts) >= 7:
+            action, office, phen, sig, etn = parts[1], parts[2], parts[3], parts[4], parts[5]
+            if action in ("CAN", "EXP", "UPG"):
+                return None
+            year = (p.get("sent") or "")[:4]
+            return f"{office}.{phen}.{sig}.{etn}.{year}"
+    return p.get("id") or p.get("@id")
+
+
+def active_warnings(lat, lon, now):
+    got = []
+    for f in nws(f"{NWS}/alerts/active?point={float(lat):.4f},{float(lon):.4f}").get("features") or []:
+        p = f.get("properties") or {}
+        if p.get("status") != "Actual" or p.get("messageType") not in ("Alert", "Update"):
+            continue
+        if not str(p.get("event") or "").endswith("Warning"):
+            continue
+        try:
+            end = datetime.datetime.fromisoformat(p.get("ends") or p.get("expires"))
+            if end <= now + datetime.timedelta(minutes=5):
+                continue
+        except Exception:
+            pass
+        k = warning_key(p)
+        if k:
+            got.append((k, p))
+    return got
+
+
+def build_warning(p, cfg, a, now, warn_on=True):
+    tz = now.tzinfo
+    town = a.get("TOWN") or "La Porte, IN"
+    short = town.split(",")[0]
+    until = ""
+    try:
+        until = datetime.datetime.fromisoformat(p.get("ends") or p.get("expires")).astimezone(tz).strftime("%a. %-I:%M %p %Z")
+    except Exception:
+        pass
+    event = str(p.get("event") or "Warning")
+    subject = f"{event} for {short}" + (f" until {until}" if until else "")
+    nws_page = f"https://forecast.weather.gov/MapClick.php?lat={float(a['LAT']):.4f}&lon={float(a['LON']):.4f}"
+    para = lambda t: "".join(f'<p style="margin:0 0 10px;font-size:15px;line-height:1.5;color:#1f2a1f;">{esc(x.strip())}</p>'
+                             for x in str(t or "").replace("\r", "").split("\n\n") if x.strip())
+    desc = str(p.get("description") or "")
+    if len(desc) > 2500:
+        desc = desc[:2500].rsplit(" ", 1)[0] + " ..."
+    local = local_county(a)
+    more = (f'<a href="{SITE}/emergency" style="display:inline-block;font-weight:700;text-decoration:none;padding:12px 18px;border-radius:8px;background:#b3261e;color:#ffffff;margin:0 8px 8px 0;">Live alerts and radar</a>' if local else "") + \
+           f'<a href="{nws_page}" style="display:inline-block;font-weight:700;text-decoration:none;padding:12px 18px;border-radius:8px;background:#1a1a1a;color:#ffffff;margin:0 8px 8px 0;">National Weather Service</a>'
+    parts = [f'<h1 style="margin:0 0 6px;font-family:Georgia,serif;font-size:24px;color:#b3261e;">{esc(event)}</h1>',
+             f'<p style="margin:0 0 14px;font-size:15px;color:#1f2a1f;"><strong>For your spot, {esc(town)}</strong>' + (f", until {esc(until)}" if until else "") + '.</p>',
+             f'<div style="border-left:4px solid #b3261e;background:#fdf1ef;padding:10px 14px;margin:0 0 14px;">{para(p.get("headline"))}{para(p.get("instruction"))}</div>',
+             para(desc), f'<p style="margin:14px 0 0;">{more}</p>', share_html("warning")]
+    foot = (f"Official National Weather Service warning ({esc(p.get('senderName') or 'NWS')}), passed along as issued. Emails can be late; "
+            "keep your phone's emergency alerts on and follow local officials. "
+            f'<a href="{SITE}/" style="color:#5b665b;">La Porte Weather Now</a> is free, made in La Porte, Indiana, and run by Scoop.<br><br>'
+            f"You're getting this because you signed up for the morning forecast for {esc(town)}, which includes warning emails. "
+            '<a href="__NOWARN__" style="color:#5b665b;">Stop warning emails</a> (keeps the morning email) · '
+            '<a href="__UNSUB__" style="color:#5b665b;">Unsubscribe from everything</a><br><br>'
+            f"La Porte Weather Now · {esc(cfg.get('mailingAddress') or '')}")
+    body = ('<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+            f'<title>{esc(subject)}</title></head><body style="margin:0;background:#f4f1e8;">'
+            '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f1e8;"><tr><td align="center" style="padding:20px 12px;">'
+            '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background:#ffffff;border-radius:12px;">'
+            '<tr><td style="background:#b3261e;color:#ffffff;padding:14px 22px;border-radius:12px 12px 0 0;font-family:Arial,sans-serif;font-weight:800;letter-spacing:.06em;font-size:13px;">'
+            'WEATHER SERVICE WARNING · LA PORTE WEATHER NOW</td></tr>'
+            '<tr><td style="padding:22px;font-family:Arial,Helvetica,sans-serif;">' + "".join(parts) + '</td></tr>'
+            f'<tr><td style="padding:16px 22px 22px;font-family:Arial,sans-serif;font-size:12px;line-height:1.5;color:#5b665b;border-top:1px solid #e5e1d5;">{foot}</td></tr>'
+            '</table></td></tr></table></body></html>')
+    return subject, body, str(p.get("headline") or "")[:140]
+
+
+def load_warn_state():
+    try:
+        st = json.load(open(WARN_STATE, encoding="utf-8"))
+        st.setdefault("sent", {})
+        return st
+    except Exception:
+        return None
+
+
+def save_warn_state(st, now):
+    cut = (now - datetime.timedelta(days=10)).isoformat()
+    st["sent"] = {k: d for k, d in st.get("sent", {}).items() if d >= cut}
+    st["about"] = "Who already got which warning email, as keyed hashes of warning + address (no addresses)."
+    st["updated"] = now.isoformat(timespec="seconds")
+    with open(WARN_STATE, "w", encoding="utf-8") as f:
+        json.dump(st, f, indent=0, sort_keys=True)
+        f.write("\n")
+
+
+def warn_key(k, email):
+    return sign(f"warn|{k}|{email.strip().lower()}")[:20]
+
+
+def warn(cfg, now):
+    miss = ready(cfg) + ([] if KEY else ["no BREVO_API_KEY secret"])
+    if miss:
+        print("Warning emails aren't set up yet: " + "; ".join(miss))
+        return 0
+    st = load_warn_state()
+    boot = st is None
+    if boot:
+        st = {"sent": {}}
+    members = [c for c in list_members(cfg["listId"]) if not c.get("emailBlacklisted")]
+    groups = {}
+    for c in members:
+        if not warns_on(c):
+            continue
+        a = place_of(c)
+        if not a.get("GRIDPOINT"):
+            continue        # the morning run fills it in; warnings start once it's known
+        groups.setdefault(a["GRIDPOINT"], []).append((c["email"].strip().lower(), a))
+    def look(item):
+        gp, people = item
+        try:
+            return gp, active_warnings(people[0][1]["LAT"], people[0][1]["LON"], now), None
+        except Exception as e:
+            return gp, [], e
+    due, failed, queued = [], 0, set()
+    with concurrent.futures.ThreadPoolExecutor(max_workers=6) as ex:
+        for gp, ws, err in ex.map(look, groups.items()):
+            if err:
+                failed += 1
+                print(f"{gp}: Weather Service alerts didn't answer ({str(err)[:100]}); will check again next run.")
+                continue
+            for k, p in ws:
+                for email, a in groups[gp]:
+                    h = warn_key(k, email)
+                    if h in st["sent"] or h in queued:
+                        continue
+                    queued.add(h)
+                    if boot:
+                        st["sent"][h] = now.isoformat(timespec="seconds")
+                        continue
+                    due.append((h, email, a, p))
+    if boot:
+        save_warn_state(st, now)
+        print(f"First run: noted {len(st['sent'])} warning(s) already in effect without emailing; new ones from now on.")
+        return 0
+    if not due:
+        save_warn_state(st, now)
+        print(f"No new warnings for {sum(len(v) for v in groups.values())} subscriber(s) in {len(groups)} forecast area(s)"
+              f" ({now:%-I:%M %p %Z}).")
+        return 0
+    rc = 0
+    try:
+        left, plan = sends_left()
+    except Exception as e:
+        left, plan = None, None
+        print(f"Couldn't read Brevo's sends left ({str(e)[:100]}).")
+    reserve = len(members) + RESERVE_EXTRA     # kept for the next morning emails and sign-up confirmations
+    if left is None:
+        room = 20
+    elif plan == "free":
+        room = max(0, left - reserve)
+    else:
+        room = len(due)
+    # Most dangerous first if not all fit
+    order = ("Tornado Warning", "Extreme Wind Warning", "Flash Flood Warning", "Severe Thunderstorm Warning")
+    due.sort(key=lambda d: order.index(d[3].get("event")) if d[3].get("event") in order else len(order))
+    if len(due) > room:
+        print(f"BUDGET: {len(due)} warning emails due but only {room} fit (Brevo: {left} left today, {reserve} kept for "
+              "morning emails). The rest wait for the next run. Time for a paid Brevo plan.")
+        rc = 3
+    elif left is not None and plan == "free" and left - len(due) < reserve + 30:
+        print(f"Brevo is getting low: {left} sends left today, {reserve} kept for morning emails.")
+        rc = 3
+    jobs = []
+    for h, email, a, p in due[:room]:
+        try:
+            local = now.astimezone(ZoneInfo(a.get("TZ") or "America/Chicago"))
+        except Exception:
+            local = now
+        subject, body, pv = build_warning(p, cfg, a, local)
+        jobs.append((h, email, a, message(cfg, email, subject, body, pv, kind="warning")))
+    def go(job):
+        try:
+            brevo("/smtp/email", "POST", job[3])
+            return job, None
+        except Exception as e:
+            return job, e
+    ok = 0
+    with concurrent.futures.ThreadPoolExecutor(max_workers=6) as ex:
+        for (h, email, a, msg), err in ex.map(go, jobs):
+            if err:
+                print(f"{a.get('TOWN')}: Brevo refused a warning email ({str(err)[:160]}).")
+                rc = 3
+                continue
+            st["sent"][h] = now.isoformat(timespec="seconds")
+            ok += 1
+    save_warn_state(st, now)
+    print(f"{ok} of {len(due)} warning emails sent ({len({d[3].get('event') for d in due})} kind(s) of warning).")
+    return rc
+
+
 def main(argv):
     mode = argv[1] if len(argv) > 1 else "send"
     cfg = load_config()
     if mode == "setup":
         return setup(cfg)
     now = now_central()
+    if mode == "warn":
+        return warn(cfg, now)
     try:
         closings = get_json(CLOSINGS_JSON)
     except Exception:
