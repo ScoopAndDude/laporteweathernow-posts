@@ -3,8 +3,8 @@
 
 If there's no Daily Scoop for today by 6:30 AM Central, this posts a short automatic update
 with the official NWS forecast for La Porte, clearly marked as automatic, so the homepage and
-the Scoop page never show yesterday's post as the newest. The morning Scoop task replaces it
-when its write-up comes in later.
+the Scoop page never show yesterday's post as the newest. The Daily Scoop writer
+(scripts/scoop_writer.py) replaces it when it posts later that morning.
 
   python3 scripts/backup_scoop.py build OUT.json    fetch NWS and write the post to OUT.json
                                                     (and its commit message to OUT.json.msg);
@@ -23,7 +23,7 @@ Rules:
   is missing.
 - Clock times in the NWS wording are already in Central time (see nws_snapshot.text_in_zone).
 - "forecasts" stays empty, so the Track Record never grades NWS's numbers as ours.
-- "auto": true marks the post for the morning Scoop task (which replaces it) and the site check.
+- "auto": true marks the post for the Daily Scoop writer (which replaces it) and the site check.
 """
 import datetime
 import json

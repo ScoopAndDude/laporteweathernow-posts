@@ -1,0 +1,1114 @@
+{
+ "now": "2026-10-14T05:31:00-05:00",
+ "snapshot": {
+  "about": "Official weather for La Porte, Indiana, saved by a GitHub job for the Daily Scoop (laporteweathernow.com/daily-scoop). Copied from NWS, SPC and WPC as-is; see scripts/nws_snapshot.py.",
+  "fetched": "2026-10-14T05:02:07-05:00",
+  "place": "La Porte, IN",
+  "lat": 41.6081,
+  "lon": -86.7189,
+  "point": {},
+  "zones": null,
+  "observation": {
+   "station": "KPPO (La Porte Municipal Airport)",
+   "time": "2026-10-14T04:15:00-05:00",
+   "weather": "Fog/Mist",
+   "temperatureF": 64,
+   "dewpointF": 64,
+   "humidityPercent": 100,
+   "wind": {
+    "from": "ENE",
+    "degrees": 60,
+    "mph": 3,
+    "gustMph": null
+   },
+   "visibilityMiles": 1.0,
+   "pressureInHg": 29.91,
+   "metar": "KPPO 140915Z AUTO 06003KT 1SM BR OVC003 18/18 A2991 RMK AO2 PRESFR"
+  },
+  "forecast": {
+   "updated": "2026-10-14T06:29:58+00:00",
+   "generated": "2026-10-14T10:02:07+00:00",
+   "timesNote": "Clock times in the forecast wording are already in America/Chicago (La Porte's real time). NWS writes them in America/Indiana/Indianapolis, which it has on file for La Porte by mistake.",
+   "periods": [
+    {
+     "name": "Today",
+     "start": "2026-10-14T06:00:00-04:00",
+     "end": "2026-10-14T18:00:00-04:00",
+     "isDaytime": true,
+     "temperatureF": 66,
+     "rainChancePercent": 43,
+     "wind": "N 0 to 10 mph",
+     "short": "Chance Showers And Thunderstorms then Mostly Cloudy",
+     "detailed": "A chance of showers and thunderstorms before 10am. Mostly cloudy, with a high near 66. North wind 0 to 10 mph. Chance of precipitation is 40%. New rainfall amounts between a tenth and quarter of an inch possible."
+    },
+    {
+     "name": "Tonight",
+     "start": "2026-10-14T18:00:00-04:00",
+     "end": "2026-10-15T06:00:00-04:00",
+     "isDaytime": false,
+     "temperatureF": 54,
+     "rainChancePercent": 7,
+     "wind": "NE 5 to 10 mph",
+     "short": "Mostly Cloudy",
+     "detailed": "Mostly cloudy, with a low around 54. Northeast wind 5 to 10 mph."
+    },
+    {
+     "name": "Thursday",
+     "start": "2026-10-15T06:00:00-04:00",
+     "end": "2026-10-15T18:00:00-04:00",
+     "isDaytime": true,
+     "temperatureF": 61,
+     "rainChancePercent": 69,
+     "wind": "E 10 mph",
+     "short": "Mostly Cloudy then Rain Showers Likely",
+     "detailed": "Rain showers likely after 11am. Mostly cloudy, with a high near 61. East wind around 10 mph. Chance of precipitation is 70%. New rainfall amounts between a quarter and half of an inch possible."
+    },
+    {
+     "name": "Thursday Night",
+     "start": "2026-10-15T18:00:00-04:00",
+     "end": "2026-10-16T06:00:00-04:00",
+     "isDaytime": false,
+     "temperatureF": 52,
+     "rainChancePercent": 81,
+     "wind": "SW 5 to 15 mph",
+     "short": "Showers And Thunderstorms",
+     "detailed": "Rain showers before 7pm, then showers and thunderstorms. Cloudy, with a low around 52. Southwest wind 5 to 15 mph, with gusts as high as 25 mph. Chance of precipitation is 80%. New rainfall amounts between a half and three quarters of an inch possible."
+    },
+    {
+     "name": "Friday",
+     "start": "2026-10-16T06:00:00-04:00",
+     "end": "2026-10-16T18:00:00-04:00",
+     "isDaytime": true,
+     "temperatureF": 55,
+     "rainChancePercent": 80,
+     "wind": "NW 15 to 20 mph",
+     "short": "Rain Showers",
+     "detailed": "Rain showers. Mostly cloudy, with a high near 55. Northwest wind 15 to 20 mph, with gusts as high as 40 mph. Chance of precipitation is 80%. New rainfall amounts between a quarter and half of an inch possible."
+    },
+    {
+     "name": "Friday Night",
+     "start": "2026-10-16T18:00:00-04:00",
+     "end": "2026-10-17T06:00:00-04:00",
+     "isDaytime": false,
+     "temperatureF": 39,
+     "rainChancePercent": 69,
+     "wind": "N 10 to 20 mph",
+     "short": "Rain Showers Likely",
+     "detailed": "Rain showers likely before 1am. Mostly cloudy, with a low around 39. Chance of precipitation is 70%. New rainfall amounts between a quarter and half of an inch possible."
+    },
+    {
+     "name": "Saturday",
+     "start": "2026-10-17T06:00:00-04:00",
+     "end": "2026-10-17T18:00:00-04:00",
+     "isDaytime": true,
+     "temperatureF": 57,
+     "rainChancePercent": 4,
+     "wind": "SE 0 to 5 mph",
+     "short": "Sunny",
+     "detailed": "Sunny, with a high near 57."
+    },
+    {
+     "name": "Saturday Night",
+     "start": "2026-10-17T18:00:00-04:00",
+     "end": "2026-10-18T06:00:00-04:00",
+     "isDaytime": false,
+     "temperatureF": 37,
+     "rainChancePercent": 0,
+     "wind": "SW 5 mph",
+     "short": "Clear",
+     "detailed": "Clear, with a low around 37."
+    },
+    {
+     "name": "Sunday",
+     "start": "2026-10-18T06:00:00-04:00",
+     "end": "2026-10-18T18:00:00-04:00",
+     "isDaytime": true,
+     "temperatureF": 64,
+     "rainChancePercent": 0,
+     "wind": "S 5 to 15 mph",
+     "short": "Sunny",
+     "detailed": "Sunny, with a high near 64."
+    },
+    {
+     "name": "Sunday Night",
+     "start": "2026-10-18T18:00:00-04:00",
+     "end": "2026-10-19T06:00:00-04:00",
+     "isDaytime": false,
+     "temperatureF": 44,
+     "rainChancePercent": 2,
+     "wind": "S 5 to 10 mph",
+     "short": "Mostly Clear",
+     "detailed": "Mostly clear, with a low around 44."
+    },
+    {
+     "name": "Monday",
+     "start": "2026-10-19T06:00:00-04:00",
+     "end": "2026-10-19T18:00:00-04:00",
+     "isDaytime": true,
+     "temperatureF": 67,
+     "rainChancePercent": 2,
+     "wind": "SW 5 to 10 mph",
+     "short": "Partly Sunny",
+     "detailed": "Partly sunny, with a high near 67."
+    },
+    {
+     "name": "Monday Night",
+     "start": "2026-10-19T18:00:00-04:00",
+     "end": "2026-10-20T06:00:00-04:00",
+     "isDaytime": false,
+     "temperatureF": 46,
+     "rainChancePercent": 2,
+     "wind": "SW 0 to 5 mph",
+     "short": "Partly Cloudy",
+     "detailed": "Partly cloudy, with a low around 46."
+    },
+    {
+     "name": "Tuesday",
+     "start": "2026-10-20T06:00:00-04:00",
+     "end": "2026-10-20T18:00:00-04:00",
+     "isDaytime": true,
+     "temperatureF": 69,
+     "rainChancePercent": 3,
+     "wind": "S 0 to 5 mph",
+     "short": "Mostly Sunny",
+     "detailed": "Mostly sunny, with a high near 69."
+    },
+    {
+     "name": "Tuesday Night",
+     "start": "2026-10-20T18:00:00-04:00",
+     "end": "2026-10-21T06:00:00-04:00",
+     "isDaytime": false,
+     "temperatureF": 48,
+     "rainChancePercent": 5,
+     "wind": "S 5 mph",
+     "short": "Mostly Clear",
+     "detailed": "Mostly clear, with a low around 48."
+    }
+   ]
+  },
+  "rain": {
+   "note": "NWS forecast grid rain totals (QPF) for the La Porte grid point; the forecast text's own wording comes first.",
+   "next24hInches": 0.07,
+   "next72hInches": 1.07,
+   "byPeriod": [
+    {
+     "name": "Today",
+     "inches": 0.07
+    },
+    {
+     "name": "Tonight",
+     "inches": 0.0
+    },
+    {
+     "name": "Thursday",
+     "inches": 0.32
+    },
+    {
+     "name": "Thursday Night",
+     "inches": 0.33
+    },
+    {
+     "name": "Friday",
+     "inches": 0.21
+    },
+    {
+     "name": "Friday Night",
+     "inches": 0.14
+    },
+    {
+     "name": "Saturday",
+     "inches": 0.0
+    },
+    {
+     "name": "Saturday Night",
+     "inches": 0
+    },
+    {
+     "name": "Sunday",
+     "inches": 0
+    },
+    {
+     "name": "Sunday Night",
+     "inches": 0
+    },
+    {
+     "name": "Monday",
+     "inches": 0
+    },
+    {
+     "name": "Monday Night",
+     "inches": 0
+    },
+    {
+     "name": "Tuesday",
+     "inches": 0
+    },
+    {
+     "name": "Tuesday Night",
+     "inches": 0
+    }
+   ]
+  },
+  "alertsLaPorteCounty": [],
+  "alertsNearby": {
+   "indiana": [],
+   "nearbyCountiesFullText": []
+  },
+  "discussion": {
+   "issued": "2026-10-14T02:29:00-05:00",
+   "ageHours": 2.6,
+   "text": "KEY MESSAGES...\n\n- A cold front will continue sliding southeastward today with\n  some showers possible as it does so.\n\n- A lull in greater rain chances is expected later this\n  afternoon into tonight, but another round of showers and \n  storms is expected Thursday and Thursday night.\n\n- There is a Marginal Risk of severe storms (mainly wind) along\n  and south of US Route 24 for Thursday evening. Confidence in \n  severe weather is low.\n\n- Turning much cooler and windy for Friday with some lake effect\n  rain showers.\n\n&&\n"
+  },
+  "hazardousWeatherOutlook": null,
+  "hydrologicOutlook": null,
+  "spc": [
+   {
+    "day": 1,
+    "valid": "202610141200",
+    "expires": "202610151200",
+    "riskAtLaPorte": "General Thunderstorms Risk",
+    "riskAreasAnywhere": [
+     "General Thunderstorms Risk",
+     "Marginal Risk",
+     "Slight Risk"
+    ],
+    "summary": "Thunderstorms with severe wind gusts and potentially a tornado threat will be possible this afternoon and evening across parts of the southern Plains. A marginal wind-damage threat will also be possible from parts of the Ozarks into the central Appalachians."
+   },
+   {
+    "day": 2,
+    "valid": "202610151200",
+    "expires": "202610161200",
+    "riskAtLaPorte": "General Thunderstorms Risk",
+    "riskAreasAnywhere": [
+     "General Thunderstorms Risk",
+     "Marginal Risk"
+    ],
+    "summary": "Isolated severe storms capable of damaging wind gusts and perhaps a brief tornado or two are possible over portions of the mid-Mississippi and Ohio Valleys Thursday afternoon and evening."
+   },
+   {
+    "day": 3,
+    "valid": "202610161200",
+    "expires": "202610171200",
+    "riskAtLaPorte": "No thunderstorm or severe risk area",
+    "riskAreasAnywhere": [
+     "General Thunderstorms Risk",
+     "Marginal Risk"
+    ],
+    "summary": "Isolated severe storms are possible across portions of the Mid-Atlantic Friday afternoon and evening."
+   }
+  ],
+  "wpcExcessiveRain": [
+   {
+    "layer": "Excessive Rainfall Day 1",
+    "atLaPorte": []
+   },
+   {
+    "layer": "Excessive Rainfall Day 2",
+    "atLaPorte": [
+     {
+      "objectid": 1,
+      "product": "Day 2 Excessive Rainfall Potential Forecast",
+      "valid_time": "12Z 10/15/26 - 12Z 10/16/26",
+      "outlook": "Marginal (At Least 5%)",
+      "issue_time": "2026-10-14 07:25:00",
+      "start_time": "2026-10-15 12:00:00",
+      "end_time": "2026-10-16 12:00:00",
+      "idp_source": "98e1409",
+      "idp_filedate": 1791964084000,
+      "idp_ingestdate": 1791964092000,
+      "st_area(shape)": 1084784981450.4249,
+      "st_perimeter(shape)": 10714732.41291633,
+      "dn": 1,
+      "snippet": "12Z 10/15/26 - 12Z 10/16/26"
+     }
+    ]
+   },
+   {
+    "layer": "Excessive Rainfall Day 3",
+    "atLaPorte": []
+   },
+   {
+    "layer": "Excessive Rainfall Day 4",
+    "atLaPorte": []
+   },
+   {
+    "layer": "Excessive Rainfall Day 5",
+    "atLaPorte": []
+   }
+  ],
+  "workdayRain": {
+   "about": "NWS hour-by-hour rain chances for work hours, 6 a.m. to 6 p.m. Central (30-49% = possible, 50%+ = likely).",
+   "days": [
+    {
+     "date": "2026-10-14",
+     "summary": "rain possible 6 a.m.-7 a.m. (up to 30%); mostly dry 7 a.m.-6 p.m.",
+     "hours": [
+      {
+       "hour": 6,
+       "rainChancePercent": 30
+      },
+      {
+       "hour": 7,
+       "rainChancePercent": 17
+      },
+      {
+       "hour": 8,
+       "rainChancePercent": 16
+      },
+      {
+       "hour": 9,
+       "rainChancePercent": 15
+      },
+      {
+       "hour": 10,
+       "rainChancePercent": 14
+      },
+      {
+       "hour": 11,
+       "rainChancePercent": 10
+      },
+      {
+       "hour": 12,
+       "rainChancePercent": 6
+      },
+      {
+       "hour": 13,
+       "rainChancePercent": 2
+      },
+      {
+       "hour": 14,
+       "rainChancePercent": 2
+      },
+      {
+       "hour": 15,
+       "rainChancePercent": 2
+      },
+      {
+       "hour": 16,
+       "rainChancePercent": 1
+      },
+      {
+       "hour": 17,
+       "rainChancePercent": 1
+      }
+     ]
+    },
+    {
+     "date": "2026-10-15",
+     "summary": "mostly dry 6 a.m.-12 p.m.; rain possible 12 p.m.-1 p.m. (up to 43%); rain likely 1 p.m.-6 p.m. (up to 73%)",
+     "hours": [
+      {
+       "hour": 6,
+       "rainChancePercent": 3
+      },
+      {
+       "hour": 7,
+       "rainChancePercent": 5
+      },
+      {
+       "hour": 8,
+       "rainChancePercent": 8
+      },
+      {
+       "hour": 9,
+       "rainChancePercent": 11
+      },
+      {
+       "hour": 10,
+       "rainChancePercent": 14
+      },
+      {
+       "hour": 11,
+       "rainChancePercent": 29
+      },
+      {
+       "hour": 12,
+       "rainChancePercent": 43
+      },
+      {
+       "hour": 13,
+       "rainChancePercent": 58
+      },
+      {
+       "hour": 14,
+       "rainChancePercent": 60
+      },
+      {
+       "hour": 15,
+       "rainChancePercent": 65
+      },
+      {
+       "hour": 16,
+       "rainChancePercent": 69
+      },
+      {
+       "hour": 17,
+       "rainChancePercent": 73
+      }
+     ]
+    }
+   ]
+  },
+  "consensus": {
+   "about": "NWS next to four computer models (Open-Meteo, CC BY 4.0). blend = the middle value of NWS and the models; adjusted = blend corrected by our own average past error at the La Porte airport once 14+ days are graded (capped at 3 degrees). Rain chances are NWS's. suggested = what the Daily Scoop's forecasts use (tomorrow and the day after).",
+   "models": {
+    "ncep_nbm_conus": "National Blend of Models (NBM)",
+    "ncep_hrrr_conus": "HRRR (short range)",
+    "gfs_seamless": "American GFS",
+    "ecmwf_ifs025": "European ECMWF"
+   },
+   "bias": {
+    "days": 14,
+    "ready": true,
+    "high": -2.9,
+    "highDays": 14,
+    "low": 2.4,
+    "lowDays": 14,
+    "note": "Average of (forecast minus airport reading) over the last 30 graded days; positive means we ran warm. Used to nudge the model blend once 14+ days are graded."
+   },
+   "days": [
+    {
+     "date": "2026-10-14",
+     "nws": {
+      "high": 66,
+      "low": null,
+      "rain": 43
+     },
+     "models": {
+      "ncep_nbm_conus": {
+       "high": 67,
+       "low": 56,
+       "rain": 44
+      },
+      "ncep_hrrr_conus": {
+       "high": 66,
+       "low": 55,
+       "rain": 44
+      },
+      "gfs_seamless": {
+       "high": 66,
+       "low": 55,
+       "rain": 44
+      },
+      "ecmwf_ifs025": {
+       "high": 72,
+       "low": 59,
+       "rain": 91
+      }
+     },
+     "blend": {
+      "high": 66,
+      "low": 56
+     },
+     "adjusted": {
+      "high": 69,
+      "low": 54
+     },
+     "spread": {
+      "high": 6,
+      "low": 4
+     },
+     "note": "our blend's high (69) differs from NWS (66) by 3 degrees; the models disagree on the high by 6 degrees (less certain)"
+    },
+    {
+     "date": "2026-10-15",
+     "nws": {
+      "high": 61,
+      "low": 54,
+      "rain": 81
+     },
+     "models": {
+      "ncep_nbm_conus": {
+       "high": 61,
+       "low": 54,
+       "rain": 95
+      },
+      "ncep_hrrr_conus": {
+       "high": 57,
+       "low": 54,
+       "rain": 95
+      },
+      "gfs_seamless": {
+       "high": 57,
+       "low": 54,
+       "rain": 95
+      },
+      "ecmwf_ifs025": {
+       "high": 70,
+       "low": 58,
+       "rain": 98
+      }
+     },
+     "blend": {
+      "high": 61,
+      "low": 54
+     },
+     "adjusted": {
+      "high": 64,
+      "low": 52
+     },
+     "spread": {
+      "high": 13,
+      "low": 4
+     },
+     "note": "our blend's high (64) differs from NWS (61) by 3 degrees; the models disagree on the high by 13 degrees (less certain)"
+    },
+    {
+     "date": "2026-10-16",
+     "nws": {
+      "high": 55,
+      "low": 52,
+      "rain": 80
+     },
+     "models": {
+      "ncep_nbm_conus": {
+       "high": 61,
+       "low": 45,
+       "rain": 84
+      },
+      "ncep_hrrr_conus": {
+       "rain": 84
+      },
+      "gfs_seamless": {
+       "high": 58,
+       "low": 47,
+       "rain": 84
+      },
+      "ecmwf_ifs025": {
+       "high": 70,
+       "low": 48,
+       "rain": 98
+      }
+     },
+     "blend": {
+      "high": 60,
+      "low": 48
+     },
+     "adjusted": {
+      "high": 63,
+      "low": 46
+     },
+     "spread": {
+      "high": 15,
+      "low": 7
+     },
+     "note": "our blend's high (63) differs from NWS (55) by 8 degrees; the models disagree on the high by 15 degrees (less certain); our blend's low (46) differs from NWS (52) by 6 degrees; the models disagree on the low by 7 degrees (less certain)"
+    },
+    {
+     "date": "2026-10-17",
+     "nws": {
+      "high": 57,
+      "low": 39,
+      "rain": 4
+     },
+     "models": {
+      "ncep_nbm_conus": {
+       "high": 57,
+       "low": 39,
+       "rain": 25
+      },
+      "ncep_hrrr_conus": {
+       "rain": 25
+      },
+      "gfs_seamless": {
+       "high": 55,
+       "low": 37,
+       "rain": 25
+      },
+      "ecmwf_ifs025": {
+       "high": 55,
+       "low": 42,
+       "rain": 67
+      }
+     },
+     "blend": {
+      "high": 56,
+      "low": 39
+     },
+     "adjusted": {
+      "high": 59,
+      "low": 37
+     },
+     "spread": {
+      "high": 2,
+      "low": 5
+     },
+     "note": "NWS and the models agree within a few degrees"
+    }
+   ],
+   "suggested": [
+    {
+     "date": "2026-10-15",
+     "high": 64,
+     "low": 52,
+     "rain": 81
+    },
+    {
+     "date": "2026-10-16",
+     "high": 63,
+     "low": 46,
+     "rain": 80
+    }
+   ]
+  },
+  "links": {
+   "forecast": "https://forecast.weather.gov/MapClick.php?lat=41.6081&lon=-86.7189",
+   "discussion": "https://forecast.weather.gov/product.php?site=IWX&issuedby=IWX&product=AFD",
+   "hazardousWeatherOutlook": "https://forecast.weather.gov/product.php?site=IWX&issuedby=IWX&product=HWO",
+   "hydrologicOutlook": "https://forecast.weather.gov/product.php?site=IWX&issuedby=IWX&product=ESF",
+   "currentHazards": "https://www.weather.gov/iwx/",
+   "spcOutlooks": "https://www.spc.noaa.gov/products/outlook/",
+   "wpcExcessiveRain": "https://www.wpc.ncep.noaa.gov/qpf/excessive_rainfall_outlook_ero.php",
+   "observation": "https://forecast.weather.gov/data/obhistory/KPPO.html"
+  },
+  "errors": []
+ },
+ "posts": {
+  "about": "Daily Scoop posts for laporteweathernow.com, newest first. Publish and correct posts with laporteweathernow.com/scoop-draft. Never change a forecast after it is posted; add a dated correction instead.",
+  "posts": [
+   {
+    "type": "daily",
+    "date": "2026-10-13",
+    "posted": "2026-10-13T05:42:00-05:00",
+    "updated": "2026-10-13T23:17:00-05:00",
+    "title": "One more summer-like day near 83, then showers and storms late tonight",
+    "summary": "A sunny, unusually warm Tuesday near 83 gives way to showers and storms likely after midnight into early Wednesday, a soaking Thursday, a cool, dry weekend, and no watches, warnings or advisories for La Porte County.",
+    "body": [
+     "Automatic update, 11:17 p.m.: The Special Weather Statement for northern La Porte County has ended. Since the Scoop below was written, NWS has lowered its chance of rain for Wednesday to 20% (from 40%). Over the next 12 hours, NWS's hour-by-hour forecast has rain possible from midnight to 1 a.m. (up to 43%), rain likely from 1 a.m. to 4 a.m. (up to 72%) and rain possible from 4 a.m. to 5 a.m. (up to 45%). There are no watches, warnings, or advisories for La Porte County right now.",
+     "A great day to be outside before tonight's rain. NWS says sunny, high near 83, dry through work hours. Tonight a chance of showers and storms 10 p.m. to 1 a.m., then likely (70%), low around 62. The La Porte airport at 5:15 a.m.: clear and 70. Bring in anything you want kept dry.",
+     "Wednesday: showers possible before 10 a.m. (40%), mostly dry after about 7 a.m., near 71; NWS's amounts for tonight and Wednesday add up to 1 to 1½ inches. Thursday: rain likely, then storms into the night (90%), another half to three-quarters of an inch, near 65. Friday breezy, near 57, 30% showers. Dry, chilly weekend: highs 57 to 64, a low near 35 Saturday night. NWS says a low of 62 Wednesday morning and a high of 65 Thursday; the computer models we also check say 57 and 69, so our forecast uses those. The models disagree on Wednesday and Thursday, so those days are less certain.",
+     "What changed since yesterday's Scoop: tonight's rain arrives a bit later, around 10 p.m. to 1 a.m. (from after 7 p.m.), and Wednesday's daytime chance is down to 40% (from 70%). NWS Northern Indiana forecasters say highs may near records today, thunder chances tonight look low, and the weekend chill should be brief. For Monday, our Oct. 10 Scoop said a high of 83 and a low of 57; the La Porte airport got 88 and 52.",
+     "Right now there are no watches, warnings or advisories for La Porte County or for Porter and Lake counties next door. SPC shows no severe-storm risk here through Thursday, only general thunderstorms. WPC puts La Porte in a marginal (at least 5%) risk of flooding rain from 7 a.m. Thursday to 7 a.m. Friday."
+    ],
+    "sources": [
+     {
+      "label": "NWS forecast for La Porte, IN",
+      "url": "https://forecast.weather.gov/MapClick.php?lat=41.6081&lon=-86.7189"
+     },
+     {
+      "label": "NWS Northern Indiana forecast discussion (we used the 2:11 AM EDT Oct. 13 issue; the link opens the newest one)",
+      "url": "https://forecast.weather.gov/product.php?site=IWX&issuedby=IWX&product=AFD"
+     },
+     {
+      "label": "Storm Prediction Center convective outlooks",
+      "url": "https://www.spc.noaa.gov/products/outlook/"
+     },
+     {
+      "label": "Weather Prediction Center excessive rainfall outlooks",
+      "url": "https://www.wpc.ncep.noaa.gov/qpf/excessive_rainfall_outlook_ero.php"
+     },
+     {
+      "label": "NWS Northern Indiana current hazards",
+      "url": "https://www.weather.gov/iwx/"
+     },
+     {
+      "label": "Computer model forecasts from Open-Meteo (CC BY 4.0)",
+      "url": "https://open-meteo.com/"
+     }
+    ],
+    "author": "La Porte Weather Now",
+    "forecasts": [
+     {
+      "date": "2026-10-14",
+      "high": 72,
+      "low": 57,
+      "rain": 40
+     },
+     {
+      "date": "2026-10-15",
+      "high": 69,
+      "low": 53,
+      "rain": 90
+     }
+    ],
+    "corrections": []
+   },
+   {
+    "type": "daily",
+    "date": "2026-10-12",
+    "posted": "2026-10-12T05:42:00-05:00",
+    "updated": "2026-10-12T15:17:00-05:00",
+    "title": "Foggy start, then near 84 for Columbus Day; showers and storms Tuesday night",
+    "summary": "Morning fog gives way to a sunny, unusually warm Columbus Day near 84 and a similar Tuesday, with showers and storms likely Tuesday night into Wednesday, rain Thursday, a chilly weekend, and no watches, warnings or advisories for La Porte County.",
+    "body": [
+     "Automatic update, 3:17 p.m.: Since the Scoop below was written, NWS has raised its high for today to 87 (from 84). It's running warmer than NWS's earlier hour-by-hour forecast: at 2:35 p.m. the La Porte airport reported clear and 88 degrees, where that forecast had about 83. There are no watches, warnings, or advisories for La Porte County right now.",
+     "Foggy start, then summer-like warmth for Columbus Day. Patchy fog until about 8 a.m., then mostly sunny and dry all day, high near 84, gusts to 25 mph. Tonight: mostly clear and mild, low around 69. The La Porte airport at 5:15 a.m.: fog, 54, visibility a quarter mile. Allow extra time and use low beams on the morning drive.",
+     "Tuesday: sunny, near 84. Showers and storms are likely (70%) after 7 p.m. Tuesday and through Wednesday, about half an inch to an inch added up from NWS's amounts; Wednesday near 71. Rain showers Thursday (80%), near 68, then a 30% chance Friday, near 57. A chilly, dry weekend: Saturday near 55, a low around 35 Saturday night, Sunday sunny near 61. NWS says lows of 69 tonight and 62 Wednesday morning; the computer models we also check run cooler, so our forecast says 66 and 57. The models disagree on Tuesday through Thursday, so those days are less certain.",
+     "What changed since Saturday's Scoop: Tuesday is much warmer and dry by day, near 84 (from 73); the rain now arrives Tuesday night instead (from Monday night into Tuesday morning), and Wednesday's chance is up to 70% (from 30% to 50%). NWS Northern Indiana forecasters say highs could near records today and Tuesday, and it's unclear how fast the front sinks south midweek. Yesterday we said a high of 73; the La Porte airport got 75.",
+     "Right now there are no watches, warnings or advisories for La Porte County, northern or southern, or for Porter and Lake counties next door. SPC shows no severe-storm risk here through Wednesday, only general thunderstorms possible Tuesday. WPC puts La Porte in a marginal (at least 5%) risk of flooding rain from 7 a.m. Thursday to 7 a.m. Friday."
+    ],
+    "sources": [
+     {
+      "label": "NWS forecast for La Porte, IN",
+      "url": "https://forecast.weather.gov/MapClick.php?lat=41.6081&lon=-86.7189"
+     },
+     {
+      "label": "NWS Northern Indiana forecast discussion (we used the 2:05 AM EDT Oct. 12 issue; the link opens the newest one)",
+      "url": "https://forecast.weather.gov/product.php?site=IWX&issuedby=IWX&product=AFD"
+     },
+     {
+      "label": "Storm Prediction Center convective outlooks",
+      "url": "https://www.spc.noaa.gov/products/outlook/"
+     },
+     {
+      "label": "Weather Prediction Center excessive rainfall outlooks",
+      "url": "https://www.wpc.ncep.noaa.gov/qpf/excessive_rainfall_outlook_ero.php"
+     },
+     {
+      "label": "NWS Northern Indiana current hazards",
+      "url": "https://www.weather.gov/iwx/"
+     },
+     {
+      "label": "Computer model forecasts from Open-Meteo (CC BY 4.0)",
+      "url": "https://open-meteo.com/"
+     }
+    ],
+    "author": "La Porte Weather Now",
+    "forecasts": [
+     {
+      "date": "2026-10-13",
+      "high": 82,
+      "low": 66,
+      "rain": 70
+     },
+     {
+      "date": "2026-10-14",
+      "high": 70,
+      "low": 57,
+      "rain": 70
+     }
+    ],
+    "corrections": []
+   },
+   {
+    "type": "daily",
+    "date": "2026-10-11",
+    "posted": "2026-10-11T06:32:00-05:00",
+    "updated": "2026-10-11T23:47:00-05:00",
+    "title": "Automatic NWS update: Patchy fog, low around 55",
+    "summary": "The Daily Scoop is running late, so here is the official NWS forecast for La Porte, posted automatically at 6:32 a.m. and refreshed at 11:47 p.m.",
+    "body": [
+     "This is an automatic update, refreshed through the day (latest at 11:47 p.m.). The Daily Scoop didn't post by 6:30 a.m., so here is the official National Weather Service forecast for La Porte, in NWS's own words. If Scoop's write-up comes in later today, it will replace this.",
+     "Overnight: Patchy fog. Mostly clear, with a low around 55. South wind around 5 mph. Columbus Day: Patchy fog before 6 a.m. Mostly sunny, with a high near 84. Southwest wind 5 to 10 mph, with gusts as high as 25 mph. At 11:15 p.m. the La Porte airport reported fog and 54 degrees. NWS last updated this forecast at 10:45 p.m.",
+     "The next few days, from the same NWS forecast: Monday Night: Mostly clear, low around 69. Tuesday: Sunny, high near 83. Tuesday Night: Showers and thunderstorms likely, low around 61, 60% chance of rain. Wednesday: Rain showers likely, high near 70, 60% chance of rain. Wednesday Night: Slight chance rain showers, low around 53, 20% chance of rain. Thursday: Rain showers likely, high near 67, 60% chance of rain.",
+     "Right now (checked at 11:47 p.m.): NWS has a Special Weather Statement for La Porte County until 1 a.m. Monday. We pass these along as NWS issues them; details and updates are at weather.gov/iwx."
+    ],
+    "sources": [
+     {
+      "label": "NWS forecast for La Porte, IN",
+      "url": "https://forecast.weather.gov/MapClick.php?lat=41.6081&lon=-86.7189"
+     },
+     {
+      "label": "NWS Northern Indiana current hazards",
+      "url": "https://www.weather.gov/iwx/"
+     }
+    ],
+    "author": "La Porte Weather Now",
+    "forecasts": [],
+    "corrections": [],
+    "auto": true
+   }
+  ]
+ },
+ "scorecard": {
+  "latest": {
+   "date": "2026-10-13",
+   "fromPost": "2026-10-12",
+   "leadDays": 1,
+   "forecast": {
+    "high": 82,
+    "low": 66,
+    "rain": 70
+   },
+   "status": "scored",
+   "observed": {
+    "high": 84,
+    "low": 64,
+    "rained": false,
+    "rainText": "no rain recorded"
+   },
+   "high": {
+    "off": 2.0,
+    "hit": true
+   },
+   "low": {
+    "off": 2.0,
+    "hit": true
+   },
+   "rain": {
+    "hit": false,
+    "kind": "likely"
+   },
+   "verdict": "close"
+  },
+  "thinDays": {
+   "2026-10-10": 1
+  }
+ },
+ "updates": {
+  "about": "State for scripts/scoop_update.py, the automatic updates to today's Daily Scoop: the forecast the Scoop was written from (baseline), what was last published, the alerts last seen, and today's updates. Replaced each day. Safe to delete: the job starts over from the current post.",
+  "date": "2026-10-13",
+  "post": "2026-10-13T05:42:00-05:00",
+  "kind": "written",
+  "baseline": {
+   "from": "2026-10-13T05:41:33-05:00",
+   "source": "nws-snapshot.json (what the Scoop was written from)",
+   "periods": {
+    "night 2026-10-12": {
+     "name": "Overnight",
+     "temp": 69,
+     "rain": 0,
+     "short": "Partly Cloudy"
+    },
+    "day 2026-10-13": {
+     "name": "Tuesday",
+     "temp": 83,
+     "rain": 0,
+     "short": "Sunny"
+    },
+    "night 2026-10-13": {
+     "name": "Tuesday Night",
+     "temp": 62,
+     "rain": 70,
+     "short": "Chance Showers And Thunderstorms"
+    },
+    "day 2026-10-14": {
+     "name": "Wednesday",
+     "temp": 71,
+     "rain": 40,
+     "short": "Chance Showers And Thunderstorms then Mostly Cloudy"
+    },
+    "night 2026-10-14": {
+     "name": "Wednesday Night",
+     "temp": 53,
+     "rain": 0,
+     "short": "Mostly Cloudy"
+    },
+    "day 2026-10-15": {
+     "name": "Thursday",
+     "temp": 65,
+     "rain": 90,
+     "short": "Showers And Thunderstorms"
+    },
+    "night 2026-10-15": {
+     "name": "Thursday Night",
+     "temp": 47,
+     "rain": 90,
+     "short": "Showers And Thunderstorms"
+    },
+    "day 2026-10-16": {
+     "name": "Friday",
+     "temp": 57,
+     "rain": 30,
+     "short": "Chance Rain Showers"
+    },
+    "night 2026-10-16": {
+     "name": "Friday Night",
+     "temp": 37,
+     "rain": 30,
+     "short": "Chance Rain Showers then Partly Cloudy"
+    },
+    "day 2026-10-17": {
+     "name": "Saturday",
+     "temp": 57,
+     "rain": 0,
+     "short": "Sunny"
+    },
+    "night 2026-10-17": {
+     "name": "Saturday Night",
+     "temp": 35,
+     "rain": 0,
+     "short": "Mostly Clear"
+    },
+    "day 2026-10-18": {
+     "name": "Sunday",
+     "temp": 64,
+     "rain": 0,
+     "short": "Sunny"
+    },
+    "night 2026-10-18": {
+     "name": "Sunday Night",
+     "temp": 43,
+     "rain": 0,
+     "short": "Partly Cloudy"
+    },
+    "day 2026-10-19": {
+     "name": "Monday",
+     "temp": 67,
+     "rain": 0,
+     "short": "Partly Sunny"
+    }
+   },
+   "alerts": [],
+   "alertRows": [],
+   "hourly": {
+    "2026-10-13T05": {
+     "temp": 70,
+     "rain": 3
+    },
+    "2026-10-13T06": {
+     "temp": 69,
+     "rain": 2
+    },
+    "2026-10-13T07": {
+     "temp": 69,
+     "rain": 1
+    },
+    "2026-10-13T08": {
+     "temp": 70,
+     "rain": 2
+    },
+    "2026-10-13T09": {
+     "temp": 73,
+     "rain": 2
+    },
+    "2026-10-13T10": {
+     "temp": 75,
+     "rain": 1
+    },
+    "2026-10-13T11": {
+     "temp": 79,
+     "rain": 2
+    },
+    "2026-10-13T12": {
+     "temp": 81,
+     "rain": 4
+    },
+    "2026-10-13T13": {
+     "temp": 81,
+     "rain": 4
+    },
+    "2026-10-13T14": {
+     "temp": 83,
+     "rain": 5
+    },
+    "2026-10-13T15": {
+     "temp": 82,
+     "rain": 4
+    },
+    "2026-10-13T16": {
+     "temp": 82,
+     "rain": 5
+    },
+    "2026-10-13T17": {
+     "temp": 81,
+     "rain": 4
+    },
+    "2026-10-13T18": {
+     "temp": 76,
+     "rain": 5
+    },
+    "2026-10-13T19": {
+     "temp": 72,
+     "rain": 6
+    },
+    "2026-10-13T20": {
+     "temp": 70,
+     "rain": 6
+    },
+    "2026-10-13T21": {
+     "temp": 69,
+     "rain": 7
+    },
+    "2026-10-13T22": {
+     "temp": 68,
+     "rain": 15
+    },
+    "2026-10-13T23": {
+     "temp": 67,
+     "rain": 26
+    },
+    "2026-10-14T00": {
+     "temp": 67,
+     "rain": 34
+    },
+    "2026-10-14T01": {
+     "temp": 66,
+     "rain": 69
+    },
+    "2026-10-14T02": {
+     "temp": 66,
+     "rain": 69
+    },
+    "2026-10-14T03": {
+     "temp": 65,
+     "rain": 69
+    },
+    "2026-10-14T04": {
+     "temp": 64,
+     "rain": 51
+    },
+    "2026-10-14T05": {
+     "temp": 64,
+     "rain": 42
+    },
+    "2026-10-14T06": {
+     "temp": 64,
+     "rain": 33
+    },
+    "2026-10-14T07": {
+     "temp": 62,
+     "rain": 28
+    },
+    "2026-10-14T08": {
+     "temp": 64,
+     "rain": 24
+    },
+    "2026-10-14T09": {
+     "temp": 66,
+     "rain": 17
+    },
+    "2026-10-14T10": {
+     "temp": 68,
+     "rain": 1
+    },
+    "2026-10-14T11": {
+     "temp": 69,
+     "rain": 1
+    },
+    "2026-10-14T12": {
+     "temp": 70,
+     "rain": 2
+    },
+    "2026-10-14T13": {
+     "temp": 70,
+     "rain": 2
+    },
+    "2026-10-14T14": {
+     "temp": 71,
+     "rain": 4
+    },
+    "2026-10-14T15": {
+     "temp": 69,
+     "rain": 7
+    },
+    "2026-10-14T16": {
+     "temp": 69,
+     "rain": 9
+    }
+   },
+   "hourlyFrom": "2026-10-13T05:47:00-05:00"
+  },
+  "published": {
+   "time": "2026-10-13T23:17:00-05:00",
+   "alertKeys": [],
+   "alerts": [],
+   "changes": [
+    {
+     "k": "day 2026-10-14",
+     "was": "Wednesday",
+     "now": "Wednesday",
+     "shortWas": "Chance Showers And Thunderstorms then Mostly Cloudy",
+     "shortNow": "Slight Chance Showers And Thunderstorms then Mostly Cloudy",
+     "field": "rain",
+     "from": 40,
+     "to": 20
+    }
+   ],
+   "off": [],
+   "paragraph": "Automatic update, 11:17 p.m.: The Special Weather Statement for northern La Porte County has ended. Since the Scoop below was written, NWS has lowered its chance of rain for Wednesday to 20% (from 40%). Over the next 12 hours, NWS's hour-by-hour forecast has rain possible from midnight to 1 a.m. (up to 43%), rain likely from 1 a.m. to 4 a.m. (up to 72%) and rain possible from 4 a.m. to 5 a.m. (up to 45%). There are no watches, warnings, or advisories for La Porte County right now."
+  },
+  "alertRows": [],
+  "missing": []
+ }
+}
