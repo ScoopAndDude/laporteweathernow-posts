@@ -1,6 +1,6 @@
 {
  "about": "Official weather for La Porte, Indiana, saved by a GitHub job for the Daily Scoop (laporteweathernow.com/daily-scoop). Copied from NWS, SPC and WPC as-is; see scripts/nws_snapshot.py.",
- "fetched": "2026-10-18T08:28:57-05:00",
+ "fetched": "2026-10-18T08:56:20-05:00",
  "place": "La Porte, IN",
  "lat": 41.6081,
  "lon": -86.7189,
@@ -23,36 +23,36 @@
  },
  "observation": {
   "station": "KPPO (La Porte Municipal Airport)",
-  "time": "2026-10-18T07:55:00-05:00",
-  "weather": "",
-  "temperatureF": null,
-  "dewpointF": null,
-  "humidityPercent": null,
+  "time": "2026-10-18T08:15:00-05:00",
+  "weather": "Clear",
+  "temperatureF": 41,
+  "dewpointF": 36,
+  "humidityPercent": 81,
   "wind": {
-   "from": null,
-   "degrees": null,
-   "mph": null,
+   "from": "SSW",
+   "degrees": 210,
+   "mph": 6,
    "gustMph": null
   },
   "visibilityMiles": 10.0,
-  "pressureInHg": null,
-  "metar": ""
+  "pressureInHg": 30.51,
+  "metar": "KPPO 181315Z AUTO 21005KT 10SM CLR 05/02 A3051 RMK AO2"
  },
  "forecast": {
-  "updated": "2026-10-18T09:15:02+00:00",
-  "generated": "2026-10-18T10:17:02+00:00",
+  "updated": "2026-10-18T13:30:58+00:00",
+  "generated": "2026-10-18T13:56:21+00:00",
   "timesNote": "Clock times in the forecast wording are already in America/Chicago (La Porte's real time). NWS writes them in America/Indiana/Indianapolis, which it has on file for La Porte by mistake.",
   "periods": [
    {
     "name": "Today",
-    "start": "2026-10-18T06:00:00-04:00",
+    "start": "2026-10-18T09:00:00-04:00",
     "end": "2026-10-18T18:00:00-04:00",
     "isDaytime": true,
     "temperatureF": 62,
     "rainChancePercent": 0,
-    "wind": "S 5 to 15 mph",
-    "short": "Areas Of Frost then Sunny",
-    "detailed": "Areas of frost before 8am. Sunny, with a high near 62. South wind 5 to 15 mph, with gusts as high as 25 mph."
+    "wind": "SW 10 to 15 mph",
+    "short": "Sunny",
+    "detailed": "Sunny, with a high near 62. Southwest wind 10 to 15 mph, with gusts as high as 25 mph."
    },
    {
     "name": "Tonight",
@@ -269,7 +269,7 @@
  },
  "discussion": {
   "issued": "2026-10-18T04:01:00-05:00",
-  "ageHours": 4.5,
+  "ageHours": 4.9,
   "text": "000\nFXUS63 KIWX 180901\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n501 AM EDT Sun Oct 18 2026\n\n.KEY MESSAGES...\n\n- After a possible period of patchy frost tonight and maybe\n  Monday night, lows trend warmer, away from frost potential.\n  Highs also moderate to near or just above normal.\n\n- Dry weather remains across the area through this week.\n\n&&\n\n.DISCUSSION...\nIssued at 214 AM EDT Sun Oct 18 2026\n\nSurface high pressure slowly slides eastward today from the southern \nGreat Lakes and then a couple more surface high pressure systems \npass by to the north of the Great Lakes Tuesday and Thursday. \nMeanwhile, mid level ridging continues to keep the area within a \nlarge scale area of subsidence quelling any large scale area of rain \nthrough this week and probably through next weekend. This is even as \na cold front stalls around the area Monday night/Tuesday and another \ncold front moves through later Wednesday/Thursday AM time frame. \nThese FROPAs will be dry FROPAs. Troughs attempt to make their way \neastward but continue to run into the stout mid level ridge east of \nthe Rockies through this work week. As such, various vort \nmaxes/surface lows take a northeast trek from the Plains into the \nwestern Great Lakes/southcentral Canada area. Attempts by WAA \nto affect the area cause a slow warming trend through the 60s \ntoday and Monday, reaching the 70s for highs on Tuesday \nsouthwest of US-30 through this week. Daily lows look to trend \nwarmer as well beyond this morning. There's a marginal chance \nfor frost Monday morning with about 3 hours of 38 degree temps \nor less, especially south of US-24. However, another \nfrost/freeze issuance will depend on if the growing season \ncontinues or if this morning's temps ended things. The area is \nfairly dry with MinRH values dipping into the 20s and 30s of \npercents today through Tuesday, but low level lapse rates aren't\nas strong as they could be, and even more of a factor, wind \ngusts are below considerable thresholds. Future dry days are \npossible beyond Tuesday, but wind gusts don't look respectable \nat this time. It is also possible our forecast dew points are \ntoo high as currently constituted beyond Tuesday.\n\n&&\n\n.AVIATION /12Z TAFS THROUGH 12Z MONDAY/... \nIssued at 500 AM EDT Sun Oct 18 2026\n\nDry and stable air mass will continue to promote VFR conditions\nand clear skies. Return south-southwest flow on the backside of\nsfc high pressure may support a few gusts up to 20 knots this \nafternoon at KSBN otherwise.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...Frost Advisory until 9 AM EDT /8 AM CDT/ this morning for \n     INZ005-012>015-020-022-103-104-203-204.\n     Freeze Warning until 9 AM EDT this morning for INZ006>009-017-\n     018-023>027-032>034-116-216.\nOH...Freeze Warning until 9 AM EDT this morning for OHZ001-002-004-\n     005-015-016-024-025.\nMI...Frost Advisory until 9 AM EDT this morning for MIZ078>081-177-\n     277.\nMARINE...None.\n\n&&\n\n$$\n\nDISCUSSION...Roller\nAVIATION...Steinwedel"
  },
  "hazardousWeatherOutlook": null,
@@ -338,10 +338,6 @@
     "date": "2026-10-18",
     "summary": "dry through work hours (6 a.m. to 6 p.m.)",
     "hours": [
-     {
-      "hour": 7,
-      "rainChancePercent": 0
-     },
      {
       "hour": 8,
       "rainChancePercent": 0
@@ -472,32 +468,32 @@
       "rain": 0
      },
      "ncep_hrrr_conus": {
-      "high": 59,
-      "low": 36,
+      "high": 60,
+      "low": 37,
       "rain": 0
      },
      "gfs_seamless": {
-      "high": 59,
-      "low": 36,
+      "high": 60,
+      "low": 37,
       "rain": 0
      },
      "ecmwf_ifs025": {
-      "high": 61,
-      "low": 39,
+      "high": 59,
+      "low": 36,
       "rain": 0
      }
     },
     "blend": {
-     "high": 61,
+     "high": 60,
      "low": 37
     },
     "adjusted": {
-     "high": 64,
+     "high": 62,
      "low": 36
     },
     "spread": {
      "high": 6,
-     "low": 3
+     "low": 2
     },
     "note": "the models disagree on the high by 6 degrees (less certain)"
    },
@@ -515,18 +511,18 @@
       "rain": 0
      },
      "ncep_hrrr_conus": {
-      "high": 62,
-      "low": 37,
+      "high": 63,
+      "low": 38,
       "rain": 0
      },
      "gfs_seamless": {
-      "high": 62,
-      "low": 37,
+      "high": 63,
+      "low": 38,
       "rain": 0
      },
      "ecmwf_ifs025": {
-      "high": 63,
-      "low": 39,
+      "high": 62,
+      "low": 38,
       "rain": 0
      }
     },
@@ -540,7 +536,7 @@
     },
     "spread": {
      "high": 6,
-     "low": 3
+     "low": 2
     },
     "note": "the models disagree on the high by 6 degrees (less certain)"
    },
@@ -562,7 +558,7 @@
      },
      "gfs_seamless": {
       "high": 67,
-      "low": 46,
+      "low": 42,
       "rain": 0
      },
      "ecmwf_ifs025": {
@@ -581,9 +577,9 @@
     },
     "spread": {
      "high": 5,
-     "low": 8
+     "low": 4
     },
-    "note": "the models disagree on the low by 8 degrees (less certain)"
+    "note": "NWS and the models agree within a few degrees"
    },
    {
     "date": "2026-10-21",
@@ -608,7 +604,7 @@
      },
      "ecmwf_ifs025": {
       "high": 66,
-      "low": 42,
+      "low": 41,
       "rain": 1
      }
     },
@@ -622,7 +618,7 @@
     },
     "spread": {
      "high": 5,
-     "low": 4
+     "low": 5
     },
     "note": "NWS and the models agree within a few degrees"
    }
