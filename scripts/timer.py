@@ -29,6 +29,10 @@ starts whichever jobs are due at that moment, in La Porte (Central) time:
                        if the first didn't; see places.yml)
   Tuesday 5:45-5:59 PM, Wednesday and Thursday 9:45-9:59 AM   The Chase's fuel prices from EIA
                        (saved only when EIA has a new week)
+  4:30-8:30 AM weekdays, 8:00 PM Sunday-Thursday   School closings (added Oct. 17, 2026; checks the
+                       school sites Nov.-Mar. only, 3 times per tick)
+  5:30-6:44 AM         Morning forecast email (added Oct. 17, 2026; once it's set up)
+  every tick           Readers' reports queue (added Oct. 17, 2026; once it's set up)
   every 3 hours from 12:35 AM (12:35, 3:35, 6:35 ...)   Earth from space data (NASA FIRMS fires,
                        CelesTrak weather satellites) for the disasters page
 
@@ -46,7 +50,8 @@ REPO = os.environ.get("GITHUB_REPOSITORY", "ScoopAndDude/laporteweathernow-posts
 TOKEN = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
 CENTRAL = ZoneInfo("America/Chicago")
 
-EVERY_TICK = ["home-cache.yml", "radio.yml", "scoop-update.yml", "scoop-pages.yml", "snow-totals.yml"]
+EVERY_TICK = ["home-cache.yml", "radio.yml", "scoop-update.yml", "scoop-pages.yml", "snow-totals.yml",
+              "reports.yml"]   # reports.yml (Oct. 17, 2026): readers' reports queue; does nothing until set up
 # (workflow, [(from, to), ...], days): days are Python weekdays (Monday is 0); None means every day.
 WINDOWS = [
     ("nws-snapshot.yml", [("05:00", "05:14")], None),
@@ -54,6 +59,13 @@ WINDOWS = [
     ("sky-devotion.yml", [("05:20", "05:34"), ("06:20", "06:34")], None),
     ("forecast-race.yml", [("05:30", "05:44"), ("06:30", "06:44"), ("07:30", "07:44")], None),
     ("school-call.yml", [("20:00", "20:14"), ("21:00", "21:14")], {6, 0, 1, 2, 3}),
+    # School closings (Oct. 17, 2026): every tick 4:30-8:30 AM on weekdays (it checks 3 times per tick and
+    # does nothing outside Nov.-Mar.), plus 8:00 PM Sunday-Thursday to learn the pages and start the day empty.
+    ("closings.yml", [("04:30", "08:29")], {0, 1, 2, 3, 4}),
+    ("closings.yml", [("20:00", "20:14")], {6, 0, 1, 2, 3}),
+    # Morning forecast email (Oct. 17, 2026): schedules the 6 AM send at 5:30-5:59; a start after 6 sends
+    # right away (until 6:44). Does nothing until it's set up (morning-email.json "enabled").
+    ("morning-email.yml", [("05:30", "06:44")], None),
     ("daily-video.yml", [("06:00", "06:14"), ("06:45", "06:59")], None),
     ("sender-watch.yml", [("04:45", "04:59"), ("05:15", "05:29"), ("05:45", "05:59"), ("06:15", "06:29"), ("06:45", "06:59")], None),
     ("backup-scoop.yml", [("06:30", "08:09")], None),
