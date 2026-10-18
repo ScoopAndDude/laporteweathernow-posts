@@ -1,0 +1,51 @@
+# Rain totals: saves rain.json, La Porte County's CoCoRaHS and NWS co-op rain-gauge reports for the last
+# 31 days, for laporteweathernow.com/rain-totals (scripts/rain_totals.py, added Oct. 18, 2026). Started by
+# the Timer at 8:30, 10:30 AM and 1:30 PM Central.
+name: Rain totals
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Download all 31 days again"
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - scripts/rain_totals.py
+      - .github/workflows/rain-totals.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rain-totals
+  cancel-in-progress: false
+
+jobs:
+  save:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ask for new rain reports and save them
+        env:
+          FORCE: ${{ (github.event_name == 'push' || github.event.inputs.force == 'true') && 'force' || '' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          python3 scripts/rain_totals.py $FORCE
+          if git diff --quiet -- rain.json; then exit 0; fi
+          cp rain.json "$RUNNER_TEMP/rain.json"
+          for i in 1 2 3 4; do
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            cp "$RUNNER_TEMP/rain.json" rain.json
+            git add rain.json
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -q -m "Rain totals ($(TZ=America/Chicago date '+%b %-d, %-I:%M %p %Z'))"
+            if git push -q origin HEAD:main; then exit 0; fi
+            sleep 5
+          done
+          exit 1

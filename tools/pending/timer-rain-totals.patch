@@ -1,0 +1,22 @@
+diff --git a/scripts/timer.py b/scripts/timer.py
+index 999a6cb..c595293 100644
+--- a/scripts/timer.py
++++ b/scripts/timer.py
+@@ -34,6 +34,8 @@ starts whichever jobs are due at that moment, in La Porte (Central) time:
+   every tick           Readers' reports queue (added Oct. 17, 2026; once it's set up)
+   every tick           Morning forecast email (U.S.-wide, 6 AM each subscriber's time) and Warning emails
+                        (a new NWS warning at a subscriber's spot), both added Oct. 17, 2026
++  8:30, 10:30 AM and 1:30 PM (each for 15 minutes)   Rain totals by town (added Oct. 18, 2026; CoCoRaHS
++                       and NWS co-op rain gauges in La Porte County, for /rain-totals)
+   every 3 hours from 12:35 AM (12:35, 3:35, 6:35 ...)   Earth from space data (NASA FIRMS fires,
+                        CelesTrak weather satellites) for the disasters page
+ 
+@@ -74,6 +76,8 @@ WINDOWS = [
+     ("places.yml", [("03:15", "03:29"), ("15:15", "15:29")], {0}),
+     ("fuel-prices.yml", [("17:45", "17:59")], {1}),
+     ("fuel-prices.yml", [("09:45", "09:59")], {2, 3}),
++    # Rain totals by town (Oct. 18, 2026): CoCoRaHS and co-op observers report through the morning.
++    ("rain-totals.yml", [("08:30", "08:44"), ("10:30", "10:44"), ("13:30", "13:44")], None),
+     ("space-data.yml", [(f"{h:02d}:35", f"{h:02d}:49") for h in range(0, 24, 3)], None),
+ ]
+ 
