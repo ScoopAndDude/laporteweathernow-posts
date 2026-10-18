@@ -243,7 +243,7 @@
   "hourlyFrom": "2026-10-18T08:47:00-05:00"
  },
  "published": {
-  "time": "2026-10-18T12:17:00-05:00",
+  "time": "2026-10-18T18:02:00-05:00",
   "alertKeys": [
    "Frost Advisory | La Porte County | 2026-10-19 08:00"
   ],
@@ -255,8 +255,10 @@
    }
   ],
   "changes": [],
-  "off": [],
-  "paragraph": "Automatic update, 12:17 p.m.: NWS has a Frost Advisory for La Porte County from midnight Monday until 8 a.m. Monday. We pass these along as NWS issues them; details are at weather.gov/iwx."
+  "off": [
+   "warm"
+  ],
+  "paragraph": "Automatic update, 6:02 p.m.: NWS has a Frost Advisory for La Porte County from midnight Monday until 8 a.m. Monday. We pass these along as NWS issues them; details are at weather.gov/iwx. It's running warmer than NWS's earlier hour-by-hour forecast: at 5:35 p.m. the La Porte airport reported clear and 61 degrees, where that forecast had about 55."
  },
  "alertRows": [
   {
@@ -275,6 +277,10 @@
   {
    "time": "2026-10-18T12:17:00-05:00",
    "why": "alerts changed (Frost Advisory | La Porte County | 2026-10-19 08:00)"
+  },
+  {
+   "time": "2026-10-18T18:02:00-05:00",
+   "why": "airport running warm"
   }
  ]
 }
