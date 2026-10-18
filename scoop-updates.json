@@ -1,28 +1,249 @@
 {
  "about": "State for scripts/scoop_update.py, the automatic updates to today's Daily Scoop: the forecast the Scoop was written from (baseline), what was last published, the alerts last seen, and today's updates. Replaced each day. Safe to delete: the job starts over from the current post.",
  "date": "2026-10-18",
- "post": "2026-10-18T06:32:00-05:00",
- "kind": "backup",
- "published": {
-  "time": "2026-10-18T08:02:00-05:00",
-  "alertKeys": [],
-  "obsTime": "2026-10-18T07:35:00-05:00",
-  "forecastUpdated": "2026-10-18T09:15:02+00:00"
+ "post": "2026-10-18T08:33:00-05:00",
+ "kind": "written",
+ "baseline": {
+  "from": "2026-10-18T08:28:57-05:00",
+  "source": "nws-snapshot.json (what the Scoop was written from)",
+  "periods": {
+   "day 2026-10-18": {
+    "name": "Today",
+    "temp": 62,
+    "rain": 0,
+    "short": "Areas Of Frost then Sunny"
+   },
+   "night 2026-10-18": {
+    "name": "Tonight",
+    "temp": 38,
+    "rain": 0,
+    "short": "Mostly Clear"
+   },
+   "day 2026-10-19": {
+    "name": "Monday",
+    "temp": 66,
+    "rain": 0,
+    "short": "Sunny"
+   },
+   "night 2026-10-19": {
+    "name": "Monday Night",
+    "temp": 38,
+    "rain": 0,
+    "short": "Mostly Clear"
+   },
+   "day 2026-10-20": {
+    "name": "Tuesday",
+    "temp": 68,
+    "rain": 0,
+    "short": "Sunny"
+   },
+   "night 2026-10-20": {
+    "name": "Tuesday Night",
+    "temp": 42,
+    "rain": 0,
+    "short": "Mostly Clear"
+   },
+   "day 2026-10-21": {
+    "name": "Wednesday",
+    "temp": 70,
+    "rain": 0,
+    "short": "Sunny"
+   },
+   "night 2026-10-21": {
+    "name": "Wednesday Night",
+    "temp": 45,
+    "rain": 0,
+    "short": "Mostly Clear"
+   },
+   "day 2026-10-22": {
+    "name": "Thursday",
+    "temp": 71,
+    "rain": 0,
+    "short": "Sunny"
+   },
+   "night 2026-10-22": {
+    "name": "Thursday Night",
+    "temp": 45,
+    "rain": 0,
+    "short": "Mostly Clear"
+   },
+   "day 2026-10-23": {
+    "name": "Friday",
+    "temp": 71,
+    "rain": 0,
+    "short": "Sunny"
+   },
+   "night 2026-10-23": {
+    "name": "Friday Night",
+    "temp": 44,
+    "rain": 0,
+    "short": "Mostly Clear"
+   },
+   "day 2026-10-24": {
+    "name": "Saturday",
+    "temp": 71,
+    "rain": 0,
+    "short": "Sunny"
+   },
+   "night 2026-10-24": {
+    "name": "Saturday Night",
+    "temp": 46,
+    "rain": 0,
+    "short": "Partly Cloudy"
+   }
+  },
+  "alerts": [],
+  "alertRows": [],
+  "hourly": {
+   "2026-10-18T08": {
+    "temp": 39,
+    "rain": 0
+   },
+   "2026-10-18T09": {
+    "temp": 43,
+    "rain": 0
+   },
+   "2026-10-18T10": {
+    "temp": 48,
+    "rain": 0
+   },
+   "2026-10-18T11": {
+    "temp": 52,
+    "rain": 0
+   },
+   "2026-10-18T12": {
+    "temp": 56,
+    "rain": 0
+   },
+   "2026-10-18T13": {
+    "temp": 59,
+    "rain": 0
+   },
+   "2026-10-18T14": {
+    "temp": 61,
+    "rain": 0
+   },
+   "2026-10-18T15": {
+    "temp": 61,
+    "rain": 0
+   },
+   "2026-10-18T16": {
+    "temp": 61,
+    "rain": 0
+   },
+   "2026-10-18T17": {
+    "temp": 59,
+    "rain": 0
+   },
+   "2026-10-18T18": {
+    "temp": 55,
+    "rain": 0
+   },
+   "2026-10-18T19": {
+    "temp": 52,
+    "rain": 0
+   },
+   "2026-10-18T20": {
+    "temp": 49,
+    "rain": 0
+   },
+   "2026-10-18T21": {
+    "temp": 48,
+    "rain": 0
+   },
+   "2026-10-18T22": {
+    "temp": 46,
+    "rain": 0
+   },
+   "2026-10-18T23": {
+    "temp": 45,
+    "rain": 0
+   },
+   "2026-10-19T00": {
+    "temp": 44,
+    "rain": 0
+   },
+   "2026-10-19T01": {
+    "temp": 43,
+    "rain": 0
+   },
+   "2026-10-19T02": {
+    "temp": 42,
+    "rain": 0
+   },
+   "2026-10-19T03": {
+    "temp": 42,
+    "rain": 0
+   },
+   "2026-10-19T04": {
+    "temp": 40,
+    "rain": 0
+   },
+   "2026-10-19T05": {
+    "temp": 39,
+    "rain": 0
+   },
+   "2026-10-19T06": {
+    "temp": 39,
+    "rain": 0
+   },
+   "2026-10-19T07": {
+    "temp": 39,
+    "rain": 0
+   },
+   "2026-10-19T08": {
+    "temp": 42,
+    "rain": 0
+   },
+   "2026-10-19T09": {
+    "temp": 47,
+    "rain": 0
+   },
+   "2026-10-19T10": {
+    "temp": 52,
+    "rain": 0
+   },
+   "2026-10-19T11": {
+    "temp": 56,
+    "rain": 0
+   },
+   "2026-10-19T12": {
+    "temp": 60,
+    "rain": 0
+   },
+   "2026-10-19T13": {
+    "temp": 62,
+    "rain": 0
+   },
+   "2026-10-19T14": {
+    "temp": 63,
+    "rain": 0
+   },
+   "2026-10-19T15": {
+    "temp": 64,
+    "rain": 0
+   },
+   "2026-10-19T16": {
+    "temp": 64,
+    "rain": 0
+   },
+   "2026-10-19T17": {
+    "temp": 62,
+    "rain": 0
+   },
+   "2026-10-19T18": {
+    "temp": 58,
+    "rain": 0
+   },
+   "2026-10-19T19": {
+    "temp": 54,
+    "rain": 0
+   }
+  },
+  "hourlyFrom": "2026-10-18T08:47:00-05:00"
  },
+ "published": null,
  "alertRows": [],
  "missing": [],
- "updates": [
-  {
-   "time": "2026-10-18T06:41:00-05:00",
-   "why": "alerts changed"
-  },
-  {
-   "time": "2026-10-18T07:47:00-05:00",
-   "why": "hourly refresh"
-  },
-  {
-   "time": "2026-10-18T08:02:00-05:00",
-   "why": "alerts changed"
-  }
- ]
+ "updates": []
 }
