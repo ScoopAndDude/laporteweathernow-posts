@@ -32,10 +32,12 @@ page. It never makes up prices, times or promises.
 - `ask.js`: the button and chat box, drawn in its own shadow root so the client's styles can't bend it. It reads
   `sites.json` for the business's name, greeting, color and contact buttons, and sends each question to the
   backend. Answers are shown as plain text, never HTML.
-- `backend.gs`: a Google Apps Script web app ("LPWN Ask helper", in the laporteweathernow@gmail.com Google account)
-  that holds the Claude key (the `ANTHROPIC_API_KEY` script property) and asks Claude. Free, and it never touches
-  laporteweathernow.com's Netlify credits. Setup steps are at the top of the file. After changing it: Deploy >
-  Manage deployments > edit > Version: New version (the address stays the same).
+- `backend.gs`: a Google Apps Script web app that holds the Claude key (the `ANTHROPIC_API_KEY` script property)
+  and asks Claude. It's the "Ask helper" file in the "LPWN timer" project (laporteweathernow@gmail.com), which
+  already had the permission it needs. Free, and it never touches laporteweathernow.com's Netlify credits. Setup
+  steps are at the top of the file. After changing it: Deploy > Manage deployments > edit > Version: New version
+  (the address stays the same). A syntax error in any file stops the whole project, the timer too, so run the
+  tests first.
 - Limits: 200 questions per business per day (`dailyCap` in `sites.json` changes it), 1,000 a day in all, 25 per
   visitor, 500 characters per question. The workspace's spend limit is the backstop.
 - Counts: run `askShowCounts` in the Apps Script editor to see today's and this month's questions per business

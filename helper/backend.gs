@@ -11,12 +11,19 @@
  * Why Apps Script: it's free and it keeps the key off the client's website, and it never touches laporteweathernow.com's
  * Netlify credits.
  *
- * Setup (done Oct. 19, 2026, in the laporteweathernow@gmail.com Google account):
- *  1. script.google.com > New project, named "LPWN Ask helper"; this file is its Code.gs.
+ * Where it runs (Oct. 19, 2026): as a second file, "Ask helper", in the "LPWN timer" Apps Script project in the
+ * laporteweathernow@gmail.com Google account (tools/lpwn-timer.gs is the project's other file). A project of its own
+ * needed Google's permission window, which kept opening in Scoop's personal account; the timer project already has the
+ * one permission this needs (reaching outside sites), so it runs there with nothing new to approve. Nothing here touches
+ * the timer's tick or GITHUB_TOKEN, and the names (ask..., doGet, doPost) don't clash with it.
+ * Setup:
+ *  1. In "LPWN timer": + (Add a file) > Script, named "Ask helper"; paste this file; save.
  *  2. Project Settings > Script Properties: ANTHROPIC_API_KEY = the key from the "Website Helper" workspace in the
  *     Claude Console (spend limit $10 a month). Never put the key in a file.
  *  3. Deploy > New deployment > Web app: Execute as Me, Who has access: Anyone. Its /exec address is ENDPOINT in
  *     helper/ask.js. After changing this file, Deploy > Manage deployments > edit > Version: New version (same address).
+ *     A syntax error in any file stops the whole project, the timer too: test changes with tools/helper/test_helper.js
+ *     before pasting.
  * Adding a business: add it to helper/sites.json in the laporteweathernow-posts repository (GitHub Pages serves it);
  * this script picks it up within 10 minutes. Nothing to change here.
  *
