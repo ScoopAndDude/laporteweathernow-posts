@@ -1,0 +1,55 @@
+# Storm records TEST (Oct. 19, 2026; branch storm-records only, nothing live): per-lot snow, ice and rain
+# records from free NOAA data (NOHRSC snowfall analysis, MRMS radar rain, airport reports), tried on last
+# winter's La Porte County storms. Runs on pushes to this branch and by hand; commits its results to
+# storm-records/out/ on this branch. See storm-records/README.md.
+name: Storm records (test)
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "probe or build"
+        default: "build"
+  push:
+    branches: [storm-records]
+    paths:
+      - scripts/storm_records/**
+      - storm-records/config.json
+      - .github/workflows/storm-records.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: storm-records
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: storm-records
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install readers (GRIB2 and GeoTIFF)
+        run: pip install -q numpy pygrib rasterio
+      - name: Run
+        env:
+          MODE: ${{ github.event.inputs.mode || 'auto' }}
+        run: python3 scripts/storm_records/run.py "$MODE"
+      - name: Save results to this branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add storm-records/out
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -q -m "Storm records test results ($(TZ=America/Chicago date '+%b %-d, %-I:%M %p %Z'))"
+          for i in 1 2 3; do
+            if git push -q origin HEAD:storm-records; then exit 0; fi
+            git pull -q --rebase origin storm-records
+          done
+          exit 1
