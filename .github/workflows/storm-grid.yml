@@ -1,0 +1,53 @@
+# Storm grid (built Oct. 19, 2026; scripts/storm_grid.py). No AI, free, no customer locations.
+#
+# The Timer starts it every hour (the :31 tick). Each run keeps the "storm-grid" branch current for the Hard
+# Hat sender's storm records and job-site rain: the last 48 hours of NOAA MRMS radar rain (Pass 1 about 20
+# minutes after the hour, swapped for Pass 2 an hour later) in 48 small tiles, and each morning's snow day
+# (the 24 hours ending 12 UTC: snow by hour from NOAA's National Snowfall Analysis, made once the 24-hour
+# analysis is out, about 2-3 hours after 12 UTC; from the 6-hour ones by 18 UTC if it never comes), with the
+# airports' hourly reports and the measured reports nearby. 14 snow days are kept. The branch is one commit,
+# replaced each run. The sender reads it from raw.githubusercontent.com/.../storm-grid/.
+# NOAA files that aren't out yet are skipped quietly and fetched on a later run; the run fails only on a real
+# problem (the site health check notices a job that keeps failing).
+name: Storm grid
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: storm-grid
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install readers (GRIB2 and GeoTIFF)
+        run: pip install -q "numpy<3" "pygrib<3" "rasterio<2"
+      - name: Get the grid so far
+        run: |
+          mkdir -p "$RUNNER_TEMP/grid"
+          if git fetch -q --depth 1 origin storm-grid 2>/dev/null; then
+            git archive FETCH_HEAD | tar -x -C "$RUNNER_TEMP/grid"
+          fi
+      - name: Update
+        run: python3 scripts/storm_grid.py update "$RUNNER_TEMP/grid"
+      - name: Save it to the storm-grid branch
+        run: |
+          cd "$RUNNER_TEMP/grid"
+          git init -q -b storm-grid
+          git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "Storm grid $(date -u '+%Y-%m-%d %H:%M') UTC"
+          for i in 1 2 3; do
+            git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" storm-grid:storm-grid && exit 0
+            sleep 5
+          done
+          exit 1
