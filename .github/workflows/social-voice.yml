@@ -1,0 +1,45 @@
+# Records the voiceover lines for social videos (voice-jobs/*/lines.json) in the daily video's voice
+# and saves the WAV files back to this branch. Runs only on the social-posts branch.
+name: Social video voice
+on:
+  push:
+    branches: [social-posts]
+    paths: ["voice-jobs/*/lines.json", "voice-jobs/record.py"]
+permissions:
+  contents: write
+concurrency:
+  group: social-voice
+  cancel-in-progress: false
+jobs:
+  voice:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: social-posts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Voice cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.cache/huggingface
+          key: kokoro-voice-${{ runner.os }}-py312-v1
+      - name: Install the voice
+        run: |
+          sudo apt-get install -y -qq espeak-ng > /dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq espeak-ng > /dev/null)
+          pip install -q torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -q "kokoro>=0.9.4" soundfile numpy
+      - name: Record
+        run: python3 voice-jobs/record.py
+      - name: Save the recordings to this branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add voice-jobs
+          if git diff --cached --quiet; then echo "Nothing new."; exit 0; fi
+          git commit -q -m "Voiceover recorded"
+          git push -q origin HEAD:social-posts
