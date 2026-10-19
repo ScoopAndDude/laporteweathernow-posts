@@ -40,6 +40,8 @@ starts whichever jobs are due at that moment, in La Porte (Central) time:
                        CelesTrak weather satellites) for the disasters page
   7:00 AM and 5:00 PM (each for 15 minutes)   First snow check (added Oct. 19, 2026; emails Scoop once a
                        winter when snow first shows up in the NWS forecast for La Porte County)
+  every hour, :20-:34  Storm grid (Hard Hat storm records and job-site rain; NOAA radar and snowfall analysis
+                       for NW Indiana and SW Michigan on the storm-grid branch; no customer locations)
 
 The jobs keep their GitHub schedules too, so if GitHub's clock recovers, a job may run twice;
 each one is safe to run twice.
@@ -83,6 +85,8 @@ WINDOWS = [
     ("space-data.yml", [(f"{h:02d}:35", f"{h:02d}:49") for h in range(0, 24, 3)], None),
     # First snow check (Oct. 19, 2026): after the NWS's overnight and afternoon forecasts; emails once a winter.
     ("first-snow.yml", [("07:00", "07:14"), ("17:00", "17:14")], None),
+    # Storm grid (Hard Hat storm records): every hour, after NOAA's Pass 1 radar (about 15 minutes after the hour).
+    ("storm-grid.yml", [(f"{h:02d}:20", f"{h:02d}:34") for h in range(24)], None),
 ]
 
 
