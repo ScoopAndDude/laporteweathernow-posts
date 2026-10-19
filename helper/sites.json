@@ -1,0 +1,38 @@
+{
+  "_about": "The businesses the 'Ask us' website helper answers for (helper/ask.js on their site, helper/backend.gs answers). One entry per business; the key is the data-site the site's script tag uses (lowercase letters, numbers, dashes). Only facts the business gave us: the helper answers from these and nothing else. Changes go live within 10 minutes. active false switches a business off. dailyCap is questions a day (default 200).",
+  "demo-lawn": {
+    "active": true,
+    "name": "Lakeside Lawn & Snow",
+    "sample": true,
+    "tagline": "A sample business made up for this demo: a family-run lawn care and snow removal company in La Porte County, Indiana.",
+    "greeting": "Hi! Ask me about our services, hours, the towns we cover, or how to get a quote.",
+    "color": "#1f7a4d",
+    "services": [
+      "Weekly and every-other-week mowing, April through October",
+      "Spring and fall cleanups, leaf removal",
+      "Mulch and edging",
+      "Aeration and overseeding in the fall",
+      "Snow plowing and salting for driveways and small parking lots, November through March",
+      "Seasonal snow contracts (every snow of 2 inches or more is plowed) or one-time plowing"
+    ],
+    "notOffered": ["Tree removal", "Irrigation systems", "Pest control or lawn chemicals"],
+    "area": "La Porte, Michigan City, Westville, Kingsbury, Rolling Prairie and Union Mills",
+    "hours": [
+      "Office: Monday to Friday 8 AM to 5 PM, Saturday 8 AM to noon",
+      "Crews work Monday to Saturday, weather permitting",
+      "Snow routes start when 2 inches have fallen, any time of day or night"
+    ],
+    "phone": "(219) 555-0142",
+    "text": "(219) 555-0142",
+    "email": "hello@example.com",
+    "quoteUrl": "",
+    "faqs": [
+      { "q": "How do I get a quote?", "a": "Call or text (219) 555-0142 or email hello@example.com with your address and what you need. Quotes are free, usually within one business day." },
+      { "q": "Are you insured?", "a": "Yes, fully insured. A certificate of insurance is available on request." },
+      { "q": "What happens when it rains on my mowing day?", "a": "Rained-out mowing moves to the next dry day, usually within 48 hours. We text you when the crew is on its way." },
+      { "q": "How do snow contracts work?", "a": "A seasonal contract covers every snow of 2 inches or more from November through March. One-time plowing is available when there's room on the route." },
+      { "q": "How do I pay?", "a": "Card, check or cash. Seasonal contracts can be paid monthly." }
+    ],
+    "notes": "This is a made-up sample business for showing the helper. Prices depend on the property, so the helper never quotes a price."
+  }
+}

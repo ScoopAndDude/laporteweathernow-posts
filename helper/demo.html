@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ask us helper demo | La Porte Weather Now</title>
+<meta name="robots" content="noindex" />
+<meta name="description" content="A sample small-business page showing the Ask us website helper by La Porte Weather Now." />
+<!--
+  The demo for the "Ask us" website helper (added Oct. 19, 2026): a made-up local business's page with the helper on it,
+  for showing prospects. Everything about "Lakeside Lawn & Snow" is invented (a 555 number, an example.com email).
+  The helper itself is the one line near the bottom: helper/ask.js with data-site="demo-lawn" (its facts are in sites.json).
+-->
+<style>
+  :root { --green: #1f7a4d; --ink: #1d2024; --muted: #59616a; --line: #e2e6ea; --bg: #ffffff; --soft: #f3f7f4; }
+  * { box-sizing: border-box; margin: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.5; }
+  .note { background: #fff7e0; color: #5c4300; border-bottom: 1px solid #f0dca4; padding: 10px 16px; font-size: 14px; text-align: center; }
+  .note a { color: inherit; font-weight: 700; }
+  header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px; max-width: 980px; margin: 0 auto; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 19px; letter-spacing: -.01em; }
+  .logo svg { width: 34px; height: 34px; }
+  nav a { color: var(--muted); text-decoration: none; font-size: 15px; margin-left: 14px; }
+  .hero { background: linear-gradient(160deg, #e7f3ec 0%, #f7fbf8 60%); border-bottom: 1px solid var(--line); }
+  .hero .in { max-width: 980px; margin: 0 auto; padding: 48px 16px 52px; }
+  h1 { font-size: clamp(28px, 6vw, 44px); line-height: 1.12; letter-spacing: -.02em; max-width: 640px; }
+  .hero p { color: var(--muted); font-size: 18px; margin-top: 12px; max-width: 560px; }
+  .cta { display: inline-block; margin-top: 22px; background: var(--green); color: #fff; text-decoration: none; font-weight: 700; padding: 12px 20px; border-radius: 10px; }
+  main { max-width: 980px; margin: 0 auto; padding: 36px 16px 120px; }
+  h2 { font-size: 24px; letter-spacing: -.01em; margin-bottom: 14px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 36px; }
+  .card { border: 1px solid var(--line); border-radius: 14px; padding: 16px; background: var(--soft); }
+  .card b { display: block; margin-bottom: 4px; }
+  .card span { color: var(--muted); font-size: 15px; }
+  .try { border: 2px dashed #b8d8c6; border-radius: 14px; padding: 16px 18px; background: #fafdfb; margin-bottom: 36px; }
+  .try ul { margin: 8px 0 0 18px; color: var(--muted); }
+  footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; padding: 18px 16px 90px; text-align: center; }
+  footer a { color: var(--muted); }
+  @media (max-width: 560px) { nav { display: none; } }
+</style>
+</head>
+<body>
+  <div class="note">Sample page made by <a href="https://laporteweathernow.com/">La Porte Weather Now</a> to show the <b>Ask us</b> helper. The business is made up. Try the button in the corner.</div>
+  <header>
+    <div class="logo">
+      <svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="17" fill="#1f7a4d"/><path d="M9 22c3-7 6-10 8-10s5 3 8 10" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M12 22h10" stroke="#cfead9" stroke-width="2.4" stroke-linecap="round"/></svg>
+      Lakeside Lawn &amp; Snow
+    </div>
+    <nav><a href="#services">Services</a><a href="#area">Area</a><a href="#contact">Contact</a></nav>
+  </header>
+  <section class="hero">
+    <div class="in">
+      <h1>Lawns kept sharp all summer. Driveways clear all winter.</h1>
+      <p>Family-run lawn care and snow removal for La Porte County. Free quotes, usually within a day.</p>
+      <a class="cta" href="#contact">Get a free quote</a>
+    </div>
+  </section>
+  <main>
+    <h2 id="services">What we do</h2>
+    <div class="grid">
+      <div class="card"><b>Mowing</b><span>Weekly or every other week, April through October.</span></div>
+      <div class="card"><b>Cleanups</b><span>Spring and fall cleanups, leaves, mulch and edging.</span></div>
+      <div class="card"><b>Aeration</b><span>Aeration and overseeding every fall.</span></div>
+      <div class="card"><b>Snow &amp; ice</b><span>Plowing and salting for driveways and small lots, November through March.</span></div>
+    </div>
+    <div class="try">
+      <b>Try asking the helper:</b>
+      <ul>
+        <li>Do you plow driveways in Michigan City?</li>
+        <li>What happens if it rains on my mowing day?</li>
+        <li>Are you open Saturday?</li>
+        <li>How much is a seasonal snow contract? (it won't make up a price)</li>
+      </ul>
+    </div>
+    <h2 id="area">Where we work</h2>
+    <p style="margin-bottom:36px;color:var(--muted)">La Porte, Michigan City, Westville, Kingsbury, Rolling Prairie and Union Mills.</p>
+    <h2 id="contact">Contact</h2>
+    <p style="color:var(--muted)">Call or text (219) 555-0142 &middot; hello@example.com &middot; Office Mon-Fri 8 AM-5 PM, Sat 8 AM-noon</p>
+  </main>
+  <footer>Lakeside Lawn &amp; Snow is a made-up business for this demo. The <b>Ask us</b> helper is by <a href="https://laporteweathernow.com/">La Porte Weather Now</a>.</footer>
+
+  <!-- The helper: this one line is all a client's site needs. -->
+  <script src="ask.js" data-site="demo-lawn" data-open="true" defer></script>
+</body>
+</html>
