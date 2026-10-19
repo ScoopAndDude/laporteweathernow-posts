@@ -42,6 +42,8 @@ starts whichever jobs are due at that moment, in La Porte (Central) time:
                        winter when snow first shows up in the NWS forecast for La Porte County)
   every hour, :20-:34  Storm grid (Hard Hat storm records and job-site rain; NOAA radar and snowfall analysis
                        for NW Indiana and SW Michigan on the storm-grid branch; no customer locations)
+  Monday 8:45, 10:45 AM and 1:45 PM (each for 15 minutes)   World Watch update (added Oct. 19, 2026; El Nino and
+                       the Amazon Rainforest Watch on the Claude API credit; the later starts do nothing once it's in)
 
 The jobs keep their GitHub schedules too, so if GitHub's clock recovers, a job may run twice;
 each one is safe to run twice.
@@ -74,6 +76,8 @@ WINDOWS = [
     ("closings.yml", [("20:00", "20:14")], {6, 0, 1, 2, 3}),
     ("daily-video.yml", [("06:00", "06:14"), ("06:45", "06:59")], None),
     ("sender-watch.yml", [("04:45", "04:59"), ("05:15", "05:29"), ("05:45", "05:59"), ("06:15", "06:29"), ("06:45", "06:59")], None),
+    # World Watch (Oct. 19, 2026): Mondays, on the Claude API credit; the later starts do nothing once the week's update is in.
+    ("world-watch.yml", [("08:45", "08:59"), ("10:45", "10:59"), ("13:45", "13:59")], {0}),
     # The Daily Scoop writer (Oct. 18, 2026): no AI; posts once, after the 5 a.m. snapshot, and does nothing after that.
     ("scoop-writer.yml", [("05:30", "06:14"), ("07:00", "07:14"), ("09:00", "09:14")], None),
     ("backup-scoop.yml", [("06:30", "08:09")], None),

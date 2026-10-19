@@ -1,0 +1,94 @@
+# World Watch: the weekly El Nino and Amazon Rainforest Watch update (scripts/world_watch.py), added Oct. 19, 2026.
+# Until then a scheduled Claude task did this on Scoop's Claude plan. Now it runs here on the monthly Claude API
+# credit that comes with the plan: the ANTHROPIC_API_KEY repository secret, from the "World Watch" workspace in the
+# Claude Console (spend limit $25 a month). Without the secret it changes nothing and says so.
+# Claude (Opus 5.5, web search and web fetch) only proposes; the script checks every field and can change only
+# world-watch.json's El Nino part and amazon-watch.json's headline, stats, news and species. This job checks that
+# no other file changed before it saves.
+# The Timer starts it Mondays at 8:45 AM Central, with 10:45 AM and 1:45 PM as second chances that do nothing once
+# the week's update is in. GitHub's own clock is a late backup. Run it by hand from Actions > World Watch update
+# (tick "force" to run on another day, or again).
+name: World Watch update
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Run even if it isn't Monday or today's update is already in"
+        type: boolean
+        default: false
+  schedule:
+    - cron: "40 20 * * 1"   # 3:40 PM CDT / 2:40 PM CST Mondays, backup only
+  push:
+    branches: [main]
+    paths:
+      - scripts/world_watch.py
+      - tools/world-watch/**
+      - .github/workflows/world-watch.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: world-watch
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install the Claude API library
+        run: pip install -q anthropic==1.15.0
+      - name: Tests (no network)
+        run: python3 tools/world-watch/test_world_watch.py
+      - name: Is it due?
+        id: due
+        if: github.event_name != 'push'
+        env:
+          FORCE: ${{ github.event.inputs.force }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          due=$(python3 scripts/world_watch.py due)
+          if [ "$due" = "yes" ] && [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "::notice title=World Watch::No ANTHROPIC_API_KEY repository secret yet, so nothing was changed."
+            due=nokey
+          fi
+          echo "World Watch due: $due"
+          echo "due=$due" >> "$GITHUB_OUTPUT"
+      - name: Ask Claude for this week's update
+        if: steps.due.outputs.due == 'yes'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 scripts/world_watch.py research "$RUNNER_TEMP/ww.json"
+      - name: Save it (only the two World Watch files)
+        if: steps.due.outputs.due == 'yes'
+        run: |
+          prop="$RUNNER_TEMP/ww.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3 4; do
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            rm -f "$prop.msg"
+            python3 scripts/world_watch.py apply "$prop"
+            if [ ! -f "$prop.msg" ]; then echo "Nothing changed."; exit 0; fi
+            python3 -m json.tool world-watch.json > /dev/null
+            python3 -m json.tool amazon-watch.json > /dev/null
+            other=$(git status --porcelain --untracked-files=all | grep -v -E '^ ?M (world-watch|amazon-watch)\.json$' || true)
+            if [ -n "$other" ]; then echo "Something else changed, so nothing was saved:"; echo "$other"; exit 1; fi
+            git add world-watch.json amazon-watch.json
+            if git diff --cached --quiet; then echo "Nothing changed."; exit 0; fi
+            git commit -q -F "$prop.msg"
+            if git push -q origin HEAD:main; then echo "::notice title=World Watch::Saved: $(head -n 1 "$prop.msg")"; exit 0; fi
+            sleep 5
+          done
+          exit 1
+      - name: What it did
+        if: always() && steps.due.outputs.due == 'yes'
+        run: |
+          if [ -f "$RUNNER_TEMP/ww.json.md" ]; then cat "$RUNNER_TEMP/ww.json.md" >> "$GITHUB_STEP_SUMMARY"; fi
