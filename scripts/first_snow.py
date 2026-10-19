@@ -29,6 +29,7 @@ import re
 import sys
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from zoneinfo import ZoneInfo
 
@@ -287,7 +288,7 @@ def open_issue(title, body):
 
 
 def deliver(subject, body_html, text, md, issue_ok=True):
-    """'email' or 'issue #n' when it went out, None when it couldn't."""
+    """('email', Brevo message id) or ('issue #n', None) when it went out, (None, None) when it couldn't."""
     cfg = config()
     why = ""
     if not KEY:
@@ -304,19 +305,35 @@ def deliver(subject, body_html, text, md, issue_ok=True):
                     "to": [{"email": OWNER}], "subject": subject, "htmlContent": body_html, "textContent": text,
                     "tags": ["first-snow"]})
                 print(f"Emailed {OWNER} (Brevo message {r.get('messageId', '?')}).")
-                return "email"
+                return "email", r.get("messageId")
         except Exception as e:
             why = str(e)[:200]
     print(f"Couldn't email ({why}).")
     if not issue_ok:
-        return None
+        return None, None
     try:
         n = open_issue(subject, md + f"\n\n(This came as an issue because the email didn't go: {why}.)")
         print(f"Opened GitHub issue #{n} instead; GitHub emails it to Scoop.")
-        return f"issue #{n}"
+        return f"issue #{n}", None
     except Exception as e:
         print(f"Couldn't open a GitHub issue either ({str(e)[:200]}).")
-        return None
+        return None, None
+
+
+def delivery(message_id, tries=7):
+    """What Brevo reports for one message (test runs): waits up to a minute for 'delivered' or a bounce."""
+    got = []
+    for i in range(tries):
+        try:
+            evs = brevo(f"/smtp/statistics/events?limit=20&messageId={urllib.parse.quote(message_id)}").get("events") or []
+            got = sorted({e.get("event") or "?" for e in evs})
+        except Exception as e:
+            got = [f"no answer ({str(e)[:80]})"]
+        if any(x in got for x in ("delivered", "hardBounces", "softBounces", "blocked", "invalid", "error", "spam")):
+            break
+        if i < tries - 1:
+            time.sleep(10)
+    return ", ".join(got) or "nothing yet"
 
 
 # ---------- state ----------
@@ -396,12 +413,13 @@ def main():
         notice(f"{checked}. Would email {OWNER}:\nSubject: {subject}\n\n{text}")
         return 0
     print(f"{checked}.\n{seen}")
-    via = deliver(subject, body_html, text, md, issue_ok=(mode == "check"))
+    via, message_id = deliver(subject, body_html, text, md, issue_ok=(mode == "check"))
     if not via:
         notice(f"Couldn't send \"{subject}\" by email or GitHub issue; failing so GitHub emails Scoop, and the next run "
                "tries again." if mode == "check" else f"Couldn't send the test email \"{subject}\".")
         return 1
-    notice(f"Sent \"{subject}\" ({'email to ' + OWNER if via == 'email' else via}).")
+    notice(f"Sent \"{subject}\" ({'email to ' + OWNER if via == 'email' else via})."
+           + (f" Brevo reports: {delivery(message_id)}." if mode == "test" and message_id else ""))
     if mode == "check":
         first = by_period(hits)[0] if hits else None
         st.update({"season": winter, "notified": now.isoformat(timespec="minutes"), "via": via, "failsInARow": 0,
