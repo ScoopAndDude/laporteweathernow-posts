@@ -30,6 +30,23 @@ This is not certified; it's a free, automatic daily record.
   uses many of the same reports, so the snow check is generous; the rain gauges are independent of the
   radar estimate.
 
+## Results (run 39268159936, Oct. 19, 2026)
+- Records for last winter's 5 big storms (Nov. 9-10, Nov. 29-30, Jan. 12-15, Jan. 25-26, Jan. 30-31) at 5 test
+  lots, plus rain during work hours at 3 sites on 6 days. See `out/index.html`.
+- **Snow vs 262 CoCoRaHS 24-hour reports:** typical miss 0.5 in., within 1 in. 75%, within 2 in. 91%, no bias.
+  Generous: the analysis takes in many of these reports.
+- **Snow vs 160 NWS storm reports (storm totals):** typical miss 1.5 in., within 2 in. 65%, about 1 in. low on
+  average. Worst in narrow lake-effect bands: Fish Lake / Mill Creek's 20 in. (Jan. 15) showed as about 7.
+  That's why each record lists the measured reports within 6 miles next to the estimate.
+- **Radar rain vs 351 CoCoRaHS gauge-days:** typical miss 0.10 in., 98% within 1 in. (independent check).
+- Example: Michigan City lot (Meijer, 5150 Franklin St), Jan. 30-31: 6.2 in.; two NWS reports 2.5 miles away
+  measured 6.0. Plow amount (2 in.) reached about 11 PM Friday.
+- MRMS radar water badly undercounts cold lake-effect snow (0.1-0.3 in. of water for 6-12 in. of snow), so it's
+  used only to time the snow within each 6-hour quarter, together with the airport's reported snow rate.
+- The Michigan City airport's rain gauge read 0.00 on every rainy day checked; rain comparisons use La Porte's
+  or Valparaiso's gauge.
+- Sample customer page: claude.ai artifact "Hard Hat Storm Record" (made by `scripts/storm_records/sample_page.py`).
+
 ## Files
 - `scripts/storm_records/build.py` - the engine (`run.py probe` checks which archives answer).
 - `storm-records/config.json` - test lots (public places only) and storm windows.
