@@ -513,8 +513,8 @@ def snow_day(day, store, now):
             code = "".join(TYPE_CODE.get(types[i], ".") if (snow[i] >= 0.005 or liquid[i] >= 0.005) else "."
                            for i in range(24))
             zr = sum(liquid[i] for i in range(24) if types[i] == "freezing rain" and liquid[i] >= 0.005)
-            if day_total <= 0 and code.strip(".") == "":
-                continue
+            if day_total <= 0 and not any(ch in code for ch in "SsPZ"):
+                continue     # rain only: nothing for a storm record (rain at job sites comes from the radar tiles)
             cells.append(r * COLS + c)
             snow_rows.append([int(round(x * 100)) for x in snow])
             type_rows.append(code)
