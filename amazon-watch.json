@@ -1,16 +1,16 @@
 {
   "about": "Numbers and news for laporteweathernow.com/amazon (Amazon Rainforest Watch). Updated weekly from official data as reported by trusted outlets. Only numbers the sources state; calm, factual, no hype. species: new-to-science discoveries in and around the Amazon (only photos with a free license, credited).",
-  "updated": "2026-10-12",
-  "nextUpdate": "2026-10-19",
-  "headline": "Forest-clearing alerts stay near record lows in Brazil, while the drought keeps Amazon rivers falling ahead of the Oct. 25 runoff.",
+  "updated": "2026-10-19",
+  "nextUpdate": "2026-10-26",
+  "headline": "Brazil's yearly forest loss fell to the lowest since records began in 1988, even as drought and a surge of fires hit Amazonas and Pará ahead of the Oct. 25 runoff.",
   "stats": [
     {
-      "value": "350 km²",
-      "label": "Deforestation alerts, Brazilian Amazon, September 2026",
-      "note": "Up 9% from September 2025 (327 km²), but January–September alerts are down about 27% from last year (INPE DETER).",
+      "value": "3,335 km²",
+      "label": "Forest cleared, Brazilian Amazon, Aug. 2025–July 2026",
+      "note": "Down 41.8% from 5,731 km² a year earlier and the lowest since records began in 1988 (INPE PRODES, preliminary estimate; the final rate comes in the first half of 2027).",
       "source": {
-        "label": "Gazeta da Amazônia, citing INPE DETER data, Oct. 9, 2026",
-        "url": "https://gazetadaamazonia.com.br/09/10/2026/desmatamento-amazonia-setembro/"
+        "label": "Brazil's Environment Ministry, Oct. 16, 2026",
+        "url": "https://www.gov.br/mma/pt-br/noticias-defeso-eleitoral/brasil-alcanca-menores-taxas-de-desmatamento-da-serie-historica-na-amazonia-e-no-cerrado"
       }
     },
     {
@@ -43,30 +43,39 @@
   ],
   "now": [
     {
+      "date": "2026-10-16",
+      "title": "Yearly deforestation rate falls to a record low",
+      "text": "Brazil's official PRODES estimate puts forest clearing in the Brazilian Amazon at 3,335 square kilometers from August 2025 to July 2026, down 41.8% from 5,731 the year before and the lowest since the series began in 1988. Pará (1,130), Mato Grosso (849) and Amazonas (525) had the most. In the Cerrado savanna, clearing fell 23.8% to about 5,517 square kilometers, also a record low.",
+      "source": {
+        "label": "Brazil's Environment Ministry, Oct. 16, 2026",
+        "url": "https://www.gov.br/mma/pt-br/noticias-defeso-eleitoral/brasil-alcanca-menores-taxas-de-desmatamento-da-serie-historica-na-amazonia-e-no-cerrado"
+      }
+    },
+    {
+      "date": "2026-10-15",
+      "title": "Fires surge around Manaus; officials investigate",
+      "text": "The AP reports that fire counts across the Amazon, near historic lows earlier this year, have tripled since Oct. 4, hitting Amazonas and Pará hardest. In Manaus, public school classes were canceled and residents were urged to wear masks. Environment Minister João Paulo Capobianco told the AP the signs point to a premeditated effort to set some fires; it is not yet clear who started them or why.",
+      "source": {
+        "label": "Associated Press, Oct. 15, 2026",
+        "url": "https://www.news4jax.com/news/world/2026/10/15/brazil-investigates-amazon-wildfires-that-disrupt-daily-life-and-have-fueled-political-attacks/"
+      }
+    },
+    {
+      "date": "2026-10-13",
+      "title": "Indigenous alliance reports threats from illegal miners",
+      "text": "An alliance of Kayapó, Yanomami and Munduruku representatives released an open letter on Oct. 9 saying illegal gold miners had made threats against their communities after the first round of the election. The letter cites MapBiomas data showing illegal mining in their lands grew more than 128% from 2018 to 2022, and it does not name a candidate.",
+      "source": {
+        "label": "Roraima 1, Oct. 13, 2026",
+        "url": "https://roraima1.com.br/indigenas-denunciam-ameacas-de-garimpeiros-apos-primeiro-turno-das-eleicoes/"
+      }
+    },
+    {
       "date": "2026-10-09",
-      "title": "Deforestation alerts tick up in September, still near record lows",
-      "text": "INPE's DETER satellite system flagged 350 square kilometers of deforestation alerts in the Brazilian Amazon in September, up 9% from 327 a year earlier and the second-lowest September in a decade. From January through September, alerts totaled 2,392 square kilometers, down about 27% from the same months of 2025. Pará state had about half of September's total.",
+      "title": "Rio Negro keeps falling at Manaus",
+      "text": "The Rio Negro at the Port of Manaus read 17.92 meters on Oct. 9, down from 18.73 meters on Oct. 1, and sandbanks are slowing ferry crossings. The Geological Service of Brazil projects the river could end October between 12.31 and 16.50 meters; the record low is 12.66 meters, set in October 2024.",
       "source": {
-        "label": "Gazeta da Amazônia, citing INPE DETER data, Oct. 9, 2026",
-        "url": "https://gazetadaamazonia.com.br/09/10/2026/desmatamento-amazonia-setembro/"
-      }
-    },
-    {
-      "date": "2026-10-07",
-      "title": "Rio Negro dips below 18 meters at Manaus",
-      "text": "The Rio Negro at the Port of Manaus read 17.99 meters on Oct. 7, which the Geological Service of Brazil still calls normal for the dry season. Rivers are expected to keep falling in the coming weeks, with below-average rain across much of the basin, and the Branco basin among the hardest hit.",
-      "source": {
-        "label": "Amazonas Atual, citing the Geological Service of Brazil",
-        "url": "https://amazonasatual.com.br/nivel-do-rio-negro-em-manaus-e-de-1799-m-ainda-normal-na-vazante/"
-      }
-    },
-    {
-      "date": "2026-10-06",
-      "title": "Deadly clash with a mining gang in Peru's Madre de Dios",
-      "text": "Peru's national police said one officer was killed and another wounded in a shootout with a gang tied to illegal mining in La Pampa, Madre de Dios. Three suspects were killed, and police seized 15 rifles and five grenades.",
-      "source": {
-        "label": "El Peruano",
-        "url": "https://elperuano.pe/noticia/306288-mineria-ilegal-tres-delincuentes-abatidos-en-enfrentamiento-armado-con-la-policia-en-madre-de-dios"
+        "label": "Amazonas1, Oct. 9, 2026",
+        "url": "https://amazonas1.com.br/rio-negro-cai-para-1792-metros-e-dificulta-travessia-de-balsas/"
       }
     },
     {
@@ -77,18 +86,21 @@
         "label": "NPR",
         "url": "https://www.npr.org/2026/10/04/nx-s1-5981181/brazil-presidential-lula-bolsonaro"
       }
-    },
-    {
-      "date": "2026-10-04",
-      "title": "Fires up sharply in Amazonas",
-      "text": "The Amazonas state fire department reported more than three times as many registered fires in September as in September last year. Firefighters were battling blazes near Manaus, and almost all fires were reported to be human-caused, such as slash-and-burn farming and fires that got out of control.",
-      "source": {
-        "label": "CGTN, citing the Amazonas fire department",
-        "url": "https://news.cgtn.com/news/2026-10-04/Firefighters-battle-wildfires-in-Brazil-s-Amazon--1QXGsKAUxUI/p.html"
-      }
     }
   ],
   "species": [
+    {
+      "name": "A hoverfly that looks like a stingless bee",
+      "scientific": "Ubristes mirabilissimus",
+      "where": "Lowland rainforest in Napo Province, Ecuadorian Amazon",
+      "announced": "2026-10-17",
+      "text": "A fly about 12 to 14 millimeters long that mimics Trigona stingless bees, with long antennae, thick brushy hind legs and a bee-like belly. It flies low in a zig-zag. It is known from two sites about 35 kilometers apart, and the study gives the genus its first DNA barcodes.",
+      "source": {
+        "label": "Evolutionary Systematics (Oct. 2026, open access)",
+        "url": "https://doi.org/10.3897/evolsyst.10.185722"
+      },
+      "more": []
+    },
     {
       "name": "Vivid orange killifish",
       "scientific": "Laimosemion laranja",
