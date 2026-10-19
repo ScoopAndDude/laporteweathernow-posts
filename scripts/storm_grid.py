@@ -393,9 +393,14 @@ def airport_rate(wx):
 
 # ---------------------------------------------------------------- measured reports to compare with
 
+REPORTS_OK = {"ok": True}   # False when a report list couldn't be fetched (the sender says so instead of "none")
+
+
 def lsr_snow(a, b):
     q = urllib.parse.urlencode({"wfos": "IWX,LOT", "sts": f"{a:%Y-%m-%dT%H:%MZ}", "ets": f"{b:%Y-%m-%dT%H:%MZ}"})
     body = get(f"https://mesonet.agron.iastate.edu/geojson/lsr.geojson?{q}")
+    if body is None:
+        REPORTS_OK["ok"] = False
     out = []
     for f in (json.loads(body).get("features", []) if body else []):
         p = f.get("properties") or {}
@@ -421,6 +426,8 @@ def cocorahs(date):
     out = []
     for net in ("IN_COCORAHS", "MI_COCORAHS"):
         body = get(f"https://mesonet.agron.iastate.edu/api/1/daily.geojson?network={net}&date={date}")
+        if body is None:
+            REPORTS_OK["ok"] = False
         for f in (json.loads(body).get("features", []) if body else []):
             p = f.get("properties") or {}
             try:
@@ -537,6 +544,7 @@ def snow_day(day, store, now):
             snow_rows.append([int(round(x * 100)) for x in snow])
             type_rows.append(code)
             ice.append(int(round(zr * 100)))
+    REPORTS_OK["ok"] = True
     reports = lsr_snow(e - H24, e + dt.timedelta(hours=3)) + cocorahs(day.isoformat())
     return {
         "about": "Estimated snow by hour (hundredths of an inch) in each cell for the 24 hours ending 12 UTC; type by "
@@ -550,7 +558,7 @@ def snow_day(day, store, now):
         "anyIce": any(("Z" in t or "P" in t) for t in type_rows),
         "cells": cells, "snow": snow_rows, "type": type_rows, "ice": ice,
         "stations": {s: dict(STATIONS[s], obs=st_hours[s]) for s in names},
-        "reports": reports,
+        "reports": reports, "reportsOk": REPORTS_OK["ok"],
     }
 
 
