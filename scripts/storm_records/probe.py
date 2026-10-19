@@ -12,7 +12,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "storm-records", "out")
-UA = {"User-Agent": "laporteweathernow.com storm records test (GitHub Actions; scoop090129@gmail.com)"}
+UA = {"User-Agent": "laporteweathernow.com storm records test (GitHub Actions; laporteweathernow@gmail.com)"}
 results = []
 
 
