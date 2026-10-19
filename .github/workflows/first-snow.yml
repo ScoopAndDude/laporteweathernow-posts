@@ -1,0 +1,68 @@
+# First snow check (added Oct. 19, 2026; scripts/first_snow.py). No AI.
+#
+# Scoop asked to hear as soon as snow first shows up in the forecast for La Porte County, so Hard Hat
+# Weather's storm records get switched on before the first snowfall. The Timer starts it at 7:00 AM and
+# 5:00 PM Central. Each run reads the NWS 7-day forecast and alerts for Michigan City, La Porte and Wanatah;
+# the first time this winter (July-June) one mentions snow, flurries, sleet, freezing rain or drizzle, or a
+# winter alert is out, it emails laporteweathernow@gmail.com once through Brevo (a GitHub issue, which GitHub
+# emails to Scoop, if Brevo can't). That it went out is kept on the "first-snow-state" branch: one email per
+# winter. Delete that branch to make it email again this winter.
+#
+# Run it by hand (Actions > First snow check > Run workflow):
+#   check    what the Timer does
+#   preview  print what it finds and the email it would send (sends and saves nothing)
+#   test     email ONE "[TEST]" copy to laporteweathernow@gmail.com (saves nothing)
+name: First snow check
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "check (what the Timer does), preview (sends nothing), or test (one [TEST] email)"
+        type: choice
+        options: [check, preview, test]
+        default: check
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: first-snow
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get whether this winter's email went out
+        run: |
+          mkdir -p "$RUNNER_TEMP/fs"
+          if git fetch -q --depth 1 origin first-snow-state 2>/dev/null; then
+            git show FETCH_HEAD:first-snow-state.json > "$RUNNER_TEMP/fs/first-snow-state.json" || rm -f "$RUNNER_TEMP/fs/first-snow-state.json"
+          fi
+          cp "$RUNNER_TEMP/fs/first-snow-state.json" "$RUNNER_TEMP/fs/before.json" 2>/dev/null || true
+      - name: First snow check
+        env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          GH_TOKEN: ${{ github.token }}
+          MODE: ${{ github.event.inputs.mode || 'check' }}
+          FIRST_SNOW_STATE: ${{ runner.temp }}/fs/first-snow-state.json
+        run: python3 scripts/first_snow.py "$MODE"
+      - name: Save that it went out
+        if: always()
+        run: |
+          S="$RUNNER_TEMP/fs/first-snow-state.json"
+          [ -f "$S" ] || exit 0
+          if [ -f "$RUNNER_TEMP/fs/before.json" ] && cmp -s "$S" "$RUNNER_TEMP/fs/before.json"; then exit 0; fi
+          D=$(mktemp -d) && cp "$S" "$D/" && cd "$D"
+          git init -q -b first-snow-state
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" add first-snow-state.json
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "First snow check: state"
+          for i in 1 2 3; do
+            git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" first-snow-state:first-snow-state && exit 0
+            sleep 4
+          done
+          exit 1

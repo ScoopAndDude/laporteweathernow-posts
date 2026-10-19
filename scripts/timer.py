@@ -38,6 +38,8 @@ starts whichever jobs are due at that moment, in La Porte (Central) time:
                        (a new NWS warning at a subscriber's spot), both added Oct. 17, 2026
   every 3 hours from 12:35 AM (12:35, 3:35, 6:35 ...)   Earth from space data (NASA FIRMS fires,
                        CelesTrak weather satellites) for the disasters page
+  7:00 AM and 5:00 PM (each for 15 minutes)   First snow check (added Oct. 19, 2026; emails Scoop once a
+                       winter when snow first shows up in the NWS forecast for La Porte County)
 
 The jobs keep their GitHub schedules too, so if GitHub's clock recovers, a job may run twice;
 each one is safe to run twice.
@@ -79,6 +81,8 @@ WINDOWS = [
     ("fuel-prices.yml", [("17:45", "17:59")], {1}),
     ("fuel-prices.yml", [("09:45", "09:59")], {2, 3}),
     ("space-data.yml", [(f"{h:02d}:35", f"{h:02d}:49") for h in range(0, 24, 3)], None),
+    # First snow check (Oct. 19, 2026): after the NWS's overnight and afternoon forecasts; emails once a winter.
+    ("first-snow.yml", [("07:00", "07:14"), ("17:00", "17:14")], None),
 ]
 
 
