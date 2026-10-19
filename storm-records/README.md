@@ -53,10 +53,28 @@ This is not certified; it's a free, automatic daily record.
 - `storm-records/out/` - results written by the "Storm records (test)" job: `records/<storm>/<lot>.html|json`,
   `rain/<site>-<day>.json`, `index.html`, `summary.json`, `summary.txt`.
 
-## To switch it on (not done; needs Scoop's OK)
-1. A GitHub job here saves a regional grid (snow analysis and hourly radar precipitation for NW Indiana and
-   SW Michigan) after each storm to a data branch. No customer locations in this public repository.
-2. The Hard Hat sender (Apps Script, private) reads that grid at each customer's lots, writes the record to
-   the company's Weather log, and emails it the morning after the storm with the calls it sent.
-3. Delay records and the rain-out guarantee check use radar at the site, with the station as a second line.
-4. The Hard Hat page describes storm records (a website publish: check_site, credits, Scoop's OK).
+## The switch-on pieces (built Oct. 19, 2026 after Scoop's "ok"; none of it is live)
+1. **Storm grid job** (`scripts/storm_grid.py`): one fixed grid for NW Indiana and SW Michigan (41.00-42.12 N,
+   87.56-86.04 W, 0.02 degrees, 48 tiles of 10 x 10 cells), no customer locations. Every hour it keeps the last
+   48 hours of MRMS radar rain (Pass 1 about 20 minutes after the hour, Pass 2 swapped in an hour later), and
+   each morning it makes the snow day (the 24 hours ending 12 UTC: snow by hour per cell, type by hour,
+   freezing-rain ice, the airports' hourly weather, and the NWS and CoCoRaHS reports). Tested here by the
+   "Storm grid (test)" job (`.github/workflows/storm-grid-test.yml`, `storm-records/grid-test.json`):
+   - Results in `out/grid/` (`compare.txt`, `latency.txt`, `live-update/`). At the 5 test lots on last winter's
+     6 storm days, the grid matched the per-lot engine within 0.1-0.2 in. and gave the same plow-amount hour.
+   - NOAA timing (Oct. 19): the 24-hour snowfall analysis for 12 UTC came out at 14:59 UTC (6-hour ones from
+     13:38 UTC); MRMS Pass 1 about 15 minutes after the hour, Pass 2 about 57 minutes after.
+   - Two hourly runs on today's data: 44 s, then under a second; 272 KB on a dry day; a region-wide 6 in. day is
+     about 0.5 MB of snow tiles.
+   - The ready-to-merge job is on the branch **storm-grid-live** (from main: `.github/workflows/storm-grid.yml`,
+     `scripts/storm_grid.py`, the Timer's hourly :31 start). It writes the **storm-grid** branch.
+2. **The sender's round 9** (site repo, `hardhat-sender/2026-10-19/` on the branch storm-records-page): storm
+   records by email and a Storm records tab; radar rain at the job site in the Weather log, the rain-out
+   guarantee (the station or radar, whichever shows more: radar only adds credits), the score, and same-day
+   delay records. Tested in Node against this grid's real files.
+3. **The Hard Hat pages** (site repo branch storm-records-page): a Storm records section with this Michigan City
+   example, FAQ, plan table row, and the guarantee wording on the Hard Hat page, terms and pay page.
+
+To switch on, in order (each step with Scoop's OK): merge storm-grid-live into main (let it run a day so the
+radar and a snow day are there); paste round 9 into the sender (sha256 checks, Check setup, new web app
+version for the welcome email, Preview storm records); then publish the pages (check_site, credits).
