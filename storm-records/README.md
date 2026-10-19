@@ -53,7 +53,7 @@ This is not certified; it's a free, automatic daily record.
 - `storm-records/out/` - results written by the "Storm records (test)" job: `records/<storm>/<lot>.html|json`,
   `rain/<site>-<day>.json`, `index.html`, `summary.json`, `summary.txt`.
 
-## The switch-on pieces (built Oct. 19, 2026 after Scoop's "ok"; none of it is live)
+## The switch-on pieces (built Oct. 19, 2026 after Scoop's "ok"; the grid job is live, the rest is not)
 1. **Storm grid job** (`scripts/storm_grid.py`): one fixed grid for NW Indiana and SW Michigan (41.00-42.12 N,
    87.56-86.04 W, 0.02 degrees, 48 tiles of 10 x 10 cells), no customer locations. Every hour it keeps the last
    48 hours of MRMS radar rain (Pass 1 about 20 minutes after the hour, Pass 2 swapped in an hour later), and
@@ -66,8 +66,9 @@ This is not certified; it's a free, automatic daily record.
      13:38 UTC); MRMS Pass 1 about 15 minutes after the hour, Pass 2 about 57 minutes after.
    - Two hourly runs on today's data: 44 s, then under a second; 272 KB on a dry day; a region-wide 6 in. day is
      about 0.5 MB of snow tiles.
-   - The ready-to-merge job is on the branch **storm-grid-live** (from main: `.github/workflows/storm-grid.yml`,
-     `scripts/storm_grid.py`, the Timer's hourly :31 start). It writes the **storm-grid** branch.
+   - **Live since Oct. 19, 2026, 11:45 AM** (Scoop: "yes"): merged into main (db7b62c) from the branch
+     storm-grid-live (`.github/workflows/storm-grid.yml`, `scripts/storm_grid.py`, the Timer's hourly :31 start).
+     It writes the **storm-grid** branch; the first run (39287298622) made 48 radar hours and Oct. 17-19's snow days.
 2. **The sender's round 9** (site repo, `hardhat-sender/2026-10-19/` on the branch storm-records-page): storm
    records by email and a Storm records tab; radar rain at the job site in the Weather log, the rain-out
    guarantee (the station or radar, whichever shows more: radar only adds credits), the score, and same-day
@@ -75,6 +76,6 @@ This is not certified; it's a free, automatic daily record.
 3. **The Hard Hat pages** (site repo branch storm-records-page): a Storm records section with this Michigan City
    example, FAQ, plan table row, and the guarantee wording on the Hard Hat page, terms and pay page.
 
-To switch on, in order (each step with Scoop's OK): merge storm-grid-live into main (let it run a day so the
-radar and a snow day are there); paste round 9 into the sender (sha256 checks, Check setup, new web app
+To switch on, in order (each step with Scoop's OK): merge storm-grid-live into main (done Oct. 19); paste round 9
+into the sender (sha256 checks, Check setup, new web app
 version for the welcome email, Preview storm records); then publish the pages (check_site, credits).
