@@ -320,6 +320,13 @@ def deliver(subject, body_html, text, md, issue_ok=True):
 
 
 # ---------- state ----------
+def notice(msg):
+    """Also put the result on the run's page (a GitHub Actions note), so it shows without opening the log."""
+    print(msg)
+    if os.environ.get("GITHUB_ACTIONS"):
+        print("::notice title=First snow check::" + msg.replace("%", "%25").replace("\r", "").replace("\n", "%0A"))
+
+
 def season(now):
     y = now.year if now.month >= 7 else now.year - 1
     return f"{y}-{(y + 1) % 100:02d}"
@@ -351,7 +358,7 @@ def main():
     st = load_state()
     winter = season(now)
     if mode == "check" and st.get("season") == winter and st.get("notified"):
-        print(f"This winter's first-snow email already went out ({st['notified']}, {st.get('via', '?')}).")
+        notice(f"This winter's first-snow email already went out ({st['notified']}, {st.get('via', '?')}).")
         return 0
 
     towns = []
@@ -366,30 +373,35 @@ def main():
         st["failsInARow"] = int(st.get("failsInARow") or 0) + 1
         save_state(st)
         if st["failsInARow"] >= FAILS_BEFORE_ALARM:
-            print(f"The NWS hasn't answered {st['failsInARow']} runs in a row; failing on purpose so GitHub emails Scoop.")
+            notice(f"The NWS hasn't answered {st['failsInARow']} runs in a row; failing on purpose so GitHub emails Scoop.")
             return 1
-        print(f"The NWS didn't answer (run {st['failsInARow']} in a row); trying again at the next run.")
+        notice(f"The NWS didn't answer (run {st['failsInARow']} in a row); trying again at the next run.")
         return 0
     if mode == "check" and st.get("failsInARow"):
         st["failsInARow"] = 0
         save_state(st)
 
-    for t in towns:
-        print(f"{t['town']}: " + " | ".join(f"{p.get('name')}: {p.get('shortForecast')}" for p in t["periods"]))
+    seen = "\n".join(f"{t['town']}: " + " | ".join(f"{p.get('name')}: {p.get('shortForecast')}" for p in t["periods"])
+                     for t in towns)
     hits = [h for t in towns for h in wintry_periods(t)]
     alerts = [a for t in towns for a in winter_alerts(t)]
-    print(f"Checked {now:%b. %-d, %-I:%M %p %Z}: {len(hits)} snowy forecast period(s), {len(alerts)} winter alert(s).")
+    checked = (f"Checked {now:%b. %-d, %-I:%M %p %Z}: {len(hits)} snowy forecast period(s), "
+               f"{len(alerts)} winter alert(s)" + (f"; no answer for {3 - len(towns)} town(s)" if len(towns) < 3 else ""))
     if not hits and not alerts and mode != "test":
-        print("No snow in the forecast for La Porte County yet.")
+        notice(f"No snow in the forecast for La Porte County yet. {checked}.\n{seen}")
         return 0
 
     subject, body_html, text, md = compose(towns, hits, alerts, test=(mode == "test"))
     if mode == "preview":
-        print(f"\nWould email {OWNER}:\nSubject: {subject}\n\n{text}")
+        notice(f"{checked}. Would email {OWNER}:\nSubject: {subject}\n\n{text}")
         return 0
+    print(f"{checked}.\n{seen}")
     via = deliver(subject, body_html, text, md, issue_ok=(mode == "check"))
     if not via:
+        notice(f"Couldn't send \"{subject}\" by email or GitHub issue; failing so GitHub emails Scoop, and the next run "
+               "tries again." if mode == "check" else f"Couldn't send the test email \"{subject}\".")
         return 1
+    notice(f"Sent \"{subject}\" ({'email to ' + OWNER if via == 'email' else via}).")
     if mode == "check":
         first = by_period(hits)[0] if hits else None
         st.update({"season": winter, "notified": now.isoformat(timespec="minutes"), "via": via, "failsInARow": 0,
