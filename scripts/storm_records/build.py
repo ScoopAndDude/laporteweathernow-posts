@@ -298,6 +298,19 @@ def ptype(wx, temp, liquid):
     return ""
 
 
+def airport_rate(wx):
+    """Typical water-equivalent rate (in./hour) for the heaviest snow the airport reported that hour."""
+    codes = [c.strip() for c in (wx or "").split() if c.strip()]
+    best = 0.0
+    for c in codes:
+        bare = c.lstrip("+-")
+        if not (("SN" in bare or "PL" in bare or "SG" in bare) and bare not in ("BLSN", "DRSN")):
+            continue
+        rate = 0.04 if c.startswith("+") else (0.01 if c.startswith("-") else 0.02)
+        best = max(best, rate)
+    return best
+
+
 def nearest_station(lat, lon, need_precip=False):
     best = None
     for sid, s in CONF["stations"].items():
@@ -411,7 +424,10 @@ def storm_series(points, a, b, hours_ext):
                     continue  # this quarter-day is outside the storm window
                 snowy = [h for h in hrs if by_t[h]["type"] in ("snow", "snow?", "sleet")]
                 pool = snowy or [h for h in hrs if (by_t[h]["liquid"] or 0) > 0] or hrs
-                w = [max(by_t[h]["liquid"] or 0.0, 0.0) for h in pool]
+                # weight = the larger of radar water at the lot and a typical water rate for the snow the
+                # airport reports (light 0.01, moderate 0.02, heavy 0.04 in./hour), so an hour the radar
+                # undercounts (shallow snow clouds) still gets its share
+                w = [max(max(by_t[h]["liquid"] or 0.0, 0.0), airport_rate(by_t[h]["wx"])) for h in pool]
                 if sum(w) <= 0:
                     w = [1.0] * len(pool)
                 for h, wi in zip(pool, w):
