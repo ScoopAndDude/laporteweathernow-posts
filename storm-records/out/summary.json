@@ -1,5 +1,5 @@
 {
- "made": "2026-10-19T09:04-05:00",
+ "made": "2026-10-19T09:14-05:00",
  "storms": [
   {
    "id": "2025-11-09",
@@ -8,57 +8,110 @@
     {
      "lot": "mc-franklin",
      "label": "Franklin St lot, Michigan City",
-     "snow": 7.3,
-     "plow": "2025-11-10T03:00:00+00:00",
+     "snow": 6.2,
+     "plow": "2025-11-10T04:00:00+00:00",
      "ice": 0,
      "refreeze": "2025-11-11T00:00:00+00:00",
      "start": "2025-11-09T17:00:00+00:00",
      "end": "2025-11-10T09:00:00+00:00",
-     "radar_liquid": 1.02
+     "nearby": []
     },
     {
      "lot": "lp-lincolnway",
      "label": "Lincolnway lot, La Porte",
-     "snow": 12.0,
+     "snow": 10.6,
      "plow": "2025-11-10T02:00:00+00:00",
      "ice": 0,
-     "refreeze": "2025-11-09T20:00:00+00:00",
+     "refreeze": null,
      "start": "2025-11-09T17:00:00+00:00",
      "end": "2025-11-10T10:00:00+00:00",
-     "radar_liquid": 1.09
+     "nearby": [
+      {
+       "inches": 5.8,
+       "place": "1 WNW La Porte",
+       "miles": 0.4,
+       "what": "NWS storm report, Sun Nov 9, 11 PM",
+       "t": "2025-11-10T05:58:00+00:00"
+      },
+      {
+       "inches": 11.6,
+       "place": "La Porte 0.9 SSE",
+       "miles": 1.3,
+       "what": "CoCoRaHS, 24 hours to about 7 AM Mon Nov 10",
+       "t": "2025-11-10"
+      }
+     ]
     },
     {
      "lot": "westville",
      "label": "US 421 lot, Westville",
-     "snow": 8.2,
-     "plow": "2025-11-09T21:00:00+00:00",
+     "snow": 7.5,
+     "plow": "2025-11-10T01:00:00+00:00",
      "ice": 0,
      "refreeze": "2025-11-10T22:00:00+00:00",
      "start": "2025-11-09T15:00:00+00:00",
      "end": "2025-11-10T11:00:00+00:00",
-     "radar_liquid": 1.08
+     "nearby": [
+      {
+       "inches": 6.1,
+       "place": "Chesterton 3.9 ESE",
+       "miles": 5.1,
+       "what": "CoCoRaHS, 24 hours to about 7 AM Mon Nov 10",
+       "t": "2025-11-10"
+      },
+      {
+       "inches": 2.0,
+       "place": "Chesterton 3.9 ESE",
+       "miles": 5.1,
+       "what": "CoCoRaHS, 24 hours to about 7 AM Tue Nov 11",
+       "t": "2025-11-11"
+      }
+     ]
     },
     {
      "lot": "wanatah",
      "label": "US 30 lot, Wanatah",
-     "snow": 7.4,
+     "snow": 6.7,
      "plow": "2025-11-09T18:00:00+00:00",
      "ice": 0,
      "refreeze": "2025-11-10T22:00:00+00:00",
      "start": "2025-11-09T15:00:00+00:00",
      "end": "2025-11-10T11:00:00+00:00",
-     "radar_liquid": 0.92
+     "nearby": [
+      {
+       "inches": 9.0,
+       "place": "Wanatah 4.4 ESE",
+       "miles": 4.8,
+       "what": "CoCoRaHS, 24 hours to about 7 AM Mon Nov 10",
+       "t": "2025-11-10"
+      },
+      {
+       "inches": 0.5,
+       "place": "Wanatah 4.4 ESE",
+       "miles": 4.8,
+       "what": "CoCoRaHS, 24 hours to about 7 AM Tue Nov 11",
+       "t": "2025-11-11"
+      }
+     ]
     },
     {
      "lot": "rolling-prairie",
      "label": "Rolling Prairie lot",
-     "snow": 11.9,
+     "snow": 12.3,
      "plow": "2025-11-09T22:00:00+00:00",
      "ice": 0,
-     "refreeze": "2025-11-09T20:00:00+00:00",
+     "refreeze": null,
      "start": "2025-11-09T17:00:00+00:00",
      "end": "2025-11-10T10:00:00+00:00",
-     "radar_liquid": 1.06
+     "nearby": [
+      {
+       "inches": 13.0,
+       "place": "Hesston",
+       "miles": 5.5,
+       "what": "NWS storm report, Mon Nov 10, 7 AM",
+       "t": "2025-11-10T13:12:00+00:00"
+      }
+     ]
     }
    ]
   },
@@ -69,57 +122,103 @@
     {
      "lot": "mc-franklin",
      "label": "Franklin St lot, Michigan City",
-     "snow": 6.4,
+     "snow": 6.6,
      "plow": "2025-11-29T21:00:00+00:00",
      "ice": 0,
-     "refreeze": "2025-12-01T05:00:00+00:00",
+     "refreeze": "2025-11-30T20:00:00+00:00",
      "start": "2025-11-29T14:00:00+00:00",
      "end": "2025-11-30T18:00:00+00:00",
-     "radar_liquid": 0.89
+     "nearby": [
+      {
+       "inches": 5.0,
+       "place": "Trail Creek 3.0 SE",
+       "miles": 4.1,
+       "what": "CoCoRaHS, 24 hours to about 7 AM Sun Nov 30",
+       "t": "2025-11-30"
+      }
+     ]
     },
     {
      "lot": "lp-lincolnway",
      "label": "Lincolnway lot, La Porte",
-     "snow": 8.1,
+     "snow": 8.5,
      "plow": "2025-11-29T20:00:00+00:00",
      "ice": 0,
      "refreeze": "2025-12-01T01:00:00+00:00",
      "start": "2025-11-29T14:00:00+00:00",
      "end": "2025-11-30T18:00:00+00:00",
-     "radar_liquid": 0.89
+     "nearby": [
+      {
+       "inches": 7.3,
+       "place": "La Porte",
+       "miles": 0.1,
+       "what": "NWS storm report, Sat Nov 29, 7 PM",
+       "t": "2025-11-30T01:59:00+00:00"
+      },
+      {
+       "inches": 7.3,
+       "place": "La Porte",
+       "miles": 0.6,
+       "what": "NWS storm report, Sat Nov 29, 8 PM",
+       "t": "2025-11-30T02:40:00+00:00"
+      }
+     ]
     },
     {
      "lot": "westville",
      "label": "US 421 lot, Westville",
-     "snow": 7.2,
+     "snow": 7.4,
      "plow": "2025-11-29T20:00:00+00:00",
      "ice": 0,
-     "refreeze": "2025-11-30T09:00:00+00:00",
+     "refreeze": null,
      "start": "2025-11-29T14:00:00+00:00",
      "end": "2025-11-30T18:00:00+00:00",
-     "radar_liquid": 0.98
+     "nearby": [
+      {
+       "inches": 6.0,
+       "place": "Chesterton 3.9 ESE",
+       "miles": 5.1,
+       "what": "CoCoRaHS, 24 hours to about 7 AM Sun Nov 30",
+       "t": "2025-11-30"
+      },
+      {
+       "inches": 0.2,
+       "place": "Chesterton 3.9 ESE",
+       "miles": 5.1,
+       "what": "CoCoRaHS, 24 hours to about 7 AM Mon Dec 1",
+       "t": "2025-12-01"
+      }
+     ]
     },
     {
      "lot": "wanatah",
      "label": "US 30 lot, Wanatah",
-     "snow": 7.4,
+     "snow": 7.5,
      "plow": "2025-11-29T20:00:00+00:00",
      "ice": 0,
-     "refreeze": "2025-11-30T09:00:00+00:00",
+     "refreeze": null,
      "start": "2025-11-29T14:00:00+00:00",
-     "end": "2025-11-30T06:00:00+00:00",
-     "radar_liquid": 0.97
+     "end": "2025-11-30T18:00:00+00:00",
+     "nearby": []
     },
     {
      "lot": "rolling-prairie",
      "label": "Rolling Prairie lot",
-     "snow": 9.1,
+     "snow": 9.4,
      "plow": "2025-11-29T20:00:00+00:00",
      "ice": 0,
      "refreeze": "2025-12-01T01:00:00+00:00",
      "start": "2025-11-29T14:00:00+00:00",
      "end": "2025-11-30T18:00:00+00:00",
-     "radar_liquid": 0.91
+     "nearby": [
+      {
+       "inches": 6.0,
+       "place": "Rolling Prarie",
+       "miles": 0.3,
+       "what": "NWS storm report, Sat Nov 29, 9 PM",
+       "t": "2025-11-30T03:55:00+00:00"
+      }
+     ]
     }
    ]
   },
@@ -130,57 +229,102 @@
     {
      "lot": "mc-franklin",
      "label": "Franklin St lot, Michigan City",
-     "snow": 1.9,
-     "plow": null,
+     "snow": 2.2,
+     "plow": "2026-01-15T17:00:00+00:00",
      "ice": 0,
-     "refreeze": "2026-01-14T14:00:00+00:00",
+     "refreeze": null,
      "start": "2026-01-14T13:00:00+00:00",
      "end": "2026-01-15T18:00:00+00:00",
-     "radar_liquid": 0.11
+     "nearby": []
     },
     {
      "lot": "lp-lincolnway",
      "label": "Lincolnway lot, La Porte",
-     "snow": 3.5,
-     "plow": "2026-01-15T04:00:00+00:00",
+     "snow": 5.0,
+     "plow": "2026-01-14T23:00:00+00:00",
      "ice": 0,
-     "refreeze": "2026-01-14T15:00:00+00:00",
+     "refreeze": null,
      "start": "2026-01-14T13:00:00+00:00",
      "end": "2026-01-15T18:00:00+00:00",
-     "radar_liquid": 0.1
+     "nearby": [
+      {
+       "inches": 2.5,
+       "place": "La Porte 1.6 SW",
+       "miles": 1.5,
+       "what": "CoCoRaHS, 24 hours to about 7 AM Thu Jan 15",
+       "t": "2026-01-15"
+      },
+      {
+       "inches": 0.7,
+       "place": "La Porte 1.6 SW",
+       "miles": 1.5,
+       "what": "CoCoRaHS, 24 hours to about 7 AM Fri Jan 16",
+       "t": "2026-01-16"
+      }
+     ]
     },
     {
      "lot": "westville",
      "label": "US 421 lot, Westville",
-     "snow": 2.7,
+     "snow": 2.2,
      "plow": "2026-01-15T01:00:00+00:00",
      "ice": 0,
-     "refreeze": "2026-01-14T15:00:00+00:00",
+     "refreeze": null,
      "start": "2026-01-14T14:00:00+00:00",
-     "end": "2026-01-15T16:00:00+00:00",
-     "radar_liquid": 0.15
+     "end": "2026-01-15T01:00:00+00:00",
+     "nearby": [
+      {
+       "inches": 2.0,
+       "place": "Chesterton 3.9 ESE",
+       "miles": 5.1,
+       "what": "CoCoRaHS, 24 hours to about 7 AM Thu Jan 15",
+       "t": "2026-01-15"
+      },
+      {
+       "inches": 0.0001,
+       "place": "Chesterton 3.9 ESE",
+       "miles": 5.1,
+       "what": "CoCoRaHS, 24 hours to about 7 AM Fri Jan 16",
+       "t": "2026-01-16"
+      }
+     ]
     },
     {
      "lot": "wanatah",
      "label": "US 30 lot, Wanatah",
-     "snow": 3.2,
-     "plow": "2026-01-14T23:00:00+00:00",
+     "snow": 2.6,
+     "plow": "2026-01-15T00:00:00+00:00",
      "ice": 0,
-     "refreeze": "2026-01-14T15:00:00+00:00",
+     "refreeze": null,
      "start": "2026-01-14T14:00:00+00:00",
-     "end": "2026-01-15T16:00:00+00:00",
-     "radar_liquid": 0.19
+     "end": "2026-01-15T01:00:00+00:00",
+     "nearby": [
+      {
+       "inches": 2.0,
+       "place": "Wanatah 4.4 ESE",
+       "miles": 4.8,
+       "what": "CoCoRaHS, 24 hours to about 7 AM Thu Jan 15",
+       "t": "2026-01-15"
+      },
+      {
+       "inches": 0.2,
+       "place": "Wanatah 4.4 ESE",
+       "miles": 4.8,
+       "what": "CoCoRaHS, 24 hours to about 7 AM Fri Jan 16",
+       "t": "2026-01-16"
+      }
+     ]
     },
     {
      "lot": "rolling-prairie",
      "label": "Rolling Prairie lot",
-     "snow": 7.2,
+     "snow": 9.9,
      "plow": "2026-01-15T01:00:00+00:00",
      "ice": 0,
-     "refreeze": "2026-01-14T15:00:00+00:00",
+     "refreeze": null,
      "start": "2026-01-14T14:00:00+00:00",
      "end": "2026-01-15T18:00:00+00:00",
-     "radar_liquid": 0.2
+     "nearby": []
     }
    ]
   },
@@ -191,57 +335,102 @@
     {
      "lot": "mc-franklin",
      "label": "Franklin St lot, Michigan City",
-     "snow": 6.2,
+     "snow": 5.7,
      "plow": "2026-01-25T14:00:00+00:00",
      "ice": 0,
      "refreeze": null,
      "start": "2026-01-25T06:00:00+00:00",
      "end": "2026-01-26T04:00:00+00:00",
-     "radar_liquid": 0.14
+     "nearby": []
     },
     {
      "lot": "lp-lincolnway",
      "label": "Lincolnway lot, La Porte",
-     "snow": 7.5,
+     "snow": 7.9,
      "plow": "2026-01-25T13:00:00+00:00",
      "ice": 0,
      "refreeze": null,
      "start": "2026-01-25T06:00:00+00:00",
      "end": "2026-01-26T12:00:00+00:00",
-     "radar_liquid": 0.11
+     "nearby": [
+      {
+       "inches": 9.2,
+       "place": "1 WNW La Porte",
+       "miles": 0.4,
+       "what": "NWS storm report, Sun Jan 25, 11 PM",
+       "t": "2026-01-26T05:58:00+00:00"
+      },
+      {
+       "inches": 6.5,
+       "place": "2 SW La Porte",
+       "miles": 1.5,
+       "what": "NWS storm report, Mon Jan 26, 7 AM",
+       "t": "2026-01-26T13:00:00+00:00"
+      }
+     ]
     },
     {
      "lot": "westville",
      "label": "US 421 lot, Westville",
-     "snow": 7.2,
+     "snow": 6.6,
      "plow": "2026-01-25T13:00:00+00:00",
      "ice": 0,
      "refreeze": null,
      "start": "2026-01-25T06:00:00+00:00",
      "end": "2026-01-26T04:00:00+00:00",
-     "radar_liquid": 0.2
+     "nearby": [
+      {
+       "inches": 6.0,
+       "place": "Chesterton 3.9 ESE",
+       "miles": 5.1,
+       "what": "CoCoRaHS, 24 hours to about 7 AM Mon Jan 26",
+       "t": "2026-01-26"
+      },
+      {
+       "inches": 7.0,
+       "place": "3 ENE Valparaiso",
+       "miles": 5.8,
+       "what": "NWS storm report, Mon Jan 26, 8 AM",
+       "t": "2026-01-26T14:15:00+00:00"
+      }
+     ]
     },
     {
      "lot": "wanatah",
      "label": "US 30 lot, Wanatah",
-     "snow": 5.7,
+     "snow": 5.8,
      "plow": "2026-01-25T13:00:00+00:00",
      "ice": 0,
      "refreeze": null,
      "start": "2026-01-25T06:00:00+00:00",
      "end": "2026-01-26T05:00:00+00:00",
-     "radar_liquid": 0.27
+     "nearby": []
     },
     {
      "lot": "rolling-prairie",
      "label": "Rolling Prairie lot",
-     "snow": 12.1,
+     "snow": 10.6,
      "plow": "2026-01-25T13:00:00+00:00",
      "ice": 0,
      "refreeze": null,
      "start": "2026-01-25T06:00:00+00:00",
      "end": "2026-01-26T18:00:00+00:00",
-     "radar_liquid": 0.17
+     "nearby": [
+      {
+       "inches": 8.0,
+       "place": "Rolling Prarie",
+       "miles": 0.3,
+       "what": "NWS storm report, Mon Jan 26, 5 AM",
+       "t": "2026-01-26T11:20:00+00:00"
+      },
+      {
+       "inches": 13.5,
+       "place": "New Carlisle",
+       "miles": 5.8,
+       "what": "NWS storm report, Mon Jan 26, 9 AM",
+       "t": "2026-01-26T15:44:00+00:00"
+      }
+     ]
     }
    ]
   },
@@ -252,57 +441,110 @@
     {
      "lot": "mc-franklin",
      "label": "Franklin St lot, Michigan City",
-     "snow": 5.8,
+     "snow": 6.2,
      "plow": "2026-01-31T06:00:00+00:00",
      "ice": 0,
      "refreeze": null,
      "start": "2026-01-31T02:00:00+00:00",
      "end": "2026-01-31T10:00:00+00:00",
-     "radar_liquid": 0.1
+     "nearby": [
+      {
+       "inches": 6.0,
+       "place": "1 WSW Michigan City",
+       "miles": 2.5,
+       "what": "NWS storm report, Sat Jan 31, 7 AM",
+       "t": "2026-01-31T13:50:00+00:00"
+      },
+      {
+       "inches": 6.0,
+       "place": "Michigan City",
+       "miles": 2.5,
+       "what": "NWS storm report, Sat Jan 31, 4 AM",
+       "t": "2026-01-31T10:15:00+00:00"
+      }
+     ]
     },
     {
      "lot": "lp-lincolnway",
      "label": "Lincolnway lot, La Porte",
-     "snow": 4.5,
+     "snow": 5.0,
      "plow": "2026-01-31T09:00:00+00:00",
      "ice": 0,
      "refreeze": null,
      "start": "2026-01-31T03:00:00+00:00",
      "end": "2026-01-31T10:00:00+00:00",
-     "radar_liquid": 0.04
+     "nearby": [
+      {
+       "inches": 3.2,
+       "place": "La Porte 1.6 SW",
+       "miles": 1.5,
+       "what": "CoCoRaHS, 24 hours to about 7 AM Sat Jan 31",
+       "t": "2026-01-31"
+      }
+     ]
     },
     {
      "lot": "westville",
      "label": "US 421 lot, Westville",
-     "snow": 6.3,
+     "snow": 6.2,
      "plow": "2026-01-31T06:00:00+00:00",
      "ice": 0,
      "refreeze": null,
      "start": "2026-01-31T03:00:00+00:00",
      "end": "2026-01-31T11:00:00+00:00",
-     "radar_liquid": 0.13
+     "nearby": [
+      {
+       "inches": 6.0,
+       "place": "Westville",
+       "miles": 0.2,
+       "what": "NWS storm report, Sat Jan 31, 8 AM",
+       "t": "2026-01-31T14:00:00+00:00"
+      },
+      {
+       "inches": 7.0,
+       "place": "1 NE Westville",
+       "miles": 1.0,
+       "what": "NWS storm report, Sat Jan 31, 6 AM",
+       "t": "2026-01-31T12:30:00+00:00"
+      }
+     ]
     },
     {
      "lot": "wanatah",
      "label": "US 30 lot, Wanatah",
-     "snow": 4.6,
-     "plow": "2026-01-31T07:00:00+00:00",
+     "snow": 3.8,
+     "plow": "2026-01-31T08:00:00+00:00",
      "ice": 0,
      "refreeze": null,
      "start": "2026-01-31T04:00:00+00:00",
      "end": "2026-01-31T11:00:00+00:00",
-     "radar_liquid": 0.07
+     "nearby": [
+      {
+       "inches": 7.0,
+       "place": "South Wanatah",
+       "miles": 1.4,
+       "what": "NWS storm report, Sat Jan 31, 9 AM",
+       "t": "2026-01-31T15:00:00+00:00"
+      },
+      {
+       "inches": 0.0001,
+       "place": "Wanatah 4.4 ESE",
+       "miles": 4.8,
+       "what": "CoCoRaHS, 24 hours to about 7 AM Sun Feb 1",
+       "t": "2026-02-01"
+      }
+     ]
     },
     {
      "lot": "rolling-prairie",
      "label": "Rolling Prairie lot",
-     "snow": 3.4,
+     "snow": 3.3,
      "plow": "2026-01-31T09:00:00+00:00",
      "ice": 0,
      "refreeze": null,
      "start": "2026-01-31T03:00:00+00:00",
      "end": "2026-01-31T10:00:00+00:00",
-     "radar_liquid": 0.04
+     "nearby": []
     }
    ]
   }
@@ -310,1302 +552,988 @@
  "checks": {
   "snow_vs_storm_reports": {
    "n": 160,
-   "mean_diff": -1.23,
-   "mean_abs_diff": 1.87,
+   "mean_diff": -0.97,
+   "mean_abs_diff": 1.77,
    "median_abs_diff": 1.5,
-   "within_1": 0.39,
-   "within_2": 0.61,
-   "median_rel_err_ge1": 0.21
+   "within_1": 0.41,
+   "within_2": 0.66
   },
-  "snow_vs_cocorahs": {
+  "snow_vs_cocorahs_24h": {
    "n": 262,
    "mean_diff": -0.03,
    "mean_abs_diff": 0.92,
    "median_abs_diff": 0.5,
    "within_1": 0.75,
-   "within_2": 0.91,
-   "median_rel_err_ge1": 0.15
+   "within_2": 0.91
+  },
+  "snow_vs_cocorahs_6h_sums": {
+   "n": 262,
+   "mean_diff": 0.06,
+   "mean_abs_diff": 0.93,
+   "median_abs_diff": 0.5,
+   "within_1": 0.74,
+   "within_2": 0.9
   },
   "pairs_storm_reports": [
    {
     "storm": "2025-11-09",
     "place": "2 S New Buffalo",
     "reported": 4.0,
-    "analysis": 6.2,
-    "lat": 41.77,
-    "lon": -86.74
+    "analysis": 7.3
    },
    {
     "storm": "2025-11-09",
     "place": "Michiana",
     "reported": 4.0,
-    "analysis": 5.5,
-    "lat": 41.77,
-    "lon": -86.8
+    "analysis": 6.0
    },
    {
     "storm": "2025-11-09",
     "place": "1 S Springville",
     "reported": 4.5,
-    "analysis": 1.8,
-    "lat": 41.67,
-    "lon": -86.74
+    "analysis": 4.5
    },
    {
     "storm": "2025-11-09",
     "place": "1 WNW La Porte",
     "reported": 5.8,
-    "analysis": 9.9,
-    "lat": 41.61,
-    "lon": -86.73
+    "analysis": 8.7
    },
    {
     "storm": "2025-11-09",
     "place": "2 W Roseland",
     "reported": 6.0,
-    "analysis": 7.6,
-    "lat": 41.72,
-    "lon": -86.29
+    "analysis": 7.7
    },
    {
     "storm": "2025-11-09",
     "place": "South Bend",
     "reported": 6.0,
-    "analysis": 4.9,
-    "lat": 41.68,
-    "lon": -86.27
+    "analysis": 6.4
    },
    {
     "storm": "2025-11-09",
     "place": "2 W Roseland",
     "reported": 6.1,
-    "analysis": 8.0,
-    "lat": 41.72,
-    "lon": -86.29
+    "analysis": 8.5
    },
    {
     "storm": "2025-11-09",
     "place": "1 S Springville",
     "reported": 7.0,
-    "analysis": 9.3,
-    "lat": 41.67,
-    "lon": -86.74
+    "analysis": 8.9
    },
    {
     "storm": "2025-11-09",
     "place": "1 ENE Gulivoire Park",
     "reported": 7.0,
-    "analysis": 4.7,
-    "lat": 41.62,
-    "lon": -86.23
+    "analysis": 5.9
    },
    {
     "storm": "2025-11-09",
     "place": "2 SSE Stevensville",
     "reported": 7.7,
-    "analysis": 7.1,
-    "lat": 41.99,
-    "lon": -86.51
+    "analysis": 7.2
    },
    {
     "storm": "2025-11-09",
     "place": "2 NW South Bend",
     "reported": 8.0,
-    "analysis": 8.0,
-    "lat": 41.7,
-    "lon": -86.3
+    "analysis": 8.5
    },
    {
     "storm": "2025-11-09",
     "place": "Georgetown",
     "reported": 8.1,
-    "analysis": 8.5,
-    "lat": 41.73,
-    "lon": -86.23
+    "analysis": 8.4
    },
    {
     "storm": "2025-11-09",
     "place": "1 S Roseland",
     "reported": 8.2,
-    "analysis": 8.0,
-    "lat": 41.7,
-    "lon": -86.25
+    "analysis": 8.2
    },
    {
     "storm": "2025-11-09",
     "place": "3 NNW La Porte",
     "reported": 8.5,
-    "analysis": 12.0,
-    "lat": 41.64,
-    "lon": -86.75
+    "analysis": 10.6
    },
    {
     "storm": "2025-11-09",
     "place": "1 S Springville",
     "reported": 8.5,
-    "analysis": 11.2,
-    "lat": 41.67,
-    "lon": -86.74
+    "analysis": 10.7
    },
    {
     "storm": "2025-11-09",
     "place": "2 ENE Chain-O-Lakes",
     "reported": 8.5,
-    "analysis": 7.6,
-    "lat": 41.72,
-    "lon": -86.35
+    "analysis": 8.8
    },
    {
     "storm": "2025-11-09",
     "place": "2 ESE South Bend",
     "reported": 8.6,
-    "analysis": 9.2,
-    "lat": 41.66,
-    "lon": -86.23
+    "analysis": 9.4
    },
    {
     "storm": "2025-11-09",
     "place": "North Liberty",
     "reported": 8.9,
-    "analysis": 11.2,
-    "lat": 41.53,
-    "lon": -86.43
+    "analysis": 10.8
    },
    {
     "storm": "2025-11-09",
     "place": "Bertrand",
     "reported": 9.0,
-    "analysis": 8.2,
-    "lat": 41.77,
-    "lon": -86.26
+    "analysis": 8.2
    },
    {
     "storm": "2025-11-09",
     "place": "3 NW Roseland",
     "reported": 9.3,
-    "analysis": 7.7,
-    "lat": 41.75,
-    "lon": -86.29
+    "analysis": 8.2
    },
    {
     "storm": "2025-11-09",
     "place": "2 SSW Sumnerville",
     "reported": 10.0,
-    "analysis": 8.4,
-    "lat": 41.88,
-    "lon": -86.22
+    "analysis": 8.1
    },
    {
     "storm": "2025-11-09",
     "place": "New Carlisle",
     "reported": 10.0,
-    "analysis": 10.4,
-    "lat": 41.71,
-    "lon": -86.51
+    "analysis": 10.9
    },
    {
     "storm": "2025-11-09",
     "place": "Union Mills",
     "reported": 11.0,
-    "analysis": 9.0,
-    "lat": 41.5,
-    "lon": -86.78
+    "analysis": 8.5
    },
    {
     "storm": "2025-11-09",
     "place": "1 N Lakeville",
     "reported": 11.5,
-    "analysis": 7.4,
-    "lat": 41.54,
-    "lon": -86.27
+    "analysis": 7.5
    },
    {
     "storm": "2025-11-09",
     "place": "La Paz",
     "reported": 12.0,
-    "analysis": 7.4,
-    "lat": 41.46,
-    "lon": -86.31
+    "analysis": 7.4
    },
    {
     "storm": "2025-11-09",
     "place": "Hesston",
     "reported": 13.0,
-    "analysis": 10.1,
-    "lat": 41.75,
-    "lon": -86.65
+    "analysis": 11.0
    },
    {
     "storm": "2025-11-09",
     "place": "1 NE Walkerton",
     "reported": 14.0,
-    "analysis": 11.0,
-    "lat": 41.48,
-    "lon": -86.47
+    "analysis": 9.7
    },
    {
     "storm": "2025-11-09",
     "place": "4 NNE Boone Grove",
     "reported": 4.0,
-    "analysis": 6.5,
-    "lat": 41.41,
-    "lon": -87.1
+    "analysis": 5.9
    },
    {
     "storm": "2025-11-09",
     "place": "Ogden Dunes",
     "reported": 5.5,
-    "analysis": 5.1,
-    "lat": 41.62,
-    "lon": -87.2
+    "analysis": 5.1
    },
    {
     "storm": "2025-11-09",
     "place": "Porter",
     "reported": 5.5,
-    "analysis": 6.9,
-    "lat": 41.62,
-    "lon": -87.08
+    "analysis": 7.1
    },
    {
     "storm": "2025-11-09",
     "place": "1 NNW DeMotte",
     "reported": 6.5,
-    "analysis": 4.1,
-    "lat": 41.21,
-    "lon": -87.21
+    "analysis": 4.0
    },
    {
     "storm": "2025-11-09",
     "place": "Hobart",
     "reported": 6.5,
-    "analysis": 6.4,
-    "lat": 41.53,
-    "lon": -87.25
+    "analysis": 6.2
    },
    {
     "storm": "2025-11-09",
     "place": "3 NNW Lake Station",
     "reported": 7.6,
-    "analysis": 7.5,
-    "lat": 41.62,
-    "lon": -87.25
+    "analysis": 7.5
    },
    {
     "storm": "2025-11-09",
     "place": "1 WSW Valparaiso",
     "reported": 8.0,
-    "analysis": 7.1,
-    "lat": 41.47,
-    "lon": -87.09
+    "analysis": 6.5
    },
    {
     "storm": "2025-11-09",
     "place": "Porter",
     "reported": 8.3,
-    "analysis": 7.4,
-    "lat": 41.62,
-    "lon": -87.08
+    "analysis": 7.6
    },
    {
     "storm": "2025-11-09",
     "place": "4 NNE Boone Grove",
     "reported": 9.0,
-    "analysis": 7.8,
-    "lat": 41.41,
-    "lon": -87.1
+    "analysis": 7.0
    },
    {
     "storm": "2025-11-09",
     "place": "1 N Valparaiso",
     "reported": 9.5,
-    "analysis": 7.9,
-    "lat": 41.49,
-    "lon": -87.06
+    "analysis": 7.2
    },
    {
     "storm": "2025-11-09",
     "place": "3 N Valparaiso",
     "reported": 9.5,
-    "analysis": 6.9,
-    "lat": 41.52,
-    "lon": -87.06
+    "analysis": 7.2
    },
    {
     "storm": "2025-11-09",
     "place": "1 WSW Valparaiso",
     "reported": 11.0,
-    "analysis": 8.3,
-    "lat": 41.47,
-    "lon": -87.09
+    "analysis": 7.6
    },
    {
     "storm": "2025-11-09",
     "place": "2 WNW Boone Grove",
     "reported": 11.5,
-    "analysis": 8.0,
-    "lat": 41.37,
-    "lon": -87.16
+    "analysis": 7.5
    },
    {
     "storm": "2025-11-09",
     "place": "1 N Valparaiso",
     "reported": 12.0,
-    "analysis": 8.3,
-    "lat": 41.49,
-    "lon": -87.06
+    "analysis": 7.6
    },
    {
     "storm": "2025-11-29",
     "place": "Rolling Prarie",
     "reported": 6.0,
-    "analysis": 7.3,
-    "lat": 41.67,
-    "lon": -86.62
+    "analysis": 6.8
    },
    {
     "storm": "2025-11-29",
     "place": "Culver",
     "reported": 6.0,
-    "analysis": 4.2,
-    "lat": 41.22,
-    "lon": -86.42
+    "analysis": 5.8
    },
    {
     "storm": "2025-11-29",
     "place": "La Paz",
     "reported": 6.0,
-    "analysis": 7.9,
-    "lat": 41.46,
-    "lon": -86.31
+    "analysis": 7.3
    },
    {
     "storm": "2025-11-29",
     "place": "2 SW La Porte",
     "reported": 6.5,
-    "analysis": 5.0,
-    "lat": 41.59,
-    "lon": -86.73
+    "analysis": 5.9
    },
    {
     "storm": "2025-11-29",
     "place": "2 S Roseland",
     "reported": 6.8,
-    "analysis": 4.6,
-    "lat": 41.69,
-    "lon": -86.25
+    "analysis": 5.2
    },
    {
     "storm": "2025-11-29",
     "place": "Niles",
     "reported": 7.0,
-    "analysis": 3.9,
-    "lat": 41.83,
-    "lon": -86.25
+    "analysis": 5.0
    },
    {
     "storm": "2025-11-29",
     "place": "2 N Gulivoire Park",
     "reported": 7.0,
-    "analysis": 4.8,
-    "lat": 41.64,
-    "lon": -86.24
+    "analysis": 5.6
    },
    {
     "storm": "2025-11-29",
     "place": "La Porte",
     "reported": 7.3,
-    "analysis": 4.8,
-    "lat": 41.61,
-    "lon": -86.71
+    "analysis": 6.3
    },
    {
     "storm": "2025-11-29",
     "place": "La Porte",
     "reported": 7.3,
-    "analysis": 4.8,
-    "lat": 41.61,
-    "lon": -86.72
+    "analysis": 5.8
    },
    {
     "storm": "2025-11-29",
     "place": "1 S North Judson",
     "reported": 7.5,
-    "analysis": 6.5,
-    "lat": 41.2,
-    "lon": -86.78
+    "analysis": 5.4
    },
    {
     "storm": "2025-11-29",
     "place": "Walkerton",
     "reported": 7.5,
-    "analysis": 5.8,
-    "lat": 41.46,
-    "lon": -86.48
+    "analysis": 5.1
    },
    {
     "storm": "2025-11-29",
     "place": "4 W Lakeville",
     "reported": 7.7,
-    "analysis": 7.9,
-    "lat": 41.53,
-    "lon": -86.35
+    "analysis": 7.4
    },
    {
     "storm": "2025-11-29",
     "place": "1 NE Georgetown",
     "reported": 7.7,
-    "analysis": 4.1,
-    "lat": 41.75,
-    "lon": -86.22
+    "analysis": 3.9
    },
    {
     "storm": "2025-11-29",
     "place": "2 NE Georgetown",
     "reported": 7.7,
-    "analysis": 4.1,
-    "lat": 41.75,
-    "lon": -86.2
+    "analysis": 3.4
    },
    {
     "storm": "2025-11-29",
     "place": "Koontz Lake",
     "reported": 7.8,
-    "analysis": 5.9,
-    "lat": 41.42,
-    "lon": -86.48
+    "analysis": 6.2
    },
    {
     "storm": "2025-11-29",
     "place": "Buchanan",
     "reported": 8.0,
-    "analysis": 7.1,
-    "lat": 41.83,
-    "lon": -86.37
+    "analysis": 6.5
    },
    {
     "storm": "2025-11-29",
     "place": "Plymouth",
     "reported": 8.0,
-    "analysis": 5.3,
-    "lat": 41.35,
-    "lon": -86.31
+    "analysis": 6.8
    },
    {
     "storm": "2025-11-29",
     "place": "Argos",
     "reported": 8.0,
-    "analysis": 7.0,
-    "lat": 41.23,
-    "lon": -86.25
+    "analysis": 6.1
    },
    {
     "storm": "2025-11-29",
     "place": "2 NE Winona",
     "reported": 8.0,
-    "analysis": 7.1,
-    "lat": 41.26,
-    "lon": -86.56
+    "analysis": 6.3
    },
    {
     "storm": "2025-11-29",
     "place": "3 NE Knox",
     "reported": 8.5,
-    "analysis": 6.7,
-    "lat": 41.32,
-    "lon": -86.58
+    "analysis": 6.3
    },
    {
     "storm": "2025-11-29",
     "place": "Koontz Lake",
     "reported": 8.9,
-    "analysis": 8.6,
-    "lat": 41.42,
-    "lon": -86.48
+    "analysis": 7.4
    },
    {
     "storm": "2025-11-29",
     "place": "Berrien Springs",
     "reported": 9.0,
-    "analysis": 7.1,
-    "lat": 41.95,
-    "lon": -86.34
+    "analysis": 6.6
    },
    {
     "storm": "2025-11-29",
     "place": "Plymouth",
     "reported": 9.0,
-    "analysis": 5.3,
-    "lat": 41.35,
-    "lon": -86.31
+    "analysis": 6.8
    },
    {
     "storm": "2025-11-29",
     "place": "1 NNE South Bend",
     "reported": 9.0,
-    "analysis": 7.8,
-    "lat": 41.69,
-    "lon": -86.26
+    "analysis": 6.6
    },
    {
     "storm": "2025-11-29",
     "place": "3 W Niles",
     "reported": 9.5,
-    "analysis": 6.7,
-    "lat": 41.83,
-    "lon": -86.31
+    "analysis": 6.3
    },
    {
     "storm": "2025-11-29",
     "place": "4 NW Roseland",
     "reported": 9.8,
-    "analysis": 7.6,
-    "lat": 41.75,
-    "lon": -86.3
+    "analysis": 6.3
    },
    {
     "storm": "2025-11-29",
     "place": "1 NE Bertrand",
     "reported": 10.0,
-    "analysis": 6.8,
-    "lat": 41.78,
-    "lon": -86.25
+    "analysis": 6.5
    },
    {
     "storm": "2025-11-29",
     "place": "3 SE Plymouth",
     "reported": 10.0,
-    "analysis": 5.8,
-    "lat": 41.31,
-    "lon": -86.29
+    "analysis": 6.1
    },
    {
     "storm": "2025-11-29",
     "place": "3 NE Chain-O-Lakes",
     "reported": 10.0,
-    "analysis": 4.8,
-    "lat": 41.74,
-    "lon": -86.34
+    "analysis": 5.9
    },
    {
     "storm": "2025-11-29",
     "place": "2 SW La Porte",
     "reported": 10.3,
-    "analysis": 7.7,
-    "lat": 41.59,
-    "lon": -86.73
+    "analysis": 7.6
    },
    {
     "storm": "2025-11-29",
     "place": "Bertrand",
     "reported": 11.0,
-    "analysis": 6.8,
-    "lat": 41.77,
-    "lon": -86.26
+    "analysis": 6.5
    },
    {
     "storm": "2025-11-29",
     "place": "Valparaiso",
     "reported": 1.0,
-    "analysis": 1.2,
-    "lat": 41.47,
-    "lon": -87.06
+    "analysis": 1.2
    },
    {
     "storm": "2025-11-29",
     "place": "Valparaiso",
     "reported": 4.5,
-    "analysis": 1.2,
-    "lat": 41.47,
-    "lon": -87.06
+    "analysis": 3.5
    },
    {
     "storm": "2025-11-29",
     "place": "1 S Hobart",
     "reported": 5.0,
-    "analysis": 4.2,
-    "lat": 41.52,
-    "lon": -87.25
+    "analysis": 3.7
    },
    {
     "storm": "2025-11-29",
     "place": "Valparaiso",
     "reported": 5.0,
-    "analysis": 4.8,
-    "lat": 41.47,
-    "lon": -87.06
+    "analysis": 4.9
    },
    {
     "storm": "2025-11-29",
     "place": "3 NNW Lake Station",
     "reported": 5.7,
-    "analysis": 5.1,
-    "lat": 41.62,
-    "lon": -87.25
+    "analysis": 5.1
    },
    {
     "storm": "2025-11-29",
     "place": "Portage",
     "reported": 5.8,
-    "analysis": 5.9,
-    "lat": 41.58,
-    "lon": -87.18
+    "analysis": 5.6
    },
    {
     "storm": "2025-11-29",
     "place": "Winfield",
     "reported": 6.0,
-    "analysis": 4.9,
-    "lat": 41.42,
-    "lon": -87.25
+    "analysis": 4.3
    },
    {
     "storm": "2025-11-29",
     "place": "1 N Valparaiso",
     "reported": 6.0,
-    "analysis": 6.7,
-    "lat": 41.49,
-    "lon": -87.06
+    "analysis": 6.9
    },
    {
     "storm": "2025-11-29",
     "place": "Porter",
     "reported": 6.2,
-    "analysis": 5.8,
-    "lat": 41.62,
-    "lon": -87.08
+    "analysis": 5.7
    },
    {
     "storm": "2025-11-29",
     "place": "1 S Merrillville",
     "reported": 6.6,
-    "analysis": 6.5,
-    "lat": 41.45,
-    "lon": -87.33
+    "analysis": 6.3
    },
    {
     "storm": "2025-11-29",
     "place": "2 SE Hobart",
     "reported": 7.0,
-    "analysis": 6.3,
-    "lat": 41.51,
-    "lon": -87.23
+    "analysis": 6.2
    },
    {
     "storm": "2025-11-29",
     "place": "1 NNW DeMotte",
     "reported": 7.5,
-    "analysis": 7.1,
-    "lat": 41.21,
-    "lon": -87.21
+    "analysis": 7.6
    },
    {
     "storm": "2025-11-29",
     "place": "2 W Valparaiso",
     "reported": 7.5,
-    "analysis": 7.0,
-    "lat": 41.47,
-    "lon": -87.1
+    "analysis": 7.1
    },
    {
     "storm": "2025-11-29",
     "place": "2 NNW Valparaiso",
     "reported": 7.6,
-    "analysis": 6.8,
-    "lat": 41.5,
-    "lon": -87.07
+    "analysis": 6.9
    },
    {
     "storm": "2025-11-29",
     "place": "3 N Valparaiso",
     "reported": 8.0,
-    "analysis": 6.4,
-    "lat": 41.52,
-    "lon": -87.06
+    "analysis": 6.7
    },
    {
     "storm": "2025-11-29",
     "place": "DeMotte",
     "reported": 9.2,
-    "analysis": 5.3,
-    "lat": 41.2,
-    "lon": -87.2
+    "analysis": 7.2
    },
    {
     "storm": "2025-11-29",
     "place": "3 N Valparaiso",
     "reported": 10.0,
-    "analysis": 4.3,
-    "lat": 41.52,
-    "lon": -87.06
+    "analysis": 5.8
    },
    {
     "storm": "2026-01-12",
     "place": "2 SSE Stevensville",
     "reported": 4.0,
-    "analysis": 4.3,
-    "lat": 41.99,
-    "lon": -86.51
+    "analysis": 4.9
    },
    {
     "storm": "2026-01-12",
     "place": "1 SSE Roseland",
     "reported": 6.0,
-    "analysis": 5.5,
-    "lat": 41.71,
-    "lon": -86.25
+    "analysis": 9.4
    },
    {
     "storm": "2026-01-12",
     "place": "1 NE Georgetown",
     "reported": 6.5,
-    "analysis": 5.7,
-    "lat": 41.75,
-    "lon": -86.22
+    "analysis": 9.0
    },
    {
     "storm": "2026-01-12",
     "place": "4 S Buchanan",
     "reported": 7.0,
-    "analysis": 11.2,
-    "lat": 41.76,
-    "lon": -86.36
+    "analysis": 11.8
    },
    {
     "storm": "2026-01-12",
     "place": "2 ESE La Paz",
     "reported": 7.5,
-    "analysis": 9.8,
-    "lat": 41.45,
-    "lon": -86.28
+    "analysis": 10.2
    },
    {
     "storm": "2026-01-12",
     "place": "2 N Twin Lakes",
     "reported": 8.0,
-    "analysis": 6.3,
-    "lat": 41.33,
-    "lon": -86.36
+    "analysis": 6.7
    },
    {
     "storm": "2026-01-12",
     "place": "2 SE Indian Village",
     "reported": 8.5,
-    "analysis": 6.0,
-    "lat": 41.7,
-    "lon": -86.21
+    "analysis": 9.2
    },
    {
     "storm": "2026-01-12",
     "place": "3 N Teegarden",
     "reported": 9.0,
-    "analysis": 8.8,
-    "lat": 41.5,
-    "lon": -86.39
+    "analysis": 8.6
    },
    {
     "storm": "2026-01-12",
     "place": "1 ESE Buchanan",
     "reported": 9.5,
-    "analysis": 10.8,
-    "lat": 41.82,
-    "lon": -86.34
+    "analysis": 11.4
    },
    {
     "storm": "2026-01-12",
     "place": "1 S Gulivoire Park",
     "reported": 9.5,
-    "analysis": 5.4,
-    "lat": 41.6,
-    "lon": -86.24
+    "analysis": 10.8
    },
    {
     "storm": "2026-01-12",
     "place": "1 ENE Bertrand",
     "reported": 10.0,
-    "analysis": 5.3,
-    "lat": 41.78,
-    "lon": -86.24
+    "analysis": 9.7
    },
    {
     "storm": "2026-01-12",
     "place": "1 NE Georgetown",
     "reported": 12.1,
-    "analysis": 12.0,
-    "lat": 41.75,
-    "lon": -86.22
+    "analysis": 12.1
    },
    {
     "storm": "2026-01-12",
     "place": "1 SSE Roseland",
     "reported": 12.6,
-    "analysis": 12.4,
-    "lat": 41.71,
-    "lon": -86.25
+    "analysis": 11.6
    },
    {
     "storm": "2026-01-12",
     "place": "3 W Niles",
     "reported": 12.9,
-    "analysis": 11.6,
-    "lat": 41.84,
-    "lon": -86.3
+    "analysis": 12.8
    },
    {
     "storm": "2026-01-12",
     "place": "New Carlisle",
     "reported": 13.0,
-    "analysis": 5.9,
-    "lat": 41.71,
-    "lon": -86.5
+    "analysis": 8.0
    },
    {
     "storm": "2026-01-12",
     "place": "2 NE Gulivoire Park",
     "reported": 13.0,
-    "analysis": 11.9,
-    "lat": 41.64,
-    "lon": -86.22
+    "analysis": 11.5
    },
    {
     "storm": "2026-01-12",
     "place": "1 ENE Bertrand",
     "reported": 14.0,
-    "analysis": 11.4,
-    "lat": 41.78,
-    "lon": -86.24
+    "analysis": 11.8
    },
    {
     "storm": "2026-01-12",
     "place": "2 NNE Gulivoire Park",
     "reported": 14.0,
-    "analysis": 13.8,
-    "lat": 41.64,
-    "lon": -86.23
+    "analysis": 14.4
    },
    {
     "storm": "2026-01-12",
     "place": "Niles",
     "reported": 16.4,
-    "analysis": 12.0,
-    "lat": 41.83,
-    "lon": -86.26
+    "analysis": 13.4
    },
    {
     "storm": "2026-01-12",
     "place": "1 NE Georgetown",
     "reported": 16.6,
-    "analysis": 12.0,
-    "lat": 41.75,
-    "lon": -86.22
+    "analysis": 14.7
    },
    {
     "storm": "2026-01-12",
     "place": "3 NNE Fish Lake",
     "reported": 20.0,
-    "analysis": 7.0,
-    "lat": 41.61,
-    "lon": -86.52
+    "analysis": 9.9
    },
    {
     "storm": "2026-01-12",
     "place": "Valparaiso",
     "reported": 1.6,
-    "analysis": 0.8,
-    "lat": 41.48,
-    "lon": -87.06
+    "analysis": 0.8
    },
    {
     "storm": "2026-01-25",
     "place": "New Carlisle",
     "reported": 11.0,
-    "analysis": 10.6,
-    "lat": 41.71,
-    "lon": -86.5
+    "analysis": 10.5
    },
    {
     "storm": "2026-01-25",
     "place": "1 NNW DeMotte",
     "reported": 3.0,
-    "analysis": 1.8,
-    "lat": 41.21,
-    "lon": -87.21
+    "analysis": 2.3
    },
    {
     "storm": "2026-01-25",
     "place": "2 WSW La Porte",
     "reported": 8.0,
-    "analysis": 7.2,
-    "lat": 41.59,
-    "lon": -86.75
+    "analysis": 7.5
    },
    {
     "storm": "2026-01-25",
     "place": "1 NE Crown Point",
     "reported": 6.0,
-    "analysis": 5.0,
-    "lat": 41.43,
-    "lon": -87.35
+    "analysis": 5.1
    },
    {
     "storm": "2026-01-25",
     "place": "Porter",
     "reported": 2.5,
-    "analysis": 1.3,
-    "lat": 41.62,
-    "lon": -87.08
+    "analysis": 2.3
    },
    {
     "storm": "2026-01-25",
     "place": "Porter",
     "reported": 6.0,
-    "analysis": 2.4,
-    "lat": 41.62,
-    "lon": -87.07
+    "analysis": 2.3
    },
    {
     "storm": "2026-01-25",
     "place": "South Bend",
     "reported": 5.9,
-    "analysis": 8.0,
-    "lat": 41.72,
-    "lon": -86.21
+    "analysis": 8.3
    },
    {
     "storm": "2026-01-25",
     "place": "1 WNW La Porte",
     "reported": 9.2,
-    "analysis": 5.5,
-    "lat": 41.61,
-    "lon": -86.73
+    "analysis": 5.7
    },
    {
     "storm": "2026-01-25",
     "place": "3 ENE Valparaiso",
     "reported": 2.0,
-    "analysis": 1.6,
-    "lat": 41.49,
-    "lon": -87.0
+    "analysis": 2.6
    },
    {
     "storm": "2026-01-25",
     "place": "Hobart",
     "reported": 4.5,
-    "analysis": 2.3,
-    "lat": 41.53,
-    "lon": -87.26
+    "analysis": 3.0
    },
    {
     "storm": "2026-01-25",
     "place": "2 WNW Boone Grove",
     "reported": 1.8,
-    "analysis": 1.7,
-    "lat": 41.37,
-    "lon": -87.16
+    "analysis": 2.8
    },
    {
     "storm": "2026-01-25",
     "place": "1 N Valparaiso",
     "reported": 9.0,
-    "analysis": 6.6,
-    "lat": 41.49,
-    "lon": -87.06
+    "analysis": 6.5
    },
    {
     "storm": "2026-01-25",
     "place": "3 NNE Valparaiso",
     "reported": 7.5,
-    "analysis": 6.7,
-    "lat": 41.52,
-    "lon": -87.04
+    "analysis": 6.6
    },
    {
     "storm": "2026-01-25",
     "place": "2 NNE Gulivoire Park",
     "reported": 7.4,
-    "analysis": 6.9,
-    "lat": 41.64,
-    "lon": -86.23
+    "analysis": 7.2
    },
    {
     "storm": "2026-01-25",
     "place": "3 W Niles",
     "reported": 11.1,
-    "analysis": 8.3,
-    "lat": 41.84,
-    "lon": -86.3
+    "analysis": 8.7
    },
    {
     "storm": "2026-01-25",
     "place": "3 NNE Fish Lake",
     "reported": 12.4,
-    "analysis": 9.4,
-    "lat": 41.61,
-    "lon": -86.52
+    "analysis": 9.0
    },
    {
     "storm": "2026-01-25",
     "place": "3 NNW Lake Station",
     "reported": 1.3,
-    "analysis": 1.2,
-    "lat": 41.62,
-    "lon": -87.25
+    "analysis": 2.0
    },
    {
     "storm": "2026-01-25",
     "place": "2 ENE Gulivoire Park",
     "reported": 6.8,
-    "analysis": 6.9,
-    "lat": 41.62,
-    "lon": -86.22
+    "analysis": 7.3
    },
    {
     "storm": "2026-01-25",
     "place": "4 NNE Boone Grove",
     "reported": 2.2,
-    "analysis": 1.7,
-    "lat": 41.41,
-    "lon": -87.1
+    "analysis": 3.0
    },
    {
     "storm": "2026-01-25",
     "place": "4 S Buchanan",
     "reported": 12.7,
-    "analysis": 10.4,
-    "lat": 41.76,
-    "lon": -86.36
+    "analysis": 11.0
    },
    {
     "storm": "2026-01-25",
     "place": "4 NNE Boone Grove",
     "reported": 4.5,
-    "analysis": 5.7,
-    "lat": 41.41,
-    "lon": -87.1
+    "analysis": 5.7
    },
    {
     "storm": "2026-01-25",
     "place": "2 SSE Stevensville",
     "reported": 6.4,
-    "analysis": 7.3,
-    "lat": 41.99,
-    "lon": -86.51
+    "analysis": 7.4
    },
    {
     "storm": "2026-01-25",
     "place": "Porter",
     "reported": 7.9,
-    "analysis": 6.7,
-    "lat": 41.62,
-    "lon": -87.08
+    "analysis": 6.4
    },
    {
     "storm": "2026-01-25",
     "place": "1 WSW Valparaiso",
     "reported": 2.5,
-    "analysis": 1.8,
-    "lat": 41.47,
-    "lon": -87.09
+    "analysis": 2.8
    },
    {
     "storm": "2026-01-25",
     "place": "3 NNW Lake Station",
     "reported": 5.1,
-    "analysis": 6.0,
-    "lat": 41.62,
-    "lon": -87.25
+    "analysis": 5.6
    },
    {
     "storm": "2026-01-25",
     "place": "3 WNW South Bend",
     "reported": 9.2,
-    "analysis": 10.3,
-    "lat": 41.7,
-    "lon": -86.32
+    "analysis": 10.4
    },
    {
     "storm": "2026-01-25",
     "place": "3 ENE Valparaiso",
     "reported": 7.0,
-    "analysis": 6.8,
-    "lat": 41.49,
-    "lon": -87.0
+    "analysis": 6.7
    },
    {
     "storm": "2026-01-25",
     "place": "1 S Merrillville",
     "reported": 7.4,
-    "analysis": 4.7,
-    "lat": 41.45,
-    "lon": -87.33
+    "analysis": 4.8
    },
    {
     "storm": "2026-01-25",
     "place": "2 SW La Porte",
     "reported": 6.5,
-    "analysis": 7.2,
-    "lat": 41.59,
-    "lon": -86.73
+    "analysis": 7.5
    },
    {
     "storm": "2026-01-25",
     "place": "2 WNW Boone Grove",
     "reported": 5.3,
-    "analysis": 5.1,
-    "lat": 41.37,
-    "lon": -87.16
+    "analysis": 5.0
    },
    {
     "storm": "2026-01-25",
     "place": "Rolling Prarie",
     "reported": 8.0,
-    "analysis": 11.6,
-    "lat": 41.67,
-    "lon": -86.62
+    "analysis": 10.2
    },
    {
     "storm": "2026-01-25",
     "place": "Ogden Dunes",
     "reported": 2.7,
-    "analysis": 1.2,
-    "lat": 41.62,
-    "lon": -87.2
+    "analysis": 2.0
    },
    {
     "storm": "2026-01-25",
     "place": "3 NNW Valparaiso",
     "reported": 7.5,
-    "analysis": 6.6,
-    "lat": 41.51,
-    "lon": -87.08
+    "analysis": 6.5
    },
    {
     "storm": "2026-01-25",
     "place": "1 N Valparaiso",
     "reported": 2.0,
-    "analysis": 1.8,
-    "lat": 41.49,
-    "lon": -87.06
+    "analysis": 3.0
    },
    {
     "storm": "2026-01-25",
     "place": "3 NNW Valparaiso",
     "reported": 2.5,
-    "analysis": 3.0,
-    "lat": 41.51,
-    "lon": -87.08
+    "analysis": 3.0
    },
    {
     "storm": "2026-01-25",
     "place": "1 ESE Buchanan",
     "reported": 12.1,
-    "analysis": 9.8,
-    "lat": 41.82,
-    "lon": -86.34
+    "analysis": 10.6
    },
    {
     "storm": "2026-01-25",
     "place": "New Carlisle",
     "reported": 13.5,
-    "analysis": 11.5,
-    "lat": 41.7,
-    "lon": -86.51
+    "analysis": 10.8
    },
    {
     "storm": "2026-01-30",
     "place": "1 WSW Michigan City",
     "reported": 6.0,
-    "analysis": 5.5,
-    "lat": 41.71,
-    "lon": -86.9
+    "analysis": 5.4
    },
    {
     "storm": "2026-01-30",
     "place": "Michigan City",
     "reported": 6.0,
-    "analysis": 5.4,
-    "lat": 41.71,
-    "lon": -86.88
+    "analysis": 5.3
    },
    {
     "storm": "2026-01-30",
     "place": "Westville",
     "reported": 6.0,
-    "analysis": 6.3,
-    "lat": 41.54,
-    "lon": -86.91
+    "analysis": 6.2
    },
    {
     "storm": "2026-01-30",
     "place": "1 NE Westville",
     "reported": 7.0,
-    "analysis": 6.3,
-    "lat": 41.55,
-    "lon": -86.9
+    "analysis": 6.2
    },
    {
     "storm": "2026-01-30",
     "place": "South Wanatah",
     "reported": 7.0,
-    "analysis": 4.6,
-    "lat": 41.41,
-    "lon": -86.9
+    "analysis": 3.8
    },
    {
     "storm": "2026-01-30",
     "place": "1 SW Hobart",
     "reported": 6.7,
-    "analysis": 2.1,
-    "lat": 41.52,
-    "lon": -87.27
+    "analysis": 2.1
    },
    {
     "storm": "2026-01-30",
     "place": "3 SE South Haven",
     "reported": 7.0,
-    "analysis": 3.9,
-    "lat": 41.52,
-    "lon": -87.09
+    "analysis": 3.5
    },
    {
     "storm": "2026-01-30",
     "place": "1 NNW Valparaiso",
     "reported": 7.8,
-    "analysis": 6.5,
-    "lat": 41.48,
-    "lon": -87.07
+    "analysis": 6.2
    },
    {
     "storm": "2026-01-30",
     "place": "3 SE South Haven",
     "reported": 8.0,
-    "analysis": 6.6,
-    "lat": 41.52,
-    "lon": -87.09
+    "analysis": 5.9
    },
    {
     "storm": "2026-01-30",
     "place": "Chesterton",
     "reported": 9.0,
-    "analysis": 7.0,
-    "lat": 41.61,
-    "lon": -87.06
+    "analysis": 5.0
    },
    {
     "storm": "2026-01-30",
     "place": "Porter",
     "reported": 10.0,
-    "analysis": 7.0,
-    "lat": 41.62,
-    "lon": -87.07
+    "analysis": 5.0
    },
    {
     "storm": "2026-01-30",
     "place": "1 ESE Dune Acres",
     "reported": 11.0,
-    "analysis": 7.0,
-    "lat": 41.64,
-    "lon": -87.06
+    "analysis": 5.0
    }
   ],
   "pairs_cocorahs": [
@@ -3450,8 +3378,7 @@
    "mean_abs_diff": 0.19,
    "median_abs_diff": 0.1,
    "within_1": 0.98,
-   "within_2": 1.0,
-   "median_rel_err_ge1": 0.14
+   "within_2": 1.0
   },
   "pairs_rain": [
    {
@@ -5567,18 +5494,20 @@
    "day": "2026-09-17",
    "site": "mc-franklin",
    "label": "Franklin St lot, Michigan City",
-   "station": "MGC",
-   "station_miles": 4.0,
+   "station": "PPO",
+   "station_name": "La Porte airport",
+   "station_miles": 10.7,
    "site_rain_in": 0.64,
    "site_wet_hours": 4,
-   "airport_rain_in": 0,
-   "airport_wet_hours": 0
+   "airport_rain_in": 1.33,
+   "airport_wet_hours": 4
   },
   {
    "day": "2026-09-17",
    "site": "lp-lincolnway",
    "label": "Lincolnway lot, La Porte",
    "station": "PPO",
+   "station_name": "La Porte airport",
    "station_miles": 2.7,
    "site_rain_in": 1.07,
    "site_wet_hours": 4,
@@ -5590,6 +5519,7 @@
    "site": "wanatah",
    "label": "US 30 lot, Wanatah",
    "station": "VPZ",
+   "station_name": "Valparaiso airport",
    "station_miles": 5.9,
    "site_rain_in": 1.06,
    "site_wet_hours": 4,
@@ -5600,8 +5530,9 @@
    "day": "2026-09-18",
    "site": "mc-franklin",
    "label": "Franklin St lot, Michigan City",
-   "station": "MGC",
-   "station_miles": 4.0,
+   "station": "PPO",
+   "station_name": "La Porte airport",
+   "station_miles": 10.7,
    "site_rain_in": 0,
    "site_wet_hours": 0,
    "airport_rain_in": 0,
@@ -5612,6 +5543,7 @@
    "site": "lp-lincolnway",
    "label": "Lincolnway lot, La Porte",
    "station": "PPO",
+   "station_name": "La Porte airport",
    "station_miles": 2.7,
    "site_rain_in": 0,
    "site_wet_hours": 0,
@@ -5623,6 +5555,7 @@
    "site": "wanatah",
    "label": "US 30 lot, Wanatah",
    "station": "VPZ",
+   "station_name": "Valparaiso airport",
    "station_miles": 5.9,
    "site_rain_in": 0,
    "site_wet_hours": 0,
@@ -5633,18 +5566,20 @@
    "day": "2026-09-19",
    "site": "mc-franklin",
    "label": "Franklin St lot, Michigan City",
-   "station": "MGC",
-   "station_miles": 4.0,
+   "station": "PPO",
+   "station_name": "La Porte airport",
+   "station_miles": 10.7,
    "site_rain_in": 0.6,
    "site_wet_hours": 3,
-   "airport_rain_in": 0,
-   "airport_wet_hours": 0
+   "airport_rain_in": 0.36,
+   "airport_wet_hours": 2
   },
   {
    "day": "2026-09-19",
    "site": "lp-lincolnway",
    "label": "Lincolnway lot, La Porte",
    "station": "PPO",
+   "station_name": "La Porte airport",
    "station_miles": 2.7,
    "site_rain_in": 0.59,
    "site_wet_hours": 3,
@@ -5656,6 +5591,7 @@
    "site": "wanatah",
    "label": "US 30 lot, Wanatah",
    "station": "VPZ",
+   "station_name": "Valparaiso airport",
    "station_miles": 5.9,
    "site_rain_in": 0.32,
    "site_wet_hours": 3,
@@ -5666,18 +5602,20 @@
    "day": "2026-09-30",
    "site": "mc-franklin",
    "label": "Franklin St lot, Michigan City",
-   "station": "MGC",
-   "station_miles": 4.0,
+   "station": "PPO",
+   "station_name": "La Porte airport",
+   "station_miles": 10.7,
    "site_rain_in": 0.32,
    "site_wet_hours": 7,
-   "airport_rain_in": 0,
-   "airport_wet_hours": 0
+   "airport_rain_in": 0.19,
+   "airport_wet_hours": 7
   },
   {
    "day": "2026-09-30",
    "site": "lp-lincolnway",
    "label": "Lincolnway lot, La Porte",
    "station": "PPO",
+   "station_name": "La Porte airport",
    "station_miles": 2.7,
    "site_rain_in": 0.21,
    "site_wet_hours": 6,
@@ -5689,6 +5627,7 @@
    "site": "wanatah",
    "label": "US 30 lot, Wanatah",
    "station": "VPZ",
+   "station_name": "Valparaiso airport",
    "station_miles": 5.9,
    "site_rain_in": 0.2,
    "site_wet_hours": 7,
@@ -5699,18 +5638,20 @@
    "day": "2026-10-01",
    "site": "mc-franklin",
    "label": "Franklin St lot, Michigan City",
-   "station": "MGC",
-   "station_miles": 4.0,
+   "station": "PPO",
+   "station_name": "La Porte airport",
+   "station_miles": 10.7,
    "site_rain_in": 0.11,
    "site_wet_hours": 3,
-   "airport_rain_in": 0,
-   "airport_wet_hours": 0
+   "airport_rain_in": 0.01,
+   "airport_wet_hours": 1
   },
   {
    "day": "2026-10-01",
    "site": "lp-lincolnway",
    "label": "Lincolnway lot, La Porte",
    "station": "PPO",
+   "station_name": "La Porte airport",
    "station_miles": 2.7,
    "site_rain_in": 0.07,
    "site_wet_hours": 2,
@@ -5722,6 +5663,7 @@
    "site": "wanatah",
    "label": "US 30 lot, Wanatah",
    "station": "VPZ",
+   "station_name": "Valparaiso airport",
    "station_miles": 5.9,
    "site_rain_in": 0,
    "site_wet_hours": 0,
@@ -5732,18 +5674,20 @@
    "day": "2026-10-16",
    "site": "mc-franklin",
    "label": "Franklin St lot, Michigan City",
-   "station": "MGC",
-   "station_miles": 4.0,
+   "station": "PPO",
+   "station_name": "La Porte airport",
+   "station_miles": 10.7,
    "site_rain_in": 0.21,
    "site_wet_hours": 5,
-   "airport_rain_in": 0,
-   "airport_wet_hours": 0
+   "airport_rain_in": 0.12,
+   "airport_wet_hours": 5
   },
   {
    "day": "2026-10-16",
    "site": "lp-lincolnway",
    "label": "Lincolnway lot, La Porte",
    "station": "PPO",
+   "station_name": "La Porte airport",
    "station_miles": 2.7,
    "site_rain_in": 0.19,
    "site_wet_hours": 7,
@@ -5755,6 +5699,7 @@
    "site": "wanatah",
    "label": "US 30 lot, Wanatah",
    "station": "VPZ",
+   "station_name": "Valparaiso airport",
    "station_miles": 5.9,
    "site_rain_in": 0.09,
    "site_wet_hours": 3,
@@ -5762,6 +5707,5 @@
    "airport_wet_hours": 4
   }
  ],
- "nohrsc_unit_factor": 1.0,
- "seconds": 312
+ "seconds": 330
 }

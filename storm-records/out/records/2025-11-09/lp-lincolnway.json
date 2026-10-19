@@ -15,27 +15,99 @@
   "name": "La Porte airport",
   "miles": 2.7
  },
- "snow_total_in": 12.0,
+ "snow_total_in": 10.6,
  "plow_at": 2,
  "plow_reached": "2025-11-10T02:00:00+00:00",
  "start": "2025-11-09T17:00:00+00:00",
  "end": "2025-11-10T10:00:00+00:00",
  "heaviest": {
   "t": "2025-11-10T04:00:00+00:00",
-  "in": 2.12
+  "in": 1.87
  },
  "ice_in": 0,
  "sleet_hours": 0,
- "low_f": 17.6,
+ "low_f": 21.2,
  "high_f": 37.4,
- "refreeze": "2025-11-09T20:00:00+00:00",
- "radar_liquid_in": 1.09,
+ "after_low_f": 17.6,
+ "after_high_f": 32.0,
+ "melt": null,
+ "refreeze": null,
+ "nearby": [
+  {
+   "inches": 5.8,
+   "place": "1 WNW La Porte",
+   "miles": 0.4,
+   "what": "NWS storm report, Sun Nov 9, 11 PM",
+   "t": "2025-11-10T05:58:00+00:00"
+  },
+  {
+   "inches": 11.6,
+   "place": "La Porte 0.9 SSE",
+   "miles": 1.3,
+   "what": "CoCoRaHS, 24 hours to about 7 AM Mon Nov 10",
+   "t": "2025-11-10"
+  },
+  {
+   "inches": 9.6,
+   "place": "La Porte 1.6 SW",
+   "miles": 1.5,
+   "what": "CoCoRaHS, 24 hours to about 7 AM Mon Nov 10",
+   "t": "2025-11-10"
+  },
+  {
+   "inches": 1.3,
+   "place": "La Porte 1.6 SW",
+   "miles": 1.5,
+   "what": "CoCoRaHS, 24 hours to about 7 AM Tue Nov 11",
+   "t": "2025-11-11"
+  },
+  {
+   "inches": 8.5,
+   "place": "3 NNW La Porte",
+   "miles": 2.5,
+   "what": "NWS storm report, Mon Nov 10, 9 AM",
+   "t": "2025-11-10T15:00:00+00:00"
+  },
+  {
+   "inches": 8.5,
+   "place": "1 S Springville",
+   "miles": 4.2,
+   "what": "NWS storm report, Mon Nov 10, 3 AM",
+   "t": "2025-11-10T09:50:00+00:00"
+  },
+  {
+   "inches": 7.0,
+   "place": "1 S Springville",
+   "miles": 4.2,
+   "what": "NWS storm report, Sun Nov 9, 11 PM",
+   "t": "2025-11-10T05:27:00+00:00"
+  },
+  {
+   "inches": 4.5,
+   "place": "1 S Springville",
+   "miles": 4.2,
+   "what": "NWS storm report, Sun Nov 9, 8 PM",
+   "t": "2025-11-10T02:21:00+00:00"
+  }
+ ],
+ "analysis_days": [
+  {
+   "end": "2025-11-10T12:00:00+00:00",
+   "nohrsc_24h": 10.6,
+   "nohrsc_6h_sum": 12.0
+  },
+  {
+   "end": "2025-11-11T12:00:00+00:00",
+   "nohrsc_24h": 1.0,
+   "nohrsc_6h_sum": 1.0
+  }
+ ],
  "hours": [
   {
    "t": "2025-11-09T13:00:00+00:00",
    "snow_in": 0.0,
    "cum_in": 0.0,
-   "liquid_in": 0.0,
+   "radar_water_in": 0.0,
    "type": "",
    "temp_f": 33.8,
    "wx": ""
@@ -44,7 +116,7 @@
    "t": "2025-11-09T14:00:00+00:00",
    "snow_in": 0.0,
    "cum_in": 0.0,
-   "liquid_in": 0.0,
+   "radar_water_in": 0.0,
    "type": "",
    "temp_f": 33.8,
    "wx": ""
@@ -53,7 +125,7 @@
    "t": "2025-11-09T15:00:00+00:00",
    "snow_in": 0.0,
    "cum_in": 0.0,
-   "liquid_in": 0.0,
+   "radar_water_in": 0.0,
    "type": "",
    "temp_f": 35.6,
    "wx": ""
@@ -62,7 +134,7 @@
    "t": "2025-11-09T16:00:00+00:00",
    "snow_in": 0.0,
    "cum_in": 0.0,
-   "liquid_in": 0.0,
+   "radar_water_in": 0.0,
    "type": "",
    "temp_f": 35.6,
    "wx": ""
@@ -71,160 +143,160 @@
    "t": "2025-11-09T17:00:00+00:00",
    "snow_in": 0.0,
    "cum_in": 0.0,
-   "liquid_in": 0.0,
+   "radar_water_in": 0.0,
    "type": "",
    "temp_f": 37.4,
    "wx": ""
   },
   {
    "t": "2025-11-09T18:00:00+00:00",
-   "snow_in": 0.31,
+   "snow_in": 0.27,
    "cum_in": 0.3,
-   "liquid_in": 0.043,
+   "radar_water_in": 0.043,
    "type": "snow",
    "temp_f": 35.6,
    "wx": "-SN BR -SN BR"
   },
   {
    "t": "2025-11-09T19:00:00+00:00",
-   "snow_in": 0.36,
-   "cum_in": 0.7,
-   "liquid_in": 0.083,
+   "snow_in": 0.32,
+   "cum_in": 0.6,
+   "radar_water_in": 0.083,
    "type": "snow",
    "temp_f": 33.8,
    "wx": "SN FG SN FG SN FG"
   },
   {
    "t": "2025-11-09T20:00:00+00:00",
-   "snow_in": 0.19,
-   "cum_in": 0.9,
-   "liquid_in": 0.043,
+   "snow_in": 0.17,
+   "cum_in": 0.8,
+   "radar_water_in": 0.043,
    "type": "snow",
    "temp_f": 32.0,
    "wx": "SN FG -SN BR -SN BR"
   },
   {
    "t": "2025-11-09T21:00:00+00:00",
-   "snow_in": 0.14,
-   "cum_in": 1.0,
-   "liquid_in": 0.031,
+   "snow_in": 0.12,
+   "cum_in": 0.9,
+   "radar_water_in": 0.031,
    "type": "snow",
    "temp_f": 32.0,
    "wx": "-SN BR -SN BR -SN BR"
   },
   {
    "t": "2025-11-09T22:00:00+00:00",
-   "snow_in": 0.15,
-   "cum_in": 1.1,
-   "liquid_in": 0.035,
+   "snow_in": 0.14,
+   "cum_in": 1.0,
+   "radar_water_in": 0.035,
    "type": "snow",
    "temp_f": 32.0,
    "wx": "-SN BR -SN BR -SN BR"
   },
   {
    "t": "2025-11-09T23:00:00+00:00",
-   "snow_in": 0.17,
-   "cum_in": 1.3,
-   "liquid_in": 0.039,
+   "snow_in": 0.15,
+   "cum_in": 1.2,
+   "radar_water_in": 0.039,
    "type": "snow",
    "temp_f": 30.2,
    "wx": "-SN FZFG SN FZFG SN FZFG"
   },
   {
    "t": "2025-11-10T00:00:00+00:00",
-   "snow_in": 0.12,
-   "cum_in": 1.4,
-   "liquid_in": 0.028,
+   "snow_in": 0.11,
+   "cum_in": 1.3,
+   "radar_water_in": 0.028,
    "type": "snow",
    "temp_f": 30.2,
    "wx": "SN FZFG -SN FZFG -SN FZFG"
   },
   {
    "t": "2025-11-10T01:00:00+00:00",
-   "snow_in": 0.47,
-   "cum_in": 1.9,
-   "liquid_in": 0.035,
+   "snow_in": 0.41,
+   "cum_in": 1.7,
+   "radar_water_in": 0.035,
    "type": "snow",
    "temp_f": 30.2,
    "wx": "-SN FZFG SN FZFG -SN FZFG"
   },
   {
    "t": "2025-11-10T02:00:00+00:00",
-   "snow_in": 0.72,
-   "cum_in": 2.6,
-   "liquid_in": 0.055,
+   "snow_in": 0.64,
+   "cum_in": 2.3,
+   "radar_water_in": 0.055,
    "type": "snow",
    "temp_f": 30.2,
    "wx": "SN FZFG SN FZFG SN FZFG"
   },
   {
    "t": "2025-11-10T03:00:00+00:00",
-   "snow_in": 1.76,
-   "cum_in": 4.4,
-   "liquid_in": 0.134,
+   "snow_in": 1.55,
+   "cum_in": 3.9,
+   "radar_water_in": 0.134,
    "type": "snow",
    "temp_f": 30.2,
    "wx": "-SN FZFG SN FZFG SN FZFG"
   },
   {
    "t": "2025-11-10T04:00:00+00:00",
-   "snow_in": 2.12,
-   "cum_in": 6.5,
-   "liquid_in": 0.161,
+   "snow_in": 1.87,
+   "cum_in": 5.7,
+   "radar_water_in": 0.161,
    "type": "snow",
    "temp_f": 30.2,
    "wx": "SN FZFG SN FZFG +SN FZFG"
   },
   {
    "t": "2025-11-10T05:00:00+00:00",
-   "snow_in": 1.86,
-   "cum_in": 8.4,
-   "liquid_in": 0.142,
+   "snow_in": 1.64,
+   "cum_in": 7.4,
+   "radar_water_in": 0.142,
    "type": "snow",
    "temp_f": 30.2,
    "wx": "+SN FZFG +SN FZFG SN FZFG"
   },
   {
    "t": "2025-11-10T06:00:00+00:00",
-   "snow_in": 1.5,
-   "cum_in": 9.9,
-   "liquid_in": 0.114,
+   "snow_in": 1.32,
+   "cum_in": 8.7,
+   "radar_water_in": 0.114,
    "type": "snow",
    "temp_f": 28.4,
    "wx": "SN FZFG SN FZFG -SN BR"
   },
   {
    "t": "2025-11-10T07:00:00+00:00",
-   "snow_in": 0.66,
-   "cum_in": 10.5,
-   "liquid_in": 0.043,
+   "snow_in": 0.58,
+   "cum_in": 9.3,
+   "radar_water_in": 0.043,
    "type": "snow",
    "temp_f": 30.2,
    "wx": "SN FZFG SN FZFG SN FZFG"
   },
   {
    "t": "2025-11-10T08:00:00+00:00",
-   "snow_in": 0.78,
-   "cum_in": 11.3,
-   "liquid_in": 0.051,
+   "snow_in": 0.69,
+   "cum_in": 10.0,
+   "radar_water_in": 0.051,
    "type": "snow",
    "temp_f": 28.4,
    "wx": "+SN FZFG +SN FZFG SN FZFG"
   },
   {
    "t": "2025-11-10T09:00:00+00:00",
-   "snow_in": 0.3,
-   "cum_in": 11.6,
-   "liquid_in": 0.02,
+   "snow_in": 0.26,
+   "cum_in": 10.2,
+   "radar_water_in": 0.02,
    "type": "snow",
    "temp_f": 28.4,
    "wx": "-SN FZFG -SN BR -SN BR"
   },
   {
    "t": "2025-11-10T10:00:00+00:00",
-   "snow_in": 0.42,
-   "cum_in": 12.0,
-   "liquid_in": 0.028,
+   "snow_in": 0.37,
+   "cum_in": 10.6,
+   "radar_water_in": 0.028,
    "type": "snow",
    "temp_f": 26.6,
    "wx": "-SN BR SN FZFG -SN BR"
@@ -232,8 +304,8 @@
   {
    "t": "2025-11-10T11:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": 0.0,
+   "cum_in": 10.6,
+   "radar_water_in": 0.0,
    "type": "snow",
    "temp_f": 26.6,
    "wx": "-SN BR UP BR"
@@ -241,8 +313,8 @@
   {
    "t": "2025-11-10T12:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": 0.0,
+   "cum_in": 10.6,
+   "radar_water_in": 0.0,
    "type": "",
    "temp_f": 24.8,
    "wx": ""
@@ -250,8 +322,8 @@
   {
    "t": "2025-11-10T13:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": 0.0,
+   "cum_in": 10.6,
+   "radar_water_in": 0.0,
    "type": "",
    "temp_f": 21.2,
    "wx": ""
@@ -259,8 +331,8 @@
   {
    "t": "2025-11-10T14:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": 0.0,
+   "cum_in": 10.6,
+   "radar_water_in": 0.0,
    "type": "",
    "temp_f": 23.0,
    "wx": ""
@@ -268,8 +340,8 @@
   {
    "t": "2025-11-10T15:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": 0.0,
+   "cum_in": 10.6,
+   "radar_water_in": 0.0,
    "type": "",
    "temp_f": 23.0,
    "wx": ""
@@ -277,8 +349,8 @@
   {
    "t": "2025-11-10T16:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": 0.0,
+   "cum_in": 10.6,
+   "radar_water_in": 0.0,
    "type": "",
    "temp_f": 26.6,
    "wx": ""
@@ -286,8 +358,8 @@
   {
    "t": "2025-11-10T17:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": 0.0,
+   "cum_in": 10.6,
+   "radar_water_in": 0.0,
    "type": "",
    "temp_f": 28.4,
    "wx": ""
@@ -295,8 +367,8 @@
   {
    "t": "2025-11-10T18:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": 0.0,
+   "cum_in": 10.6,
+   "radar_water_in": 0.0,
    "type": "",
    "temp_f": 30.2,
    "wx": ""
@@ -304,8 +376,8 @@
   {
    "t": "2025-11-10T19:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": null,
+   "cum_in": 10.6,
+   "radar_water_in": null,
    "type": "snow",
    "temp_f": 30.2,
    "wx": "-SN HZ"
@@ -313,8 +385,8 @@
   {
    "t": "2025-11-10T20:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": null,
+   "cum_in": 10.6,
+   "radar_water_in": null,
    "type": "snow",
    "temp_f": 26.6,
    "wx": "+SN FZFG -SN FZFG -SN FZFG"
@@ -322,8 +394,8 @@
   {
    "t": "2025-11-10T21:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": null,
+   "cum_in": 10.6,
+   "radar_water_in": null,
    "type": "snow",
    "temp_f": 28.4,
    "wx": "SN FZFG -SN BR"
@@ -331,8 +403,8 @@
   {
    "t": "2025-11-10T22:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": null,
+   "cum_in": 10.6,
+   "radar_water_in": null,
    "type": "",
    "temp_f": 32.0,
    "wx": ""
@@ -340,8 +412,8 @@
   {
    "t": "2025-11-10T23:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": null,
+   "cum_in": 10.6,
+   "radar_water_in": null,
    "type": "snow",
    "temp_f": 32.0,
    "wx": "-SN UP"
@@ -349,8 +421,8 @@
   {
    "t": "2025-11-11T00:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": null,
+   "cum_in": 10.6,
+   "radar_water_in": null,
    "type": "",
    "temp_f": 32.0,
    "wx": ""
@@ -358,8 +430,8 @@
   {
    "t": "2025-11-11T01:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": null,
+   "cum_in": 10.6,
+   "radar_water_in": null,
    "type": "",
    "temp_f": 32.0,
    "wx": "UP"
@@ -367,8 +439,8 @@
   {
    "t": "2025-11-11T02:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": null,
+   "cum_in": 10.6,
+   "radar_water_in": null,
    "type": "",
    "temp_f": 32.0,
    "wx": "UP"
@@ -376,8 +448,8 @@
   {
    "t": "2025-11-11T03:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": null,
+   "cum_in": 10.6,
+   "radar_water_in": null,
    "type": "",
    "temp_f": 26.6,
    "wx": ""
@@ -385,8 +457,8 @@
   {
    "t": "2025-11-11T04:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": null,
+   "cum_in": 10.6,
+   "radar_water_in": null,
    "type": "",
    "temp_f": 26.6,
    "wx": ""
@@ -394,8 +466,8 @@
   {
    "t": "2025-11-11T05:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": null,
+   "cum_in": 10.6,
+   "radar_water_in": null,
    "type": "",
    "temp_f": 26.6,
    "wx": ""
@@ -403,8 +475,8 @@
   {
    "t": "2025-11-11T06:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": null,
+   "cum_in": 10.6,
+   "radar_water_in": null,
    "type": "",
    "temp_f": 23.0,
    "wx": ""
@@ -412,8 +484,8 @@
   {
    "t": "2025-11-11T07:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": null,
+   "cum_in": 10.6,
+   "radar_water_in": null,
    "type": "",
    "temp_f": 24.8,
    "wx": ""
@@ -421,8 +493,8 @@
   {
    "t": "2025-11-11T08:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": null,
+   "cum_in": 10.6,
+   "radar_water_in": null,
    "type": "",
    "temp_f": 21.2,
    "wx": ""
@@ -430,8 +502,8 @@
   {
    "t": "2025-11-11T09:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": null,
+   "cum_in": 10.6,
+   "radar_water_in": null,
    "type": "",
    "temp_f": 19.4,
    "wx": ""
@@ -439,8 +511,8 @@
   {
    "t": "2025-11-11T10:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": null,
+   "cum_in": 10.6,
+   "radar_water_in": null,
    "type": "",
    "temp_f": 17.6,
    "wx": ""
@@ -448,8 +520,8 @@
   {
    "t": "2025-11-11T11:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": null,
+   "cum_in": 10.6,
+   "radar_water_in": null,
    "type": "",
    "temp_f": 19.4,
    "wx": ""
@@ -457,8 +529,8 @@
   {
    "t": "2025-11-11T12:00:00+00:00",
    "snow_in": 0.0,
-   "cum_in": 12.0,
-   "liquid_in": null,
+   "cum_in": 10.6,
+   "radar_water_in": null,
    "type": "",
    "temp_f": 19.4,
    "wx": ""
