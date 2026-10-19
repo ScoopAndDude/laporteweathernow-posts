@@ -4,10 +4,12 @@
 Free public NOAA data for NW Indiana and SW Michigan on one fixed regional grid. It knows nothing about any
 customer: the Hard Hat sender (private, Google Apps Script) reads these files at each customer's own lots.
 
-  radar.json            the last 48 hours of NOAA MRMS MultiSensor QPE (radar plus rain gauges, 1 hour, 1 km),
-                        averaged over each grid cell: rain at a job site during work hours, for delay records and
-                        the rain-out guarantee.
-  snow/YYYY-MM-DD.json  the 24 hours ending 12 UTC that morning (6 AM CST, 7 AM CDT): estimated snow by hour in each
+  radar/TR-TC.json      the last 48 hours of NOAA MRMS MultiSensor QPE (radar plus rain gauges, 1 hour, 1 km),
+                        averaged over each grid cell, one file per tile of 10 x 10 cells: rain at a job site during
+                        work hours, for delay records and the rain-out guarantee. (radar.json has all of it, for
+                        this job's next run.)
+  snow/YYYY-MM-DD/      meta.json and one file per tile that had anything (TR-TC.json, listed in meta.json's
+                        "tiles"): the 24 hours ending 12 UTC that morning (6 AM CST, 7 AM CDT): estimated snow by hour in each
                         cell (the NOAA National Snowfall Analysis 24-hour total, split by its 6-hour analyses, spread
                         over each quarter-day by radar or by the nearest airport's reported snow rate, whichever is
                         larger: the method tested on last winter's storms in scripts/storm_records/build.py), the type
@@ -17,13 +19,14 @@ customer: the Hard Hat sender (private, Google Apps Script) reads these files at
   index.json            what's there and when it was made.
 
 The grid: 41.00-42.12 N, 87.56-86.04 W, 0.02 degrees (about 2 km); row 0 is the north edge and a cell's index is
-row * cols + col. Radar values are thousandths of an inch in a flat [index, value, index, value, ...] list per hour
-(cells with none are left out; -1 means no radar data); snow is hundredths of an inch.
+row * cols + col, and its tile is "TR-TC" with TR = row // 10 and TC = col // 10. Radar values are thousandths of an
+inch in a flat [index, value, index, value, ...] list per hour (cells with none are left out; -1 means no radar data);
+snow is hundredths of an inch.
 
   python3 scripts/storm_grid.py update DIR            the hourly run: new radar hours, and the snow day once NOAA's
                                                       24-hour analysis is out (or from the 6-hour ones after 18 UTC)
-  python3 scripts/storm_grid.py backfill DIR DAY...   snow days (and that day's radar, as radar-DAY.json) for past
-                                                      dates, for tests
+  python3 scripts/storm_grid.py backfill DIR DAY...   snow days (and that day's radar, as radar-DAY/TR-TC.json) for
+                                                      past dates, for tests
   python3 scripts/storm_grid.py latency DIR           when NOAA's latest files appeared (Last-Modified), for timing
 """
 import datetime as dt
@@ -53,6 +56,10 @@ GRID.update(rows=ROWS, cols=COLS)
 LAT = GRID["north"] - (np.arange(ROWS) + 0.5) * GRID["step"]
 LON = GRID["west"] + (np.arange(COLS) + 0.5) * GRID["step"]
 NCELL = ROWS * COLS
+TILE = 10
+TROWS, TCOLS = -(-ROWS // TILE), -(-COLS // TILE)
+GRID.update(tile=TILE, tileRows=TROWS, tileCols=TCOLS)
+TILES = [f"{tr}-{tc}" for tr in range(TROWS) for tc in range(TCOLS)]
 
 # Airports with hourly reports (IEM's ASOS archive). Michigan City's rain gauge read 0.00 on every rainy day
 # checked in Sept.-Oct. 2026, so it's marked as not measuring rain (its weather and temperature are fine).
@@ -246,6 +253,44 @@ def save_radar(path, store):
         json.dump({"about": "NOAA MRMS MultiSensor QPE, 1-hour (Pass 2, or Pass 1 until Pass 2 is out), mean over each "
                             "cell; keys are each hour's END (UTC); v = [cell, thousandths of an inch, ...]; -1 = no data",
                    "grid": GRID, "hours": hours}, f, separators=(",", ":"))
+
+
+def tile_name(idx):
+    r, c = divmod(int(idx), COLS)
+    return f"{r // TILE}-{c // TILE}"
+
+
+def write_radar_tiles(tdir, store):
+    """One file per tile, every tile, with every hour (an hour with nothing in that tile has an empty list)."""
+    keys = sorted(store)
+    per = {k: {} for k in keys}
+    for k in keys:
+        flat = store[k]["v"]
+        for i in range(0, len(flat), 2):
+            per[k].setdefault(tile_name(flat[i]), []).extend(flat[i:i + 2])
+    for name in TILES:
+        write_json(os.path.join(tdir, f"{name}.json"), {
+            "grid": GRID, "tile": name, "from": keys[0] if keys else None, "to": keys[-1] if keys else None,
+            "hours": {k: {"p": store[k]["p"], "v": per[k].get(name, [])} for k in keys}})
+
+
+def write_snow_day(sdir, obj):
+    """snow/DAY/: one file per tile with anything in it, then meta.json (listing them) last."""
+    d = os.path.join(sdir, obj["day"])
+    if os.path.isdir(d):
+        shutil.rmtree(d)
+    tiles = {}
+    for i, idx in enumerate(obj["cells"]):
+        t = tiles.setdefault(tile_name(idx), {"cells": [], "snow": [], "type": [], "ice": []})
+        t["cells"].append(idx)
+        t["snow"].append(obj["snow"][i])
+        t["type"].append(obj["type"][i])
+        t["ice"].append(obj["ice"][i])
+    for name, t in tiles.items():
+        write_json(os.path.join(d, f"{name}.json"), dict(t, day=obj["day"], tile=name))
+    meta = {k: v for k, v in obj.items() if k not in ("cells", "snow", "type", "ice")}
+    meta["tiles"] = sorted(tiles)
+    write_json(os.path.join(d, "meta.json"), meta)
 
 
 def fetch_radar_hour(store, end, passes=(2, 1)):
@@ -524,6 +569,7 @@ def update(outdir, now=None):
             upgraded += 1 if have else 0
     log(f"radar: {len(store)} hours kept, {fetched} fetched ({upgraded} upgraded to Pass 2)")
     save_radar(rpath, store)
+    write_radar_tiles(os.path.join(outdir, "radar"), store)
     # snow days: the latest three 12 UTC ends
     last12 = now.replace(hour=12, minute=0, second=0, microsecond=0)
     if last12 > now:
@@ -532,15 +578,14 @@ def update(outdir, now=None):
     for back in range(3):
         e = last12 - H24 * back
         day = e.date()
-        spath = os.path.join(outdir, "snow", f"{day.isoformat()}.json")
-        if os.path.exists(spath):
+        if os.path.exists(os.path.join(outdir, "snow", day.isoformat(), "meta.json")):
             continue
         hours_in = all(iso(e - H24 + H1 * (i + 1)) in store for i in range(24))
         p24 = nohrsc_path("24h", e, quiet=True)
         late = now - e >= dt.timedelta(hours=SNOW_WAIT)
         if (p24 and hours_in) or late:
             obj = snow_day(day, store, now)
-            write_json(spath, obj)
+            write_snow_day(os.path.join(outdir, "snow"), obj)
             made.append(day.isoformat())
             log(f"snow day {day}: made (24-hour analysis {'yes' if obj['source']['nohrsc24'] else 'no'}, "
                 f"{obj['source']['radarHours']} radar hours, max {obj['maxSnow']} in.)")
@@ -548,9 +593,9 @@ def update(outdir, now=None):
             log(f"snow day {day}: waiting ({'analysis out' if p24 else 'no 24-hour analysis yet'}, "
                 f"{'radar complete' if hours_in else 'radar hours missing'})")
     sdir = os.path.join(outdir, "snow")
-    days = sorted(f[:-5] for f in os.listdir(sdir) if f.endswith(".json")) if os.path.isdir(sdir) else []
+    days = sorted(f for f in os.listdir(sdir) if os.path.exists(os.path.join(sdir, f, "meta.json"))) if os.path.isdir(sdir) else []
     for d in days[:-KEEP_SNOW_DAYS]:
-        os.remove(os.path.join(sdir, f"{d}.json"))
+        shutil.rmtree(os.path.join(sdir, d))
     days = days[-KEEP_SNOW_DAYS:]
     keys = sorted(store)
     write_json(os.path.join(outdir, "index.json"), {
@@ -572,9 +617,9 @@ def backfill(outdir, days):
             h = e - H24 + H1 * (i + 1)
             if not fetch_radar_hour(store, h, passes=(2, 1)):
                 log(f"  ! no radar for {iso(h)}")
-        save_radar(os.path.join(outdir, f"radar-{d}.json"), store)
+        write_radar_tiles(os.path.join(outdir, f"radar-{d}"), store)
         obj = snow_day(day, store, e + dt.timedelta(hours=18))
-        write_json(os.path.join(outdir, "snow", f"{d}.json"), obj)
+        write_snow_day(os.path.join(outdir, "snow"), obj)
         log(f"{d}: {len(obj['cells'])} cells with something, max {obj['maxSnow']} in., source {obj['source']}")
     with open(os.path.join(outdir, "grid-info.json"), "w", encoding="utf-8") as f:
         json.dump(GRID_INFO, f, indent=1, default=str)

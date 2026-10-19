@@ -31,9 +31,15 @@ def parse(s):
 def main():
     out = sys.argv[1]
     lines = []
-    for path in sorted(glob.glob(os.path.join(out, "snow", "*.json"))):
+    for path in sorted(glob.glob(os.path.join(out, "snow", "*", "meta.json"))):
         day = json.load(open(path))
         g = day["grid"]
+        # the tiles hold the cells; put them back together
+        day.update(cells=[], snow=[], type=[], ice=[])
+        for name in day["tiles"]:
+            t = json.load(open(os.path.join(os.path.dirname(path), f"{name}.json")))
+            for k in ("cells", "snow", "type", "ice"):
+                day[k] += t[k]
         idx = {c: i for i, c in enumerate(day["cells"])}
         end = parse(day["end"])
         hours = [parse(h) for h in day["hours"]]

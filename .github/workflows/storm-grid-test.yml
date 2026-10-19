@@ -33,6 +33,8 @@ jobs:
           python-version: "3.12"
       - name: Install readers (GRIB2 and GeoTIFF)
         run: pip install -q numpy pygrib rasterio
+      - name: Start fresh
+        run: rm -rf storm-records/out/grid
       - name: When NOAA's newest files appeared
         run: python3 scripts/storm_grid.py latency storm-records/out/grid
       - name: Build the test days
