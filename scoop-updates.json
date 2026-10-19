@@ -259,19 +259,22 @@
   },
   "hourlyFrom": "2026-10-19T05:47:00-05:00"
  },
- "published": null,
- "alertRows": [
-  {
-   "id": "urn:oid:2.49.0.1.840.0.c888382f24710c6fc77e2a4b505cb0b25cff1819.001.1",
-   "event": "Frost Advisory",
-   "area": "Elkhart; Lagrange; Steuben; Noble; De Kalb; Starke; Pulaski; Marshall; Fulton; Whitley; Allen; White; Cass; Miami; Wabash; Huntington; Wells; Adams; Grant; Blackford; Jay; Northern La Porte; Eastern St. Joseph; Northern Kosciusko; Southern La Porte; Western St. Joseph; Southern Kosciusko; Williams; Fulton; Defiance; Henry; Paulding; Putnam; Van Wert; Allen",
-   "onset": "2026-10-19T01:00:00-04:00",
-   "ends": "2026-10-19T09:00:00-04:00",
-   "expires": "2026-10-19T09:00:00-04:00",
-   "sent": "2026-10-18T21:46:00-04:00",
-   "messageType": "Update"
-  }
- ],
+ "published": {
+  "time": "2026-10-19T08:02:00-05:00",
+  "alertKeys": [],
+  "alerts": [],
+  "changes": [],
+  "off": [
+   "cool"
+  ],
+  "paragraph": "Automatic update, 8:02 a.m.: The Frost Advisory for La Porte County has ended. It's running cooler than NWS's earlier hour-by-hour forecast: at 7:35 a.m. the La Porte airport reported mostly clear and 36 degrees, where that forecast had about 41. There are no watches, warnings, or advisories for La Porte County right now."
+ },
+ "alertRows": [],
  "missing": [],
- "updates": []
+ "updates": [
+  {
+   "time": "2026-10-19T08:02:00-05:00",
+   "why": "alerts changed (none now); airport running cool"
+  }
+ ]
 }
