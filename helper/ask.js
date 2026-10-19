@@ -13,7 +13,7 @@
  */
 (function () {
   "use strict";
-  var ENDPOINT = "https://script.google.com/macros/s/AKfycbz_LPWN_ASK_HELPER_NOT_DEPLOYED_YET/exec";
+  var ENDPOINT = "https://script.google.com/macros/s/AKfycbyM3iLkhrRaB1G2i_GlfGrJRyrxMwAv6RGtjx5oXuTjBgaSgzCGtD81HtzqaKXM4y5QtA/exec";
   var me = document.currentScript;
   if (!me || window.__lpwnAskHelper) return;
   window.__lpwnAskHelper = true;
