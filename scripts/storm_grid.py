@@ -75,6 +75,8 @@ STATIONS = {
 RADAR_HOURS = 48          # radar.json keeps this many hours
 KEEP_SNOW_DAYS = 14       # snow days kept on the data branch
 FETCH_PER_RUN = 50        # radar files per hourly run (the first run fills 48)
+PASS1_AFTER = 20          # minutes after the hour to look for Pass 1 (NOAA posts it about 15 minutes after)
+PASS2_AFTER = 65          # minutes after the hour to look for Pass 2 (about 57 minutes after)
 SNOW_WAIT = 6             # hours after 12 UTC to wait for the 24-hour analysis before using the 6-hour ones
 TYPE_CODE = {"snow": "S", "snow?": "s", "sleet": "P", "freezing rain": "Z", "rain": "R", "": "."}
 LOG = []
@@ -527,6 +529,7 @@ def snow_day(day, store, now):
         "source": {"snowOk": snow_ok, "nohrsc24": v24 is not None, "nohrsc6": sum(have6),
                    "radarHours": sum(radar_ok), "radarPass2": sum(1 for h in hours if store.get(iso(h), {}).get("p") == 2)},
         "maxSnow": round(float(total.max()), 1),
+        "anyIce": any(("Z" in t or "P" in t) for t in type_rows),
         "cells": cells, "snow": snow_rows, "type": type_rows, "ice": ice,
         "stations": {s: dict(STATIONS[s], obs=st_hours[s]) for s in names},
         "reports": reports,
@@ -548,7 +551,9 @@ def update(outdir, now=None):
     store = load_radar(rpath)
     oldest = floor_hour(now) - H1 * RADAR_HOURS
     store = {k: v for k, v in store.items() if parse_iso(k) > oldest}
-    newest = floor_hour(now - dt.timedelta(minutes=65))
+    # NOAA posts Pass 1 about 15 minutes after the hour and Pass 2 (more rain gauges) about an hour after
+    # (checked Oct. 19, 2026): take Pass 1 first and swap in Pass 2 when it's out.
+    newest = floor_hour(now - dt.timedelta(minutes=PASS1_AFTER))
     want = []
     h = newest
     while h > oldest:
@@ -561,9 +566,10 @@ def update(outdir, now=None):
         have = store.get(iso(h))
         if have and have["p"] == 2:
             continue
-        if have and now - h < dt.timedelta(minutes=110):
-            continue         # Pass 2 usually comes about two hours after the hour
-        ok = fetch_radar_hour(store, h, passes=(2,) if have else (2, 1))
+        pass2_due = now - h >= dt.timedelta(minutes=PASS2_AFTER)
+        if have and not pass2_due:
+            continue
+        ok = fetch_radar_hour(store, h, passes=(2,) if have else ((2, 1) if pass2_due else (1,)))
         if ok:
             fetched += 1
             upgraded += 1 if have else 0
