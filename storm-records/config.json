@@ -1,0 +1,31 @@
+{
+  "about": "Storm records TEST config (Oct. 19, 2026). Lots are public places used only to try the idea; no customer locations belong in this public repository. Storm windows are in Central time and cover last winter's La Porte County snow storms from snow.json (NWS storm reports).",
+  "lots": [
+    {"id": "mc-franklin", "label": "Franklin St lot, Michigan City", "lat": 41.67506, "lon": -86.88981, "plow_at": 2},
+    {"id": "lp-lincolnway", "label": "Lincolnway lot, La Porte", "lat": 41.61060, "lon": -86.72250, "plow_at": 2},
+    {"id": "westville", "label": "US 421 lot, Westville", "lat": 41.53760, "lon": -86.90830, "plow_at": 2},
+    {"id": "wanatah", "label": "US 30 lot, Wanatah", "lat": 41.43060, "lon": -86.89830, "plow_at": 2},
+    {"id": "rolling-prairie", "label": "Rolling Prairie lot", "lat": 41.67390, "lon": -86.61640, "plow_at": 2}
+  ],
+  "storms": [
+    {"id": "2025-11-09", "name": "Nov. 9-10, 2025", "start": "2025-11-09T06:00", "end": "2025-11-10T12:00"},
+    {"id": "2025-11-29", "name": "Nov. 29-30, 2025", "start": "2025-11-29T00:00", "end": "2025-11-30T12:00"},
+    {"id": "2026-01-12", "name": "Jan. 12-15, 2026", "start": "2026-01-12T06:00", "end": "2026-01-15T12:00"},
+    {"id": "2026-01-25", "name": "Jan. 25-26, 2026", "start": "2026-01-25T00:00", "end": "2026-01-26T12:00"},
+    {"id": "2026-01-30", "name": "Jan. 30-31, 2026", "start": "2026-01-30T12:00", "end": "2026-01-31T12:00"}
+  ],
+  "rain": {
+    "about": "Rain at a job site during work hours, from radar, compared with the nearest airport and with CoCoRaHS gauges.",
+    "sites": ["mc-franklin", "lp-lincolnway", "wanatah"],
+    "work_hours": [7, 17],
+    "days": ["2026-09-17", "2026-09-18", "2026-09-19", "2026-09-30", "2026-10-01", "2026-10-16"],
+    "gauge_dates": ["2026-09-18", "2026-09-19", "2026-09-20", "2026-09-21", "2026-10-01", "2026-10-02", "2026-10-17"]
+  },
+  "region": {"south": 41.20, "north": 42.00, "west": -87.35, "east": -86.20},
+  "stations": {
+    "MGC": {"name": "Michigan City airport", "lat": 41.7033, "lon": -86.8212},
+    "PPO": {"name": "La Porte airport", "lat": 41.5725, "lon": -86.7345},
+    "VPZ": {"name": "Valparaiso airport", "lat": 41.4540, "lon": -87.0071},
+    "SBN": {"name": "South Bend airport", "lat": 41.7072, "lon": -86.3164}
+  }
+}
