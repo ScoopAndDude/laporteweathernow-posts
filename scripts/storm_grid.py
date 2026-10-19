@@ -6,8 +6,7 @@ customer: the Hard Hat sender (private, Google Apps Script) reads these files at
 
   radar/TR-TC.json      the last 48 hours of NOAA MRMS MultiSensor QPE (radar plus rain gauges, 1 hour, 1 km),
                         averaged over each grid cell, one file per tile of 10 x 10 cells: rain at a job site during
-                        work hours, for delay records and the rain-out guarantee. (radar.json has all of it, for
-                        this job's next run.)
+                        work hours, for delay records and the rain-out guarantee. (The next run reads them back.)
   snow/YYYY-MM-DD/      meta.json and one file per tile that had anything (TR-TC.json, listed in meta.json's
                         "tiles"): the 24 hours ending 12 UTC that morning (6 AM CST, 7 AM CDT): estimated snow by hour in each
                         cell (the NOAA National Snowfall Analysis 24-hour total, split by its 6-hour analyses, spread
@@ -235,6 +234,25 @@ def decode_hour(flat):
     if f.size:
         a[f[:, 0]] = np.where(f[:, 1] < 0, np.nan, f[:, 1] / 1000.0)
     return a.reshape(ROWS, COLS)
+
+
+def load_radar_tiles(tdir):
+    """The radar hours back from the tiles (this job's memory between runs), or {} when there are none."""
+    store = {}
+    if not os.path.isdir(tdir):
+        return store
+    for name in TILES:
+        try:
+            with open(os.path.join(tdir, f"{name}.json"), encoding="utf-8") as f:
+                o = json.load(f)
+        except (OSError, ValueError):
+            return {}                  # a tile missing or broken: start over rather than keep holes
+        if o.get("grid", {}).get("rows") != ROWS or o.get("grid", {}).get("cols") != COLS:
+            return {}
+        for k, h in o.get("hours", {}).items():
+            st = store.setdefault(k, {"p": h["p"], "v": []})
+            st["v"].extend(h["v"])
+    return store
 
 
 def load_radar(path):
@@ -547,8 +565,7 @@ def write_json(path, obj):
 
 def update(outdir, now=None):
     now = now or dt.datetime.now(UTC)
-    rpath = os.path.join(outdir, "radar.json")
-    store = load_radar(rpath)
+    store = load_radar_tiles(os.path.join(outdir, "radar"))
     oldest = floor_hour(now) - H1 * RADAR_HOURS
     store = {k: v for k, v in store.items() if parse_iso(k) > oldest}
     # NOAA posts Pass 1 about 15 minutes after the hour and Pass 2 (more rain gauges) about an hour after
@@ -574,7 +591,6 @@ def update(outdir, now=None):
             fetched += 1
             upgraded += 1 if have else 0
     log(f"radar: {len(store)} hours kept, {fetched} fetched ({upgraded} upgraded to Pass 2)")
-    save_radar(rpath, store)
     write_radar_tiles(os.path.join(outdir, "radar"), store)
     # snow days: the latest three 12 UTC ends
     last12 = now.replace(hour=12, minute=0, second=0, microsecond=0)

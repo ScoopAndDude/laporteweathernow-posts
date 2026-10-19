@@ -44,6 +44,19 @@ jobs:
       - name: Compare with the per-lot engine
         if: always()
         run: python3 scripts/storm_records/grid_compare.py storm-records/out/grid
+      - name: Try the hourly run (twice) on today's data
+        if: always()
+        run: |
+          D="$RUNNER_TEMP/live"; O=storm-records/out/grid/live-update; rm -rf "$D"; mkdir -p "$O"
+          t0=$(date +%s); python3 scripts/storm_grid.py update "$D"; t1=$(date +%s)
+          cp "$D/log.txt" "$O/log-1.txt"
+          python3 scripts/storm_grid.py update "$D"; t2=$(date +%s)
+          cp "$D/log.txt" "$O/log-2.txt"
+          cp "$D/index.json" "$O/"
+          cp "$D/radar/2-3.json" "$O/radar-2-3.json" 2>/dev/null || true
+          ls "$D/snow" > "$O/snow-days.txt" 2>/dev/null || true
+          for d in "$D"/snow/*/; do [ -f "$d/meta.json" ] && cp "$d/meta.json" "$O/meta-$(basename "$d").json"; done
+          { echo "first run $((t1 - t0)) s, second run $((t2 - t1)) s"; du -sh "$D" "$D/radar" "$D/snow" 2>/dev/null; } > "$O/sizes.txt"
       - name: Save results to this branch
         if: always()
         run: |
