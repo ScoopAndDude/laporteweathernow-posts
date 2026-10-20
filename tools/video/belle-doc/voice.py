@@ -25,7 +25,7 @@ PRONOUNCE = {
     "Lamphere": "lˈæmfɪɹ", "Budsberg": "bˈʌdzbɜɹɡ", "Asle": "ˈɑslə", "Ole": "ˈOli", "Skandinaven": "skˌændɪnˈɑvən",
     "Smutzer": "smˈʌtsəɹ", "Leliter": "lˈɛlɪtəɹ", "Mads": "mˈæds", "Jennie": "ʤˈɛni", "Myrtle": "mˈɜɹtᵊl",
     "Gurholdt": "ɡˈʊɹhOlt", "Lindbloom": "lˈɪndblum", "Maxson": "mˈæksən", "Iola": "Iˈolə",
-    "Nawrocki": "nəɹˈɑki", "Swanhild": "swˈɑnhɪld", "McClung": "məklˈʌŋ", "Sorensons": "sˈɔɹənsənz",
+    "Nawrocki": "nəɹˈɑki", "Swanhild": "swˈɑnhɪld", "McClung": "məklˈʌŋ", "Sorensons": "sˈɔɹənsənz", "Moe": "mˈO",
 }
 
 
@@ -41,9 +41,11 @@ def main():
     record, made = [], 0
     for ln in lines:
         spoken = ln.get("tts") or ln["say"]
+        # a line is recorded again when its words change, or when the way one of its names is said changes
+        key = spoken + " | " + "; ".join(f"{w}={p}" for w, p in sorted(PRONOUNCE.items()) if w in spoken)
         path = os.path.join(out, ln["id"] + ".flac")
         prev = old.get(ln["id"])
-        if prev and prev.get("text") == spoken and os.path.exists(path):
+        if prev and prev.get("key", prev.get("text")) == key and os.path.exists(path):
             prev["say"] = ln["say"]
             record.append(prev)
             continue
@@ -66,7 +68,7 @@ def main():
             at += len(a) / RATE
         audio = np.concatenate(chunks).astype(np.float32)
         sf.write(path, audio, RATE, format="FLAC")
-        record.append({"id": ln["id"], "say": ln["say"], "text": spoken, "seconds": round(len(audio) / RATE, 3), "words": words,
+        record.append({"id": ln["id"], "say": ln["say"], "text": spoken, "key": key, "seconds": round(len(audio) / RATE, 3), "words": words,
                        "phonemes": " ".join(phon)})
         made += 1
         print(ln["id"], record[-1]["seconds"], "s")
