@@ -1373,6 +1373,8 @@ class Map(Shot):
 # ------------------------------------------------------------------------------------------------ timeline
 VOICE_DATA = {}
 WPS = 2.45            # words per second, for timing before the narration is recorded
+DUCK_HOLD = 1.0       # seconds the music stays down after the narrator stops
+DUCK_AHEAD = 0.35     # seconds it starts going down before the narrator starts
 
 
 def load_voice():
@@ -1781,11 +1783,21 @@ def soundtrack(chapters, path):
                 narr[i:i + len(a)] += a[: n - i]
     if missing:
         print(f"  ({missing} lines have no recording yet)")
-    # how much the music steps back while the narrator talks
-    rect = np.abs(narr)
-    att = sg.lfilter([1 - math.exp(-1 / (0.03 * SR))], [1, -math.exp(-1 / (0.03 * SR))], rect)
-    rel = sg.lfilter([1 - math.exp(-1 / (0.6 * SR))], [1, -math.exp(-1 / (0.6 * SR))], att)
-    duck = np.clip(np.maximum(att, rel) / (np.percentile(rel[rel > 1e-4], 70) if (rel > 1e-4).any() else 1), 0, 1).astype(np.float32)
+    # how much the music steps back while the narrator talks. The music goes down a moment before the voice starts,
+    # stays down for a beat after it stops and moves in smooth fades, so it doesn't jump up in the short pauses
+    # between lines (it only comes up in real breaks, like the chapter cards).
+    from scipy.ndimage import maximum_filter1d
+    ctl = 200                                                    # control rate, Hz
+    step = SR // ctl
+    m = len(narr) // step
+    peak = np.abs(narr[: m * step]).reshape(m, step).max(axis=1)
+    thr = 0.02 * float(np.percentile(peak[peak > 1e-4], 90)) if (peak > 1e-4).any() else 1.0
+    act = (peak > thr).astype(np.float32)
+    hold, ahead = int(DUCK_HOLD * ctl), int(DUCK_AHEAD * ctl)
+    act = maximum_filter1d(act, size=hold + ahead + 1, origin=(hold - ahead) // 2)
+    b, a = sg.butter(1, 1.2 / (ctl / 2))
+    act = np.clip(sg.filtfilt(b, a, act), 0, 1)
+    duck = np.interp(np.arange(n) / step, np.arange(m), act).astype(np.float32)
     mus = np.zeros((n, 2), np.float32)
     for k, c in enumerate(chapters):
         name = c.get("music") or "open"
