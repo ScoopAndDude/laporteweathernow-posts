@@ -4,11 +4,13 @@ name: Belle Gunness documentary pictures (one-off, Oct. 2026)
 # Wikimedia Commons and the Library of Congress. The pictures go in a zip on a "belle-doc-images" pre-release
 # (so the branch stays small); the list with every picture's license and credit, and the log, are saved on
 # the belle-doc branch. Runs only on that branch, only when the list changes. Nothing is posted.
+# Since Oct. 20 it runs the second pass (fetch.py --extra, sources-extra.json), which adds pictures without
+# renumbering the first pass's; its pictures go in a second zip on the same pre-release.
 on:
   push:
     branches: [belle-doc]
     paths:
-      - tools/video/belle-doc/sources.json
+      - tools/video/belle-doc/sources-extra.json
       - tools/video/belle-doc/fetch.py
       - .github/workflows/belle-doc-images.yml
 
@@ -33,24 +35,25 @@ jobs:
       - name: Get ready
         run: pip install -q pillow
       - name: Find and download
-        run: python3 tools/video/belle-doc/fetch.py || echo "fetch.py stopped with an error; see images/fetch-log.txt"
+        run: python3 tools/video/belle-doc/fetch.py --extra || echo "fetch.py stopped with an error; see images/fetch-log-extra.txt"
       - name: Zip the pictures onto the pre-release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           cd tools/video/belle-doc/images
-          zip -q -r ../belle-doc-images.zip . -i "*.jpg" "manifest.json"
+          touch extra-files.txt
+          (cat extra-files.txt; echo manifest.json) | grep -v '^$' | zip -q ../belle-doc-images-extra-${{ github.run_number }}.zip -@
           cd ..
-          ls -la belle-doc-images.zip
+          ls -la belle-doc-images-extra-*.zip
           gh release view belle-doc-images >/dev/null 2>&1 || gh release create belle-doc-images --prerelease --target belle-doc \
             --title "Belle Gunness documentary pictures (working files)" \
             --notes "Working pictures for the documentary in tools/video/belle-doc on the belle-doc branch: public domain, CC0 or CC BY only. Each picture's source, license and credit are in images/manifest.json."
-          gh release upload belle-doc-images belle-doc-images.zip --clobber
+          gh release upload belle-doc-images belle-doc-images-extra-${{ github.run_number }}.zip --clobber
       - name: Save the list and the log on this branch
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add tools/video/belle-doc/images/manifest.json tools/video/belle-doc/images/fetch-log.txt || true
+          git add tools/video/belle-doc/images/manifest.json tools/video/belle-doc/images/fetch-log-extra.txt tools/video/belle-doc/images/extra-files.txt || true
           git commit -q -m "Belle documentary: picture list (licenses and credits) and search log" || echo "nothing new"
           for i in 1 2 3; do git pull -q --rebase origin belle-doc && git push -q origin HEAD:belle-doc && break; sleep 5; done

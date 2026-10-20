@@ -10,6 +10,11 @@
 
 Saves images/<name>-NN.jpg, images/manifest.json (title, page, url, license, artist, credit, date, desc)
 and images/fetch-log.txt (everything it tried, since the job's own log can't be read from the workspace).
+
+    fetch.py --extra     a second, smaller pass (sources-extra.json): adds pictures to the list without touching
+                         the ones already there (their numbers stay the same): sharper copies of chosen pictures,
+                         full-resolution clippings of chosen newspaper headlines, and a few new searches.
+                         New files are listed in images/extra-files.txt; the log is images/fetch-log-extra.txt.
 """
 import io
 import json
@@ -27,7 +32,7 @@ Image.MAX_IMAGE_PIXELS = None
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "images")
 os.makedirs(OUT, exist_ok=True)
-LOGF = open(os.path.join(OUT, "fetch-log.txt"), "w", encoding="utf-8")
+LOGF = None                    # opened in main (fetch-log.txt, or fetch-log-extra.txt for --extra)
 UA = "LaPorteWeatherNow/1.0 (https://laporteweathernow.com; laporteweathernow@gmail.com) documentary picture search"
 MAX_SIDE = 2000
 
@@ -35,8 +40,9 @@ MAX_SIDE = 2000
 def log(*a):
     s = " ".join(str(x) for x in a)
     print(s)
-    print(s, file=LOGF)
-    LOGF.flush()
+    if LOGF:
+        print(s, file=LOGF)
+        LOGF.flush()
 
 
 _last = {"loc": 0.0}
@@ -94,13 +100,15 @@ def save_image(raw, path, max_side=MAX_SIDE):
 
 
 manifest, seen = [], set()
+NEW_FILES = []                 # files saved in this run (for the --extra zip)
 
 
-def add(entry, raw, name, k, max_side=MAX_SIDE):
-    path = os.path.join(OUT, f"{name}-{k:02d}.jpg")
+def add(entry, raw, name, k, max_side=MAX_SIDE, filename=None):
+    path = os.path.join(OUT, filename or f"{name}-{k:02d}.jpg")
     size = save_image(raw, path, max_side)
     entry.update({"file": os.path.basename(path), "saved": list(size)})
     manifest.append(entry)
+    NEW_FILES.append(entry["file"])
     log("  saved", entry["file"], size, "|", entry.get("license", ""), "|", (entry.get("artist") or "")[:50], "|", (entry.get("title") or "")[:90])
 
 
@@ -288,6 +296,7 @@ def newspapers(spec):
         return
     # earliest pages first (the first weeks of May 1908 had the biggest headlines), one page per paper per day
     results.sort(key=lambda r: (str(r.get("date", "")), str(r.get("id", ""))))
+    name = spec.get("name", "news")
     k, per_day = 0, set()
     for r in results:
         if k >= spec.get("max", 60):
@@ -298,6 +307,8 @@ def newspapers(spec):
         if day_key in per_day:
             continue
         rid = r.get("id") or ""
+        if rid.split("&q=")[0] in seen:
+            continue
         base = next((iiif_base(u) for u in r.get("image_url") or [] if iiif_base(u)), None)
         try:
             info = getjson(base + "/info.json", loc=True)
@@ -307,6 +318,8 @@ def newspapers(spec):
             continue
         crops = []
         try:
+            if not spec.get("crops_per_page", 3):
+                raise StopIteration
             res_json = getjson(rid.split("#")[0] + ("&" if "?" in rid else "?") + "fo=json", loc=True)
             alto_url = find_alto_url(res_json)
             if alto_url:
@@ -319,6 +332,8 @@ def newspapers(spec):
                     crops.append({"box": [X0, Y0, X1 - X0, Y1 - Y0], "score": score, "text": text})
             else:
                 log("  no word positions for", rid[:100])
+        except StopIteration:
+            pass
         except Exception as e:
             log("  word positions failed:", rid[:100], e)
         try:
@@ -327,12 +342,14 @@ def newspapers(spec):
             log("  page download failed:", base, e)
             continue
         per_day.add(day_key)
+        seen.add(rid.split("&q=")[0])
         k += 1
-        entry = {"title": f"{paper}, {r.get('date', '')}", "page": rid.split("&q=")[0], "url": base, "license": "Public domain (1908 newspaper)",
+        entry = {"title": f"{paper}, {r.get('date', '')}", "page": rid.split("&q=")[0], "url": base,
+                 "license": spec.get("license", "Public domain (1908 newspaper)"),
                  "artist": paper, "credit": "Library of Congress, Chronicling America", "date": str(r.get("date", "")),
                  "desc": clean(" ".join(r.get("description", []) if isinstance(r.get("description"), list) else [str(r.get("description") or "")]))[:300],
                  "source": "Library of Congress", "kind": "newspaper-page", "page_size": [iw, ih], "crops": []}
-        add(entry, raw, "news", k, max_side=2600)
+        add(entry, raw, name, k, max_side=2600)
         for j, c in enumerate(crops, 1):
             x, y, w, h = c["box"]
             if w < 50 or h < 30:
@@ -342,7 +359,7 @@ def newspapers(spec):
             except Exception as e:
                 log("  crop failed:", e)
                 continue
-            path = os.path.join(OUT, f"news-{k:02d}-crop{j}.jpg")
+            path = os.path.join(OUT, f"{name}-{k:02d}-crop{j}.jpg")
             size = save_image(raw_c, path, 2000)
             entry["crops"].append({"file": os.path.basename(path), "box": c["box"], "score": c["score"], "text": c["text"], "saved": list(size)})
             log("    crop", os.path.basename(path), size, "|", c["text"][:100])
@@ -353,7 +370,136 @@ def write_manifest():
         json.dump(manifest, fh, ensure_ascii=False, indent=1)
 
 
+# ------------------------------------------------------------------ the second pass (--extra)
+def commons_original(title):
+    """The full-size file URL for a Commons file title."""
+    data = getjson(API + urllib.parse.urlencode({"action": "query", "format": "json", "prop": "imageinfo", "iiprop": "url|size",
+                                                "titles": title}))
+    page = next(iter((data.get("query", {}).get("pages", {}) or {}).values()), {})
+    ii = (page.get("imageinfo") or [{}])[0]
+    return ii.get("url"), ii.get("width"), ii.get("height")
+
+
+def hires_copies(items, old):
+    """Sharper copies of Commons pictures already on the list: {"file": "gunness-45.jpg", "out": "gunness-45-hi", "max_side": 4600}."""
+    by_file = {x["file"]: x for x in old}
+    for h in items:
+        if h["out"] + ".jpg" in by_file:
+            continue                                  # made by an earlier run
+        src = by_file.get(h["file"])
+        if not src:
+            log("  not on the list:", h["file"])
+            continue
+        try:
+            url, w, hh = commons_original(src["title"])
+            raw = get(url)
+        except Exception as e:
+            log("  original failed:", src["title"], e)
+            continue
+        entry = {k: v for k, v in src.items() if k not in ("file", "saved")}
+        entry.update({"url": url, "hires_of": h["file"]})
+        add(entry, raw, "", 0, max_side=int(h.get("max_side", 5000)), filename=h["out"] + ".jpg")
+
+
+def news_clips(items, old):
+    """Full-resolution cut-outs of newspaper pages already on the list, straight from the Library's IIIF server:
+    {"file": "news-02.jpg", "box": [x0, y0, x1, y1] (fractions of the page), "out": "news-02-a"}."""
+    by_file = {x["file"]: x for x in old}
+    for c in items:
+        if c["out"] + ".jpg" in by_file:
+            continue                                  # made by an earlier run
+        src = by_file.get(c["file"])
+        if not src or not src.get("url"):
+            log("  page not on the list:", c["file"])
+            continue
+        base = src["url"]
+        try:
+            iw, ih = src.get("page_size") or (None, None)
+            if not iw:
+                info = getjson(base + "/info.json", loc=True)
+                iw, ih = int(info["width"]), int(info["height"])
+            x0, y0, x1, y1 = c["box"]
+            X, Y = int(max(0, x0) * iw), int(max(0, y0) * ih)
+            Wd, Ht = int(min(1, x1) * iw) - X, int(min(1, y1) * ih) - Y
+            m = int(c.get("max_side", 3600))
+            raw = get(f"{base}/{X},{Y},{Wd},{Ht}/!{m},{m}/0/default.jpg", loc=True)
+        except Exception as e:
+            log("  clip failed:", c["file"], c["box"], e)
+            continue
+        entry = {k: v for k, v in src.items() if k not in ("file", "saved", "crops")}
+        entry.update({"clip_of": c["file"], "box": c["box"], "clip_px": [X, Y, Wd, Ht], "note": c.get("note", "")})
+        add(entry, raw, "", 0, max_side=int(c.get("max_side", 3600)), filename=c["out"] + ".jpg")
+
+
+def main_extra():
+    global LOGF
+    LOGF = open(os.path.join(OUT, "fetch-log-extra.txt"), "w", encoding="utf-8")
+    spec = json.load(open(os.path.join(HERE, "sources-extra.json"), encoding="utf-8"))
+    old = json.load(open(os.path.join(OUT, "manifest.json"), encoding="utf-8"))
+    manifest.extend(old)
+    for x in old:
+        seen.add(x.get("title"))
+        seen.add(x.get("page"))
+    log(len(old), "pictures already on the list")
+    if spec.get("commons_hires"):
+        log("Sharper copies:", len(spec["commons_hires"]))
+        hires_copies(spec["commons_hires"], old)
+        write_manifest()
+    if spec.get("news_clips"):
+        log("Newspaper clippings at full resolution:", len(spec["news_clips"]))
+        news_clips(spec["news_clips"], old)
+        write_manifest()
+    taken = {re.sub(r"-\d+\.jpg$", "", x["file"]) for x in old}
+    for q in spec.get("commons", []):
+        if q["name"] in taken:
+            log("  name already used, skipped:", q["name"])
+            continue
+        log("Commons:", q["name"], q.get("category") or q.get("search"))
+        try:
+            found = commons(q)
+        except Exception as e:
+            log("  didn't answer:", e)
+            continue
+        k = 0
+        for it in sorted(found, key=lambda x: x["title"] or ""):
+            if k >= q.get("max", 50):
+                break
+            if it["title"] in seen or not it["url"] or not it["mime"].startswith("image/") or "svg" in it["mime"]:
+                continue
+            if not license_ok(it["license"]):
+                log("  skip (license):", it["title"][:90], "|", it["license"])
+                continue
+            seen.add(it["title"])
+            try:
+                raw = get(it["url"])
+            except Exception as e:
+                log("  couldn't download", it["title"], e)
+                continue
+            k += 1
+            add(it, raw, q["name"], k)
+            time.sleep(0.3)
+        write_manifest()
+    for q in spec.get("newspapers", []):
+        if q["name"] in taken:
+            log("  name already used, skipped:", q["name"])
+            continue
+        log("Chronicling America:", q)
+        try:
+            newspapers(dict(q, crops_per_page=0))
+        except Exception as e:
+            log("  stopped:", e)
+        write_manifest()
+    write_manifest()
+    with open(os.path.join(OUT, "extra-files.txt"), "w", encoding="utf-8") as fh:
+        fh.write("\n".join(NEW_FILES) + "\n")
+    log(len(NEW_FILES), "new pictures saved;", len(manifest), "on the list")
+
+
 def main():
+    global LOGF
+    if "--extra" in sys.argv:
+        return main_extra()
+    LOGF = open(os.path.join(OUT, "fetch-log.txt"), "w", encoding="utf-8")
     spec = json.load(open(os.path.join(HERE, "sources.json"), encoding="utf-8"))
     only = set(sys.argv[1:])
     for q in spec.get("commons", []):

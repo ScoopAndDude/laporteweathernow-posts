@@ -1,0 +1,53 @@
+{
+  "about": "Second picture pass for the Belle Gunness documentary (fetch.py --extra, Oct. 20, 2026). Adds to images/manifest.json without renumbering anything: sharper copies of pictures already chosen, full-resolution cut-outs of the 1908 headlines the film shows (boxes are fractions of the page), and a few searches for scenes the first pass didn't find (the courthouse, the 1908 trial, Lamphere's 1910 'confession', the 1931 Los Angeles story). Same rules: public domain, CC0 or CC BY only.",
+  "commons_hires": [
+    {"file": "gunness-45.jpg", "out": "gunness-45-hi", "max_side": 4600},
+    {"file": "selbu-01.jpg", "out": "selbu-01-hi", "max_side": 4200},
+    {"file": "selbu-02.jpg", "out": "selbu-02-hi", "max_side": 4200}
+  ],
+  "news_clips": [
+    {"file": "news-01.jpg", "box": [0.30, 0.19, 0.52, 0.36], "out": "news-01-a", "note": "MYSTERY IN MURDERS"},
+    {"file": "news-02.jpg", "box": [0.0, 0.06, 0.24, 0.32], "out": "news-02-a", "note": "KILLED LURING MEN TO DEATH"},
+    {"file": "news-03.jpg", "box": [0.78, 0.05, 1.0, 0.38], "out": "news-03-a", "note": "FIND EIGHT BODIES"},
+    {"file": "news-04.jpg", "box": [0.0, 0.03, 0.21, 0.17], "out": "news-04-a", "note": "DUG UP FIVE BODIES"},
+    {"file": "news-05.jpg", "box": [0.02, 0.32, 0.21, 0.42], "out": "news-05-a", "note": "YARD FULL OF BODIES"},
+    {"file": "news-06.jpg", "box": [0.01, 0.03, 0.21, 0.12], "out": "news-06-a", "note": "MORE BODIES FOUND"},
+    {"file": "news-07.jpg", "box": [0.40, 0.06, 0.58, 0.44], "out": "news-07-a", "note": "WOMAN'S HELPER HAS HEAD IN NOOSE; Matrimonial Ad Victims Answered"},
+    {"file": "news-12.jpg", "box": [0.78, 0.04, 1.0, 0.25], "out": "news-12-a", "note": "GUNNESS WOMAN SEEN IN CHICAGO"},
+    {"file": "news-15.jpg", "box": [0.0, 0.03, 0.37, 0.26], "out": "news-15-a", "note": "Andrew Helgeline's Body Found"},
+    {"file": "news-16.jpg", "box": [0.0, 0.01, 0.20, 0.10], "out": "news-16-a", "note": "ANOTHER BODY FOUND; bus line to the farm"},
+    {"file": "news-19.jpg", "box": [0.82, 0.10, 1.0, 0.29], "out": "news-19-a", "note": "MOTHER SEEKS SON"},
+    {"file": "news-20.jpg", "box": [0.38, 0.04, 0.62, 0.23], "out": "news-20-a", "note": "GUNNESS SUSPECT, CAUGHT ON TRAIN, FREED BY POLICE"},
+    {"file": "news-22.jpg", "box": [0.0, 0.015, 0.20, 0.11], "out": "news-22-a", "note": "MRS. GUNNESS ALIVE; much smaller woman"},
+    {"file": "news-23.jpg", "box": [0.0, 0.05, 0.42, 0.48], "out": "news-23-a", "note": "LURED TO DEATH BY LOVE LETTERS; roll of death"},
+    {"file": "news-28.jpg", "box": [0.80, 0.08, 1.0, 0.30], "out": "news-28-a", "note": "FORGING THE LINK; SLUICING THE ASHES TODAY"},
+    {"file": "news-35.jpg", "box": [0.0, 0.02, 0.21, 0.20], "out": "news-35-a", "note": "MORE BODIES FOUND, ELEVEN VICTIMS"},
+    {"file": "news-35.jpg", "box": [0.43, 0.02, 0.67, 0.20], "out": "news-35-b", "note": "MRS. GUNNESS ALIVE"},
+    {"file": "news-37.jpg", "box": [0.29, 0.02, 0.48, 0.22], "out": "news-37-a", "note": "NEW VICTIMS OF MRS. GUNNESS"},
+    {"file": "news-39.jpg", "box": [0.0, 0.0, 0.52, 0.64], "out": "news-39-a", "max_side": 4200, "note": "portraits and the chronology"},
+    {"file": "news-41.jpg", "box": [0.53, 0.41, 0.71, 0.59], "out": "news-41-a", "note": "SCORES OF LETTERS TO GUNNESS HOME"},
+    {"file": "news-50.jpg", "box": [0.0, 0.21, 0.19, 0.32], "out": "news-50-a", "note": "MRS. GUNNESS DEAD; the teeth"},
+    {"file": "news-54.jpg", "box": [0.33, 0.01, 0.64, 0.58], "out": "news-54-a", "note": "MAKE PROGRESS IN MURDER MYSTERY; Lamphere"},
+    {"file": "news-58.jpg", "box": [0.70, 0.41, 0.83, 0.52], "out": "news-58-a", "note": "RAY LAMPHERE HELD"}
+  ],
+  "commons": [
+    {"name": "lp-court", "search": "Court House LaPorte Indiana", "max": 12},
+    {"name": "lp-church", "search": "Baptist Church LaPorte Indiana", "max": 8},
+    {"name": "lp-bank", "search": "Bank LaPorte Indiana", "max": 8},
+    {"name": "lp-fire", "search": "Fire Department LaPorte Indiana", "max": 10},
+    {"name": "lp-cemetery", "search": "Cemetery LaPorte Indiana", "max": 12},
+    {"name": "lp-depot", "search": "Depot LaPorte Indiana", "max": 8},
+    {"name": "lp-street", "search": "Street LaPorte Indiana circa 1908", "max": 15},
+    {"name": "castle-garden2", "search": "Castle Garden emigrants", "max": 15},
+    {"name": "emigrants-no", "search": "utvandrere", "max": 15},
+    {"name": "emigrants-deck", "search": "emigrants steerage deck engraving", "max": 10},
+    {"name": "la-1931", "search": "Los Angeles 1931", "max": 10},
+    {"name": "uindy", "search": "University of Indianapolis", "max": 6}
+  ],
+  "newspapers": [
+    {"name": "news-apr", "q": "gunness", "dates": "1908-04-28/1908-05-05", "max": 10},
+    {"name": "news-nov", "q": "lamphere", "dates": "1908-11-09/1908-11-30", "max": 10},
+    {"name": "news-jan10", "q": "lamphere", "dates": "1910-01-10/1910-01-31", "max": 8, "license": "Public domain (1910 newspaper)"},
+    {"name": "news-1931", "q": "gunness", "dates": "1931-04-01/1931-08-31", "max": 8, "license": "Public domain (1931 newspaper; Library of Congress: no known restrictions)"}
+  ]
+}
