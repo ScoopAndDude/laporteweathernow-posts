@@ -1155,7 +1155,11 @@ def render(short, outdir, stills=False):
     spec = SHORTS[short]
     tl, total = timeline(spec)
     theme = spec["theme"]
-    if theme == "halloween":
+    if theme.startswith("photo"):
+        base = Image.new("RGBA", (W, H), (8, 8, 10, 255))
+        atm = Atmos(tint=(196, 196, 204) if theme != "photo-warm" else (220, 190, 160),
+                    fog=0.16 if theme != "photo-night" else 0.30, vignette=0.75, grain=16 if theme == "photo" else 10, seed=2)
+    elif theme == "halloween":
         hw.FACES[:] = [hw.face_layer(s) for _, _, s, _ in hw.PUMPKINS]
         base = hw.night_base()
         atm = Atmos(tint=(170, 150, 210), fog=0.22, vignette=0.6, grain=10, seed=4)
@@ -1176,6 +1180,8 @@ def render(short, outdir, stills=False):
     if theme == "woods":
         woods_ctx = next(seg["scene"].ctx for seg in tl if seg["scene"].ctx)
     bars = [{"start": s["start"], "dur": s["dur"]} for s in tl]
+    global BRAND
+    BRAND = vr.brand_row()
 
     def frame_at(t):
         idx = max(i for i, s in enumerate(tl) if t >= s["start"] - 1e-9)
@@ -1186,17 +1192,22 @@ def render(short, outdir, stills=False):
             hw.animate(f, t)
         if theme == "woods":
             draw_woods(f, t, woods_ctx, total)
-        atm.fog(f, t, y0=1050 if theme != "woods" else 980, y1=330)
+        if not theme.startswith("photo") or theme == "photo-night":
+            atm.fog(f, t, y0=1050 if theme != "woods" else 980, y1=330)
         seg["scene"].draw(f, u, seg["words"], seg["scene"].ctx)
+        if theme.startswith("photo"):
+            f.alpha_composite(BRAND, (0, 175))
         caption(f, seg["words"], u)
         vr.progress(f, bars, t, total)
         flash = lightning(u, seg["scene"].flash_at) if seg["scene"].flash_at is not None else 0.0
-        atm.finish(f, t, flicker=0.6 if theme == "noir" else 0.0, flash=flash)
+        atm.finish(f, t, flicker=0.6 if theme in ("noir", "photo") else 0.0, flash=flash)
         return f
 
     os.makedirs(outdir, exist_ok=True)
     if stills:
-        paths = []
+        p = os.path.join(outdir, f"{short}-still-0.png")          # the cover frame (0.4 s)
+        frame_at(0.4).convert("RGB").save(p)
+        paths = [p]
         for k, seg in enumerate(tl):
             t = seg["start"] + min(seg["dur"] - 0.05, max(seg["words"][-1][2] - 0.2, 0.5) if seg["words"] else 1.0)
             p = os.path.join(outdir, f"{short}-still-{k + 1}.png")
@@ -1230,6 +1241,390 @@ def render(short, outdir, stills=False):
         raise RuntimeError("ffmpeg couldn't make " + short)
     print(f"Made {out}: {total:.1f} s, {n} frames, {os.path.getsize(out) / 1e6:.1f} MB")
     return [out]
+
+
+
+# =============================================================================================
+# Real pictures (Oct. 20, 2026; Scoop: "use real images"): 1908 photos of Belle Gunness and her farm (public
+# domain, or scans shared under CC BY by Steve Shook), Hesston's No. 242 (Franklin Campbell, CC BY 2.0) and
+# pumpkin patch photos (CC BY / CC0), from images/ (fetch_images.py). Only public domain, CC0 and CC BY
+# pictures are used (no share-alike), and each CC BY one is credited on screen and in the post.
+# =============================================================================================
+import re as _re
+from PIL import ImageEnhance, ImageOps
+
+IMGDIR = os.path.join(HERE, "images")
+MANIFEST = {x["file"]: x for x in json.load(open(os.path.join(IMGDIR, "manifest.json"), encoding="utf-8"))}
+
+
+def credit(f):
+    m = MANIFEST[f]
+    lic = (m.get("license") or "").strip()
+    who = _re.sub(r"\s+from\s.*$", "", _re.sub(r"(Unknown author)+", "", m.get("artist") or "")).strip()
+    if lic.lower().startswith(("public domain", "cc0")):
+        return ""
+    return f"Photo: {who} / {lic}"
+
+
+def photo(f, tone, inset=0.0):
+    im = Image.open(os.path.join(IMGDIR, f)).convert("RGB")
+    if inset:
+        dx, dy = int(im.width * inset), int(im.height * inset)
+        im = im.crop((dx, dy, im.width - dx, im.height - dy))
+    if tone == "sepia":
+        g = ImageOps.autocontrast(im.convert("L"), cutoff=1)
+        g = ImageEnhance.Contrast(g).enhance(1.12)
+        im = ImageOps.colorize(g, black=(12, 9, 7), mid=(118, 94, 68), white=(238, 218, 180))
+    elif tone == "night":
+        im = ImageEnhance.Color(im).enhance(0.3)
+        im = ImageEnhance.Brightness(im).enhance(0.62)
+        im = ImageEnhance.Contrast(im).enhance(1.22)
+        arr = np.asarray(im, np.float32) * np.array([0.70, 0.86, 1.10], np.float32)
+        im = Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8))
+    elif tone == "pumpkin":
+        im = ImageEnhance.Brightness(im).enhance(0.66)
+        im = ImageEnhance.Contrast(im).enhance(1.12)
+    return im.convert("RGBA")
+
+
+def kenburns(frame, im, u, dur, z=(1.0, 1.12), f0=(0.5, 0.5), f1=(0.5, 0.5)):
+    """The photo fills the frame and slowly pushes in; returns a function mapping photo points to the screen."""
+    k = min(1.0, max(0.0, u / max(0.1, dur)))
+    k = k * k * (3 - 2 * k)
+    zz = z[0] + (z[1] - z[0]) * k
+    fx, fy = f0[0] + (f1[0] - f0[0]) * k, f0[1] + (f1[1] - f0[1]) * k
+    s = max(W / im.width, H / im.height) * zz
+    cw, ch = W / s, H / s
+    cx = min(max(fx * im.width, cw / 2), im.width - cw / 2)
+    cy = min(max(fy * im.height, ch / 2), im.height - ch / 2)
+    x0, y0 = cx - cw / 2, cy - ch / 2
+    frame.alpha_composite(im.resize((W, H), Image.BICUBIC, box=(x0, y0, x0 + cw, y0 + ch)))
+    return lambda px, py: ((px * im.width - x0) * s, (py * im.height - y0) * s)
+
+
+def _shade():
+    a = np.zeros((H, 1), np.float32)
+    y = np.arange(H, dtype=np.float32)[:, None]
+    a += np.clip(1 - y / 720, 0, 1) ** 1.3 * 175                      # dark at the top, for titles
+    a += np.clip((y - 1080) / 420, 0, 1) ** 1.2 * 205                 # and at the bottom, for captions
+    img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    img.putalpha(Image.fromarray(np.repeat(np.clip(a, 0, 230), W, axis=1).astype(np.uint8), "L"))
+    return img
+
+
+SHADE = None
+
+
+def shade(frame):
+    global SHADE
+    if SHADE is None:
+        SHADE = _shade()
+    frame.alpha_composite(SHADE)
+
+
+def credit_line(frame, text):
+    if text:
+        img = T(text, "semi", 25, (235, 235, 235, 235), stroke=2, stroke_fill=(0, 0, 0))
+        frame.alpha_composite(img, (X0 - 10, 1478))
+
+
+def embers(frame, u, k, n=46):
+    """Embers rising and an orange glow from below (over a photo)."""
+    if k <= 0:
+        return
+    g = soft_dot(380, (255, 104, 20), int(120 * k))
+    frame.alpha_composite(g, (W // 2 - g.width // 2, 1250 - g.height // 2))
+    for i in range(int(n * k)):
+        ph = (u * (0.35 + (i % 9) * 0.05) + i * 0.137) % 1.0
+        x = (i * 211) % W + 40 * math.sin(u * 1.7 + i)
+        y = 1500 - ph * 1250
+        frame.alpha_composite(soft_dot(3 + i % 3, (255, 180, 70), int(255 * (1 - ph) * k)), (int(x), int(y)))
+
+
+def ghosts_over(frame, t, ctx, spots=((150, 760), (830, 640), (500, 560))):
+    for i, (gx, gy) in enumerate(spots):
+        a = 0.10 + 0.28 * (0.5 + 0.5 * math.sin(t * 1.1 + i * 2.1))
+        frame.alpha_composite(vr.with_alpha(ctx["ghost"], a), (gx - 75, int(gy + 16 * math.sin(t * 1.6 + i))))
+
+
+def emerging(f, tone, scale=2.0, blur=0.9, edge=(0.14, 0.10, 0.22, 0.30)):
+    """A small portrait made ready to float in the dark: the halftone and JPEG blocks softened,
+    enlarged once (sharpened after), and the edges faded to black (left, top, right, bottom)."""
+    im = photo(f, tone).convert("RGB").filter(ImageFilter.GaussianBlur(blur))
+    im = im.resize((int(im.width * scale), int(im.height * scale)), Image.LANCZOS)
+    im = im.filter(ImageFilter.UnsharpMask(radius=3, percent=70, threshold=2))
+    w, h = im.size
+    x = np.arange(w, dtype=np.float32)[None, :] / w
+    y = np.arange(h, dtype=np.float32)[:, None] / h
+    m = np.clip(np.minimum(x / edge[0], (1 - x) / edge[2]), 0, 1) * np.clip(np.minimum(y / edge[1], (1 - y) / edge[3]), 0, 1)
+    m = m * m * (3 - 2 * m)
+    arr = np.asarray(im, np.float32) * m[..., None]
+    out = Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8)).convert("RGBA")
+    out.putalpha(Image.fromarray((m * 255).astype(np.uint8), "L"))
+    return out
+
+
+def float_in(frame, im, u, dur, w=(1180, 1400), focus=((0.41, 0.42), (0.41, 0.40)), at=(540, 640)):
+    """The portrait, width w[0] -> w[1] px over the scene, with its focus point held at `at` on screen."""
+    k = min(1.0, max(0.0, u / max(0.1, dur)))
+    k = k * k * (3 - 2 * k)
+    ww = w[0] + (w[1] - w[0]) * k
+    hh = ww * im.height / im.width
+    fx = focus[0][0] + (focus[1][0] - focus[0][0]) * k
+    fy = focus[0][1] + (focus[1][1] - focus[0][1]) * k
+    frame.alpha_composite(im.resize((int(ww), int(hh)), Image.BICUBIC), (int(at[0] - fx * ww), int(at[1] - fy * hh)))
+
+
+# --- Belle Gunness, part 1, with the real pictures
+def pp_face(ctx):
+    ctx["face"] = emerging("belle-08.jpg", "sepia", scale=3.0, blur=0.5)   # the clean print of her portrait
+    ctx["face_credit"] = credit("belle-08.jpg")
+
+
+def p_a1(frame, u, words, ctx):
+    float_in(frame, ctx["face"], u, 5.6, w=(1180, 1400))
+    shade(frame)
+    paste_c(frame, T("LA PORTE, INDIANA", "bold", 34, BONE + (255,), tracking=4), W / 2, 284)
+    never = word_at(words, "never", 3.0)
+    if u < never:
+        title(frame, "THEY ANSWERED HER ADS", "bask", 84, BONE, 1205, glow=(0, 0, 0), alpha=appear(u, 0.0, 0.12))
+    else:
+        title(frame, "NEVER SEEN AGAIN", "bask", 108, (242, 64, 52), 1205, glow=(120, 0, 0), jitter=u if u - never < 0.25 else 0)
+
+
+def pp_family(ctx):
+    ctx["fam"] = photo("belle-05.jpg", "sepia", inset=0.02)
+
+
+def p_a2(frame, u, words, ctx):
+    kenburns(frame, ctx["fam"], u, 2.4, z=(1.55, 1.25), f0=(0.24, 0.30), f1=(0.27, 0.36))   # on Belle's face
+    shade(frame)
+    at = word_at(words, "Belle", 0.8)
+    if u >= at - 0.1:
+        title(frame, "BELLE GUNNESS", "bask", 132, BONE, 1190, glow=(150, 10, 10), jitter=u if u - at < 0.2 else 0)
+    credit_line(frame, "Photo: Library of Congress, Bain Collection (public domain)")
+
+
+def pp_ruins(ctx):
+    ctx["ruins"] = photo("belle-farm-13.jpg", "sepia", inset=0.05)
+    ctx["ruins_credit"] = credit("belle-farm-13.jpg")
+
+
+def p_a3(frame, u, words, ctx):
+    kenburns(frame, ctx["ruins"], u, 8.0, z=(1.0, 1.14), f0=(0.40, 0.62), f1=(0.47, 0.66))
+    burned = word_at(words, "burned", 2.0)
+    embers(frame, u, min(1.0, max(0.0, (u - burned + 0.3) / 1.2)))
+    shade(frame)
+    april = word_at(words, "April", 0.3)
+    text = "APRIL 28, 1908"
+    n = int(max(0, min(len(text), (u - april) / 0.06)))
+    if n:
+        typed = T(text[:n], "mono", 84, BONE + (255,), stroke=3)
+        frame.alpha_composite(typed, ((W - T(text, "mono", 84, BONE + (255,), stroke=3).width) // 2, 320))
+    credit_line(frame, ctx["ruins_credit"] + " · the farm after the fire, 1908")
+
+
+def pp_cellar(ctx):
+    ctx["cellar"] = photo("belle-farm-15.jpg", "sepia", inset=0.05)
+    ctx["cellar_credit"] = credit("belle-farm-15.jpg")
+
+
+def p_a4(frame, u, words, ctx):
+    kenburns(frame, ctx["cellar"], u, 3.2, z=(1.08, 1.2), f0=(0.5, 0.40), f1=(0.52, 0.45))
+    shade(frame)
+    title(frame, "WHAT THEY DUG UP NEXT", "bask", 84, BONE, 360, glow=(0, 0, 0), alpha=appear(u, 0.0, 0.15))
+    at = word_at(words, "part", 1.4)
+    if u >= at - 0.15:
+        img = T("PART 2", "bask", 230, (232, 40, 34, 255))
+        g, pad = glowT(img, (140, 0, 0), radius=34, strength=0.9)
+        if u - at < 0.3:
+            rng = np.random.default_rng(int(u * 1000))
+            for dx in (-12, 12):
+                frame.alpha_composite(vr.with_alpha(g, 0.35), (int(W / 2 - g.width / 2 + dx + rng.normal(0, 4)), int(1150 - g.height / 2)))
+        paste_c(frame, g, W / 2, 1150)
+    credit_line(frame, ctx["cellar_credit"] + " · crowds at the farm, 1908")
+
+
+# --- Belle Gunness, part 2, with the real pictures
+def p_b1(frame, u, words, ctx):
+    float_in(frame, ctx["face"], u, 3.4, w=(1420, 1220), focus=((0.41, 0.40), (0.42, 0.43)))
+    shade(frame)
+    at = word_at(words, "really", 1.2)
+    if u >= at - 0.1:
+        q = T("?", "bask", 560, (222, 34, 30, 255))
+        g, pad = glowT(q, (120, 0, 0), radius=40, strength=0.9)
+        s = 1.25 - 0.25 * appear(u, at - 0.1, 0.18)
+        paste_c(frame, g.resize((int(g.width * s), int(g.height * s)), Image.BICUBIC), W / 2 + 40, 700, appear(u, at - 0.1, 0.18) * 0.92)
+    title(frame, "WAS IT REALLY BELLE?", "bask", 96, BONE, 1200, glow=(0, 0, 0))
+
+
+def pp_crowd(ctx):
+    ctx["crowd"] = photo("belle-01.jpg", "sepia", inset=0.02)
+    ctx["crowd_credit"] = credit("belle-01.jpg")
+
+
+def p_b2(frame, u, words, ctx):
+    kenburns(frame, ctx["crowd"], u, 6.0, z=(1.0, 1.15), f0=(0.38, 0.62), f1=(0.46, 0.60))
+    shade(frame)
+    found = word_at(words, "found", 1.8)
+    eleven = word_at(words, "eleven", found + 1.0)
+    if u >= found - 0.1:
+        n = int(min(11, max(1, 11 * (u - found + 0.1) / max(0.3, eleven - found + 0.2))))
+        num = T(f"{n}+" if n >= 11 else str(n), "black", 300, BONE + (255,), stroke=4)
+        g, pad = glowT(num, (150, 10, 10), radius=36, strength=0.85)
+        paste_c(frame, g, W / 2, 520)
+        lab = T("REMAINS FOUND ON HER FARM", "bold", 44, BONE + (255,), tracking=3, stroke=2)
+        paste_c(frame, lab, W / 2, 720, appear(u, found, 0.3))
+    else:
+        title(frame, "THEY DUG UP THE FARM", "bask", 92, BONE, 520, glow=(0, 0, 0))
+    credit_line(frame, ctx["crowd_credit"] + " · searchers at the farm, 1908")
+
+
+def pp_poster(ctx):
+    pp_face(ctx)
+    ctx["bg"] = photo("belle-farm-14.jpg", "sepia", inset=0.05).filter(ImageFilter.GaussianBlur(6))
+    p = aged_paper(780, 1000, seed=33)
+    head = fitT("HAVE YOU SEEN HER?", "bask", 84, INKC + (255,), max_w=700)
+    p.alpha_composite(head, ((p.width - head.width) // 2, 50))
+    d = ImageDraw.Draw(p)
+    d.line((60, 160, 720, 160), fill=INKC + (200,), width=3)
+    face = Image.open(os.path.join(IMGDIR, "belle-08.jpg")).convert("L")
+    face = ImageOps.colorize(ImageOps.autocontrast(face, cutoff=1), black=(30, 22, 16), white=(232, 214, 178)).convert("RGBA")
+    face = ImageOps.fit(face, (560, 620), Image.LANCZOS, centering=(0.5, 0.36))
+    fr = Image.new("RGBA", (580, 640), INKC + (255,))
+    fr.alpha_composite(face, (10, 10))
+    p.alpha_composite(fr, ((p.width - fr.width) // 2, 190))
+    newsprint(d, 80, 860, 700, 960, np.random.default_rng(8), size=12, gap=9)
+    ctx["poster"] = p
+    ctx["stamp"] = stamp([("DNA TEST", 84), ("NO ANSWER", 92)])
+
+
+def p_b3(frame, u, words, ctx):
+    kenburns(frame, ctx["bg"], u, 7.0, z=(1.05, 1.12))
+    shade(frame)
+    dna = word_at(words, "DNA", 3.2)
+    shake = (np.random.default_rng(int(u * 1000)).normal(0, 9, 2) if 0 <= u - dna < 0.22 else (0, 0))
+    p = ctx["poster"]
+    z = 0.9 + 0.04 * min(1, u / 6)
+    paste_c(frame, p.resize((int(p.width * z), int(p.height * z)), Image.BICUBIC), W / 2 + shake[0], 740 + shake[1])
+    if u >= dna:
+        s = 1.0 + 1.2 * (1 - appear(u, dna, 0.12))
+        st = ctx["stamp"]
+        paste_c(frame, st.resize((int(st.width * s), int(st.height * s)), Image.BICUBIC), W / 2 + shake[0], 1010 + shake[1], min(1, appear(u, dna, 0.08) * 1.2))
+    else:
+        title(frame, "SEEN ALIVE FOR YEARS?", "bask", 84, BONE, 1255, glow=(0, 0, 0), alpha=appear(u, 0.2, 0.2))
+
+
+def pp_museum(ctx):
+    prep_museum(ctx)
+    ctx["farm"] = photo("belle-farm-14.jpg", "sepia", inset=0.05)
+    ctx["farm_credit"] = credit("belle-farm-14.jpg")
+
+
+def p_b4(frame, u, words, ctx):
+    kenburns(frame, ctx["farm"], u, 5.0, z=(1.0, 1.08), f0=(0.45, 0.55), f1=(0.5, 0.55))
+    frame.alpha_composite(Image.new("RGBA", (W, H), (0, 0, 0, 90)))
+    shade(frame)
+    c = ctx["card"]
+    z = 0.95 + 0.04 * min(1, u / 4)
+    paste_c(frame, c.resize((int(c.width * z), int(c.height * z)), Image.BICUBIC), W / 2, 760, appear(u, 0.0, 0.18))
+    credit_line(frame, ctx["farm_credit"] + " · the Gunness farm, 1908")
+
+
+# --- Trick-or-treat hours, over real pumpkin patch photos
+def pp_pumpkins(ctx):
+    ctx["pk"] = {f: photo(f, "pumpkin") for f in ("pumpkins-08.jpg", "pumpkins-04.jpg", "pumpkins-07.jpg")}
+    ctx["pk_credit"] = {f: credit(f) for f in ctx["pk"]}
+
+
+def p_c1(frame, u, words, ctx):
+    kenburns(frame, ctx["pk"]["pumpkins-08.jpg"], u, 4.6, z=(1.0, 1.12), f0=(0.45, 0.5), f1=(0.5, 0.48))
+    frame.alpha_composite(Image.new("RGBA", (W, H), (10, 4, 0, 70)))
+    shade(frame)
+    draw_c1(frame, u, words, ctx)
+    credit_line(frame, ctx["pk_credit"]["pumpkins-08.jpg"])
+
+
+def p_c2(frame, u, words, ctx):
+    kenburns(frame, ctx["pk"]["pumpkins-04.jpg"], u, 5.8, z=(1.0, 1.1), f0=(0.5, 0.7), f1=(0.5, 0.62))
+    frame.alpha_composite(Image.new("RGBA", (W, H), (8, 4, 12, 150)))
+    shade(frame)
+    draw_c2(frame, u, words, ctx)
+    credit_line(frame, ctx["pk_credit"]["pumpkins-04.jpg"])
+
+
+def p_c3(frame, u, words, ctx):
+    kenburns(frame, ctx["pk"]["pumpkins-07.jpg"], u, 7.4, z=(1.0, 1.12), f0=(0.5, 0.5), f1=(0.45, 0.52))
+    frame.alpha_composite(Image.new("RGBA", (W, H), (8, 4, 12, 120)))
+    shade(frame)
+    draw_c3(frame, u, words, ctx)
+    credit_line(frame, ctx["pk_credit"]["pumpkins-07.jpg"])
+
+
+# --- The Hesston Ghost Train: No. 242 in the woods, at night
+def pp_hesston(ctx):
+    ctx["h2"] = photo("hesston-02.jpg", "night")
+    ctx["h3"] = photo("hesston-03.jpg", "night")
+    ctx["h_credit"] = credit("hesston-02.jpg")
+    ctx["ghost"] = hw.ghost(150).filter(ImageFilter.GaussianBlur(2.5))
+
+
+def steam_from(frame, u, sx, sy, n=10):
+    for i in range(n):
+        age = ((u * 0.9 + i / n) % 1.0) * 2.4
+        r = int(24 + 70 * age)
+        a = int(110 * max(0.0, 1 - age / 2.4))
+        frame.alpha_composite(soft_dot(r, (200, 210, 220), a), (int(sx - 30 * age - 2 * r), int(sy - 170 * age - 2 * r)))
+
+
+def p_d1(frame, u, words, ctx):
+    to = kenburns(frame, ctx["h2"], u, 3.2, z=(1.0, 1.1), f0=(0.66, 0.55), f1=(0.66, 0.52))
+    sx, sy = to(0.66, 0.30)
+    steam_from(frame, u, sx, sy)
+    ghosts_over(frame, u, ctx)
+    shade(frame)
+    draw_d1(frame, u, words, ctx)
+    credit_line(frame, ctx["h_credit"] + " · Hesston's No. 242")
+
+
+def p_d2(frame, u, words, ctx):
+    to = kenburns(frame, ctx["h3"], u, 7.6, z=(1.0, 1.22), f0=(0.52, 0.55), f1=(0.53, 0.52))
+    lx, ly = to(0.535, 0.53)
+    frame.alpha_composite(soft_dot(60, (255, 220, 140), 160), (int(lx - 120), int(ly - 120)))   # the headlight
+    sx, sy = to(0.525, 0.30)
+    steam_from(frame, u, sx, sy)
+    ghosts_over(frame, u + 3, ctx, spots=((170, 820), (880, 700), (300, 560)))
+    shade(frame)
+    draw_d2(frame, u, words, ctx)
+    credit_line(frame, ctx["h_credit"] + " · Hesston's No. 242")
+
+
+SHORTS_DRAWN = SHORTS
+SHORTS = {
+    "belle-1": {"theme": "photo", "music": "lullaby", "scenes": [
+        Scene("a1", p_a1, pp_face, sfx=[("whoosh", 0.0)], lead=0.0),
+        Scene("a2", p_a2, pp_family, sfx=[("thunder", 0.0)], flash_at=0.0),
+        Scene("a3", p_a3, pp_ruins, sfx=[("type", "April"), ("fire", "burned")]),
+        Scene("a4", p_a4, pp_cellar, sfx=[("heartbeat", 0.0), ("hit", "part")], gap=0.6)]},
+    "belle-2": {"theme": "photo", "music": "lullaby", "scenes": [
+        Scene("b1", p_b1, pp_face, sfx=[("thunder", 0.0), ("hit", "really")], lead=0.0, flash_at=0.0),
+        Scene("b2", p_b2, pp_crowd, sfx=[("heartbeat", "found")]),
+        Scene("b3", p_b3, pp_poster, sfx=[("thud", "DNA")]),
+        Scene("b4", p_b4, pp_museum, sfx=[("whoosh", 0.0)], gap=0.7)]},
+    "hours": {"theme": "photo-warm", "music": "organ", "scenes": [
+        Scene("c1", p_c1, pp_pumpkins, sfx=[("whoosh", 0.0), ("pop", "Save")], lead=0.0),
+        Scene("c2", p_c2, pp_pumpkins, sfx=[("whoosh", 0.0)]),
+        Scene("c3", p_c3, pp_pumpkins, sfx=[("pop", "LaCrosse"), ("pop", "Pottawattamie")], gap=0.8)]},
+    "ghost-train": {"theme": "photo-night", "music": "drone", "scenes": [
+        Scene("d1", p_d1, pp_hesston, sfx=[("whistle", 0.05)], lead=0.0),
+        Scene("d2", p_d2, pp_hesston, sfx=[("whistle", "last")], gap=0.6)]},
+}
+CREDITS = {
+    "belle-1": ["belle-08.jpg", "belle-05.jpg", "belle-farm-13.jpg", "belle-farm-15.jpg"],
+    "belle-2": ["belle-08.jpg", "belle-01.jpg", "belle-farm-14.jpg"],
+    "hours": ["pumpkins-08.jpg", "pumpkins-04.jpg", "pumpkins-07.jpg"],
+    "ghost-train": ["hesston-02.jpg", "hesston-03.jpg"],
+}
 
 
 if __name__ == "__main__":
