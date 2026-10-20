@@ -1,0 +1,40 @@
+name: Halloween shorts pictures (one-off, Oct. 20, 2026)
+
+# Finds public-domain and free-to-reuse pictures for tools/video/belle-2026 on Wikimedia Commons and the
+# Library of Congress and saves them, with their licenses, on the belle-video branch. Runs only on that
+# branch, only when the list changes. Nothing is posted.
+on:
+  push:
+    branches: [belle-video]
+    paths:
+      - tools/video/belle-2026/images.json
+      - tools/video/belle-2026/fetch_images.py
+      - .github/workflows/belle-images.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: belle-images
+  cancel-in-progress: true
+
+jobs:
+  pictures:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Get ready
+        run: pip install -q pillow
+      - name: Find and download
+        run: python3 tools/video/belle-2026/fetch_images.py
+      - name: Save them on this branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/video/belle-2026/images
+          git commit -q -m "Halloween shorts: pictures from Wikimedia Commons and the Library of Congress, with licenses" || echo "nothing new"
+          git pull -q --rebase && git push -q
