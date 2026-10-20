@@ -227,6 +227,37 @@ def img_path(name):
     raise FileNotFoundError(name)
 
 
+MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+
+def nice_date(d):
+    """'1908-05-14' -> 'May 14, 1908' (anything else is returned as it is)."""
+    import re
+    m = re.match(r"(\d{4})-(\d\d)-(\d\d)", d or "")
+    return f"{MONTHS[int(m.group(2)) - 1]} {int(m.group(3))}, {m.group(1)}" if m else (d or "")
+
+
+def paper_name(a):
+    """Library of Congress newspaper titles, tidied: 'the washington herald (washington, d.c.) 1906-1939' ->
+    'The Washington Herald (Washington, D.C.)'."""
+    import re
+    a = re.sub(r"\[microfilm reel\]", "", a or "")
+    a = re.sub(r"\s+\d[\d?]{3}-.*$", "", a).strip()
+    a = re.sub(r"\s*\[([a-z.]+)\]", lambda m: ", " + m.group(1), a)
+    a = re.sub(r"\b(dakota|indian territory|d\.t\.)\s*,\s*", "", a)
+    words = []
+    for i, w in enumerate(a.split()):
+        core = w.strip("(),")
+        if re.fullmatch(r"([a-z]\.){2,}", core):
+            nw = w.replace(core, core.upper())
+        elif core in ("of", "the", "and", "for") and i > 0:
+            nw = w
+        else:
+            nw = "-".join(re.sub(r"^([(\"']*)([a-z])", lambda m: m.group(1) + m.group(2).upper(), part) for part in w.split("-"))
+        words.append(nw)
+    return " ".join(words).replace(",,", ",")
+
+
 def credit_for(name):
     m = MANIFEST.get(name)
     if not m:
@@ -647,11 +678,31 @@ class News(Shot):
         if self.mode == "hold":
             w *= lerp(1.0, 0.93, drift(u))
         h = w * H / W
-        return self.pyr.view((cx - w / 2, cy - h / 2, cx + w / 2, cy + h / 2))
+        view = (cx - w / 2, cy - h / 2, cx + w / 2, cy + h / 2)
+        spot = self.spec.get("spot")
+        if not spot:
+            return self.pyr.view(view)
+        # dim everything but the lines being read ("spot": [x0, y0, x1, y1] as fractions of the page)
+        arr = self.pyr.view_array(view).astype(np.float32)
+        iw, ih = self.pyr.size
+        sx = W / (view[2] - view[0])
+        X0, X1 = (spot[0] * iw - view[0]) * sx, (spot[2] * iw - view[0]) * sx
+        Y0, Y1 = (spot[1] * ih - view[1]) * sx, (spot[3] * ih - view[1]) * sx
+        start = float(self.spec.get("spot_at", 0.35))
+        amt = float(self.spec.get("spot_amount", 0.62)) * ease(clamp((u - start) / 0.25))
+        if amt > 0.004:
+            feather = 26.0
+            xs = np.arange(W, dtype=np.float32)
+            ys = np.arange(H, dtype=np.float32)
+            dx = np.maximum(np.maximum(X0 - xs, xs - X1), 0)[None, :]
+            dy = np.maximum(np.maximum(Y0 - ys, ys - Y1), 0)[:, None]
+            inside = np.clip(1 - np.sqrt(dx * dx + dy * dy) / feather, 0, 1)
+            arr *= (1 - amt * (1 - inside))[..., None]
+        return Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8))
 
     def credit(self):
         m = MANIFEST.get(self.spec.get("file"), {})
-        return self.spec.get("credit", f"{m.get('artist', 'Newspaper')}, {m.get('date', '')} · Library of Congress" if m else "")
+        return self.spec.get("credit", f"{paper_name(m.get('artist', 'Newspaper'))}, {nice_date(m.get('date', ''))} · Library of Congress" if m else "")
 
 
 def ragged(p, seed, depth=7, step=10):
@@ -1839,7 +1890,8 @@ def used_pictures(chapters):
                 lic = (m.get("license") or "").strip()
                 low = lic.lower()
                 pd = low.startswith(("public domain", "pd", "no known", "no restrictions"))
-                out.append({"file": f, "title": clean_title(m.get("title", f)), "who": clean_who(m.get("artist", "")) or clean_credit(m.get("credit", "")),
+                title = f"{paper_name(m.get('artist', ''))}, {nice_date(m.get('date', ''))}" if m.get("kind") == "newspaper-page" else clean_title(m.get("title", f))
+                out.append({"file": f, "title": title, "who": clean_who(m.get("artist", "")) or clean_credit(m.get("credit", "")),
                             "license": "public domain" if pd else lic, "license_url": LICENSE_URL.get(low, ""),
                             "page": m.get("page", ""), "source": m.get("source", ""), "kind": m.get("kind", ""),
                             "date": m.get("date", "")})

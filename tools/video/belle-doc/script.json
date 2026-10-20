@@ -564,11 +564,25 @@
      "id": "c2-03",
      "say": "They opened a candy store. It caught fire. The insurance paid.",
      "v": {
-      "type": "quote",
-      "text": "Chicago storefront, 1890s",
-      "by": "picture to come",
-      "size": 48
+      "type": "news",
+      "file": "news-39-a.jpg",
+      "mode": "zoom",
+      "box": [
+       0.385,
+       0.146,
+       0.668,
+       0.178
+      ],
+      "hold": 0.3,
+      "spot": [
+       0.388,
+       0.1505,
+       0.666,
+       0.1755
+      ],
+      "spot_at": 0.45
      },
+     "lower": "A 1908 timeline of the case | Turner County Herald (Hurley, S.D.), May 14, 1908",
      "sfx": [
       [
        "fire",
@@ -580,15 +594,22 @@
      "id": "c2-04",
      "say": "Over the years, the candy store and two of their homes burned. Each time, Belle collected.",
      "v": {
-      "type": "big",
-      "text": "Three fires",
-      "tone": "bw",
-      "f0": [
-       0.5,
-       0.62
+      "type": "news",
+      "file": "news-39-a.jpg",
+      "mode": "hold",
+      "box": [
+       0.385,
+       0.166,
+       0.668,
+       0.198
       ],
-      "cap": "the candy store and two homes, and insurance every time",
-      "file": "chicago-1880s-37.jpg"
+      "spot": [
+       0.388,
+       0.1505,
+       0.666,
+       0.1925
+      ],
+      "spot_at": 0.0
      }
     },
     {
@@ -1096,20 +1117,45 @@
       "type": "big",
       "text": "8 to 10 letters a day",
       "size": 130,
-      "tone": "bw",
-      "cap": "by her mail carrier's count",
-      "file": "gunness-26.jpg"
+      "cap": "by her mail carrier's count"
      }
     },
     {
      "id": "c4-05",
      "say": "She was placing ads in the marriage columns of newspapers, many of them Norwegian-language papers read by farmers all over the Midwest.",
-     "v": {
-      "type": "quote",
-      "text": "1908 newspaper page",
-      "by": "picture to come",
-      "size": 48
-     }
+     "v": [
+      {
+       "type": "news",
+       "file": "bee-0508.jpg",
+       "mode": "zoom",
+       "box": [
+        0.042,
+        0.094,
+        0.178,
+        0.128
+       ],
+       "hold": 0.3
+      },
+      {
+       "type": "news",
+       "file": "bee-0508.jpg",
+       "mode": "hold",
+       "box": [
+        0.04,
+        0.245,
+        0.18,
+        0.305
+       ],
+       "spot": [
+        0.044,
+        0.2485,
+        0.178,
+        0.3015
+       ],
+       "spot_at": 0.1
+      }
+     ],
+     "lower": "The Omaha Daily Bee | May 8, 1908"
     },
     {
      "id": "c4-06",
@@ -1562,23 +1608,22 @@
       "type": "news",
       "file": "news-23-a.jpg",
       "mode": "clip",
+      "box": [
+       0.0,
+       0.02,
+       0.5,
+       0.4
+      ],
       "size": [
-       0.78,
+       0.8,
        0.84
       ],
       "z": [
        1.0,
-       1.12
-      ],
-      "f0": [
-       0.5,
-       0.4
-      ],
-      "f1": [
-       0.5,
-       0.3
+       1.1
       ]
-     }
+     },
+     "lower": "The Washington Herald | May 10, 1908"
     },
     {
      "id": "c5-03",
@@ -1677,13 +1722,25 @@
      "say": "Someone else was watching: Belle's hired man, Ray Lamphere. By most accounts he was in love with her, and jealous of Andrew.",
      "v": {
       "type": "photo",
-      "file": "belle-12.jpg",
+      "file": "gunness-45-hi.jpg",
       "fit": "print",
       "tone": "sepia",
       "z": [
        1.0,
-       1.1
-      ]
+       1.08
+      ],
+      "crop": [
+       0.662,
+       0.032,
+       0.79,
+       0.168
+      ],
+      "rot": 0.0,
+      "box": [
+       0.8,
+       0.7
+      ],
+      "lower": "Ray Lamphere | on a 1908 postcard"
      }
     },
     {
@@ -1691,13 +1748,13 @@
      "say": "In February 1908, Belle fired him. Then she went after him: she had him arrested for trespassing, tried to get a peace bond against him, and asked to have him declared insane.",
      "tts": "In February nineteen oh eight, Belle fired him. Then she went after him: she had him arrested for trespassing, tried to get a peace bond against him, and asked to have him declared insane.",
      "v": {
-      "type": "photo",
-      "file": "belle-13.jpg",
-      "fit": "contain",
-      "tone": "sepia",
-      "z": [
-       1.0,
-       1.08
+      "type": "typed",
+      "head": "BELLE AND RAY LAMPHERE, 1908",
+      "rows": [
+       "February: she fired him.",
+       "Then: arrested for trespassing,",
+       "a peace bond sought against him,",
+       "a request to declare him insane."
       ]
      }
     },
@@ -1928,38 +1985,46 @@
      "say": "That same day, the sheriff went looking for Ray Lamphere. By evening, according to the newspapers, he was under arrest, charged with murdering Belle Gunness and her children.",
      "v": {
       "type": "photo",
-      "file": "belle-12.jpg",
+      "file": "belle-13.jpg",
       "fit": "contain",
       "tone": "sepia",
       "z": [
        1.0,
        1.1
       ]
-     }
+     },
+     "lower": "Ray Lamphere | 1908"
     },
     {
      "id": "c6-06",
      "say": "Lamphere said he had only seen the fire as he passed by on his way to work.",
      "v": {
-      "type": "photo",
-      "file": "belle-13.jpg",
-      "fit": "print",
-      "tone": "sepia",
-      "z": [
-       1.0,
-       1.08
-      ]
+      "same": true
      }
     },
     {
      "id": "c6-07",
      "say": "The first newspaper stories called it a tragedy: a widow and her children, burned in their beds.",
      "v": {
-      "type": "quote",
-      "text": "1908 headline: FOUR BURNED IN THEIR BEDS",
-      "by": "picture to come",
-      "size": 48
-     }
+      "type": "news",
+      "file": "bee-0429.jpg",
+      "mode": "zoom",
+      "box": [
+       0.695,
+       0.715,
+       0.832,
+       0.812
+      ],
+      "hold": 0.3,
+      "spot": [
+       0.697,
+       0.7185,
+       0.83,
+       0.7475
+      ],
+      "spot_at": 0.55
+     },
+     "lower": "The Omaha Daily Bee | April 29, 1908"
     },
     {
      "id": "c6-08",
@@ -2525,12 +2590,13 @@
       },
       {
        "type": "news",
-       "file": "news-58-a.jpg",
+       "file": "news-58-b.jpg",
        "mode": "clip",
        "size": [
         0.7,
         0.8
-       ]
+       ],
+       "lower": "The Washington Herald | May 23, 1908"
       }
      ],
      "gap": 1.0
@@ -2892,10 +2958,54 @@
      "say": "In 1931, in Los Angeles, a woman named Esther Carlson was charged with poisoning an eighty-one-year-old man, August Lindstrom, for two thousand dollars.",
      "tts": "In nineteen thirty-one, in Los Angeles, a woman named Esther Carlson was charged with poisoning an eighty-one-year-old man, August Lindstrom, for two thousand dollars.",
      "v": {
-      "type": "quote",
-      "text": "Los Angeles, 1931",
-      "by": "picture to come",
-      "size": 48
+      "type": "map",
+      "map": "usa",
+      "cam0": [
+       -96,
+       38.5,
+       60
+      ],
+      "cam1": [
+       -112,
+       36.5,
+       30
+      ],
+      "title": "1931",
+      "move_end": 0.5,
+      "places": [
+       {
+        "name": "La Porte",
+        "at": [
+         -86.72,
+         41.61
+        ],
+        "show": 0.0
+       },
+       {
+        "name": "Syracuse",
+        "at": [
+         -76.15,
+         43.05
+        ],
+        "show": 0.0
+       },
+       {
+        "name": "Tacoma",
+        "at": [
+         -122.44,
+         47.25
+        ],
+        "show": 0.0
+       },
+       {
+        "name": "Los Angeles",
+        "at": [
+         -118.24,
+         34.05
+        ],
+        "show": 0.3
+       }
+      ]
      }
     },
     {
