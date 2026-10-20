@@ -2,7 +2,7 @@
 """Records the documentary's narration (lines.json, made from script.json by `doc.py lines`) with the same
 voice as the shorts (Kokoro-82M, af_heart) into voice/<id>.flac and voice/voice.json (each line's length,
 word timings and the sounds the voice used, to check names and numbers). Runs in GitHub Actions
-(.github/workflows/belle-doc-voice.yml), where the model downloads. Lines that haven't changed since the
+(.github/workflows/haunts-doc-voice.yml), where the model downloads. Lines that haven't changed since the
 last run are kept as they are, so a fix re-records only what changed.
 
 A line can have "tts": the words as they should be spoken (years and numbers spelled out), while "say" is

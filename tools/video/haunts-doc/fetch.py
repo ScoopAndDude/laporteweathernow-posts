@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Finds and downloads real pictures for the Belle Gunness documentary (runs in GitHub Actions,
-.github/workflows/belle-doc-images.yml, because the cloud workspace can't reach these sites).
+"""Finds and downloads real pictures for the La Porte County hauntings documentary (runs in GitHub Actions,
+.github/workflows/haunts-doc-images.yml, because the cloud workspace can't reach these sites). Same rules and
+code as the Belle Gunness film's fetch.py.
 
 - Wikimedia Commons: only public domain, CC0 and CC BY files (no share-alike, non-commercial or
   no-derivatives), each with its author and license for the credit.
@@ -611,9 +612,15 @@ def main():
         log("Library of Congress maps:", q["name"], q["q"])
         loc_fetch(q, "maps", 3200)
         write_manifest()
-    if spec.get("newspapers") and (not only or "news" in only):
-        log("Chronicling America:", spec["newspapers"])
-        newspapers(spec["newspapers"])
+    news = spec.get("newspapers")
+    if news and (not only or "news" in only):
+        for ns in (news if isinstance(news, list) else [news]):     # one search, or several (each with its own name)
+            log("Chronicling America:", ns)
+            try:
+                newspapers(ns)
+            except Exception as e:
+                log("  newspaper search stopped:", e)
+            write_manifest()
     write_manifest()
     log(len(manifest), "pictures saved")
 

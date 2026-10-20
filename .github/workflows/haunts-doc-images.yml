@@ -1,0 +1,81 @@
+name: La Porte County hauntings documentary pictures (one-off, Oct. 2026)
+
+# Finds public-domain and free-to-reuse pictures and old newspaper pages for tools/video/haunts-doc on
+# Wikimedia Commons and the Library of Congress (same rules and code as the Belle Gunness film). The pictures go
+# in a zip on a "haunts-doc-images" pre-release (so the branch stays small); the list with every picture's
+# license and credit, and the log, are saved on the haunts-doc branch. Runs only on that branch, only when the
+# list changes. Nothing is posted.
+on:
+  push:
+    branches: [haunts-doc]
+    paths:
+      - tools/video/haunts-doc/sources.json
+      - tools/video/haunts-doc/sources-extra.json
+      - tools/video/haunts-doc/fetch.py
+      - .github/workflows/haunts-doc-images.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: haunts-doc-images
+  cancel-in-progress: true
+
+jobs:
+  pictures:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 80
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Is there a picture list yet?
+        id: chk
+        run: |
+          D=tools/video/haunts-doc
+          if [ -f $D/sources-extra.json ] && git diff --name-only HEAD~1 HEAD | grep -q sources-extra.json; then echo "mode=extra" >> "$GITHUB_OUTPUT"
+          elif [ -f $D/sources.json ]; then echo "mode=first" >> "$GITHUB_OUTPUT"
+          else echo "mode=none" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/setup-python@v5
+        if: steps.chk.outputs.mode != 'none'
+        with:
+          python-version: "3.12"
+      - name: Get ready
+        if: steps.chk.outputs.mode != 'none'
+        run: pip install -q pillow
+      - name: Find and download
+        if: steps.chk.outputs.mode != 'none'
+        run: |
+          if [ "${{ steps.chk.outputs.mode }}" = "extra" ]; then
+            python3 tools/video/haunts-doc/fetch.py --extra || echo "fetch.py stopped with an error; see images/fetch-log-extra.txt"
+          else
+            python3 tools/video/haunts-doc/fetch.py || echo "fetch.py stopped with an error; see images/fetch-log.txt"
+          fi
+      - name: Zip the pictures onto the pre-release
+        if: steps.chk.outputs.mode != 'none'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd tools/video/haunts-doc/images
+          if [ "${{ steps.chk.outputs.mode }}" = "extra" ]; then
+            touch extra-files.txt
+            (cat extra-files.txt; echo manifest.json) | grep -v '^$' | zip -q ../haunts-doc-images-extra-${{ github.run_number }}.zip -@
+            Z=haunts-doc-images-extra-${{ github.run_number }}.zip
+          else
+            zip -q ../haunts-doc-images-${{ github.run_number }}.zip *.jpg manifest.json || true
+            Z=haunts-doc-images-${{ github.run_number }}.zip
+          fi
+          cd ..
+          ls -la "$Z"
+          gh release view haunts-doc-images >/dev/null 2>&1 || gh release create haunts-doc-images --prerelease --target haunts-doc \
+            --title "La Porte County hauntings documentary pictures (working files)" \
+            --notes "Working pictures for the documentary in tools/video/haunts-doc on the haunts-doc branch: public domain, CC0 or CC BY only. Each picture's source, license and credit are in images/manifest.json."
+          gh release upload haunts-doc-images "$Z" --clobber
+      - name: Save the list and the log on this branch
+        if: always() && steps.chk.outputs.mode != 'none'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/video/haunts-doc/images/manifest.json tools/video/haunts-doc/images/fetch-log*.txt tools/video/haunts-doc/images/extra-files.txt 2>/dev/null || true
+          git commit -q -m "Hauntings documentary: picture list (licenses and credits) and search log" || echo "nothing new"
+          for i in 1 2 3; do git pull -q --rebase origin haunts-doc && git push -q origin HEAD:haunts-doc && break; sleep 5; done

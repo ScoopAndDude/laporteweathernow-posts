@@ -1,0 +1,67 @@
+name: La Porte County hauntings documentary voice (one-off, Oct. 2026)
+
+# Records the documentary's narration (tools/video/haunts-doc/lines.json) with the same voice as the shorts
+# and saves it on the haunts-doc branch. Runs only on that branch, only when the words change, and only
+# re-records lines that changed. Nothing is posted.
+on:
+  push:
+    branches: [haunts-doc]
+    paths:
+      - tools/video/haunts-doc/lines.json
+      - tools/video/haunts-doc/voice.py
+      - .github/workflows/haunts-doc-voice.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: haunts-doc-voice
+  cancel-in-progress: true
+
+jobs:
+  voice:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Is there a script yet?
+        id: chk
+        run: echo "go=$([ -f tools/video/haunts-doc/lines.json ] && echo yes || echo no)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-python@v5
+        if: steps.chk.outputs.go == 'yes'
+        with:
+          python-version: "3.12"
+
+      - name: Voice cache
+        if: steps.chk.outputs.go == 'yes'
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.cache/huggingface
+          key: kokoro-voice-${{ runner.os }}-py312-v1
+
+      - name: Install the voice
+        if: steps.chk.outputs.go == 'yes'
+        run: |
+          sudo apt-get install -y -qq espeak-ng > /dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq espeak-ng > /dev/null)
+          pip install -q torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -q "kokoro>=0.9.4" soundfile numpy
+          python3 -m spacy download en_core_web_sm -q || true
+
+      - name: Record
+        if: steps.chk.outputs.go == 'yes'
+        run: python3 tools/video/haunts-doc/voice.py 2>&1 | tee tools/video/haunts-doc/voice-log.txt
+
+      - name: Save the recording on this branch
+        if: always() && steps.chk.outputs.go == 'yes'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A tools/video/haunts-doc/voice tools/video/haunts-doc/voice-log.txt || true
+          git commit -q -m "Hauntings documentary: the narration (Kokoro-82M af_heart)" || echo "nothing new"
+          for i in 1 2 3; do git pull -q --rebase origin haunts-doc && git push -q origin HEAD:haunts-doc && break; sleep 5; done
