@@ -170,7 +170,7 @@ CHAPTERS = [
     # ------------------------------------------------------------------ 1. Brynhild
     dict(id="c1", music="norway", card=dict(type="chapter", n=1, title="Brynhild", sub="Selbu, Norway · 1859"), lines=[
         L("c1-01", "She was born Brynhild Paulsdatter Størset, on November eleventh, 1859, in Selbu, a farming district in the hills of central Norway.",
-          MAP(**NOR, cam0=[9.0, 61.5, 30], cam1=[11.0, 63.2, 7], title="NORWAY", move_end=0.85,
+          MAP(**NOR, cam0=[9.0, 61.0, 34], cam1=[10.6, 63.0, 15], title="NORWAY", move_end=0.85,
               places=[{"name": "Selbu", "at": [11.03, 63.22], "show": 0.45}, {"name": "Trondheim", "at": [10.39, 63.43], "show": 0.6, "size": 44, "off": [-210, -40]}])),
         L("c1-02", "She was the youngest of eight children. Her father was a cottar, a tenant who worked another family's land, and a stonecutter.",
           P("selbu-04.jpg", tone="bw", crop=[0.0, 0.10, 1.0, 0.86], z=[1.0, 1.12], f0=[0.55, 0.55], f1=[0.5, 0.5]), lower="Selbu, Norway"),
@@ -431,12 +431,12 @@ CHAPTERS = [
     # ------------------------------------------------------------------ 10. Sightings
     dict(id="c10", music="sightings", card=dict(type="chapter", n=10, title="Sightings", sub="1908 – 1931"), lines=[
         L("c10-01", "Within days of the bodies being found, people started seeing Belle Gunness.",
-          MAP(map="usa", cam0=[-96, 38.5, 60], title="SIGHTINGS", places=[{"name": "La Porte", "at": [-86.72, 41.61], "show": 0.0}])),
+          MAP(map="usa", cam0=[-97, 41.0, 62], title="SIGHTINGS", places=[{"name": "La Porte", "at": [-86.72, 41.61], "show": 0.0}])),
         L("c10-02", "In Syracuse. In Tacoma. For more than twenty years, letters reached La Porte from all over the country.",
-          MAP(map="usa", cam0=[-96, 38.5, 60], title="SIGHTINGS", places=[{"name": "La Porte", "at": [-86.72, 41.61], "show": 0.0},
+          MAP(map="usa", cam0=[-97, 41.0, 62], title="SIGHTINGS", places=[{"name": "La Porte", "at": [-86.72, 41.61], "show": 0.0},
               {"name": "Syracuse", "at": [-76.15, 43.05], "show": 0.05}, {"name": "Tacoma", "at": [-122.44, 47.25], "show": 0.2}])),
         L("c10-03", "In 1931, in Los Angeles, a woman named Esther Carlson was charged with poisoning an eighty-one-year-old man, August Lindstrom, for two thousand dollars.",
-          MAP(map="usa", cam0=[-96, 38.5, 60], cam1=[-112, 36.5, 30], title="1931", move_end=0.5,
+          MAP(map="usa", cam0=[-97, 41.0, 62], cam1=[-112, 36.5, 30], title="1931", move_end=0.5,
               places=[{"name": "La Porte", "at": [-86.72, 41.61], "show": 0.0}, {"name": "Syracuse", "at": [-76.15, 43.05], "show": 0.0},
                       {"name": "Tacoma", "at": [-122.44, 47.25], "show": 0.0}, {"name": "Los Angeles", "at": [-118.24, 34.05], "show": 0.3}])),
         L("c10-04", "She died of tuberculosis before her trial.", SAME),
@@ -449,8 +449,9 @@ CHAPTERS = [
     # ------------------------------------------------------------------ 11. The DNA
     dict(id="c11", music="dna", card=dict(type="chapter", n=11, title="The DNA", sub="2007 – 2008"), lines=[
         L("c11-01", "In 2007, a team from the University of Indianapolis set out to answer the question with science.",
-          TYPED("UNIVERSITY OF INDIANAPOLIS, 2007", ["Andrea Simmons: graduate student,", "lawyer, La Porte native.", "Stephen Nawrocki: forensic anthropologist."])),
-        L("c11-02", "It was led by Andrea Simmons, a graduate student, a lawyer, and a La Porte native, with forensic anthropologist Stephen Nawrocki.", SAME),
+          P("uindy-02.jpg", tone="sepia-soft", z=[1.0, 1.1], f0=[0.5, 0.45], f1=[0.5, 0.5]), lower="University of Indianapolis | today"),
+        L("c11-02", "It was led by Andrea Simmons, a graduate student, a lawyer, and a La Porte native, with forensic anthropologist Stephen Nawrocki.",
+          TYPED("THE TEAM, 2007", ["Andrea Simmons: graduate student,", "lawyer, La Porte native.", "Stephen Nawrocki:", "forensic anthropologist."])),
         L("c11-03", "On November fifth, 2007, they opened the grave at Forest Home Cemetery near Chicago, where the headless woman was buried beside Mads Sorenson.",
           P("forest-home-11.jpg", tone="sepia-soft", crop=[0.0, 0.0, 1.0, 0.56], z=[1.0, 1.1], f0=[0.5, 0.6], f1=[0.42, 0.55]), lower="Forest Home Cemetery | Forest Park, Illinois, today"),
         L("c11-04", "Inside the casket, with the woman's bones, they found the remains of two children no one had expected.",
@@ -472,7 +473,7 @@ CHAPTERS = [
           MVP("grave", z=[1.0, 1.12]), lower="Andrew Helgelien's grave | on a 1908 postcard"),
         L("e05", "Most of the others were never named.", dict(type="dark"), gap=1.0),
         L("e06", "Whether Belle Gunness died in that fire, or walked away into the dark and lived out her life under another name, no one has ever proved.",
-          P("belle-07.jpg", z=[1.02, 1.22], f0=[0.45, 0.42], f1=[0.45, 0.40])),
+          P("belle-08.jpg", z=[1.02, 1.22], f0=[0.42, 0.42], f1=[0.42, 0.40])),
         L("e07", "More than a hundred years later, La Porte is still asking.", SAME, gap=1.5),
         L("e08", None, QUOTE("Sources, photo credits and the museum's November 7 program are in the description.", None, size=46), hold=5.0),
     ]),

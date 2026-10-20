@@ -206,13 +206,13 @@
       "map": "atlantic",
       "cam0": [
        9.0,
-       61.5,
-       30
+       61.0,
+       34
       ],
       "cam1": [
-       11.0,
-       63.2,
-       7
+       10.6,
+       63.0,
+       15
       ],
       "title": "NORWAY",
       "move_end": 0.85,
@@ -2896,9 +2896,9 @@
       "type": "map",
       "map": "usa",
       "cam0": [
-       -96,
-       38.5,
-       60
+       -97,
+       41.0,
+       62
       ],
       "title": "SIGHTINGS",
       "places": [
@@ -2920,9 +2920,9 @@
       "type": "map",
       "map": "usa",
       "cam0": [
-       -96,
-       38.5,
-       60
+       -97,
+       41.0,
+       62
       ],
       "title": "SIGHTINGS",
       "places": [
@@ -2961,9 +2961,9 @@
       "type": "map",
       "map": "usa",
       "cam0": [
-       -96,
-       38.5,
-       60
+       -97,
+       41.0,
+       62
       ],
       "cam1": [
        -112,
@@ -3061,20 +3061,37 @@
      "say": "In 2007, a team from the University of Indianapolis set out to answer the question with science.",
      "tts": "In two thousand seven, a team from the University of Indianapolis set out to answer the question with science.",
      "v": {
-      "type": "typed",
-      "head": "UNIVERSITY OF INDIANAPOLIS, 2007",
-      "rows": [
-       "Andrea Simmons: graduate student,",
-       "lawyer, La Porte native.",
-       "Stephen Nawrocki: forensic anthropologist."
+      "type": "photo",
+      "file": "uindy-02.jpg",
+      "fit": "cover",
+      "tone": "sepia-soft",
+      "z": [
+       1.0,
+       1.1
+      ],
+      "f0": [
+       0.5,
+       0.45
+      ],
+      "f1": [
+       0.5,
+       0.5
       ]
-     }
+     },
+     "lower": "University of Indianapolis | today"
     },
     {
      "id": "c11-02",
      "say": "It was led by Andrea Simmons, a graduate student, a lawyer, and a La Porte native, with forensic anthropologist Stephen Nawrocki.",
      "v": {
-      "same": true
+      "type": "typed",
+      "head": "THE TEAM, 2007",
+      "rows": [
+       "Andrea Simmons: graduate student,",
+       "lawyer, La Porte native.",
+       "Stephen Nawrocki:",
+       "forensic anthropologist."
+      ]
      }
     },
     {
@@ -3251,7 +3268,7 @@
      "say": "Whether Belle Gunness died in that fire, or walked away into the dark and lived out her life under another name, no one has ever proved.",
      "v": {
       "type": "photo",
-      "file": "belle-07.jpg",
+      "file": "belle-08.jpg",
       "fit": "cover",
       "tone": "sepia",
       "z": [
@@ -3259,11 +3276,11 @@
        1.22
       ],
       "f0": [
-       0.45,
+       0.42,
        0.42
       ],
       "f1": [
-       0.45,
+       0.42,
        0.4
       ]
      }
