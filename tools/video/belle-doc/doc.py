@@ -1017,6 +1017,10 @@ MAPS = {
                  "files": ["world-land", "world-lakes", "world-borders", "world-states"]},
     "midwest": {"bbox": [-89.4, 40.9, -85.4, 42.9], "px": 5200, "grid": 0.5,
                 "files": ["mid-lakes", "mid-states", "mid-rail"]},
+    "plains": {"bbox": [-103.0, 38.5, -82.5, 50.0], "px": 5200, "grid": 5,
+               "files": ["world-land", "world-lakes", "world-borders", "world-states"]},
+    "usa": {"bbox": [-131.0, 21.0, -59.0, 53.0], "px": 5200, "grid": 10,
+            "files": ["world-land", "world-lakes", "world-borders", "world-states"]},
 }
 LAND, WATER, COAST = (228, 214, 180), (172, 180, 168), (64, 50, 36)
 
@@ -1045,7 +1049,7 @@ class MapBase:
         return json.load(open(os.path.join(HERE, "map", fname + ".geojson"), encoding="utf-8"))["features"]
 
     def draw(self, m):
-        img = Image.new("RGB", (self.wpx, self.hpx), WATER if self.name == "atlantic" else LAND)
+        img = Image.new("RGB", (self.wpx, self.hpx), WATER if "world-land" in m["files"] else LAND)
         d = ImageDraw.Draw(img)
         def rings(g):
             t, c = g["type"], g["coordinates"]
@@ -1093,7 +1097,7 @@ class MapBase:
             for r in shore:
                 if len(r) > 2:
                     d.line(r + [r[0]], fill=tuple(int(c * (1 - a / 255) + 120 * a / 255) for c in WATER), width=lw * k)
-        for lf in lakes + (["world-land"] if "world-land" in files else []):
+        for lf in (["world-land"] if "world-land" in files else []) + lakes:      # land, then the lakes on top
             for f in self.geo(lf):
                 for poly in rings(f["geometry"]):
                     d.polygon(P(poly[0]), fill=WATER if lf != "world-land" else LAND)

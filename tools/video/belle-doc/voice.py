@@ -25,6 +25,7 @@ PRONOUNCE = {
     "Lamphere": "lˈæmfɪɹ", "Budsberg": "bˈʌdzbɜɹɡ", "Asle": "ˈɑslə", "Ole": "ˈOli", "Skandinaven": "skˌændɪnˈɑvən",
     "Smutzer": "smˈʌtsəɹ", "Leliter": "lˈɛlɪtəɹ", "Mads": "mˈæds", "Jennie": "ʤˈɛni", "Myrtle": "mˈɜɹtᵊl",
     "Gurholdt": "ɡˈʊɹhOlt", "Lindbloom": "lˈɪndblum", "Maxson": "mˈæksən", "Iola": "Iˈolə",
+    "Nawrocki": "nəɹˈɑki", "Swanhild": "swˈɑnhɪld", "McClung": "məklˈʌŋ", "Sorensons": "sˈɔɹənsənz",
 }
 
 
