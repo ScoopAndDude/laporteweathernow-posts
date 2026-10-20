@@ -9,9 +9,11 @@ watching to the end: the hook is on screen in the first frame, captions follow t
 the picture changes every couple of seconds, and there's no slow intro or long end card.
 
 The narration is the weather radio's voice (Kokoro-82M af_heart), recorded by voice.py in GitHub Actions
-(voice/, with each word's timing). Everything else is made here: the pictures are drawn in code (no photos,
-stock footage or AI pictures) and the music and sounds are written in code (no recordings). The facts are in
-lines.json's notes; the trick-or-treat hours come from trick-or-treat.json (checked Oct. 20).
+(voice/, with each word's timing). The pictures are real photos from images/ (public domain or CC BY, each
+CC BY one credited on screen; see the "Real pictures" section near the end), with the drawn versions kept in
+SHORTS_DRAWN; no stock footage or AI pictures. The music and sounds are written in code (no recordings). The
+facts and their sources are in lines.json ("about"); the trick-or-treat hours come from trick-or-treat.json
+(checked Oct. 20).
 """
 import importlib.util
 import json
