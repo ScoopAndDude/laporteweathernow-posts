@@ -1,0 +1,55 @@
+name: Belle Gunness video voice (one-off, Oct. 20, 2026)
+
+# Records the narration for tools/video/belle-2026 with the weather radio's voice and saves it on the
+# belle-video branch. Runs only on that branch, only when the words change. Nothing is posted.
+on:
+  push:
+    branches: [belle-video]
+    paths:
+      - tools/video/belle-2026/lines.json
+      - tools/video/belle-2026/voice.py
+      - .github/workflows/belle-voice.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: belle-voice
+  cancel-in-progress: true
+
+jobs:
+  voice:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Voice cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.cache/huggingface
+          key: kokoro-voice-${{ runner.os }}-py312-v1
+
+      - name: Install the voice
+        run: |
+          sudo apt-get install -y -qq espeak-ng > /dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq espeak-ng > /dev/null)
+          pip install -q torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -q "kokoro>=0.9.4" soundfile numpy
+          python3 -m spacy download en_core_web_sm -q || true
+
+      - name: Record
+        run: python3 tools/video/belle-2026/voice.py
+
+      - name: Save the recording on this branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/video/belle-2026/voice
+          git commit -q -m "Belle Gunness video: the narration (Kokoro-82M af_heart)" || echo "nothing new"
+          git push -q
