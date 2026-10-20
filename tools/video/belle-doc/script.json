@@ -60,7 +60,7 @@
     },
     {
      "id": "o03",
-     "say": "Everyone believed the woman was their mother. A widow named Belle Gunness.",
+     "say": "At first, everyone believed the woman was their mother. A widow named Belle Gunness.",
      "v": {
       "type": "photo",
       "file": "belle-08.jpg",
@@ -150,7 +150,8 @@
        1.0,
        1.25
       ]
-     }
+     },
+     "lower": "As printed in the Omaha Daily Bee | May 8, 1908"
     },
     {
      "id": "o08",
@@ -262,7 +263,7 @@
     },
     {
      "id": "c1-04",
-     "say": "In Selbu, a story is still told about her: that as a young woman she was attacked at a dance, lost the baby she was carrying, and was never the same. There's no record that it happened.",
+     "say": "In Selbu, a story has been told about her: that as a young woman she was attacked at a dance, lost the baby she was carrying, and was never the same. There's no record that it happened.",
      "v": {
       "type": "quote",
       "text": "A story told in Selbu",
@@ -387,7 +388,7 @@
     },
     {
      "id": "c1-06",
-     "say": "In America, Brynhild became Bella. Then Belle.",
+     "say": "In America, Brynhild became Bella, or Belle.",
      "v": {
       "type": "quote",
       "text": "Castle Garden / emigrants arriving",
@@ -478,7 +479,7 @@
     },
     {
      "id": "c2-06",
-     "say": "Belle and Mads also raised two girls, Myrtle and Lucy, and a foster daughter, Jennie Olson.",
+     "say": "They were also raising two little girls, Myrtle and Lucy, and an older foster daughter, Jennie Olson.",
      "v": {
       "type": "photo",
       "file": "belle-05.jpg",
@@ -544,7 +545,7 @@
     },
     {
      "id": "c2-11",
-     "say": "She used it to buy a farm, about sixty miles to the east, outside La Porte, Indiana.",
+     "say": "She used it to buy a farm about fifty miles east of Chicago, outside La Porte, Indiana.",
      "v": {
       "type": "map",
       "map": "midwest",
@@ -705,7 +706,7 @@
     },
     {
      "id": "c3-03",
-     "say": "La Porte was a busy factory town. Belle kept to herself, and she worked hard.",
+     "say": "La Porte was a busy factory town. Out on her farm, Belle worked hard.",
      "v": [
       {
        "type": "photo",
@@ -759,7 +760,7 @@
     },
     {
      "id": "c3-05",
-     "say": "Peter brought his two little daughters. Within about a week, the baby died, while she was alone with Belle. No one ever determined why.",
+     "say": "Peter brought his two little daughters. Within about a week, the baby died in Belle's care, while Peter was out of the house. The death was put down to fluid in the lungs.",
      "v": {
       "type": "photo",
       "file": "belle-farm-07.jpg",
@@ -800,20 +801,21 @@
     },
     {
      "id": "c3-08",
-     "say": "The coroner weighed the grinder, and measured how far it could have fallen.",
+     "say": "The coroner was suspicious. He weighed the grinder, measured how far it could have fallen, and decided the blow could have killed him.",
      "v": {
       "type": "typed",
       "head": "THE CORONER, DECEMBER 1902",
       "rows": [
        "Weighed the grinder.",
        "Measured the fall.",
-       "Called a jury."
+       "Called a jury.",
+       "Verdict: Belle cleared."
       ]
      }
     },
     {
      "id": "c3-09",
-     "say": "He was suspicious. But in the end, there were no charges. Belle collected about three thousand dollars in life insurance.",
+     "say": "An inquest cleared Belle, and she collected about three thousand dollars in life insurance.",
      "v": {
       "type": "big",
       "text": "$3,000",
@@ -951,8 +953,8 @@
     },
     {
      "id": "c4-06",
-     "say": "One of them, as a newspaper reprinted it in 1908, read: Comely widow, who owns large farm in one of the finest districts in La Porte county, Indiana, desires to make the acquaintance of gentleman equally well provided, with view of joining fortunes. No replies by letter considered unless sender is willing to follow answer with personal visit.",
-     "tts": "One of them, as a newspaper reprinted it in nineteen oh eight, read: Comely widow, who owns large farm in one of the finest districts in La Porte county, Indiana, desires to make the acquaintance of gentleman equally well provided, with view of joining fortunes. No replies by letter considered unless sender is willing to follow answer with personal visit.",
+     "say": "One ad, printed in 1908 as hers, read: Comely widow, who owns large farm in one of the finest districts in La Porte county, Indiana, desires to make the acquaintance of gentleman equally well provided, with view of joining fortunes. No replies by letter considered unless sender is willing to follow answer with personal visit.",
+     "tts": "One ad, printed in nineteen oh eight as hers, read: Comely widow, who owns large farm in one of the finest districts in La Porte county, Indiana, desires to make the acquaintance of gentleman equally well provided, with view of joining fortunes. No replies by letter considered unless sender is willing to follow answer with personal visit.",
      "v": {
       "type": "ad",
       "head": "PERSONAL.",
@@ -968,7 +970,8 @@
        "page",
        0.0
       ]
-     ]
+     ],
+     "lower": "As printed in the Omaha Daily Bee | May 8, 1908"
     },
     {
      "id": "c4-07",
@@ -1008,7 +1011,7 @@
     },
     {
      "id": "c4-09",
-     "say": "John Moe came from Elbow Lake, Minnesota, with more than a thousand dollars. Within about a week, he was gone.",
+     "say": "John Moe came from Elbow Lake, Minnesota, reportedly with more than a thousand dollars. He was never seen alive again.",
      "v": {
       "type": "map",
       "map": "plains",
@@ -1330,10 +1333,10 @@
      "say": "In one letter, she told him how to carry his money, sewn inside his underwear, and wrote: Do not say one word about it to anyone, not even your nearest relative.",
      "v": {
       "type": "letter",
-      "greeting": "My dear friend,",
+      "greeting": "My dear friend, …",
       "text": "Do not say one word about it to anyone, not even your nearest relative.",
-      "sign": "Bella Gunness",
-      "sync": false
+      "sync": false,
+      "by": "Belle Gunness to Andrew Helgelien, Nov. 22, 1906 (translated from Norwegian)"
      }
     },
     {
@@ -1342,8 +1345,8 @@
      "v": {
       "type": "letter",
       "text": "I do not think you will leave me after you have first come here; that I am sure of.",
-      "sign": "Bella Gunness",
-      "sync": false
+      "sync": false,
+      "by": "Belle Gunness to Andrew Helgelien, undated letter (translated from Norwegian)"
      },
      "gap": 0.9
     },
@@ -1432,7 +1435,7 @@
      "v": {
       "type": "quote",
       "text": "Sell your brother's stock and come here and we will hunt your brother together.",
-      "by": "Belle Gunness to Asle Helgelien, as printed in 1908"
+      "by": "The gist of Belle's letters to Asle, as the Omaha Daily Bee summed it up, May 8, 1908"
      }
     },
     {
@@ -1442,7 +1445,7 @@
      "v": {
       "type": "quote",
       "text": "I am a lonely Norwegian woman.",
-      "by": "Belle Gunness, March 1, 1908, to a man in Kansas City"
+      "by": "Belle Gunness to Christian Hansen, March 1, 1908, as printed in the Morning Oregonian"
      }
     },
     {
@@ -1553,6 +1556,7 @@
      "say": "In the ruins, searchers found four bodies: Myrtle, eleven. Lucy, nine. Philip, five. And a woman, without a head.",
      "v": {
       "type": "names",
+      "head": "FOUND IN THE CELLAR",
       "names": [
        [
         "Myrtle",
@@ -1567,7 +1571,7 @@
         "5"
        ],
        [
-        "and a woman, without a head",
+        "a woman, head missing",
         ""
        ]
       ],
@@ -1715,7 +1719,7 @@
     },
     {
      "id": "c7-06",
-     "say": "Two feet below him lay Jennie Olson, the foster daughter who had supposedly gone away to school.",
+     "say": "Nearby, two feet beneath him by one newspaper's account, lay Jennie Olson, the foster daughter who had supposedly gone away to school.",
      "v": {
       "type": "quote",
       "text": "Jennie Olson",
@@ -1748,7 +1752,7 @@
     },
     {
      "id": "c7-08",
-     "say": "Most had been cut apart. Some were men. Some were children.",
+     "say": "Most had been cut apart. Most were men. At least two were teenagers, Jennie among them.",
      "v": {
       "type": "photo",
       "file": "belle-01.jpg",
@@ -1793,7 +1797,7 @@
     },
     {
      "id": "c7-10",
-     "say": "The rest were never named. Seven of them were buried in La Porte's potter's field.",
+     "say": "The rest were never named. Seven of them were buried in La Porte's potter's field. And the farm was never thoroughly searched.",
      "v": {
       "type": "quote",
       "text": "cemetery, La Porte",
@@ -1803,11 +1807,15 @@
     },
     {
      "id": "c7-11",
-     "say": "Estimates of how many people Belle Gunness killed run from fourteen to more than forty.",
+     "say": "Most researchers say she killed at least fourteen people. Some believe it was twenty-five or more. The number you'll often hear, more than forty, comes from legend.",
      "v": {
-      "type": "big",
-      "text": "14 to 40+",
-      "cap": "estimates of how many people she killed"
+      "type": "typed",
+      "head": "HOW MANY?",
+      "rows": [
+       "At least 14: most researchers.",
+       "25 or more: some researchers.",
+       "More than 40: legend."
+      ]
      },
      "gap": 0.9
     },
@@ -1906,14 +1914,37 @@
     },
     {
      "id": "c8-03",
-     "say": "Neighbors, and at least one local doctor who knew her, said the body was far too small to be hers. Other doctors said the fire could explain it. No reliable measurement survives.",
+     "say": "Neighbors, and at least one local doctor who knew her, said the body was far too small to be hers. Other doctors said the fire could explain it.",
+     "v": {
+      "type": "photo",
+      "file": "belle-farm-15.jpg",
+      "fit": "cover",
+      "tone": "sepia",
+      "z": [
+       1.15,
+       1.3
+      ],
+      "f0": [
+       0.5,
+       0.75
+      ],
+      "f1": [
+       0.5,
+       0.7
+      ]
+     }
+    },
+    {
+     "id": "c8-03b",
+     "say": "In 1908, the coroner guessed its height at five foot three. Belle was about five foot eight. A century later, scientists' first estimate from the skeleton was five foot six to five foot nine. Without the head, none of it proved anything.",
+     "tts": "In nineteen oh eight, the coroner guessed its height at five foot three. Belle was about five foot eight. A century later, scientists' first estimate from the skeleton was five foot six to five foot nine. Without the head, none of it proved anything.",
      "v": {
       "type": "typed",
       "head": "THE WOMAN IN THE CELLAR",
       "rows": [
-       "Head: never found.",
-       "Too small to be Belle, said neighbors and one doctor.",
-       "The fire shrank it, said others."
+       "1908, the coroner's guess: about 5 ft. 3 in.",
+       "Belle Gunness: about 5 ft. 8 in.",
+       "2007, from the skeleton: 5 ft. 6 in. to 5 ft. 9 in."
       ]
      }
     },
@@ -2036,8 +2067,21 @@
      }
     },
     {
+     "id": "c9-03b",
+     "say": "Prosecutors had a watch Lamphere was carrying when he was arrested. John Moe's half-brother said it was Moe's. Lamphere said Belle had given it to him.",
+     "v": {
+      "type": "typed",
+      "head": "THE WATCH",
+      "rows": [
+       "Found on Ray Lamphere.",
+       "John Moe's, said Moe's half-brother.",
+       "A gift from Belle, said Lamphere."
+      ]
+     }
+    },
+    {
      "id": "c9-04",
-     "say": "Witnesses testified that they had seen Belle, alive, that summer.",
+     "say": "Defense witnesses said they had seen Belle, alive, that summer.",
      "v": {
       "type": "photo",
       "file": "belle-07.jpg",
@@ -2063,6 +2107,13 @@
        3.0
       ]
      ]
+    },
+    {
+     "id": "c9-05b",
+     "say": "The poison found in the bodies may have helped him. His lawyer argued that it showed Lamphere had nothing to do with their deaths.",
+     "v": {
+      "same": true
+     }
     },
     {
      "id": "c9-06",
@@ -2092,12 +2143,19 @@
     },
     {
      "id": "c9-08",
-     "say": "After his death, newspapers printed what they called his confession. In it, he said he had set the fire, and that the body in the cellar was Belle.",
+     "say": "After his death, newspapers printed what they called his confession. In it, he said he had chloroformed Belle and the children while he and a woman robbed the house, and that the body in the cellar was Belle.",
      "v": {
       "type": "quote",
       "text": "1910 newspaper: confession",
       "by": "picture to come",
       "size": 48
+     }
+    },
+    {
+     "id": "c9-08b",
+     "say": "The minister he had confided in said he had never repeated a word of what Lamphere told him.",
+     "v": {
+      "same": true
      }
     },
     {
@@ -2115,7 +2173,7 @@
     },
     {
      "id": "c9-10",
-     "say": "Those stories came secondhand, after Lamphere was dead, and they contradict each other.",
+     "say": "All of these stories, the printed confession included, came secondhand, after Lamphere was dead, and they contradict each other.",
      "v": {
       "same": true
      },
@@ -2135,7 +2193,7 @@
    "lines": [
     {
      "id": "c10-01",
-     "say": "Within days of the fire, people started seeing Belle Gunness.",
+     "say": "Within days of the bodies being found, people started seeing Belle Gunness.",
      "v": {
       "type": "map",
       "map": "usa",
@@ -2231,7 +2289,7 @@
     },
     {
      "id": "c10-06",
-     "say": "Esther Carlson had always denied it. Nothing ever proved it.",
+     "say": "Esther Carlson had always denied it. She said she had been working in Hartford, Connecticut, the whole time. Her remains have never been tested.",
      "v": {
       "type": "photo",
       "file": "belle-08.jpg",
@@ -2294,8 +2352,16 @@
      "gap": 0.8
     },
     {
+     "id": "c11-04b",
+     "say": "The next spring, when they opened the children's graves, they found adult bones in one of them.",
+     "v": {
+      "same": true
+     },
+     "gap": 0.8
+    },
+    {
      "id": "c11-05",
-     "say": "They hoped to match DNA from the bones with saliva on envelopes Belle had licked a century before.",
+     "say": "They hoped to match DNA from the bones with saliva on envelopes Belle may have sealed a century before.",
      "v": {
       "type": "quote",
       "text": "envelope / letters",
@@ -2328,7 +2394,7 @@
    "lines": [
     {
      "id": "e01",
-     "say": "The house on McClung Road is long gone, and the land is private property.",
+     "say": "The house on McClung Road is long gone.",
      "v": {
       "type": "photo",
       "file": "belle-farm-14.jpg",
@@ -2347,8 +2413,8 @@
       "type": "typed",
       "head": "LA PORTE COUNTY HISTORICAL SOCIETY MUSEUM",
       "rows": [
-       "2405 Indiana Ave., La Porte",
-       "Tuesday to Saturday, 10 a.m. to 4:30 p.m.",
+       "2405 Indiana Ave., Suite 1, La Porte",
+       "Tuesday to Saturday, 10 a.m. to 4:30 p.m. Central",
        "Belle Gunness exhibit"
       ]
      }

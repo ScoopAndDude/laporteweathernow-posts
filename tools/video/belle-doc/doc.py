@@ -684,6 +684,9 @@ class Reveal(Shot):
         ox, oy = int(cx - unread.width / 2), int(cy - unread.height / 2)
         sh, pad = shadow(unread, radius=16, alpha=170, offset=(4, 12))
         sc.img.paste(sh, (ox - pad, oy - pad), sh)
+        if self.spec.get("by"):                          # who wrote it, under the page (always shown)
+            by = para("\u2014 " + self.spec["by"], "inter-m", 30, (214, 200, 174, 255), min(1500, sc.w - 200), align="center")
+            sc.img.paste(by, (int(cx - by.width / 2), int(oy + unread.height + 26)), by)
         self.base = np.asarray(sc.img.convert("RGB")).copy()
         full = sc.img.copy()
         full.paste(done, (ox, oy), done)
@@ -781,7 +784,7 @@ class Letter(Reveal):
 
     def build_pages(self):
         s = self.spec
-        pw, ph = 1240, 920
+        pw, ph = 1240, 860 if s.get("by") else 920
         page = aged_paper(pw, ph, seed=11, color=(232, 220, 192), edge=110).copy()
         d = ImageDraw.Draw(page)
         for yy in range(150, ph - 60, 66):
@@ -808,7 +811,7 @@ class Letter(Reveal):
             sx, sy = pw - 120 - sg.width, y + 92
             done.alpha_composite(sg, (sx, sy))
             boxes.append((sx - 4, sy - 4, sx + sg.width + 4, sy + sg.height + 6))
-        return unread, done, boxes, 0.5
+        return unread, done, boxes, 0.56 if s.get("by") else 0.5
 
 
 @shot("typed")
