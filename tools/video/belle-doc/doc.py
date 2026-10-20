@@ -672,6 +672,7 @@ def fine_print(d, x0, y, colw, rows, rng, size=5, gap=12):
 class Reveal(Shot):
     """Words that darken (or appear) as the narrator reads them: two versions of the page are made once, and
     each frame pastes the read words from the finished one onto the unread one."""
+    SYNC, SPEED = True, 1.25
 
     def build_pages(self):
         raise NotImplementedError
@@ -690,16 +691,16 @@ class Reveal(Shot):
         self.boxes = [(x0 + ox, y0 + oy, x1 + ox, y1 + oy) for (x0, y0, x1, y1) in boxes]
         self.sw, self.sh = sc.w, sc.h
         self.focus = (0.5, (oy + focus * unread.height) / sc.h)
-        self.z = self.spec.get("z", [1.0, 1.14])
+        self.z = getattr(self, "z", None) or self.spec.get("z", [1.0, 1.14])
 
     def words_read(self, t):
         spoken = word_times(self.line)
         tl = t - (self.line["_start"] if self.line else self.start)
         n = len(self.boxes)
-        if spoken and self.spec.get("sync", True):
+        if spoken and self.spec.get("sync", self.SYNC):
             k = sum(1 for (_, a, b) in spoken if a <= tl + 0.05)
             return min(n, int(round(k * n / max(1, len(spoken)))))
-        return int(n * clamp(self.u(t) * 1.25))
+        return int(n * clamp(self.u(t) * float(self.spec.get("speed", self.SPEED))))
 
     def frame(self, t):
         k = drift(self.u(t))
@@ -813,35 +814,39 @@ class Letter(Reveal):
 @shot("typed")
 class Typed(Reveal):
     """A typewritten note card (an explainer, not a copy of any real document): a heading and lines of
-    facts that type themselves out as the narrator reads."""
+    facts that type themselves out over the first part of the shot."""
+    SYNC, SPEED = False, 1.8
 
     def build_pages(self):
         s = self.spec
-        pw, ph = 1260, s.get("height", 820)
+        self.z = s.get("z", [1.18, 1.32])
+        pw, ph = 1400, s.get("height", 840)
         page = aged_paper(pw, ph, seed=s.get("seed", 31), color=(226, 214, 186), edge=80, blotch=0.06).copy()
         d = ImageDraw.Draw(page)
         ink = (30, 26, 24, 255)
         y = 80
         if s.get("head"):
-            hd = text(s["head"], "type", 46, ink, tracking=3)
+            hd = text(s["head"], "type", 56, ink, tracking=3)
+            if hd.width > pw - 160:
+                hd = hd.resize((pw - 160, int(hd.height * (pw - 160) / hd.width)), Image.LANCZOS)
             page.alpha_composite(hd, ((pw - hd.width) // 2, y))
-            y += hd.height + 22
-            d.line((120, y, pw - 120, y), fill=ink[:3] + (150,), width=2)
-            y += 40
-        f = font("type", 40)
+            y += hd.height + 24
+            d.line((110, y, pw - 110, y), fill=ink[:3] + (150,), width=3)
+            y += 44
+        f = font("type", 52)
         unread, done = page.copy(), page.copy()
         dd = ImageDraw.Draw(done)
         boxes = []
         for row in s["rows"]:
-            x = 120
+            x = 110
             for wd in row.split():
                 wl = f.getlength(wd + " ")
-                if x + wl > pw - 110:
-                    x, y = 150, y + 56
+                if x + wl > pw - 100:
+                    x, y = 150, y + 66
                 dd.text((x, y), wd, font=f, fill=ink)
-                boxes.append((int(x) - 2, int(y) - 4, int(x + wl), int(y + 54)))
+                boxes.append((int(x) - 2, int(y) - 4, int(x + wl), int(y + 66)))
                 x += wl
-            y += 74
+            y += 88
         return unread, done, boxes, 0.5
 
 
@@ -1681,6 +1686,106 @@ def cmd_final(outdir, name="belle-gunness-documentary.mp4"):
     return out
 
 
+LICENSE_URL = {"cc by 2.0": "https://creativecommons.org/licenses/by/2.0/", "cc by 3.0": "https://creativecommons.org/licenses/by/3.0/",
+               "cc by 4.0": "https://creativecommons.org/licenses/by/4.0/", "cc0": "https://creativecommons.org/publicdomain/zero/1.0/"}
+
+
+def clean_title(t):
+    import re
+    t = re.sub(r"^File:", "", t or "")
+    t = re.sub(r"\.(jpe?g|png|tiff?|gif)$", "", t, flags=re.I)
+    t = re.sub(r"\s*\(\d{6,}\)\s*$", "", t)
+    t = re.sub(r"\s+-\s+Belle Gunness$", "", t)
+    t = re.sub(r"\s+LCCN\d+$", "", t)
+    return t.strip()
+
+
+def clean_who(w):
+    import re
+    w = re.sub(r"(Unknown author)+", "", w or "")
+    w = re.sub(r"\s+from\s.*$", "", w).strip()
+    return w
+
+
+def used_pictures(chapters):
+    """Every picture shown, in order of first use, with what its credit needs."""
+    out, seen = [], set()
+    for c in chapters:
+        for sh in c["shots"]:
+            files = [sh.spec.get("file")]
+            for f in files:
+                if not f or f in seen:
+                    continue
+                seen.add(f)
+                m = MANIFEST.get(f, {})
+                lic = (m.get("license") or "").strip()
+                low = lic.lower()
+                pd = low.startswith(("public domain", "pd", "no known", "no restrictions"))
+                out.append({"file": f, "title": clean_title(m.get("title", f)), "who": clean_who(m.get("artist", "")),
+                            "license": "public domain" if pd else lic, "license_url": LICENSE_URL.get(low, ""),
+                            "page": m.get("page", ""), "source": m.get("source", ""), "kind": m.get("kind", ""),
+                            "date": m.get("date", "")})
+    return out
+
+
+def cmd_credits(outdir=None):
+    chapters = build(load_script())
+    pics = used_pictures(chapters)
+    rows = ["# Photo and newspaper credits: Belle Gunness documentary", "",
+            "Every picture in the film, in order of first appearance. CC BY photos are also credited on screen.", "",
+            "| Picture | By | License | Source |", "|---|---|---|---|"]
+    for p in pics:
+        lic = f"[{p['license']}]({p['license_url']})" if p["license_url"] else p["license"]
+        src = f"[{p['source'] or 'link'}]({p['page']})" if p["page"] else p["source"]
+        rows.append(f"| {p['title']} | {p['who'] or '-'} | {lic} | {src} |")
+    rows += ["", "Music and sound effects were written for the film (tools/video/belle-doc/music.py). Fonts: IM Fell English and Old Standard TT (SIL Open Font License), Special Elite (Apache 2.0), Lora (OFL), Inter (OFL). Maps from Natural Earth (public domain)."]
+    path = os.path.join(HERE, "CREDITS.md")
+    open(path, "w", encoding="utf-8").write("\n".join(rows) + "\n")
+    print("credits:", path, len(pics), "pictures")
+    return pics
+
+
+def cmd_description(outdir):
+    """The YouTube description: chapter times from the finished timing, and the picture credits."""
+    script = load_script()
+    yt = json.load(open(os.path.join(HERE, "youtube.json"), encoding="utf-8"))
+    chapters = build(script)
+    lines = []
+    for c, ch in zip(chapters, script["chapters"]):
+        card = ch.get("card")
+        if c["id"] == "title":
+            continue
+        name = "Intro" if c["id"] == "open" else ((f"{card['n']}. " if card.get("n") else "") + card["title"] + (f" ({card['sub']})" if card.get("sub") else ""))
+        t = 0 if c["id"] == "open" else int(c["start"])
+        lines.append(f"{t // 60}:{t % 60:02d} {name}")
+    pics = cmd_credits()
+    groups = {}
+    for p in pics:
+        if p["kind"] == "newspaper-page":
+            key = ("1908 newspaper pages", "public domain, from the Library of Congress (Chronicling America)")
+        elif p["license"] == "public domain":
+            key = ("Public domain", p["who"] or p["source"])
+        else:
+            key = (p["who"] or "Unknown", f"{p['license']} ({p['license_url'].replace('https://', '')})")
+        groups.setdefault(key, []).append(p["title"])
+    out = []
+    for (who, lic), titles in groups.items():
+        if who == "1908 newspaper pages":
+            out.append(f"1908 newspaper pages: {lic}")
+        elif who == "Public domain":
+            out.append(f"Public domain ({lic}): " + "; ".join(titles))
+        else:
+            out.append(f"{who}, {lic}: " + "; ".join(titles))
+    out.append("Full list with links: https://github.com/ScoopAndDude/laporteweathernow-posts/blob/belle-doc/tools/video/belle-doc/CREDITS.md")
+    desc = "\n".join(yt["description"]).replace("{CHAPTERS}", "\n".join(lines)).replace("{CREDITS}", "\n".join(out))
+    path = os.path.join(outdir, "youtube-description.txt")
+    open(path, "w", encoding="utf-8").write(desc + "\n")
+    meta = os.path.join(outdir, "youtube-details.txt")
+    open(meta, "w", encoding="utf-8").write(f"Title: {yt['title']}\n\nTags: {', '.join(yt['tags'])}\n\nCategory: Education\nMade for kids: No\n")
+    print("description:", path, len(desc), "characters (YouTube allows 5,000)")
+    return path
+
+
 def main():
     load_manifests()
     load_voice()
@@ -1699,6 +1804,10 @@ def main():
         cmd_final(args[1])
     elif cmd == "srt":
         cmd_srt(args[1])
+    elif cmd == "description":
+        cmd_description(args[1])
+    elif cmd == "credits":
+        cmd_credits()
     elif cmd == "sound":
         chapters = build(load_script())
         soundtrack(chapters, os.path.join(args[1], "soundtrack-raw.wav"))
