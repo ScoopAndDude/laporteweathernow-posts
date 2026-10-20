@@ -1,0 +1,165 @@
+{
+  "about": "Real pictures for the Belle Gunness documentary (Oct. 20, 2026; Scoop: \"lets make a whole documentary on belle\", \"make it for youtube\"). fetch.py (GitHub Actions, belle-doc-images.yml) looks these up and keeps only public domain, CC0 and CC BY files (no share-alike, no non-commercial), each with its credit, in images/manifest.json. Library of Congress pictures are kept only when the Library says there are no known restrictions; 1908 newspaper pages are public domain.",
+  "commons": [
+    {
+      "name": "gunness",
+      "search": "\"Belle Gunness\"",
+      "max": 120
+    },
+    {
+      "name": "gunness-cat",
+      "category": "Category:Belle Gunness",
+      "depth": 2,
+      "max": 120
+    },
+    {
+      "name": "gunness-1908",
+      "search": "Gunness 1908 LaPorte",
+      "max": 60
+    },
+    {
+      "name": "laporte-old",
+      "search": "\"LaPorte, Indiana\" Shook",
+      "max": 80
+    },
+    {
+      "name": "laporte-cat",
+      "category": "Category:La Porte, Indiana",
+      "depth": 1,
+      "max": 60
+    },
+    {
+      "name": "courthouse",
+      "search": "La Porte County Courthouse",
+      "max": 30
+    },
+    {
+      "name": "selbu",
+      "category": "Category:Selbu",
+      "depth": 1,
+      "max": 40
+    },
+    {
+      "name": "trondheim-old",
+      "search": "Trondhjem 1880",
+      "max": 40
+    },
+    {
+      "name": "emigrants",
+      "search": "Norwegian emigrants 1880s",
+      "max": 40
+    },
+    {
+      "name": "emigrant-ship",
+      "search": "emigrant ship steerage 1880",
+      "max": 40
+    },
+    {
+      "name": "castle-garden",
+      "category": "Category:Castle Garden",
+      "depth": 1,
+      "max": 30
+    },
+    {
+      "name": "chicago-1880s",
+      "category": "Category:Chicago in the 1880s",
+      "depth": 1,
+      "max": 40
+    },
+    {
+      "name": "chicago-1890s",
+      "category": "Category:Chicago in the 1890s",
+      "depth": 1,
+      "max": 40
+    },
+    {
+      "name": "chicago-1900s",
+      "category": "Category:Chicago in the 1900s",
+      "depth": 1,
+      "max": 40
+    },
+    {
+      "name": "prison",
+      "search": "Indiana State Prison Michigan City",
+      "max": 40
+    },
+    {
+      "name": "forest-home",
+      "search": "Forest Home Cemetery Forest Park Illinois",
+      "max": 40
+    },
+    {
+      "name": "skandinaven",
+      "search": "Skandinaven newspaper Chicago",
+      "max": 20
+    }
+  ],
+  "loc_photos": [
+    {
+      "name": "loc-gunness",
+      "q": "gunness",
+      "max": 40
+    },
+    {
+      "name": "loc-laporte",
+      "q": "la porte indiana",
+      "dates": "1880/1920",
+      "max": 60
+    },
+    {
+      "name": "loc-chicago",
+      "q": "chicago street",
+      "dates": "1885/1910",
+      "max": 60
+    },
+    {
+      "name": "loc-steerage",
+      "q": "steerage emigrants",
+      "dates": "1880/1915",
+      "max": 30
+    },
+    {
+      "name": "loc-castle-garden",
+      "q": "castle garden emigrants",
+      "max": 30
+    },
+    {
+      "name": "loc-norway",
+      "q": "norway emigrants",
+      "dates": "1870/1915",
+      "max": 30
+    },
+    {
+      "name": "loc-michigan-city",
+      "q": "michigan city indiana",
+      "dates": "1890/1920",
+      "max": 30
+    },
+    {
+      "name": "loc-farm",
+      "q": "indiana farm house",
+      "dates": "1895/1915",
+      "max": 30
+    }
+  ],
+  "loc_maps": [
+    {
+      "name": "map-laporte",
+      "q": "la porte indiana",
+      "dates": "1860/1920",
+      "max": 30
+    },
+    {
+      "name": "map-laporte-county",
+      "q": "la porte county",
+      "dates": "1860/1920",
+      "max": 30
+    }
+  ],
+  "newspapers": {
+    "q": "gunness",
+    "dates": "1908-04-28/1909-12-31",
+    "max": 60,
+    "crops_per_page": 3
+  }
+}
