@@ -1,8 +1,9 @@
 {
-  "about": "Trick-or-treat hours for every La Porte County, IN community, read by laporteweathernow.com/trick-or-treat (the page updates within about 10 minutes of a change here; no site publish needed). Rules: put hours under 'hours' only when the town itself (its website, council, police or official social page) or reliable local news has announced them for this year, with that source and status 'official' (the town or its police) or 'reported' (local news). Until then hours stays null and 'last' shows last year's hours with their source. Never copy last year's hours into 'hours'. Dates are YYYY-MM-DD and times are 24-hour Central Time. 'events' are extra trick-or-treat events with their own date, hours and source; drop or correct one if its organizer changes it.",
+  "about": "Trick-or-treat hours for every La Porte County, IN community, read by laporteweathernow.com/trick-or-treat (the page updates within about 10 minutes of a change here; no site publish needed). Rules: put hours under 'hours' only when the town itself (its website, council, police or official social page) or reliable local news has announced them for this year, with that source and status 'official' (the town or its police) or 'reported' (local news). Until then hours stays null and 'last' shows last year's hours with their source. Never copy last year's hours into 'hours'. Dates are YYYY-MM-DD and times are 24-hour Central Time. 'events' are extra trick-or-treat events with their own date, hours and source; drop or correct one if its organizer changes it. 'fun' lists fall places (group 'farm': pumpkin patches, orchards, wagon rides, corn mazes; group 'haunt': haunted houses and rides) that are open this year. Add one only when its own website or official page (or the state or county tourism listing) shows this year's dates, and copy them into 'when' as plain words, with Eastern time marked for places in Michigan. 'until' (YYYY-MM-DD) is its last open day this season; the page hides it the day after. 'funChecked' is the day the list was last checked.",
   "year": 2026,
-  "updated": "2026-10-18T10:26:00-05:00",
-  "checked": "2026-10-18",
+  "updated": "2026-10-20T11:30:00-05:00",
+  "checked": "2026-10-20",
+  "funChecked": "2026-10-20",
   "usual": {"date": "2026-10-31", "start": "17:00", "end": "19:00"},
   "towns": [
     {
@@ -130,11 +131,105 @@
       "source": {"name": "City of Michigan City", "url": "https://michigancityin.gov/city-event/booatthezoo2026/"}
     },
     {
+      "id": "franciscan-trunk-or-treat", "name": "Franciscan Health Trunk-or-Treat",
+      "date": "2026-10-23", "start": "16:30", "end": "18:30",
+      "place": "Franciscan Health, 301 W. Homer St., Michigan City", "lat": 41.7139, "lon": -86.9028,
+      "note": "Check-in starts at 4 p.m. Decorated cars, treats, food and drinks.",
+      "source": {"name": "City of Michigan City", "url": "https://michigancityin.gov/halloween26/"}
+    },
+    {
+      "id": "franklin-street", "name": "Trick-or-Treat on Franklin Street",
+      "date": "2026-10-24", "start": "14:00", "end": "17:00",
+      "place": "Downtown Michigan City, starting at 7th and Franklin streets", "lat": 41.7183, "lon": -86.9033,
+      "note": "Trick-or-treating is 3 to 5 p.m., with costume contests, live music and food trucks.",
+      "source": {"name": "City of Michigan City", "url": "https://michigancityin.gov/halloween26/"}
+    },
+    {
+      "id": "ymca-trunk-or-treat", "name": "YMCA Trunk-or-Treat",
+      "date": "2026-10-24", "start": "14:00", "end": "16:00",
+      "place": "Michigan City Elston YMCA parking lot", "lat": 41.7075, "lon": -86.895,
+      "note": "Free and open to everyone. Costumes encouraged.",
+      "source": {"name": "City of Michigan City", "url": "https://michigancityin.gov/halloween26/"}
+    },
+    {
+      "id": "museum-trick-or-treat", "name": "Museum Trick or Treat",
+      "date": "2026-10-24", "start": "14:00", "end": "16:00",
+      "place": "La Porte County Historical Society Museum, 2405 Indiana Ave., La Porte", "lat": 41.5888, "lon": -86.7025,
+      "note": "Free. Trick-or-treat with \"time-traveling ghosts\" on the main floor. A quieter session, 1 to 1:45 p.m., is for kids with disabilities or anyone who'd like a calmer visit.",
+      "source": {"name": "La Porte County Historical Society", "url": "https://laportecountyhistory.org/event/museum-trick-or-treat/"}
+    },
+    {
+      "id": "pioneerland", "name": "Trick or Treat in Pioneerland",
+      "date": "2026-10-24", "start": "17:00", "end": "19:00",
+      "place": "La Porte County Fairgrounds, 2581 W. State Road 2, La Porte", "lat": 41.5978, "lon": -86.7663,
+      "note": "Trick-or-treat through the fairgrounds' historic Pioneer Land village. It's part of the fairgrounds' Halloween Happenings weekend, Oct. 23 to 25.",
+      "source": {"name": "WSBT's 2026 list", "url": "https://wsbt.com/news/local/trick-or-treat-halloween-trunk-candy-costumes-holiday-tradition-celebration-kids-families-fun-neighbors-south-bend-mishawaka-elkhart-northern-indiana-southwest-michigan-2026"}
+    },
+    {
+      "id": "lppd-trunk-or-treat", "name": "La Porte Police Trunk or Treat",
+      "date": "2026-10-25", "start": "13:00", "end": "15:00",
+      "place": "La Porte Civic Auditorium, 1001 Ridge St., La Porte", "lat": 41.6083, "lon": -86.713,
+      "note": "The police department's third annual trunk-or-treat.",
+      "source": {"name": "WIMS", "url": "https://wimsradio.com/2026/10/13/la-porte-police-department-to-host-3rd-annual-trunk-or-treat/"}
+    },
+    {
+      "id": "orak-shrine", "name": "Orak Shrine Trunk-or-Treat",
+      "date": "2026-10-25", "start": "16:00", "end": "18:00",
+      "place": "Orak Shrine Center, 3848 N. Frontage Rd., Michigan City", "lat": 41.6715, "lon": -86.8905,
+      "note": "Open to the public.",
+      "source": {"name": "City of Michigan City", "url": "https://michigancityin.gov/halloween26/"}
+    },
+    {
       "id": "wolfies-night-out", "name": "Wolfie's Night Out Trick or Treat",
       "date": "2026-10-28", "start": "18:30", "end": "20:00",
       "place": "Ames Field, 2501 Franklin St., Michigan City", "lat": 41.7069, "lon": -86.8946,
       "note": "Free, for Michigan City Area Schools students and their families.",
       "source": {"name": "WIMS", "url": "https://wimsradio.com/2026/09/21/michigan-city-area-schools-invites-local-businesses-to-sponsor-wolfies-night-out-trick-or-treat-at-ames/"}
+    },
+    {
+      "id": "halloween-fun-fair", "name": "Halloween Fun Fair",
+      "date": "2026-10-31", "start": "17:00", "end": "21:00",
+      "place": "Michigan City H.O.P.E. Community Center, 222 McClelland Ave.", "lat": 41.7106, "lon": -86.8996,
+      "note": "Free; sign up on Eventbrite (the city's page links it). Games, a talent show and karaoke.",
+      "source": {"name": "City of Michigan City", "url": "https://michigancityin.gov/halloween26/"}
+    }
+  ],
+  "fun": [
+    {
+      "id": "garwood-orchard", "name": "Garwood Orchard & Farm Market", "group": "farm",
+      "kinds": ["Pumpkins", "Apples", "Wagon rides"],
+      "when": "U-pick daily through Oct. 31, 9 a.m. to 5:30 p.m. The last wagon to the fields leaves at 4:45 p.m.",
+      "until": "2026-10-31",
+      "place": "5911 W. 50 S., La Porte",
+      "note": "No charge for parking or the wagon ride; you pay for what you pick ($20 minimum per family). The farm says to call first, (219) 362-4385, since weather can change its hours. The market stays open through Thanksgiving.",
+      "source": {"name": "Garwood Orchard", "url": "https://www.garwoodapplefarm.com/upickseasons"}
+    },
+    {
+      "id": "johnsons-farm", "name": "Pumpkin Festival Weekends at Johnson's Farm", "group": "farm",
+      "kinds": ["Pumpkins", "Corn maze", "Tram rides"],
+      "when": "Saturday and Sunday, Oct. 24 and 25, and Saturday, Oct. 31, 10 a.m. to 6 p.m. (last admission 5 p.m.)",
+      "until": "2026-10-31",
+      "place": "8960 E. Ridge Road, Hobart (about 27 miles west)",
+      "note": "General admission $15.99, all-access $25.99. Pumpkins and other u-pick cost extra.",
+      "source": {"name": "Visit Indiana", "url": "https://visitindiana.in.gov/event/pumpkin-festival-weekends-at-johnson%e2%80%99s-farm/31642/"}
+    },
+    {
+      "id": "hesston-ghost-train", "name": "Hesston Ghost Train", "group": "haunt",
+      "kinds": ["Ghost train", "For families"],
+      "when": "Saturday and Sunday, Oct. 24 and 25 (its last weekend), noon to 5 p.m.",
+      "until": "2026-10-25",
+      "place": "Hesston Steam Museum, 1201 E. 1000 N., La Porte",
+      "note": "A steam train ride through haunted woods; the museum says it's suitable for children. Adults $11, kids 13 and under $7. Free parking.",
+      "source": {"name": "Hesston Steam Museum", "url": "https://hesston.org/ghosttrain"}
+    },
+    {
+      "id": "niles-scream-park", "name": "Niles Scream Park", "group": "haunt",
+      "kinds": ["Haunted houses", "Haunted trail"],
+      "when": "Fridays and Saturdays 7 to 11 p.m., Sundays 7 to 10 p.m., through Nov. 1, then \"Black Out\" nights Nov. 6 and 7, 7 to 10 p.m. These are Eastern times, an hour ahead of La Porte.",
+      "until": "2026-11-07",
+      "place": "855 Mayflower Rd., Niles, Mich. (about 28 miles northeast)",
+      "note": "Intense. Friday, Oct. 30 is adults only (18 and up, with ID). Packages $33 to $49 online, more at the gate.",
+      "source": {"name": "Niles Scream Park", "url": "https://haunted.org/schedule/"}
     }
   ]
 }
