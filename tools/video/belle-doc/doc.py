@@ -810,6 +810,75 @@ class Letter(Reveal):
         return unread, done, boxes, 0.5
 
 
+@shot("typed")
+class Typed(Reveal):
+    """A typewritten note card (an explainer, not a copy of any real document): a heading and lines of
+    facts that type themselves out as the narrator reads."""
+
+    def build_pages(self):
+        s = self.spec
+        pw, ph = 1260, s.get("height", 820)
+        page = aged_paper(pw, ph, seed=s.get("seed", 31), color=(226, 214, 186), edge=80, blotch=0.06).copy()
+        d = ImageDraw.Draw(page)
+        ink = (30, 26, 24, 255)
+        y = 80
+        if s.get("head"):
+            hd = text(s["head"], "type", 46, ink, tracking=3)
+            page.alpha_composite(hd, ((pw - hd.width) // 2, y))
+            y += hd.height + 22
+            d.line((120, y, pw - 120, y), fill=ink[:3] + (150,), width=2)
+            y += 40
+        f = font("type", 40)
+        unread, done = page.copy(), page.copy()
+        dd = ImageDraw.Draw(done)
+        boxes = []
+        for row in s["rows"]:
+            x = 120
+            for wd in row.split():
+                wl = f.getlength(wd + " ")
+                if x + wl > pw - 110:
+                    x, y = 150, y + 56
+                dd.text((x, y), wd, font=f, fill=ink)
+                boxes.append((int(x) - 2, int(y) - 4, int(x + wl), int(y + 54)))
+                x += wl
+            y += 74
+        return unread, done, boxes, 0.5
+
+
+@shot("timeline")
+class Timeline(Shot):
+    """Years along a line, with the events appearing one by one; "now" marks where the story is."""
+
+    def prepare(self):
+        s = self.spec
+        self.events = s["events"]                       # [[year, label], ...]
+        y0, y1 = s.get("from", self.events[0][0]), s.get("to", self.events[-1][0])
+        self.x = lambda yr: 170 + (W - 340) * (yr - y0) / max(1, (y1 - y0))
+        self.labels = [(yr, text(str(yr), "lora-b", 44, BONE + (255,)), para(lab, "fell-it", 38, (214, 198, 170, 255), 300, align="center"))
+                       for yr, lab in self.events]
+
+    def frame(self, t):
+        tl = t - self.start
+        f = dark_bg(t, 9)
+        d = ImageDraw.Draw(f)
+        ly = H / 2 + 10
+        grow = ease(tl / 1.2)
+        d.line((170, ly, 170 + (W - 340) * grow, ly), fill=(196, 176, 140), width=3)
+        span = self.dur * 0.7
+        for i, (yr, yl, lab) in enumerate(self.labels):
+            a = fade(tl, 0.6 + i * span / max(1, len(self.labels)), 0.5)
+            if a <= 0:
+                continue
+            x = self.x(yr)
+            hl = yr == self.spec.get("now")
+            r = 11 if hl else 8
+            d.ellipse((x - r, ly - r, x + r, ly + r), fill=BLOOD if hl else (196, 176, 140))
+            up = i % 2 == 0
+            put_c(f, yl, x, ly - 60 if up else ly + 60, a)
+            put_c(f, lab, x, (ly - 60 - 40 - lab.height / 2) if up else (ly + 60 + 40 + lab.height / 2), a)
+        return f
+
+
 # ---- cards
 @shot("title")
 class Title(Shot):
