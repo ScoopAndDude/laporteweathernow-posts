@@ -104,6 +104,24 @@ AD_TEXT = ("Comely widow, who owns large farm in one of the finest districts in 
            "unless sender is willing to follow answer with personal visit.")
 
 # ---------------------------------------------------------------------------------------------- the chapters
+MV = "gunness-45-hi.jpg"          # a 1908 postcard of numbered photos from the case (its legend names each one)
+MVC = {
+    "smith": [0.249, 0.032, 0.339, 0.258], "schell": [0.343, 0.030, 0.432, 0.262], "smutzer": [0.249, 0.268, 0.336, 0.462],
+    "grand_jury": [0.338, 0.272, 0.528, 0.460], "asle": [0.251, 0.470, 0.340, 0.700], "andrew": [0.343, 0.470, 0.434, 0.704],
+    "sheriff_coroner": [0.437, 0.468, 0.582, 0.610], "jury": [0.536, 0.178, 0.757, 0.347], "teeth": [0.682, 0.360, 0.788, 0.458],
+    "miner": [0.682, 0.470, 0.800, 0.597], "jennie": [0.707, 0.752, 0.798, 0.970], "maxson": [0.802, 0.752, 0.896, 0.970],
+    "grave": [0.899, 0.792, 0.981, 0.970], "lamphere_jail": [0.794, 0.032, 0.885, 0.265], "check": [0.255, 0.855, 0.414, 0.970],
+    "fire_out": [0.337, 0.708, 0.434, 0.843], "discovery": [0.438, 0.617, 0.523, 0.843],
+}
+
+
+def MVP(key, **kw):
+    """One photo from the multiview postcard, as a print on the desk."""
+    d = dict(fit="print", tone="sepia", z=[1.0, 1.08], rot=0.0)
+    d.update(kw)
+    return P(MV, crop=MVC[key], **d)
+
+
 def TODO(desc):
     """A stand-in until the right picture is chosen."""
     return QUOTE(desc, "picture to come", size=48)
@@ -157,7 +175,7 @@ CHAPTERS = [
         L("c1-02", "She was the youngest of eight children. Her father was a cottar, a tenant who worked another family's land, and a stonecutter.",
           P("selbu-04.jpg", tone="bw", crop=[0.0, 0.10, 1.0, 0.86], z=[1.0, 1.12], f0=[0.55, 0.55], f1=[0.5, 0.5]), lower="Selbu, Norway"),
         L("c1-03", "As a teenager she herded cattle and milked cows on the neighbors' farms, and saved for one thing: a ticket to America.",
-          P("selbu-01-hi.jpg", tone="bw", crop=[0.02, 0.36, 0.49, 0.80], z=[1.0, 1.1], f0=[0.4, 0.5], f1=[0.55, 0.5])),
+          P("selbu-01-hi.jpg", tone="bw", crop=[0.02, 0.36, 0.475, 0.80], z=[1.0, 1.1], f0=[0.4, 0.5], f1=[0.55, 0.5])),
         L("c1-04", "In Selbu, a story has been told about her: that as a young woman she was attacked at a dance, lost the baby she was carrying, and was never the same. There's no record that it happened.",
           QUOTE("A story told in Selbu", None, font="fell-it", size=70), gap=0.6),
         L("c1-05", "In 1881, at twenty-one, she crossed the Atlantic to join her older sister in Chicago.",
@@ -168,16 +186,17 @@ CHAPTERS = [
               places=[{"name": "Selbu", "at": [11.03, 63.22], "show": 0.0}, {"name": "New York", "at": [-74.0, 40.7], "show": 0.7},
                       {"name": "Chicago", "at": [-87.63, 41.88], "show": 0.88},
                       {"name": "ATLANTIC OCEAN", "at": [-38, 47], "dot": 0, "font": "fell-sc", "size": 50, "tracking": 8}], w=2.4),
-           P("gunness-44.jpg", fit="print", tone="bw", z=[1.0, 1.08])],
-          lower={"text": "Her sister, Nellie Larson | Chicago, about 1908", "at": 4.6}, gap=1.1),
+           P("gunness-44.jpg", fit="print", tone="bw", z=[1.0, 1.08], lower="Her sister, Nellie Larson | Chicago, about 1908")], gap=1.1),
         L("c1-06", "In America, Brynhild became Bella, or Belle.",
-          P("chicago-1880s-01.jpg", tone="bw", crop=[0.0, 0.0, 1.0, 0.94], z=[1.0, 1.12], f0=[0.5, 0.5], f1=[0.42, 0.55]), gap=0.7),
+          P("castle-garden2-01.jpg", tone="bw", crop=[0.0, 0.0, 1.0, 0.93], z=[1.0, 1.14], f0=[0.5, 0.45], f1=[0.62, 0.6]),
+          lower="Castle Garden, New York | where immigrants landed", gap=0.7),
     ]),
 
     # ------------------------------------------------------------------ 2. Chicago
     dict(id="c2", music="chicago", card=dict(type="chapter", n=2, title="Chicago", sub="1881 – 1900"), lines=[
         L("c2-01", "Chicago in the 1880s was one of the fastest-growing cities in the world, and home to more Norwegians than any other city in America.",
-          [P("chicago-1880s-28.jpg", tone="bw", crop=[0.0, 0.0, 1.0, 0.93], z=[1.0, 1.12], f0=[0.5, 0.45], f1=[0.5, 0.55]),
+          [P("chicago-1880s-01.jpg", tone="bw", crop=[0.0, 0.0, 1.0, 0.94], z=[1.0, 1.12], f0=[0.5, 0.5], f1=[0.42, 0.55]),
+           P("chicago-1880s-28.jpg", tone="bw", crop=[0.0, 0.0, 1.0, 0.93], z=[1.0, 1.12], f0=[0.5, 0.45], f1=[0.5, 0.55]),
            P("chicago-1890s-27.jpg", fit="print", tone="bw", z=[1.0, 1.08])], lower="Chicago | 1880s and 1890s"),
         L("c2-02", "Belle worked as a servant. In 1884 she married a fellow Norwegian, Mads Sorenson.",
           TYPED("CHICAGO, 1884", ["Bella Petersen, servant girl,", "marries Mads Ditlev Anton Sorenson,", "a Norwegian from Drammen."])),
@@ -189,7 +208,7 @@ CHAPTERS = [
         L("c2-06", "They were also raising two little girls, Myrtle and Lucy, and an older foster daughter, Jennie Olson.",
           P("belle-05.jpg", z=[1.0, 1.12], f0=[0.55, 0.45], f1=[0.62, 0.5]), credit="Photo: Library of Congress, Bain Collection (public domain)"),
         L("c2-07", "On July thirtieth, 1900, Mads came home with a headache. Belle said she gave him a powder for it. Then he died.",
-          TODO("Chicago home, 1900")),
+          P("chicago-1880s-19.jpg", fit="print", tone="bw", z=[1.0, 1.1])),
         L("c2-08", "It was the one day on which two of his life insurance policies overlapped: the old one ending, and a new, bigger one beginning.",
           BIG("July 30, 1900", cap="the one day two life insurance policies overlapped")),
         L("c2-09", "One doctor suspected poison. Another blamed his heart. There was no autopsy, and no charges.",
@@ -223,7 +242,7 @@ CHAPTERS = [
         L("c3-09", "An inquest cleared Belle, and she collected about three thousand dollars in life insurance.",
           BIG("$3,000", cap="life insurance, about")),
         L("c3-10", "Peter's brother came and took his surviving daughter, Swanhild, away with him.",
-          P("belle-farm-14.jpg", z=[1.0, 1.1], f0=[0.4, 0.55], f1=[0.5, 0.55])),
+          P("gunness-51.jpg", z=[1.0, 1.12], f0=[0.5, 0.6], f1=[0.5, 0.45])),
         L("c3-11", "In 1903, Belle had a son. She named him Philip.",
           P("belle-02.jpg", fit="print", z=[1.0, 1.1], f0=[0.5, 0.5], f1=[0.55, 0.45]), gap=0.7),
     ]),
@@ -235,7 +254,7 @@ CHAPTERS = [
         L("c4-02", "In 1906, Jennie Olson, the foster daughter Belle had raised since she was a baby, disappeared.",
           TYPED("JENNIE OLSON", ["Foster daughter of Belle Gunness.", "Raised by her since she was a baby.", "Last seen in 1906."])),
         L("c4-03", "Belle said Jennie had gone away to school, in Los Angeles by most accounts. Nobody ever saw her again.",
-          P("belle-farm-06.jpg", z=[1.0, 1.12]), gap=0.7),
+          MVP("jennie", z=[1.0, 1.1]), gap=0.7),
         L("c4-04", "By then, Belle was writing letters. A lot of them. Her mail carrier said she sent eight to ten a day.",
           BIG("8 to 10 letters a day", cap="by her mail carrier's count", size=130, file="gunness-26.jpg", tone="bw")),
         L("c4-05", "She was placing ads in the marriage columns of newspapers, many of them Norwegian-language papers read by farmers all over the Midwest.",
@@ -270,9 +289,10 @@ CHAPTERS = [
     # ------------------------------------------------------------------ 5. Andrew
     dict(id="c5", music="suitors", card=dict(type="chapter", n=5, title="Andrew", sub="1906 – 1908"), lines=[
         L("c5-01", "In 1906, a bachelor farmer from near Aberdeen, South Dakota, answered one of Belle's ads. His name was Andrew Helgelien.",
-          MAP(map="plains", cam0=[-93.0, 44.0, 19], title="1906", route=[[-98.49, 45.46], [-95.0, 44.0], [-90.0, 42.5], [-86.72, 41.61]],
-              route_from=0.3, route_to=0.95, places=SUITOR_PLACES + [{"name": "Aberdeen, S.D.", "at": [-98.49, 45.46], "show": 0.05}])),
-        L("c5-02", "For sixteen months, they wrote to each other.", TODO("letters, 1906-07")),
+          [MAP(map="plains", cam0=[-93.0, 44.0, 19], title="1906", route=[[-98.49, 45.46], [-95.0, 44.0], [-90.0, 42.5], [-86.72, 41.61]],
+              route_from=0.3, route_to=0.95, places=SUITOR_PLACES + [{"name": "Aberdeen, S.D.", "at": [-98.49, 45.46], "show": 0.05}], w=2.0),
+           MVP("andrew", lower="Andrew Helgelien | of Mansfield, South Dakota")]),
+        L("c5-02", "For sixteen months, they wrote to each other.", NEWS("news-23-a.jpg", mode="clip", size=[0.78, 0.84], z=[1.0, 1.12], f0=[0.5, 0.4], f1=[0.5, 0.3])),
         L("c5-03", "In one letter, she told him how to carry his money, sewn inside his underwear, and wrote: Do not say one word about it to anyone, not even your nearest relative.",
           dict(type="letter", greeting="My dear friend, \u2026", text="Do not say one word about it to anyone, not even your nearest relative.", sync=False,
                by="Belle Gunness to Andrew Helgelien, Nov. 22, 1906 (translated from Norwegian)")),
@@ -282,13 +302,15 @@ CHAPTERS = [
         L("c5-05", "In early January 1908, Andrew came to La Porte. He told his brother he'd be home in a week.",
           P("belle-farm-14.jpg", tone="bw", z=[1.0, 1.1]), lower="La Porte | January 1908"),
         L("c5-06", "He had his savings, nearly three thousand dollars, sent to a bank in La Porte. Belle took the money in cash.",
-          BIG("nearly $3,000", cap="Andrew Helgelien's savings")),
+          [BIG("nearly $3,000", cap="Andrew Helgelien's savings"),
+           MVP("check", box=[0.82, 0.62], z=[1.0, 1.1], lower="Andrew Helgelien's check | First National Bank, La Porte, January 1908")]),
         L("c5-07", "The next day, Andrew was gone.", P("gunness-67.jpg", tone="bw", crop=[0.03, 0.04, 0.97, 0.95], z=[1.05, 1.2]), gap=1.0),
         L("c5-08", "Someone else was watching: Belle's hired man, Ray Lamphere. By most accounts he was in love with her, and jealous of Andrew.",
           P("belle-12.jpg", fit="print", z=[1.0, 1.1])),
         L("c5-09", "In February 1908, Belle fired him. Then she went after him: she had him arrested for trespassing, tried to get a peace bond against him, and asked to have him declared insane.",
           P("belle-13.jpg", fit="contain", z=[1.0, 1.08])),
-        L("c5-10", "Back in South Dakota, Andrew's brother, Asle, kept writing, asking where Andrew had gone.", TODO("Asle Helgelien / letters")),
+        L("c5-10", "Back in South Dakota, Andrew's brother, Asle, kept writing, asking where Andrew had gone.",
+          MVP("asle"), lower="Asle Helgelien | Andrew's brother"),
         L("c5-11", "Belle wrote back that Andrew had gone away, perhaps to Norway, and suggested Asle sell his brother's stock and come help her look.",
           QUOTE("Sell your brother's stock and come here and we will hunt your brother together.", "The gist of Belle's letters to Asle, as the Omaha Daily Bee summed it up, May 8, 1908")),
         L("c5-12", "She was still writing to other men. On March first, 1908, she told a man in Kansas City that she was a lonely Norwegian woman, and asked whether he could put up a thousand dollars in cash.",
@@ -305,11 +327,11 @@ CHAPTERS = [
     # ------------------------------------------------------------------ 6. The fire
     dict(id="c6", music="fire", card=dict(type="chapter", n=6, title="The Fire", sub="April 28, 1908"), lines=[
         L("c6-01", "Around four o'clock the next morning, the new hired man, Joe Maxson, woke to the smell of smoke.",
-          TODO("night / smoke"), sfx=[["fire", 2.0]]),
+          MVP("maxson", tone="bw"), lower="Joe Maxson | the hired man", sfx=[["fire", 2.0]]),
         L("c6-02", "He shouted for Belle and the children. No one answered. He ran for help.",
           P("gunness-66.jpg", tone="night", crop=[0.03, 0.05, 0.97, 0.80], z=[1.0, 1.16], f0=[0.5, 0.55], f1=[0.5, 0.45])),
         L("c6-03", "By the time the fire was out, the big brick house had collapsed into its own cellar.",
-          [P("gunness-52.jpg", fit="print", z=[1.0, 1.08]), P("belle-farm-13.jpg", z=[1.0, 1.12], f0=[0.5, 0.65], f1=[0.5, 0.6])]),
+          [MVP("fire_out", z=[1.0, 1.1]), P("belle-farm-13.jpg", z=[1.0, 1.12], f0=[0.5, 0.65], f1=[0.5, 0.6])]),
         L("c6-04", "In the ruins, searchers found four bodies: Myrtle, eleven. Lucy, nine. Philip, five. And a woman, without a head.",
           dict(type="names", head="FOUND IN THE CELLAR", names=[["Myrtle", "11"], ["Lucy", "9"], ["Philip", "5"], ["a woman, head missing", ""]], span=0.85), gap=1.0),
         L("c6-05", "That same day, the sheriff went looking for Ray Lamphere. By evening, according to the newspapers, he was under arrest, charged with murdering Belle Gunness and her children.",
@@ -322,13 +344,13 @@ CHAPTERS = [
     # ------------------------------------------------------------------ 7. The hog lot
     dict(id="c7", music="digging", card=dict(type="chapter", n=7, title="The Hog Lot", sub="May 1908"), lines=[
         L("c7-01", "In early May, a stranger walked into the sheriff's office. It was Asle Helgelien, from South Dakota, with a stack of Belle's letters to his brother.",
-          TODO("Asle Helgelien / sheriff")),
+          [MVP("smutzer", tone="bw", lower="Sheriff Albert Smutzer"), MVP("asle", tone="bw", w=1.4)]),
         L("c7-02", "He didn't believe Andrew had simply left.", SAME),
         L("c7-03", "Joe Maxson remembered something. In March, Belle had him fill and level a pit of garbage near the hog lot.",
           [P("belle-farm-03.jpg", z=[1.0, 1.12], f0=[0.5, 0.55], f1=[0.58, 0.5]), P("gunness-36.jpg", fit="print", z=[1.0, 1.08])]),
         L("c7-04", "On May fifth, 1908, they dug there.", BIG("May 5, 1908", file="belle-farm-05.jpg"), sfx=[["thud", 1.2]]),
-        L("c7-05", "Wrapped in sacks, they found the remains of Andrew Helgelien.", P("belle-farm-05.jpg", z=[1.05, 1.18], f0=[0.45, 0.6])),
-        L("c7-06", "Nearby, two feet beneath him by one newspaper's account, lay Jennie Olson, the foster daughter who had supposedly gone away to school.", TODO("Jennie Olson"), gap=1.0),
+        L("c7-05", "Wrapped in sacks, they found the remains of Andrew Helgelien.", MVP("discovery", z=[1.0, 1.1])),
+        L("c7-06", "Nearby, two feet beneath him by one newspaper's account, lay Jennie Olson, the foster daughter who had supposedly gone away to school.", MVP("jennie", tone="bw", z=[1.04, 1.14]), gap=1.0),
         L("c7-07", "They kept digging. By the next night, nine bodies had come out of the yard.", P("belle-farm-09.jpg", z=[1.0, 1.15], f0=[0.5, 0.6], f1=[0.45, 0.5])),
         L("c7-08", "Most had been cut apart. Most were men. At least two were teenagers, Jennie among them.",
           P("gunness-41.jpg", fit="print", z=[1.0, 1.1])),
@@ -339,7 +361,10 @@ CHAPTERS = [
         L("c7-10", "The rest were never named. Seven of them were buried in La Porte's potter's field. And the farm was never thoroughly searched.", P("gunness-43.jpg", z=[1.0, 1.12], f0=[0.5, 0.5], f1=[0.45, 0.55])),
         L("c7-11", "Most researchers say she killed at least fourteen people. Some believe it was twenty-five or more. The number you'll often hear, more than forty, comes from legend.",
           TYPED("HOW MANY?", ["At least 14: most researchers.", "25 or more: some researchers.", "More than 40: legend."]), gap=0.9),
-        L("c7-12", "And the whole country was watching La Porte.", TODO("1908 headline, May")),
+        L("c7-12", "And the whole country was watching La Porte.",
+          dict(type="pile", items=[{"file": "news-04-a.jpg"}, {"file": "news-05-a.jpg"}, {"file": "news-02-a.jpg", "width": 0.27},
+                                   {"file": "news-01-a.jpg", "width": 0.30}, {"file": "news-35-a.jpg", "width": 0.27}, {"file": "news-37-a.jpg", "width": 0.25},
+                                   {"file": "news-06-a.jpg", "width": 0.33}], span=0.85), gap=0.8),
         L("c7-13", "On Sunday, May tenth, thousands of people came out to the farm. The railroads and trolleys alone brought about four thousand more into town.",
           [P("gunness-21.jpg", tone="warm", crop=[0.03, 0.04, 0.97, 0.94], z=[1.0, 1.1]), P("belle-farm-04.jpg", z=[1.0, 1.12]), NEWS("news-16-a.jpg", mode="clip")],
           lower="The Gunness farm | May 1908", sfx=[["crowd", 0.0]]),
@@ -357,21 +382,26 @@ CHAPTERS = [
           TYPED("THE WOMAN IN THE CELLAR", ["1908, the coroner's guess: about 5 ft. 3 in.", "Belle Gunness: about 5 ft. 8 in.", "2007, from the bones: 5'6\" to 5'9\"."])),
         L("c8-04", "A Chicago chemist later reported finding poison in the stomachs of the woman and two of the children.",
           TYPED("REPORTED IN 1908", ["Dr. Walter Haines, Rush Medical College:", "arsenic and strychnine."])),
-        L("c8-05", "The sheriff and a miner named Louis Schultz washed the ashes through a sluice, like gold.", TODO("sluicing the ashes")),
-        L("c8-06", "On May nineteenth, they found two dental plates with false teeth. Belle's dentist said they were hers.", BIG("May 19, 1908", cap="the teeth"), sfx=[["camera", 0.8]]),
+        L("c8-05", "The sheriff and a miner named Louis Schultz washed the ashes through a sluice, like gold.",
+          [P("gunness-64.jpg", fit="print", z=[1.0, 1.08]), MVP("miner", z=[1.0, 1.1])]),
+        L("c8-06", "On May nineteenth, they found two dental plates with false teeth. Belle's dentist said they were hers.",
+          MVP("teeth", box=[0.8, 0.62], z=[1.0, 1.12]), lower="May 19, 1908 | the teeth, on a 1908 postcard", sfx=[["camera", 0.8]]),
         L("c8-07", "The sheriff said it proved, beyond the shadow of a doubt, that Belle had died in the fire. The coroner agreed.",
           QUOTE("beyond the shadow of a doubt", "Sheriff Albert Smutzer, May 1908")),
         L("c8-08", "Not everyone did. The teeth had come through a fire that destroyed a house, and they were in good shape. Many people believed they had been planted.",
           P("belle-08.jpg", fit="print", z=[1.0, 1.1])),
         L("c8-09", "Three days later, a grand jury indicted Ray Lamphere for arson and murder. It also indicted Belle Gunness, for the murder of Andrew Helgelien, though the coroner had just declared her dead.",
-          TODO("1908 headline: INDICTED AFTER DEATH"), gap=1.0),
+          [MVP("grand_jury", box=[0.84, 0.70], z=[1.0, 1.1], lower="The grand jury | 1908"), NEWS("news-58-a.jpg", mode="clip", size=[0.7, 0.8])], gap=1.0),
     ]),
 
     # ------------------------------------------------------------------ 9. The trial
     dict(id="c9", music="trial", card=dict(type="chapter", n=9, title="The Trial", sub="November 1908"), lines=[
-        L("c9-01", "Ray Lamphere went on trial in November 1908, at the La Porte County Courthouse.", TODO("La Porte County Courthouse")),
-        L("c9-02", "Choosing a jury was hard. Several men were excused because they believed Belle Gunness was still alive.", TODO("courtroom / jurors")),
-        L("c9-03", "Lamphere's lawyer, Wirt Worden, argued that she was.", P("belle-13.jpg", fit="contain", z=[1.0, 1.08])),
+        L("c9-01", "Ray Lamphere went on trial in November 1908, at the La Porte County Courthouse.",
+          NEWS("paper-nov-04-a.jpg", mode="clip", size=[0.88, 0.80], z=[1.0, 1.12], f0=[0.5, 0.5], f1=[0.42, 0.45]), lower="The Spokane Press | Nov. 9, 1908"),
+        L("c9-02", "As the jury was chosen, six men were excused because they believed Belle Gunness was still alive.",
+          MVP("jury", box=[0.84, 0.72], z=[1.0, 1.12]), lower="The jury that tried Ray Lamphere | November 1908"),
+        L("c9-03", "Lamphere's lawyer, Wirt Worden, argued that she was.",
+          NEWS("paper-nov-05-a.jpg", mode="clip", size=[0.62, 0.82], z=[1.0, 1.1]), lower="The Washington Times | Nov. 10, 1908"),
         L("c9-03b", "Prosecutors had a watch Lamphere was carrying when he was arrested. John Moe's half-brother said it was Moe's. Lamphere said Belle had given it to him.",
           TYPED("THE WATCH", ["Found on Ray Lamphere.", "John Moe's, said Moe's half-brother.", "A gift from Belle, said Lamphere."])),
         L("c9-04", "Defense witnesses said they had seen Belle, alive, that summer.", P("belle-07.jpg", fit="print", z=[1.0, 1.1])),
@@ -379,10 +409,14 @@ CHAPTERS = [
           BIG("Guilty of arson", cap="November 26, 1908"), sfx=[["gavel", 3.0]]),
         L("c9-05b", "The poison found in the bodies may have helped him. His lawyer argued that it showed Lamphere had nothing to do with their deaths.", SAME),
         L("c9-06", "He was sentenced to two to twenty-one years in the state prison at Michigan City.", P("prison-33.jpg", tone="warm", crop=[0.02, 0.03, 0.98, 0.78], z=[1.0, 1.1], f0=[0.4, 0.5], f1=[0.55, 0.5]), lower="Indiana State Prison | Michigan City, about 1908"),
-        L("c9-07", "He served about a year. On December thirtieth, 1909, Ray Lamphere died of tuberculosis.", P("belle-12.jpg", fit="print", z=[1.0, 1.1]), gap=0.8),
+        L("c9-07", "He served about a year. On December thirtieth, 1909, Ray Lamphere died of tuberculosis.", MVP("lamphere_jail", tone="bw"), gap=0.8),
         L("c9-08", "After his death, newspapers printed what they called his confession. In it, he said he had chloroformed Belle and the children while he and a woman robbed the house, and that the body in the cellar was Belle.",
-          TODO("1910 newspaper: confession")),
-        L("c9-08b", "The minister he had confided in said he had never repeated a word of what Lamphere told him.", SAME),
+          [dict(type="pile", items=[{"file": "paper-1910-03-a.jpg", "width": 0.26}, {"file": "paper-1910-02-a.jpg", "width": 0.30},
+                                    {"file": "paper-1910-07-a.jpg", "width": 0.24}], span=0.8, credit="Newspapers, January 1910 \u00b7 Library of Congress", w=1.0),
+           NEWS("paper-1910-04-a.jpg", mode="clip", size=[0.55, 0.86], z=[1.0, 1.14], f0=[0.5, 0.35], f1=[0.5, 0.62], w=1.4,
+                lower="Evening Times-Republican (Marshalltown, Iowa) | Jan. 13, 1910")]),
+        L("c9-08b", "The minister he had confided in said he had never repeated a word of what Lamphere told him.",
+          MVP("schell"), lower="The Rev. Edwin A. Schell"),
         L("c9-09", "Other men told other stories. That Lamphere had helped her escape. That the woman in the cellar was a housekeeper lured from Chicago. That Belle had killed forty-two men.",
           TYPED("WHAT OTHERS SAID HE SAID", ["He helped her escape.", "The body was a housekeeper from Chicago.", "She killed 42 men."])),
         L("c9-10", "All of these stories, the printed confession included, came secondhand, after Lamphere was dead, and they contradict each other.", SAME, gap=1.0),
@@ -421,12 +455,13 @@ CHAPTERS = [
 
     # ------------------------------------------------------------------ epilogue
     dict(id="end", music="end", card=dict(type="chapter", kicker="EPILOGUE", title="La Porte", sub="Today"), tail=2.5, lines=[
-        L("e01", "The house on McClung Road is long gone.", P("belle-farm-14.jpg", z=[1.0, 1.1])),
+        L("e01", "The house on McClung Road is long gone.", P("gunness-56.jpg", tone="warm", crop=[0.03, 0.12, 0.97, 0.92], z=[1.0, 1.1], f0=[0.5, 0.5], f1=[0.46, 0.55])),
         L("e02", "Belle's story is kept at the La Porte County Historical Society Museum, on Indiana Avenue.",
           TYPED("LA PORTE COUNTY HISTORICAL SOCIETY MUSEUM", ["2405 Indiana Ave., Suite 1, La Porte", "Tue.-Sat., 10 a.m.-4:30 p.m. Central", "Belle Gunness exhibit"])),
         L("e03", "In 2008, a hundred years after the fire, descendants of her victims came to La Porte to put headstones on graves that had been unmarked since 1908.",
-          TODO("La Porte cemetery headstones")),
-        L("e04", "Andrew Helgelien lies in Patton Cemetery. His stone calls him the last victim.", SAME),
+          BIG("April 26, 2008", cap="headstones for graves unmarked since 1908")),
+        L("e04", "Andrew Helgelien lies in Patton Cemetery. His stone calls him the last victim.",
+          MVP("grave", z=[1.0, 1.12]), lower="Andrew Helgelien's grave | on a 1908 postcard"),
         L("e05", "Most of the others were never named.", dict(type="dark"), gap=1.0),
         L("e06", "Whether Belle Gunness died in that fire, or walked away into the dark and lived out her life under another name, no one has ever proved.",
           P("belle-07.jpg", z=[1.02, 1.22], f0=[0.45, 0.42], f1=[0.45, 0.40])),

@@ -1,5 +1,5 @@
 {
-  "about": "Second picture pass for the Belle Gunness documentary (fetch.py --extra, Oct. 20, 2026; the clippings are cut from full-size pages). Adds to images/manifest.json without renumbering anything: sharper copies of pictures already chosen, full-resolution cut-outs of the 1908 headlines the film shows (boxes are fractions of the page), and a few searches for scenes the first pass didn't find (the courthouse, the 1908 trial, Lamphere's 1910 'confession', the 1931 Los Angeles story). Same rules: public domain, CC0 or CC BY only.",
+  "about": "Second picture pass for the Belle Gunness documentary (fetch.py --extra, Oct. 20, 2026; the clippings are cut from full-size pages). Adds to images/manifest.json without renumbering anything: sharper copies of pictures already chosen, full-resolution cut-outs of the 1908 headlines the film shows (boxes are fractions of the page), and a few searches for scenes the first pass didn't find (the courthouse, the 1908 trial, Lamphere's 1910 'confession', the 1931 Los Angeles story). Same rules: public domain, CC0 or CC BY only. Pass 4 adds full-size pages named by address (resource_pages) and the trial and 1910 headlines.",
   "commons_hires": [
     {
       "file": "gunness-45.jpg",
@@ -271,6 +271,72 @@
       ],
       "out": "news-58-a",
       "note": "RAY LAMPHERE HELD"
+    },
+    {
+      "file": "paper-nov-04.jpg",
+      "box": [
+        0.0,
+        0.015,
+        0.63,
+        0.275
+      ],
+      "out": "paper-nov-04-a",
+      "note": "NOTED \"MURDER FARM\" TRIAL BEGINS (Spokane Press, Nov. 9, 1908)"
+    },
+    {
+      "file": "paper-nov-05.jpg",
+      "box": [
+        0.03,
+        0.02,
+        0.195,
+        0.115
+      ],
+      "out": "paper-nov-05-a",
+      "note": "DEFENSE WILL DOUBT MRS. GUNNESS' DEATH (Washington Times, Nov. 10, 1908)"
+    },
+    {
+      "file": "paper-1910-02.jpg",
+      "box": [
+        0.8,
+        0.12,
+        0.985,
+        0.25
+      ],
+      "out": "paper-1910-02-a",
+      "note": "LAMPHERE'S STORY OF MURDER FARM (Vinita Daily Chieftain, Jan. 13, 1910)"
+    },
+    {
+      "file": "paper-1910-03.jpg",
+      "box": [
+        0.46,
+        0.155,
+        0.615,
+        0.31
+      ],
+      "out": "paper-1910-03-a",
+      "note": "LAMPHERE MADE DYING CONFESSION (Daily Ardmoreite, Jan. 13, 1910)"
+    },
+    {
+      "file": "paper-1910-04.jpg",
+      "box": [
+        0.82,
+        0.12,
+        0.985,
+        0.29
+      ],
+      "out": "paper-1910-04-a",
+      "note": "LAMPHERE REVEALS GUNNESS SECRETS (Evening Times-Republican, Jan. 13, 1910)"
+    },
+    {
+      "file": "paper-1910-07.jpg",
+      "box": [
+        0.42,
+        0.355,
+        0.57,
+        0.48
+      ],
+      "out": "paper-1910-07-a",
+      "note": "DYING, GAVE UP GUNNESS SECRET (Wenatchee Daily World, Jan. 13, 1910)"
     }
   ],
   "commons": [
@@ -372,7 +438,44 @@
       "q": "gunness",
       "dates": "1931-04-01/1931-08-31",
       "max": 8,
-      "license": "Public domain (1931 newspaper; Library of Congress: no known restrictions)"
+      "license": "1931 newspaper: copyright not checked, not used in the film"
+    }
+  ],
+  "resource_pages": [
+    {
+      "name": "bee-0429",
+      "url": "https://www.loc.gov/resource/sn99021999/1908-04-29/ed-1/?sp=1",
+      "paper": "Omaha Daily Bee (Omaha, Neb.)",
+      "date": "1908-04-29",
+      "note": "FOUR BURNED IN THEIR BEDS"
+    },
+    {
+      "name": "bee-0508",
+      "url": "https://www.loc.gov/resource/sn99021999/1908-05-08/ed-1/?sp=1",
+      "paper": "Omaha Daily Bee (Omaha, Neb.)",
+      "date": "1908-05-08",
+      "note": "Plays Part of Circe: the 'comely widow' ad"
+    },
+    {
+      "name": "oregonian-0513",
+      "url": "https://www.loc.gov/resource/sn83025138/1908-05-13/ed-1/?sp=3",
+      "paper": "Morning Oregonian (Portland, Or.)",
+      "date": "1908-05-13",
+      "note": "Gus Gunness on Peter's death"
+    },
+    {
+      "name": "oregonian-0523",
+      "url": "https://www.loc.gov/resource/sn83025138/1908-05-23/ed-1/?sp=4",
+      "paper": "Morning Oregonian (Portland, Or.)",
+      "date": "1908-05-23",
+      "note": "INDICTED AFTER DEATH"
+    },
+    {
+      "name": "oregonian-1127",
+      "url": "https://www.loc.gov/resource/sn83025138/1908-11-27/ed-1/?sp=6",
+      "paper": "Morning Oregonian (Portland, Or.)",
+      "date": "1908-11-27",
+      "note": "the verdict"
     }
   ]
 }

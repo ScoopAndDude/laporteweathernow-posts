@@ -1384,6 +1384,8 @@ def build(script):
                         for name, at in v.get("sfx", []):
                             c["sfx"].append((name, s0 + float(at)))
                         c["sfx"] += prev.auto_sfx()
+                        if v.get("lower"):                 # a label that belongs to this one picture
+                            c["overlays"].append({"kind": "lower", "text": v["lower"], "start": s0 + 0.3, "end": max(s0 + 2.0, s1 - 0.35)})
                     s0 = s1
             if ln.get("lower"):
                 lo = ln["lower"] if isinstance(ln["lower"], dict) else {"text": ln["lower"]}
@@ -1424,10 +1426,11 @@ def lower_img(s):
     b = text(parts[1].strip(), "inter-m", 28, (206, 190, 160, 255), tracking=3) if len(parts) > 1 else None
     w = max(a.width, b.width if b else 0) + 90
     h = a.height + (b.height + 16 if b else 0) + 50
-    band = Image.new("RGBA", (w + 200, h), (0, 0, 0, 0))
-    arr = np.zeros((h, w + 200, 4), np.uint8)
-    xs = np.linspace(1, 0, w + 200) ** 1.6
-    arr[..., 3] = (xs * 170).astype(np.uint8)[None, :]
+    arr = np.zeros((h, w + 220, 4), np.uint8)
+    arr[..., :3] = (12, 9, 7)
+    xs = np.arange(w + 220, dtype=np.float32)
+    alpha = np.where(xs < w, 205.0, 205.0 * np.clip(1 - (xs - w) / 220.0, 0, 1) ** 1.5)    # solid under the words, then fading
+    arr[..., 3] = alpha.astype(np.uint8)[None, :]
     band = Image.fromarray(arr, "RGBA")
     rule = Image.new("RGBA", (6, h - 30), (178, 30, 26, 255))
     band.alpha_composite(rule, (40, 15))

@@ -293,7 +293,7 @@
       "crop": [
        0.02,
        0.36,
-       0.49,
+       0.475,
        0.8
       ]
      }
@@ -432,13 +432,10 @@
        "z": [
         1.0,
         1.08
-       ]
+       ],
+       "lower": "Her sister, Nellie Larson | Chicago, about 1908"
       }
      ],
-     "lower": {
-      "text": "Her sister, Nellie Larson | Chicago, about 1908",
-      "at": 4.6
-     },
      "gap": 1.1
     },
     {
@@ -446,28 +443,29 @@
      "say": "In America, Brynhild became Bella, or Belle.",
      "v": {
       "type": "photo",
-      "file": "chicago-1880s-01.jpg",
+      "file": "castle-garden2-01.jpg",
       "fit": "cover",
       "tone": "bw",
       "z": [
        1.0,
-       1.12
+       1.14
       ],
       "f0": [
        0.5,
-       0.5
+       0.45
       ],
       "f1": [
-       0.42,
-       0.55
+       0.62,
+       0.6
       ],
       "crop": [
        0.0,
        0.0,
        1.0,
-       0.94
+       0.93
       ]
      },
+     "lower": "Castle Garden, New York | where immigrants landed",
      "gap": 0.7
     }
    ]
@@ -487,6 +485,30 @@
      "say": "Chicago in the 1880s was one of the fastest-growing cities in the world, and home to more Norwegians than any other city in America.",
      "tts": "Chicago in the eighteen eighties was one of the fastest-growing cities in the world, and home to more Norwegians than any other city in America.",
      "v": [
+      {
+       "type": "photo",
+       "file": "chicago-1880s-01.jpg",
+       "fit": "cover",
+       "tone": "bw",
+       "z": [
+        1.0,
+        1.12
+       ],
+       "f0": [
+        0.5,
+        0.5
+       ],
+       "f1": [
+        0.42,
+        0.55
+       ],
+       "crop": [
+        0.0,
+        0.0,
+        1.0,
+        0.94
+       ]
+      },
       {
        "type": "photo",
        "file": "chicago-1880s-28.jpg",
@@ -615,10 +637,14 @@
      "say": "On July thirtieth, 1900, Mads came home with a headache. Belle said she gave him a powder for it. Then he died.",
      "tts": "On July thirtieth, nineteen hundred, Mads came home with a headache. Belle said she gave him a powder for it. Then he died.",
      "v": {
-      "type": "quote",
-      "text": "Chicago home, 1900",
-      "by": "picture to come",
-      "size": 48
+      "type": "photo",
+      "file": "chicago-1880s-19.jpg",
+      "fit": "print",
+      "tone": "bw",
+      "z": [
+       1.0,
+       1.1
+      ]
      }
     },
     {
@@ -952,20 +978,20 @@
      "say": "Peter's brother came and took his surviving daughter, Swanhild, away with him.",
      "v": {
       "type": "photo",
-      "file": "belle-farm-14.jpg",
+      "file": "gunness-51.jpg",
       "fit": "cover",
       "tone": "sepia",
       "z": [
        1.0,
-       1.1
+       1.12
       ],
       "f0": [
-       0.4,
-       0.55
+       0.5,
+       0.6
       ],
       "f1": [
        0.5,
-       0.55
+       0.45
       ]
      }
     },
@@ -1046,13 +1072,20 @@
      "say": "Belle said Jennie had gone away to school, in Los Angeles by most accounts. Nobody ever saw her again.",
      "v": {
       "type": "photo",
-      "file": "belle-farm-06.jpg",
-      "fit": "cover",
+      "file": "gunness-45-hi.jpg",
+      "fit": "print",
       "tone": "sepia",
       "z": [
        1.0,
-       1.12
-      ]
+       1.1
+      ],
+      "crop": [
+       0.707,
+       0.752,
+       0.798,
+       0.97
+      ],
+      "rot": 0.0
      },
      "gap": 0.7
     },
@@ -1441,74 +1474,110 @@
      "id": "c5-01",
      "say": "In 1906, a bachelor farmer from near Aberdeen, South Dakota, answered one of Belle's ads. His name was Andrew Helgelien.",
      "tts": "In nineteen oh six, a bachelor farmer from near Aberdeen, South Dakota, answered one of Belle's ads. His name was Andrew Helgelien.",
-     "v": {
-      "type": "map",
-      "map": "plains",
-      "cam0": [
-       -93.0,
-       44.0,
-       19
-      ],
-      "title": "1906",
-      "route": [
-       [
-        -98.49,
-        45.46
+     "v": [
+      {
+       "type": "map",
+       "map": "plains",
+       "cam0": [
+        -93.0,
+        44.0,
+        19
        ],
-       [
-        -95.0,
-        44.0
-       ],
-       [
-        -90.0,
-        42.5
-       ],
-       [
-        -86.72,
-        41.61
-       ]
-      ],
-      "route_from": 0.3,
-      "route_to": 0.95,
-      "places": [
-       {
-        "name": "La Porte",
-        "at": [
-         -86.72,
-         41.61
-        ],
-        "show": 0.0
-       },
-       {
-        "name": "LAKE MICHIGAN",
-        "at": [
-         -87.2,
-         43.6
-        ],
-        "dot": 0,
-        "font": "fell-sc",
-        "size": 40,
-        "tracking": 4
-       },
-       {
-        "name": "Aberdeen, S.D.",
-        "at": [
+       "title": "1906",
+       "route": [
+        [
          -98.49,
          45.46
         ],
-        "show": 0.05
-       }
-      ]
-     }
+        [
+         -95.0,
+         44.0
+        ],
+        [
+         -90.0,
+         42.5
+        ],
+        [
+         -86.72,
+         41.61
+        ]
+       ],
+       "route_from": 0.3,
+       "route_to": 0.95,
+       "places": [
+        {
+         "name": "La Porte",
+         "at": [
+          -86.72,
+          41.61
+         ],
+         "show": 0.0
+        },
+        {
+         "name": "LAKE MICHIGAN",
+         "at": [
+          -87.2,
+          43.6
+         ],
+         "dot": 0,
+         "font": "fell-sc",
+         "size": 40,
+         "tracking": 4
+        },
+        {
+         "name": "Aberdeen, S.D.",
+         "at": [
+          -98.49,
+          45.46
+         ],
+         "show": 0.05
+        }
+       ],
+       "w": 2.0
+      },
+      {
+       "type": "photo",
+       "file": "gunness-45-hi.jpg",
+       "fit": "print",
+       "tone": "sepia",
+       "z": [
+        1.0,
+        1.08
+       ],
+       "crop": [
+        0.343,
+        0.47,
+        0.434,
+        0.704
+       ],
+       "rot": 0.0,
+       "lower": "Andrew Helgelien | of Mansfield, South Dakota"
+      }
+     ]
     },
     {
      "id": "c5-02",
      "say": "For sixteen months, they wrote to each other.",
      "v": {
-      "type": "quote",
-      "text": "letters, 1906-07",
-      "by": "picture to come",
-      "size": 48
+      "type": "news",
+      "file": "news-23-a.jpg",
+      "mode": "clip",
+      "size": [
+       0.78,
+       0.84
+      ],
+      "z": [
+       1.0,
+       1.12
+      ],
+      "f0": [
+       0.5,
+       0.4
+      ],
+      "f1": [
+       0.5,
+       0.3
+      ]
      }
     },
     {
@@ -1552,11 +1621,35 @@
     {
      "id": "c5-06",
      "say": "He had his savings, nearly three thousand dollars, sent to a bank in La Porte. Belle took the money in cash.",
-     "v": {
-      "type": "big",
-      "text": "nearly $3,000",
-      "cap": "Andrew Helgelien's savings"
-     }
+     "v": [
+      {
+       "type": "big",
+       "text": "nearly $3,000",
+       "cap": "Andrew Helgelien's savings"
+      },
+      {
+       "type": "photo",
+       "file": "gunness-45-hi.jpg",
+       "fit": "print",
+       "tone": "sepia",
+       "z": [
+        1.0,
+        1.1
+       ],
+       "crop": [
+        0.255,
+        0.855,
+        0.414,
+        0.97
+       ],
+       "rot": 0.0,
+       "box": [
+        0.82,
+        0.62
+       ],
+       "lower": "Andrew Helgelien's check | First National Bank, La Porte, January 1908"
+      }
+     ]
     },
     {
      "id": "c5-07",
@@ -1612,11 +1705,23 @@
      "id": "c5-10",
      "say": "Back in South Dakota, Andrew's brother, Asle, kept writing, asking where Andrew had gone.",
      "v": {
-      "type": "quote",
-      "text": "Asle Helgelien / letters",
-      "by": "picture to come",
-      "size": 48
-     }
+      "type": "photo",
+      "file": "gunness-45-hi.jpg",
+      "fit": "print",
+      "tone": "sepia",
+      "z": [
+       1.0,
+       1.08
+      ],
+      "crop": [
+       0.251,
+       0.47,
+       0.34,
+       0.7
+      ],
+      "rot": 0.0
+     },
+     "lower": "Asle Helgelien | Andrew's brother"
     },
     {
      "id": "c5-11",
@@ -1697,11 +1802,23 @@
      "id": "c6-01",
      "say": "Around four o'clock the next morning, the new hired man, Joe Maxson, woke to the smell of smoke.",
      "v": {
-      "type": "quote",
-      "text": "night / smoke",
-      "by": "picture to come",
-      "size": 48
+      "type": "photo",
+      "file": "gunness-45-hi.jpg",
+      "fit": "print",
+      "tone": "bw",
+      "z": [
+       1.0,
+       1.08
+      ],
+      "crop": [
+       0.802,
+       0.752,
+       0.896,
+       0.97
+      ],
+      "rot": 0.0
      },
+     "lower": "Joe Maxson | the hired man",
      "sfx": [
       [
        "fire",
@@ -1743,13 +1860,20 @@
      "v": [
       {
        "type": "photo",
-       "file": "gunness-52.jpg",
+       "file": "gunness-45-hi.jpg",
        "fit": "print",
        "tone": "sepia",
        "z": [
         1.0,
-        1.08
-       ]
+        1.1
+       ],
+       "crop": [
+        0.337,
+        0.708,
+        0.434,
+        0.843
+       ],
+       "rot": 0.0
       },
       {
        "type": "photo",
@@ -1860,12 +1984,44 @@
     {
      "id": "c7-01",
      "say": "In early May, a stranger walked into the sheriff's office. It was Asle Helgelien, from South Dakota, with a stack of Belle's letters to his brother.",
-     "v": {
-      "type": "quote",
-      "text": "Asle Helgelien / sheriff",
-      "by": "picture to come",
-      "size": 48
-     }
+     "v": [
+      {
+       "type": "photo",
+       "file": "gunness-45-hi.jpg",
+       "fit": "print",
+       "tone": "bw",
+       "z": [
+        1.0,
+        1.08
+       ],
+       "crop": [
+        0.249,
+        0.268,
+        0.336,
+        0.462
+       ],
+       "rot": 0.0,
+       "lower": "Sheriff Albert Smutzer"
+      },
+      {
+       "type": "photo",
+       "file": "gunness-45-hi.jpg",
+       "fit": "print",
+       "tone": "bw",
+       "z": [
+        1.0,
+        1.08
+       ],
+       "crop": [
+        0.251,
+        0.47,
+        0.34,
+        0.7
+       ],
+       "rot": 0.0,
+       "w": 1.4
+      }
+     ]
     },
     {
      "id": "c7-02",
@@ -1929,27 +2085,41 @@
      "say": "Wrapped in sacks, they found the remains of Andrew Helgelien.",
      "v": {
       "type": "photo",
-      "file": "belle-farm-05.jpg",
-      "fit": "cover",
+      "file": "gunness-45-hi.jpg",
+      "fit": "print",
       "tone": "sepia",
       "z": [
-       1.05,
-       1.18
+       1.0,
+       1.1
       ],
-      "f0": [
-       0.45,
-       0.6
-      ]
+      "crop": [
+       0.438,
+       0.617,
+       0.523,
+       0.843
+      ],
+      "rot": 0.0
      }
     },
     {
      "id": "c7-06",
      "say": "Nearby, two feet beneath him by one newspaper's account, lay Jennie Olson, the foster daughter who had supposedly gone away to school.",
      "v": {
-      "type": "quote",
-      "text": "Jennie Olson",
-      "by": "picture to come",
-      "size": 48
+      "type": "photo",
+      "file": "gunness-45-hi.jpg",
+      "fit": "print",
+      "tone": "bw",
+      "z": [
+       1.04,
+       1.14
+      ],
+      "crop": [
+       0.707,
+       0.752,
+       0.798,
+       0.97
+      ],
+      "rot": 0.0
      },
      "gap": 1.0
     },
@@ -2060,11 +2230,38 @@
      "id": "c7-12",
      "say": "And the whole country was watching La Porte.",
      "v": {
-      "type": "quote",
-      "text": "1908 headline, May",
-      "by": "picture to come",
-      "size": 48
-     }
+      "type": "pile",
+      "items": [
+       {
+        "file": "news-04-a.jpg"
+       },
+       {
+        "file": "news-05-a.jpg"
+       },
+       {
+        "file": "news-02-a.jpg",
+        "width": 0.27
+       },
+       {
+        "file": "news-01-a.jpg",
+        "width": 0.3
+       },
+       {
+        "file": "news-35-a.jpg",
+        "width": 0.27
+       },
+       {
+        "file": "news-37-a.jpg",
+        "width": 0.25
+       },
+       {
+        "file": "news-06-a.jpg",
+        "width": 0.33
+       }
+      ],
+      "span": 0.85
+     },
+     "gap": 0.8
     },
     {
      "id": "c7-13",
@@ -2215,21 +2412,61 @@
     {
      "id": "c8-05",
      "say": "The sheriff and a miner named Louis Schultz washed the ashes through a sluice, like gold.",
-     "v": {
-      "type": "quote",
-      "text": "sluicing the ashes",
-      "by": "picture to come",
-      "size": 48
-     }
+     "v": [
+      {
+       "type": "photo",
+       "file": "gunness-64.jpg",
+       "fit": "print",
+       "tone": "sepia",
+       "z": [
+        1.0,
+        1.08
+       ]
+      },
+      {
+       "type": "photo",
+       "file": "gunness-45-hi.jpg",
+       "fit": "print",
+       "tone": "sepia",
+       "z": [
+        1.0,
+        1.1
+       ],
+       "crop": [
+        0.682,
+        0.47,
+        0.8,
+        0.597
+       ],
+       "rot": 0.0
+      }
+     ]
     },
     {
      "id": "c8-06",
      "say": "On May nineteenth, they found two dental plates with false teeth. Belle's dentist said they were hers.",
      "v": {
-      "type": "big",
-      "text": "May 19, 1908",
-      "cap": "the teeth"
+      "type": "photo",
+      "file": "gunness-45-hi.jpg",
+      "fit": "print",
+      "tone": "sepia",
+      "z": [
+       1.0,
+       1.12
+      ],
+      "crop": [
+       0.682,
+       0.36,
+       0.788,
+       0.458
+      ],
+      "rot": 0.0,
+      "box": [
+       0.8,
+       0.62
+      ]
      },
+     "lower": "May 19, 1908 | the teeth, on a 1908 postcard",
      "sfx": [
       [
        "camera",
@@ -2263,12 +2500,39 @@
     {
      "id": "c8-09",
      "say": "Three days later, a grand jury indicted Ray Lamphere for arson and murder. It also indicted Belle Gunness, for the murder of Andrew Helgelien, though the coroner had just declared her dead.",
-     "v": {
-      "type": "quote",
-      "text": "1908 headline: INDICTED AFTER DEATH",
-      "by": "picture to come",
-      "size": 48
-     },
+     "v": [
+      {
+       "type": "photo",
+       "file": "gunness-45-hi.jpg",
+       "fit": "print",
+       "tone": "sepia",
+       "z": [
+        1.0,
+        1.1
+       ],
+       "crop": [
+        0.338,
+        0.272,
+        0.528,
+        0.46
+       ],
+       "rot": 0.0,
+       "box": [
+        0.84,
+        0.7
+       ],
+       "lower": "The grand jury | 1908"
+      },
+      {
+       "type": "news",
+       "file": "news-58-a.jpg",
+       "mode": "clip",
+       "size": [
+        0.7,
+        0.8
+       ]
+      }
+     ],
      "gap": 1.0
     }
    ]
@@ -2288,35 +2552,71 @@
      "say": "Ray Lamphere went on trial in November 1908, at the La Porte County Courthouse.",
      "tts": "Ray Lamphere went on trial in November nineteen oh eight, at the La Porte County Courthouse.",
      "v": {
-      "type": "quote",
-      "text": "La Porte County Courthouse",
-      "by": "picture to come",
-      "size": 48
-     }
+      "type": "news",
+      "file": "paper-nov-04-a.jpg",
+      "mode": "clip",
+      "size": [
+       0.88,
+       0.8
+      ],
+      "z": [
+       1.0,
+       1.12
+      ],
+      "f0": [
+       0.5,
+       0.5
+      ],
+      "f1": [
+       0.42,
+       0.45
+      ]
+     },
+     "lower": "The Spokane Press | Nov. 9, 1908"
     },
     {
      "id": "c9-02",
-     "say": "Choosing a jury was hard. Several men were excused because they believed Belle Gunness was still alive.",
+     "say": "As the jury was chosen, six men were excused because they believed Belle Gunness was still alive.",
      "v": {
-      "type": "quote",
-      "text": "courtroom / jurors",
-      "by": "picture to come",
-      "size": 48
-     }
+      "type": "photo",
+      "file": "gunness-45-hi.jpg",
+      "fit": "print",
+      "tone": "sepia",
+      "z": [
+       1.0,
+       1.12
+      ],
+      "crop": [
+       0.536,
+       0.178,
+       0.757,
+       0.347
+      ],
+      "rot": 0.0,
+      "box": [
+       0.84,
+       0.72
+      ]
+     },
+     "lower": "The jury that tried Ray Lamphere | November 1908"
     },
     {
      "id": "c9-03",
      "say": "Lamphere's lawyer, Wirt Worden, argued that she was.",
      "v": {
-      "type": "photo",
-      "file": "belle-13.jpg",
-      "fit": "contain",
-      "tone": "sepia",
+      "type": "news",
+      "file": "paper-nov-05-a.jpg",
+      "mode": "clip",
+      "size": [
+       0.62,
+       0.82
+      ],
       "z": [
        1.0,
-       1.08
+       1.1
       ]
-     }
+     },
+     "lower": "The Washington Times | Nov. 10, 1908"
     },
     {
      "id": "c9-03b",
@@ -2402,32 +2702,93 @@
      "tts": "He served about a year. On December thirtieth, nineteen oh nine, Ray Lamphere died of tuberculosis.",
      "v": {
       "type": "photo",
-      "file": "belle-12.jpg",
+      "file": "gunness-45-hi.jpg",
       "fit": "print",
-      "tone": "sepia",
+      "tone": "bw",
       "z": [
        1.0,
-       1.1
-      ]
+       1.08
+      ],
+      "crop": [
+       0.794,
+       0.032,
+       0.885,
+       0.265
+      ],
+      "rot": 0.0
      },
      "gap": 0.8
     },
     {
      "id": "c9-08",
      "say": "After his death, newspapers printed what they called his confession. In it, he said he had chloroformed Belle and the children while he and a woman robbed the house, and that the body in the cellar was Belle.",
-     "v": {
-      "type": "quote",
-      "text": "1910 newspaper: confession",
-      "by": "picture to come",
-      "size": 48
-     }
+     "v": [
+      {
+       "type": "pile",
+       "items": [
+        {
+         "file": "paper-1910-03-a.jpg",
+         "width": 0.26
+        },
+        {
+         "file": "paper-1910-02-a.jpg",
+         "width": 0.3
+        },
+        {
+         "file": "paper-1910-07-a.jpg",
+         "width": 0.24
+        }
+       ],
+       "span": 0.8,
+       "credit": "Newspapers, January 1910 · Library of Congress",
+       "w": 1.0
+      },
+      {
+       "type": "news",
+       "file": "paper-1910-04-a.jpg",
+       "mode": "clip",
+       "size": [
+        0.55,
+        0.86
+       ],
+       "z": [
+        1.0,
+        1.14
+       ],
+       "f0": [
+        0.5,
+        0.35
+       ],
+       "f1": [
+        0.5,
+        0.62
+       ],
+       "w": 1.4,
+       "lower": "Evening Times-Republican (Marshalltown, Iowa) | Jan. 13, 1910"
+      }
+     ]
     },
     {
      "id": "c9-08b",
      "say": "The minister he had confided in said he had never repeated a word of what Lamphere told him.",
      "v": {
-      "same": true
-     }
+      "type": "photo",
+      "file": "gunness-45-hi.jpg",
+      "fit": "print",
+      "tone": "sepia",
+      "z": [
+       1.0,
+       1.08
+      ],
+      "crop": [
+       0.343,
+       0.03,
+       0.432,
+       0.262
+      ],
+      "rot": 0.0
+     },
+     "lower": "The Rev. Edwin A. Schell"
     },
     {
      "id": "c9-09",
@@ -2699,12 +3060,26 @@
      "say": "The house on McClung Road is long gone.",
      "v": {
       "type": "photo",
-      "file": "belle-farm-14.jpg",
+      "file": "gunness-56.jpg",
       "fit": "cover",
-      "tone": "sepia",
+      "tone": "warm",
       "z": [
        1.0,
        1.1
+      ],
+      "f0": [
+       0.5,
+       0.5
+      ],
+      "f1": [
+       0.46,
+       0.55
+      ],
+      "crop": [
+       0.03,
+       0.12,
+       0.97,
+       0.92
       ]
      }
     },
@@ -2726,18 +3101,32 @@
      "say": "In 2008, a hundred years after the fire, descendants of her victims came to La Porte to put headstones on graves that had been unmarked since 1908.",
      "tts": "In two thousand eight, a hundred years after the fire, descendants of her victims came to La Porte to put headstones on graves that had been unmarked since nineteen oh eight.",
      "v": {
-      "type": "quote",
-      "text": "La Porte cemetery headstones",
-      "by": "picture to come",
-      "size": 48
+      "type": "big",
+      "text": "April 26, 2008",
+      "cap": "headstones for graves unmarked since 1908"
      }
     },
     {
      "id": "e04",
      "say": "Andrew Helgelien lies in Patton Cemetery. His stone calls him the last victim.",
      "v": {
-      "same": true
-     }
+      "type": "photo",
+      "file": "gunness-45-hi.jpg",
+      "fit": "print",
+      "tone": "sepia",
+      "z": [
+       1.0,
+       1.12
+      ],
+      "crop": [
+       0.899,
+       0.792,
+       0.981,
+       0.97
+      ],
+      "rot": 0.0
+     },
+     "lower": "Andrew Helgelien's grave | on a 1908 postcard"
     },
     {
      "id": "e05",

@@ -455,6 +455,47 @@ def news_clips(items, old):
         del big
 
 
+def resource_pages(items, old):
+    """Whole newspaper pages named by their Library of Congress address, saved at full size (for headlines the
+    film zooms into): {"name": "bee-0429", "url": "https://www.loc.gov/resource/.../?sp=1", "paper": ..., "date": ...}."""
+    have = {x["file"] for x in old}
+    for r in items:
+        out = r["name"] + ".jpg"
+        if out in have:
+            continue
+        try:
+            js = getjson(r["url"].split("#")[0] + ("&" if "?" in r["url"] else "?") + "fo=json", loc=True)
+        except Exception as e:
+            log("  page lookup failed:", r["url"], e)
+            continue
+        urls = re.findall(r'https://tile\.loc\.gov/image-services/iiif/[^"\s]+', json.dumps(js))
+        base = next((iiif_base(u) for u in urls if iiif_base(u)), None)
+        if not base:
+            log("  no picture service for", r["url"])
+            continue
+        try:
+            info = getjson(base + "/info.json", loc=True)
+            iw, ih = int(info["width"]), int(info["height"])
+        except Exception as e:
+            log("  info.json failed:", base, e)
+            iw, ih = None, None
+        raw = None
+        m = int(r.get("max_side", 9000))
+        for size in ([f"!{max(iw, ih)},{max(iw, ih)}"] if iw else []) + [f"!{m},{m}", "full", "pct:50"]:
+            try:
+                raw = get(f"{base}/full/{size}/0/default.jpg", loc=True)
+                break
+            except Exception as e:
+                log(f"  {r['name']} at {size} failed:", e)
+        if raw is None:
+            continue
+        entry = {"title": f"{r.get('paper', '')}, {r.get('date', '')}", "page": r["url"], "url": base,
+                 "license": r.get("license", "Public domain (1908 newspaper)"), "artist": r.get("paper", ""),
+                 "credit": "Library of Congress, Chronicling America", "date": r.get("date", ""), "desc": r.get("note", ""),
+                 "source": "Library of Congress", "kind": "newspaper-page", "page_size": [iw, ih], "note": r.get("note", "")}
+        add(entry, raw, "", 0, max_side=m, filename=out)
+
+
 def main_extra():
     global LOGF
     LOGF = open(os.path.join(OUT, "fetch-log-extra.txt"), "w", encoding="utf-8")
@@ -472,6 +513,10 @@ def main_extra():
     if spec.get("news_clips"):
         log("Newspaper clippings at full resolution:", len(spec["news_clips"]))
         news_clips(spec["news_clips"], old)
+        write_manifest()
+    if spec.get("resource_pages"):
+        log("Whole pages at full size:", len(spec["resource_pages"]))
+        resource_pages(spec["resource_pages"], old)
         write_manifest()
     taken = {re.sub(r"-\d+\.jpg$", "", x["file"]) for x in old}
     for q in spec.get("commons", []):
