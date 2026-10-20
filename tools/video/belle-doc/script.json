@@ -245,20 +245,57 @@
      "id": "c1-02",
      "say": "She was the youngest of eight children. Her father was a cottar, a tenant who worked another family's land, and a stonecutter.",
      "v": {
-      "type": "quote",
-      "text": "Selbu / Norwegian farm, 1800s",
-      "by": "picture to come",
-      "size": 48
-     }
+      "type": "photo",
+      "file": "selbu-04.jpg",
+      "fit": "cover",
+      "tone": "bw",
+      "z": [
+       1.0,
+       1.12
+      ],
+      "f0": [
+       0.55,
+       0.55
+      ],
+      "f1": [
+       0.5,
+       0.5
+      ],
+      "crop": [
+       0.0,
+       0.1,
+       1.0,
+       0.86
+      ]
+     },
+     "lower": "Selbu, Norway"
     },
     {
      "id": "c1-03",
      "say": "As a teenager she herded cattle and milked cows on the neighbors' farms, and saved for one thing: a ticket to America.",
      "v": {
-      "type": "quote",
-      "text": "Norwegian farm life / cattle",
-      "by": "picture to come",
-      "size": 48
+      "type": "photo",
+      "file": "selbu-01-hi.jpg",
+      "fit": "cover",
+      "tone": "bw",
+      "z": [
+       1.0,
+       1.1
+      ],
+      "f0": [
+       0.4,
+       0.5
+      ],
+      "f1": [
+       0.55,
+       0.5
+      ],
+      "crop": [
+       0.02,
+       0.36,
+       0.49,
+       0.8
+      ]
      }
     },
     {
@@ -276,124 +313,160 @@
      "id": "c1-05",
      "say": "In 1881, at twenty-one, she crossed the Atlantic to join her older sister in Chicago.",
      "tts": "In eighteen eighty-one, at twenty-one, she crossed the Atlantic to join her older sister in Chicago.",
-     "v": {
-      "type": "map",
-      "map": "atlantic",
-      "cam0": [
-       -20,
-       55,
-       70
-      ],
-      "cam1": [
-       -38,
-       50,
-       95
-      ],
-      "title": "1881",
-      "move_end": 0.6,
-      "route": [
-       [
-        11.03,
-        63.22
+     "v": [
+      {
+       "type": "map",
+       "map": "atlantic",
+       "cam0": [
+        -20,
+        55,
+        70
        ],
-       [
-        10.39,
-        63.43
+       "cam1": [
+        -38,
+        50,
+        95
        ],
-       [
-        7.0,
-        62.6
-       ],
-       [
-        4.5,
-        61.2
-       ],
-       [
-        1.5,
-        57.5
-       ],
-       [
-        -0.33,
-        53.74
-       ],
-       [
-        -2.98,
-        53.41
-       ],
-       [
-        -6.0,
-        52.0
-       ],
-       [
-        -25,
-        50
-       ],
-       [
-        -50,
-        44
-       ],
-       [
-        -74.0,
-        40.7
-       ],
-       [
-        -80.0,
-        41.4
-       ],
-       [
-        -87.63,
-        41.88
-       ]
-      ],
-      "route_from": 0.08,
-      "route_to": 0.92,
-      "places": [
-       {
-        "name": "Selbu",
-        "at": [
+       "title": "1881",
+       "move_end": 0.6,
+       "route": [
+        [
          11.03,
          63.22
         ],
-        "show": 0.0
-       },
-       {
-        "name": "New York",
-        "at": [
+        [
+         10.39,
+         63.43
+        ],
+        [
+         7.0,
+         62.6
+        ],
+        [
+         4.5,
+         61.2
+        ],
+        [
+         1.5,
+         57.5
+        ],
+        [
+         -0.33,
+         53.74
+        ],
+        [
+         -2.98,
+         53.41
+        ],
+        [
+         -6.0,
+         52.0
+        ],
+        [
+         -25,
+         50
+        ],
+        [
+         -50,
+         44
+        ],
+        [
          -74.0,
          40.7
         ],
-        "show": 0.7
-       },
-       {
-        "name": "Chicago",
-        "at": [
+        [
+         -80.0,
+         41.4
+        ],
+        [
          -87.63,
          41.88
-        ],
-        "show": 0.88
-       },
-       {
-        "name": "ATLANTIC OCEAN",
-        "at": [
-         -38,
-         47
-        ],
-        "dot": 0,
-        "font": "fell-sc",
-        "size": 50,
-        "tracking": 8
-       }
-      ]
-     }
+        ]
+       ],
+       "route_from": 0.08,
+       "route_to": 0.92,
+       "places": [
+        {
+         "name": "Selbu",
+         "at": [
+          11.03,
+          63.22
+         ],
+         "show": 0.0
+        },
+        {
+         "name": "New York",
+         "at": [
+          -74.0,
+          40.7
+         ],
+         "show": 0.7
+        },
+        {
+         "name": "Chicago",
+         "at": [
+          -87.63,
+          41.88
+         ],
+         "show": 0.88
+        },
+        {
+         "name": "ATLANTIC OCEAN",
+         "at": [
+          -38,
+          47
+         ],
+         "dot": 0,
+         "font": "fell-sc",
+         "size": 50,
+         "tracking": 8
+        }
+       ],
+       "w": 2.4
+      },
+      {
+       "type": "photo",
+       "file": "gunness-44.jpg",
+       "fit": "print",
+       "tone": "bw",
+       "z": [
+        1.0,
+        1.08
+       ]
+      }
+     ],
+     "lower": {
+      "text": "Her sister, Nellie Larson | Chicago, about 1908",
+      "at": 4.6
+     },
+     "gap": 1.1
     },
     {
      "id": "c1-06",
      "say": "In America, Brynhild became Bella, or Belle.",
      "v": {
-      "type": "quote",
-      "text": "Castle Garden / emigrants arriving",
-      "by": "picture to come",
-      "size": 48
+      "type": "photo",
+      "file": "chicago-1880s-01.jpg",
+      "fit": "cover",
+      "tone": "bw",
+      "z": [
+       1.0,
+       1.12
+      ],
+      "f0": [
+       0.5,
+       0.5
+      ],
+      "f1": [
+       0.42,
+       0.55
+      ],
+      "crop": [
+       0.0,
+       0.0,
+       1.0,
+       0.94
+      ]
      },
      "gap": 0.7
     }
@@ -413,12 +486,43 @@
      "id": "c2-01",
      "say": "Chicago in the 1880s was one of the fastest-growing cities in the world, and home to more Norwegians than any other city in America.",
      "tts": "Chicago in the eighteen eighties was one of the fastest-growing cities in the world, and home to more Norwegians than any other city in America.",
-     "v": {
-      "type": "quote",
-      "text": "Chicago street, 1880s-90s",
-      "by": "picture to come",
-      "size": 48
-     }
+     "v": [
+      {
+       "type": "photo",
+       "file": "chicago-1880s-28.jpg",
+       "fit": "cover",
+       "tone": "bw",
+       "z": [
+        1.0,
+        1.12
+       ],
+       "f0": [
+        0.5,
+        0.45
+       ],
+       "f1": [
+        0.5,
+        0.55
+       ],
+       "crop": [
+        0.0,
+        0.0,
+        1.0,
+        0.93
+       ]
+      },
+      {
+       "type": "photo",
+       "file": "chicago-1890s-27.jpg",
+       "fit": "print",
+       "tone": "bw",
+       "z": [
+        1.0,
+        1.08
+       ]
+      }
+     ],
+     "lower": "Chicago | 1880s and 1890s"
     },
     {
      "id": "c2-02",
@@ -456,7 +560,13 @@
      "v": {
       "type": "big",
       "text": "Three fires",
-      "cap": "the candy store and two homes, and insurance every time"
+      "tone": "bw",
+      "f0": [
+       0.5,
+       0.62
+      ],
+      "cap": "the candy store and two homes, and insurance every time",
+      "file": "chicago-1880s-37.jpg"
      }
     },
     {
@@ -680,29 +790,42 @@
        1.08
       ]
      },
-     "lower": "La Porte, Indiana | 1901"
+     "lower": "La Porte, Indiana"
     },
     {
      "id": "c3-02",
      "say": "The farm sat at the north edge of town, on McClung Road: more than forty acres, a big brick house, a barn, and an orchard.",
-     "v": {
-      "type": "photo",
-      "file": "belle-farm-02.jpg",
-      "fit": "cover",
-      "tone": "sepia",
-      "z": [
-       1.0,
-       1.12
-      ],
-      "f0": [
-       0.45,
-       0.55
-      ],
-      "f1": [
-       0.55,
-       0.5
-      ]
-     }
+     "v": [
+      {
+       "type": "photo",
+       "file": "belle-farm-02.jpg",
+       "fit": "cover",
+       "tone": "sepia",
+       "z": [
+        1.0,
+        1.12
+       ],
+       "f0": [
+        0.45,
+        0.55
+       ],
+       "f1": [
+        0.55,
+        0.5
+       ],
+       "w": 1.5
+      },
+      {
+       "type": "photo",
+       "file": "belle-farm-06.jpg",
+       "fit": "print",
+       "tone": "sepia",
+       "z": [
+        1.0,
+        1.08
+       ]
+      }
+     ]
     },
     {
      "id": "c3-03",
@@ -710,26 +833,26 @@
      "v": [
       {
        "type": "photo",
-       "file": "laporte-15.jpg",
+       "file": "laporte-cat-01.jpg",
        "fit": "cover",
        "tone": "paper",
        "z": [
-        1.25,
-        1.6
+        1.0,
+        1.12
        ],
        "f0": [
-        0.55,
-        0.62
+        0.5,
+        0.5
        ],
        "f1": [
-        0.5,
-        0.58
+        0.55,
+        0.45
        ],
        "crop": [
-        0.3,
-        0.3,
-        1.0,
-        1.0
+        0.08,
+        0.02,
+        0.97,
+        0.66
        ]
       },
       {
@@ -786,7 +909,9 @@
      "tts": "On December sixteenth, nineteen oh two, Peter died too.",
      "v": {
       "type": "big",
-      "text": "December 16, 1902"
+      "text": "December 16, 1902",
+      "tone": "bw",
+      "file": "gunness-30.jpg"
      },
      "gap": 0.7
     },
@@ -935,10 +1060,12 @@
      "id": "c4-04",
      "say": "By then, Belle was writing letters. A lot of them. Her mail carrier said she sent eight to ten a day.",
      "v": {
-      "type": "quote",
-      "text": "1900s letters / post office",
-      "by": "picture to come",
-      "size": 48
+      "type": "big",
+      "text": "8 to 10 letters a day",
+      "size": 130,
+      "tone": "bw",
+      "cap": "by her mail carrier's count",
+      "file": "gunness-26.jpg"
      }
     },
     {
@@ -977,21 +1104,74 @@
      "id": "c4-07",
      "say": "Men answered. Farmers and laborers, most of them Norwegian immigrants like her, many of them with savings.",
      "v": {
-      "type": "photo",
-      "file": "belle-11.jpg",
-      "fit": "cover",
-      "tone": "sepia",
-      "z": [
-       1.6,
-       1.25
+      "type": "map",
+      "map": "plains",
+      "cam0": [
+       -92.0,
+       44.2,
+       18
       ],
-      "f0": [
-       0.55,
-       0.45
-      ],
-      "f1": [
-       0.6,
-       0.5
+      "title": "THE SUITORS",
+      "places": [
+       {
+        "name": "La Porte",
+        "at": [
+         -86.72,
+         41.61
+        ],
+        "show": 0.0
+       },
+       {
+        "name": "LAKE MICHIGAN",
+        "at": [
+         -87.2,
+         43.6
+        ],
+        "dot": 0,
+        "font": "fell-sc",
+        "size": 40,
+        "tracking": 4
+       },
+       {
+        "name": "Elbow Lake, Minn.",
+        "at": [
+         -95.98,
+         45.99
+        ],
+        "show": 0.25
+       },
+       {
+        "name": "Scandinavia, Wis.",
+        "at": [
+         -89.15,
+         44.46
+        ],
+        "show": 0.42,
+        "off": [
+         18,
+         14
+        ]
+       },
+       {
+        "name": "Iola, Wis.",
+        "at": [
+         -89.13,
+         44.51
+        ],
+        "show": 0.55,
+        "off": [
+         18,
+         -70
+        ]
+       },
+       {
+        "name": "Aberdeen, S.D.",
+        "at": [
+         -98.49,
+         45.46
+        ],
+        "show": 0.68
+       }
       ]
      }
     },
@@ -1235,10 +1415,13 @@
      "id": "c4-12",
      "say": "When his sons wrote to ask where he was, Belle answered that he had never arrived.",
      "v": {
-      "type": "quote",
-      "text": "letter / envelope 1907",
-      "by": "picture to come",
-      "size": 48
+      "type": "typed",
+      "head": "OLE BUDSBERG",
+      "rows": [
+       "Last seen: La Porte Savings Bank, April 1907.",
+       "His sons wrote to Belle.",
+       "Her answer: he never arrived."
+      ]
      },
      "gap": 0.8
     }
@@ -1380,12 +1563,18 @@
      "say": "The next day, Andrew was gone.",
      "v": {
       "type": "photo",
-      "file": "belle-farm-06.jpg",
+      "file": "gunness-67.jpg",
       "fit": "cover",
       "tone": "bw",
       "z": [
        1.05,
        1.2
+      ],
+      "crop": [
+       0.03,
+       0.04,
+       0.97,
+       0.95
       ]
      },
      "gap": 1.0
@@ -1443,8 +1632,9 @@
      "say": "She was still writing to other men. On March first, 1908, she told a man in Kansas City that she was a lonely Norwegian woman, and asked whether he could put up a thousand dollars in cash.",
      "tts": "She was still writing to other men. On March first, nineteen oh eight, she told a man in Kansas City that she was a lonely Norwegian woman, and asked whether he could put up a thousand dollars in cash.",
      "v": {
-      "type": "quote",
+      "type": "letter",
       "text": "I am a lonely Norwegian woman.",
+      "sync": false,
       "by": "Belle Gunness to Christian Hansen, March 1, 1908, as printed in the Morning Oregonian"
      }
     },
@@ -1523,33 +1713,63 @@
      "id": "c6-02",
      "say": "He shouted for Belle and the children. No one answered. He ran for help.",
      "v": {
-      "type": "quote",
-      "text": "La Porte fire department / night",
-      "by": "picture to come",
-      "size": 48
+      "type": "photo",
+      "file": "gunness-66.jpg",
+      "fit": "cover",
+      "tone": "night",
+      "z": [
+       1.0,
+       1.16
+      ],
+      "f0": [
+       0.5,
+       0.55
+      ],
+      "f1": [
+       0.5,
+       0.45
+      ],
+      "crop": [
+       0.03,
+       0.05,
+       0.97,
+       0.8
+      ]
      }
     },
     {
      "id": "c6-03",
      "say": "By the time the fire was out, the big brick house had collapsed into its own cellar.",
-     "v": {
-      "type": "photo",
-      "file": "belle-farm-13.jpg",
-      "fit": "cover",
-      "tone": "sepia",
-      "z": [
-       1.0,
-       1.12
-      ],
-      "f0": [
-       0.5,
-       0.65
-      ],
-      "f1": [
-       0.5,
-       0.6
-      ]
-     }
+     "v": [
+      {
+       "type": "photo",
+       "file": "gunness-52.jpg",
+       "fit": "print",
+       "tone": "sepia",
+       "z": [
+        1.0,
+        1.08
+       ]
+      },
+      {
+       "type": "photo",
+       "file": "belle-farm-13.jpg",
+       "fit": "cover",
+       "tone": "sepia",
+       "z": [
+        1.0,
+        1.12
+       ],
+       "f0": [
+        0.5,
+        0.65
+       ],
+       "f1": [
+        0.5,
+        0.6
+       ]
+      }
+     ]
     },
     {
      "id": "c6-04",
@@ -1621,14 +1841,7 @@
      "id": "c6-08",
      "say": "That story lasted one week.",
      "v": {
-      "type": "photo",
-      "file": "belle-14.jpg",
-      "fit": "print",
-      "tone": "sepia",
-      "z": [
-       1.0,
-       1.12
-      ]
+      "same": true
      },
      "gap": 1.2
     }
@@ -1664,24 +1877,36 @@
     {
      "id": "c7-03",
      "say": "Joe Maxson remembered something. In March, Belle had him fill and level a pit of garbage near the hog lot.",
-     "v": {
-      "type": "photo",
-      "file": "belle-farm-03.jpg",
-      "fit": "cover",
-      "tone": "sepia",
-      "z": [
-       1.0,
-       1.12
-      ],
-      "f0": [
-       0.5,
-       0.55
-      ],
-      "f1": [
-       0.58,
-       0.5
-      ]
-     }
+     "v": [
+      {
+       "type": "photo",
+       "file": "belle-farm-03.jpg",
+       "fit": "cover",
+       "tone": "sepia",
+       "z": [
+        1.0,
+        1.12
+       ],
+       "f0": [
+        0.5,
+        0.55
+       ],
+       "f1": [
+        0.58,
+        0.5
+       ]
+      },
+      {
+       "type": "photo",
+       "file": "gunness-36.jpg",
+       "fit": "print",
+       "tone": "sepia",
+       "z": [
+        1.0,
+        1.08
+       ]
+      }
+     ]
     },
     {
      "id": "c7-04",
@@ -1755,8 +1980,8 @@
      "say": "Most had been cut apart. Most were men. At least two were teenagers, Jennie among them.",
      "v": {
       "type": "photo",
-      "file": "belle-01.jpg",
-      "fit": "cover",
+      "file": "gunness-41.jpg",
+      "fit": "print",
       "tone": "sepia",
       "z": [
        1.0,
@@ -1799,10 +2024,22 @@
      "id": "c7-10",
      "say": "The rest were never named. Seven of them were buried in La Porte's potter's field. And the farm was never thoroughly searched.",
      "v": {
-      "type": "quote",
-      "text": "cemetery, La Porte",
-      "by": "picture to come",
-      "size": 48
+      "type": "photo",
+      "file": "gunness-43.jpg",
+      "fit": "cover",
+      "tone": "sepia",
+      "z": [
+       1.0,
+       1.12
+      ],
+      "f0": [
+       0.5,
+       0.5
+      ],
+      "f1": [
+       0.45,
+       0.55
+      ]
      }
     },
     {
@@ -1835,6 +2072,22 @@
      "v": [
       {
        "type": "photo",
+       "file": "gunness-21.jpg",
+       "fit": "cover",
+       "tone": "warm",
+       "z": [
+        1.0,
+        1.1
+       ],
+       "crop": [
+        0.03,
+        0.04,
+        0.97,
+        0.94
+       ]
+      },
+      {
+       "type": "photo",
        "file": "belle-farm-04.jpg",
        "fit": "cover",
        "tone": "sepia",
@@ -1844,17 +2097,12 @@
        ]
       },
       {
-       "type": "photo",
-       "file": "belle-farm-10.jpg",
-       "fit": "cover",
-       "tone": "sepia",
-       "z": [
-        1.0,
-        1.1
-       ]
+       "type": "news",
+       "file": "news-16-a.jpg",
+       "mode": "clip"
       }
      ],
-     "lower": "The Gunness farm | Sunday, May 10, 1908",
+     "lower": "The Gunness farm | May 1908",
      "sfx": [
       [
        "crowd",
@@ -1867,12 +2115,16 @@
      "say": "Peddlers at the gate sold lemonade and lunches, and souvenir pictures. The best seller was a photograph of Belle and her three children.",
      "v": {
       "type": "photo",
-      "file": "belle-09.jpg",
+      "file": "gunness-71.jpg",
       "fit": "print",
       "tone": "sepia",
       "z": [
        1.0,
        1.12
+      ],
+      "f0": [
+       0.5,
+       0.45
       ]
      },
      "gap": 0.9
@@ -1944,7 +2196,7 @@
       "rows": [
        "1908, the coroner's guess: about 5 ft. 3 in.",
        "Belle Gunness: about 5 ft. 8 in.",
-       "2007, from the skeleton: 5 ft. 6 in. to 5 ft. 9 in."
+       "2007, from the bones: 5'6\" to 5'9\"."
       ]
      }
     },
@@ -2119,11 +2371,30 @@
      "id": "c9-06",
      "say": "He was sentenced to two to twenty-one years in the state prison at Michigan City.",
      "v": {
-      "type": "quote",
-      "text": "Indiana State Prison, Michigan City",
-      "by": "picture to come",
-      "size": 48
-     }
+      "type": "photo",
+      "file": "prison-33.jpg",
+      "fit": "cover",
+      "tone": "warm",
+      "z": [
+       1.0,
+       1.1
+      ],
+      "f0": [
+       0.4,
+       0.5
+      ],
+      "f1": [
+       0.55,
+       0.5
+      ],
+      "crop": [
+       0.02,
+       0.03,
+       0.98,
+       0.78
+      ]
+     },
+     "lower": "Indiana State Prison | Michigan City, about 1908"
     },
     {
      "id": "c9-07",
@@ -2319,10 +2590,13 @@
      "say": "In 2007, a team from the University of Indianapolis set out to answer the question with science.",
      "tts": "In two thousand seven, a team from the University of Indianapolis set out to answer the question with science.",
      "v": {
-      "type": "quote",
-      "text": "University of Indianapolis / lab",
-      "by": "picture to come",
-      "size": 48
+      "type": "typed",
+      "head": "UNIVERSITY OF INDIANAPOLIS, 2007",
+      "rows": [
+       "Andrea Simmons: graduate student,",
+       "lawyer, La Porte native.",
+       "Stephen Nawrocki: forensic anthropologist."
+      ]
      }
     },
     {
@@ -2337,17 +2611,42 @@
      "say": "On November fifth, 2007, they opened the grave at Forest Home Cemetery near Chicago, where the headless woman was buried beside Mads Sorenson.",
      "tts": "On November fifth, two thousand seven, they opened the grave at Forest Home Cemetery near Chicago, where the headless woman was buried beside Mads Sorenson.",
      "v": {
-      "type": "quote",
-      "text": "Forest Home Cemetery",
-      "by": "picture to come",
-      "size": 48
-     }
+      "type": "photo",
+      "file": "forest-home-11.jpg",
+      "fit": "cover",
+      "tone": "sepia-soft",
+      "z": [
+       1.0,
+       1.1
+      ],
+      "f0": [
+       0.5,
+       0.6
+      ],
+      "f1": [
+       0.42,
+       0.55
+      ],
+      "crop": [
+       0.0,
+       0.0,
+       1.0,
+       0.56
+      ]
+     },
+     "lower": "Forest Home Cemetery | Forest Park, Illinois, today"
     },
     {
      "id": "c11-04",
      "say": "Inside the casket, with the woman's bones, they found the remains of two children no one had expected.",
      "v": {
-      "same": true
+      "type": "typed",
+      "head": "THE GRAVE, 2007 AND 2008",
+      "rows": [
+       "Inside: the woman's bones,",
+       "and two children no one expected.",
+       "In one child's grave: adult bones."
+      ]
      },
      "gap": 0.8
     },
@@ -2363,10 +2662,13 @@
      "id": "c11-05",
      "say": "They hoped to match DNA from the bones with saliva on envelopes Belle may have sealed a century before.",
      "v": {
-      "type": "quote",
-      "text": "envelope / letters",
-      "by": "picture to come",
-      "size": 48
+      "type": "typed",
+      "head": "THE TEST",
+      "rows": [
+       "DNA from the bones,",
+       "against saliva on the envelopes and stamps",
+       "of letters Belle mailed to a suitor."
+      ]
      }
     },
     {
@@ -2414,7 +2716,7 @@
       "head": "LA PORTE COUNTY HISTORICAL SOCIETY MUSEUM",
       "rows": [
        "2405 Indiana Ave., Suite 1, La Porte",
-       "Tuesday to Saturday, 10 a.m. to 4:30 p.m. Central",
+       "Tue.-Sat., 10 a.m.-4:30 p.m. Central",
        "Belle Gunness exhibit"
       ]
      }
@@ -2450,19 +2752,19 @@
      "say": "Whether Belle Gunness died in that fire, or walked away into the dark and lived out her life under another name, no one has ever proved.",
      "v": {
       "type": "photo",
-      "file": "belle-08.jpg",
+      "file": "belle-07.jpg",
       "fit": "cover",
       "tone": "sepia",
       "z": [
        1.02,
-       1.25
+       1.22
       ],
       "f0": [
-       0.42,
+       0.45,
        0.42
       ],
       "f1": [
-       0.42,
+       0.45,
        0.4
       ]
      }

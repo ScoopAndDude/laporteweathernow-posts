@@ -469,6 +469,10 @@ class Shot:
         f = self.spec.get("file")
         return self.spec.get("credit", credit_for(f) if f else "")
 
+    def auto_sfx(self):
+        """Sounds the shot makes by itself: [(name, time)]."""
+        return []
+
 
 def drift(u):
     """Camera progress over a shot: steady, with soft ends (a little past 0..1 for the dissolves)."""
@@ -554,7 +558,7 @@ class Photo(Shot):
         return self.scene.view(z, fx, fy)
 
 
-@functools.lru_cache(maxsize=24)
+@functools.lru_cache(maxsize=6)
 def paper_page(name, tone="paper"):
     return Pyramid(picture(name, tone, None, max_side=4000))
 
@@ -612,6 +616,7 @@ class News(Shot):
             sc.place_c(img)
             self.scene = sc.done()
             self.z = s.get("z", [1.0, 1.10])
+            self.f0, self.f1 = s.get("f0", [0.5, 0.5]), s.get("f1", s.get("f0", [0.5, 0.5]))
             return
         self.pyr = paper_page(s["file"], self.tone)
         iw, ih = self.pyr.size
@@ -630,7 +635,8 @@ class News(Shot):
     def frame(self, t):
         u = self.u(t)
         if self.mode == "clip":
-            return self.scene.view(lerp(self.z[0], self.z[1], drift(u)))
+            k = drift(u)
+            return self.scene.view(lerp(self.z[0], self.z[1], k), lerp(self.f0[0], self.f1[0], k), lerp(self.f0[1], self.f1[1], k))
         k = ease(clamp(u / max(0.2, 1 - self.hold))) if self.mode != "hold" else 0
         r0, r1 = self.r0, self.r1
         w0, w1 = r0[2] - r0[0], r1[2] - r1[0]
@@ -646,6 +652,74 @@ class News(Shot):
     def credit(self):
         m = MANIFEST.get(self.spec.get("file"), {})
         return self.spec.get("credit", f"{m.get('artist', 'Newspaper')}, {m.get('date', '')} · Library of Congress" if m else "")
+
+
+def ragged(p, seed, depth=7, step=10):
+    """Cut an RGBA picture's edges a little unevenly, like a clipping cut by hand."""
+    mask = Image.new("L", p.size, 0)
+    rng = np.random.default_rng(seed)
+    pts = [(i, rng.uniform(0, depth)) for i in range(0, p.width, step)] + [(p.width - rng.uniform(0, depth), i) for i in range(0, p.height, step)]
+    pts += [(i, p.height - rng.uniform(0, depth)) for i in range(p.width, 0, -step)] + [(rng.uniform(0, depth), i) for i in range(p.height, 0, -step)]
+    ImageDraw.Draw(mask).polygon(pts, fill=255)
+    p.putalpha(mask)
+    return p
+
+
+@shot("pile")
+class Pile(Shot):
+    """Clippings from papers all over the country, dropped on the desk one after another. items: [{"file", "box"
+    (fractions of that picture), "width" (fraction of the frame), "at": [x, y] (fractions), "rot"}]."""
+    LAYOUT = [(0.29, 0.33, -4.0), (0.71, 0.31, 3.2), (0.50, 0.56, -1.4), (0.25, 0.70, 2.6), (0.75, 0.70, -3.0), (0.52, 0.36, 1.3), (0.40, 0.62, -2.2)]
+
+    def prepare(self):
+        s = self.spec
+        self.bg = desk(4, (30, 24, 19))
+        self.items = []
+        for i, it in enumerate(s["items"]):
+            pic = picture(it["file"], it.get("tone", "paper"), tuple(it["box"]) if it.get("box") else None, max_side=2400)
+            lay = self.LAYOUT[i % len(self.LAYOUT)]
+            k = min(W * float(it.get("width", 0.36)) / pic.width, H * float(it.get("max_h", 0.46)) / pic.height)
+            p = pic.resize((max(1, int(pic.width * k)), max(1, int(pic.height * k))), Image.LANCZOS).convert("RGBA")
+            p = ragged(p, len(it["file"]) + i).rotate(float(it.get("rot", lay[2])), resample=Image.BICUBIC, expand=True)
+            img, _ = shadow(p, radius=14, alpha=200, offset=(5, 11))
+            at = it.get("at", lay[:2])
+            self.items.append((img, at[0] * W, at[1] * H))
+        self.span = float(s.get("span", 0.78))
+        self.z = s.get("z", [1.0, 1.07])
+        self.settled = (0, self.bg.copy())
+
+    def frame(self, t):
+        tl = t - self.start
+        step = self.dur * self.span / max(1, len(self.items))
+        drop = 0.34
+        n_done = sum(1 for i in range(len(self.items)) if tl >= 0.12 + i * step + drop)
+        if n_done != self.settled[0]:                    # paste the clippings that have landed once
+            base = self.bg.copy()
+            for img, cx, cy in self.items[:n_done]:
+                put_c(base, img, cx, cy)
+            self.settled = (n_done, base)
+        f = self.settled[1].copy()
+        for i in range(n_done, len(self.items)):
+            u = (tl - (0.12 + i * step)) / drop
+            if u <= 0:
+                break
+            img, cx, cy = self.items[i]
+            k = ease_out(u)
+            sc = 1 + 0.16 * (1 - k)
+            im = img.resize((int(img.width * sc), int(img.height * sc)), Image.BILINEAR) if sc > 1.002 else img
+            put_c(f, im, cx, cy - 26 * (1 - k), clamp(u * 2.5))
+        zz = lerp(self.z[0], self.z[1], drift(self.u(t)))
+        if zz > 1.001:
+            vw, vh = W / zz, H / zz
+            f = Image.fromarray(warp(np.asarray(f), ((W - vw) / 2, (H - vh) / 2, (W + vw) / 2, (H + vh) / 2)))
+        return f
+
+    def credit(self):
+        return self.spec.get("credit", "Newspapers, May 1908 \u00b7 Library of Congress")
+
+    def auto_sfx(self):
+        step = self.dur * float(self.spec.get("span", 0.78)) / max(1, len(self.spec["items"]))
+        return [("page", self.start + 0.12 + i * step + 0.22) for i in range(len(self.spec["items"]))]
 
 
 def word_times(line):
@@ -1309,9 +1383,13 @@ def build(script):
                         c["shots"].append(prev)
                         for name, at in v.get("sfx", []):
                             c["sfx"].append((name, s0 + float(at)))
+                        c["sfx"] += prev.auto_sfx()
                     s0 = s1
             if ln.get("lower"):
-                c["overlays"].append({"kind": "lower", "text": ln["lower"], "start": t + 0.25, "end": t + max(3.8, min(6.0, dur))})
+                lo = ln["lower"] if isinstance(ln["lower"], dict) else {"text": ln["lower"]}
+                st = t + float(lo.get("at", 0.25))
+                end = max(st + 2.0, span_end - 0.3) if "at" in lo else st + max(3.5, min(5.75, t + dur - st))
+                c["overlays"].append({"kind": "lower", "text": lo["text"], "start": st, "end": end})
             if ln.get("on"):
                 o = ln["on"] if isinstance(ln["on"], dict) else {"text": ln["on"]}
                 c["overlays"].append(dict(o, kind="on", start=t + float(o.get("at", 0.2)), end=t + float(o.get("until", dur + gap * 0.5))))
@@ -1460,7 +1538,12 @@ def cmd_stills(outdir, only):
             at = s.start + s.dur * float(s.spec.get("still", 0.7))
             ln = s.line or {}
             label = f"{c['id']} {fmt_t(s.start)} {s.kind} {s.spec.get('file', s.spec.get('title', s.spec.get('text', '')))} | {ln.get('say', '')}"
-            items.append((label, frame_at(c, at)))
+            try:
+                items.append((label, frame_at(c, at)))
+            except FileNotFoundError as e:                 # a picture that hasn't arrived yet
+                im = Image.new("RGB", (W, H), (60, 20, 20))
+                ImageDraw.Draw(im).text((60, 60), "missing: " + str(e), font=font("inter-m", 60), fill=(255, 255, 255))
+                items.append((label, im))
         contact_sheet(items, os.path.join(outdir, f"sheet-{c['id']}.jpg"))
         print("sheet", c["id"], len(items), "shots", f"{c['end'] - c['start']:.1f} s")
     total = chapters[-1]["end"]
@@ -1563,6 +1646,16 @@ def cmd_srt(outdir):
                 toks = ln["say"].split()
                 step = ln["_dur"] / max(1, len(toks))
                 words = [[w, i * step, (i + 1) * step] for i, w in enumerate(toks)]
+            import re
+            merged = []                 # the voice gives punctuation as its own "words": stick it back on
+            for (w, a, b) in words:
+                if merged and re.fullmatch(r"[.,;:!?\u2026\"'\u201d\u2019)\]]+", w):
+                    merged[-1] = [merged[-1][0] + w, merged[-1][1], b]
+                elif merged and merged[-1][0] in ("\u201c", "(", "\"", "\u2018"):
+                    merged[-1] = [merged[-1][0] + w, merged[-1][1], b]
+                else:
+                    merged.append([w, a, b])
+            words = merged
             cur, cs = [], None
             for (w, a, b) in words:
                 if cs is None:
@@ -1574,7 +1667,13 @@ def cmd_srt(outdir):
                     cues.append((ln["_start"] + cs, ln["_start"] + b + 0.15, txt))
                     cur, cs = [], None
             if cur:
-                cues.append((ln["_start"] + cs, ln["_start"] + words[-1][2] + 0.25, " ".join(cur)))
+                tail = " ".join(cur)
+                n_line = sum(1 for q in cues if q[0] >= ln["_start"] - 1e-6)
+                if len(tail) < 16 and n_line and len(cues[-1][2]) + len(tail) < 92:   # don't leave a word on its own
+                    a0, _, t0 = cues.pop()
+                    cues.append((a0, ln["_start"] + words[-1][2] + 0.25, t0 + " " + tail))
+                else:
+                    cues.append((ln["_start"] + cs, ln["_start"] + words[-1][2] + 0.25, tail))
     def ts(x):
         ms = int(round(x * 1000))
         return f"{ms // 3600000:02d}:{ms // 60000 % 60:02d}:{ms // 1000 % 60:02d},{ms % 1000:03d}"
@@ -1667,7 +1766,7 @@ def loudnorm(src, dst, target=-14.0):
 
 def cmd_final(outdir, name="belle-gunness-documentary.mp4"):
     chapters = build(load_script())
-    paths = cmd_render(outdir, None)
+    paths = cmd_render(outdir, None, workers=int(os.environ.get("DOC_WORKERS", "1")))
     raw = os.path.join(outdir, "soundtrack-raw.wav")
     soundtrack(chapters, raw)
     norm = os.path.join(outdir, "soundtrack.wav")
@@ -1703,11 +1802,23 @@ def clean_title(t):
     return t.strip()
 
 
+def clean_credit(c):
+    """A picture's "credit" field as a short source name (not a URL)."""
+    import re
+    c = (c or "").strip()
+    if not c or re.match(r"https?://", c):
+        return ""
+    c = re.sub(r"^Book:\s*", "", c)
+    c = re.split(r"(?<=[a-z])\.[\"\u201d]?\s", c)[0].strip(' "\u201c\u201d')
+    return clean_who(c)
+
+
 def clean_who(w):
     import re
-    w = re.sub(r"(Unknown author)+", "", w or "")
-    w = re.sub(r"\s+from\s.*$", "", w).strip()
-    return w
+    w = re.sub(r"(Unknown author|Unknown photographer|or not provided|Unknown)", "", w or "", flags=re.I)
+    w = re.sub(r"\s+from\s.*$", "", w).strip(" ,;")
+    w = re.split(r"(?<=[a-z])\.\s", w)[0]            # a long credit line: its first sentence
+    return w[:70].strip()
 
 
 def used_pictures(chapters):
@@ -1715,16 +1826,17 @@ def used_pictures(chapters):
     out, seen = [], set()
     for c in chapters:
         for sh in c["shots"]:
-            files = [sh.spec.get("file")]
+            files = [sh.spec.get("file")] + [it.get("file") for it in sh.spec.get("items", [])]
             for f in files:
-                if not f or f in seen:
-                    continue
-                seen.add(f)
                 m = MANIFEST.get(f, {})
+                key = m.get("clip_of") or m.get("hires_of") or f
+                if not f or key in seen:
+                    continue
+                seen.add(key)
                 lic = (m.get("license") or "").strip()
                 low = lic.lower()
                 pd = low.startswith(("public domain", "pd", "no known", "no restrictions"))
-                out.append({"file": f, "title": clean_title(m.get("title", f)), "who": clean_who(m.get("artist", "")),
+                out.append({"file": f, "title": clean_title(m.get("title", f)), "who": clean_who(m.get("artist", "")) or clean_credit(m.get("credit", "")),
                             "license": "public domain" if pd else lic, "license_url": LICENSE_URL.get(low, ""),
                             "page": m.get("page", ""), "source": m.get("source", ""), "kind": m.get("kind", ""),
                             "date": m.get("date", "")})
@@ -1771,16 +1883,31 @@ def cmd_description(outdir):
         else:
             key = (p["who"] or "Unknown", f"{p['license']} ({p['license_url'].replace('https://', '')})")
         groups.setdefault(key, []).append(p["title"])
-    out = []
-    for (who, lic), titles in groups.items():
-        if who == "1908 newspaper pages":
-            out.append(f"1908 newspaper pages: {lic}")
-        elif who == "Public domain":
-            out.append(f"Public domain ({lic}): " + "; ".join(titles))
-        else:
-            out.append(f"{who}, {lic}: " + "; ".join(titles))
-    out.append("Full list with links: https://github.com/ScoopAndDude/laporteweathernow-posts/blob/belle-doc/tools/video/belle-doc/CREDITS.md")
-    desc = "\n".join(yt["description"]).replace("{CHAPTERS}", "\n".join(lines)).replace("{CREDITS}", "\n".join(out))
+    full_list = "Full list with titles and links: https://github.com/ScoopAndDude/laporteweathernow-posts/blob/belle-doc/tools/video/belle-doc/CREDITS.md"
+
+    def credit_lines(compact):
+        out, pd = [], []
+        for (who, lic), titles in groups.items():
+            if who == "1908 newspaper pages":
+                out.append(f"Newspaper pages: {lic}")
+            elif who == "Public domain":
+                pd.append((lic, titles))
+            elif compact and len(titles) > 2:
+                out.append(f"{who}, {lic}: {len(titles)} photos and postcards")
+            else:
+                out.append(f"{who}, {lic}: " + "; ".join(titles))
+        if pd:
+            if compact:
+                out.append("Public domain: " + "; ".join(sorted({lic for lic, _ in pd})))
+            else:
+                out += [f"Public domain ({lic}): " + "; ".join(titles) for lic, titles in pd]
+        return out + [full_list]
+
+    desc = ""
+    for compact in (False, True):
+        desc = "\n".join(yt["description"]).replace("{CHAPTERS}", "\n".join(lines)).replace("{CREDITS}", "\n".join(credit_lines(compact)))
+        if len(desc) <= 4800:
+            break
     path = os.path.join(outdir, "youtube-description.txt")
     open(path, "w", encoding="utf-8").write(desc + "\n")
     meta = os.path.join(outdir, "youtube-details.txt")
@@ -1802,7 +1929,7 @@ def main():
     elif cmd == "stills":
         cmd_stills(args[1], set(args[2:]))
     elif cmd == "render":
-        cmd_render(args[1], set(args[2:]))
+        cmd_render(args[1], set(args[2:]), workers=int(os.environ.get("DOC_WORKERS", "1")))
     elif cmd == "final":
         cmd_final(args[1])
     elif cmd == "srt":

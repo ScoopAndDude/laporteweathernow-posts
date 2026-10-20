@@ -272,9 +272,10 @@ def find_alto_url(obj):
 
 def newspapers(spec):
     d0, d1 = spec["dates"].split("/")
-    tries = [
-        ("collections/chronicling-america", {"q": spec["q"], "start_date": d0, "end_date": d1, "dl": "page"}),
+    tries = [                     # the first form that gives pages inside the dates wins (some forms ignore the dates)
         ("collections/chronicling-america", {"qs": spec["q"], "ops": "AND", "searchType": "advanced", "start_date": d0, "end_date": d1, "dl": "page"}),
+        ("collections/chronicling-america", {"q": spec["q"], "start_date": d0, "end_date": d1, "dl": "page"}),
+        ("collections/chronicling-america", {"q": spec["q"], "dates": d0 + "/" + d1}),
         ("collections/chronicling-america", {"q": spec["q"], "dates": d0[:4] + "/" + d1[:4]}),
         ("search", {"q": spec["q"] + " la porte", "fa": "original-format:newspaper", "dates": d0[:4] + "/" + d1[:4]}),
     ]
@@ -284,8 +285,9 @@ def newspapers(spec):
         url = f"https://www.loc.gov/{ep}/?" + urllib.parse.urlencode(params)
         try:
             data = getjson(url, loc=True)
-            res = [r for r in data.get("results", []) if any(iiif_base(u) for u in (r.get("image_url") or []))]
-            log(f"  newspaper search {url[:160]} -> {len(data.get('results', []))} results, {len(res)} with pictures")
+            res = [r for r in data.get("results", []) if any(iiif_base(u) for u in (r.get("image_url") or []))
+                   and d0 <= str(r.get("date", ""))[:10] <= d1]
+            log(f"  newspaper search {url[:180]} -> {len(data.get('results', []))} results, {len(res)} inside the dates with pictures")
             if res:
                 log("  first result keys:", sorted(res[0].keys())[:40])
                 results = res
@@ -402,33 +404,55 @@ def hires_copies(items, old):
 
 
 def news_clips(items, old):
-    """Full-resolution cut-outs of newspaper pages already on the list, straight from the Library's IIIF server:
-    {"file": "news-02.jpg", "box": [x0, y0, x1, y1] (fractions of the page), "out": "news-02-a"}."""
+    """Full-resolution cut-outs of newspaper pages already on the list: {"file": "news-02.jpg", "box": [x0, y0, x1, y1]
+    (fractions of the page), "out": "news-02-a"}. Each page is downloaded once at full size and cut here (asking the
+    Library's server for a region gave back a blurred, enlarged copy)."""
     by_file = {x["file"]: x for x in old}
+    pages = {}
     for c in items:
         if c["out"] + ".jpg" in by_file:
             continue                                  # made by an earlier run
-        src = by_file.get(c["file"])
+        pages.setdefault(c["file"], []).append(c)
+    for pfile, clips in pages.items():
+        src = by_file.get(pfile)
         if not src or not src.get("url"):
-            log("  page not on the list:", c["file"])
+            log("  page not on the list:", pfile)
             continue
         base = src["url"]
-        try:
-            iw, ih = src.get("page_size") or (None, None)
-            if not iw:
+        iw, ih = src.get("page_size") or (None, None)
+        if not iw:
+            try:
                 info = getjson(base + "/info.json", loc=True)
                 iw, ih = int(info["width"]), int(info["height"])
-            x0, y0, x1, y1 = c["box"]
-            X, Y = int(max(0, x0) * iw), int(max(0, y0) * ih)
-            Wd, Ht = int(min(1, x1) * iw) - X, int(min(1, y1) * ih) - Y
-            m = int(c.get("max_side", 3600))
-            raw = get(f"{base}/{X},{Y},{Wd},{Ht}/!{m},{m}/0/default.jpg", loc=True)
-        except Exception as e:
-            log("  clip failed:", c["file"], c["box"], e)
+            except Exception as e:
+                log("  info.json failed:", pfile, e)
+                continue
+        big = None
+        for size in (f"!{max(iw, ih)},{max(iw, ih)}", "full", "pct:75", "!5200,5200"):
+            try:
+                big = Image.open(io.BytesIO(get(f"{base}/full/{size}/0/default.jpg", loc=True))).convert("RGB")
+                log(f"  page {pfile} at {size}: {big.size}")
+                break
+            except Exception as e:
+                log(f"  page {pfile} at {size} failed:", e)
+        if big is None:
             continue
-        entry = {k: v for k, v in src.items() if k not in ("file", "saved", "crops")}
-        entry.update({"clip_of": c["file"], "box": c["box"], "clip_px": [X, Y, Wd, Ht], "note": c.get("note", "")})
-        add(entry, raw, "", 0, max_side=int(c.get("max_side", 3600)), filename=c["out"] + ".jpg")
+        bw, bh = big.size
+        for c in clips:
+            x0, y0, x1, y1 = c["box"]
+            box = (int(max(0, x0) * bw), int(max(0, y0) * bh), int(min(1, x1) * bw), int(min(1, y1) * bh))
+            crop = big.crop(box)
+            m = int(c.get("max_side", 3600))
+            crop.thumbnail((m, m), Image.LANCZOS)
+            path = os.path.join(OUT, c["out"] + ".jpg")
+            crop.save(path, quality=90)
+            entry = {k: v for k, v in src.items() if k not in ("file", "saved", "crops")}
+            entry.update({"clip_of": pfile, "box": c["box"], "clip_px": [box[0], box[1], box[2] - box[0], box[3] - box[1]],
+                          "note": c.get("note", ""), "file": c["out"] + ".jpg", "saved": list(crop.size)})
+            manifest.append(entry)
+            NEW_FILES.append(entry["file"])
+            log("  saved", entry["file"], crop.size, "|", c.get("note", ""))
+        del big
 
 
 def main_extra():
