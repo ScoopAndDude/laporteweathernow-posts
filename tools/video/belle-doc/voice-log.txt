@@ -1,36 +1,9 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
 /opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/torch/nn/modules/rnn.py:1011: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
   super().__init__("LSTM", *args, **kwargs)
 /opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/torch/nn/utils/weight_norm.py:145: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
   WeightNorm.apply(module, name, dim)
-Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
 /opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
   warnings.warn(
-o03 5.7 s
-c1-04 12.025 s
-c1-06 3.425 s
-c2-06 6.8 s
-c2-11 6.275 s
-c3-03 4.9 s
-c3-05 10.775 s
-c3-08 7.95 s
-c3-09 5.925 s
-c4-06 22.775 s
-c4-09 8.05 s
-c7-06 9.075 s
-c7-08 5.75 s
-c7-10 7.85 s
-c7-11 10.45 s
-c8-03 9.125 s
-c8-03b 15.675 s
-c9-03b 9.375 s
-c9-04 4.275 s
-c9-05b 7.975 s
-c9-08 12.725 s
-c9-08b 6.2 s
-c9-10 8.475 s
-c10-01 4.95 s
-c10-06 9.35 s
-c11-04b 5.775 s
-c11-05 7.125 s
-e01 3.0 s
-28 lines recorded, 128 in all, 15.6 minutes
+c9-02 6.7 s
+1 lines recorded, 128 in all, 15.6 minutes
