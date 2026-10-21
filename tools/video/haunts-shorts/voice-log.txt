@@ -5,19 +5,5 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
   WeightNorm.apply(module, name, dim)
 /opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
   warnings.warn(
-f1 6.625 s
-f2 5.5 s
-f3 6.575 s
-f4 6.625 s
-f5 4.325 s
-g1 6.65 s
-g2 8.175 s
-g3 5.9 s
-g4 6.25 s
-g5 6.5 s
-k1 7.05 s
-k2 7.725 s
-k3 8.5 s
-k4 6.125 s
-k5 4.325 s
-15 lines recorded, 15 in all, 1.6 minutes
+k4 6.8 s
+1 lines recorded, 15 in all, 1.6 minutes
