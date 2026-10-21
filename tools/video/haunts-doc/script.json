@@ -349,12 +349,18 @@
       },
       {
        "type": "photo",
-       "file": "mapz-county-01-title.jpg",
+       "file": "mapz-county-01.jpg",
        "fit": "contain",
        "tone": "warm",
        "z": [
         1.0,
         1.06
+       ],
+       "crop": [
+        0.418,
+        0.54,
+        0.692,
+        0.664
        ],
        "lower": "Map of LaPorte Co., Indiana | 1862"
       }
@@ -2249,21 +2255,27 @@
      "v": {
       "type": "news",
       "file": "np-ghost-01-col.jpg",
-      "mode": "zoom",
+      "mode": "pan",
       "box": [
-       0.0,
-       0.5,
-       1.0,
-       0.75
+       0.05,
+       0.03,
+       0.71,
+       0.25
+      ],
+      "box2": [
+       0.05,
+       0.53,
+       0.71,
+       0.73
       ],
       "spot": [
-       0.03,
-       0.565,
-       0.97,
-       0.7
+       0.06,
+       0.583,
+       0.7,
+       0.715
       ],
-      "spot_at": 0.4,
-      "hold": 0.4
+      "spot_at": 0.55,
+      "hold": 0.45
      },
      "lower": "The Virginia Enterprise, Virginia, Minnesota | July 7, 1905",
      "sfx": [
