@@ -1,0 +1,46 @@
+name: Halloween documentary voice samples (one-off, Oct. 2026)
+
+# Records three narration lines with several free voices (Kokoro voices and, if it installs, Chatterbox),
+# so Scoop can pick the most natural one. The mp3s go on the halloween-doc-images pre-release. Nothing is posted.
+on:
+  workflow_dispatch:
+  push:
+    branches: [halloween-doc]
+    paths:
+      - tools/video/halloween-doc/voice_test.py
+      - .github/workflows/halloween-doc-voice-test.yml
+
+permissions:
+  contents: write
+
+jobs:
+  samples:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.cache/huggingface
+          key: voice-test-${{ runner.os }}-py311-v1
+      - name: Install
+        run: |
+          sudo apt-get install -y -qq espeak-ng ffmpeg > /dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq espeak-ng ffmpeg > /dev/null)
+          pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          pip install -q "kokoro>=0.9.4" soundfile numpy
+          python3 -m spacy download en_core_web_sm -q || true
+          pip install -q chatterbox-tts || echo "chatterbox did not install"
+      - name: Record
+        run: python3 tools/video/halloween-doc/voice_test.py
+      - name: Upload the samples
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd tools/video/halloween-doc/voice-test && zip -q ../voice-samples-${{ github.run_number }}.zip *.mp3 lines.json && cd ..
+          gh release view halloween-doc-images >/dev/null 2>&1 || gh release create halloween-doc-images --prerelease --target halloween-doc --title "History of Halloween documentary pictures (working files)" --notes "Working files." || true
+          gh release upload halloween-doc-images voice-samples-${{ github.run_number }}.zip --clobber
