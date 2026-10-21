@@ -24,7 +24,7 @@ concurrency:
 jobs:
   pictures:
     runs-on: ubuntu-24.04
-    timeout-minutes: 80
+    timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
         with:
@@ -42,7 +42,7 @@ jobs:
           python-version: "3.12"
       - name: Get ready
         if: steps.chk.outputs.mode != 'none'
-        run: pip install -q pillow
+        run: pip install -q pillow pymupdf
       - name: Find and download
         if: steps.chk.outputs.mode != 'none'
         run: |

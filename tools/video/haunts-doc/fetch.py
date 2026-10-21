@@ -6,8 +6,10 @@ code as the Belle Gunness film's fetch.py.
 - Wikimedia Commons: only public domain, CC0 and CC BY files (no share-alike, non-commercial or
   no-derivatives), each with its author and license for the credit.
 - Library of Congress photos and maps: only items the Library marks "no known restrictions" (or public domain).
-- Library of Congress Chronicling America: 1908-1909 newspaper pages that mention Gunness (public domain).
-  The OCR word positions find the "Gunness" headlines, and each headline block is also saved as a crop.
+- Library of Congress Chronicling America: old newspaper pages for each search (public domain, or no known
+  restrictions). The OCR word positions find the headline blocks with the search's "pattern", saved as crops too.
+- Every picture in one Library of Congress item (loc_items, e.g. the HABS survey of the lighthouse).
+- Pages of public-domain books on the Internet Archive that mention a name (archive_books).
 
 Saves images/<name>-NN.jpg, images/manifest.json (title, page, url, license, artist, credit, date, desc)
 and images/fetch-log.txt (everything it tried, since the job's own log can't be read from the workspace).
@@ -154,6 +156,9 @@ def commons(q):
             pages += commons_pages(dict(base, generator="categorymembers", gcmtitle=c, gcmtype="file", gcmlimit="50"), q.get("max", 50))
             if len(pages) >= q.get("max", 50) * 2:
                 break
+    elif q.get("titles"):                     # exact file names, 40 at a time
+        for i in range(0, len(q["titles"]), 40):
+            pages += commons_pages(dict(base, titles="|".join(q["titles"][i:i + 40])), 40)
     else:
         pages = commons_pages(dict(base, generator="search", gsrsearch=q["search"], gsrnamespace="6", gsrlimit="50"), q.get("max", 50))
     out = []
@@ -242,6 +247,124 @@ def loc_fetch(spec, endpoint, max_side):
              "source": "Library of Congress"}, raw, spec["name"], k, max_side)
 
 
+def loc_item_pages(spec):
+    """Every picture in one Library of Congress item (a HABS survey has photos, data pages and drawings):
+    {"name": "habs-lh", "item": "https://www.loc.gov/item/in0149/", "max": 40}."""
+    try:
+        ij = getjson(spec["item"].split("?")[0].rstrip("/") + "/?fo=json", loc=True)
+    except Exception as e:
+        log("  item failed:", spec["item"], e)
+        return
+    rights = loc_rights(ij)
+    log("  rights:", rights[:200])
+    if not re.search(r"no known (copyright )?restrictions|public domain|no known restriction", rights, re.I):
+        log("  skip (rights)")
+        return
+    it = ij.get("item", {}) or {}
+    res = ij.get("resources") or []
+    log("  resources:", len(res), [(r.get("url"), r.get("files")) for r in res][:60])
+    bases = []
+    for r in res:
+        u = r.get("url")
+        if not u:
+            continue
+        n = r.get("files") if isinstance(r.get("files"), int) else 1
+        for sp in range(1, max(1, min(n, spec.get("max", 40))) + 1):
+            pu = re.sub(r"([?&])sp=\d+", r"\1sp=%d" % sp, u) if "sp=" in u else u + ("&" if "?" in u else "?") + f"sp={sp}"
+            try:
+                js = getjson(pu.split("#")[0] + "&fo=json", loc=True)
+            except Exception as e:
+                log("  page failed:", pu, e)
+                continue
+            found = [iiif_base(x) for x in re.findall(r'https://tile\.loc\.gov/image-services/iiif/[^"\s]+', json.dumps(js))]
+            found = [b for b in found if b]
+            pg = js.get("page")
+            cap = clean(str((pg.get("title") if isinstance(pg, dict) else "") or r.get("caption") or ""))
+            # the page's own picture is the one named most often in its record
+            if found:
+                b = max(set(found), key=found.count)
+                if b not in [x[0] for x in bases]:
+                    bases.append((b, pu, cap))
+            if len(bases) >= spec.get("max", 40):
+                break
+        if len(bases) >= spec.get("max", 40):
+            break
+    k = 0
+    for b, pu, cap in bases:
+        try:
+            raw = get(f"{b}/full/!{spec.get('max_side', 3000)},{spec.get('max_side', 3000)}/0/default.jpg", loc=True)
+        except Exception as e:
+            try:
+                raw = get(f"{b}/full/pct:50/0/default.jpg", loc=True)
+            except Exception as e2:
+                log("  download failed:", b, e, e2)
+                continue
+        k += 1
+        add({"title": clean(it.get("title") or ij.get("title") or ""), "page": pu, "url": b, "caption": cap[:200],
+             "license": "No known restrictions (Library of Congress)", "rights": rights[:300],
+             "artist": clean("; ".join(c if isinstance(c, str) else c.get("title", "") for c in (it.get("contributor_names") or [])))[:160],
+             "credit": "Library of Congress", "date": str(it.get("date") or "")[:40], "source": "Library of Congress"},
+            raw, spec["name"], k, spec.get("max_side", 3000))
+
+
+def archive_books(spec):
+    """Pages of an old book on the Internet Archive that mention a name: {"name": "hardinge", "id": "modernamericansp00brit",
+    "find": ["Cathcart"], "max": 6, "license": "Public domain (1870 book)", "title": ..., "author": ...}. The book's PDF
+    (with its text layer) is downloaded, searched page by page and the matching pages are drawn at about 200 dpi."""
+    ids = [spec["id"]] if spec.get("id") else []
+    if spec.get("search"):                           # or find the book first
+        try:
+            js = getjson("https://archive.org/advancedsearch.php?" + urllib.parse.urlencode(
+                {"q": spec["search"], "fl[]": "identifier", "rows": "8", "output": "json"}))
+            ids += [d["identifier"] for d in js.get("response", {}).get("docs", []) if d.get("identifier") not in ids]
+            log("  books found:", ids)
+        except Exception as e:
+            log("  book search failed:", e)
+    k = 0
+    for ident in ids[: spec.get("tries", 4)]:
+        k += one_book(ident, spec, k)
+        if k:
+            break
+
+
+def one_book(ident, spec, k0=0):
+    import fitz                                      # pymupdf
+    pdf_path = os.path.join(OUT, "_" + ident + ".pdf")
+    try:
+        meta = getjson(f"https://archive.org/metadata/{ident}")
+        pdfs = [f["name"] for f in meta.get("files", []) if f.get("name", "").lower().endswith(".pdf")]
+        log("  files:", pdfs[:6])
+        name = next((f for f in pdfs if f == ident + ".pdf"), None) or next((f for f in pdfs if "text" in f.lower()), None) or (pdfs[0] if pdfs else ident + ".pdf")
+        raw = get(f"https://archive.org/download/{ident}/{urllib.parse.quote(name)}", tries=3)
+        open(pdf_path, "wb").write(raw)
+        log("  pdf:", name, len(raw) // 1024, "KB")
+    except Exception as e:
+        log("  book download failed:", ident, e)
+        return 0
+    doc = fitz.open(pdf_path)
+    words = [w.lower() for w in spec["find"]]
+    hits = []
+    for i in range(doc.page_count):
+        t = doc[i].get_text() or ""
+        low = t.lower()
+        if any(w in low for w in words):
+            hits.append((i, re.sub(r"[ \t]+", " ", t).strip()))      # the whole page's text, to read the facts
+    log("  pages that match:", [h[0] + 1 for h in hits][:60])
+    k = k0
+    for i, snip in hits[: spec.get("max", 6)]:
+        pix = doc[i].get_pixmap(dpi=spec.get("dpi", 200))
+        k += 1
+        add({"title": (spec.get("title") or ident) + f", page {i + 1} of the scan", "book_id": ident, "page": f"https://archive.org/details/{ident}/page/n{i}/mode/1up",
+             "url": f"https://archive.org/details/{ident}", "license": spec.get("license", "Public domain (old book)"),
+             "artist": spec.get("author", ""), "credit": "Internet Archive", "date": spec.get("date", ""), "desc": snip[:6000],
+             "source": "Internet Archive", "kind": "book-page", "scan_page": i + 1,
+             "found": [w for w in spec["find"] if w.lower() in snip.lower()]},
+            pix.tobytes("jpeg"), spec["name"], k, max_side=3000)
+    doc.close()
+    os.remove(pdf_path)
+    return k - k0
+
+
 # ------------------------------------------------------------------ Chronicling America (1908 newspapers)
 def alto_blocks(xml_bytes, pattern):
     """(page_w, page_h, [(score, x, y, w, h, text)]) for text blocks containing the pattern."""
@@ -326,7 +449,7 @@ def newspapers(spec):
             res_json = getjson(rid.split("#")[0] + ("&" if "?" in rid else "?") + "fo=json", loc=True)
             alto_url = find_alto_url(res_json)
             if alto_url:
-                pw, ph, blocks = alto_blocks(get(alto_url, loc=True), spec["q"])
+                pw, ph, blocks = alto_blocks(get(alto_url, loc=True), spec.get("pattern") or spec["q"])
                 sx, sy = iw / pw, ih / ph
                 for score, x, y, w, h, text in blocks[: spec.get("crops_per_page", 3)]:
                     pad = 0.15
@@ -611,6 +734,21 @@ def main():
             continue
         log("Library of Congress maps:", q["name"], q["q"])
         loc_fetch(q, "maps", 3200)
+        write_manifest()
+    for q in spec.get("loc_items", []):
+        if only and q["name"] not in only:
+            continue
+        log("Library of Congress item, every picture:", q["name"], q["item"])
+        loc_item_pages(q)
+        write_manifest()
+    for q in spec.get("archive_books", []):
+        if only and q["name"] not in only:
+            continue
+        log("Internet Archive book:", q["name"], q["id"], q["find"])
+        try:
+            archive_books(q)
+        except Exception as e:
+            log("  book stopped:", e)
         write_manifest()
     news = spec.get("newspapers")
     if news and (not only or "news" in only):

@@ -1,0 +1,1628 @@
+{
+ "title": "Haunted: The Ghost Stories of La Porte County",
+ "chapters": [
+  {
+   "id": "open",
+   "music": "open",
+   "tail": 0.2,
+   "lines": [
+    {
+     "id": "o01",
+     "say": "On the shore of Lake Michigan, for forty-three years, a woman climbed to the same lamp every night and lit it. Some people say she still does.",
+     "v": {
+      "type": "quote",
+      "text": "the old Michigan City lighthouse, at dusk",
+      "by": "picture to come",
+      "size": 48
+     },
+     "sfx": [
+      [
+       "waves",
+       0.0
+      ]
+     ]
+    },
+    {
+     "id": "o02",
+     "say": "Inland, a former United States senator sat in the dark and listened to a drum that no one was playing.",
+     "v": {
+      "type": "quote",
+      "text": "a 19th-century séance engraving",
+      "by": "picture to come",
+      "size": 48
+     },
+     "sfx": [
+      [
+       "drum",
+       3.2
+      ]
+     ]
+    },
+    {
+     "id": "o03",
+     "say": "In a La Porte cemetery, a single marker stands for four hundred and ninety-nine unknown persons.",
+     "v": {
+      "type": "quote",
+      "text": "old cemetery, fog",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "o04",
+     "say": "Out in the farm country, the story goes, a chapel burned more than a hundred and fifty years ago, and was never at peace again.",
+     "v": {
+      "type": "quote",
+      "text": "a country chapel at night",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "o05",
+     "say": "And in the summer of 1905, a newspaper told of a man with no head, standing by the railroad tracks after dark, flagging down a train.",
+     "tts": "And in the summer of nineteen oh five, a newspaper told of a man with no head, standing by the railroad tracks after dark, flagging down a train.",
+     "v": {
+      "type": "quote",
+      "text": "1905 newspaper: headless ghost",
+      "by": "picture to come",
+      "size": 48
+     },
+     "sfx": [
+      [
+       "train",
+       2.5
+      ]
+     ]
+    },
+    {
+     "id": "o06",
+     "say": "These are the ghost stories of La Porte County, Indiana.",
+     "v": {
+      "type": "map",
+      "map": "county",
+      "cam0": [
+       -86.74,
+       41.6,
+       0.9
+      ],
+      "cam1": [
+       -86.74,
+       41.6,
+       0.75
+      ],
+      "move_end": 0.9,
+      "places": [
+       {
+        "name": "LAKE MICHIGAN",
+        "at": [
+         -86.98,
+         41.86
+        ],
+        "dot": 0,
+        "font": "fell-sc",
+        "size": 46,
+        "tracking": 4
+       },
+       {
+        "name": "LA PORTE COUNTY",
+        "at": [
+         -86.74,
+         41.42
+        ],
+        "dot": 0,
+        "font": "fell-sc",
+        "size": 40,
+        "tracking": 6
+       },
+       {
+        "name": "La Porte",
+        "at": [
+         -86.7225,
+         41.6106
+        ],
+        "show": 0.2
+       },
+       {
+        "name": "Michigan City",
+        "at": [
+         -86.895,
+         41.7075
+        ],
+        "show": 0.35
+       }
+      ]
+     }
+    },
+    {
+     "id": "o07",
+     "say": "And this is the history behind them: what's real, what's legend, and what no one can prove.",
+     "v": {
+      "type": "dark"
+     },
+     "gap": 0.8
+    }
+   ]
+  },
+  {
+   "id": "title",
+   "music": "title",
+   "tail": 0.3,
+   "lines": [
+    {
+     "id": "t01",
+     "v": {
+      "type": "title",
+      "title": "HAUNTED",
+      "subtitle": "The ghost stories of La Porte County",
+      "kicker": "A LA PORTE WEATHER NOW DOCUMENTARY"
+     },
+     "hold": 7.5
+    }
+   ]
+  },
+  {
+   "id": "c1",
+   "music": "door",
+   "card": {
+    "type": "chapter",
+    "n": 1,
+    "title": "The Door",
+    "sub": "La Porte County · 1832"
+   },
+   "lines": [
+    {
+     "id": "c1-01",
+     "say": "La Porte is French for “the door.” The name is said to come from a natural opening in the forest, a doorway onto the prairie.",
+     "v": {
+      "type": "quote",
+      "text": "an 1860s map of La Porte County",
+      "by": "picture to come",
+      "size": 48
+     },
+     "lower": "La Porte | French for “the door”"
+    },
+    {
+     "id": "c1-02",
+     "say": "For generations before any settlers came, this was Potawatomi land.",
+     "v": {
+      "type": "quote",
+      "text": "Potawatomi people in Indiana, George Winter, 1837",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c1-03",
+     "say": "Under treaties signed in 1826 and 1832, the Potawatomi ceded their land here to the United States. In 1838, the government forced hundreds of Potawatomi people to leave Indiana for Kansas. The march is remembered as the Trail of Death.",
+     "tts": "Under treaties signed in eighteen twenty-six and eighteen thirty-two, the Potawatomi ceded their land here to the United States. In eighteen thirty-eight, the government forced hundreds of Potawatomi people to leave Indiana for Kansas. The march is remembered as the Trail of Death.",
+     "v": {
+      "type": "typed",
+      "head": "POTAWATOMI LAND",
+      "rows": [
+       "1826 and 1832: treaties with the United States.",
+       "1838: hundreds forced from Indiana to Kansas,",
+       "on the march remembered as the Trail of Death."
+      ]
+     },
+     "gap": 0.8
+    },
+    {
+     "id": "c1-04",
+     "say": "La Porte County was created in 1832.",
+     "tts": "La Porte County was created in eighteen thirty-two.",
+     "v": {
+      "type": "photo",
+      "file": "lp-court-08.jpg",
+      "fit": "print",
+      "tone": "sepia",
+      "z": [
+       1.0,
+       1.08
+      ]
+     },
+     "lower": "La Porte County's second courthouse | about 1848"
+    },
+    {
+     "id": "c1-05",
+     "say": "On the lake, at the mouth of Trail Creek, Michigan City was laid out the next year. On July Fourth, 1836, the first commercial ship, the Sea Serpent, sailed into the creek.",
+     "tts": "On the lake, at the mouth of Trail Creek, Michigan City was laid out the next year. On July Fourth, eighteen thirty-six, the first commercial ship, the Sea Serpent, sailed into the creek.",
+     "v": {
+      "type": "quote",
+      "text": "Michigan City harbor, old postcard",
+      "by": "picture to come",
+      "size": 48
+     },
+     "lower": "Michigan City, Indiana"
+    },
+    {
+     "id": "c1-06",
+     "say": "The railroads came in 1852, and the factories after them.",
+     "tts": "The railroads came in eighteen fifty-two, and the factories after them.",
+     "v": {
+      "type": "quote",
+      "text": "railroad / car works, old photo",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c1-07",
+     "say": "In 1860, the state began building a prison at Michigan City. In 1933, ten inmates broke out of it with pistols smuggled in by John Dillinger.",
+     "tts": "In eighteen sixty, the state began building a prison at Michigan City. In nineteen thirty-three, ten inmates broke out of it with pistols smuggled in by John Dillinger.",
+     "v": {
+      "type": "photo",
+      "file": "prison-33.jpg",
+      "fit": "cover",
+      "tone": "warm",
+      "z": [
+       1.0,
+       1.1
+      ],
+      "f0": [
+       0.4,
+       0.5
+      ],
+      "f1": [
+       0.55,
+       0.5
+      ],
+      "crop": [
+       0.02,
+       0.03,
+       0.98,
+       0.78
+      ]
+     },
+     "lower": "Indiana State Prison | Michigan City, about 1908"
+    },
+    {
+     "id": "c1-08",
+     "say": "For all its history, we couldn't find a ghost story about the prison that anyone could trace to a source.",
+     "v": {
+      "same": true
+     }
+    },
+    {
+     "id": "c1-09",
+     "say": "Even the land has changed. A sand dune about two hundred feet tall, the Hoosier Slide, once towered over the harbor. By 1920, it had been dug away, much of it to make glass.",
+     "tts": "Even the land has changed. A sand dune about two hundred feet tall, the Hoosier Slide, once towered over the harbor. By nineteen twenty, it had been dug away, much of it to make glass.",
+     "v": {
+      "type": "photo",
+      "file": "laporte-old-12.jpg",
+      "fit": "cover",
+      "tone": "warm",
+      "z": [
+       1.0,
+       1.12
+      ],
+      "f0": [
+       0.6,
+       0.5
+      ],
+      "f1": [
+       0.45,
+       0.45
+      ]
+     },
+     "lower": "The harbor and the Hoosier Slide | 1909"
+    },
+    {
+     "id": "c1-10",
+     "say": "A place where so much has come and gone leaves stories behind. Some are history. Some are legend. Many are a little of both.",
+     "v": {
+      "type": "quote",
+      "text": "La Porte old street, dusk",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c1-11",
+     "say": "In this film, we'll tell you which is which, as best the records allow.",
+     "v": {
+      "same": true
+     },
+     "gap": 0.8
+    }
+   ]
+  },
+  {
+   "id": "c2",
+   "music": "keeper",
+   "card": {
+    "type": "chapter",
+    "n": 2,
+    "title": "The Keeper",
+    "sub": "Michigan City · 1861 – 1904"
+   },
+   "lines": [
+    {
+     "id": "c2-01",
+     "say": "In 1853, a young music teacher named Harriet Colfax moved from Ogdensburg, New York, to Michigan City, with her brother.",
+     "tts": "In eighteen fifty-three, a young music teacher named Harriet Colfax moved from Ogdensburg, New York, to Michigan City, with her brother.",
+     "v": {
+      "type": "quote",
+      "text": "Harriet Colfax portrait, or Michigan City 1850s",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c2-02",
+     "say": "He ran a newspaper, and she helped him set the type. In 1856, he died of tuberculosis. He was twenty-six.",
+     "tts": "He ran a newspaper, and she helped him set the type. In eighteen fifty-six, he died of tuberculosis. He was twenty-six.",
+     "v": {
+      "type": "typed",
+      "head": "HARRIET COLFAX",
+      "rows": [
+       "From Ogdensburg, New York.",
+       "Michigan City, 1853: a music teacher,",
+       "setting type at her brother's newspaper."
+      ]
+     }
+    },
+    {
+     "id": "c2-03",
+     "say": "In 1861, Harriet was appointed keeper of the Michigan City lighthouse.",
+     "tts": "In eighteen sixty-one, Harriet was appointed keeper of the Michigan City lighthouse.",
+     "v": {
+      "type": "quote",
+      "text": "the 1858 lighthouse, old photo",
+      "by": "picture to come",
+      "size": 48
+     },
+     "lower": "The Michigan City lighthouse | built 1858"
+    },
+    {
+     "id": "c2-04",
+     "say": "Newspapers long said she owed the job to her cousin, Schuyler Colfax, a congressman from South Bend who later became vice president. She told a reporter she'd been appointed by Mr. Lincoln, soon after his inauguration.",
+     "v": [
+      {
+       "type": "quote",
+       "text": "Schuyler Colfax portrait",
+       "by": "picture to come",
+       "size": 48
+      },
+      {
+       "type": "quote",
+       "text": "appointed by Mr. Lincoln soon after his inauguration",
+       "by": "Harriet Colfax, in an 1881 interview"
+      }
+     ]
+    },
+    {
+     "id": "c2-05",
+     "say": "The lighthouse was new, built in 1858 of stone and brick, with the light in a cupola on the roof.",
+     "tts": "The lighthouse was new, built in eighteen fifty-eight of stone and brick, with the light in a cupola on the roof.",
+     "v": {
+      "type": "quote",
+      "text": "HABS drawing or photo of the lighthouse",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c2-06",
+     "say": "Every evening, she lit the lamps. At first they burned lard oil. She heated it on the stove, and on cold nights it could harden again before she got it to the light.",
+     "v": {
+      "type": "quote",
+      "text": "lighthouse lamp / Fresnel lens",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c2-07",
+     "say": "In 1871, a second light was built out on the pier, at the end of a long, raised wooden walkway. In 1874, it was moved to the west pier, across Trail Creek. To reach it, she rowed across the creek in a small boat.",
+     "tts": "In eighteen seventy-one, a second light was built out on the pier, at the end of a long, raised wooden walkway. In eighteen seventy-four, it was moved to the west pier, across Trail Creek. To reach it, she rowed across the creek in a small boat.",
+     "v": {
+      "type": "quote",
+      "text": "the pier light and the elevated walk, old postcard",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c2-08",
+     "say": "In storms, the walk was dangerous. In 1872, she wrote, the waves dashed over the top of the beacon.",
+     "tts": "In storms, the walk was dangerous. In eighteen seventy-two, she wrote, the waves dashed over the top of the beacon.",
+     "v": {
+      "type": "quote",
+      "text": "storm waves at the Michigan City pier",
+      "by": "picture to come",
+      "size": 48
+     },
+     "sfx": [
+      [
+       "waves",
+       0.0
+      ]
+     ]
+    },
+    {
+     "id": "c2-09",
+     "say": "Her log for May twenty-eighth, 1873, has one line.",
+     "tts": "Her log for May twenty-eighth, eighteen seventy-three, has one line.",
+     "v": {
+      "type": "letter",
+      "text": "Narrowly escaped being swept into the lake.",
+      "sync": false,
+      "by": "Harriet Colfax's log, May 28, 1873",
+      "greeting": "May 28, 1873."
+     }
+    },
+    {
+     "id": "c2-10",
+     "say": "In 1886, a storm knocked the pier beacon into the lake. In 1890, she found its lock tampered with, and broke a pane of glass to get the lamp lit.",
+     "tts": "In eighteen eighty-six, a storm knocked the pier beacon into the lake. In eighteen ninety, she found its lock tampered with, and broke a pane of glass to get the lamp lit.",
+     "v": {
+      "type": "typed",
+      "head": "THE KEEPER'S LOG",
+      "rows": [
+       "1872: waves over the top of the beacon.",
+       "1873: nearly swept into the lake.",
+       "1886: the beacon knocked into the lake.",
+       "1890: the lock tampered with; she broke the glass."
+      ]
+     }
+    },
+    {
+     "id": "c2-11",
+     "say": "She kept the light for forty-three years. People called her Old Faithful.",
+     "v": {
+      "type": "big",
+      "text": "43 years",
+      "cap": "keeper of the Michigan City light, 1861 – 1904"
+     }
+    },
+    {
+     "id": "c2-12",
+     "say": "She didn't keep it alone. Ann Hartwell, a teacher she had known in Ogdensburg, followed her to Michigan City and lived with her at the lighthouse. The National Park Service calls Ann her lifelong companion.",
+     "v": {
+      "type": "quote",
+      "text": "the lighthouse keeper's house",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c2-13",
+     "say": "Ann taught in the public schools for about twenty-five years, then opened a book exchange that became the area's first lending library.",
+     "v": {
+      "type": "typed",
+      "head": "ANN HARTWELL",
+      "rows": [
+       "A teacher in Michigan City's public schools",
+       "for about twenty-five years.",
+       "Then: the area's first lending library."
+      ]
+     }
+    },
+    {
+     "id": "c2-14",
+     "say": "In October 1904, at about eighty years old, Harriet Colfax retired.",
+     "tts": "In October nineteen oh four, at about eighty years old, Harriet Colfax retired.",
+     "v": {
+      "type": "quote",
+      "text": "1904 newspaper: Miss Colfax retires",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c2-15",
+     "say": "A Chicago newspaper quoted her: I could not bear to see anyone else light my lamp.",
+     "v": {
+      "type": "quote",
+      "text": "I could not bear to see anyone else light my lamp.",
+      "by": "Harriet Colfax, quoted in the Chicago Daily Tribune, Oct. 2, 1904"
+     },
+     "gap": 0.9
+    },
+    {
+     "id": "c2-16",
+     "say": "Six days later, the light in the old lighthouse was put out for good. The lantern came off the roof, and a new light took its place at the end of the pier.",
+     "v": {
+      "type": "quote",
+      "text": "the pierhead light, about 1910",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c2-17",
+     "say": "Harriet and Ann moved into a new home. In January, Ann died. That April, Harriet died too.",
+     "v": {
+      "type": "typed",
+      "head": "1905",
+      "rows": [
+       "January: Ann Hartwell dies.",
+       "April: Harriet Colfax dies.",
+       "Both are buried at Greenwood Cemetery."
+      ]
+     },
+     "gap": 0.8
+    },
+    {
+     "id": "c2-18",
+     "say": "They're buried in Greenwood Cemetery, in Michigan City.",
+     "v": {
+      "same": true
+     }
+    },
+    {
+     "id": "c2-19",
+     "say": "The old lighthouse has been a museum since 1973, run by the Michigan City Historical Society.",
+     "tts": "The old lighthouse has been a museum since nineteen seventy-three, run by the Michigan City Historical Society.",
+     "v": {
+      "type": "quote",
+      "text": "the Old Lighthouse Museum today",
+      "by": "picture to come",
+      "size": 48
+     },
+     "lower": "Old Lighthouse Museum | Michigan City"
+    },
+    {
+     "id": "c2-20",
+     "say": "And it's said to have a ghost. In 2026, a boating magazine wrote that the lighthouse is said to be haunted by its keeper, still on duty. Even the magazine admitted no one knows for sure.",
+     "tts": "And it's said to have a ghost. In twenty twenty-six, a boating magazine wrote that the lighthouse is said to be haunted by its keeper, still on duty. Even the magazine admitted no one knows for sure.",
+     "v": {
+      "type": "quote",
+      "text": "said to still remain on duty",
+      "by": "Lakeland Boating, July 2026"
+     }
+    },
+    {
+     "id": "c2-21",
+     "say": "We couldn't find anyone who says they've seen her. Only the story: that after forty-three years, she still can't bear to see anyone else light her lamp.",
+     "v": {
+      "type": "quote",
+      "text": "the lighthouse lantern at night",
+      "by": "picture to come",
+      "size": 48
+     },
+     "gap": 1.2
+    }
+   ]
+  },
+  {
+   "id": "c3",
+   "music": "parlor",
+   "card": {
+    "type": "chapter",
+    "n": 3,
+    "title": "Mourning",
+    "sub": "The Barker Mansion · 1886 – 1910"
+   },
+   "lines": [
+    {
+     "id": "c3-01",
+     "say": "In downtown Michigan City stands the Barker Mansion.",
+     "v": {
+      "type": "quote",
+      "text": "the Barker Mansion",
+      "by": "picture to come",
+      "size": 48
+     },
+     "lower": "Barker Mansion | 631 Washington St., Michigan City"
+    },
+    {
+     "id": "c3-02",
+     "say": "John H. Barker ran the Haskell and Barker Car Company, which built thousands of railroad freight cars a year. In 1905, he turned his family's home into a mansion of thirty-eight rooms.",
+     "tts": "John H. Barker ran the Haskell and Barker Car Company, which built thousands of railroad freight cars a year. In nineteen oh five, he turned his family's home into a mansion of thirty-eight rooms.",
+     "v": {
+      "type": "quote",
+      "text": "Haskell & Barker car works, old postcard",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c3-03",
+     "say": "The family knew grief. In 1886, Barker built a hall at Trinity Episcopal Church in memory of three children, all of whom had died as babies.",
+     "tts": "The family knew grief. In eighteen eighty-six, Barker built a hall at Trinity Episcopal Church in memory of three children, all of whom had died as babies.",
+     "v": {
+      "type": "quote",
+      "text": "Trinity Episcopal Church, Michigan City",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c3-04",
+     "say": "A marker at the mansion says both of Catherine Barker's parents died in 1910. She was fourteen, and, the marker says, the world's richest heiress.",
+     "tts": "A marker at the mansion says both of Catherine Barker's parents died in nineteen ten. She was fourteen, and, the marker says, the world's richest heiress.",
+     "v": {
+      "type": "quote",
+      "text": "1910 newspaper: Catherine Barker, heiress",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c3-05",
+     "say": "Victorians lived close to death, and they had rules for it. Clocks were stopped at the hour of a death. Mirrors were covered. Families wore black, sometimes for years, and had photographs taken of the dead.",
+     "v": {
+      "type": "typed",
+      "head": "VICTORIAN MOURNING",
+      "rows": [
+       "Stop the clocks.",
+       "Cover the mirrors.",
+       "Wear black.",
+       "Photograph the dead."
+      ]
+     }
+    },
+    {
+     "id": "c3-06",
+     "say": "This fall, the mansion is offering candlelight tours about those Victorian superstitions. But the museum is clear about what they are not.",
+     "v": {
+      "same": true
+     }
+    },
+    {
+     "id": "c3-07",
+     "say": "This is not a haunted house, paranormal investigation, or ghost tour.",
+     "v": {
+      "type": "quote",
+      "text": "This is not a haunted house, paranormal investigation, or ghost tour.",
+      "by": "Barker Mansion, on its 2026 candlelight tour"
+     },
+     "gap": 0.6
+    },
+    {
+     "id": "c3-08",
+     "say": "Fifty years earlier, though, some people in La Porte believed they could do more than mourn the dead. They believed they could talk with them.",
+     "v": {
+      "type": "dark"
+     },
+     "gap": 1.0
+    }
+   ]
+  },
+  {
+   "id": "c4",
+   "music": "spirits",
+   "card": {
+    "type": "chapter",
+    "n": 4,
+    "title": "The Spirit Rooms",
+    "sub": "La Porte · the 1850s"
+   },
+   "lines": [
+    {
+     "id": "c4-01",
+     "say": "In the spring of 1848, two young sisters in Hydesville, New York, said they could talk with a spirit through rapping sounds. Within a few years, Spiritualism had spread across the country.",
+     "tts": "In the spring of eighteen forty-eight, two young sisters in Hydesville, New York, said they could talk with a spirit through rapping sounds. Within a few years, Spiritualism had spread across the country.",
+     "v": {
+      "type": "quote",
+      "text": "the Fox sisters, engraving",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c4-02",
+     "say": "Believers sat in circles in darkened rooms, hands on a table, and waited for the dead to answer.",
+     "v": {
+      "type": "quote",
+      "text": "table-turning séance engraving",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c4-03",
+     "say": "By the mid-1850s, according to the Indiana Historical Bureau, Spiritualism was fairly widespread in Indiana.",
+     "tts": "By the mid-eighteen fifties, according to the Indiana Historical Bureau, Spiritualism was fairly widespread in Indiana.",
+     "v": {
+      "same": true
+     }
+    },
+    {
+     "id": "c4-04",
+     "say": "Charles W. Cathcart was one of La Porte County's leading men. Born on the island of Madeira in 1809, he had served in the Indiana Senate, in Congress, and, briefly, in the United States Senate.",
+     "tts": "Charles W. Cathcart was one of La Porte County's leading men. Born on the island of Madeira in eighteen oh nine, he had served in the Indiana Senate, in Congress, and, briefly, in the United States Senate.",
+     "v": {
+      "type": "typed",
+      "head": "CHARLES W. CATHCART",
+      "rows": [
+       "Born on Madeira, 1809.",
+       "Indiana Senate, 1837 – 1840.",
+       "U.S. House, 1845 – 1849.",
+       "U.S. Senate, 1852 – 1853."
+      ]
+     }
+    },
+    {
+     "id": "c4-05",
+     "say": "He was a skeptic. When he heard about a spirit circle at the home of a Mr. Poston, in La Porte County, he went to expose it.",
+     "v": {
+      "type": "quote",
+      "text": "a parlor séance, 1850s engraving",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c4-06",
+     "say": "He brought along a homemade device that could light up the dark room in a flash.",
+     "v": {
+      "same": true
+     },
+     "sfx": [
+      [
+       "flash",
+       2.0
+      ]
+     ]
+    },
+    {
+     "id": "c4-07",
+     "say": "The lights went out. A spirit the circle called Old King took up a bass drum.",
+     "v": {
+      "type": "dark"
+     },
+     "sfx": [
+      [
+       "drum",
+       1.8
+      ],
+      [
+       "drum",
+       3.0
+      ]
+     ],
+     "gap": 0.6
+    },
+    {
+     "id": "c4-08",
+     "say": "Cathcart set off his flash.",
+     "v": {
+      "type": "dark"
+     },
+     "sfx": [
+      [
+       "flash",
+       0.6
+      ]
+     ],
+     "gap": 0.8
+    },
+    {
+     "id": "c4-09",
+     "say": "He described what he saw in the Spiritual Telegraph, a Spiritualist newspaper in New York: the stick beating the drum, as if handled from above, with no mortal nearer than about eight feet of it.",
+     "v": {
+      "type": "quote",
+      "text": "no mortal nearer than about eight feet of it",
+      "by": "Charles W. Cathcart, in the Spiritual Telegraph"
+     }
+    },
+    {
+     "id": "c4-10",
+     "say": "What a picture for an artist, he wrote.",
+     "v": {
+      "type": "quote",
+      "text": "What a picture for an artist!",
+      "by": "Charles W. Cathcart, in the Spiritual Telegraph"
+     },
+     "gap": 0.6
+    },
+    {
+     "id": "c4-11",
+     "say": "The skeptic started holding circles of his own, and they were even livelier: flying furniture, voices with no bodies, and spirits playing music in the dark.",
+     "v": {
+      "type": "quote",
+      "text": "spirit musicians / instruments engraving",
+      "by": "picture to come",
+      "size": 48
+     },
+     "sfx": [
+      [
+       "triangle",
+       2.5
+      ]
+     ]
+    },
+    {
+     "id": "c4-12",
+     "say": "In 1859, a national directory of Spiritualists listed them by name: Cathcart's Spirit Rooms, Laporte.",
+     "tts": "In eighteen fifty-nine, a national directory of Spiritualists listed them by name: Cathcart's Spirit Rooms, Laporte.",
+     "v": {
+      "type": "typed",
+      "head": "THE SPIRITUALIST REGISTER, 1859",
+      "rows": [
+       "Trance mediums:",
+       "…",
+       "Cathcart's Spirit Rooms, Laporte."
+      ]
+     }
+    },
+    {
+     "id": "c4-13",
+     "say": "And in 1870, in her history of American Spiritualism, the medium Emma Hardinge gave them a chapter of their own: Cathcart's Spirit Room.",
+     "tts": "And in eighteen seventy, in her history of American Spiritualism, the medium Emma Hardinge gave them a chapter of their own: Cathcart's Spirit Room.",
+     "v": {
+      "type": "quote",
+      "text": "Hardinge 1870, the Cathcart chapter page",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c4-14",
+     "say": "Today, no one knows exactly where the spirit rooms stood. Charles Cathcart died in 1888, on his farm near La Porte. He's buried at Pine Lake Cemetery.",
+     "tts": "Today, no one knows exactly where the spirit rooms stood. Charles Cathcart died in eighteen eighty-eight, on his farm near La Porte. He's buried at Pine Lake Cemetery.",
+     "v": {
+      "type": "quote",
+      "text": "La Porte, 1850s-1880s view",
+      "by": "picture to come",
+      "size": 48
+     },
+     "gap": 1.0
+    }
+   ]
+  },
+  {
+   "id": "c5",
+   "music": "graves",
+   "card": {
+    "type": "chapter",
+    "n": 5,
+    "title": "Unknown Persons",
+    "sub": "Pine Lake and Patton Cemeteries"
+   },
+   "lines": [
+    {
+     "id": "c5-01",
+     "say": "Pine Lake Cemetery, in La Porte, was established in 1856. Its first burial was two years later.",
+     "tts": "Pine Lake Cemetery, in La Porte, was established in eighteen fifty-six. Its first burial was two years later.",
+     "v": {
+      "type": "quote",
+      "text": "Pine Lake, La Porte, old postcard",
+      "by": "picture to come",
+      "size": 48
+     },
+     "lower": "Pine Lake | La Porte"
+    },
+    {
+     "id": "c5-02",
+     "say": "Graves from the town's old city cemetery were moved here.",
+     "v": {
+      "type": "quote",
+      "text": "old cemetery",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c5-03",
+     "say": "Not all of them had names. A marker there stands for four hundred and ninety-nine unknown persons, moved from an older burial ground.",
+     "v": {
+      "type": "big",
+      "text": "499",
+      "cap": "unknown persons"
+     }
+    },
+    {
+     "id": "c5-04",
+     "say": "Accounts disagree about when it happened. One says 1871. Another, 1893.",
+     "tts": "Accounts disagree about when it happened. One says eighteen seventy-one. Another, eighteen ninety-three.",
+     "v": {
+      "type": "typed",
+      "head": "THE REBURIALS",
+      "rows": [
+       "One account: 1871.",
+       "Another: 1893."
+      ]
+     }
+    },
+    {
+     "id": "c5-05",
+     "say": "All that digging left a story behind. When one old coffin was opened, the story goes, the woman inside was found upside down and twisted, as if she had been buried alive.",
+     "v": {
+      "type": "dark"
+     },
+     "gap": 0.8
+    },
+    {
+     "id": "c5-06",
+     "say": "No record of it has been found. Stories like it are told about old cemeteries all over the world.",
+     "v": {
+      "same": true
+     }
+    },
+    {
+     "id": "c5-07",
+     "say": "Visitors tell of something else: shadows, like mist, above the stones.",
+     "v": {
+      "type": "quote",
+      "text": "cemetery stones in fog",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c5-08",
+     "say": "Elsewhere in La Porte is Patton Cemetery, started in 1841.",
+     "tts": "Elsewhere in La Porte is Patton Cemetery, started in eighteen forty-one.",
+     "v": {
+      "type": "quote",
+      "text": "La Porte, old view (Patton)",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c5-09",
+     "say": "Andrew Helgelien, the last known victim of Belle Gunness, is buried there. His story is in our last documentary.",
+     "v": {
+      "type": "photo",
+      "file": "gunness-45-hi.jpg",
+      "fit": "print",
+      "tone": "sepia",
+      "z": [
+       1.0,
+       1.12
+      ],
+      "crop": [
+       0.899,
+       0.792,
+       0.981,
+       0.97
+      ],
+      "rot": 0.0
+     },
+     "lower": "Andrew Helgelien's grave | on a 1908 postcard"
+    },
+    {
+     "id": "c5-10",
+     "say": "A neighbor once told of hearing voices in the cemetery at night, and looking out to find no one there.",
+     "v": {
+      "type": "dark"
+     }
+    },
+    {
+     "id": "c5-11",
+     "say": "This year, the trouble at Patton has been the weather. The derecho of August eleventh, 2026, brought gusts near sixty miles an hour to La Porte. Afterward, the historical society said the cemetery was unsafe for the public to enter, and canceled its October tour.",
+     "tts": "This year, the trouble at Patton has been the weather. The derecho of August eleventh, twenty twenty-six, brought gusts near sixty miles an hour to La Porte. Afterward, the historical society said the cemetery was unsafe for the public to enter, and canceled its October tour.",
+     "v": {
+      "type": "typed",
+      "head": "PATTON CEMETERY, 2026",
+      "rows": [
+       "Aug. 11: a derecho, gusts near 60 mph in La Porte.",
+       "After: unsafe for the public to enter.",
+       "October's history tour: canceled."
+      ]
+     },
+     "gap": 1.0
+    }
+   ]
+  },
+  {
+   "id": "c6",
+   "music": "chapel",
+   "card": {
+    "type": "chapter",
+    "n": 6,
+    "title": "The Chapel",
+    "sub": "Posey Chapel · Galena Township"
+   },
+   "lines": [
+    {
+     "id": "c6-01",
+     "say": "In the farm country northeast of La Porte, in Galena Township, there's a small cemetery called Posey Chapel.",
+     "v": {
+      "type": "map",
+      "map": "county",
+      "cam0": [
+       -86.7,
+       41.66,
+       0.55
+      ],
+      "cam1": [
+       -86.64,
+       41.72,
+       0.32
+      ],
+      "move_end": 0.85,
+      "places": [
+       {
+        "name": "LAKE MICHIGAN",
+        "at": [
+         -86.98,
+         41.86
+        ],
+        "dot": 0,
+        "font": "fell-sc",
+        "size": 46,
+        "tracking": 4
+       },
+       {
+        "name": "La Porte",
+        "at": [
+         -86.7225,
+         41.6106
+        ],
+        "show": 0.0
+       },
+       {
+        "name": "Michigan City",
+        "at": [
+         -86.895,
+         41.7075
+        ],
+        "show": 0.0
+       },
+       {
+        "name": "Rolling Prairie",
+        "at": [
+         -86.6161,
+         41.6742
+        ],
+        "show": 0.2
+       },
+       {
+        "name": "Posey Chapel",
+        "at": [
+         -86.6273,
+         41.7531
+        ],
+        "show": 0.5,
+        "size": 44
+       }
+      ]
+     }
+    },
+    {
+     "id": "c6-02",
+     "say": "In 2011, when a local newspaper counted down the county's ten most haunted places, Posey Chapel was number one.",
+     "tts": "In twenty eleven, when a local newspaper counted down the county's ten most haunted places, Posey Chapel was number one.",
+     "v": {
+      "type": "big",
+      "text": "No. 1",
+      "cap": "La Porte County's most haunted, by one 2011 count"
+     }
+    },
+    {
+     "id": "c6-03",
+     "say": "The legend, as it's told online: the church burned more than a hundred and fifty years ago, and its preacher took his own life near the gate.",
+     "v": {
+      "type": "dark"
+     }
+    },
+    {
+     "id": "c6-04",
+     "say": "Since then, people say, there have been lights in the trees, red eyes, a woman in white, and on some nights, the sound of a woman singing.",
+     "v": {
+      "type": "typed",
+      "head": "WHAT PEOPLE SAY",
+      "rows": [
+       "Lights in the trees.",
+       "Red eyes.",
+       "A woman in white.",
+       "A woman singing."
+      ]
+     }
+    },
+    {
+     "id": "c6-05",
+     "say": "Here's what the records say.",
+     "v": {
+      "type": "dark"
+     },
+     "gap": 0.5
+    },
+    {
+     "id": "c6-06",
+     "say": "A Methodist congregation was founded here in 1833, a year after the county itself.",
+     "tts": "A Methodist congregation was founded here in eighteen thirty-three, a year after the county itself.",
+     "v": {
+      "type": "quote",
+      "text": "1830s Methodist / country church engraving",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c6-07",
+     "say": "The cemetery began as a family plot. It takes its name from Ida Posey, who, by one account, helped build a chapel here in 1841.",
+     "tts": "The cemetery began as a family plot. It takes its name from Ida Posey, who, by one account, helped build a chapel here in eighteen forty-one.",
+     "v": {
+      "type": "typed",
+      "head": "POSEY CHAPEL",
+      "rows": [
+       "1833: a Methodist congregation.",
+       "1841: a chapel, built with Ida Posey's help.",
+       "1855: rebuilt, after a fire."
+      ]
+     }
+    },
+    {
+     "id": "c6-08",
+     "say": "By the same account, the chapel burned and was rebuilt in 1855. So, by that account, there really was a fire more than a hundred and fifty years ago.",
+     "tts": "By the same account, the chapel burned and was rebuilt in eighteen fifty-five. So, by that account, there really was a fire more than a hundred and fifty years ago.",
+     "v": {
+      "same": true
+     }
+    },
+    {
+     "id": "c6-09",
+     "say": "And there was another. In 1972, the church burned again, and this time it wasn't rebuilt. One writer says the fire was set on purpose.",
+     "tts": "And there was another. In nineteen seventy-two, the church burned again, and this time it wasn't rebuilt. One writer says the fire was set on purpose.",
+     "v": {
+      "type": "big",
+      "text": "1972",
+      "cap": "the church burns again; it is not rebuilt"
+     }
+    },
+    {
+     "id": "c6-10",
+     "say": "Today, a pavilion stands where the chapel stood, among hundreds of graves.",
+     "v": {
+      "type": "quote",
+      "text": "country cemetery, quiet",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c6-11",
+     "say": "As for the preacher, we found no record that any preacher there took his own life, and no record of anyone dying in either fire.",
+     "v": {
+      "same": true
+     }
+    },
+    {
+     "id": "c6-12",
+     "say": "It's still an active cemetery, where families bury their own. If you go, go by day, and leave it as you found it.",
+     "v": {
+      "same": true
+     },
+     "gap": 1.0
+    }
+   ]
+  },
+  {
+   "id": "c7",
+   "music": "rails",
+   "card": {
+    "type": "chapter",
+    "n": 7,
+    "title": "The Flagman",
+    "sub": "Flaherty's Siding · 1905"
+   },
+   "lines": [
+    {
+     "id": "c7-01",
+     "say": "On July thirty-first, 1905, the Muncie Evening Press ran a story about a ghost in La Porte County, under the headline Headless Ghost Grows Uneasy.",
+     "tts": "On July thirty-first, nineteen oh five, the Muncie Evening Press ran a story about a ghost in La Porte County, under the headline Headless Ghost Grows Uneasy.",
+     "v": {
+      "type": "typed",
+      "head": "MUNCIE EVENING PRESS, JULY 31, 1905",
+      "rows": [
+       "HEADLESS GHOST",
+       "GROWS UNEASY"
+      ]
+     },
+     "sfx": [
+      [
+       "page",
+       0.0
+      ]
+     ]
+    },
+    {
+     "id": "c7-02",
+     "say": "It told of a place near La Porte called Flaherty's Siding, where, after dark, a figure had been seen on the railroad platform.",
+     "v": {
+      "type": "quote",
+      "text": "a small railroad station / platform, about 1905",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c7-03",
+     "say": "It had no head. It carried a dinner pail, and it swung its arms as if it were flagging an approaching train.",
+     "v": {
+      "type": "quote",
+      "text": "railroad water tank, about 1905",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c7-04",
+     "say": "Then it would vanish, often with a shriek.",
+     "v": {
+      "type": "dark"
+     },
+     "gap": 0.6
+    },
+    {
+     "id": "c7-05",
+     "say": "Headless, the paper said, and acting for all the world like an animate thing.",
+     "v": {
+      "type": "quote",
+      "text": "Headless, and acting for all the world like an animate thing",
+      "by": "Muncie Evening Press, July 31, 1905"
+     }
+    },
+    {
+     "id": "c7-06",
+     "say": "People believed it was Columbus Cole, a well-known local man who had been run over by an engine, close to the spot where the water tank stood. The accident, the paper said, had taken his head.",
+     "v": {
+      "type": "quote",
+      "text": "steam locomotive at night",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c7-07",
+     "say": "Some young men from town decided it was a hoax, and went out to prove it.",
+     "v": {
+      "same": true
+     }
+    },
+    {
+     "id": "c7-08",
+     "say": "The first night, they saw nothing.",
+     "v": {
+      "type": "dark"
+     },
+     "gap": 0.6
+    },
+    {
+     "id": "c7-09",
+     "say": "On the second night, one of them called for quiet. There, near the old water tank, stood the headless figure. They watched it for five minutes or more.",
+     "v": {
+      "type": "quote",
+      "text": "water tank by the tracks, night",
+      "by": "picture to come",
+      "size": 48
+     },
+     "sfx": [
+      [
+       "wind",
+       0.0
+      ]
+     ]
+    },
+    {
+     "id": "c7-10",
+     "say": "Then they ran to the spot. It was gone.",
+     "v": {
+      "type": "dark"
+     },
+     "gap": 0.7
+    },
+    {
+     "id": "c7-11",
+     "say": "By one account, they recognized the dinner pail: the one Cole always carried to and from work. We were no longer skeptics, the paper quoted them, but believers.",
+     "v": {
+      "type": "quote",
+      "text": "We were no longer skeptics, but believers.",
+      "by": "Muncie Evening Press, July 31, 1905"
+     }
+    },
+    {
+     "id": "c7-12",
+     "say": "We tried to find Columbus Cole. We couldn't find a record of his death, which railroad it was, or even where Flaherty's Siding was. If you know, tell us in the comments.",
+     "v": {
+      "type": "typed",
+      "head": "STILL UNKNOWN",
+      "rows": [
+       "When Columbus Cole died.",
+       "Which railroad it was.",
+       "Where Flaherty's Siding was."
+      ]
+     }
+    },
+    {
+     "id": "c7-13",
+     "say": "And if you go looking, stay off the tracks. Trains still run through La Porte County, and they don't stop for ghosts.",
+     "v": {
+      "type": "quote",
+      "text": "La Porte railroad depot, old postcard",
+      "by": "picture to come",
+      "size": 48
+     },
+     "sfx": [
+      [
+       "train",
+       0.5
+      ]
+     ],
+     "gap": 0.8
+    }
+   ]
+  },
+  {
+   "id": "c8",
+   "music": "war",
+   "card": {
+    "type": "chapter",
+    "n": 8,
+    "title": "Victory City",
+    "sub": "Kingsbury · 1940 – 1960"
+   },
+   "lines": [
+    {
+     "id": "c8-01",
+     "say": "In the fall of 1940, before the United States entered the Second World War, the government picked farmland south of La Porte for an ammunition plant.",
+     "tts": "In the fall of nineteen forty, before the United States entered the Second World War, the government picked farmland south of La Porte for an ammunition plant.",
+     "v": {
+      "type": "map",
+      "map": "county",
+      "cam0": [
+       -86.72,
+       41.58,
+       0.55
+      ],
+      "cam1": [
+       -86.7,
+       41.52,
+       0.34
+      ],
+      "move_end": 0.85,
+      "places": [
+       {
+        "name": "La Porte",
+        "at": [
+         -86.7225,
+         41.6106
+        ],
+        "show": 0.0
+       },
+       {
+        "name": "Kingsbury",
+        "at": [
+         -86.6978,
+         41.5281
+        ],
+        "show": 0.3
+       },
+       {
+        "name": "Kingsford Heights",
+        "at": [
+         -86.6917,
+         41.4806
+        ],
+        "show": 0.55
+       }
+      ]
+     }
+    },
+    {
+     "id": "c8-02",
+     "say": "It took in more than thirteen thousand acres. About two hundred and fifty families had to leave their homes and farms.",
+     "v": {
+      "type": "big",
+      "text": "13,454 acres",
+      "size": 130,
+      "cap": "about 250 families moved out"
+     }
+    },
+    {
+     "id": "c8-03",
+     "say": "The Kingsbury Ordnance Plant made fuses for ammunition, up to a hundred and eighty thousand a day.",
+     "v": {
+      "type": "quote",
+      "text": "ordnance plant / fuses, 1940s",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c8-04",
+     "say": "In May 1942, it employed twenty thousand, seven hundred and eighty-five people. Nearly half of them were women.",
+     "tts": "In May nineteen forty-two, it employed twenty thousand, seven hundred and eighty-five people. Nearly half of them were women.",
+     "v": {
+      "type": "big",
+      "text": "20,785",
+      "cap": "workers, May 1942; nearly half of them women"
+     }
+    },
+    {
+     "id": "c8-05",
+     "say": "To house them, builders started nearly three thousand homes in a new town, laid out in a circle like a wagon wheel. At first, it was called Victory City. Today it's Kingsford Heights.",
+     "v": {
+      "type": "quote",
+      "text": "Kingsford Heights / wagon wheel plan",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c8-06",
+     "say": "The work was dangerous. An explosive called tetryl turned some workers' skin orange.",
+     "v": {
+      "same": true
+     }
+    },
+    {
+     "id": "c8-07",
+     "say": "In that 2011 list of the county's most haunted places, the plant was number ten. The writer said she'd been told that explosions had killed workers there during the war.",
+     "tts": "In that twenty eleven list of the county's most haunted places, the plant was number ten. The writer said she'd been told that explosions had killed workers there during the war.",
+     "v": {
+      "type": "big",
+      "text": "No. 10",
+      "cap": "the 2011 list"
+     }
+    },
+    {
+     "id": "c8-08",
+     "say": "We found no record of deadly explosions there. One writer who researched the plant says there were never any major accidents.",
+     "v": {
+      "same": true
+     }
+    },
+    {
+     "id": "c8-09",
+     "say": "The plant closed after the war, reopened for the Korean War, and closed for good around 1960.",
+     "tts": "The plant closed after the war, reopened for the Korean War, and closed for good around nineteen sixty.",
+     "v": {
+      "type": "typed",
+      "head": "KINGSBURY ORDNANCE PLANT",
+      "rows": [
+       "1940: site chosen.",
+       "1942: 20,785 workers.",
+       "1945: closed.",
+       "1951: reopened for Korea.",
+       "About 1960: closed for good."
+      ]
+     }
+    },
+    {
+     "id": "c8-10",
+     "say": "In 1965, much of the land went to the state. Today it's the Kingsbury Fish and Wildlife Area, where people hunt, fish and hike.",
+     "tts": "In nineteen sixty-five, much of the land went to the state. Today it's the Kingsbury Fish and Wildlife Area, where people hunt, fish and hike.",
+     "v": {
+      "type": "quote",
+      "text": "Kingsbury Fish & Wildlife Area today",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "c8-11",
+     "say": "Other parts of the old plant are private industrial land, and off-limits. If you go, stay on public land, and wear orange in hunting season.",
+     "v": {
+      "same": true
+     }
+    },
+    {
+     "id": "c8-12",
+     "say": "Sometimes a place feels haunted simply because so much happened there, and so few people remember.",
+     "v": {
+      "same": true
+     },
+     "gap": 1.2
+    }
+   ]
+  },
+  {
+   "id": "end",
+   "music": "end",
+   "card": {
+    "type": "chapter",
+    "kicker": "EPILOGUE",
+    "title": "The Light on the Pier",
+    "sub": "Today"
+   },
+   "tail": 2.5,
+   "lines": [
+    {
+     "id": "e01",
+     "say": "Most of these stories can't be proved. Some can be disproved.",
+     "v": {
+      "type": "quote",
+      "text": "lake at dusk",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "e02",
+     "say": "But the people in them were real. A keeper who climbed to her lamp for forty-three years. A senator who sat in the dark and listened. Four hundred and ninety-nine people no one could name. A congregation that lost its church. A railroad man named Columbus Cole. And twenty thousand workers who went to war without leaving home.",
+     "v": {
+      "type": "names",
+      "head": "THE PEOPLE IN THE STORIES",
+      "names": [
+       [
+        "Harriet Colfax",
+        "keeper, 1861 – 1904"
+       ],
+       [
+        "Charles W. Cathcart",
+        "of the Spirit Rooms"
+       ],
+       [
+        "499 unknown persons",
+        "Pine Lake Cemetery"
+       ],
+       [
+        "The Posey Chapel congregation",
+        "since 1833"
+       ],
+       [
+        "Columbus Cole",
+        "Flaherty's Siding"
+       ],
+       [
+        "20,785 workers",
+        "Kingsbury, 1942"
+       ]
+      ],
+      "span": 0.9
+     }
+    },
+    {
+     "id": "e03",
+     "say": "Maybe that's what a ghost story is: a way of remembering.",
+     "v": {
+      "type": "dark"
+     },
+     "gap": 1.0
+    },
+    {
+     "id": "e04",
+     "say": "The Old Lighthouse Museum is open Wednesday through Sunday afternoons until the end of October.",
+     "v": {
+      "type": "typed",
+      "head": "OLD LIGHTHOUSE MUSEUM",
+      "rows": [
+       "100 Heisman Harbor Rd., Michigan City",
+       "Wed.-Sun., 1-4 p.m. Central, through Oct. 31",
+       "Adults $10"
+      ]
+     }
+    },
+    {
+     "id": "e05",
+     "say": "The cemeteries are active, and they belong to the families. Go by day, be respectful, and stay off private land.",
+     "v": {
+      "type": "typed",
+      "head": "IF YOU GO",
+      "rows": [
+       "Cemeteries: by day, and with respect.",
+       "Patton Cemetery: check before you go.",
+       "Railroad tracks and private land: stay off."
+      ]
+     }
+    },
+    {
+     "id": "e06",
+     "say": "The lamp Harriet Colfax tended went dark in 1904. But out at the end of the pier in Michigan City, a light still shines every night.",
+     "tts": "The lamp Harriet Colfax tended went dark in nineteen oh four. But out at the end of the pier in Michigan City, a light still shines every night.",
+     "v": {
+      "type": "quote",
+      "text": "the pierhead light at night",
+      "by": "picture to come",
+      "size": 48
+     }
+    },
+    {
+     "id": "e07",
+     "say": "Some people like to think she's still keeping watch.",
+     "v": {
+      "same": true
+     },
+     "gap": 1.5
+    },
+    {
+     "id": "e08",
+     "v": {
+      "type": "quote",
+      "text": "Sources, photo credits and visiting details are in the description.",
+      "size": 46
+     },
+     "hold": 5.0
+    }
+   ]
+  }
+ ]
+}

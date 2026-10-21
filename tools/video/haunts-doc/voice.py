@@ -19,13 +19,13 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 VOICE, SPEED, RATE = "af_heart", 0.94, 24000
 # names the voice wouldn't know how to say (IPA, in the style Kokoro's misaki uses)
 PRONOUNCE = {
-    "La Porte": "ləpˈɔɹt", "LaPorte": "ləpˈɔɹt", "Gunness": "ɡˈʌnəs", "Gunnesses": "ɡˈʌnəsᵻz",
-    "Brynhild": "bɹˈɪnhɪld", "Størset": "stˈɜɹsɛt", "Storset": "stˈɜɹsɛt", "Paulsdatter": "pˈWlzdɑtəɹ",
-    "Selbu": "sˈɛlbu", "Trondheim": "tɹˈɑnhIm", "Sorenson": "sˈɔɹənsən", "Helgelien": "hˈɛlɡəlin",
-    "Lamphere": "lˈæmfɪɹ", "Budsberg": "bˈʌdzbɜɹɡ", "Asle": "ˈɑslə", "Ole": "ˈOli", "Skandinaven": "skˌændɪnˈɑvən",
-    "Smutzer": "smˈʌtsəɹ", "Leliter": "lˈɛlɪtəɹ", "Mads": "mˈæds", "Jennie": "ʤˈɛni", "Myrtle": "mˈɜɹtᵊl",
-    "Gurholdt": "ɡˈʊɹhOlt", "Lindbloom": "lˈɪndblum", "Maxson": "mˈæksən", "Iola": "Iˈolə",
-    "Nawrocki": "nəɹˈɑki", "Swanhild": "swˈɑnhɪld", "McClung": "məklˈʌŋ", "Sorensons": "sˈɔɹənsənz", "Moe": "mˈO",
+    "La Porte": "ləpˈɔɹt", "LaPorte": "ləpˈɔɹt", "Laporte": "ləpˈɔɹt", "Potawatomi": "pˌɑtəwˈɑtəmi",
+    "Schuyler": "skˈIləɹ", "Colfax": "kˈOlfæks", "Hartwell": "hˈɑɹtwɛl", "Ogdensburg": "ˈɑɡdənzbˌɜɹɡ",
+    "Hardinge": "hˈɑɹdɪŋ", "Poston": "pˈOstən", "Madeira": "mədˈɪɹə", "Hydesville": "hˈIdzvɪl",
+    "Cathcart": "kˈæθkɑɹt", "Cathcart's": "kˈæθkɑɹts", "derecho": "dəɹˈAʧO", "tetryl": "tˈɛtɹəl",
+    "Flaherty's": "flˈæhəɹtiz", "Flaherty": "flˈæhəɹti", "Posey": "pˈOzi", "Galena": "ɡəlˈinə",
+    "Muncie": "mˈʌnsi", "Hoosier": "hˈuʒəɹ", "Kingsford": "kˈɪŋzfəɹd", "Dillinger": "dˈɪlɪnʤəɹ",
+    "Helgelien": "hˈɛlɡəlin", "Gunness": "ɡˈʌnəs",
 }
 
 

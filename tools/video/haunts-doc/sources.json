@@ -1,0 +1,590 @@
+{
+ "about": "Real pictures for the La Porte County hauntings documentary (Oct. 20, 2026; Scoop: \"research all of laporte county hauntings and make another documentary just like Belle's\"). fetch.py (GitHub Actions, haunts-doc-images.yml) looks these up and keeps only public domain, CC0 and CC BY files (no share-alike, no non-commercial), each with its credit, in images/manifest.json. Library of Congress pictures are kept only when the Library says there are no known restrictions; old newspaper pages and 1870 book pages are public domain. Names don't repeat the Belle film's (its pictures are used too, from belle-doc/images).",
+ "commons": [
+  {
+   "name": "named",
+   "titles": [
+    "File:Old Michigan City Lighthouse.JPG",
+    "File:Michigan City Lighthouse.jpg",
+    "File:Lake Michigan waves at Michigan City lighthouse (11465553165).jpg",
+    "File:Hoosier Slide, 1907 - Michigan City, Indiana.jpg",
+    "File:Chicago Yacht Club's Boats and Hoosier Slide, 1912 - Michigan City, Indiana (53959165002).jpg",
+    "File:Indiana State Prison 1871.jpg",
+    "File:Indiana State Prison layout, c 1865.jpg",
+    "File:Barker Mansion P7190107.jpg"
+   ],
+   "max": 20
+  },
+  {
+   "name": "lh-old",
+   "category": "Category:Old Michigan City Light",
+   "depth": 2,
+   "max": 50
+  },
+  {
+   "name": "lh-east",
+   "category": "Category:Michigan City East Light",
+   "depth": 1,
+   "max": 40
+  },
+  {
+   "name": "lh-east2",
+   "category": "Category:Michigan City East Pierhead Light",
+   "depth": 1,
+   "max": 40
+  },
+  {
+   "name": "lh-cards",
+   "search": "intitle:\"Michigan City, Indiana\" lighthouse",
+   "max": 50
+  },
+  {
+   "name": "lh-cards2",
+   "search": "intitle:\"Michigan City, Indiana\" \"light house\"",
+   "max": 30
+  },
+  {
+   "name": "mc-pier",
+   "search": "intitle:\"Michigan City, Indiana\" pier",
+   "max": 40
+  },
+  {
+   "name": "mc-harbor",
+   "search": "intitle:\"Michigan City, Indiana\" harbor",
+   "max": 40
+  },
+  {
+   "name": "mc-creek",
+   "search": "intitle:\"Michigan City, Indiana\" \"Trail Creek\"",
+   "max": 25
+  },
+  {
+   "name": "mc-storm",
+   "search": "intitle:\"Michigan City, Indiana\" storm OR ice OR waves OR winter OR wreck",
+   "max": 30
+  },
+  {
+   "name": "mc-lake",
+   "search": "intitle:\"Michigan City, Indiana\" lake OR beach OR shore",
+   "max": 30
+  },
+  {
+   "name": "mc-slide",
+   "search": "intitle:\"Hoosier Slide\"",
+   "max": 30
+  },
+  {
+   "name": "mc-street",
+   "search": "intitle:\"Michigan City, Indiana\" street",
+   "max": 30
+  },
+  {
+   "name": "mc-park",
+   "search": "intitle:\"Michigan City, Indiana\" \"Washington Park\"",
+   "max": 30
+  },
+  {
+   "name": "mc-barker",
+   "search": "intitle:\"Michigan City, Indiana\" Barker",
+   "max": 25
+  },
+  {
+   "name": "barker-cat",
+   "category": "Category:John H. Barker Mansion",
+   "depth": 1,
+   "max": 25
+  },
+  {
+   "name": "mc-carworks",
+   "search": "intitle:\"Michigan City, Indiana\" \"car works\" OR Haskell OR Pullman OR \"car shops\"",
+   "max": 25
+  },
+  {
+   "name": "mc-church",
+   "search": "intitle:\"Michigan City, Indiana\" church OR Trinity",
+   "max": 25
+  },
+  {
+   "name": "mc-depot",
+   "search": "intitle:\"Michigan City, Indiana\" depot OR station OR railroad OR train",
+   "max": 25
+  },
+  {
+   "name": "mc-cemetery",
+   "search": "intitle:\"Michigan City, Indiana\" cemetery OR Greenwood",
+   "max": 15
+  },
+  {
+   "name": "colfax-h",
+   "search": "\"Harriet Colfax\"",
+   "max": 15
+  },
+  {
+   "name": "colfax-s",
+   "category": "Category:Schuyler Colfax",
+   "depth": 0,
+   "max": 15
+  },
+  {
+   "name": "fresnel",
+   "category": "Category:Fresnel lenses",
+   "depth": 0,
+   "max": 30
+  },
+  {
+   "name": "lamp-oil",
+   "search": "lighthouse lamp lard oil OR \"lighthouse lamp\" 19th century",
+   "max": 12
+  },
+  {
+   "name": "seance",
+   "category": "Category:Séances",
+   "depth": 1,
+   "max": 50
+  },
+  {
+   "name": "spirit-us",
+   "category": "Category:Spiritualism in the United States",
+   "depth": 1,
+   "max": 50
+  },
+  {
+   "name": "fox-sisters",
+   "category": "Category:Fox sisters",
+   "depth": 1,
+   "max": 25
+  },
+  {
+   "name": "table-turning",
+   "category": "Category:Table-turning",
+   "depth": 1,
+   "max": 35
+  },
+  {
+   "name": "spirit-photo",
+   "category": "Category:Spirit photography",
+   "depth": 1,
+   "max": 35
+  },
+  {
+   "name": "hardinge-c",
+   "category": "Category:Emma Hardinge Britten",
+   "depth": 0,
+   "max": 12
+  },
+  {
+   "name": "koons",
+   "search": "Koons spirit room",
+   "max": 12
+  },
+  {
+   "name": "cathcart-c",
+   "search": "\"Charles W. Cathcart\" OR \"Charles William Cathcart\"",
+   "max": 10
+  },
+  {
+   "name": "spirit-instr",
+   "search": "spirit trumpet OR \"spirit music\" OR \"spirit band\" seance 19th century",
+   "max": 15
+  },
+  {
+   "name": "lp-lakes",
+   "search": "intitle:\"LaPorte, Indiana\" lake",
+   "max": 50
+  },
+  {
+   "name": "lp-pine",
+   "search": "intitle:\"Pine Lake\" LaPorte",
+   "max": 35
+  },
+  {
+   "name": "lp-cem",
+   "search": "intitle:\"LaPorte, Indiana\" cemetery",
+   "max": 20
+  },
+  {
+   "name": "lp-cem2",
+   "search": "\"Pine Lake Cemetery\" OR \"Patton Cemetery\" LaPorte",
+   "max": 15
+  },
+  {
+   "name": "lp-depot",
+   "search": "intitle:\"LaPorte, Indiana\" depot OR station OR railroad OR train OR interurban",
+   "max": 35
+  },
+  {
+   "name": "lp-streets",
+   "search": "intitle:\"LaPorte, Indiana\" street OR avenue OR \"birds eye\" OR \"bird's eye\"",
+   "max": 35
+  },
+  {
+   "name": "lp-church",
+   "search": "intitle:\"LaPorte, Indiana\" church",
+   "max": 25
+  },
+  {
+   "name": "rolling-prairie",
+   "search": "intitle:\"Rolling Prairie, Indiana\"",
+   "max": 35
+  },
+  {
+   "name": "posey",
+   "search": "\"Posey Chapel\"",
+   "max": 10
+  },
+  {
+   "name": "county-towns",
+   "search": "intitle:\"Westville, Indiana\" OR intitle:\"Wanatah, Indiana\" OR intitle:\"Union Mills, Indiana\" OR intitle:\"LaCrosse, Indiana\" OR intitle:\"Hanna, Indiana\" OR intitle:\"Kingsbury, Indiana\"",
+   "max": 40
+  },
+  {
+   "name": "kingsbury",
+   "search": "Kingsbury Ordnance",
+   "max": 25
+  },
+  {
+   "name": "kingsbury2",
+   "search": "\"Kingsbury Fish and Wildlife\" OR \"Kingsford Heights\"",
+   "max": 30
+  },
+  {
+   "name": "ordnance-ww2",
+   "search": "women ordnance plant fuses 1942 OR 1943",
+   "max": 20
+  },
+  {
+   "name": "potawatomi",
+   "search": "George Winter Potawatomi",
+   "max": 20
+  },
+  {
+   "name": "rail-tank",
+   "search": "railroad water tank steam locomotive 1900s",
+   "max": 15
+  },
+  {
+   "name": "lake-night",
+   "search": "intitle:\"Lake Michigan\" night OR moon OR moonlight OR dusk",
+   "max": 25
+  }
+ ],
+ "loc_photos": [
+  {
+   "name": "loc-lh",
+   "q": "michigan city lighthouse",
+   "max": 20
+  },
+  {
+   "name": "loc-mc",
+   "q": "michigan city, ind.",
+   "dates": "1880/1930",
+   "max": 35
+  },
+  {
+   "name": "loc-slide",
+   "q": "hoosier slide",
+   "max": 15
+  },
+  {
+   "name": "loc-lp",
+   "q": "la porte, ind.",
+   "dates": "1870/1930",
+   "max": 25
+  },
+  {
+   "name": "loc-kop",
+   "q": "kingsbury ordnance",
+   "max": 20
+  },
+  {
+   "name": "loc-kop2",
+   "q": "kingsbury indiana",
+   "dates": "1940/1946",
+   "max": 15
+  },
+  {
+   "name": "loc-fuses",
+   "q": "fuses ordnance plant women",
+   "dates": "1941/1945",
+   "max": 20
+  },
+  {
+   "name": "loc-spirit",
+   "q": "spiritualism",
+   "dates": "1848/1880",
+   "max": 25
+  },
+  {
+   "name": "loc-seance",
+   "q": "spirit rapping",
+   "max": 20
+  },
+  {
+   "name": "loc-fox",
+   "q": "fox sisters",
+   "max": 10
+  },
+  {
+   "name": "loc-tank",
+   "q": "railroad water tank",
+   "dates": "1885/1915",
+   "max": 20
+  },
+  {
+   "name": "loc-station",
+   "q": "railroad station indiana",
+   "dates": "1885/1915",
+   "max": 20
+  },
+  {
+   "name": "loc-keeper",
+   "q": "lighthouse keeper",
+   "dates": "1860/1915",
+   "max": 15
+  },
+  {
+   "name": "loc-lens",
+   "q": "lighthouse lens",
+   "dates": "1860/1920",
+   "max": 12
+  },
+  {
+   "name": "loc-colfax",
+   "q": "schuyler colfax",
+   "max": 10
+  },
+  {
+   "name": "loc-cathcart",
+   "q": "cathcart",
+   "dates": "1840/1890",
+   "max": 10
+  },
+  {
+   "name": "loc-potawatomi",
+   "q": "potawatomi",
+   "dates": "1830/1900",
+   "max": 15
+  },
+  {
+   "name": "loc-church",
+   "q": "methodist church indiana",
+   "dates": "1840/1910",
+   "max": 10
+  }
+ ],
+ "loc_items": [
+  {
+   "name": "habs-lh",
+   "item": "https://www.loc.gov/item/in0149/",
+   "max": 40
+  }
+ ],
+ "loc_maps": [
+  {
+   "name": "map-co1862",
+   "q": "map of laporte co., indiana",
+   "max": 10
+  },
+  {
+   "name": "map-lpco",
+   "q": "laporte county indiana",
+   "dates": "1850/1900",
+   "max": 15
+  },
+  {
+   "name": "map-mc",
+   "q": "michigan city indiana",
+   "dates": "1830/1900",
+   "max": 15
+  },
+  {
+   "name": "map-lp",
+   "q": "la porte indiana panoramic",
+   "dates": "1860/1900",
+   "max": 10
+  },
+  {
+   "name": "map-kop",
+   "q": "kingsbury ordnance plant",
+   "max": 10
+  }
+ ],
+ "archive_books": [
+  {
+   "name": "hardinge",
+   "id": "modernamericansp00brit",
+   "find": [
+    "Cathcart"
+   ],
+   "max": 8,
+   "license": "Public domain (1870 book)",
+   "title": "Emma Hardinge, Modern American Spiritualism (New York, 1870)",
+   "author": "Emma Hardinge",
+   "date": "1870"
+  },
+  {
+   "name": "register1859",
+   "search": "title:(spiritualist register) AND date:[1858-01-01 TO 1860-12-31]",
+   "find": [
+    "Cathcart"
+   ],
+   "max": 3,
+   "license": "Public domain (1859 book)",
+   "title": "The Spiritualist Register for 1859 (Auburn, N.Y.)",
+   "author": "Uriah Clark",
+   "date": "1859"
+  },
+  {
+   "name": "packard1876",
+   "search": "title:(la porte county) AND creator:(packard)",
+   "find": [
+    "Cathcart",
+    "Posey",
+    "Flaherty",
+    "Wightman",
+    "Spiritualis"
+   ],
+   "max": 14,
+   "tries": 3,
+   "license": "Public domain (1876 book)",
+   "title": "Jasper Packard, History of La Porte County, Indiana (1876)",
+   "author": "Jasper Packard",
+   "date": "1876"
+  },
+  {
+   "name": "chapman1880",
+   "search": "title:(history of la porte county) AND date:[1880-01-01 TO 1880-12-31]",
+   "find": [
+    "Cathcart",
+    "Posey",
+    "Flaherty",
+    "Wightman",
+    "Spiritualis"
+   ],
+   "max": 14,
+   "tries": 3,
+   "license": "Public domain (1880 book)",
+   "title": "History of La Porte County, Indiana (Chas. C. Chapman & Co., 1880)",
+   "date": "1880"
+  },
+  {
+   "name": "daniels1904",
+   "search": "title:(la porte county) AND creator:(daniels)",
+   "find": [
+    "Cathcart",
+    "Posey",
+    "Flaherty",
+    "Wightman",
+    "Spiritualis",
+    "Colfax"
+   ],
+   "max": 14,
+   "tries": 3,
+   "license": "Public domain (1904 book)",
+   "title": "E. D. Daniels, A Twentieth Century History and Biographical Record of LaPorte County, Indiana (1904)",
+   "author": "E. D. Daniels",
+   "date": "1904"
+  }
+ ],
+ "newspapers": [
+  {
+   "name": "np-colfax",
+   "q": "colfax lighthouse",
+   "pattern": "colfax|lighthouse|keeper",
+   "dates": "1870-01-01/1905-12-31",
+   "max": 16,
+   "crops_per_page": 2,
+   "license": "Public domain (newspaper, before 1906)"
+  },
+  {
+   "name": "np-colfax2",
+   "q": "harriet colfax",
+   "pattern": "colfax",
+   "dates": "1870-01-01/1905-12-31",
+   "max": 12,
+   "crops_per_page": 2,
+   "license": "Public domain (newspaper, before 1906)"
+  },
+  {
+   "name": "np-ghost",
+   "q": "headless ghost laporte",
+   "pattern": "headless|ghost|laporte|porte",
+   "dates": "1905-06-01/1905-10-31",
+   "max": 10,
+   "crops_per_page": 2,
+   "license": "Public domain (1905 newspaper)"
+  },
+  {
+   "name": "np-ghost2",
+   "q": "headless ghost porte",
+   "pattern": "headless|ghost|porte",
+   "dates": "1905-06-01/1905-10-31",
+   "max": 10,
+   "crops_per_page": 2,
+   "license": "Public domain (1905 newspaper)"
+  },
+  {
+   "name": "np-ghost3",
+   "q": "headless ghost",
+   "pattern": "headless",
+   "dates": "1905-07-20/1905-09-10",
+   "max": 12,
+   "crops_per_page": 2,
+   "license": "Public domain (1905 newspaper)"
+  },
+  {
+   "name": "np-cathcart",
+   "q": "cathcart spirits",
+   "pattern": "cathcart|spirit",
+   "dates": "1850-01-01/1870-12-31",
+   "max": 10,
+   "crops_per_page": 2,
+   "license": "Public domain (newspaper, 1850-1870)"
+  },
+  {
+   "name": "np-barker",
+   "q": "catherine barker heiress",
+   "pattern": "barker|heiress|richest",
+   "dates": "1910-11-01/1912-12-31",
+   "max": 10,
+   "crops_per_page": 2,
+   "license": "Public domain (newspaper, 1910-1912)"
+  },
+  {
+   "name": "np-kingsbury",
+   "q": "kingsbury ordnance",
+   "pattern": "kingsbury|ordnance",
+   "dates": "1940-09-01/1946-12-31",
+   "max": 10,
+   "crops_per_page": 2,
+   "license": "No known restrictions (Library of Congress, Chronicling America)"
+  },
+  {
+   "name": "np-dillinger",
+   "q": "michigan city prison convicts",
+   "pattern": "michigan|prison|convicts|escape",
+   "dates": "1933-09-26/1933-10-05",
+   "max": 6,
+   "crops_per_page": 2,
+   "license": "No known restrictions (Library of Congress, Chronicling America)"
+  },
+  {
+   "name": "np-slide",
+   "q": "hoosier slide",
+   "pattern": "hoosier|slide",
+   "dates": "1890-01-01/1925-12-31",
+   "max": 6,
+   "crops_per_page": 1,
+   "license": "Public domain (newspaper, before 1926)"
+  },
+  {
+   "name": "np-lhstorm",
+   "q": "michigan city lighthouse storm",
+   "pattern": "lighthouse|michigan",
+   "dates": "1870-01-01/1905-12-31",
+   "max": 8,
+   "crops_per_page": 2,
+   "license": "Public domain (newspaper, before 1906)"
+  }
+ ]
+}
