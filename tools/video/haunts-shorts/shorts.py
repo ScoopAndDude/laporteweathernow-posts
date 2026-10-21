@@ -59,6 +59,11 @@ def numerals_in_captions():
                     break
 
 
+def scan_credit(f):
+    """Steve Shook's postcards: he collected and scanned them (the cards are 1910-1933), so the credit says Scan, not Photo."""
+    return credit(f).replace("Photo: ", "Scan: ", 1)
+
+
 # ---------------------------------------------------------------------------------------------
 # Pictures
 # ---------------------------------------------------------------------------------------------
@@ -246,7 +251,7 @@ def pp_end(ctx):
     d.ellipse((cx - r, cy - r, cx + r, cy + r), fill=(0, 0, 0, 150))
     d.polygon([(cx - 20, cy - 32), (cx - 20, cy + 32), (cx + 36, cy)], fill=(255, 255, 255, 235))
     ctx["thumb"] = shadowed(card)
-    ctx["end_credit"] = credit("lh-cards-03.jpg")
+    ctx["end_credit"] = scan_credit("lh-cards-03.jpg")
 
 
 def p_end(frame, u, words, ctx):
@@ -254,7 +259,7 @@ def p_end(frame, u, words, ctx):
     title(frame, "WATCH THE FULL DOCUMENTARY", "black", 56, BONE, 450, glow=(0, 0, 0), alpha=appear(u, 0.0, 0.2))
     push(frame, ctx["thumb"], u, 4.0, W / 2, 790, z=(0.96, 1.0), alpha=appear(u, 0.05, 0.25))
     title(frame, "on YouTube · 20 minutes", "bold", 44, (226, 220, 206), 1130, alpha=appear(u, 0.3, 0.3))
-    note(frame, "Thumbnail: " + ctx["end_credit"].replace("Photo: ", "postcard by ") if ctx["end_credit"] else "")
+    note(frame, "Thumbnail: a 1933 postcard, " + ctx["end_credit"].replace("Scan: ", "scan by ") if ctx["end_credit"] else "")
 
 
 # ---------------------------------------------------------------------------------------------
@@ -361,7 +366,7 @@ def g2(frame, u, words, ctx):
         g = T("HIS “LIGHTNING BUG”", "bask", 84, GOLD + (255,))
         gg, _ = glowT(g, (255, 150, 30), radius=28, strength=0.8)
         paste_c(frame, gg, W / 2, 330, appear(u, bug - 0.1, 0.2))
-    note(frame, "His account, in Emma Hardinge, Modern American Spiritualism, 1870 (public domain)")
+    note(frame, "Emma Hardinge, Modern American Spiritualism, 1870 (public domain)")
 
 
 def g3(frame, u, words, ctx):
@@ -425,11 +430,11 @@ LANTERN_OLD = (0.452, 0.190)   # the old lighthouse's lantern, 2007 photo
 
 def pp_keep(ctx):
     ctx["night"] = pic("lh-cards-03.jpg", "dusk", inset=0.04)
-    ctx["night_credit"] = credit("lh-cards-03.jpg")
+    ctx["night_credit"] = scan_credit("lh-cards-03.jpg")
     ctx["pier"] = pic("lh-cards-01.jpg", "sepia", inset=0.02)
     ctx["rough"] = pic("mc-lake-08.jpg", "sepia", inset=0.02)
-    ctx["pier_credit"] = credit("lh-cards-01.jpg")
-    ctx["rough_credit"] = credit("mc-lake-08.jpg")
+    ctx["pier_credit"] = scan_credit("lh-cards-01.jpg")
+    ctx["rough_credit"] = scan_credit("mc-lake-08.jpg")
     ctx["lights"] = pic("lhx-cat-05.jpg", "sepia", crop=[0.28, 0.31, 0.73, 0.69])
     ctx["old"] = pic("lh-old-01.jpg", "night")
     ctx["old_credit"] = credit("lh-old-01.jpg")
