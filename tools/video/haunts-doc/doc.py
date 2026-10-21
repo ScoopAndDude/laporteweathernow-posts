@@ -298,7 +298,10 @@ def picture(name, tone="sepia", crop=None, max_side=2600):
         im = ImageEnhance.Color(im).enhance(0.55)
         arr = np.asarray(im, np.float32) * np.array([1.04, 0.98, 0.88], np.float32)
         im = Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8))
-    elif tone == "night":
+    elif tone in ("night", "night-lift"):
+        if tone == "night-lift":                       # a dark picture: stretch and lift it first, so night doesn't crush it
+            im = ImageOps.autocontrast(im, cutoff=0.8)
+            im = Image.eval(im, lambda v: int(255 * (v / 255) ** 0.7))
         im = ImageEnhance.Color(im).enhance(0.3)
         im = ImageEnhance.Brightness(im).enhance(0.6)
         arr = np.asarray(im, np.float32) * np.array([0.72, 0.86, 1.08], np.float32)
@@ -714,6 +717,9 @@ class News(Shot):
 
     def credit(self):
         m = MANIFEST.get(self.spec.get("file"), {})
+        if m.get("kind") == "book-page":            # a page of an old book, from the Internet Archive
+            import re
+            return self.spec.get("credit", re.sub(r", page \d+ of the scan$", "", m.get("title", "")) + " \u00b7 " + m.get("source", "Internet Archive"))
         return self.spec.get("credit", f"{paper_name(m.get('artist', 'Newspaper'))}, {nice_date(m.get('date', ''))} · Library of Congress" if m else "")
 
 

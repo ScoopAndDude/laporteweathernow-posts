@@ -212,6 +212,7 @@ def loc_rights(item_json):
 
 
 def loc_fetch(spec, endpoint, max_side):
+    max_side = int(spec.get("max_side", max_side))
     k = 0
     try:
         results = loc_items(endpoint, spec["q"], spec.get("dates"), spec.get("max", 30))
@@ -235,7 +236,7 @@ def loc_fetch(spec, endpoint, max_side):
             log("  item failed:", rid, e)
             continue
         rights = loc_rights(ij)
-        if not re.search(r"no known (copyright )?restrictions|public domain|no known restriction", rights, re.I):
+        if not re.search(r"no known (copyright )?restrictions|public domain|no known restriction|free to use and reuse|not aware of any u\.?s\.? copyright", rights, re.I):
             log("  skip (rights):", r.get("title", "")[:70], "|", rights[:120])
             continue
         it = ij.get("item", {}) or {}
@@ -267,13 +268,29 @@ def loc_item_pages(spec):
         return
     rights = loc_rights(ij)
     log("  rights:", rights[:200])
-    if not re.search(r"no known (copyright )?restrictions|public domain|no known restriction", rights, re.I):
+    if not re.search(r"no known (copyright )?restrictions|public domain|no known restriction|free to use and reuse|not aware of any u\.?s\.? copyright", rights, re.I):
         log("  skip (rights)")
         return
     it = ij.get("item", {}) or {}
     res = ij.get("resources") or []
-    log("  resources:", len(res), [(r.get("url"), r.get("files")) for r in res][:60])
+    log("  resources:", len(res), [(r.get("url"), r.get("files") if isinstance(r.get("files"), int) else len(r.get("files") or [])) for r in res][:60])
     bases = []
+    # the item's file list names each page's master file; its IIIF id is the storage path with ":" for "/"
+    for r in res:
+        for page in (r.get("files") if isinstance(r.get("files"), list) else []):
+            for f in (page if isinstance(page, list) else [page]):
+                u = (f or {}).get("url", "") if isinstance(f, dict) else ""
+                mm = re.search(r"tile\.loc\.gov/storage-services/(?:master|service)/(pnp/.+?)\.(?:tif|jpg|jp2)$", u)
+                if mm:
+                    b = "https://tile.loc.gov/image-services/iiif/service:" + mm.group(1).replace("/", ":")
+                    if b not in [x[0] for x in bases]:
+                        bases.append((b, r.get("url", ""), ""))
+                    break
+            if len(bases) >= spec.get("max", 40):
+                break
+    if bases:
+        log("  pages from the file list:", len(bases))
+        res = []                                     # skip the page-by-page lookup below
     for r in res:
         u = r.get("url")
         if not u:
