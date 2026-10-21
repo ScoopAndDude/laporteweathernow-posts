@@ -1493,6 +1493,23 @@ def build(script):
             if ln.get("on"):
                 o = ln["on"] if isinstance(ln["on"], dict) else {"text": ln["on"]}
                 c["overlays"].append(dict(o, kind="on", start=t + float(o.get("at", 0.2)), end=t + float(o.get("until", dur + gap * 0.5))))
+            # A rubber stamp (MYTH, TRUE, UNPROVEN...) that lands on the picture at a word, with a thump.
+            for st in (ln.get("stamp") if isinstance(ln.get("stamp"), list) else ([ln["stamp"]] if ln.get("stamp") else [])):
+                st = st if isinstance(st, dict) else {"text": st}
+                at = st.get("at", 0.4)
+                t_at = word_at(ln, at) if isinstance(at, str) else t + float(at)
+                until = st.get("until")
+                t_end = (word_at(ln, until) if isinstance(until, str) else t + float(until)) if until is not None else span_end - 0.25
+                c["overlays"].append(dict(st, kind="stamp", start=t_at, end=max(t_at + 1.4, t_end)))
+                c["sfx"].append(("stamp", t_at - 0.02))
+            # The year badge in the corner (a time machine for the viewer): set on a line, it stays until the
+            # next line that sets one ("year": "" hides it) or the end of the chapter.
+            if "year" in ln:
+                for o in c["overlays"]:
+                    if o["kind"] == "year" and o["end"] is None:
+                        o["end"] = t
+                if ln["year"]:
+                    c["overlays"].append({"kind": "year", "text": str(ln["year"]), "start": t + 0.05, "end": None})
             for name, at in ln.get("sfx", []):
                 c["sfx"].append((name, t + (float(at) if not isinstance(at, str) else word_at(ln, at))))
             t = span_end
@@ -1500,6 +1517,9 @@ def build(script):
         if c["shots"]:
             c["shots"][-1].end = t
         c["end"] = t
+        for o in c["overlays"]:
+            if o["kind"] == "year" and o["end"] is None:
+                o["end"] = t - 0.6
         chapters.append(c)
     return chapters
 
@@ -1552,11 +1572,73 @@ def on_img(s, style):
     return glow(para(s, "inter-sb", 44, BONE + (255,), 1500, align="center"), (0, 0, 0), radius=12, strength=1.0)
 
 
+STAMP_COLORS = {"red": (198, 36, 28), "green": (52, 132, 78), "amber": (226, 148, 30), "bone": BONE}
+
+
+@functools.lru_cache(maxsize=32)
+def stamp_img(s, color="red", size=118, rot=-7.0):
+    """A rubber stamp: thick rounded border and big letters, inked unevenly, a little crooked."""
+    col = STAMP_COLORS.get(color, STAMP_COLORS["red"])
+    lines = [text(part.upper(), "inter-b", size if i == 0 else int(size * 0.42), col + (255,), tracking=8 if i == 0 else 4)
+             for i, part in enumerate(s.split("|"))]
+    pad = int(size * 0.3)
+    w = max(l.width for l in lines) + pad * 2
+    h = sum(l.height for l in lines) + int(size * 0.12) * (len(lines) - 1) + pad * 2
+    img = Image.new("RGBA", (w + 24, h + 24), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    bw = max(8, int(size * 0.1))
+    d.rounded_rectangle((12, 12, 12 + w, 12 + h), radius=int(size * 0.16), outline=col + (255,), width=bw)
+    y = 12 + pad
+    for l in lines:
+        img.alpha_composite(l, (12 + (w - l.width) // 2, y))
+        y += l.height + int(size * 0.12)
+    arr = np.asarray(img).astype(np.float32)
+    rng = np.random.default_rng(sum(map(ord, s)) + int(size))
+    n = cv2.GaussianBlur(rng.random(arr.shape[:2]).astype(np.float32), (0, 0), 2.2)
+    n = (n - n.min()) / max(1e-6, n.max() - n.min())
+    grain = rng.random(arr.shape[:2]).astype(np.float32)
+    ink = np.clip(0.78 + 1.1 * (n - 0.35), 0.0, 1.0) * np.where(grain > 0.05, 1.0, 0.3)
+    arr[..., 3] *= ink
+    out = Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8), "RGBA")
+    return out.rotate(rot, resample=Image.BICUBIC, expand=True)
+
+
+@functools.lru_cache(maxsize=32)
+def year_img(s):
+    """The year badge: a big year with a thin amber rule over it, for the top-right corner."""
+    big = text(s, "old-b", 66, BONE + (255,), tracking=2)
+    rule = Image.new("RGBA", (max(80, big.width), 3), (214, 150, 60, 230))
+    pad = 22
+    w, h = big.width + pad * 2, big.height + pad * 2 + 10
+    arr = np.zeros((h, w, 4), np.uint8)
+    arr[..., :3] = (10, 8, 6)
+    arr[..., 3] = 150
+    img = Image.fromarray(arr, "RGBA")
+    img.alpha_composite(rule, (w - pad - rule.width, pad - 4))
+    img.alpha_composite(big, (pad, pad + 6))
+    return img
+
+
 def draw_overlays(f, c, t, shot_now):
     for o in c["overlays"]:
         if not (o["start"] <= t <= o["end"] + 0.5):
             continue
         a = fade(t, o["start"], 0.45) * (1 - fade(t, o["end"], 0.45))
+        if o["kind"] == "stamp":
+            img = stamp_img(o["text"], o.get("color", "red"), int(o.get("size", 118)), float(o.get("rot", -7.0)))
+            k = clamp((t - o["start"]) / 0.16)
+            sc = 1.0 + 0.55 * (1 - ease_out(k))                      # comes down from above and lands
+            a = clamp((t - o["start"]) / 0.07) * (1 - fade(t, o["end"], 0.4))
+            if sc != 1.0:
+                img = img.resize((max(1, int(img.width * sc)), max(1, int(img.height * sc))), Image.BILINEAR)
+            px, py = o.get("pos", [0.74, 0.30])
+            put_c(f, img, W * px, H * py, a)
+            continue
+        if o["kind"] == "year":
+            img = year_img(o["text"])
+            k = ease_out(clamp((t - o["start"]) / 0.45))
+            put(f, img, W - 48 - img.width, 44 - (1 - k) * 18, a)
+            continue
         if o["kind"] == "lower":
             img = lower_img(o["text"])
             slide = (1 - ease_out((t - o["start"]) / 0.6)) * 40

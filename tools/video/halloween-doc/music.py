@@ -584,4 +584,23 @@ def _sfx(name, seed=0):
         return bandpass(n, 300, 2500) * e.astype(np.float32) * 0.3
     if name == "fire":
         return np.stack([crackle(6.0, seed, 1.0, 26) + rumble(6.0, seed, 0.7)] * 2, axis=1) * env(int(6.0 * SR), 0.8, 2.0)[:, None]
+    if name == "stamp":                       # a rubber stamp coming down on paper: a slap and a short low knock
+        tt = t_axis(0.9)
+        slap = bandpass(rng.normal(0, 1, len(tt)).astype(np.float32), 700, 5200) * np.exp(-tt * 38).astype(np.float32)
+        knock = (np.sin(2 * np.pi * 95 * tt) * np.exp(-tt * 26)).astype(np.float32)
+        body = lowpass(rng.normal(0, 1, len(tt)).astype(np.float32), 600) * np.exp(-tt * 18).astype(np.float32) * 0.5
+        return reverb((slap * 0.8 + knock * 0.9 + body).astype(np.float32), 0.8, 0.18, seed=11)
+    if name == "knock":                       # three knocks on a wooden door
+        out = np.zeros(int(1.6 * SR), np.float32)
+        tt = t_axis(0.25)
+        k1 = (np.sin(2 * np.pi * 160 * tt) * np.exp(-tt * 40) + lowpass(rng.normal(0, 1, len(tt)).astype(np.float32), 1500) * np.exp(-tt * 60) * 0.6).astype(np.float32)
+        for i, at in enumerate((0.0, 0.26, 0.52)):
+            j = int(at * SR)
+            out[j:j + len(k1)] += k1 * (1.0 - 0.1 * i)
+        return reverb(out, 1.2, 0.25, seed=12)
+    if name == "match":                       # a match struck and catching
+        tt = t_axis(1.3)
+        scrape = bandpass(rng.normal(0, 1, len(tt)).astype(np.float32), 1500, 7000) * (np.exp(-((tt - 0.12) / 0.07) ** 2)).astype(np.float32)
+        flare = highpass(rng.normal(0, 1, len(tt)).astype(np.float32), 2500) * (np.clip((tt - 0.18) / 0.05, 0, 1) * np.exp(-(tt - 0.18).clip(0) * 3)).astype(np.float32) * 0.35
+        return reverb((scrape * 0.7 + flare).astype(np.float32), 1.0, 0.2, seed=13)
     return np.zeros(int(0.5 * SR), np.float32)
