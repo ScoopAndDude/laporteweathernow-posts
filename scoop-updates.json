@@ -1,38 +1,20 @@
 {
  "about": "State for scripts/scoop_update.py, the automatic updates to today's Daily Scoop: the forecast the Scoop was written from (baseline), what was last published, the alerts last seen, and today's updates. Replaced each day. Safe to delete: the job starts over from the current post.",
- "date": "2026-10-20",
- "post": "2026-10-20T05:32:00-05:00",
+ "date": "2026-10-21",
+ "post": "2026-10-21T05:32:00-05:00",
  "kind": "written",
  "baseline": {
-  "from": "2026-10-20T05:02:10-05:00",
+  "from": "2026-10-21T05:02:16-05:00",
   "source": "nws-snapshot.json (what the Scoop was written from)",
   "periods": {
-   "night 2026-10-19": {
-    "name": "Overnight",
-    "temp": 41,
-    "rain": 0,
-    "short": "Mostly Clear"
-   },
-   "day 2026-10-20": {
-    "name": "Tuesday",
-    "temp": 68,
-    "rain": 0,
-    "short": "Sunny"
-   },
-   "night 2026-10-20": {
-    "name": "Tuesday Night",
-    "temp": 41,
-    "rain": 0,
-    "short": "Mostly Clear"
-   },
    "day 2026-10-21": {
-    "name": "Wednesday",
+    "name": "Today",
     "temp": 69,
     "rain": 0,
-    "short": "Sunny"
+    "short": "Patchy Fog then Sunny"
    },
    "night 2026-10-21": {
-    "name": "Wednesday Night",
+    "name": "Tonight",
     "temp": 44,
     "rain": 0,
     "short": "Mostly Clear"
@@ -45,25 +27,25 @@
    },
    "night 2026-10-22": {
     "name": "Thursday Night",
-    "temp": 43,
+    "temp": 42,
     "rain": 0,
     "short": "Mostly Clear"
    },
    "day 2026-10-23": {
     "name": "Friday",
-    "temp": 66,
+    "temp": 69,
     "rain": 0,
     "short": "Sunny"
    },
    "night 2026-10-23": {
     "name": "Friday Night",
-    "temp": 41,
+    "temp": 44,
     "rain": 0,
     "short": "Mostly Clear"
    },
    "day 2026-10-24": {
     "name": "Saturday",
-    "temp": 66,
+    "temp": 68,
     "rain": 0,
     "short": "Mostly Sunny"
    },
@@ -75,9 +57,9 @@
    },
    "day 2026-10-25": {
     "name": "Sunday",
-    "temp": 69,
+    "temp": 72,
     "rain": 0,
-    "short": "Mostly Sunny"
+    "short": "Partly Sunny"
    },
    "night 2026-10-25": {
     "name": "Sunday Night",
@@ -87,112 +69,34 @@
    },
    "day 2026-10-26": {
     "name": "Monday",
-    "temp": 64,
+    "temp": 66,
     "rain": 0,
     "short": "Partly Sunny"
+   },
+   "night 2026-10-26": {
+    "name": "Monday Night",
+    "temp": 46,
+    "rain": 0,
+    "short": "Mostly Cloudy"
+   },
+   "day 2026-10-27": {
+    "name": "Tuesday",
+    "temp": 57,
+    "rain": 20,
+    "short": "Slight Chance Rain Showers"
+   },
+   "night 2026-10-27": {
+    "name": "Tuesday Night",
+    "temp": 41,
+    "rain": 20,
+    "short": "Slight Chance Rain Showers then Mostly Cloudy"
    }
   },
   "alerts": [],
   "alertRows": [],
   "hourly": {
-   "2026-10-20T05": {
-    "temp": 41,
-    "rain": 0
-   },
-   "2026-10-20T06": {
-    "temp": 41,
-    "rain": 0
-   },
-   "2026-10-20T07": {
-    "temp": 41,
-    "rain": 0
-   },
-   "2026-10-20T08": {
-    "temp": 44,
-    "rain": 0
-   },
-   "2026-10-20T09": {
-    "temp": 49,
-    "rain": 0
-   },
-   "2026-10-20T10": {
-    "temp": 54,
-    "rain": 0
-   },
-   "2026-10-20T11": {
-    "temp": 58,
-    "rain": 0
-   },
-   "2026-10-20T12": {
-    "temp": 61,
-    "rain": 0
-   },
-   "2026-10-20T13": {
-    "temp": 64,
-    "rain": 0
-   },
-   "2026-10-20T14": {
-    "temp": 66,
-    "rain": 0
-   },
-   "2026-10-20T15": {
-    "temp": 67,
-    "rain": 0
-   },
-   "2026-10-20T16": {
-    "temp": 66,
-    "rain": 0
-   },
-   "2026-10-20T17": {
-    "temp": 63,
-    "rain": 0
-   },
-   "2026-10-20T18": {
-    "temp": 58,
-    "rain": 0
-   },
-   "2026-10-20T19": {
-    "temp": 54,
-    "rain": 0
-   },
-   "2026-10-20T20": {
-    "temp": 51,
-    "rain": 0
-   },
-   "2026-10-20T21": {
-    "temp": 50,
-    "rain": 0
-   },
-   "2026-10-20T22": {
-    "temp": 49,
-    "rain": 0
-   },
-   "2026-10-20T23": {
-    "temp": 48,
-    "rain": 0
-   },
-   "2026-10-21T00": {
-    "temp": 47,
-    "rain": 0
-   },
-   "2026-10-21T01": {
-    "temp": 46,
-    "rain": 0
-   },
-   "2026-10-21T02": {
-    "temp": 45,
-    "rain": 0
-   },
-   "2026-10-21T03": {
-    "temp": 44,
-    "rain": 0
-   },
-   "2026-10-21T04": {
-    "temp": 43,
-    "rain": 0
-   },
    "2026-10-21T05": {
-    "temp": 42,
+    "temp": 41,
     "rain": 0
    },
    "2026-10-21T06": {
@@ -200,31 +104,31 @@
     "rain": 0
    },
    "2026-10-21T07": {
-    "temp": 41,
+    "temp": 40,
     "rain": 0
    },
    "2026-10-21T08": {
-    "temp": 43,
+    "temp": 45,
     "rain": 0
    },
    "2026-10-21T09": {
-    "temp": 48,
+    "temp": 50,
     "rain": 0
    },
    "2026-10-21T10": {
-    "temp": 53,
+    "temp": 55,
     "rain": 0
    },
    "2026-10-21T11": {
-    "temp": 58,
+    "temp": 61,
     "rain": 0
    },
    "2026-10-21T12": {
-    "temp": 63,
+    "temp": 64,
     "rain": 0
    },
    "2026-10-21T13": {
-    "temp": 66,
+    "temp": 67,
     "rain": 0
    },
    "2026-10-21T14": {
@@ -232,36 +136,114 @@
     "rain": 0
    },
    "2026-10-21T15": {
-    "temp": 68,
+    "temp": 69,
     "rain": 0
    },
    "2026-10-21T16": {
+    "temp": 68,
+    "rain": 0
+   },
+   "2026-10-21T17": {
     "temp": 66,
+    "rain": 0
+   },
+   "2026-10-21T18": {
+    "temp": 62,
+    "rain": 1
+   },
+   "2026-10-21T19": {
+    "temp": 54,
+    "rain": 1
+   },
+   "2026-10-21T20": {
+    "temp": 52,
+    "rain": 1
+   },
+   "2026-10-21T21": {
+    "temp": 51,
+    "rain": 1
+   },
+   "2026-10-21T22": {
+    "temp": 50,
+    "rain": 1
+   },
+   "2026-10-21T23": {
+    "temp": 49,
+    "rain": 1
+   },
+   "2026-10-22T00": {
+    "temp": 49,
+    "rain": 1
+   },
+   "2026-10-22T01": {
+    "temp": 48,
+    "rain": 1
+   },
+   "2026-10-22T02": {
+    "temp": 47,
+    "rain": 1
+   },
+   "2026-10-22T03": {
+    "temp": 46,
+    "rain": 0
+   },
+   "2026-10-22T04": {
+    "temp": 45,
+    "rain": 0
+   },
+   "2026-10-22T05": {
+    "temp": 45,
+    "rain": 0
+   },
+   "2026-10-22T06": {
+    "temp": 44,
+    "rain": 0
+   },
+   "2026-10-22T07": {
+    "temp": 44,
+    "rain": 0
+   },
+   "2026-10-22T08": {
+    "temp": 47,
+    "rain": 0
+   },
+   "2026-10-22T09": {
+    "temp": 53,
+    "rain": 0
+   },
+   "2026-10-22T10": {
+    "temp": 59,
+    "rain": 0
+   },
+   "2026-10-22T11": {
+    "temp": 63,
+    "rain": 0
+   },
+   "2026-10-22T12": {
+    "temp": 66,
+    "rain": 0
+   },
+   "2026-10-22T13": {
+    "temp": 68,
+    "rain": 0
+   },
+   "2026-10-22T14": {
+    "temp": 69,
+    "rain": 0
+   },
+   "2026-10-22T15": {
+    "temp": 69,
+    "rain": 0
+   },
+   "2026-10-22T16": {
+    "temp": 68,
     "rain": 0
    }
   },
-  "hourlyFrom": "2026-10-20T05:47:00-05:00"
+  "hourlyFrom": "2026-10-21T05:47:00-05:00"
  },
- "published": {
-  "time": "2026-10-20T11:17:00-05:00",
-  "alertKeys": [],
-  "alerts": [],
-  "changes": [],
-  "off": [
-   "warm"
-  ],
-  "paragraph": "Automatic update, 11:17 a.m.: It's running warmer than NWS's earlier hour-by-hour forecast: at 10:35 a.m. the La Porte airport reported 63 degrees, where that forecast had about 58. There are no watches, warnings, or advisories for La Porte County right now."
- },
+ "published": null,
  "alertRows": [],
  "missing": [],
- "updates": [
-  {
-   "time": "2026-10-20T10:17:00-05:00",
-   "why": "airport running wet"
-  },
-  {
-   "time": "2026-10-20T11:17:00-05:00",
-   "why": "airport running warm"
-  }
- ]
+ "updates": []
 }
