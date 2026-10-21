@@ -44,6 +44,7 @@ BONE = (240, 230, 212)
 PAPER = (228, 211, 176)
 BLOOD = (178, 30, 26)
 NIGHT = (10, 9, 8)
+GLOW = (34, 92, 104)  # the cold glow behind the title and chapter names
 
 # ------------------------------------------------------------------------------------------------ fonts
 FONTS = {
@@ -494,7 +495,15 @@ class Shot:
         if not self.ready:
             self.prepare()
             self.ready = True
-        return self.frame(t)
+        f = self.frame(t)
+        fl = self.spec.get("flash")                # seconds into the shot: dark until then, a white flare, then the picture
+        if fl is not None:
+            tl = t - self.start
+            if tl < fl:
+                f = Image.blend(f, Image.new("RGB", f.size, (6, 5, 4)), 0.95)
+            else:
+                f = Image.blend(f, Image.new("RGB", f.size, (255, 250, 236)), min(1.0, math.exp(-(tl - fl) * 4.5)))
+        return f
 
     def frame(self, t):
         return Image.new("RGB", (W, H), NIGHT)
@@ -1020,7 +1029,7 @@ class Timeline(Shot):
 class Title(Shot):
     def prepare(self):
         s = self.spec
-        self.t1 = glow(text(s["title"], "fell", s.get("size", 150), BONE + (255,), tracking=6), (90, 20, 10), radius=30, strength=0.9)
+        self.t1 = glow(text(s["title"], "fell", s.get("size", 150), BONE + (255,), tracking=6), GLOW, radius=30, strength=0.9)
         self.t2 = text(s.get("subtitle", ""), "fell-it", 60, (214, 196, 166, 255)) if s.get("subtitle") else None
         self.t0 = text(s.get("kicker", ""), "inter-sb", 28, (190, 172, 140, 255), tracking=10) if s.get("kicker") else None
 
@@ -1044,7 +1053,7 @@ class Chapter(Shot):
         s = self.spec
         n = s.get("n")
         self.k = text(f"CHAPTER {NUMBERS[n].upper()}" if n else s.get("kicker", ""), "inter-sb", 30, (196, 176, 140, 255), tracking=12)
-        self.t = glow(text(s["title"], "fell", 140, BONE + (255,), tracking=3), (80, 18, 8), radius=26, strength=0.75)
+        self.t = glow(text(s["title"], "fell", 140, BONE + (255,), tracking=3), GLOW, radius=26, strength=0.75)
         self.sub = text(s["sub"], "fell-it", 48, (200, 184, 156, 255)) if s.get("sub") else None
         self.rule = Image.new("RGBA", (360, 2), (196, 176, 140, 200))
 
@@ -1157,6 +1166,9 @@ MAPS = {
                "files": ["world-land", "world-lakes", "world-borders", "world-states"]},
     "usa": {"bbox": [-131.0, 21.0, -59.0, 53.0], "px": 5200, "grid": 10,
             "files": ["world-land", "world-lakes", "world-borders", "world-states"]},
+    # La Porte County and its neighbors (county lines: Census 2010, via plotly/datasets; rivers: Natural Earth)
+    "county": {"bbox": [-87.45, 41.10, -86.00, 42.00], "px": 8000, "grid": 0.1,
+               "files": ["county-fill", "mid-lakes", "county-lines", "mid-states", "county-rivers", "mid-rail"]},
 }
 LAND, WATER, COAST = (228, 214, 180), (172, 180, 168), (64, 50, 36)
 
@@ -1207,6 +1219,10 @@ class MapBase:
             return []
         P = lambda ring: [self.xy(x, y) for x, y in ring]
         files = m["files"]
+        if "county-fill" in files:                  # the county itself, a shade lighter than its neighbors
+            for f in self.geo("county-fill"):
+                for poly in rings(f["geometry"]):
+                    d.polygon(P(poly[0]), fill=(240, 229, 200))
         if "world-land" in files:
             for f in self.geo("world-land"):
                 for poly in rings(f["geometry"]):
@@ -1245,6 +1261,21 @@ class MapBase:
                 for f in self.geo(bf):
                     for ln in lines(f["geometry"]):
                         dashed(d, P(ln), col, max(1, lw - 1), dash * lw / 2, dash * lw / 3)
+        if "county-rivers" in files:
+            for f in self.geo("county-rivers"):
+                for ln in lines(f["geometry"]):
+                    d.line(P(ln), fill=(134, 148, 140), width=max(2, lw + 1))
+        if "county-lines" in files:                 # neighbors dashed, La Porte County's own line solid, on top
+            feats = self.geo("county-lines")
+            for main in (False, True):
+                for f in feats:
+                    if bool((f.get("properties") or {}).get("main")) != main:
+                        continue
+                    for ln in lines(f["geometry"]):
+                        if main:
+                            d.line(P(ln), fill=(92, 66, 44), width=max(3, lw + 2), joint="curve")
+                        else:
+                            dashed(d, P(ln), (150, 124, 96), max(1, lw - 1), 9 * lw / 2, 9 * lw / 3)
         if "mid-rail" in files:
             for f in self.geo("mid-rail"):
                 for ln in lines(f["geometry"]):
@@ -1277,11 +1308,15 @@ def dashed(d, pts, fill, width, dash, gap):
     for i in range(len(pts) - 1):
         a, b = pts[i], pts[i + 1]
         L = math.dist(a, b)
+        if L <= 0:
+            continue
         pos = 0.0
         while pos < L - 1e-6:
             ph = run % period
-            on = ph < dash
-            step = min(L - pos, (dash - ph) if on else (period - ph))
+            on = ph < dash - 1e-6
+            # (a step can come out as a rounding error's width when ph lands on a dash's end: never step less than
+            # a thousandth of a pixel, or the loop can stall)
+            step = min(L - pos, max(1e-3, (dash - ph) if on else (period - ph)))
             if on:
                 d.line([(lerp(a[0], b[0], pos / L), lerp(a[1], b[1], pos / L)),
                         (lerp(a[0], b[0], (pos + step) / L), lerp(a[1], b[1], (pos + step) / L))], fill=fill, width=width)

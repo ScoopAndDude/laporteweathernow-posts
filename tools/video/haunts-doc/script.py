@@ -128,8 +128,10 @@ POSEY = {"name": "Posey Chapel", "at": [-86.6273, 41.7531]}
 ROLLING = {"name": "Rolling Prairie", "at": [-86.6161, 41.6742]}
 KINGSBURY = {"name": "Kingsbury", "at": [-86.6978, 41.5281]}
 KFH = {"name": "Kingsford Heights", "at": [-86.6917, 41.4806]}
-LAKE = {"name": "LAKE MICHIGAN", "at": [-86.98, 41.86], "dot": 0, "font": "fell-sc", "size": 46, "tracking": 4}
-COUNTY = {"name": "LA PORTE COUNTY", "at": [-86.74, 41.42], "dot": 0, "font": "fell-sc", "size": 40, "tracking": 6}
+LAKE = {"name": "LAKE MICHIGAN", "at": [-87.25, 41.74], "dot": 0, "font": "fell-sc", "size": 46, "tracking": 4}
+COUNTY = {"name": "LA PORTE COUNTY", "at": [-86.90, 41.52], "dot": 0, "font": "fell-sc", "size": 40, "tracking": 6}
+MICH = {"name": "MICHIGAN", "at": [-86.50, 41.79], "dot": 0, "font": "fell-sc", "size": 38, "tracking": 8}
+IND = {"name": "INDIANA", "at": [-86.30, 41.33], "dot": 0, "font": "fell-sc", "size": 38, "tracking": 8}
 
 
 def place(p, show=0.0, **kw):
@@ -152,7 +154,8 @@ CHAPTERS = [
         L("o05", "And in the summer of 1905, a newspaper told of a man with no head, standing by the railroad tracks after dark, flagging down a train.",
           TODO("1905 newspaper: headless ghost"), sfx=[["train", 2.5]]),
         L("o06", "These are the ghost stories of La Porte County, Indiana.",
-          MAP(**CO, cam0=[-86.74, 41.60, 0.9], cam1=[-86.74, 41.60, 0.75], move_end=0.9, places=[LAKE, COUNTY, place(LP, 0.2), place(MC, 0.35)])),
+          MAP(**CO, cam0=[-86.70, 41.55, 1.40], cam1=[-86.70, 41.55, 1.22], move_end=0.9,
+              places=[LAKE, COUNTY, MICH, IND, place(MC, 0.15), place(LP, 0.3)])),
         L("o07", "And this is the history behind them: what's real, what's legend, and what no one can prove.", DARK, gap=0.8),
     ]),
     dict(id="title", music="title", tail=0.3, lines=[
@@ -339,7 +342,7 @@ CHAPTERS = [
     # ------------------------------------------------------------------ 8. Victory City
     dict(id="c8", music="war", card=dict(type="chapter", n=8, title="Victory City", sub="Kingsbury · 1940 – 1960"), lines=[
         L("c8-01", "In the fall of 1940, before the United States entered the Second World War, the government picked farmland south of La Porte for an ammunition plant.",
-          MAP(**CO, cam0=[-86.72, 41.58, 0.55], cam1=[-86.70, 41.52, 0.34], move_end=0.85,
+          MAP(**CO, cam0=[-86.72, 41.56, 0.75], cam1=[-86.71, 41.53, 0.50], move_end=0.85,
               places=[place(LP, 0.0), place(KINGSBURY, 0.3), place(KFH, 0.55)])),
         L("c8-02", "It took in more than thirteen thousand acres. About two hundred and fifty families had to leave their homes and farms.",
           BIG("13,454 acres", cap="about 250 families moved out", size=130)),

@@ -25,7 +25,7 @@ PRONOUNCE = {
     "Cathcart": "kˈæθkɑɹt", "Cathcart's": "kˈæθkɑɹts", "derecho": "dəɹˈAʧO", "tetryl": "tˈɛtɹəl",
     "Flaherty's": "flˈæhəɹtiz", "Flaherty": "flˈæhəɹti", "Posey": "pˈOzi", "Galena": "ɡəlˈinə",
     "Muncie": "mˈʌnsi", "Hoosier": "hˈuʒəɹ", "Kingsford": "kˈɪŋzfəɹd", "Dillinger": "dˈɪlɪnʤəɹ",
-    "Helgelien": "hˈɛlɡəlin", "Gunness": "ɡˈʌnəs",
+    "Helgelien": "hˈɛlɡəlin", "Gunness": "ɡˈʌnəs", "bass": "bˈAs",
 }
 
 
