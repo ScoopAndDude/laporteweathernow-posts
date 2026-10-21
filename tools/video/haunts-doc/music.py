@@ -408,8 +408,8 @@ def cue(name, seconds, seed=1):
             t += every
 
     if name == "open":
-        place(buf, waves(seconds + 2, seed, 0.9), 0, 1.0)
-        place(buf, wind(seconds + 2, seed + 1, 0.8), 0, 0.8)
+        place(buf, waves(seconds + 2, seed, 0.55), 0, 1.0)
+        place(buf, wind(seconds + 2, seed + 1, 0.5), 0, 0.8)
         place(buf, drone("A1", seconds + 2, seed, 1.0), 0, 0.8)
         place(buf, drone("E2", seconds + 2, seed + 1, 0.5), 0, 0.5)
         loop(lambda t: place(buf, bell(hz("A2"), 7.0, seed + int(t)), t + 1.0, 0.3, -0.3), 13.0)
@@ -421,13 +421,13 @@ def cue(name, seconds, seed=1):
         place(buf, rumble(seconds + 1, seed, 1.0), 0, 0.8)
         melody(buf, 1.4, H_THEME[:4], e8 * 1.4, "glass", 0, 0.7, seed, pan=0.15)
     elif name == "door":
-        place(buf, wind(seconds + 2, seed, 0.7), 0, 0.7)
+        place(buf, wind(seconds + 2, seed, 0.45), 0, 0.7)
         piano_arps(buf, 0.3, H_PROG_A, bar, nb, 6, 0.7, seed)
         chords(buf, 0.0, H_PROG_A, bar, nb, 700, 0.4, seed + 5)
         loop(lambda t: melody(buf, t, H_THEME if int(t / phrase) % 4 == 0 else H_THEME_B, e8, "glass", 0, 0.6, seed + int(t), pan=0.2),
              phrase * 2, first=phrase)
     elif name == "keeper":
-        place(buf, waves(seconds + 2, seed, 1.1, period=6.5), 0, 1.0)
+        place(buf, waves(seconds + 2, seed, 0.65, period=6.5), 0, 1.0)
         chords(buf, 0.0, H_PROG_A + H_PROG_B, bar, nb, 900, 0.6, seed)
         loop(lambda t: melody(buf, t, H_THEME, e8 * 1.05, "box", 0, 0.75, seed + int(t), pan=0.25), phrase * 2.0, first=bar)
         loop(lambda t: melody(buf, t, H_THEME_B, e8 * 1.05, "box", 0, 0.55, seed + 40 + int(t), pan=-0.25), phrase * 2.0, first=bar + phrase)
@@ -462,10 +462,10 @@ def cue(name, seconds, seed=1):
         chords(buf, 0.0, H_PROG_B, bar * 2, int(seconds / (bar * 2)) + 1, 650, 0.7, seed)
         loop(lambda t: place(buf, bell(hz("A2"), 8.0, seed + int(t)), t + 1.5, 0.45, 0.0), 9.5)
         place(buf, drone("A1", seconds + 2, seed, 1.0), 0, 0.6)
-        place(buf, wind(seconds + 2, seed, 0.7), 0, 0.7)
+        place(buf, wind(seconds + 2, seed, 0.45), 0, 0.7)
         loop(lambda t: melody(buf, t, H_THEME_B, e8 * 1.25, "glass", -1, 0.5, seed + int(t), pan=-0.2), phrase * 2.5, first=phrase)
     elif name == "chapel":
-        place(buf, wind(seconds + 2, seed, 0.8), 0, 0.8)
+        place(buf, wind(seconds + 2, seed, 0.5), 0, 0.8)
         organ_chords(buf, 0.2, HYMN, bar * 1.5, int(seconds / (bar * 1.5)) + 1, 0.9, seed)
         loop(lambda t: melody(buf, t, H_THEME, e8 * 1.5, "organ", 0, 0.5, seed + int(t)), bar * 1.5 * 16, first=bar * 1.5 * 8)
         loop(lambda t: place(buf, bell(hz("E3"), 7.0, seed + int(t)), t, 0.2, 0.4), 17.0, first=4.0)
@@ -486,7 +486,7 @@ def cue(name, seconds, seed=1):
         loop(pulse, bar / 2)
         loop(lambda t: melody(buf, t, H_THEME_B, e8, "piano", -1, 0.45, seed + int(t), pan=-0.2), phrase * 2, first=phrase)
     elif name == "end":
-        place(buf, waves(seconds + 2, seed, 0.6), 0, 0.7)
+        place(buf, waves(seconds + 2, seed, 0.4), 0, 0.7)
         chords(buf, 0.0, H_PROG_A + H_PROG_B, bar, nb, 800, 0.6, seed)
         tt = melody(buf, 1.0, H_THEME, e8 * 1.1, "piano", 0, 0.7, seed)
         tt = melody(buf, tt, H_THEME_B, e8 * 1.1, "glass", 0, 0.7, seed + 9)
