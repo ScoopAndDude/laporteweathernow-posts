@@ -579,7 +579,7 @@ def news_clips(items, old):
                 log("  info.json failed:", pfile, e)
                 continue
         big = None
-        for size in (f"!{max(iw, ih)},{max(iw, ih)}", "full", "pct:75", "!5200,5200"):
+        for size in (f"!{max(iw, ih)},{max(iw, ih)}", "full", "pct:75", "!10000,10000", "!8000,8000", "!5200,5200"):
             try:
                 big = Image.open(io.BytesIO(get(f"{base}/full/{size}/0/default.jpg", loc=True))).convert("RGB")
                 log(f"  page {pfile} at {size}: {big.size}")

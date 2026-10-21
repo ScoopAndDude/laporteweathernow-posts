@@ -1898,7 +1898,8 @@ def cmd_final(outdir, name=SLUG + ".mp4"):
     return out
 
 
-LICENSE_URL = {"cc by 2.0": "https://creativecommons.org/licenses/by/2.0/", "cc by 3.0": "https://creativecommons.org/licenses/by/3.0/",
+LICENSE_URL = {"cc by 1.0": "https://creativecommons.org/licenses/by/1.0/", "cc by 2.0": "https://creativecommons.org/licenses/by/2.0/",
+               "cc by 2.5": "https://creativecommons.org/licenses/by/2.5/", "cc by 3.0": "https://creativecommons.org/licenses/by/3.0/",
                "cc by 4.0": "https://creativecommons.org/licenses/by/4.0/", "cc0": "https://creativecommons.org/publicdomain/zero/1.0/"}
 
 
@@ -1924,8 +1925,10 @@ def clean_credit(c):
 
 
 def clean_who(w):
+    import html
     import re
-    w = re.sub(r"(Unknown author|Unknown photographer|or not provided|Unknown)", "", w or "", flags=re.I)
+    w = html.unescape(w or "").strip(" /")
+    w = re.sub(r"(Unknown author|Unknown photographer|or not provided|Unknown)", "", w, flags=re.I)
     w = re.sub(r"\s+from\s.*$", "", w).strip(" ,;")
     w = re.split(r"(?<=[a-z])\.\s", w)[0]            # a long credit line: its first sentence
     return w[:70].strip()
@@ -1947,7 +1950,8 @@ def used_pictures(chapters):
                 low = lic.lower()
                 pd = low.startswith(("public domain", "pd", "no known", "no restrictions"))
                 title = f"{paper_name(m.get('artist', ''))}, {nice_date(m.get('date', ''))}" if m.get("kind") == "newspaper-page" else clean_title(m.get("title", f))
-                out.append({"file": f, "title": title, "who": clean_who(m.get("artist", "")) or clean_credit(m.get("credit", "")),
+                who = "" if m.get("kind") == "newspaper-page" else (clean_who(m.get("artist", "")) or clean_credit(m.get("credit", "")))
+                out.append({"file": f, "title": title, "who": who,
                             "license": "public domain" if pd else lic, "license_url": LICENSE_URL.get(low, ""),
                             "page": m.get("page", ""), "source": m.get("source", ""), "kind": m.get("kind", ""),
                             "date": m.get("date", "")})
@@ -1964,6 +1968,10 @@ def cmd_credits(outdir=None):
         lic = f"[{p['license']}]({p['license_url']})" if p["license_url"] else p["license"]
         src = f"[{p['source'] or 'link'}]({p['page']})" if p["page"] else p["source"]
         rows.append(f"| {p['title']} | {p['who'] or '-'} | {lic} | {src} |")
+    yt = json.load(open(os.path.join(HERE, "youtube.json"), encoding="utf-8"))
+    if yt.get("sources"):
+        rows += ["", "## Sources", "", "The history in the film comes from these (old newspapers are from the Library of Congress's Chronicling America):", ""]
+        rows += [f"- {x}" for x in yt["sources"]]
     rows += ["", "Music and sound effects were written for the film (tools/video/haunts-doc/music.py). Fonts: IM Fell English and Old Standard TT (SIL Open Font License), Special Elite (Apache 2.0), Lora (OFL), Inter (OFL). Maps from Natural Earth (public domain)."]
     path = os.path.join(HERE, "CREDITS.md")
     open(path, "w", encoding="utf-8").write("\n".join(rows) + "\n")
@@ -2003,13 +2011,22 @@ def cmd_description(outdir):
                 out.append(f"Newspaper pages: {lic}")
             elif who == "Public domain":
                 pd.append((lic, titles))
+            elif compact and lic.startswith("CC0"):
+                pd.append((lic, titles))                    # CC0 asks for no credit: counted with the public domain
             elif compact and len(titles) > 2:
                 out.append(f"{who}, {lic}: {len(titles)} photos and postcards")
             else:
                 out.append(f"{who}, {lic}: " + "; ".join(titles))
         if pd:
             if compact:
-                out.append("Public domain: " + "; ".join(sorted({lic for lic, _ in pd})))
+                srcs = {}
+                for p in pics:
+                    if (p["license"] == "public domain" or p["license"].startswith("CC0")) and p["kind"] != "newspaper-page":
+                        s0 = p["source"] or "other archives"
+                        srcs[s0] = srcs.get(s0, 0) + 1
+                names = [k if k.startswith(("Wikimedia", "other")) else "the " + k for k, _ in sorted(srcs.items(), key=lambda kv: -kv[1])]
+                out.append(f"Public domain and CC0: {sum(srcs.values())} photos, drawings, maps and book pages from " +
+                           (", ".join(names[:-1]) + " and " + names[-1] if len(names) > 1 else names[0]))
             else:
                 out += [f"Public domain ({lic}): " + "; ".join(titles) for lic, titles in pd]
         return out + [full_list]

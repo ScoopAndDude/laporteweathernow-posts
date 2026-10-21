@@ -1,28 +1,11 @@
 {
-  "about": "Third picture pass for the hauntings documentary (fetch.py --extra, Oct. 21, 2026): the 1869 bird's-eye view of Michigan City and the 1862 county map from the Library of Congress (skipped before because of how their free-to-use notice is worded), every drawing in the HABS survey of the lighthouse, Potawatomi pictures, old railroad water tanks, and full-resolution cut-outs of the 1905 headless-ghost stories and the 1910 Barker heiress stories found on the last pass. Same rules: public domain, CC0 or CC BY only.",
-  "commons": [
-    {"name": "pota-cat", "category": "Category:Potawatomi", "depth": 1, "max": 30},
-    {"name": "pota-winter", "search": "George Winter Potawatomi", "max": 20},
-    {"name": "tankz-cat", "category": "Category:Railway water towers in the United States", "depth": 1, "max": 24},
-    {"name": "tankz-search", "search": "railroad water tank", "max": 16}
-  ],
-  "loc_photos": [
-    {"name": "tankz-loc", "q": "railroad water tank", "max": 15}
-  ],
-  "loc_maps": [
-    {"name": "mapz-mc", "q": "bird's eye view of michigan city", "max": 3, "max_side": 8000},
-    {"name": "mapz-county", "q": "map of laporte co., indiana", "max": 3, "max_side": 7000}
-  ],
-  "loc_items": [
-    {"name": "habsz-lh", "item": "https://www.loc.gov/item/in0149/", "max": 12, "max_side": 3500}
+  "about": "Fourth picture pass for the hauntings documentary (fetch.py --extra, Oct. 21, 2026): a sharp copy of Anthony Finley's 1827 map of Indiana (\"Pottawatomie Indians\" across the north) from Wikimedia Commons, and full-size cut-outs of the 1862 county map from the Library of Congress: Galena Township (the Methodist church where Posey Chapel's cemetery is today), the state prison as drawn in 1862, and the map's title. Same rules: public domain, CC0 or CC BY only.",
+  "commons_hires": [
+    {"file": "pota-cat-04.jpg", "out": "pota-cat-04-hi", "max_side": 6000}
   ],
   "news_clips": [
-    {"file": "np-ghost-04.jpg", "box": [0.6455, 0.057, 0.791, 0.181], "out": "np-ghost-04-head", "max_side": 4000, "note": "Town Haunted by Headless Ghost (headline), Barbour County Index, Aug. 16, 1905"},
-    {"file": "np-ghost-04.jpg", "box": [0.646, 0.254, 0.790, 0.3885], "out": "np-ghost-04-drawing", "max_side": 4000, "note": "The Headless Apparition (drawing), Barbour County Index, Aug. 16, 1905"},
-    {"file": "np-ghost-04.jpg", "box": [0.610, 0.050, 0.825, 0.480], "out": "np-ghost-04-a", "max_side": 4000, "note": "Town Haunted by Headless Ghost, top of the column"},
-    {"file": "np-ghost-04.jpg", "box": [0.610, 0.460, 0.825, 0.915], "out": "np-ghost-04-b", "max_side": 4000, "note": "Town Haunted by Headless Ghost, rest of the column (the boiler explosion)"},
-    {"file": "np-ghost-03.jpg", "box": [0.800, 0.385, 0.990, 0.945], "out": "np-ghost-03-col", "max_side": 4000, "note": "They Saw the Ghost (from the Indianapolis Sentinel), New Haven Morning Journal and Courier, Aug. 14, 1905"},
-    {"file": "np-barker-02.jpg", "box": [0.215, 0.118, 0.537, 0.385], "out": "np-barker-02-col", "max_side": 4000, "note": "Entire Fortune to His Daughter, The Durham Recorder, Dec. 8, 1910"},
-    {"file": "np-barker-04.jpg", "box": [0.5005, 0.644, 0.6095, 0.7335], "out": "np-barker-04-head", "max_side": 4000, "note": "Orphan, 14, Who Gets $30,000,000 Is Richest Girl, The Spokane Press, Dec. 12, 1910"}
+    {"file": "mapz-county-01.jpg", "box": [0.40, 0.008, 0.60, 0.090], "out": "mapz-county-01-galena", "max_side": 4000, "note": "Galena Township, on the 1862 map of LaPorte County"},
+    {"file": "mapz-county-01.jpg", "box": [0.787, 0.006, 0.995, 0.112], "out": "mapz-county-01-prison", "max_side": 4000, "note": "Northern Indiana State Prison, Michigan City, as drawn on the 1862 county map"},
+    {"file": "mapz-county-01.jpg", "box": [0.425, 0.535, 0.665, 0.655], "out": "mapz-county-01-title", "max_side": 4000, "note": "The title of the 1862 map of LaPorte County"}
   ]
 }
