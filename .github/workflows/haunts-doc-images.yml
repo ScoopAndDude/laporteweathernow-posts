@@ -1,10 +1,12 @@
 name: La Porte County hauntings documentary pictures (one-off, Oct. 2026)
 
 # Finds public-domain and free-to-reuse pictures and old newspaper pages for tools/video/haunts-doc on
-# Wikimedia Commons and the Library of Congress (same rules and code as the Belle Gunness film). The pictures go
-# in a zip on a "haunts-doc-images" pre-release (so the branch stays small); the list with every picture's
-# license and credit, and the log, are saved on the haunts-doc branch. Runs only on that branch, only when the
-# list changes. Nothing is posted.
+# Wikimedia Commons, the Library of Congress and the Internet Archive (same rules and code as the Belle Gunness
+# film). The list runs as six parallel parts (Commons in two halves, Library of Congress photos, maps and the
+# lighthouse survey, old books, newspapers), each with a time limit so its pictures are always zipped. The zips
+# go on a "haunts-doc-images" pre-release (so the branch stays small); each part's list (every picture's license
+# and credit) and log are saved on the haunts-doc branch. Runs only on that branch, only when the list changes.
+# Nothing is posted.
 on:
   push:
     branches: [haunts-doc]
@@ -13,18 +15,23 @@ on:
       - tools/video/haunts-doc/sources-extra.json
       - tools/video/haunts-doc/fetch.py
       - .github/workflows/haunts-doc-images.yml
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: haunts-doc-images
+  group: haunts-doc-images-v2
   cancel-in-progress: true
 
 jobs:
   pictures:
     runs-on: ubuntu-24.04
-    timeout-minutes: 150
+    timeout-minutes: 100
+    strategy:
+      fail-fast: false
+      matrix:
+        part: [commons1, commons2, loc, maps, books, news]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -47,35 +54,37 @@ jobs:
         if: steps.chk.outputs.mode != 'none'
         run: |
           if [ "${{ steps.chk.outputs.mode }}" = "extra" ]; then
-            python3 tools/video/haunts-doc/fetch.py --extra || echo "fetch.py stopped with an error; see images/fetch-log-extra.txt"
+            python3 tools/video/haunts-doc/fetch.py --extra --part ${{ matrix.part }} --minutes 80 || echo "fetch.py stopped with an error; see images/fetch-log-extra-${{ matrix.part }}.txt"
           else
-            python3 tools/video/haunts-doc/fetch.py || echo "fetch.py stopped with an error; see images/fetch-log.txt"
+            python3 tools/video/haunts-doc/fetch.py --part ${{ matrix.part }} --minutes 80 || echo "fetch.py stopped with an error; see images/fetch-log-${{ matrix.part }}.txt"
           fi
       - name: Zip the pictures onto the pre-release
-        if: steps.chk.outputs.mode != 'none'
+        if: always() && steps.chk.outputs.mode != 'none'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           cd tools/video/haunts-doc/images
+          P=${{ matrix.part }}
           if [ "${{ steps.chk.outputs.mode }}" = "extra" ]; then
-            touch extra-files.txt
-            (cat extra-files.txt; echo manifest.json) | grep -v '^$' | zip -q ../haunts-doc-images-extra-${{ github.run_number }}.zip -@
-            Z=haunts-doc-images-extra-${{ github.run_number }}.zip
+            touch extra-files-$P.txt manifest-extra-$P.json
+            (cat extra-files-$P.txt; echo manifest-extra-$P.json) | grep -v '^$' | zip -q ../haunts-doc-images-extra-$P-${{ github.run_number }}.zip -@ || true
+            Z=haunts-doc-images-extra-$P-${{ github.run_number }}.zip
           else
-            zip -q ../haunts-doc-images-${{ github.run_number }}.zip *.jpg manifest.json || true
-            Z=haunts-doc-images-${{ github.run_number }}.zip
+            touch files-$P.txt
+            (cat files-$P.txt; echo manifest-$P.json) | grep -v '^$' | zip -q ../haunts-doc-images-$P-${{ github.run_number }}.zip -@ || true
+            Z=haunts-doc-images-$P-${{ github.run_number }}.zip
           fi
           cd ..
-          ls -la "$Z"
+          ls -la "$Z" || exit 0
           gh release view haunts-doc-images >/dev/null 2>&1 || gh release create haunts-doc-images --prerelease --target haunts-doc \
             --title "La Porte County hauntings documentary pictures (working files)" \
-            --notes "Working pictures for the documentary in tools/video/haunts-doc on the haunts-doc branch: public domain, CC0 or CC BY only. Each picture's source, license and credit are in images/manifest.json."
-          gh release upload haunts-doc-images "$Z" --clobber
+            --notes "Working pictures for the documentary in tools/video/haunts-doc on the haunts-doc branch: public domain, CC0 or CC BY only. Each picture's source, license and credit are in images/manifest*.json." || true
+          for i in 1 2 3; do gh release upload haunts-doc-images "$Z" --clobber && break; sleep $((5 + RANDOM % 10)); done
       - name: Save the list and the log on this branch
         if: always() && steps.chk.outputs.mode != 'none'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add tools/video/haunts-doc/images/manifest.json tools/video/haunts-doc/images/fetch-log*.txt tools/video/haunts-doc/images/extra-files.txt 2>/dev/null || true
-          git commit -q -m "Hauntings documentary: picture list (licenses and credits) and search log" || echo "nothing new"
-          for i in 1 2 3; do git pull -q --rebase origin haunts-doc && git push -q origin HEAD:haunts-doc && break; sleep 5; done
+          git add -A tools/video/haunts-doc/images/ || true      # only the lists and logs: the pictures and PDFs are ignored
+          git commit -q -m "Hauntings documentary: picture list (licenses and credits) and search log, ${{ matrix.part }}" || echo "nothing new"
+          for i in 1 2 3 4 5 6; do git pull -q --rebase origin haunts-doc && git push -q origin HEAD:haunts-doc && break; sleep $((5 + RANDOM % 15)); done

@@ -48,7 +48,12 @@ def log(*a):
         LOGF.flush()
 
 
-_last = {"loc": 0.0}
+_last = {"loc": 0.0, "429": 0}
+DEADLINE = [None]              # time.time() after which every loop stops, so the zip step still runs
+
+
+def out_of_time():
+    return DEADLINE[0] is not None and time.time() > DEADLINE[0]
 
 
 def get(url, tries=4, loc=False):
@@ -64,8 +69,11 @@ def get(url, tries=4, loc=False):
                 return r.read()
         except urllib.error.HTTPError as e:
             if e.code == 429:
-                log("  429 (too many requests), waiting 90 s:", url[:120])
-                time.sleep(90)
+                _last["429"] += 1
+                if _last["429"] > 25 or out_of_time():
+                    raise                                # the Library is refusing: give up on it for this run
+                log("  429 (too many requests), waiting 40 s:", url[:120])
+                time.sleep(40)
             elif e.code in (404, 403, 400) or k == tries - 1:
                 raise
             else:
@@ -211,6 +219,8 @@ def loc_fetch(spec, endpoint, max_side):
         log("  search failed:", e)
         return
     for r in results:
+        if out_of_time() or _last["429"] > 25:
+            break
         rid = r.get("id") or r.get("url")
         if not rid or rid in seen:
             continue
@@ -425,7 +435,7 @@ def newspapers(spec):
     name = spec.get("name", "news")
     k, per_day = 0, set()
     for r in results:
-        if k >= spec.get("max", 60):
+        if k >= spec.get("max", 60) or out_of_time() or _last["429"] > 25:
             break
         title = clean(r.get("title", ""))
         paper = clean((r.get("partof_title") or [title])[0] if isinstance(r.get("partof_title"), list) else (r.get("partof_title") or title))
@@ -620,16 +630,42 @@ def resource_pages(items, old):
         add(entry, raw, "", 0, max_side=m, filename=out)
 
 
+def split_spec(spec, part):
+    """The sections one parallel part runs: commons1/commons2 (the Commons searches in two halves), loc, maps, books, news."""
+    if not part:
+        return spec
+    keep = {"commons1": ["commons", "commons_hires"], "commons2": ["commons"], "loc": ["loc_photos"],
+            "maps": ["loc_maps", "loc_items", "resource_pages"], "books": ["archive_books"], "news": ["newspapers", "news_clips"]}[part]
+    out = {k: v for k, v in spec.items() if k in keep}
+    c = spec.get("commons", [])
+    half = (len(c) + 1) // 2
+    if part == "commons1":
+        out["commons"] = c[:half]
+    elif part == "commons2":
+        out["commons"] = c[half:]
+    return out
+
+
 def main_extra():
-    global LOGF
-    LOGF = open(os.path.join(OUT, "fetch-log-extra.txt"), "w", encoding="utf-8")
-    spec = json.load(open(os.path.join(HERE, "sources-extra.json"), encoding="utf-8"))
-    old = json.load(open(os.path.join(OUT, "manifest.json"), encoding="utf-8"))
+    """The second pass: adds pictures without touching the ones already on the list. With --part, each parallel job
+    writes only its new pictures to images/manifest-extra-<part>.json (merged into manifest.json afterwards)."""
+    global LOGF, write_manifest
+    part = PART[0]
+    sfx = f"-{part}" if part else ""
+    LOGF = open(os.path.join(OUT, f"fetch-log-extra{sfx}.txt"), "w", encoding="utf-8")
+    spec = split_spec(json.load(open(os.path.join(HERE, "sources-extra.json"), encoding="utf-8")), part)
+    mpath = os.path.join(OUT, "manifest.json")
+    old = json.load(open(mpath, encoding="utf-8")) if os.path.exists(mpath) else []
     manifest.extend(old)
     for x in old:
         seen.add(x.get("title"))
         seen.add(x.get("page"))
-    log(len(old), "pictures already on the list")
+    log(len(old), "pictures already on the list; part", part)
+
+    def write_new():
+        with open(os.path.join(OUT, f"manifest-extra{sfx}.json"), "w", encoding="utf-8") as fh:
+            json.dump(manifest[len(old):], fh, ensure_ascii=False, indent=1)
+    write_manifest = write_new
     if spec.get("commons_hires"):
         log("Sharper copies:", len(spec["commons_hires"]))
         hires_copies(spec["commons_hires"], old)
@@ -642,20 +678,24 @@ def main_extra():
         log("Whole pages at full size:", len(spec["resource_pages"]))
         resource_pages(spec["resource_pages"], old)
         write_manifest()
-    taken = {re.sub(r"-\d+\.jpg$", "", x["file"]) for x in old}
+    taken = {re.sub(r"-\d+(-crop\d+)?\.jpg$", "", x["file"]) for x in old}
     for q in spec.get("commons", []):
         if q["name"] in taken:
             log("  name already used, skipped:", q["name"])
             continue
-        log("Commons:", q["name"], q.get("category") or q.get("search"))
+        if out_of_time():
+            log("  time's up, skipped:", q["name"])
+            continue
+        log("Commons:", q["name"], q.get("category") or q.get("search") or q.get("titles"))
         try:
             found = commons(q)
         except Exception as e:
             log("  didn't answer:", e)
             continue
+        log("  found", len(found))
         k = 0
         for it in sorted(found, key=lambda x: x["title"] or ""):
-            if k >= q.get("max", 50):
+            if k >= q.get("max", 50) or out_of_time():
                 break
             if it["title"] in seen or not it["url"] or not it["mime"].startswith("image/") or "svg" in it["mime"]:
                 continue
@@ -672,31 +712,88 @@ def main_extra():
             add(it, raw, q["name"], k)
             time.sleep(0.3)
         write_manifest()
+    for section, endpoint, side in (("loc_photos", "photos", MAX_SIDE), ("loc_maps", "maps", 3200)):
+        for q in spec.get(section, []):
+            if q["name"] in taken or out_of_time():
+                log("  skipped:", q["name"])
+                continue
+            log("Library of Congress", endpoint + ":", q["name"], q["q"])
+            loc_fetch(q, endpoint, side)
+            write_manifest()
+    for q in spec.get("loc_items", []):
+        if q["name"] in taken or out_of_time():
+            log("  skipped:", q["name"])
+            continue
+        log("Library of Congress item, every picture:", q["name"], q["item"])
+        loc_item_pages(q)
+        write_manifest()
+    for q in spec.get("archive_books", []):
+        if q["name"] in taken or out_of_time():
+            log("  skipped:", q["name"])
+            continue
+        log("Internet Archive book:", q["name"], q.get("id") or q.get("search"), q["find"])
+        try:
+            archive_books(q)
+        except Exception as e:
+            log("  book stopped:", e)
+        write_manifest()
     for q in spec.get("newspapers", []):
-        if q["name"] in taken:
-            log("  name already used, skipped:", q["name"])
+        if q["name"] in taken or out_of_time():
+            log("  skipped:", q["name"])
             continue
         log("Chronicling America:", q)
         try:
-            newspapers(dict(q, crops_per_page=0))
+            newspapers(dict(q, crops_per_page=q.get("crops_per_page", 0)))
         except Exception as e:
             log("  stopped:", e)
         write_manifest()
     write_manifest()
-    with open(os.path.join(OUT, "extra-files.txt"), "w", encoding="utf-8") as fh:
+    with open(os.path.join(OUT, f"extra-files{sfx}.txt"), "w", encoding="utf-8") as fh:
         fh.write("\n".join(NEW_FILES) + "\n")
-    log(len(NEW_FILES), "new pictures saved;", len(manifest), "on the list")
+    log(len(NEW_FILES), "new pictures saved", "(stopped by the time limit)" if out_of_time() else "")
+
+
+PART = [None]
+
+
+def write_manifest_part():
+    name = f"manifest-{PART[0]}.json" if PART[0] else "manifest.json"
+    with open(os.path.join(OUT, name), "w", encoding="utf-8") as fh:
+        json.dump(manifest, fh, ensure_ascii=False, indent=1)
 
 
 def main():
-    global LOGF
+    global LOGF, write_manifest
+    args = [a for a in sys.argv[1:] if a != "--extra"]
+    if "--part" in args:                  # run one part of the list (parallel jobs): commons1, commons2, loc, maps, books, news
+        i = args.index("--part")
+        PART[0] = args[i + 1]
+        del args[i:i + 2]
+        write_manifest = write_manifest_part
+    if "--minutes" in args:
+        i = args.index("--minutes")
+        DEADLINE[0] = time.time() + 60 * float(args[i + 1])
+        del args[i:i + 2]
     if "--extra" in sys.argv:
         return main_extra()
-    LOGF = open(os.path.join(OUT, "fetch-log.txt"), "w", encoding="utf-8")
+    LOGF = open(os.path.join(OUT, f"fetch-log-{PART[0]}.txt" if PART[0] else "fetch-log.txt"), "w", encoding="utf-8")
     spec = json.load(open(os.path.join(HERE, "sources.json"), encoding="utf-8"))
-    only = set(sys.argv[1:])
+    if PART[0]:
+        c = spec.get("commons", [])
+        half = (len(c) + 1) // 2
+        keep = {"commons1": ["commons"], "commons2": ["commons"], "loc": ["loc_photos"], "maps": ["loc_maps", "loc_items"],
+                "books": ["archive_books"], "news": ["newspapers"]}[PART[0]]
+        spec = {k: v for k, v in spec.items() if k in keep}
+        if PART[0] == "commons1":
+            spec["commons"] = c[:half]
+        elif PART[0] == "commons2":
+            spec["commons"] = c[half:]
+    only = set(args)
     for q in spec.get("commons", []):
         if only and q["name"] not in only:
+            continue
+        if out_of_time():
+            log("  time's up, skipped:", q["name"])
             continue
         log("Commons:", q["name"], q.get("category") or q.get("search"))
         try:
@@ -706,7 +803,7 @@ def main():
             continue
         k = 0
         for it in sorted(found, key=lambda x: x["title"] or ""):
-            if k >= q.get("max", 50):
+            if k >= q.get("max", 50) or out_of_time():
                 break
             if it["title"] in seen or not it["url"] or not it["mime"].startswith("image/") or "svg" in it["mime"]:
                 continue
@@ -726,11 +823,17 @@ def main():
     for q in spec.get("loc_photos", []):
         if only and q["name"] not in only:
             continue
+        if out_of_time():
+            log("  time's up, skipped:", q["name"])
+            continue
         log("Library of Congress photos:", q["name"], q["q"])
         loc_fetch(q, "photos", MAX_SIDE)
         write_manifest()
     for q in spec.get("loc_maps", []):
         if only and q["name"] not in only:
+            continue
+        if out_of_time():
+            log("  time's up, skipped:", q["name"])
             continue
         log("Library of Congress maps:", q["name"], q["q"])
         loc_fetch(q, "maps", 3200)
@@ -738,13 +841,19 @@ def main():
     for q in spec.get("loc_items", []):
         if only and q["name"] not in only:
             continue
+        if out_of_time():
+            log("  time's up, skipped:", q["name"])
+            continue
         log("Library of Congress item, every picture:", q["name"], q["item"])
         loc_item_pages(q)
         write_manifest()
     for q in spec.get("archive_books", []):
         if only and q["name"] not in only:
             continue
-        log("Internet Archive book:", q["name"], q["id"], q["find"])
+        if out_of_time():
+            log("  time's up, skipped:", q["name"])
+            continue
+        log("Internet Archive book:", q["name"], q.get("id") or q.get("search"), q["find"])
         try:
             archive_books(q)
         except Exception as e:
@@ -753,6 +862,9 @@ def main():
     news = spec.get("newspapers")
     if news and (not only or "news" in only):
         for ns in (news if isinstance(news, list) else [news]):     # one search, or several (each with its own name)
+            if out_of_time():
+                log("  time's up, skipped:", ns.get("name"))
+                continue
             log("Chronicling America:", ns)
             try:
                 newspapers(ns)
@@ -760,7 +872,10 @@ def main():
                 log("  newspaper search stopped:", e)
             write_manifest()
     write_manifest()
-    log(len(manifest), "pictures saved")
+    if PART[0]:
+        with open(os.path.join(OUT, f"files-{PART[0]}.txt"), "w", encoding="utf-8") as fh:
+            fh.write("\n".join(NEW_FILES) + "\n")
+    log(len(manifest), "pictures saved", "(stopped by the time limit)" if out_of_time() else "")
 
 
 if __name__ == "__main__":
