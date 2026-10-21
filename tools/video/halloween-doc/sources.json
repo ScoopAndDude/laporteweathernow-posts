@@ -1,0 +1,70 @@
+{
+  "about": "Real pictures for the History of Halloween documentary (Oct. 21, 2026; Scoop: \"lets make a history of halloween documentary\"). fetch.py (GitHub Actions, halloween-doc-images.yml) looks these up and keeps only public domain, CC0 and CC BY files (no share-alike, non-commercial or no-derivatives), with each file's author and license for the credits. First pass: broad searches; a second pass (sources-extra.json) targets what the script needs.",
+  "commons": [
+    {"name": "pc", "category": "Category:Halloween postcards", "depth": 1, "max": 90},
+    {"name": "pc-witch", "search": "vintage Halloween postcard witch", "max": 40},
+    {"name": "pc-cat", "search": "Halloween postcard black cat 1910", "max": 30},
+    {"name": "pc-jol", "search": "Halloween postcard jack-o'-lantern 1908", "max": 30},
+    {"name": "maclise", "search": "Maclise Snap-Apple Night", "max": 6},
+    {"name": "burns", "search": "Robert Burns Halloween poem", "max": 15},
+    {"name": "turnip", "search": "turnip lantern", "max": 20},
+    {"name": "jol", "category": "Category:Jack-o'-lanterns", "depth": 0, "max": 60},
+    {"name": "samhain", "category": "Category:Samhain", "depth": 1, "max": 40},
+    {"name": "tlachtga", "search": "Hill of Ward Tlachtga", "max": 12},
+    {"name": "allsouls", "search": "All Souls' Day painting", "max": 20},
+    {"name": "allsaints", "search": "All Saints Day painting", "max": 15},
+    {"name": "souling", "search": "souling soul cakes", "max": 10},
+    {"name": "guising", "search": "guisers Halloween", "max": 12},
+    {"name": "hw-us", "category": "Category:Halloween in the United States", "depth": 1, "max": 60},
+    {"name": "hw-ie", "category": "Category:Halloween in Ireland", "depth": 1, "max": 30},
+    {"name": "hw-sc", "category": "Category:Halloween in Scotland", "depth": 1, "max": 20},
+    {"name": "tot", "category": "Category:Trick-or-treating", "depth": 1, "max": 40},
+    {"name": "costume-old", "search": "Halloween costume 1910s photograph", "max": 25},
+    {"name": "costume-1920", "search": "Halloween party 1920s photograph", "max": 25},
+    {"name": "apples", "search": "bobbing for apples", "max": 15},
+    {"name": "bonfire", "search": "Halloween bonfire", "max": 15},
+    {"name": "famine", "search": "Irish famine emigrants ship illustration", "max": 15},
+    {"name": "emigrants", "search": "emigrants leaving Ireland Illustrated London News", "max": 12},
+    {"name": "pumpkins", "search": "pumpkin field harvest", "max": 25},
+    {"name": "unicef", "search": "Trick or Treat for UNICEF", "max": 10},
+    {"name": "irving", "search": "Legend of Sleepy Hollow illustration headless horseman pumpkin", "max": 12},
+    {"name": "dayofdead", "search": "Bouguereau Day of the Dead", "max": 5}
+  ],
+  "loc_photos": [
+    {"name": "loc-hw", "q": "halloween", "dates": "1880/1965", "max": 60},
+    {"name": "loc-hw2", "q": "hallowe'en", "dates": "1880/1940", "max": 40},
+    {"name": "loc-jol", "q": "jack-o'-lantern", "dates": "1880/1965", "max": 25},
+    {"name": "loc-pumpkin", "q": "pumpkins", "dates": "1880/1945", "max": 25},
+    {"name": "loc-mask", "q": "halloween costumes masks", "dates": "1900/1965", "max": 25},
+    {"name": "loc-tot", "q": "trick or treat", "dates": "1930/1970", "max": 20},
+    {"name": "loc-allsouls", "q": "all souls day", "dates": "1850/1950", "max": 15},
+    {"name": "loc-emig", "q": "irish emigrants", "dates": "1840/1900", "max": 20},
+    {"name": "loc-witch", "q": "witch halloween", "dates": "1880/1940", "max": 15}
+  ],
+  "loc_items": [],
+  "loc_maps": [
+    {"name": "map-ireland", "q": "map of ireland", "dates": "1830/1880", "max": 6},
+    {"name": "map-lp", "q": "la porte indiana", "dates": "1870/1935", "max": 12}
+  ],
+  "archive_books": [
+    {"name": "burns", "search": "title:(poems chiefly in the scottish dialect) AND date:[1786-01-01 TO 1810-12-31]", "find": ["Halloween"], "max": 6, "tries": 4,
+     "license": "Public domain (18th-century book)", "title": "Robert Burns, Poems, Chiefly in the Scottish Dialect", "author": "Robert Burns", "date": "1787"},
+    {"name": "kelley", "search": "title:(book of hallowe'en) AND creator:(kelley)", "find": ["Samhain", "turnip", "jack-o'-lantern", "All Souls", "soul-cake"], "max": 12,
+     "license": "Public domain (1919 book)", "title": "Ruth Edna Kelley, The Book of Hallowe'en (Boston, 1919)", "author": "Ruth Edna Kelley", "date": "1919"},
+    {"name": "bogie", "search": "title:(bogie book)", "find": ["Hallowe'en", "Halloween"], "max": 12, "tries": 4,
+     "license": "Public domain (Dennison's Bogie Book, before 1929)", "title": "Dennison's Bogie Book", "author": "Dennison Manufacturing Co.", "date": "1910s-1920s"},
+    {"name": "parties", "search": "title:(hallowe'en) AND date:[1890-01-01 TO 1928-12-31]", "find": ["Hallowe'en"], "max": 10, "tries": 5,
+     "license": "Public domain (book published before 1929)", "title": "Hallowe'en party book", "author": "", "date": "before 1929"}
+  ],
+  "newspapers": [
+    {"name": "np-lp", "q": "hallowe'en la porte", "pattern": "hallowe.?en|halloween", "dates": "1885-01-01/1925-12-31", "max": 20, "crops_per_page": 2, "license": "Public domain (newspaper, before 1926)"},
+    {"name": "np-mc", "q": "hallowe'en michigan city", "pattern": "hallowe.?en|halloween", "dates": "1885-01-01/1925-12-31", "max": 15, "crops_per_page": 2, "license": "Public domain (newspaper, before 1926)"},
+    {"name": "np-pranks", "q": "hallowe'en pranks", "pattern": "hallowe.?en|prank", "dates": "1890-01-01/1925-12-31", "max": 20, "crops_per_page": 2, "license": "Public domain (newspaper, before 1926)"},
+    {"name": "np-indiana", "q": "hallowe'en indiana", "pattern": "hallowe.?en", "dates": "1890-01-01/1925-12-31", "max": 15, "crops_per_page": 2, "license": "Public domain (newspaper, before 1926)"},
+    {"name": "np-jol", "q": "hallowe'en jack o'lantern pumpkin", "pattern": "lantern|pumpkin", "dates": "1880-01-01/1915-12-31", "max": 12, "crops_per_page": 2, "license": "Public domain (newspaper, before 1916)"},
+    {"name": "np-parade", "q": "hallowe'en parade", "pattern": "parade|hallowe.?en", "dates": "1915-01-01/1945-12-31", "max": 15, "crops_per_page": 2, "license": "No known restrictions (Library of Congress, Chronicling America)"},
+    {"name": "np-tot", "q": "trick or treat", "pattern": "trick.{0,4}(or|and).{0,4}treat", "dates": "1927-01-01/1963-12-31", "max": 20, "crops_per_page": 2, "license": "No known restrictions (Library of Congress, Chronicling America)"},
+    {"name": "np-sugar", "q": "halloween sugar rationing", "pattern": "halloween|sugar", "dates": "1942-01-01/1946-12-31", "max": 8, "crops_per_page": 2, "license": "No known restrictions (Library of Congress, Chronicling America)"},
+    {"name": "np-unicef", "q": "trick or treat unicef", "pattern": "unicef|trick", "dates": "1950-01-01/1963-12-31", "max": 8, "crops_per_page": 2, "license": "No known restrictions (Library of Congress, Chronicling America)"}
+  ]
+}

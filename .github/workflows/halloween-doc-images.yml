@@ -1,0 +1,90 @@
+name: History of Halloween documentary pictures (one-off, Oct. 2026)
+
+# Finds public-domain and free-to-reuse pictures and old newspaper pages for tools/video/halloween-doc on
+# Wikimedia Commons, the Library of Congress and the Internet Archive (same rules and code as the Belle Gunness
+# film). The list runs as six parallel parts (Commons in two halves, Library of Congress photos, maps and the
+# lighthouse survey, old books, newspapers), each with a time limit so its pictures are always zipped. The zips
+# go on a "halloween-doc-images" pre-release (so the branch stays small); each part's list (every picture's license
+# and credit) and log are saved on the halloween-doc branch. Runs only on that branch, only when the list changes.
+# Nothing is posted.
+on:
+  push:
+    branches: [halloween-doc]
+    paths:
+      - tools/video/halloween-doc/sources.json
+      - tools/video/halloween-doc/sources-extra.json
+      - tools/video/halloween-doc/fetch.py
+      - .github/workflows/halloween-doc-images.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: halloween-doc-images-v2
+  cancel-in-progress: true
+
+jobs:
+  pictures:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 100
+    strategy:
+      fail-fast: false
+      matrix:
+        part: [commons1, commons2, loc, maps, books, news]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Is there a picture list yet?
+        id: chk
+        run: |
+          D=tools/video/halloween-doc
+          if [ -f $D/sources-extra.json ] && git diff --name-only HEAD~1 HEAD | grep -q sources-extra.json; then echo "mode=extra" >> "$GITHUB_OUTPUT"
+          elif [ -f $D/sources.json ]; then echo "mode=first" >> "$GITHUB_OUTPUT"
+          else echo "mode=none" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/setup-python@v5
+        if: steps.chk.outputs.mode != 'none'
+        with:
+          python-version: "3.12"
+      - name: Get ready
+        if: steps.chk.outputs.mode != 'none'
+        run: pip install -q pillow pymupdf
+      - name: Find and download
+        if: steps.chk.outputs.mode != 'none'
+        run: |
+          if [ "${{ steps.chk.outputs.mode }}" = "extra" ]; then
+            python3 tools/video/halloween-doc/fetch.py --extra --part ${{ matrix.part }} --minutes 80 || echo "fetch.py stopped with an error; see images/fetch-log-extra-${{ matrix.part }}.txt"
+          else
+            python3 tools/video/halloween-doc/fetch.py --part ${{ matrix.part }} --minutes 80 || echo "fetch.py stopped with an error; see images/fetch-log-${{ matrix.part }}.txt"
+          fi
+      - name: Zip the pictures onto the pre-release
+        if: always() && steps.chk.outputs.mode != 'none'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd tools/video/halloween-doc/images
+          P=${{ matrix.part }}
+          if [ "${{ steps.chk.outputs.mode }}" = "extra" ]; then
+            touch extra-files-$P.txt manifest-extra-$P.json
+            (cat extra-files-$P.txt; echo manifest-extra-$P.json) | grep -v '^$' | zip -q ../halloween-doc-images-extra-$P-${{ github.run_number }}.zip -@ || true
+            Z=halloween-doc-images-extra-$P-${{ github.run_number }}.zip
+          else
+            touch files-$P.txt
+            (cat files-$P.txt; echo manifest-$P.json) | grep -v '^$' | zip -q ../halloween-doc-images-$P-${{ github.run_number }}.zip -@ || true
+            Z=halloween-doc-images-$P-${{ github.run_number }}.zip
+          fi
+          cd ..
+          ls -la "$Z" || exit 0
+          gh release view halloween-doc-images >/dev/null 2>&1 || gh release create halloween-doc-images --prerelease --target halloween-doc \
+            --title "History of Halloween documentary pictures (working files)" \
+            --notes "Working pictures for the documentary in tools/video/halloween-doc on the halloween-doc branch: public domain, CC0 or CC BY only. Each picture's source, license and credit are in images/manifest*.json." || true
+          for i in 1 2 3; do gh release upload halloween-doc-images "$Z" --clobber && break; sleep $((5 + RANDOM % 10)); done
+      - name: Save the list and the log on this branch
+        if: always() && steps.chk.outputs.mode != 'none'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A tools/video/halloween-doc/images/ || true      # only the lists and logs: the pictures and PDFs are ignored
+          git commit -q -m "Halloween documentary: picture list (licenses and credits) and search log, ${{ matrix.part }}" || echo "nothing new"
+          for i in 1 2 3 4 5 6; do git pull -q --rebase origin halloween-doc && git push -q origin HEAD:halloween-doc && break; sleep $((5 + RANDOM % 15)); done
