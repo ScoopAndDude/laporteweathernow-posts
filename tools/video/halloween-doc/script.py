@@ -426,7 +426,7 @@ CHAPTERS = [
           MAP(**CO, cam0=[-86.75, 41.62, 1.25], cam1=[-86.70, 41.62, 1.05], move_end=0.9,
               places=[LAKE, COUNTY, place(LP, 0.1), place(MC, 0.5), place({"name": "Hesston", "at": [-86.6997, 41.7392]}, 0.3)]), year="2006"),
         L("c10-04", "Nearly every town in the county now trick-or-treats in the same window: 5 to 7 in the evening, in daylight. The old free-for-all after dark is gone. The night of the broken gates has become two hours before supper.",
-          TYPED("TRICK-OR-TREAT, LA PORTE COUNTY · 2025", ["La Porte, Michigan City, Kingsford Heights, Long Beach,", "Rolling Prairie, Trail Creek, Union Mills, Wanatah, Westville:", "5 to 7 p.m., Oct. 31."]), year="2025"),
+          TYPED("TRICK-OR-TREAT, LA PORTE COUNTY · 2025", ["La Porte, Michigan City, Kingsford Heights,", "Long Beach, Rolling Prairie, Trail Creek,", "Union Mills, Wanatah, Westville:", "5 to 7 p.m., Oct. 31."]), year="2025"),
         L("c10-05", "And this being La Porte Weather Now, the weather. Going by South Bend's records, a typical Halloween here runs in the mid to upper 40s at trick-or-treat time. But not always.",
           P(LP_CARD, tone="warm", crop=[0.02, 0.03, 0.98, 0.97], z=[1.0, 1.1], f0=[0.45, 0.42], f1=[0.5, 0.5]), year=""),
         L("c10-06", "2013: a storm dumped 2.98 inches of rain on La Porte over Halloween night, and gave Fort Wayne its wettest Halloween on record. 2014: a gust of 67 miles an hour off the lake at Michigan City. 2019: 2.2 inches of snow in Valparaiso. 2023: 1.4 inches of snow in South Bend, the second-snowiest ever.",
