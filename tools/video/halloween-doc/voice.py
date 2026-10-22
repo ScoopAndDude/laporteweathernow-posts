@@ -123,11 +123,13 @@ class Chatterbox:
             a = a[max(0, loud[0] - int(0.06 * self.rate)):min(len(a), loud[-1] + int(0.06 * self.rate))]
         return a
 
-    def listen(self, audio):
-        """What whisper hears, with word times."""
+    def listen(self, audio, expect=""):
+        """What whisper hears, with word times. The script's own sentence is given as the prompt, so whisper
+        writes numbers and names the way the script does (else "nineteen thirty-two" comes back as "1932")."""
         tmp = os.path.join(HERE, "voice", "_listen.wav")
         sf.write(tmp, audio, self.rate)
-        segs, _ = self.ears.transcribe(tmp, word_timestamps=True, language="en", beam_size=3, condition_on_previous_text=False)
+        segs, _ = self.ears.transcribe(tmp, word_timestamps=True, language="en", beam_size=3, condition_on_previous_text=False,
+                                       initial_prompt=expect or None)
         heard = []
         for s in segs:
             for w in (s.words or []):
@@ -138,19 +140,21 @@ class Chatterbox:
         """Records sentence by sentence; each sentence is checked against what whisper hears and retried with a
         new seed if it came back wrong. Returns the audio and the script's words with times."""
         chunks, words, at = [], [], 0.0
+        self.scores = []
         for si, sent in enumerate(sentences(spoken)):
             script_words = [w for w in sent.split() if norm(w)]
             best = None
             for attempt in range(4):
                 a = self.say(respell(sent), seed + 7919 * si + 104729 * attempt)
-                heard = self.listen(a)
+                heard = self.listen(a, sent)
                 score, timed = align(script_words, heard, len(a) / self.rate)
                 if best is None or score > best[0]:
                     best = (score, a, timed)
-                if score >= 0.86:
+                if score >= 0.8:
                     break
                 print(f"   retry {attempt + 1} (match {score:.2f}): {sent[:60]}", flush=True)
             score, a, timed = best
+            self.scores.append(round(score, 2))
             chunks.append(a)
             words += [[w, round(at + s, 3), round(at + e, 3)] for w, s, e in timed]
             at += len(a) / self.rate
@@ -226,7 +230,8 @@ def main():
             voice = Chatterbox() if ENGINE == "chatterbox" else Kokoro()
         audio, words = voice.record(spoken, seed=sum(map(ord, ln["id"])))
         sf.write(path, audio, voice.rate, format="FLAC")
-        record.append({"id": ln["id"], "say": ln["say"], "text": spoken, "key": key, "seconds": round(len(audio) / voice.rate, 3), "words": words})
+        record.append({"id": ln["id"], "say": ln["say"], "text": spoken, "key": key, "seconds": round(len(audio) / voice.rate, 3), "words": words,
+                       "match": getattr(voice, "scores", None)})
         made += 1
         print(ln["id"], record[-1]["seconds"], "s", flush=True)
     rate = voice.rate if voice else (old and next(iter(old.values())).get("rate")) or 24000
