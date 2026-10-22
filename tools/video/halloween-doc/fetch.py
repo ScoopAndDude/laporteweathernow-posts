@@ -77,7 +77,7 @@ def get(url, tries=4, loc=False):
             elif e.code in (404, 403, 400) or k == tries - 1:
                 raise
             else:
-                time.sleep(3 + 4 * k)
+                time.sleep(8 + 10 * k)                 # 520s from the Library's front door: back off
         except Exception:
             if k == tries - 1:
                 raise
@@ -412,6 +412,51 @@ def alto_blocks(xml_bytes, pattern):
     return pw, ph, blocks
 
 
+def ca_page(page_url):
+    """(lccn, date, ed, seq) from a loc.gov resource page URL, or None."""
+    m = re.search(r"resource/([a-z0-9]+)/(\d{4}-\d{2}-\d{2})/(ed-\d+)/\?sp=(\d+)", page_url)
+    return m.groups() if m else None
+
+
+def coords_blocks(raw, pattern):
+    """The word-coordinates service answers JSON: {"width", "height", "coords": {word: [[x, y, w, h], ...]}}.
+    Makes block-like boxes around each matching word (a column's width, a dozen lines tall)."""
+    d = json.loads(raw)
+    pw, ph = float(d["width"]), float(d["height"])
+    blocks = []
+    for word, boxes in (d.get("coords") or {}).items():
+        if not re.search(pattern, word, re.I):
+            continue
+        for x, y, w, h in boxes:
+            col = pw * 0.15
+            X0, Y0 = max(0.0, x + w / 2 - col / 2), max(0.0, y - h * 2.5)
+            blocks.append((float(h), X0, Y0, min(pw - X0, col), min(ph - Y0, h * 14), word))
+    blocks.sort(reverse=True)
+    return pw, ph, blocks
+
+
+def word_blocks(page_url, pattern, page_json=None):
+    """Where the words are on a Chronicling America page: the old site's ALTO (ocr.xml) first, then the
+    word-coordinates service the new site links to. Returns (page_w, page_h, blocks) or raises."""
+    cp = ca_page(page_url)
+    if cp:
+        lccn, date, ed, seq = cp
+        try:
+            return alto_blocks(get(f"https://chroniclingamerica.loc.gov/lccn/{lccn}/{date}/{ed}/seq-{seq}/ocr.xml", loc=True), pattern)
+        except Exception as e:
+            log("  ocr.xml failed:", lccn, date, seq, str(e)[:80])
+    if page_json is None:
+        page_json = getjson(page_url + ("&" if "?" in page_url else "?") + "fo=json", loc=True)
+    u = find_alto_url(page_json)
+    if not u:
+        raise RuntimeError("no word coordinates")
+    raw = get(u, loc=True)
+    try:
+        return alto_blocks(raw, pattern)
+    except Exception:
+        return coords_blocks(raw, pattern)
+
+
 def find_alto_url(obj):
     s = json.dumps(obj)
     m = re.search(r'https?://tile\.loc\.gov/text-services/word-coordinates-service\?[^"\s]+', s)
@@ -594,11 +639,9 @@ def news_clips(items, old):
             if "box" not in c and c.get("pattern"):
                 # find the words on the page (ALTO word coordinates) and cut around the best block
                 try:
-                    if "blocks" not in alto_cache:
-                        pj = getjson(src["page"] + ("&" if "?" in src["page"] else "?") + "fo=json", loc=True)
-                        alto = find_alto_url(pj)
-                        alto_cache["blocks"] = alto_blocks(get(alto, loc=True), c["pattern"]) if alto else (None, None, [])
-                    pw, ph, blocks = alto_cache["blocks"]
+                    if c["pattern"] not in alto_cache:
+                        alto_cache[c["pattern"]] = word_blocks(src["page"], c["pattern"])
+                    pw, ph, blocks = alto_cache[c["pattern"]]
                 except Exception as e:
                     log("  word positions failed:", pfile, e)
                     continue
@@ -698,7 +741,7 @@ def loc_issues(items, old):
             if not n:
                 n = len(re.findall(r'"sp=(\d+)"', json.dumps(js))) or int(r.get("pages", 12))
             log(f"  {name} {ed}: {n} pages")
-            for sp in range(1, min(n, int(r.get("pages", 40))) + 1):
+            for sp in range(1, min(n, int(r.get("pages", 16))) + 1):
                 if k >= r.get("max", 3) or out_of_time():
                     break
                 url = f"{base_url}?sp={sp}"
@@ -707,15 +750,14 @@ def loc_issues(items, old):
                 except Exception as e:
                     log("  page lookup failed:", url, e)
                     continue
-                alto = find_alto_url(pj)
                 urls = re.findall(r'https://tile\.loc\.gov/image-services/iiif/[^"\s]+', json.dumps(pj))
                 base = next((iiif_base(u) for u in urls if iiif_base(u)), None)
-                if not alto or not base:
+                if not base:
                     continue
                 try:
-                    pw, ph, blocks = alto_blocks(get(alto, loc=True), r.get("pattern", "hallowe"))
+                    pw, ph, blocks = word_blocks(url, r.get("pattern", "hallowe"), pj)
                 except Exception as e:
-                    log("  word positions failed:", url, e)
+                    log("  word positions failed:", url, str(e)[:100])
                     continue
                 if not blocks:
                     continue
