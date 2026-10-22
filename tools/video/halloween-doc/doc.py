@@ -1062,7 +1062,12 @@ class Chapter(Shot):
         s = self.spec
         n = s.get("n")
         self.k = text(f"CHAPTER {NUMBERS[n].upper()}" if n else s.get("kicker", ""), "inter-sb", 30, (196, 176, 140, 255), tracking=12)
-        self.t = glow(text(s["title"], "fell", 140, BONE + (255,), tracking=3), GLOW, radius=26, strength=0.75)
+        size = s.get("size", 140)
+        img = text(s["title"], "fell", size, BONE + (255,), tracking=3)
+        while img.width > W - 160 and size > 70:                 # a long title shrinks to fit
+            size -= 8
+            img = text(s["title"], "fell", size, BONE + (255,), tracking=3)
+        self.t = glow(img, GLOW, radius=26, strength=0.75)
         self.sub = text(s["sub"], "fell-it", 48, (200, 184, 156, 255)) if s.get("sub") else None
         self.rule = Image.new("RGBA", (360, 2), (196, 176, 140, 200))
 
@@ -1104,7 +1109,12 @@ class Big(Shot):
     def prepare(self):
         s = self.spec
         fk = s.get("font", "lora-b" if any(ch.isdigit() for ch in s["text"]) else "fell")
-        self.top = glow(text(s["text"], fk, s.get("size", 170), tuple(s.get("color", BONE)) + (255,)), (60, 10, 6), radius=26, strength=0.8)
+        size = s.get("size", 170)
+        img = text(s["text"], fk, size, tuple(s.get("color", BONE)) + (255,))
+        while img.width > W - 140 and size > 60:
+            size -= 8
+            img = text(s["text"], fk, size, tuple(s.get("color", BONE)) + (255,))
+        self.top = glow(img, (60, 10, 6), radius=26, strength=0.8)
         self.cap = para(s["cap"], "inter-m", 40, (222, 208, 182, 255), 1300, align="center") if s.get("cap") else None
         self.under = None
         if s.get("file"):

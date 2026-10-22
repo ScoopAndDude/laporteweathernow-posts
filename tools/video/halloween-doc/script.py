@@ -97,6 +97,7 @@ def BIG(text, cap=None, file=None, **kw):
 
 
 def QUOTE(text, by=None, **kw):
+    text = text.strip().strip("“”\"")           # the shot draws its own quotation marks
     return dict(type="quote", text=text, **({"by": by} if by else {}), **kw)
 
 
@@ -171,7 +172,7 @@ CHAPTERS = [
     # ------------------------------------------------------------------ cold open
     dict(id="open", music="open", tail=0.2, lines=[
         L("o01", "Every October, something strange happens on the streets of La Porte, Indiana.",
-          P(LP_CARD, tone="night-lift", crop=[0.02, 0.03, 0.98, 0.97], z=[1.0, 1.18], f0=[0.5, 0.5], f1=[0.45, 0.42]),
+          P(LP_CARD, tone="sepia", crop=[0.02, 0.03, 0.98, 0.97], z=[1.0, 1.18], f0=[0.5, 0.5], f1=[0.45, 0.42]),
           lower="La Porte | a 1908 postcard", sfx=[["wind", 0.0]]),
         L("o02", "Children dressed as ghosts and witches knock on the doors of strangers and demand candy. And the strangers hand it over.",
           P("hw-us-16.jpg", tone="warm", crop=[0.0, 0.0, 1.0, 1.0], z=[1.0, 1.15], f0=[0.5, 0.45], f1=[0.42, 0.4]),
@@ -179,13 +180,13 @@ CHAPTERS = [
         L("o03", "In 1866, a Philadelphia newspaper described the same night a little differently. The boys of the city, it said, were hanging dead cats to door-bells.",
           NEWS("phila-1866-01.jpg", mode="zoom", hold=0.3, lower="Evening Telegraph, Philadelphia | Oct. 31, 1866"), year="1866", sfx=[["page", 0.0]]),
         L("o04", "The holiday you know is about a hundred years old. The one underneath it is much, much older. And almost everything you've been told about where it came from is wrong.",
-          P("burns-02.jpg", tone="night", crop=[0.05, 0.05, 0.95, 0.95], z=[1.0, 1.2], f0=[0.5, 0.5], f1=[0.5, 0.42]), year="",
+          P("burns-02.jpg", tone="sepia", crop=[0.05, 0.05, 0.95, 0.95], z=[1.0, 1.2], f0=[0.5, 0.5], f1=[0.5, 0.42]), year="",
           lower="Halloween in Scotland | an engraving for Burns's poem", stamp=dict(text="MYTH", color="red", at="wrong", until=2.6)),
         L("o05", "There was no Celtic god of the dead named Samhain. The church did not steal the date. The jack-o'-lantern was a turnip. And trick-or-treat began as a threat.",
           [P("x-coligny-02.jpg", tone="bw", crop=[0.1, 0.1, 0.9, 0.9], z=[1.0, 1.12], f0=[0.5, 0.5], f1=[0.5, 0.45]),
            P("allsouls-01.jpg", tone="warm", crop=[0.02, 0.05, 0.98, 0.95], z=[1.0, 1.1], f0=[0.5, 0.45], f1=[0.45, 0.45]),
            P("turnip-05.jpg", tone="night", z=[1.0, 1.15], f0=[0.5, 0.5], f1=[0.5, 0.45]),
-           P("hw-us-17.jpg", tone="sepia", crop=[0.05, 0.05, 0.95, 0.95], z=[1.0, 1.12], f0=[0.5, 0.5], f1=[0.5, 0.45])]),
+           P("tot-15.jpg", tone="bw", crop=[0.02, 0.02, 0.98, 0.98], z=[1.0, 1.12], f0=[0.5, 0.5], f1=[0.55, 0.45])]),
         L("o06", "We'll also tell you what Halloween looked like right here, in La Porte County, over a hundred and fifty years, through the newspapers of the towns around us, and the weather records of the nights themselves.",
           MAP(**CO, cam0=[-86.70, 41.55, 1.40], cam1=[-86.70, 41.55, 1.22], move_end=0.9,
               places=[LAKE, COUNTY, MICH, IND, place(MC, 0.15), place(LP, 0.3)])),
@@ -217,7 +218,7 @@ CHAPTERS = [
     ]),
 
     # ------------------------------------------------------------------ 2. Samhain
-    dict(id="c2", music="samhain", card=dict(type="chapter", n=2, title="What We Actually Know About Samhain", sub="Ireland · the 800s"), lines=[
+    dict(id="c2", music="samhain", card=dict(type="chapter", n=2, title="Samhain", sub="What the records actually say · Ireland, the 800s"), lines=[
         L("c2-01", "You have probably heard that Halloween comes from Samhain, an ancient Celtic festival of the dead, when the veil between the worlds grew thin.",
           P("map-ireland-01.jpg", tone="paper", crop=[0.05, 0.05, 0.95, 0.95], z=[1.0, 1.2], f0=[0.5, 0.5], f1=[0.45, 0.4]),
           lower="Ireland | a 19th-century map"),
@@ -226,16 +227,16 @@ CHAPTERS = [
         L("c2-03", "Those writings were made by Christian monks, copying stories that were already old. In them, Samhain is the start of winter, and the night when kings held their assemblies, and when strange things happen in the tales.",
           TYPED("SAMHAIN IN THE OLD IRISH TALES", ["The first of November: the start of winter.", "Kings hold their assemblies at Tara.", "The hero Fionn fights a fire-breathing enemy.", "A man named Nera walks among the dead."])),
         L("c2-04", "Archaeologists have dug at the Hill of Ward, in County Meath, where a later legend put the great Samhain fire. They found layer on layer of burnt ground and feasting bones, going back about three thousand years.",
-          P("x-tara-01.jpg", tone="warm", crop=[0.05, 0.1, 0.95, 0.9], z=[1.0, 1.15], f0=[0.5, 0.5], f1=[0.5, 0.42]), year="",
-          lower="The Hill of Ward, County Meath"),
+          P("map-ireland-01.jpg", tone="paper", crop=[0.45, 0.25, 0.95, 0.75], z=[1.0, 1.25], f0=[0.5, 0.5], f1=[0.6, 0.45]), year="",
+          lower="County Meath, on a 19th-century map of Ireland"),
         L("c2-05", "Was that Samhain? The lead archaeologist's own words were: tempting, but difficult to conclusively prove.",
           QUOTE("“…tempting, but difficult to conclusively prove.”", "Dr. Stephen Davis, University College Dublin, on the Hill of Ward dig"), stamp=UNKNOWN),
         L("c2-06", "Now the parts that aren't true. Samhain, the Celtic god of the dead.",
-          BIG("“SAMHAIN, GOD OF THE DEAD”", cap="said to be the source of Halloween"), stamp=dict(MYTH, at=2.4)),
+          BIG("“A GOD OF THE DEAD”", cap="Samhain, said to be the source of Halloween"), stamp=dict(MYTH, at=2.4)),
         L("c2-07", "No such god appears in any Irish text. He was invented in 1786 by a British army officer named Charles Vallancey, who wrote that the Irish deity Saman was the judge of departed souls. Vallancey, a reviewer said, wrote more nonsense than any man of his time.",
           QUOTE("“…wrote more nonsense than any man of his time.”", "a reviewer, on Charles Vallancey"), year="1786"),
         L("c2-08", "The Celtic New Year. That one comes from two Victorian scholars, John Rhys and James Frazer, in the 1890s. The historian Ronald Hutton checked the medieval records. There is no record of such a festival.",
-          BIG("“THE CELTIC NEW YEAR”", cap="a Victorian idea, 1890s"), year="1890", stamp=dict(DISPUTED, at=3.0)),
+          BIG("“CELTIC NEW YEAR”", cap="a Victorian idea, 1890s"), year="1890", stamp=dict(DISPUTED, at=3.0)),
         L("c2-09", "Druids and human sacrifice at Samhain. There is no contemporary record of any pagan Samhain rite at all. Not one.",
           BIG("DRUID SACRIFICE", cap="no record of any Samhain rite survives"), year="", stamp=dict(MYTH, at=1.8)),
         L("c2-10", "And the veil between the worlds? That phrase is modern. The old tales do have the dead and the otherworld close at Samhain. But as a line about thin veils, it's the stuff of the last hundred years, not the first thousand.",
@@ -391,7 +392,7 @@ CHAPTERS = [
         L("c8-03", "By 1956, Culver had given UNICEF its own night: coins on October twenty-ninth, candy on the thirtieth and thirty-first.",
           TYPED("CULVER CITIZEN · OCT. 24, 1956", ["Oct. 29: trick-or-treat for UNICEF.", "Oct. 30 and 31: trick-or-treat for candy."]), year="1956"),
         L("c8-04", "The costumes changed too. A Brooklyn company called Ben Cooper had been selling boxed costumes since 1937, with a Disney license. In 1963, it licensed a character almost nobody had heard of yet: Spider-Man.",
-          [P("loc-mask-01.jpg", tone="bw", crop=[0.02, 0.02, 0.98, 0.98], z=[1.0, 1.12], f0=[0.5, 0.5], f1=[0.5, 0.45]),
+          [P("hw-us-19.jpg", tone="bw", crop=[0.02, 0.02, 0.98, 0.98], z=[1.0, 1.12], f0=[0.5, 0.5], f1=[0.5, 0.45]),
            P("hw-us-33.jpg", tone="warm", crop=[0.02, 0.02, 0.98, 0.98], z=[1.0, 1.12], f0=[0.5, 0.45], f1=[0.5, 0.4], lower="A store-bought costume | 1960s")], year="1963"),
         L("c8-05", "In 1954, South Bend had its snowiest Halloween, 1.6 inches, with a high of only 38. Hold that thought too. The weather has a part in this story.",
           BIG("1.6 in.", cap="snow in South Bend, Halloween 1954: the snowiest on record"), year="1954", sfx=[["wind", 0.2]]),
