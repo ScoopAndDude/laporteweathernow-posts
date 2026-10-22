@@ -6,6 +6,11 @@ name: History of Halloween documentary voice (one-off, Oct. 2026)
 # re-records lines that changed. Nothing is posted.
 on:
   workflow_dispatch:
+    inputs:
+      save_run_id:
+        description: "Only join and save the parts of this earlier run (skip recording)"
+        required: false
+        default: ""
   push:
     branches: [halloween-doc]
     paths:
@@ -15,6 +20,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
 
 concurrency:
   group: halloween-doc-voice
@@ -22,6 +28,7 @@ concurrency:
 
 jobs:
   record:
+    if: ${{ !inputs.save_run_id }}
     runs-on: ubuntu-24.04
     timeout-minutes: 300
     strategy:
