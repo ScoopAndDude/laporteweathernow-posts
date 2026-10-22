@@ -406,9 +406,8 @@
      "v": [
       {
        "type": "news",
-       "file": "np-pranks-01.jpg",
-       "mode": "zoom",
-       "hold": 0.3,
+       "file": "clip-topeka-1895-1.jpg",
+       "mode": "hold",
        "lower": "Topeka State Journal | Nov. 1, 1895"
       },
       {
@@ -668,35 +667,6 @@
       "color": "red",
       "at": 1.8
      }
-    },
-    {
-     "id": "c2-10",
-     "say": "And the veil between the worlds? That phrase is modern. The old tales do have the dead and the otherworld close at Samhain. But as a line about thin veils, it's the stuff of the last hundred years, not the first thousand.",
-     "v": {
-      "type": "photo",
-      "file": "x-coligny-02.jpg",
-      "fit": "cover",
-      "tone": "bw",
-      "z": [
-       1.0,
-       1.15
-      ],
-      "f0": [
-       0.5,
-       0.5
-      ],
-      "f1": [
-       0.45,
-       0.5
-      ],
-      "crop": [
-       0.1,
-       0.1,
-       0.9,
-       0.9
-      ]
-     },
-     "lower": "The Coligny calendar | a Gaulish calendar in bronze, about A.D. 100"
     },
     {
      "id": "c2-11",
@@ -1428,25 +1398,6 @@
      }
     },
     {
-     "id": "c5-06",
-     "say": "1895. The Indianapolis Journal, on the morning after. We'll let you read it.",
-     "tts": "eighteen ninety-five. The Indianapolis Journal, on the morning after. We'll let you read it.",
-     "v": {
-      "type": "news",
-      "file": "np-mc-06.jpg",
-      "mode": "zoom",
-      "hold": 0.4,
-      "lower": "Indianapolis Journal | Nov. 1, 1895"
-     },
-     "year": "1895",
-     "sfx": [
-      [
-       "page",
-       0.0
-      ]
-     ]
-    },
-    {
      "id": "c5-07",
      "say": "1906. In Whiting, up by the lake, the town put about ten extra policemen on the street for Halloween. It didn't help. Gates were carried off. A window went in at Recht's department store. And the excitement, the paper said, was great when a Recht's employee chased some small children down the street.",
      "tts": "nineteen oh six. In Whiting, up by the lake, the town put about ten extra policemen on the street for Halloween. It didn't help. Gates were carried off. A window went in at Recht's department store. And the excitement, the paper said, was great when a Recht's employee chased some small children down the street.",
@@ -1510,17 +1461,67 @@
      }
     },
     {
-     "id": "c5-11",
-     "say": "1913. South Bend's news-times, the first of November.",
-     "tts": "nineteen thirteen. South Bend's news-times, the first of November.",
+     "id": "c5-10b",
+     "say": "1910. The Lake County Times, in Hammond, the morning after. We'll let you read it.",
+     "tts": "nineteen ten. The Lake County Times, in Hammond, the morning after. We'll let you read it.",
      "v": {
       "type": "news",
-      "file": "sbnt-1913-01.jpg",
-      "mode": "zoom",
-      "hold": 0.4,
+      "file": "clip-lct-1910-2.jpg",
+      "mode": "hold",
+      "lower": "Lake County Times, Hammond | Nov. 1, 1910"
+     },
+     "year": "1910",
+     "sfx": [
+      [
+       "page",
+       0.0
+      ]
+     ]
+    },
+    {
+     "id": "c5-10c",
+     "say": "The same night, in Hegewisch, just over the state line, a sixty-year-old porter walked in the dark to an outhouse that wasn't there anymore. Someone had carried it off. He fell into the pit and died. The paper blamed, in its words, Hallowe'en dastards.",
+     "v": {
+      "type": "news",
+      "file": "clip-lct-1910-3.jpg",
+      "mode": "hold",
+      "lower": "Lake County Times | Nov. 1, 1910"
+     },
+     "sfx": [
+      [
+       "page",
+       0.0
+      ]
+     ]
+    },
+    {
+     "id": "c5-11",
+     "say": "1913. On Halloween night, a streetcar strike in Indianapolis turned into a riot. The South Bend paper reported that Halloween observers, hiding their identities under mask and face paint, joined the general disorder. Fifty arrests.",
+     "tts": "nineteen thirteen. On Halloween night, a streetcar strike in Indianapolis turned into a riot. The South Bend paper reported that Halloween observers, hiding their identities under mask and face paint, joined the general disorder. Fifty arrests.",
+     "v": {
+      "type": "news",
+      "file": "clip-sbnt-1913a-1.jpg",
+      "mode": "hold",
       "lower": "South Bend News-Times | Nov. 1, 1913"
      },
      "year": "1913",
+     "sfx": [
+      [
+       "page",
+       0.0
+      ]
+     ]
+    },
+    {
+     "id": "c5-11b",
+     "say": "In South Bend itself, a seventeen-year-old named George Kline got so annoyed by the boys making noise outside the house where he boarded that he fired a twenty-two rifle at them. One boy was hit in the leg. Not expected to prove serious, the paper said.",
+     "v": {
+      "type": "news",
+      "file": "sbnt-1913-02.jpg",
+      "mode": "zoom",
+      "hold": 0.3,
+      "lower": "South Bend News-Times | Nov. 1, 1913"
+     },
      "sfx": [
       [
        "page",
@@ -1631,6 +1632,12 @@
        "type": "news",
        "file": "sbnt-1923-01.jpg",
        "mode": "zoom",
+       "box": [
+        0.56,
+        0.72,
+        0.9,
+        1.0
+       ],
        "hold": 0.3,
        "lower": "South Bend News-Times | Nov. 1, 1923"
       }
@@ -1640,6 +1647,22 @@
       [
        "page",
        4.0
+      ]
+     ]
+    },
+    {
+     "id": "c6-02b",
+     "say": "That same morning, South Bend's front page put the new idea in a headline: Hallowe'en finds Chicago youth behaving while grown-ups frolic. Sell the youngsters the nice-party idea, it said. The older folks have the wild parties.",
+     "v": {
+      "type": "news",
+      "file": "clip-sbnt-1923-2.jpg",
+      "mode": "hold",
+      "lower": "South Bend News-Times | Nov. 1, 1923"
+     },
+     "sfx": [
+      [
+       "page",
+       0.0
       ]
      ]
     },
@@ -1723,11 +1746,29 @@
      "say": "Then came the Depression. By 1933, the damage in some cities was so bad that officials talked about banning Halloween. It's been called Black Halloween ever since.",
      "tts": "Then came the Depression. By nineteen thirty-three, the damage in some cities was so bad that officials talked about banning Halloween. It's been called Black Halloween ever since.",
      "v": {
-      "type": "news",
-      "file": "sbnt-1934-01.jpg",
-      "mode": "zoom",
-      "hold": 0.3,
-      "lower": "South Bend News-Times | Nov. 1, 1934"
+      "type": "photo",
+      "file": "costume-1920-02.jpg",
+      "fit": "cover",
+      "tone": "sepia",
+      "z": [
+       1.0,
+       1.12
+      ],
+      "f0": [
+       0.5,
+       0.5
+      ],
+      "f1": [
+       0.45,
+       0.45
+      ],
+      "crop": [
+       0.02,
+       0.02,
+       0.98,
+       0.98
+      ],
+      "lower": "A Halloween party, Wainwright, Alberta | 1920s"
      },
      "year": "1933",
      "sfx": [
@@ -2017,20 +2058,6 @@
        4.0
       ]
      ]
-    },
-    {
-     "id": "c8-03",
-     "say": "By 1956, Culver had given UNICEF its own night: coins on October twenty-ninth, candy on the thirtieth and thirty-first.",
-     "tts": "By nineteen fifty-six, Culver had given UNICEF its own night: coins on October twenty-ninth, candy on the thirtieth and thirty-first.",
-     "v": {
-      "type": "typed",
-      "head": "CULVER CITIZEN · OCT. 24, 1956",
-      "rows": [
-       "Oct. 29: trick-or-treat for UNICEF.",
-       "Oct. 30 and 31: trick-or-treat for candy."
-      ]
-     },
-     "year": "1956"
     },
     {
      "id": "c8-04",
