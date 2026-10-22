@@ -20,6 +20,7 @@ and images/fetch-log.txt (everything it tried, since the job's own log can't be 
                          New files are listed in images/extra-files.txt; the log is images/fetch-log-extra.txt.
 """
 import io
+import glob
 import json
 import os
 import re
@@ -394,7 +395,9 @@ def one_book(ident, spec, k0=0):
 
 # ------------------------------------------------------------------ Chronicling America (1908 newspapers)
 def alto_blocks(xml_bytes, pattern):
-    """(page_w, page_h, [(score, x, y, w, h, text)]) for text blocks containing the pattern."""
+    """(page_w, page_h, [(score, x, y, w, h, text)]): a box around every word matching the pattern — the text
+    block's (column's) width, from two lines above the word to about a dozen lines below it — biggest type first.
+    (Whole text blocks are no use: on old papers a block is the whole column.)"""
     root = ET.fromstring(xml_bytes)
     strip = lambda t: t.split("}")[-1]
     page = next((e for e in root.iter() if strip(e.tag) == "Page"), None)
@@ -402,14 +405,22 @@ def alto_blocks(xml_bytes, pattern):
     blocks = []
     for tb in (e for e in root.iter() if strip(e.tag) == "TextBlock"):
         words = [s for s in tb.iter() if strip(s.tag) == "String"]
-        text = " ".join(s.get("CONTENT", "") for s in words)
-        hits = [s for s in words if re.search(pattern, s.get("CONTENT", ""), re.I)]
-        if not hits:
-            continue
-        score = max(float(s.get("HEIGHT", 0)) for s in hits)
-        blocks.append((score, float(tb.get("HPOS")), float(tb.get("VPOS")), float(tb.get("WIDTH")), float(tb.get("HEIGHT")), text[:400]))
+        bx, bw = float(tb.get("HPOS", 0)), float(tb.get("WIDTH", pw * 0.15))
+        for i, s in enumerate(words):
+            if not re.search(pattern, s.get("CONTENT", ""), re.I):
+                continue
+            wy, wh = float(s.get("VPOS", 0)), float(s.get("HEIGHT", 20)) or 20.0
+            y0 = max(0.0, wy - wh * 2.5)
+            y1 = min(ph, wy + wh * 14)
+            text = " ".join(w.get("CONTENT", "") for w in words[max(0, i - 6): i + 30])
+            blocks.append((wh, bx, y0, bw, y1 - y0, text[:400]))
     blocks.sort(reverse=True)
-    return pw, ph, blocks
+    # drop boxes that sit inside an earlier (bigger-type) one
+    keep = []
+    for b in blocks:
+        if not any(abs(b[1] - k[1]) < 5 and k[2] - 5 <= b[2] <= k[2] + k[4] * 0.5 for k in keep):
+            keep.append(b)
+    return pw, ph, keep
 
 
 def ca_page(page_url):
@@ -649,8 +660,15 @@ def news_clips(items, old):
                 if not blocks:
                     log("  no block matches", c["pattern"], "on", pfile)
                     continue
+                px, py = float(c.get("pad", 0.12)), float(c.get("pad_y", 0.1))
+                if c.get("all"):
+                    extra = []
+                    for j, (score, x, y, w, h, text) in enumerate(blocks[: int(c.get("max", 4))], 1):
+                        extra.append(dict(c, all=False, out=f"{c['out']}-{j}", note=(c.get("note", "") + " | " + text[:160]).strip(" |"),
+                                          box=[max(0.0, (x - w * px) / pw), max(0.0, (y - h * py) / ph), min(1.0, (x + w * (1 + px)) / pw), min(1.0, (y + h * (1 + py)) / ph)]))
+                    clips.extend(extra)
+                    continue
                 score, x, y, w, h, text = blocks[min(int(c.get("n", 0)), len(blocks) - 1)]
-                px, py = float(c.get("pad", 0.12)), float(c.get("pad_y", 0.4))
                 c["box"] = [max(0.0, (x - w * px) / pw), max(0.0, (y - h * py) / ph), min(1.0, (x + w * (1 + px)) / pw), min(1.0, (y + h * (1 + py)) / ph)]
                 c["note"] = (c.get("note", "") + " | " + text[:160]).strip(" |")
                 log("  found", c["pattern"], "on", pfile, "box", [round(v, 3) for v in c["box"]], "|", text[:80])
@@ -818,8 +836,9 @@ def main_extra():
     sfx = f"-{part}" if part else ""
     LOGF = open(os.path.join(OUT, f"fetch-log-extra{sfx}.txt"), "w", encoding="utf-8")
     spec = split_spec(json.load(open(os.path.join(HERE, "sources-extra.json"), encoding="utf-8")), part)
-    mpath = os.path.join(OUT, "manifest.json")
-    old = json.load(open(mpath, encoding="utf-8")) if os.path.exists(mpath) else []
+    old = []
+    for mp in sorted(glob.glob(os.path.join(OUT, "manifest*.json"))):           # every earlier part's list
+        old.extend(json.load(open(mp, encoding="utf-8")))
     manifest.extend(old)
     for x in old:
         seen.add(x.get("title"))
