@@ -16,6 +16,13 @@ on:
       - tools/video/halloween-doc/fetch.py
       - .github/workflows/halloween-doc-images.yml
   workflow_dispatch:
+    inputs:
+      mode:
+        description: "first (sources.json) or extra (sources-extra.json)"
+        default: "extra"
+      parts:
+        description: "Parts to run, comma-separated (empty = all): commons1,commons2,loc,maps,books,news"
+        default: ""
 
 permissions:
   contents: write
@@ -40,7 +47,10 @@ jobs:
         id: chk
         run: |
           D=tools/video/halloween-doc
-          if [ -f $D/sources-extra.json ] && git diff --name-only HEAD~1 HEAD | grep -q sources-extra.json; then echo "mode=extra" >> "$GITHUB_OUTPUT"
+          WANT="${{ inputs.parts }}"
+          if [ -n "$WANT" ] && ! echo ",$WANT," | grep -q ",${{ matrix.part }},"; then echo "mode=none" >> "$GITHUB_OUTPUT"
+          elif [ -n "${{ inputs.mode }}" ]; then echo "mode=${{ inputs.mode }}" >> "$GITHUB_OUTPUT"
+          elif [ -f $D/sources-extra.json ] && git diff --name-only HEAD~1 HEAD | grep -q sources-extra.json; then echo "mode=extra" >> "$GITHUB_OUTPUT"
           elif [ -f $D/sources.json ]; then echo "mode=first" >> "$GITHUB_OUTPUT"
           else echo "mode=none" >> "$GITHUB_OUTPUT"; fi
       - uses: actions/setup-python@v5
