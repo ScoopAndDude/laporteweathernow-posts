@@ -1,9 +1,11 @@
 name: History of Halloween documentary voice (one-off, Oct. 2026)
 
-# Records the documentary's narration (tools/video/halloween-doc/lines.json) with the same voice as the shorts
-# and saves it on the halloween-doc branch. Runs only on that branch, only when the words change, and only
+# Records the documentary's narration (tools/video/halloween-doc/lines.json) with Chatterbox (Resemble AI, MIT),
+# the voice Scoop picked for sounding more human, in four parallel parts, then joins them and saves the
+# recording on the halloween-doc branch. Runs only on that branch, only when the words change, and only
 # re-records lines that changed. Nothing is posted.
 on:
+  workflow_dispatch:
   push:
     branches: [halloween-doc]
     paths:
@@ -19,49 +21,76 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  voice:
+  record:
     runs-on: ubuntu-24.04
-    timeout-minutes: 75
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        part: [0, 1, 2, 3]
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Is there a script yet?
-        id: chk
-        run: echo "go=$([ -f tools/video/halloween-doc/lines.json ] && echo yes || echo no)" >> "$GITHUB_OUTPUT"
 
       - uses: actions/setup-python@v5
-        if: steps.chk.outputs.go == 'yes'
         with:
-          python-version: "3.12"
+          python-version: "3.11"
 
       - name: Voice cache
-        if: steps.chk.outputs.go == 'yes'
         uses: actions/cache@v4
         with:
           path: |
             ~/.cache/pip
             ~/.cache/huggingface
-          key: kokoro-voice-${{ runner.os }}-py312-v1
+          key: chatterbox-voice-${{ runner.os }}-py311-v1
 
       - name: Install the voice
-        if: steps.chk.outputs.go == 'yes'
         run: |
-          sudo apt-get install -y -qq espeak-ng > /dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq espeak-ng > /dev/null)
-          pip install -q torch --index-url https://download.pytorch.org/whl/cpu
-          pip install -q "kokoro>=0.9.4" soundfile numpy
-          python3 -m spacy download en_core_web_sm -q || true
+          sudo apt-get install -y -qq espeak-ng ffmpeg > /dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq espeak-ng ffmpeg > /dev/null)
+          pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          pip install -q chatterbox-tts faster-whisper soundfile numpy
 
       - name: Record
-        if: steps.chk.outputs.go == 'yes'
-        run: python3 tools/video/halloween-doc/voice.py 2>&1 | tee tools/video/halloween-doc/voice-log.txt
+        env:
+          VOICE_ENGINE: chatterbox
+          VOICE_PART: ${{ matrix.part }}/4
+        run: python3 tools/video/halloween-doc/voice.py 2>&1 | tee tools/video/halloween-doc/voice-log-${{ matrix.part }}.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: voice-part-${{ matrix.part }}
+          path: |
+            tools/video/halloween-doc/voice/*.flac
+            tools/video/halloween-doc/voice/part-${{ matrix.part }}.json
+            tools/video/halloween-doc/voice-log-${{ matrix.part }}.txt
+          if-no-files-found: error
+
+  save:
+    needs: record
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: voice-part-*
+          path: parts
+          merge-multiple: true
+
+      - name: Join the parts
+        run: |
+          mkdir -p tools/video/halloween-doc/voice
+          find parts -type f | head -20
+          cp -r parts/voice/* tools/video/halloween-doc/voice/
+          cat parts/voice-log-*.txt > tools/video/halloween-doc/voice-log.txt || true
+          python3 tools/video/halloween-doc/voice.py merge
 
       - name: Save the recording on this branch
-        if: always() && steps.chk.outputs.go == 'yes'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm -f tools/video/halloween-doc/voice-log-*.txt
           git add -A tools/video/halloween-doc/voice tools/video/halloween-doc/voice-log.txt || true
-          git commit -q -m "Halloween documentary: the narration (Kokoro-82M af_heart)" || echo "nothing new"
+          git commit -q -m "Halloween documentary: the narration (Chatterbox)" || echo "nothing new"
           for i in 1 2 3; do git pull -q --rebase origin halloween-doc && git push -q origin HEAD:halloween-doc && break; sleep 5; done

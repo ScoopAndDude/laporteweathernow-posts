@@ -18,6 +18,7 @@ Music and sounds are written in code (music.py), so there's nothing for YouTube'
 """
 import functools
 import hashlib
+import glob
 import json
 import math
 import os
@@ -32,7 +33,9 @@ from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageOps
 Image.MAX_IMAGE_PIXELS = None
 HERE = os.path.dirname(os.path.abspath(__file__))
 IMG = os.path.join(HERE, "images")
+HAUNTS_IMG = os.path.normpath(os.path.join(HERE, "..", "haunts-doc", "images"))
 SHORT_IMG = os.path.normpath(os.path.join(HERE, "..", "belle-doc", "images"))
+IMG_DIRS = (IMG, HAUNTS_IMG, SHORT_IMG)
 SLUG = "history-of-halloween-documentary"
 BRANCH = "halloween-doc"
 VOICE = os.path.join(HERE, "voice")
@@ -215,9 +218,8 @@ MANIFEST = {}
 
 
 def load_manifests():
-    for d in (IMG, SHORT_IMG):
-        p = os.path.join(d, "manifest.json")
-        if os.path.exists(p):
+    for d in IMG_DIRS:
+        for p in sorted(glob.glob(os.path.join(d, "manifest*.json"))):
             for x in json.load(open(p, encoding="utf-8")):
                 MANIFEST.setdefault(x["file"], dict(x, _dir=d))
                 for c in x.get("crops", []):
@@ -225,7 +227,7 @@ def load_manifests():
 
 
 def img_path(name):
-    for d in (IMG, SHORT_IMG):
+    for d in IMG_DIRS:
         p = os.path.join(d, name)
         if os.path.exists(p):
             return p
