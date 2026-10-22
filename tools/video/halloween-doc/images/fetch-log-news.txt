@@ -1,294 +1,111 @@
 Chronicling America: {'name': 'np-lp', 'q': "hallowe'en la porte", 'pattern': 'hallowe.?en|halloween', 'dates': '1885-01-01/1925-12-31', 'max': 20, 'crops_per_page': 2, 'license': 'Public domain (newspaper, before 1926)'}
   newspaper search https://www.loc.gov/collections/chronicling-america/?qs=hallowe%27en+la+porte&ops=AND&searchType=advanced&start_date=1885-01-01&end_date=1925-12-31&dl=page&fo=json&c=100 -> 100 results, 100 inside the dates with pictures
-  first result keys: ['access_restricted', 'aka', 'batch', 'campaigns', 'composite_location', 'contributor', 'date', 'dates', 'description', 'digitized', 'extract_timestamp', 'group', 'hassegments', 'id', 'image_url', 'index', 'language', 'location', 'location_city', 'location_country', 'location_county', 'location_state', 'mime_type', 'number', 'number_edition', 'number_lccn', 'number_page', 'number_reel', 'online_format', 'original_format', 'page_id', 'partof', 'partof_collection', 'partof_division', 'partof_title', 'publication_frequency', 'resources', 'segmentof', 'shelf_id', 'site']
-  word positions failed: http://www.loc.gov/resource/sn82014248/1887-08-25/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
-  saved np-lp-01.jpg (1963, 2600) | Public domain (newspaper, before 1926) | daily kennebec journal (augusta, me.) 1870-1975 [m | daily kennebec journal (augusta, me.) 1870-1975 [microfilm reel], 1887-08-25
-  word positions failed: http://www.loc.gov/resource/sn84022137/1888-11-07/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
-  saved np-lp-02.jpg (2025, 2600) | Public domain (newspaper, before 1926) | union county courier (elk point, union county, d.t | union county courier (elk point, union county, d.t. [s.d.]) 187?-1913, 1888-11-07
+  first result keys: ['access_restricted', 'aka', 'batch', 'campaigns', 'composite_location', 'contributor', 'date', 'dates', 'description', 'digitized', 'extract_timestamp', 'group', 'hassegments', 'id', 'image_url', 'index', 'language', 'location', 'location_city', 'location_country', 'location_county', 'location_state', 'mime_type', 'number', 'number_edition', 'number_lccn', 'number_page', 'number_reel', 'online_format', 'original_format', 'other_title', 'page_id', 'partof', 'partof_collection', 'partof_division', 'partof_title', 'publication_frequency', 'resources', 'segmentof', 'shelf_id']
   word positions failed: http://www.loc.gov/resource/sn86081853/1890-05-09/ed-1/?sp=2 not well-formed (invalid token): line 1, column 0
-  saved np-lp-03.jpg (1810, 2600) | Public domain (newspaper, before 1926) | sullivan republican (laporte, pa.) 1883-1896 | sullivan republican (laporte, pa.) 1883-1896, 1890-05-09
-  word positions failed: http://www.loc.gov/resource/sn85058130/1890-10-29/ed-1/?sp=5 not well-formed (invalid token): line 1, column 0
-  saved np-lp-04.jpg (1819, 2600) | Public domain (newspaper, before 1926) | the salt lake herald (salt lake city [utah]) 1870- | the salt lake herald (salt lake city [utah]) 1870-1909, 1890-10-29
-  word positions failed: http://www.loc.gov/resource/sn84020631/1891-11-02/ed-1/?sp=4 not well-formed (invalid token): line 1, column 0
-  saved np-lp-05.jpg (2061, 2600) | Public domain (newspaper, before 1926) | santa fe daily new mexican (santa fe, n.m.) 1885-1 | santa fe daily new mexican (santa fe, n.m.) 1885-1897, 1891-11-02
-  word positions failed: http://www.loc.gov/resource/sn86081853/1893-10-27/ed-1/?sp=3 not well-formed (invalid token): line 1, column 0
-  saved np-lp-06.jpg (1956, 2600) | Public domain (newspaper, before 1926) | sullivan republican (laporte, pa.) 1883-1896 | sullivan republican (laporte, pa.) 1883-1896, 1893-10-27
-  word positions failed: http://www.loc.gov/resource/sn89060124/1895-02-01/ed-1/?sp=2 not well-formed (invalid token): line 1, column 0
-  saved np-lp-07.jpg (2064, 2600) | Public domain (newspaper, before 1926) | the prince george's enquirer and southern maryland | the prince george's enquirer and southern maryland advertiser (upper marlborough, md.) 188
-  word positions failed: http://www.loc.gov/resource/sn82014248/1897-03-09/ed-1/?sp=8 not well-formed (invalid token): line 1, column 0
-  saved np-lp-08.jpg (1983, 2600) | Public domain (newspaper, before 1926) | daily kennebec journal (augusta, me.) 1870-1975 [m | daily kennebec journal (augusta, me.) 1870-1975 [microfilm reel], 1897-03-09
-  word positions failed: http://www.loc.gov/resource/sn82016413/1898-10-27/ed-1/?sp=10 not well-formed (invalid token): line 1, column 0
-  saved np-lp-09.jpg (1984, 2600) | Public domain (newspaper, before 1926) | evening bulletin (honolulu [oahu, hawaii]) 1895-19 | evening bulletin (honolulu [oahu, hawaii]) 1895-1912, 1898-10-27
-  word positions failed: http://www.loc.gov/resource/sn82015415/1898-10-29/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
-  saved np-lp-10.jpg (1877, 2600) | Public domain (newspaper, before 1926) | the hawaiian star (honolulu [oahu]) 1893-1912 | the hawaiian star (honolulu [oahu]) 1893-1912, 1898-10-29
-  word positions failed: http://www.loc.gov/resource/sn86069561/1898-11-04/ed-1/?sp=3 not well-formed (invalid token): line 1, column 0
-  saved np-lp-11.jpg (1891, 2600) | Public domain (newspaper, before 1926) | mount vernon signal (mt. vernon, ky.) 18??-current | mount vernon signal (mt. vernon, ky.) 18??-current, 1898-11-04
-  word positions failed: http://www.loc.gov/resource/sn82014248/1898-12-16/ed-1/?sp=8 not well-formed (invalid token): line 1, column 0
-  saved np-lp-12.jpg (1946, 2600) | Public domain (newspaper, before 1926) | daily kennebec journal (augusta, me.) 1870-1975 [m | daily kennebec journal (augusta, me.) 1870-1975 [microfilm reel], 1898-12-16
-  word positions failed: http://www.loc.gov/resource/sn99062034/1899-10-28/ed-1/?sp=3 not well-formed (invalid token): line 1, column 0
-  saved np-lp-13.jpg (1675, 2600) | Public domain (newspaper, before 1926) | the madison daily leader (madison, s.d.) 1890-curr | the madison daily leader (madison, s.d.) 1890-current, 1899-10-28
-  word positions failed: http://www.loc.gov/resource/sn99062034/1899-10-30/ed-1/?sp=3 not well-formed (invalid token): line 1, column 0
-  saved np-lp-14.jpg (1676, 2600) | Public domain (newspaper, before 1926) | the madison daily leader (madison, s.d.) 1890-curr | the madison daily leader (madison, s.d.) 1890-current, 1899-10-30
-  word positions failed: http://www.loc.gov/resource/sn99062034/1899-11-01/ed-1/?sp=3 not well-formed (invalid token): line 1, column 0
-  saved np-lp-15.jpg (1680, 2600) | Public domain (newspaper, before 1926) | the madison daily leader (madison, s.d.) 1890-curr | the madison daily leader (madison, s.d.) 1890-current, 1899-11-01
-  word positions failed: http://www.loc.gov/resource/sn99062034/1899-11-23/ed-1/?sp=2 not well-formed (invalid token): line 1, column 0
-  saved np-lp-16.jpg (1706, 2600) | Public domain (newspaper, before 1926) | the madison daily leader (madison, s.d.) 1890-curr | the madison daily leader (madison, s.d.) 1890-current, 1899-11-23
-  word positions failed: http://www.loc.gov/resource/sn88053056/1902-10-18/ed-1/?sp=3 not well-formed (invalid token): line 1, column 0
-  saved np-lp-17.jpg (1964, 2600) | Public domain (newspaper, before 1926) | the daily republican (wilmington, del.) 1902-19?? | the daily republican (wilmington, del.) 1902-19??, 1902-10-18
-  word positions failed: http://www.loc.gov/resource/sn86081854/1903-10-22/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
-  saved np-lp-18.jpg (1825, 2600) | Public domain (newspaper, before 1926) | republican news item (laport, pa.) 1896-19?? | republican news item (laport, pa.) 1896-19??, 1903-10-22
-  word positions failed: http://www.loc.gov/resource/sn97067613/1903-10-28/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
-  saved np-lp-19.jpg (1852, 2600) | Public domain (newspaper, before 1926) | news and citizen (morrisville, vt. ; hyde park, vt | news and citizen (morrisville, vt. ; hyde park, vt.) 1881-current, 1903-10-28
-  word positions failed: http://www.loc.gov/resource/sn86069873/1904-10-21/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
-  saved np-lp-20.jpg (1779, 2600) | Public domain (newspaper, before 1926) | the bourbon news (paris, ky.) 1895-19?? | the bourbon news (paris, ky.) 1895-19??, 1904-10-21
+  saved np-lp-01.jpg (1810, 2600) | Public domain (newspaper, before 1926) | sullivan republican (laporte, pa.) 1883-1896 | sullivan republican (laporte, pa.) 1883-1896, 1890-05-09
+  info.json failed: https://tile.loc.gov/image-services/iiif/service:ndnp:in:batch_in_kerr_ver01:data:sn82015679:00415665507:1894102801:0556 HTTP Error 520: <none>
+  word positions failed: http://www.loc.gov/resource/sn87056249/1894-11-02/ed-1/?sp=5 not well-formed (invalid token): line 1, column 0
+  saved np-lp-02.jpg (1799, 2600) | Public domain (newspaper, before 1926) | marshall county independent (plymouth, marshall co | marshall county independent (plymouth, marshall county, ind.) 1894-1895, 1894-11-02
+  word positions failed: http://www.loc.gov/resource/sn84024442/1896-10-25/ed-1/?sp=17 not well-formed (invalid token): line 1, column 0
+  saved np-lp-03.jpg (1963, 2600) | Public domain (newspaper, before 1926) | the morning times (washington, d.c.) 1895-1897 | the morning times (washington, d.c.) 1895-1897, 1896-10-25
+  word positions failed: http://www.loc.gov/resource/sn85025431/1897-11-03/ed-1/?sp=7 not well-formed (invalid token): line 1, column 0
+  saved np-lp-04.jpg (1755, 2600) | Public domain (newspaper, before 1926) | mower county transcript (lansing, minn.) 1868-1915 | mower county transcript (lansing, minn.) 1868-1915, 1897-11-03
+  word positions failed: http://www.loc.gov/resource/sn86071197/1898-10-31/ed-1/?sp=6 not well-formed (invalid token): line 1, column 0
+  saved np-lp-05.jpg (1975, 2600) | Public domain (newspaper, before 1926) | the houston daily post (houston, tex.) 1886-1903 | the houston daily post (houston, tex.) 1886-1903, 1898-10-31
+  word positions failed: http://www.loc.gov/resource/sn84024441/1898-11-01/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
+  saved np-lp-06.jpg (1942, 2600) | Public domain (newspaper, before 1926) | the evening times (washington, d.c.) 1895-1902 | the evening times (washington, d.c.) 1895-1902, 1898-11-01
+  word positions failed: http://www.loc.gov/resource/sn86064199/1898-11-01/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
+  saved np-lp-07.jpg (1927, 2600) | Public domain (newspaper, before 1926) | el paso daily herald (el paso, tex.) 1881-1901 | el paso daily herald (el paso, tex.) 1881-1901, 1898-11-01
+  word positions failed: http://www.loc.gov/resource/sn86064199/1898-11-05/ed-1/?sp=8 not well-formed (invalid token): line 1, column 0
+  saved np-lp-08.jpg (1987, 2600) | Public domain (newspaper, before 1926) | el paso daily herald (el paso, tex.) 1881-1901 | el paso daily herald (el paso, tex.) 1881-1901, 1898-11-05
+  word positions failed: http://www.loc.gov/resource/sn84020274/1901-11-03/ed-1/?sp=18 not well-formed (invalid token): line 1, column 0
+  saved np-lp-09.jpg (1911, 2600) | Public domain (newspaper, before 1926) | the st. louis republic (st. louis, mo.) 1888-1919 | the st. louis republic (st. louis, mo.) 1888-1919, 1901-11-03
+  info.json failed: https://tile.loc.gov/image-services/iiif/service:ndnp:ct:batch_ct_butternut_ver01:data:sn84020358:00415668247:1902030401:0484 HTTP Error 520: <none>
+  word positions failed: http://www.loc.gov/resource/sn87058235/1902-10-29/ed-1/?sp=3 not well-formed (invalid token): line 1, column 0
+  saved np-lp-10.jpg (1827, 2600) | Public domain (newspaper, before 1926) | decorah public opinion (decorah, winneshiek county | decorah public opinion (decorah, winneshiek county [iowa]) 1895-1928, 1902-10-29
+  word positions failed: http://www.loc.gov/resource/sn85035720/1903-12-21/ed-2/?sp=3 not well-formed (invalid token): line 1, column 0
+  saved np-lp-11.jpg (2084, 2600) | Public domain (newspaper, before 1926) | perth amboy evening news (perth amboy, n.j.) 1903- | perth amboy evening news (perth amboy, n.j.) 1903-1959, 1903-12-21
+  word positions failed: http://www.loc.gov/resource/sn85049554/1905-10-31/ed-1/?sp=7 not well-formed (invalid token): line 1, column 0
+  saved np-lp-12.jpg (2174, 2600) | Public domain (newspaper, before 1926) | evening times-republican (marshalltown, iowa) 1890 | evening times-republican (marshalltown, iowa) 1890-1923, 1905-10-31
+  word positions failed: http://www.loc.gov/resource/sn83045313/1906-05-22/ed-1/?sp=7 not well-formed (invalid token): line 1, column 0
+  saved np-lp-13.jpg (1928, 2600) | Public domain (newspaper, before 1926) | le messager (lewiston, me.) 1880-1966 | le messager (lewiston, me.) 1880-1966, 1906-05-22
+  word positions failed: http://www.loc.gov/resource/sn86058242/1906-10-31/ed-1/?sp=3 not well-formed (invalid token): line 1, column 0
+  page download failed: https://tile.loc.gov/image-services/iiif/service:ndnp:in:batch_in_dean_ver02:data:sn86058242:00271745734:1906103101:0712 HTTP Error 520: <none>
+  word positions failed: http://www.loc.gov/resource/sn84022871/1906-11-05/ed-1/?sp=5 not well-formed (invalid token): line 1, column 0
+  saved np-lp-14.jpg (1706, 2600) | Public domain (newspaper, before 1926) | orleans county monitor (barton, vt.) 1872-1953 | orleans county monitor (barton, vt.) 1872-1953, 1906-11-05
+  info.json failed: https://tile.loc.gov/image-services/iiif/service:ndnp:in:batch_in_dean_ver02:data:sn86058242:0027174576A:1907110101:0406 HTTP Error 520: <none>
+  word positions failed: http://www.loc.gov/resource/sn86058242/1907-11-01/ed-1/?sp=6 HTTP Error 520: <none>
+  saved np-lp-15.jpg (2103, 2600) | Public domain (newspaper, before 1926) | the lake county times (hammond, ind.) 1906-1933 | the lake county times (hammond, ind.) 1906-1933, 1907-11-01
+  word positions failed: http://www.loc.gov/resource/sn83030272/1908-07-14/ed-1/?sp=10 HTTP Error 520: <none>
+  saved np-lp-16.jpg (1984, 2600) | Public domain (newspaper, before 1926) | the sun (new york [n.y.]) 1833-1916 | the sun (new york [n.y.]) 1833-1916, 1908-07-14
+  word positions failed: http://www.loc.gov/resource/sn82015485/1908-10-31/ed-1/?sp=6 not well-formed (invalid token): line 1, column 0
+  saved np-lp-17.jpg (2140, 2600) | Public domain (newspaper, before 1926) | western kansas world (wakeeney, kan.) 1885-current | western kansas world (wakeeney, kan.) 1885-current, 1908-10-31
+  word positions failed: http://www.loc.gov/resource/sn86081854/1908-11-05/ed-1/?sp=3 not well-formed (invalid token): line 1, column 0
+  saved np-lp-18.jpg (1840, 2600) | Public domain (newspaper, before 1926) | republican news item (laport, pa.) 1896-19?? | republican news item (laport, pa.) 1896-19??, 1908-11-05
+  word positions failed: http://www.loc.gov/resource/sn86081854/1909-11-04/ed-1/?sp=2 not well-formed (invalid token): line 1, column 0
+  saved np-lp-19.jpg (1845, 2600) | Public domain (newspaper, before 1926) | republican news item (laport, pa.) 1896-19?? | republican news item (laport, pa.) 1896-19??, 1909-11-04
+  word positions failed: http://www.loc.gov/resource/sn86058226/1910-10-30/ed-1/?sp=5 not well-formed (invalid token): line 1, column 0
+  page download failed: https://tile.loc.gov/image-services/iiif/service:ndnp:in:batch_in_georgecrowe_ver01:data:sn86058226:00271744882:1910103001:0277 HTTP Error 520: <none>
+  info.json failed: https://tile.loc.gov/image-services/iiif/service:ndnp:dlc:batch_dlc_mike_ver02:data:sn83045433:0010049338A:1910110101:0728 HTTP Error 520: <none>
+  word positions failed: http://www.loc.gov/resource/sn85042344/1910-11-06/ed-1/?sp=17 HTTP Error 520: <none>
+  saved np-lp-20.jpg (1927, 2600) | Public domain (newspaper, before 1926) | tulsa daily world (tulsa, indian territory [okla.] | tulsa daily world (tulsa, indian territory [okla.]) 1905-1919, 1910-11-06
 Chronicling America: {'name': 'np-mc', 'q': "hallowe'en michigan city", 'pattern': 'hallowe.?en|halloween', 'dates': '1885-01-01/1925-12-31', 'max': 15, 'crops_per_page': 2, 'license': 'Public domain (newspaper, before 1926)'}
-  newspaper search https://www.loc.gov/collections/chronicling-america/?qs=hallowe%27en+michigan+city&ops=AND&searchType=advanced&start_date=1885-01-01&end_date=1925-12-31&dl=page&fo=json&c=100 -> 100 results, 100 inside the dates with pictures
+  newspaper search failed: https://www.loc.gov/collections/chronicling-america/?qs=hallowe%27en+michigan+city&ops=AND&searchType=advanced&start_date=1885-01-01&end_date=1925-12-31&dl=page HTTP Error 520: <none>
+  newspaper search https://www.loc.gov/collections/chronicling-america/?q=hallowe%27en+michigan+city&start_date=1885-01-01&end_date=1925-12-31&dl=page&fo=json&c=100 -> 100 results, 63 inside the dates with pictures
   first result keys: ['access_restricted', 'aka', 'batch', 'campaigns', 'composite_location', 'contributor', 'date', 'dates', 'description', 'digitized', 'extract_timestamp', 'group', 'hassegments', 'id', 'image_url', 'index', 'language', 'location', 'location_city', 'location_country', 'location_county', 'location_state', 'mime_type', 'number', 'number_edition', 'number_lccn', 'number_page', 'number_reel', 'online_format', 'original_format', 'page_id', 'partof', 'partof_collection', 'partof_division', 'partof_title', 'publication_frequency', 'resources', 'segmentof', 'shelf_id', 'site']
-  word positions failed: http://www.loc.gov/resource/sn82014248/1886-05-21/ed-1/?sp=2 not well-formed (invalid token): line 1, column 0
-  saved np-mc-01.jpg (1879, 2600) | Public domain (newspaper, before 1926) | daily kennebec journal (augusta, me.) 1870-1975 [m | daily kennebec journal (augusta, me.) 1870-1975 [microfilm reel], 1886-05-21
-  word positions failed: http://www.loc.gov/resource/sn82014248/1888-09-21/ed-1/?sp=4 not well-formed (invalid token): line 1, column 0
-  saved np-mc-02.jpg (1903, 2600) | Public domain (newspaper, before 1926) | daily kennebec journal (augusta, me.) 1870-1975 [m | daily kennebec journal (augusta, me.) 1870-1975 [microfilm reel], 1888-09-21
-  word positions failed: http://www.loc.gov/resource/sn82014248/1891-05-12/ed-1/?sp=4 not well-formed (invalid token): line 1, column 0
-  saved np-mc-03.jpg (1936, 2600) | Public domain (newspaper, before 1926) | daily kennebec journal (augusta, me.) 1870-1975 [m | daily kennebec journal (augusta, me.) 1870-1975 [microfilm reel], 1891-05-12
-  word positions failed: http://www.loc.gov/resource/sn83025308/1891-11-01/ed-1/?sp=3 not well-formed (invalid token): line 1, column 0
-  saved np-mc-04.jpg (1584, 2600) | Public domain (newspaper, before 1926) | the helena independent (helena, mont.) 1875-1943 | the helena independent (helena, mont.) 1875-1943, 1891-11-01
-  word positions failed: http://www.loc.gov/resource/sn82015483/1893-11-02/ed-1/?sp=2 not well-formed (invalid token): line 1, column 0
-  saved np-mc-05.jpg (2065, 2600) | Public domain (newspaper, before 1926) | morning journal and courier (new haven [conn.]) 18 | morning journal and courier (new haven [conn.]) 1848-1894, 1893-11-02
-  word positions failed: http://www.loc.gov/resource/sn82015679/1895-11-01/ed-1/?sp=3 not well-formed (invalid token): line 1, column 0
-  saved np-mc-06.jpg (2008, 2600) | Public domain (newspaper, before 1926) | the indianapolis journal (indianapolis [ind.]) 186 | the indianapolis journal (indianapolis [ind.]) 1867-1904, 1895-11-01
-  word positions failed: http://www.loc.gov/resource/sn83035387/1896-10-31/ed-1/?sp=2 not well-formed (invalid token): line 1, column 0
-  saved np-mc-07.jpg (1908, 2600) | Public domain (newspaper, before 1926) | the gazette (cleveland, ohio) 1892-194? | the gazette (cleveland, ohio) 1892-194?, 1896-10-31
-  word positions failed: http://www.loc.gov/resource/sn85054468/1899-11-05/ed-1/?sp=10 not well-formed (invalid token): line 1, column 0
-  saved np-mc-08.jpg (1970, 2600) | Public domain (newspaper, before 1926) | the times (washington [d.c.]) 1897-1901 | the times (washington [d.c.]) 1897-1901, 1899-11-05
   word positions failed: http://www.loc.gov/resource/sn83030214/1900-10-31/ed-1/?sp=14 not well-formed (invalid token): line 1, column 0
-  saved np-mc-09.jpg (1885, 2600) | Public domain (newspaper, before 1926) | new-york tribune (new york [n.y.]) 1866-1924 | new-york tribune (new york [n.y.]) 1866-1924, 1900-10-31
-  word positions failed: http://www.loc.gov/resource/sn83025294/1901-11-09/ed-1/?sp=10 not well-formed (invalid token): line 1, column 0
-  saved np-mc-10.jpg (1881, 2600) | Public domain (newspaper, before 1926) | the butte inter mountain (butte, mont.) 1901-1912 | the butte inter mountain (butte, mont.) 1901-1912, 1901-11-09
-  word positions failed: http://www.loc.gov/resource/sn85058130/1903-11-08/ed-1/?sp=10 not well-formed (invalid token): line 1, column 0
-  saved np-mc-11.jpg (1914, 2600) | Public domain (newspaper, before 1926) | the salt lake herald (salt lake city [utah]) 1870- | the salt lake herald (salt lake city [utah]) 1870-1909, 1903-11-08
-  word positions failed: http://www.loc.gov/resource/sn82014248/1905-07-17/ed-1/?sp=9 not well-formed (invalid token): line 1, column 0
-  saved np-mc-12.jpg (1979, 2600) | Public domain (newspaper, before 1926) | daily kennebec journal (augusta, me.) 1870-1975 [m | daily kennebec journal (augusta, me.) 1870-1975 [microfilm reel], 1905-07-17
-  word positions failed: http://www.loc.gov/resource/sn82014248/1905-09-26/ed-1/?sp=3 not well-formed (invalid token): line 1, column 0
-  saved np-mc-13.jpg (2027, 2600) | Public domain (newspaper, before 1926) | daily kennebec journal (augusta, me.) 1870-1975 [m | daily kennebec journal (augusta, me.) 1870-1975 [microfilm reel], 1905-09-26
-  word positions failed: http://www.loc.gov/resource/sn82014248/1905-11-01/ed-1/?sp=3 not well-formed (invalid token): line 1, column 0
-  saved np-mc-14.jpg (2018, 2600) | Public domain (newspaper, before 1926) | daily kennebec journal (augusta, me.) 1870-1975 [m | daily kennebec journal (augusta, me.) 1870-1975 [microfilm reel], 1905-11-01
-  word positions failed: http://www.loc.gov/resource/sn84036228/1905-11-03/ed-1/?sp=6 not well-formed (invalid token): line 1, column 0
-  saved np-mc-15.jpg (1981, 2600) | Public domain (newspaper, before 1926) | fergus county argus (lewistown, mont.) 1886-1946 | fergus county argus (lewistown, mont.) 1886-1946, 1905-11-03
+  saved np-mc-01.jpg (1885, 2600) | Public domain (newspaper, before 1926) | new-york tribune (new york [n.y.]) 1866-1924 | new-york tribune (new york [n.y.]) 1866-1924, 1900-10-31
+  word positions failed: http://www.loc.gov/resource/sn98069146/1903-11-06/ed-1/?sp=8 not well-formed (invalid token): line 1, column 0
+  saved np-mc-02.jpg (1825, 2600) | Public domain (newspaper, before 1926) | windham county reformer (brattleboro, vt.) 1901-19 | windham county reformer (brattleboro, vt.) 1901-1906, 1903-11-06
+  word positions failed: http://www.loc.gov/resource/sn92053934/1904-10-29/ed-1/?sp=7 not well-formed (invalid token): line 1, column 0
+  saved np-mc-03.jpg (2184, 2600) | Public domain (newspaper, before 1926) | rock island argus (rock island, ill.) 1893-1920 | rock island argus (rock island, ill.) 1893-1920, 1904-10-29
+  word positions failed: http://www.loc.gov/resource/sn93062856/1904-11-05/ed-1/?sp=8 not well-formed (invalid token): line 1, column 0
+  page download failed: https://tile.loc.gov/image-services/iiif/service:ndnp:uuml:batch_uuml_kirilenko_ver01:data:sn93062856:206535684:1904110501:0362 HTTP Error 520: <none>
+  word positions failed: http://www.loc.gov/resource/sn86069873/1906-10-26/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
+  saved np-mc-04.jpg (1775, 2600) | Public domain (newspaper, before 1926) | the bourbon news (paris, ky.) 1895-19?? | the bourbon news (paris, ky.) 1895-19??, 1906-10-26
+  word positions failed: http://www.loc.gov/resource/sn83030214/1906-10-27/ed-1/?sp=4 not well-formed (invalid token): line 1, column 0
+  saved np-mc-05.jpg (1909, 2600) | Public domain (newspaper, before 1926) | new-york tribune (new york [n.y.]) 1866-1924 | new-york tribune (new york [n.y.]) 1866-1924, 1906-10-27
+  word positions failed: http://www.loc.gov/resource/sn86066870/1906-10-31/ed-1/?sp=6 not well-formed (invalid token): line 1, column 0
+  saved np-mc-06.jpg (2075, 2600) | Public domain (newspaper, before 1926) | the daily sentinel (grand junction, colo.) 1893-cu | the daily sentinel (grand junction, colo.) 1893-current, 1906-10-31
+  word positions failed: http://www.loc.gov/resource/sn82016211/1907-10-26/ed-1/?sp=2 not well-formed (invalid token): line 1, column 0
+  saved np-mc-07.jpg (1723, 2600) | Public domain (newspaper, before 1926) | the freeman (indianapolis [ind.]) 1884-1927 | the freeman (indianapolis [ind.]) 1884-1927, 1907-10-26
+  word positions failed: http://www.loc.gov/resource/sn84045439/1908-11-03/ed-1/?sp=5 HTTP Error 520: <none>
+  saved np-mc-08.jpg (1827, 2600) | Public domain (newspaper, before 1926) | the berne witness (berne, ind.) 1896-1921 | the berne witness (berne, ind.) 1896-1921, 1908-11-03
+  word positions failed: http://www.loc.gov/resource/sn86063823/1909-10-30/ed-1/?sp=4 not well-formed (invalid token): line 1, column 0
+  saved np-mc-09.jpg (1916, 2600) | Public domain (newspaper, before 1926) | the roswell daily record (roswell, n.m.) 1903-curr | the roswell daily record (roswell, n.m.) 1903-current, 1909-10-30
+  word positions failed: http://www.loc.gov/resource/sn86089566/1909-11-07/ed-1/?sp=12 not well-formed (invalid token): line 1, column 0
+  saved np-mc-10.jpg (1937, 2600) | Public domain (newspaper, before 1926) | laredo weekly times (laredo, tex.) 188?-19?? | laredo weekly times (laredo, tex.) 188?-19??, 1909-11-07
+  word positions failed: http://www.loc.gov/resource/sn85042354/1910-10-31/ed-1/?sp=5 not well-formed (invalid token): line 1, column 0
+  saved np-mc-11.jpg (1819, 2600) | Public domain (newspaper, before 1926) | evening journal (wilmington, del.) 1888-1932 | evening journal (wilmington, del.) 1888-1932, 1910-10-31
+  word positions failed: http://www.loc.gov/resource/sn83016689/1912-10-29/ed-1/?sp=5 not well-formed (invalid token): line 1, column 0
+  saved np-mc-12.jpg (1877, 2600) | Public domain (newspaper, before 1926) | the detroit times (detroit, mich.) 1903-1920 | the detroit times (detroit, mich.) 1903-1920, 1912-10-29
+  word positions failed: http://www.loc.gov/resource/sn86058226/1912-10-30/ed-1/?sp=5 not well-formed (invalid token): line 1, column 0
+  saved np-mc-13.jpg (1986, 2600) | Public domain (newspaper, before 1926) | the richmond palladium and sun-telegram (richmond, | the richmond palladium and sun-telegram (richmond, ind.) 1907-1939, 1912-10-30
+  word positions failed: http://www.loc.gov/resource/sn84036220/1912-11-05/ed-1/?sp=5 not well-formed (invalid token): line 1, column 0
+  saved np-mc-14.jpg (1825, 2600) | Public domain (newspaper, before 1926) | fergus county democrat (lewistown, mont.) 1904-191 | fergus county democrat (lewistown, mont.) 1904-1919, 1912-11-05
+  word positions failed: http://www.loc.gov/resource/sn97065075/1912-11-06/ed-1/?sp=5 not well-formed (invalid token): line 1, column 0
+  saved np-mc-15.jpg (1858, 2600) | Public domain (newspaper, before 1926) | lawrence democrat (lawrenceburg, tenn.) 1884-1925 | lawrence democrat (lawrenceburg, tenn.) 1884-1925, 1912-11-06
 Chronicling America: {'name': 'np-pranks', 'q': "hallowe'en pranks", 'pattern': 'hallowe.?en|prank', 'dates': '1890-01-01/1925-12-31', 'max': 20, 'crops_per_page': 2, 'license': 'Public domain (newspaper, before 1926)'}
   newspaper search https://www.loc.gov/collections/chronicling-america/?qs=hallowe%27en+pranks&ops=AND&searchType=advanced&start_date=1890-01-01&end_date=1925-12-31&dl=page&fo=json&c=100 -> 100 results, 100 inside the dates with pictures
-  first result keys: ['access_restricted', 'aka', 'batch', 'campaigns', 'composite_location', 'contributor', 'date', 'dates', 'description', 'digitized', 'extract_timestamp', 'group', 'hassegments', 'id', 'image_url', 'index', 'language', 'location', 'location_country', 'location_county', 'location_state', 'mime_type', 'number', 'number_edition', 'number_lccn', 'number_page', 'number_reel', 'online_format', 'original_format', 'page_id', 'partof', 'partof_collection', 'partof_division', 'partof_title', 'publication_frequency', 'resources', 'segmentof', 'shelf_id', 'site', 'subject']
-  word positions failed: http://www.loc.gov/resource/sn82016014/1895-11-01/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
-  saved np-pranks-01.jpg (2159, 2600) | Public domain (newspaper, before 1926) | the topeka state journal (topeka, kansas) 1892-198 | the topeka state journal (topeka, kansas) 1892-1980, 1895-11-01
-  word positions failed: http://www.loc.gov/resource/sn99063956/1899-11-03/ed-1/?sp=4 not well-formed (invalid token): line 1, column 0
-  saved np-pranks-02.jpg (2098, 2600) | Public domain (newspaper, before 1926) | the daily journal (salem, or.) 1899-1903 | the daily journal (salem, or.) 1899-1903, 1899-11-03
-  word positions failed: http://www.loc.gov/resource/sn83025294/1901-10-31/ed-1/?sp=7 not well-formed (invalid token): line 1, column 0
-  saved np-pranks-03.jpg (1879, 2600) | Public domain (newspaper, before 1926) | the butte inter mountain (butte, mont.) 1901-1912 | the butte inter mountain (butte, mont.) 1901-1912, 1901-10-31
+  first result keys: ['access_restricted', 'aka', 'batch', 'campaigns', 'composite_location', 'contributor', 'date', 'dates', 'description', 'digitized', 'extract_timestamp', 'group', 'hassegments', 'id', 'image_url', 'index', 'language', 'location', 'location_city', 'location_country', 'location_county', 'location_state', 'mime_type', 'number', 'number_edition', 'number_lccn', 'number_page', 'number_reel', 'online_format', 'original_format', 'page_id', 'partof', 'partof_collection', 'partof_division', 'partof_title', 'publication_frequency', 'resources', 'segmentof', 'shelf_id', 'site']
+  word positions failed: http://www.loc.gov/resource/sn92067221/1895-11-07/ed-1/?sp=1 HTTP Error 520: <none>
+  saved np-pranks-01.jpg (1990, 2600) | Public domain (newspaper, before 1926) | platte valley lyre (saratoga, wyo.) 1888-1901 | platte valley lyre (saratoga, wyo.) 1888-1901, 1895-11-07
   word positions failed: http://www.loc.gov/resource/sn93053725/1901-10-31/ed-1/?sp=4 not well-formed (invalid token): line 1, column 0
-  saved np-pranks-04.jpg (1970, 2600) | Public domain (newspaper, before 1926) | waterbury democrat (waterbury [connecticut]) 1900- | waterbury democrat (waterbury [connecticut]) 1900-1903, 1901-10-31
-  word positions failed: http://www.loc.gov/resource/sn91070630/1901-11-01/ed-1/?sp=8 not well-formed (invalid token): line 1, column 0
-  saved np-pranks-05.jpg (1991, 2599) | Public domain (newspaper, before 1926) | the providence news (providence [r.i.]) 1891-1906 | the providence news (providence [r.i.]) 1891-1906, 1901-11-01
-  word positions failed: http://www.loc.gov/resource/sn85042400/1902-11-01/ed-1/?sp=3 not well-formed (invalid token): line 1, column 0
-  saved np-pranks-06.jpg (1868, 2600) | Public domain (newspaper, before 1926) | the morning astorian (astoria, oregon) 1899-1930 | the morning astorian (astoria, oregon) 1899-1930, 1902-11-01
+  saved np-pranks-02.jpg (1970, 2600) | Public domain (newspaper, before 1926) | waterbury democrat (waterbury [connecticut]) 1900- | waterbury democrat (waterbury [connecticut]) 1900-1903, 1901-10-31
+  info.json failed: https://tile.loc.gov/image-services/iiif/service:ndnp:rp:batch_rp_aboleth_ver01:data:sn91070630:00514153607:1901110101:0265 HTTP Error 520: <none>
+  info.json failed: https://tile.loc.gov/image-services/iiif/service:ndnp:nbu:batch_nbu_abbott_ver01:data:sn95073194:00206539306:1901110601:0015 HTTP Error 520: <none>
+  word positions failed: http://www.loc.gov/resource/sn85042400/1902-11-01/ed-1/?sp=3 HTTP Error 520: <none>
+  page download failed: https://tile.loc.gov/image-services/iiif/service:ndnp:oru:batch_oru_reed_ver02:data:sn85042400:00271740104:1902110101:0915 HTTP Error 520: <none>
+  word positions failed: http://www.loc.gov/resource/sn86069675/1902-11-12/ed-1/?sp=4 HTTP Error 520: <none>
+  saved np-pranks-03.jpg (1851, 2600) | Public domain (newspaper, before 1926) | the mt. sterling advocate (mt. sterling, ky.) 1890 | the mt. sterling advocate (mt. sterling, ky.) 1890-current, 1902-11-12
+  word positions failed: http://www.loc.gov/resource/sn87058308/1903-11-05/ed-1/?sp=3 not well-formed (invalid token): line 1, column 0
+  saved np-pranks-04.jpg (1846, 2600) | Public domain (newspaper, before 1926) | the oskaloosa herald (oskaloosa, mahaska county, i | the oskaloosa herald (oskaloosa, mahaska county, iowa) 1885-1919, 1903-11-05
   word positions failed: http://www.loc.gov/resource/sn92051487/1903-11-06/ed-1/?sp=2 not well-formed (invalid token): line 1, column 0
-  saved np-pranks-07.jpg (2168, 2600) | Public domain (newspaper, before 1926) | the newtown bee (newtown, conn.) 1877-current | the newtown bee (newtown, conn.) 1877-current, 1903-11-06
-  word positions failed: http://www.loc.gov/resource/sn88086023/1904-11-01/ed-1/?sp=7 not well-formed (invalid token): line 1, column 0
-  saved np-pranks-08.jpg (1590, 2600) | Public domain (newspaper, before 1926) | east oregonian : e.o (pendleton, umatilla co., or. | east oregonian : e.o (pendleton, umatilla co., or.;pendleton, or) 1888-current, 1904-11-01
-  word positions failed: http://www.loc.gov/resource/sn85042303/1904-11-03/ed-1/?sp=5 not well-formed (invalid token): line 1, column 0
-  saved np-pranks-09.jpg (1813, 2600) | Public domain (newspaper, before 1926) | the daily ardmoreite (ardmore, okla.) 1893-current | the daily ardmoreite (ardmore, okla.) 1893-current, 1904-11-03
-  word positions failed: http://www.loc.gov/resource/sn82016014/1905-11-01/ed-1/?sp=8 not well-formed (invalid token): line 1, column 0
-  saved np-pranks-10.jpg (2217, 2600) | Public domain (newspaper, before 1926) | the topeka state journal (topeka, kansas) 1892-198 | the topeka state journal (topeka, kansas) 1892-1980, 1905-11-01
-  word positions failed: http://www.loc.gov/resource/sn86066870/1906-10-31/ed-1/?sp=6 not well-formed (invalid token): line 1, column 0
-  saved np-pranks-11.jpg (2075, 2600) | Public domain (newspaper, before 1926) | the daily sentinel (grand junction, colo.) 1893-cu | the daily sentinel (grand junction, colo.) 1893-current, 1906-10-31
-  word positions failed: http://www.loc.gov/resource/sn88086023/1906-11-01/ed-1/?sp=8 not well-formed (invalid token): line 1, column 0
-  saved np-pranks-12.jpg (1715, 2600) | Public domain (newspaper, before 1926) | east oregonian : e.o (pendleton, umatilla co., or. | east oregonian : e.o (pendleton, umatilla co., or.;pendleton, or) 1888-current, 1906-11-01
-  word positions failed: http://www.loc.gov/resource/sn84027718/1906-11-08/ed-1/?sp=7 not well-formed (invalid token): line 1, column 0
-  saved np-pranks-13.jpg (1835, 2600) | Public domain (newspaper, before 1926) | connecticut western news (salisbury, litchfield co | connecticut western news (salisbury, litchfield co., conn.) 1871-1970, 1906-11-08
-  word positions failed: http://www.loc.gov/resource/sn86086852/1907-10-31/ed-1/?sp=5 not well-formed (invalid token): line 1, column 0
-  saved np-pranks-14.jpg (1972, 2600) | Public domain (newspaper, before 1926) | iowa county democrat (mineral point, wis.) 1877-19 | iowa county democrat (mineral point, wis.) 1877-1938, 1907-10-31
-  word positions failed: http://www.loc.gov/resource/sn91052064/1907-11-02/ed-1/?sp=8 not well-formed (invalid token): line 1, column 0
-  saved np-pranks-15.jpg (1891, 2600) | Public domain (newspaper, before 1926) | the glenwood post (glenwood springs, colo.) 1897-c | the glenwood post (glenwood springs, colo.) 1897-current, 1907-11-02
-  word positions failed: http://www.loc.gov/resource/sn86066890/1907-11-08/ed-1/?sp=3 not well-formed (invalid token): line 1, column 0
-  saved np-pranks-16.jpg (1897, 2600) | Public domain (newspaper, before 1926) | gunnison news-champion (gunnison, colo.) 1905-1932 | gunnison news-champion (gunnison, colo.) 1905-1932, 1907-11-08
-  word positions failed: http://www.loc.gov/resource/sn92051126/1907-12-23/ed-1/?sp=5 not well-formed (invalid token): line 1, column 0
-  saved np-pranks-17.jpg (2107, 2600) | Public domain (newspaper, before 1926) | the new haven union (new haven, conn.) 1895-192? | the new haven union (new haven, conn.) 1895-192?, 1907-12-23
-  word positions failed: http://www.loc.gov/resource/sn92066980/1908-11-04/ed-1/?sp=5 not well-formed (invalid token): line 1, column 0
-  saved np-pranks-18.jpg (1861, 2600) | Public domain (newspaper, before 1926) | the laramie republican (laramie, wyo.) 18??-1915 | the laramie republican (laramie, wyo.) 18??-1915, 1908-11-04
-  word positions failed: http://www.loc.gov/resource/sn97071110/1908-11-05/ed-1/?sp=7 not well-formed (invalid token): line 1, column 0
-  saved np-pranks-19.jpg (1798, 2600) | Public domain (newspaper, before 1926) | the hood river glacier (hood river, or.) 1889-1933 | the hood river glacier (hood river, or.) 1889-1933, 1908-11-05
-  word positions failed: http://www.loc.gov/resource/sn85059533/1909-11-06/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
-  saved np-pranks-20.jpg (1798, 2600) | Public domain (newspaper, before 1926) | martinsburg herald (martinsburg, w. va.) 1881-1921 | martinsburg herald (martinsburg, w. va.) 1881-1921, 1909-11-06
-Chronicling America: {'name': 'np-indiana', 'q': "hallowe'en indiana", 'pattern': 'hallowe.?en', 'dates': '1890-01-01/1925-12-31', 'max': 15, 'crops_per_page': 2, 'license': 'Public domain (newspaper, before 1926)'}
-  newspaper search https://www.loc.gov/collections/chronicling-america/?qs=hallowe%27en+indiana&ops=AND&searchType=advanced&start_date=1890-01-01&end_date=1925-12-31&dl=page&fo=json&c=100 -> 100 results, 100 inside the dates with pictures
-  first result keys: ['access_restricted', 'aka', 'batch', 'campaigns', 'composite_location', 'contributor', 'date', 'dates', 'description', 'digitized', 'extract_timestamp', 'group', 'hassegments', 'id', 'image_url', 'index', 'language', 'location', 'location_city', 'location_country', 'location_county', 'location_state', 'mime_type', 'number', 'number_edition', 'number_lccn', 'number_page', 'number_reel', 'online_format', 'original_format', 'other_title', 'page_id', 'partof', 'partof_collection', 'partof_division', 'partof_title', 'publication_frequency', 'resources', 'segmentof', 'shelf_id']
-  word positions failed: http://www.loc.gov/resource/sn83045462/1891-09-09/ed-1/?sp=3 not well-formed (invalid token): line 1, column 0
-  saved np-indiana-01.jpg (2107, 2600) | Public domain (newspaper, before 1926) | evening star (washington, d.c.) 1854-1972 | evening star (washington, d.c.) 1854-1972, 1891-09-09
-  word positions failed: http://www.loc.gov/resource/sn84020558/1892-11-05/ed-1/?sp=8 not well-formed (invalid token): line 1, column 0
-  saved np-indiana-02.jpg (1632, 2600) | Public domain (newspaper, before 1926) | arizona republican (phoenix, ariz.) 1890-1930 | arizona republican (phoenix, ariz.) 1890-1930, 1892-11-05
-  word positions failed: http://www.loc.gov/resource/sn83030214/1902-11-01/ed-1/?sp=7 not well-formed (invalid token): line 1, column 0
-  saved np-indiana-03.jpg (1861, 2600) | Public domain (newspaper, before 1926) | new-york tribune (new york [n.y.]) 1866-1924 | new-york tribune (new york [n.y.]) 1866-1924, 1902-11-01
-  word positions failed: http://www.loc.gov/resource/sn83045366/1904-11-02/ed-1/?sp=2 not well-formed (invalid token): line 1, column 0
-  saved np-indiana-04.jpg (1902, 2600) | Public domain (newspaper, before 1926) | the minneapolis journal (minneapolis, minn.) 1888- | the minneapolis journal (minneapolis, minn.) 1888-1939, 1904-11-02
-  word positions failed: http://www.loc.gov/resource/sn82014248/1904-11-04/ed-1/?sp=6 not well-formed (invalid token): line 1, column 0
-  saved np-indiana-05.jpg (1923, 2600) | Public domain (newspaper, before 1926) | daily kennebec journal (augusta, me.) 1870-1975 [m | daily kennebec journal (augusta, me.) 1870-1975 [microfilm reel], 1904-11-04
-  word positions failed: http://www.loc.gov/resource/sn84038335/1905-11-02/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
-  saved np-indiana-06.jpg (1951, 2600) | Public domain (newspaper, before 1926) | missouri valley times (missouri valley, iowa) 1874 | missouri valley times (missouri valley, iowa) 1874-1931, 1905-11-02
-  word positions failed: http://www.loc.gov/resource/sn85047084/1907-11-03/ed-1/?sp=14 not well-formed (invalid token): line 1, column 0
-  saved np-indiana-07.jpg (1775, 2600) | Public domain (newspaper, before 1926) | the pacific commercial advertiser (honolulu, hawai | the pacific commercial advertiser (honolulu, hawaiian islands) 1885-1921, 1907-11-03
-  word positions failed: http://www.loc.gov/resource/sn90061417/1907-11-08/ed-1/?sp=2 not well-formed (invalid token): line 1, column 0
-  saved np-indiana-08.jpg (1796, 2600) | Public domain (newspaper, before 1926) | the holt county sentinel (oregon, mo.) 1883-1980 | the holt county sentinel (oregon, mo.) 1883-1980, 1907-11-08
-  word positions failed: http://www.loc.gov/resource/sn84038335/1908-01-30/ed-1/?sp=3 not well-formed (invalid token): line 1, column 0
-  saved np-indiana-09.jpg (1943, 2600) | Public domain (newspaper, before 1926) | missouri valley times (missouri valley, iowa) 1874 | missouri valley times (missouri valley, iowa) 1874-1931, 1908-01-30
-  word positions failed: http://www.loc.gov/resource/sn92066980/1908-11-04/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
-  saved np-indiana-10.jpg (1856, 2600) | Public domain (newspaper, before 1926) | the laramie republican (laramie, wyo.) 18??-1915 | the laramie republican (laramie, wyo.) 18??-1915, 1908-11-04
-  word positions failed: http://www.loc.gov/resource/sn84022565/1908-11-05/ed-1/?sp=4 not well-formed (invalid token): line 1, column 0
-  saved np-indiana-11.jpg (1884, 2600) | Public domain (newspaper, before 1926) | the somerset reporter (skowhegan, me.) 1868-1909 | the somerset reporter (skowhegan, me.) 1868-1909, 1908-11-05
-  word positions failed: http://www.loc.gov/resource/sn96091104/1909-11-05/ed-1/?sp=7 not well-formed (invalid token): line 1, column 0
-  saved np-indiana-12.jpg (1752, 2600) | Public domain (newspaper, before 1926) | the columbia herald (columbia, tenn.) 18??-1935 | the columbia herald (columbia, tenn.) 18??-1935, 1909-11-05
-  word positions failed: http://www.loc.gov/resource/sn84036199/1911-03-24/ed-1/?sp=2 not well-formed (invalid token): line 1, column 0
-  saved np-indiana-13.jpg (1952, 2600) | Public domain (newspaper, before 1926) | the montana plaindealer (helena, mont.) 1906-1911 | the montana plaindealer (helena, mont.) 1906-1911, 1911-03-24
-  word positions failed: http://www.loc.gov/resource/sn83025316/1911-11-01/ed-1/?sp=10 not well-formed (invalid token): line 1, column 0
-  saved np-indiana-14.jpg (2003, 2600) | Public domain (newspaper, before 1926) | the daily missoulian (missoula, mont.) 1904-1961 | the daily missoulian (missoula, mont.) 1904-1961, 1911-11-01
-  word positions failed: http://www.loc.gov/resource/sn82014248/1912-10-24/ed-1/?sp=2 not well-formed (invalid token): line 1, column 0
-  saved np-indiana-15.jpg (1979, 2600) | Public domain (newspaper, before 1926) | daily kennebec journal (augusta, me.) 1870-1975 [m | daily kennebec journal (augusta, me.) 1870-1975 [microfilm reel], 1912-10-24
-Chronicling America: {'name': 'np-jol', 'q': "hallowe'en jack o'lantern pumpkin", 'pattern': 'lantern|pumpkin', 'dates': '1880-01-01/1915-12-31', 'max': 12, 'crops_per_page': 2, 'license': 'Public domain (newspaper, before 1916)'}
-  newspaper search https://www.loc.gov/collections/chronicling-america/?qs=hallowe%27en+jack+o%27lantern+pumpkin&ops=AND&searchType=advanced&start_date=1880-01-01&end_date=1915-12-31&dl=page&fo=json& -> 100 results, 100 inside the dates with pictures
-  first result keys: ['access_restricted', 'aka', 'batch', 'campaigns', 'composite_location', 'contributor', 'date', 'dates', 'description', 'digitized', 'extract_timestamp', 'group', 'hassegments', 'id', 'image_url', 'index', 'language', 'location', 'location_city', 'location_country', 'location_county', 'location_state', 'mime_type', 'number', 'number_edition', 'number_lccn', 'number_page', 'number_reel', 'online_format', 'original_format', 'other_title', 'page_id', 'partof', 'partof_collection', 'partof_division', 'partof_title', 'publication_frequency', 'resources', 'segmentof', 'shelf_id']
-  word positions failed: http://www.loc.gov/resource/sn85034375/1899-11-04/ed-1/?sp=5 not well-formed (invalid token): line 1, column 0
-  saved np-jol-01.jpg (1683, 2600) | Public domain (newspaper, before 1916) | the grenada sentinel (grenada, miss.) 1868-1955 | the grenada sentinel (grenada, miss.) 1868-1955, 1899-11-04
-  word positions failed: http://www.loc.gov/resource/sn84038335/1900-11-01/ed-1/?sp=7 not well-formed (invalid token): line 1, column 0
-  saved np-jol-02.jpg (1961, 2600) | Public domain (newspaper, before 1916) | missouri valley times (missouri valley, iowa) 1874 | missouri valley times (missouri valley, iowa) 1874-1931, 1900-11-01
-  word positions failed: http://www.loc.gov/resource/sn82014248/1902-10-30/ed-1/?sp=4 not well-formed (invalid token): line 1, column 0
-  saved np-jol-03.jpg (1935, 2600) | Public domain (newspaper, before 1916) | daily kennebec journal (augusta, me.) 1870-1975 [m | daily kennebec journal (augusta, me.) 1870-1975 [microfilm reel], 1902-10-30
-  word positions failed: http://www.loc.gov/resource/sn82014248/1902-11-01/ed-1/?sp=9 not well-formed (invalid token): line 1, column 0
-  saved np-jol-04.jpg (1911, 2600) | Public domain (newspaper, before 1916) | daily kennebec journal (augusta, me.) 1870-1975 [m | daily kennebec journal (augusta, me.) 1870-1975 [microfilm reel], 1902-11-01
-  word positions failed: http://www.loc.gov/resource/sn83025294/1902-11-01/ed-1/?sp=14 not well-formed (invalid token): line 1, column 0
-  saved np-jol-05.jpg (1854, 2600) | Public domain (newspaper, before 1916) | the butte inter mountain (butte, mont.) 1901-1912 | the butte inter mountain (butte, mont.) 1901-1912, 1902-11-01
-  word positions failed: http://www.loc.gov/resource/sn83045555/1902-11-01/ed-1/?sp=16 not well-formed (invalid token): line 1, column 0
-  saved np-jol-06.jpg (1596, 2600) | Public domain (newspaper, before 1916) | deseret evening news (great salt lake city [utah]) | deseret evening news (great salt lake city [utah]) 1867-1920, 1902-11-01
-  word positions failed: http://www.loc.gov/resource/sn84036008/1902-11-04/ed-1/?sp=7 not well-formed (invalid token): line 1, column 0
-  saved np-jol-07.jpg (1802, 2600) | Public domain (newspaper, before 1916) | the billings gazette (billings, mont.) 1896-1919 | the billings gazette (billings, mont.) 1896-1919, 1902-11-04
-  word positions failed: http://www.loc.gov/resource/sn83045555/1904-11-01/ed-1/?sp=6 not well-formed (invalid token): line 1, column 0
-  saved np-jol-08.jpg (1614, 2600) | Public domain (newspaper, before 1916) | deseret evening news (great salt lake city [utah]) | deseret evening news (great salt lake city [utah]) 1867-1920, 1904-11-01
-  word positions failed: http://www.loc.gov/resource/sn83045555/1904-11-05/ed-1/?sp=23 not well-formed (invalid token): line 1, column 0
-  saved np-jol-09.jpg (1609, 2600) | Public domain (newspaper, before 1916) | deseret evening news (great salt lake city [utah]) | deseret evening news (great salt lake city [utah]) 1867-1920, 1904-11-05
-  word positions failed: http://www.loc.gov/resource/sn83045462/1905-10-21/ed-1/?sp=32 not well-formed (invalid token): line 1, column 0
-  saved np-jol-10.jpg (1940, 2600) | Public domain (newspaper, before 1916) | evening star (washington, d.c.) 1854-1972 | evening star (washington, d.c.) 1854-1972, 1905-10-21
-  word positions failed: http://www.loc.gov/resource/sn83045462/1905-10-27/ed-1/?sp=12 not well-formed (invalid token): line 1, column 0
-  saved np-jol-11.jpg (1967, 2600) | Public domain (newspaper, before 1916) | evening star (washington, d.c.) 1854-1972 | evening star (washington, d.c.) 1854-1972, 1905-10-27
-  word positions failed: http://www.loc.gov/resource/sn83045462/1905-10-29/ed-1/?sp=52 not well-formed (invalid token): line 1, column 0
-  saved np-jol-12.jpg (1948, 2600) | Public domain (newspaper, before 1916) | evening star (washington, d.c.) 1854-1972 | evening star (washington, d.c.) 1854-1972, 1905-10-29
-Chronicling America: {'name': 'np-parade', 'q': "hallowe'en parade", 'pattern': 'parade|hallowe.?en', 'dates': '1915-01-01/1945-12-31', 'max': 15, 'crops_per_page': 2, 'license': 'No known restrictions (Library of Congress, Chronicling America)'}
-  newspaper search https://www.loc.gov/collections/chronicling-america/?qs=hallowe%27en+parade&ops=AND&searchType=advanced&start_date=1915-01-01&end_date=1945-12-31&dl=page&fo=json&c=100 -> 100 results, 100 inside the dates with pictures
-  first result keys: ['access_restricted', 'aka', 'batch', 'campaigns', 'composite_location', 'contributor', 'date', 'dates', 'description', 'digitized', 'extract_timestamp', 'group', 'hassegments', 'id', 'image_url', 'index', 'language', 'location', 'location_city', 'location_country', 'location_county', 'location_state', 'mime_type', 'number', 'number_edition', 'number_lccn', 'number_page', 'number_reel', 'online_format', 'original_format', 'page_id', 'partof', 'partof_collection', 'partof_division', 'partof_title', 'publication_frequency', 'resources', 'segmentof', 'shelf_id', 'site']
-  word positions failed: http://www.loc.gov/resource/sn95066012/1915-10-30/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
-  saved np-parade-01.jpg (2021, 2600) | No known restrictions (Library of Congress, Chronicling America) | the bennington evening banner (bennington, vt.) 19 | the bennington evening banner (bennington, vt.) 19??-1961, 1915-10-30
-  word positions failed: http://www.loc.gov/resource/sn95066012/1916-10-27/ed-1/?sp=7 not well-formed (invalid token): line 1, column 0
-  saved np-parade-02.jpg (1957, 2600) | No known restrictions (Library of Congress, Chronicling America) | the bennington evening banner (bennington, vt.) 19 | the bennington evening banner (bennington, vt.) 19??-1961, 1916-10-27
-  word positions failed: http://www.loc.gov/resource/sn95066012/1916-10-30/ed-1/?sp=8 not well-formed (invalid token): line 1, column 0
-  saved np-parade-03.jpg (1958, 2600) | No known restrictions (Library of Congress, Chronicling America) | the bennington evening banner (bennington, vt.) 19 | the bennington evening banner (bennington, vt.) 19??-1961, 1916-10-30
-  word positions failed: http://www.loc.gov/resource/sn82014682/1916-11-04/ed-1/?sp=13 not well-formed (invalid token): line 1, column 0
-  saved np-parade-04.jpg (2042, 2600) | No known restrictions (Library of Congress, Chronicling America) | honolulu star-bulletin (honolulu [oahu, hawaii]) 1 | honolulu star-bulletin (honolulu [oahu, hawaii]) 1912-current, 1916-11-04
-  word positions failed: http://www.loc.gov/resource/sn95066012/1920-10-29/ed-1/?sp=5 not well-formed (invalid token): line 1, column 0
-  saved np-parade-05.jpg (1932, 2600) | No known restrictions (Library of Congress, Chronicling America) | the bennington evening banner (bennington, vt.) 19 | the bennington evening banner (bennington, vt.) 19??-1961, 1920-10-29
-  word positions failed: http://www.loc.gov/resource/sn86071593/1921-10-20/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
-  saved np-parade-06.jpg (2138, 2600) | No known restrictions (Library of Congress, Chronicling America) | the brattleboro daily reformer (brattleboro, vt.)  | the brattleboro daily reformer (brattleboro, vt.) 1913-1955, 1921-10-20
-  word positions failed: http://www.loc.gov/resource/sn86071593/1921-10-26/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
-  saved np-parade-07.jpg (2138, 2600) | No known restrictions (Library of Congress, Chronicling America) | the brattleboro daily reformer (brattleboro, vt.)  | the brattleboro daily reformer (brattleboro, vt.) 1913-1955, 1921-10-26
-  word positions failed: http://www.loc.gov/resource/sn91066782/1921-11-01/ed-1/?sp=5 not well-formed (invalid token): line 1, column 0
-  saved np-parade-08.jpg (2067, 2600) | No known restrictions (Library of Congress, Chronicling America) | the barre daily times (barre, vt.) 1897-1959 | the barre daily times (barre, vt.) 1897-1959, 1921-11-01
-  word positions failed: http://www.loc.gov/resource/sn86063289/1921-11-03/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
-  saved np-parade-09.jpg (2038, 2600) | No known restrictions (Library of Congress, Chronicling America) | the butler weekly times and the bates county recor | the butler weekly times and the bates county record (butler, mo.) 1918-1950, 1921-11-03
-  word positions failed: http://www.loc.gov/resource/sn86071593/1922-10-30/ed-1/?sp=5 not well-formed (invalid token): line 1, column 0
-  saved np-parade-10.jpg (2147, 2600) | No known restrictions (Library of Congress, Chronicling America) | the brattleboro daily reformer (brattleboro, vt.)  | the brattleboro daily reformer (brattleboro, vt.) 1913-1955, 1922-10-30
-  word positions failed: http://www.loc.gov/resource/sn95066012/1922-11-01/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
-  saved np-parade-11.jpg (1882, 2600) | No known restrictions (Library of Congress, Chronicling America) | the bennington evening banner (bennington, vt.) 19 | the bennington evening banner (bennington, vt.) 19??-1961, 1922-11-01
-  word positions failed: http://www.loc.gov/resource/sn84031081/1922-11-03/ed-1/?sp=7 not well-formed (invalid token): line 1, column 0
-  saved np-parade-12.jpg (1865, 2600) | No known restrictions (Library of Congress, Chronicling America) | albuquerque morning journal (albuquerque, n.m.) 19 | albuquerque morning journal (albuquerque, n.m.) 1903-1926, 1922-11-03
-  word positions failed: http://www.loc.gov/resource/sn83045293/1923-10-17/ed-1/?sp=7 not well-formed (invalid token): line 1, column 0
-  saved np-parade-13.jpg (2057, 2600) | No known restrictions (Library of Congress, Chronicling America) | the milwaukee leader (milwaukee, wis.) 1911-1938 | the milwaukee leader (milwaukee, wis.) 1911-1938, 1923-10-17
-  word positions failed: http://www.loc.gov/resource/sn83045293/1923-10-25/ed-1/?sp=2 not well-formed (invalid token): line 1, column 0
-  saved np-parade-14.jpg (2061, 2600) | No known restrictions (Library of Congress, Chronicling America) | the milwaukee leader (milwaukee, wis.) 1911-1938 | the milwaukee leader (milwaukee, wis.) 1911-1938, 1923-10-25
-  word positions failed: http://www.loc.gov/resource/sn92059905/1924-10-29/ed-1/?sp=20 not well-formed (invalid token): line 1, column 0
-  saved np-parade-15.jpg (2175, 2600) | No known restrictions (Library of Congress, Chronicling America) | ventnor news (ventnor city, n.j.) 1907-1926 | ventnor news (ventnor city, n.j.) 1907-1926, 1924-10-29
-Chronicling America: {'name': 'np-tot', 'q': 'trick or treat', 'pattern': 'trick.{0,4}(or|and).{0,4}treat', 'dates': '1927-01-01/1963-12-31', 'max': 20, 'crops_per_page': 2, 'license': 'No known restrictions (Library of Congress, Chronicling America)'}
-  newspaper search https://www.loc.gov/collections/chronicling-america/?qs=trick+or+treat&ops=AND&searchType=advanced&start_date=1927-01-01&end_date=1963-12-31&dl=page&fo=json&c=100 -> 100 results, 100 inside the dates with pictures
-  first result keys: ['access_restricted', 'aka', 'batch', 'campaigns', 'composite_location', 'contributor', 'date', 'dates', 'description', 'digitized', 'extract_timestamp', 'group', 'hassegments', 'id', 'image_url', 'index', 'language', 'location', 'location_city', 'location_country', 'location_county', 'location_state', 'mime_type', 'number', 'number_edition', 'number_lccn', 'number_page', 'number_reel', 'online_format', 'original_format', 'page_id', 'partof', 'partof_collection', 'partof_division', 'partof_title', 'publication_frequency', 'resources', 'segmentof', 'shelf_id', 'site']
-  word positions failed: http://www.loc.gov/resource/sn86075271/1941-10-30/ed-1/?sp=2 not well-formed (invalid token): line 1, column 0
-  saved np-tot-01.jpg (1972, 2600) | No known restrictions (Library of Congress, Chronicling America) | the herald-news (wolf point, mont.) 1940-current | the herald-news (wolf point, mont.) 1940-current, 1941-10-30
-  word positions failed: http://www.loc.gov/resource/sn85053044/1941-10-31/ed-1/?sp=10 not well-formed (invalid token): line 1, column 0
-  saved np-tot-02.jpg (1841, 2600) | No known restrictions (Library of Congress, Chronicling America) | browning chief (browning, mont.) 1941-1953 | browning chief (browning, mont.) 1941-1953, 1941-10-31
-  word positions failed: http://www.loc.gov/resource/sn83045462/1948-10-27/ed-1/?sp=41 not well-formed (invalid token): line 1, column 0
-  saved np-tot-03.jpg (1836, 2600) | No known restrictions (Library of Congress, Chronicling America) | evening star (washington, d.c.) 1854-1972 | evening star (washington, d.c.) 1854-1972, 1948-10-27
-  word positions failed: http://www.loc.gov/resource/sn83045462/1948-11-08/ed-1/?sp=31 not well-formed (invalid token): line 1, column 0
-  saved np-tot-04.jpg (1802, 2600) | No known restrictions (Library of Congress, Chronicling America) | evening star (washington, d.c.) 1854-1972 | evening star (washington, d.c.) 1854-1972, 1948-11-08
-  word positions failed: http://www.loc.gov/resource/sn84036106/1950-10-26/ed-1/?sp=8 not well-formed (invalid token): line 1, column 0
-  saved np-tot-05.jpg (1712, 2600) | No known restrictions (Library of Congress, Chronicling America) | st. ignatius post (st. ignatius, mont.) 1946-1962 | st. ignatius post (st. ignatius, mont.) 1946-1962, 1950-10-26
-  word positions failed: http://www.loc.gov/resource/sn83045462/1950-10-30/ed-1/?sp=7 not well-formed (invalid token): line 1, column 0
-  saved np-tot-06.jpg (1857, 2600) | No known restrictions (Library of Congress, Chronicling America) | evening star (washington, d.c.) 1854-1972 | evening star (washington, d.c.) 1854-1972, 1950-10-30
-  word positions failed: http://www.loc.gov/resource/sn84027524/1950-11-03/ed-1/?sp=9 not well-formed (invalid token): line 1, column 0
-  saved np-tot-07.jpg (1886, 2600) | No known restrictions (Library of Congress, Chronicling America) | hungry horse news (columbia falls, mont.) 1948-cur | hungry horse news (columbia falls, mont.) 1948-current, 1950-11-03
-  word positions failed: http://www.loc.gov/resource/sn83045462/1951-10-30/ed-1/?sp=22 not well-formed (invalid token): line 1, column 0
-  saved np-tot-08.jpg (1792, 2600) | No known restrictions (Library of Congress, Chronicling America) | evening star (washington, d.c.) 1854-1972 | evening star (washington, d.c.) 1854-1972, 1951-10-30
-  word positions failed: http://www.loc.gov/resource/sn83045462/1951-11-01/ed-1/?sp=35 not well-formed (invalid token): line 1, column 0
-  saved np-tot-09.jpg (1801, 2600) | No known restrictions (Library of Congress, Chronicling America) | evening star (washington, d.c.) 1854-1972 | evening star (washington, d.c.) 1854-1972, 1951-11-01
-  word positions failed: http://www.loc.gov/resource/sn83045462/1951-11-04/ed-1/?sp=69 not well-formed (invalid token): line 1, column 0
-  saved np-tot-10.jpg (1805, 2600) | No known restrictions (Library of Congress, Chronicling America) | evening star (washington, d.c.) 1854-1972 | evening star (washington, d.c.) 1854-1972, 1951-11-04
-  word positions failed: http://www.loc.gov/resource/sn83045462/1952-10-01/ed-1/?sp=49 not well-formed (invalid token): line 1, column 0
-  saved np-tot-11.jpg (1858, 2600) | No known restrictions (Library of Congress, Chronicling America) | evening star (washington, d.c.) 1854-1972 | evening star (washington, d.c.) 1854-1972, 1952-10-01
-  word positions failed: http://www.loc.gov/resource/sn84036106/1952-11-06/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
-  saved np-tot-12.jpg (1717, 2600) | No known restrictions (Library of Congress, Chronicling America) | st. ignatius post (st. ignatius, mont.) 1946-1962 | st. ignatius post (st. ignatius, mont.) 1946-1962, 1952-11-06
-  word positions failed: http://www.loc.gov/resource/sn83045462/1953-10-14/ed-1/?sp=8 not well-formed (invalid token): line 1, column 0
-  saved np-tot-13.jpg (1832, 2600) | No known restrictions (Library of Congress, Chronicling America) | evening star (washington, d.c.) 1854-1972 | evening star (washington, d.c.) 1854-1972, 1953-10-14
-  word positions failed: http://www.loc.gov/resource/2010270509/1953-10-22/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
-  saved np-tot-14.jpg (1976, 2600) | No known restrictions (Library of Congress, Chronicling America) | the frontier (o'neill city, holt county, neb.) 188 | the frontier (o'neill city, holt county, neb.) 1880-1965, 1953-10-22
-  word positions failed: http://www.loc.gov/resource/sn86075229/1953-10-29/ed-1/?sp=10 not well-formed (invalid token): line 1, column 0
-  saved np-tot-15.jpg (1881, 2600) | No known restrictions (Library of Congress, Chronicling America) | the hardin tribune-herald (hardin, mont.) 1925-197 | the hardin tribune-herald (hardin, mont.) 1925-1973, 1953-10-29
-  word positions failed: http://www.loc.gov/resource/sn83045462/1954-10-21/ed-1/?sp=33 not well-formed (invalid token): line 1, column 0
-  saved np-tot-16.jpg (1779, 2600) | No known restrictions (Library of Congress, Chronicling America) | evening star (washington, d.c.) 1854-1972 | evening star (washington, d.c.) 1854-1972, 1954-10-21
-  word positions failed: http://www.loc.gov/resource/sn85053223/1954-10-21/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
-  saved np-tot-17.jpg (2119, 2600) | No known restrictions (Library of Congress, Chronicling America) | the camas hot springs exchange (camas, mont.) 1926 | the camas hot springs exchange (camas, mont.) 1926-1959, 1954-10-21
-  word positions failed: http://www.loc.gov/resource/sn86075229/1954-10-21/ed-1/?sp=10 not well-formed (invalid token): line 1, column 0
-  saved np-tot-18.jpg (1864, 2600) | No known restrictions (Library of Congress, Chronicling America) | the hardin tribune-herald (hardin, mont.) 1925-197 | the hardin tribune-herald (hardin, mont.) 1925-1973, 1954-10-21
-  word positions failed: http://www.loc.gov/resource/sn84027524/1954-10-22/ed-1/?sp=7 not well-formed (invalid token): line 1, column 0
-  saved np-tot-19.jpg (1956, 2600) | No known restrictions (Library of Congress, Chronicling America) | hungry horse news (columbia falls, mont.) 1948-cur | hungry horse news (columbia falls, mont.) 1948-current, 1954-10-22
-  word positions failed: http://www.loc.gov/resource/sn82015425/1954-10-29/ed-1/?sp=3 not well-formed (invalid token): line 1, column 0
-  saved np-tot-20.jpg (2109, 2600) | No known restrictions (Library of Congress, Chronicling America) | atlanta daily world (atlanta, georgia) 1932-curren | atlanta daily world (atlanta, georgia) 1932-current, 1954-10-29
-Chronicling America: {'name': 'np-sugar', 'q': 'halloween sugar rationing', 'pattern': 'halloween|sugar', 'dates': '1942-01-01/1946-12-31', 'max': 8, 'crops_per_page': 2, 'license': 'No known restrictions (Library of Congress, Chronicling America)'}
-  newspaper search https://www.loc.gov/collections/chronicling-america/?qs=halloween+sugar+rationing&ops=AND&searchType=advanced&start_date=1942-01-01&end_date=1946-12-31&dl=page&fo=json&c=100 -> 100 results, 100 inside the dates with pictures
-  first result keys: ['access_restricted', 'aka', 'batch', 'campaigns', 'composite_location', 'contributor', 'date', 'dates', 'description', 'digitized', 'extract_timestamp', 'group', 'hassegments', 'id', 'image_url', 'index', 'language', 'location', 'location_city', 'location_country', 'location_state', 'mime_type', 'number', 'number_edition', 'number_lccn', 'number_page', 'number_reel', 'online_format', 'original_format', 'page_id', 'partof', 'partof_collection', 'partof_division', 'partof_title', 'publication_frequency', 'resources', 'segmentof', 'shelf_id', 'site', 'subject']
-  word positions failed: http://www.loc.gov/resource/sn82014085/1942-02-18/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
-  saved np-sugar-01.jpg (1939, 2600) | No known restrictions (Library of Congress, Chronicling America) | the waterbury democrat (waterbury, conn.) 1917-194 | the waterbury democrat (waterbury, conn.) 1917-1946, 1942-02-18
-  word positions failed: http://www.loc.gov/resource/2010270509/1942-10-08/ed-1/?sp=5 not well-formed (invalid token): line 1, column 0
-  saved np-sugar-02.jpg (1875, 2600) | No known restrictions (Library of Congress, Chronicling America) | the frontier (o'neill city, holt county, neb.) 188 | the frontier (o'neill city, holt county, neb.) 1880-1965, 1942-10-08
-  word positions failed: http://www.loc.gov/resource/sn82014085/1942-10-08/ed-1/?sp=13 not well-formed (invalid token): line 1, column 0
-  saved np-sugar-03.jpg (1902, 2600) | No known restrictions (Library of Congress, Chronicling America) | the waterbury democrat (waterbury, conn.) 1917-194 | the waterbury democrat (waterbury, conn.) 1917-1946, 1942-10-08
-  word positions failed: http://www.loc.gov/resource/sn87065528/1942-10-09/ed-1/?sp=9 not well-formed (invalid token): line 1, column 0
-  saved np-sugar-04.jpg (2057, 2600) | No known restrictions (Library of Congress, Chronicling America) | the chronicle-star combined with the moss point ad | the chronicle-star combined with the moss point advertiser (pascagoula, miss.) 1941-1949, 
-  word positions failed: http://www.loc.gov/resource/sn96077289/1942-10-10/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
-  saved np-sugar-05.jpg (1963, 2600) | No known restrictions (Library of Congress, Chronicling America) | the daily monitor leader (mount clemens, mich.) 19 | the daily monitor leader (mount clemens, mich.) 1942-19??, 1942-10-10
-  word positions failed: http://www.loc.gov/resource/sn84022396/1942-10-15/ed-1/?sp=2 not well-formed (invalid token): line 1, column 0
-  saved np-sugar-06.jpg (1893, 2600) | No known restrictions (Library of Congress, Chronicling America) | putnam patriot (putnam, conn.) 1872-1962 | putnam patriot (putnam, conn.) 1872-1962, 1942-10-15
-  word positions failed: http://www.loc.gov/resource/sn85053223/1942-10-15/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
-  saved np-sugar-07.jpg (1816, 2600) | No known restrictions (Library of Congress, Chronicling America) | the camas hot springs exchange (camas, mont.) 1926 | the camas hot springs exchange (camas, mont.) 1926-1959, 1942-10-15
-  word positions failed: http://www.loc.gov/resource/sn82014085/1942-10-19/ed-1/?sp=9 not well-formed (invalid token): line 1, column 0
-  saved np-sugar-08.jpg (1885, 2600) | No known restrictions (Library of Congress, Chronicling America) | the waterbury democrat (waterbury, conn.) 1917-194 | the waterbury democrat (waterbury, conn.) 1917-1946, 1942-10-19
-Chronicling America: {'name': 'np-unicef', 'q': 'trick or treat unicef', 'pattern': 'unicef|trick', 'dates': '1950-01-01/1963-12-31', 'max': 8, 'crops_per_page': 2, 'license': 'No known restrictions (Library of Congress, Chronicling America)'}
-  newspaper search https://www.loc.gov/collections/chronicling-america/?qs=trick+or+treat+unicef&ops=AND&searchType=advanced&start_date=1950-01-01&end_date=1963-12-31&dl=page&fo=json&c=100 -> 100 results, 100 inside the dates with pictures
-  first result keys: ['access_restricted', 'aka', 'batch', 'campaigns', 'composite_location', 'contributor', 'date', 'dates', 'description', 'digitized', 'extract_timestamp', 'group', 'hassegments', 'id', 'image_url', 'index', 'language', 'location', 'location_city', 'location_country', 'location_state', 'mime_type', 'number', 'number_edition', 'number_lccn', 'number_page', 'number_reel', 'online_format', 'original_format', 'other_title', 'page_id', 'partof', 'partof_collection', 'partof_division', 'partof_title', 'publication_frequency', 'resources', 'segmentof', 'shelf_id', 'site']
-  word positions failed: http://www.loc.gov/resource/sn85053223/1954-10-28/ed-1/?sp=3 not well-formed (invalid token): line 1, column 0
-  saved np-unicef-01.jpg (2120, 2600) | No known restrictions (Library of Congress, Chronicling America) | the camas hot springs exchange (camas, mont.) 1926 | the camas hot springs exchange (camas, mont.) 1926-1959, 1954-10-28
-  word positions failed: http://www.loc.gov/resource/sn92073229/1954-11-19/ed-1/?sp=11 not well-formed (invalid token): line 1, column 0
-  saved np-unicef-02.jpg (1935, 2600) | No known restrictions (Library of Congress, Chronicling America) | the chapel hill weekly (chapel hill, n.c.) 1923-19 | the chapel hill weekly (chapel hill, n.c.) 1923-1972, 1954-11-19
-  word positions failed: http://www.loc.gov/resource/sn84037526/1954-11-29/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
-  saved np-unicef-03.jpg (1760, 2600) | No known restrictions (Library of Congress, Chronicling America) | st. croix avis (christiansted, st. croix [v.i.]) 1 | st. croix avis (christiansted, st. croix [v.i.]) 1844-current, 1954-11-29
-  word positions failed: http://www.loc.gov/resource/sn84037548/1955-05-17/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
-  saved np-unicef-04.jpg (1840, 2600) | No known restrictions (Library of Congress, Chronicling America) | the west end news (frederiksted, st. croix [v.i.]) | the west end news (frederiksted, st. croix [v.i.]) 1912-1973, 1955-05-17
-  word positions failed: http://www.loc.gov/resource/sn86075229/1955-10-20/ed-1/?sp=1 not well-formed (invalid token): line 1, column 0
-  saved np-unicef-05.jpg (1900, 2600) | No known restrictions (Library of Congress, Chronicling America) | the hardin tribune-herald (hardin, mont.) 1925-197 | the hardin tribune-herald (hardin, mont.) 1925-1973, 1955-10-20
-  word positions failed: http://www.loc.gov/resource/sn86075229/1955-10-27/ed-1/?sp=4 not well-formed (invalid token): line 1, column 0
-  saved np-unicef-06.jpg (1884, 2600) | No known restrictions (Library of Congress, Chronicling America) | the hardin tribune-herald (hardin, mont.) 1925-197 | the hardin tribune-herald (hardin, mont.) 1925-1973, 1955-10-27
-  word positions failed: http://www.loc.gov/resource/sn84021917/1955-10-28/ed-1/?sp=6 not well-formed (invalid token): line 1, column 0
-  saved np-unicef-07.jpg (1681, 2600) | No known restrictions (Library of Congress, Chronicling America) | arizona sun (phoenix, ariz.) 1942-196? | arizona sun (phoenix, ariz.) 1942-196?, 1955-10-28
-  word positions failed: http://www.loc.gov/resource/sn84025840/1955-10-28/ed-1/?sp=4 not well-formed (invalid token): line 1, column 0
-  saved np-unicef-08.jpg (2008, 2600) | No known restrictions (Library of Congress, Chronicling America) | arkansas state press (little rock, ark.) 1941-1959 | arkansas state press (little rock, ark.) 1941-1959, 1955-10-28
-133 pictures saved 
+  saved np-pranks-05.jpg (2168, 2600) | Public domain (newspaper, before 1926) | the newtown bee (newtown, conn.) 1877-current | the newtown bee (newtown, conn.) 1877-current, 1903-11-06
+  time's up, skipped: np-indiana
+  time's up, skipped: np-jol
+  time's up, skipped: np-parade
+  time's up, skipped: np-tot
+  time's up, skipped: np-sugar
+  time's up, skipped: np-unicef
+40 pictures saved (stopped by the time limit)
