@@ -73,6 +73,7 @@ jobs:
 
   save:
     needs: record
+    if: ${{ always() && (needs.record.result == 'success' || inputs.save_run_id != '') }}
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
@@ -84,13 +85,17 @@ jobs:
           pattern: voice-part-*
           path: parts
           merge-multiple: true
+          run-id: ${{ inputs.save_run_id || github.run_id }}
+          github-token: ${{ github.token }}
 
       - name: Join the parts
         run: |
+          pip install -q numpy soundfile
           mkdir -p tools/video/halloween-doc/voice
           find parts -type f | head -20
-          cp -r parts/voice/* tools/video/halloween-doc/voice/
-          cat parts/voice-log-*.txt > tools/video/halloween-doc/voice-log.txt || true
+          find parts -name "*.flac" -exec cp {} tools/video/halloween-doc/voice/ \;
+          find parts -name "part-*.json" -exec cp {} tools/video/halloween-doc/voice/ \;
+          find parts -name "voice-log-*.txt" -exec cat {} + > tools/video/halloween-doc/voice-log.txt || true
           python3 tools/video/halloween-doc/voice.py merge
 
       - name: Save the recording on this branch
