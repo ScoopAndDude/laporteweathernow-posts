@@ -647,12 +647,96 @@ def resource_pages(items, old):
         add(entry, raw, "", 0, max_side=m, filename=out)
 
 
+def loc_issues(items, old):
+    """Every page of named newspaper issues (Library of Congress Chronicling America), kept only when the page's
+    words match the pattern: {"name": "sbnt-1913", "lccn": "sn87055779", "date": "1913-11-01", "pattern": "hallowe", "max": 3}.
+    Saves the page and crops of the matching text blocks. For La Porte's neighbors (South Bend, Hammond, Indianapolis),
+    whose pages the keyword search doesn't surface."""
+    have = {x["file"] for x in old}
+    for r in items:
+        if out_of_time():
+            log("  time's up, skipped:", r["name"])
+            continue
+        name, lccn, date = r["name"], r["lccn"], r["date"]
+        if any(f.startswith(name + "-") for f in have):
+            continue
+        eds = r.get("editions", ["ed-1"])
+        k = 0
+        for ed in eds:
+            base_url = f"https://www.loc.gov/resource/{lccn}/{date}/{ed}/"
+            try:
+                js = getjson(base_url + "?fo=json", loc=True)
+            except Exception as e:
+                log("  issue lookup failed:", base_url, e)
+                continue
+            n = 0
+            try:
+                n = int((js.get("resource") or {}).get("segment_count") or js.get("segments", {}).get("total") or 0)
+            except Exception:
+                n = 0
+            if not n:
+                n = len(re.findall(r'"sp=(\d+)"', json.dumps(js))) or int(r.get("pages", 12))
+            log(f"  {name} {ed}: {n} pages")
+            for sp in range(1, min(n, int(r.get("pages", 40))) + 1):
+                if k >= r.get("max", 3) or out_of_time():
+                    break
+                url = f"{base_url}?sp={sp}"
+                try:
+                    pj = getjson(url + "&fo=json", loc=True)
+                except Exception as e:
+                    log("  page lookup failed:", url, e)
+                    continue
+                alto = find_alto_url(pj)
+                urls = re.findall(r'https://tile\.loc\.gov/image-services/iiif/[^"\s]+', json.dumps(pj))
+                base = next((iiif_base(u) for u in urls if iiif_base(u)), None)
+                if not alto or not base:
+                    continue
+                try:
+                    pw, ph, blocks = alto_blocks(get(alto, loc=True), r.get("pattern", "hallowe"))
+                except Exception as e:
+                    log("  word positions failed:", url, e)
+                    continue
+                if not blocks:
+                    continue
+                try:
+                    info = getjson(base + "/info.json", loc=True)
+                    iw, ih = int(info["width"]), int(info["height"])
+                    raw = get(f"{base}/full/!2600,2600/0/default.jpg", loc=True)
+                except Exception as e:
+                    log("  page download failed:", base, e)
+                    continue
+                k += 1
+                paper = r.get("paper", lccn)
+                entry = {"title": f"{paper}, {date}, page {sp}", "page": url, "url": base, "license": r.get("license", "Public domain (newspaper, before 1930)"),
+                         "artist": paper, "credit": "Library of Congress, Chronicling America", "date": date, "desc": blocks[0][5][:300],
+                         "source": "Library of Congress", "kind": "newspaper-page", "page_size": [iw, ih], "crops": []}
+                add(entry, raw, name, k, max_side=2600)
+                sx, sy = iw / pw, ih / ph
+                for j, (score, x, y, w, h, text) in enumerate(blocks[: r.get("crops_per_page", 3)], 1):
+                    pad = 0.15
+                    X0, Y0 = max(0, int((x - w * pad) * sx)), max(0, int((y - h * pad - 40) * sy))
+                    X1, Y1 = min(iw, int((x + w * (1 + pad)) * sx)), min(ih, int((y + h * (1 + pad) + 40) * sy))
+                    if X1 - X0 < 50 or Y1 - Y0 < 30:
+                        continue
+                    try:
+                        raw_c = get(f"{base}/{X0},{Y0},{X1 - X0},{Y1 - Y0}/!2000,2000/0/default.jpg", loc=True)
+                    except Exception as e:
+                        log("  crop failed:", e)
+                        continue
+                    path = os.path.join(OUT, f"{name}-{k:02d}-crop{j}.jpg")
+                    size = save_image(raw_c, path, 2000)
+                    entry["crops"].append({"file": os.path.basename(path), "box": [X0, Y0, X1 - X0, Y1 - Y0], "score": score, "text": text, "saved": list(size)})
+                    log("    crop", os.path.basename(path), "|", text[:100])
+                write_manifest()
+
+
+
 def split_spec(spec, part):
     """The sections one parallel part runs: commons1/commons2 (the Commons searches in two halves), loc, maps, books, news."""
     if not part:
         return spec
     keep = {"commons1": ["commons", "commons_hires"], "commons2": ["commons"], "loc": ["loc_photos"],
-            "maps": ["loc_maps", "loc_items", "resource_pages"], "books": ["archive_books"], "news": ["newspapers", "news_clips"]}[part]
+            "maps": ["loc_maps", "loc_items", "resource_pages"], "books": ["archive_books"], "news": ["newspapers", "news_clips", "loc_issues"]}[part]
     out = {k: v for k, v in spec.items() if k in keep}
     c = spec.get("commons", [])
     half = (len(c) + 1) // 2
@@ -694,6 +778,10 @@ def main_extra():
     if spec.get("resource_pages"):
         log("Whole pages at full size:", len(spec["resource_pages"]))
         resource_pages(spec["resource_pages"], old)
+        write_manifest()
+    if spec.get("loc_issues"):
+        log("Newspaper issues scanned for Halloween:", len(spec["loc_issues"]))
+        loc_issues(spec["loc_issues"], old)
         write_manifest()
     taken = {re.sub(r"-\d+(-crop\d+)?\.jpg$", "", x["file"]) for x in old}
     for q in spec.get("commons", []):
