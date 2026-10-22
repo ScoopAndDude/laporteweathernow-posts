@@ -335,6 +335,13 @@ H_PROG_A = [AM, F, G, E]                          # under H_THEME, one chord a b
 H_PROG_B = [AM, C, E, AM]                         # under H_THEME_B
 H_PROG_SUS = [["A2", "E3", "B3", "C4"], ["F2", "C3", "E3", "B3"], ["D3", "A3", "C4", "E4"], ["E2", "B2", "D3", "A3"]]
 HYMN = [AM, F, C, G, AM, DM, E, AM]
+# the Halloween film's own tune: a crooked little music-box theme in A minor (the hauntings' H_THEME stays for its reprise)
+P_THEME = [("E5", 1), ("A5", 1), ("G5", 1), ("E5", 2), ("D5", 1), ("C5", 1), ("B4", 2), ("C5", 1), ("D5", 1), ("E5", 3),
+           ("E5", 1), ("G5", 1), ("A5", 1), ("B5", 2), ("A5", 1), ("G5", 1), ("E5", 2), ("D5", 1), ("C5", 1), ("A4", 3)]
+P_THEME_B = [("A4", 1), ("B4", 1), ("C5", 1), ("E5", 2), ("D5", 1), ("C5", 1), ("B4", 3), ("G4", 1), ("A4", 1), ("B4", 1), ("C5", 2), ("B4", 1), ("A4", 1), ("E4", 3)]
+P_PROG = [AM, G, F, E]                            # under P_THEME: the Andalusian fall, one chord a bar
+P_PROG_B = [AM, C, G, E]
+P_PROG_WARM = [C, G, AM, F]                       # the "porch lights" progression, almost major
 PENTA = ["A4", "C5", "D5", "E5", "G5", "A5", "E4", "G4"]
 
 
@@ -485,12 +492,85 @@ def cue(name, seconds, seed=1):
             place(buf, piano(hz("A1"), 2.0, 0.7, seed + int(t)), t, 0.4, 0.0)
         loop(pulse, bar / 2)
         loop(lambda t: melody(buf, t, H_THEME_B, e8, "piano", -1, 0.45, seed + int(t), pan=-0.2), phrase * 2, first=phrase)
-    elif name == "end":
-        place(buf, waves(seconds + 2, seed, 0.4), 0, 0.7)
-        chords(buf, 0.0, H_PROG_A + H_PROG_B, bar, nb, 800, 0.6, seed)
-        tt = melody(buf, 1.0, H_THEME, e8 * 1.1, "piano", 0, 0.7, seed)
-        tt = melody(buf, tt, H_THEME_B, e8 * 1.1, "glass", 0, 0.7, seed + 9)
-        melody(buf, tt + bar, H_THEME, e8 * 1.25, "box", 0, 0.5, seed + 19)
+    elif name == "threat":                       # mischief: a ticking clock, low piano stabs, the crooked tune
+        place(buf, tick(seconds + 2, 1.6, seed, 0.6), 0, 0.4)
+        place(buf, drone("A1", seconds + 2, seed, 0.8), 0, 0.5)
+        def stab(t):
+            k = int(t / bar)
+            ch = P_PROG[k % 4]
+            for j in (0, 3):
+                place(buf, piano(hz(ch[0]), 1.2, 0.8, seed + k * 3 + j), t + j * e8, 0.5, -0.15)
+            place(buf, piano(hz(ch[2]), 0.9, 0.5, seed + k * 5), t + 4 * e8, 0.3, 0.2)
+        loop(stab, bar)
+        loop(lambda t: melody(buf, t, P_THEME, e8, "box", 0, 0.7, seed + int(t), pan=0.25), phrase * 2.5, first=phrase)
+    elif name == "samhain":                      # the old world: a low drone, a slow drum, glass over it
+        place(buf, drone("A1", seconds + 2, seed, 1.0), 0, 0.9)
+        place(buf, drone("E2", seconds + 2, seed + 2, 0.4), 0, 0.4)
+        place(buf, wind(seconds + 2, seed + 1, 0.5), 0, 0.7)
+        def drum(t):
+            place(buf, drum_hit(seed + int(t * 10), 1.3), t, 0.45, 0.0)
+            place(buf, drum_hit(seed + int(t * 10) + 1, 0.7), t + e8 * 2, 0.25, 0.2)
+        loop(drum, bar, first=bar)
+        loop(lambda t: melody(buf, t, P_THEME_B, e8 * 1.4, "glass", 0, 0.6, seed + int(t), pan=-0.2), phrase * 2.6, first=phrase * 0.5)
+        chords(buf, 0.0, H_PROG_SUS, bar * 3, int(seconds / (bar * 3)) + 1, 550, 0.35, seed)
+    elif name == "hallows":                      # the church: organ chords and a bell
+        organ_chords(buf, 0.2, HYMN, bar * 1.5, int(seconds / (bar * 1.5)) + 1, 0.8, seed)
+        loop(lambda t: place(buf, bell(hz("A2"), 8.0, seed + int(t)), t + 1.0, 0.4, -0.2), 12.0)
+        loop(lambda t: melody(buf, t, P_THEME_B, e8 * 1.5, "organ", 0, 0.45, seed + int(t)), bar * 1.5 * 16, first=bar * 1.5 * 6)
+    elif name == "jack":                         # Burns's kitchen: a music-box waltz in 3
+        beat = 0.58
+        prog = [AM, AM, F, G, AM, AM, E, E]
+        t, k = 0.3, 0
+        while t < seconds:
+            ch = prog[k % len(prog)]
+            place(buf, piano(hz(ch[0]), 2.5, 0.65, seed + k), t, 0.5, -0.1)
+            for j in (1, 2):
+                for nn in ch[1:]:
+                    place(buf, music_box(hz(nn), 1.2, seed + k * 7 + j), t + j * beat, 0.16, 0.15)
+            t += beat * 3
+            k += 1
+        loop(lambda t: melody(buf, t, P_THEME, beat * 0.75, "box", 0, 0.7, seed + int(t), pan=0.3), beat * 3 * 10, first=beat * 3 * 2)
+        place(buf, crackle(seconds + 2, seed, 0.5), 0, 0.3)
+    elif name == "laporte":                      # home: piano arpeggios, wind off the lake, the hauntings' theme once
+        place(buf, wind(seconds + 2, seed, 0.4), 0, 0.6)
+        piano_arps(buf, 0.3, P_PROG_B, bar, nb, 6, 0.65, seed)
+        chords(buf, 0.0, P_PROG_B, bar, nb, 700, 0.4, seed + 5)
+        loop(lambda t: melody(buf, t, P_THEME if int(t / phrase) % 4 != 2 else H_THEME, e8, "glass", 0, 0.55, seed + int(t), pan=0.2),
+             phrase * 2.2, first=phrase)
+    elif name == "trouble":                      # the 1920s-30s: a clock, a pulse, the tune in the low piano
+        place(buf, tick(seconds + 2, 2.0, seed, 0.6), 0, 0.4)
+        chords(buf, 0.0, [AM, AM, F, E], bar, nb, 650, 0.6, seed)
+        def pulse(t):
+            place(buf, drum_hit(seed + int(t * 10), 0.8), t, 0.3, 0.0)
+            place(buf, piano(hz("A1"), 2.0, 0.7, seed + int(t)), t, 0.35, 0.0)
+        loop(pulse, bar / 2)
+        loop(lambda t: melody(buf, t, P_THEME, e8, "piano", -1, 0.5, seed + int(t), pan=-0.2), phrase * 2.2, first=phrase)
+    elif name == "treat":                        # trick-or-treat arrives: brighter, music box and piano, a skip in it
+        chords(buf, 0.0, P_PROG_WARM, bar, nb, 900, 0.55, seed, bright=0.3)
+        piano_arps(buf, 0.3, P_PROG_WARM, bar, nb, 6, 0.6, seed + 3, low=False)
+        loop(lambda t: melody(buf, t, P_THEME, e8 * 0.9, "box", 0, 0.75, seed + int(t), swing=0.12, pan=0.3), phrase * 2.0, first=bar)
+        loop(lambda t: place(buf, drum_hit(seed + int(t * 10), 0.5), t, 0.18, 0.1), bar)
+    elif name == "porch":                        # the 1950s: warm piano, a pad, the theme slow
+        chords(buf, 0.0, P_PROG_WARM, bar * 1.5, int(seconds / (bar * 1.5)) + 1, 1100, 0.6, seed, bright=0.4)
+        loop(lambda t: melody(buf, t, P_THEME_B, e8 * 1.3, "piano", 0, 0.65, seed + int(t), pan=0.15), phrase * 2.4, first=phrase * 0.6)
+        place(buf, crackle(seconds + 2, seed, 0.4, rate=10.0), 0, 0.25)
+    elif name == "razor":                        # the scare: heartbeat, a drone, sparse glass, nothing warm
+        place(buf, drone("A1", seconds + 2, seed, 1.0), 0, 0.9)
+        place(buf, drone("D#2", seconds + 2, seed + 4, 0.25), 0, 0.3)
+        place(buf, heartbeat(seconds + 2, 54, seed, 0.7), 0, 0.6)
+        def ghost(t):
+            for j in range(2):
+                nn = PENTA[int(rng.integers(0, len(PENTA)))]
+                place(buf, glass(hz(nn), float(rng.uniform(3.0, 5.0)), seed + int(t) + j), t + j * 1.9, 0.45, float(rng.uniform(-0.5, 0.5)))
+        loop(ghost, 10.0, first=2.0)
+        chords(buf, 0.0, H_PROG_SUS, bar * 3, int(seconds / (bar * 3)) + 1, 550, 0.3, seed)
+    elif name == "end":                          # why it survived: the full tune, piano then box then glass, warm chords
+        chords(buf, 0.0, P_PROG_WARM + P_PROG, bar, nb, 850, 0.6, seed, bright=0.2)
+        piano_arps(buf, 0.3, P_PROG_WARM + P_PROG, bar, nb, 6, 0.5, seed + 2)
+        tt = melody(buf, 1.0, P_THEME, e8 * 1.05, "piano", 0, 0.7, seed)
+        tt = melody(buf, tt, P_THEME_B, e8 * 1.05, "box", 0, 0.65, seed + 9)
+        tt = melody(buf, tt + bar, H_THEME, e8 * 1.1, "glass", 0, 0.5, seed + 19)
+        loop(lambda t: melody(buf, t, P_THEME, e8 * 1.05, "box", 0, 0.55, seed + int(t), pan=0.25), phrase * 2.5, first=tt + bar)
     else:
         place(buf, drone("A1", seconds + 2, seed, 1.0), 0, 0.8)
     out = reverb(buf, 3.4, 0.34, seed=3)

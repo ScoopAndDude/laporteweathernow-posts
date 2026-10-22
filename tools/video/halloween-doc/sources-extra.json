@@ -1,64 +1,435 @@
 {
   "about": "Second picture pass for the History of Halloween documentary (fetch.py --extra, Oct. 21, 2026). Named Commons files the first pass missed (Maclise's Snap-Apple Night, the Irish ghost turnip, named postcards), and pages of La Porte's neighbors' newspapers around Halloween (South Bend News-Times, Lake County Times, Indianapolis Journal) scanned for the word, since La Porte's own papers aren't online. Same rules: public domain, CC0 or CC BY only.",
   "commons": [
-    {"name": "x-named", "titles": [
-      "File:Snap-Apple Night globalphilosophy.PNG",
-      "File:Daniel Maclise - Snap-Apple Night - Google Art Project.jpg",
-      "File:Traditional Irish halloween Jack-o'-lantern.jpg",
-      "File:A Halloween Wish 1912.jpg",
-      "File:Halloween 1912 Card.jpg",
-      "File:Hallowe'en Greetings postcard 1920-1925.jpg",
-      "File:Emigrants Leave Ireland by Henry Doyle 1868.jpg",
-      "File:Hill of Ward.jpg",
-      "File:Tlachtga.jpg",
-      "File:Hill of Ward, Athboy, County Meath.jpg",
-      "File:Hallowe'en in Scotland, 1895 (Frank Leslie's Popular Monthly).jpg",
-      "File:The Headless Horseman Pursuing Ichabod Crane (John Quidor, 1858).jpg",
-      "File:John Quidor - The Headless Horseman Pursuing Ichabod Crane - Google Art Project.jpg",
-      "File:Jack-o'-Lantern 2003-10-31.jpg",
-      "File:Trick or Treat for UNICEF boxes.jpg"
-    ], "max": 20},
-    {"name": "x-maclise", "search": "Snap-Apple Night Maclise", "max": 8},
-    {"name": "x-ghostturnip", "search": "Irish Halloween turnip Museum of Country Life", "max": 6},
-    {"name": "x-tlachtga", "category": "Category:Hill of Ward", "depth": 0, "max": 12},
-    {"name": "x-coligny", "search": "Coligny calendar", "max": 6},
-    {"name": "x-godey", "search": "Godey's Lady's Book 1872", "max": 6},
-    {"name": "x-tara", "search": "Hill of Tara aerial", "max": 8},
-    {"name": "x-irvington", "search": "Irvington Halloween Festival", "max": 8},
-    {"name": "x-ford", "search": "Betty Ford Halloween 1974 UNICEF", "max": 6},
-    {"name": "x-pixy", "search": "Pixy Stix", "max": 4},
-    {"name": "x-charlie", "search": "Peanuts comic strip 1951", "max": 4},
-    {"name": "x-mask", "search": "Ben Cooper Halloween costume box", "max": 6},
-    {"name": "x-cat1900", "category": "Category:Halloween postcards", "depth": 2, "max": 80},
-    {"name": "x-cat1900b", "category": "Category:Halloween greeting cards", "depth": 1, "max": 40},
-    {"name": "x-lanterns", "category": "Category:Jack-o'-lanterns", "depth": 1, "max": 30},
-    {"name": "x-southbend", "search": "South Bend Indiana postcard 1910", "max": 10},
-    {"name": "x-cabbage", "search": "cabbage field harvest painting", "max": 6}
+    {
+      "name": "x-named",
+      "titles": [
+        "File:Snap-Apple Night globalphilosophy.PNG",
+        "File:Daniel Maclise - Snap-Apple Night - Google Art Project.jpg",
+        "File:Traditional Irish halloween Jack-o'-lantern.jpg",
+        "File:A Halloween Wish 1912.jpg",
+        "File:Halloween 1912 Card.jpg",
+        "File:Hallowe'en Greetings postcard 1920-1925.jpg",
+        "File:Emigrants Leave Ireland by Henry Doyle 1868.jpg",
+        "File:Hill of Ward.jpg",
+        "File:Tlachtga.jpg",
+        "File:Hill of Ward, Athboy, County Meath.jpg",
+        "File:Hallowe'en in Scotland, 1895 (Frank Leslie's Popular Monthly).jpg",
+        "File:The Headless Horseman Pursuing Ichabod Crane (John Quidor, 1858).jpg",
+        "File:John Quidor - The Headless Horseman Pursuing Ichabod Crane - Google Art Project.jpg",
+        "File:Jack-o'-Lantern 2003-10-31.jpg",
+        "File:Trick or Treat for UNICEF boxes.jpg"
+      ],
+      "max": 20
+    },
+    {
+      "name": "x-maclise",
+      "search": "Snap-Apple Night Maclise",
+      "max": 8
+    },
+    {
+      "name": "x-ghostturnip",
+      "search": "Irish Halloween turnip Museum of Country Life",
+      "max": 6
+    },
+    {
+      "name": "x-tlachtga",
+      "category": "Category:Hill of Ward",
+      "depth": 0,
+      "max": 12
+    },
+    {
+      "name": "x-coligny",
+      "search": "Coligny calendar",
+      "max": 6
+    },
+    {
+      "name": "x-godey",
+      "search": "Godey's Lady's Book 1872",
+      "max": 6
+    },
+    {
+      "name": "x-tara",
+      "search": "Hill of Tara aerial",
+      "max": 8
+    },
+    {
+      "name": "x-irvington",
+      "search": "Irvington Halloween Festival",
+      "max": 8
+    },
+    {
+      "name": "x-ford",
+      "search": "Betty Ford Halloween 1974 UNICEF",
+      "max": 6
+    },
+    {
+      "name": "x-pixy",
+      "search": "Pixy Stix",
+      "max": 4
+    },
+    {
+      "name": "x-charlie",
+      "search": "Peanuts comic strip 1951",
+      "max": 4
+    },
+    {
+      "name": "x-mask",
+      "search": "Ben Cooper Halloween costume box",
+      "max": 6
+    },
+    {
+      "name": "x-cat1900",
+      "category": "Category:Halloween postcards",
+      "depth": 2,
+      "max": 80
+    },
+    {
+      "name": "x-cat1900b",
+      "category": "Category:Halloween greeting cards",
+      "depth": 1,
+      "max": 40
+    },
+    {
+      "name": "x-lanterns",
+      "category": "Category:Jack-o'-lanterns",
+      "depth": 1,
+      "max": 30
+    },
+    {
+      "name": "x-southbend",
+      "search": "South Bend Indiana postcard 1910",
+      "max": 10
+    },
+    {
+      "name": "x-cabbage",
+      "search": "cabbage field harvest painting",
+      "max": 6
+    }
   ],
   "loc_issues": [
-    {"name": "sbnt-1913", "lccn": "sn87055779", "date": "1913-11-01", "paper": "South Bend News-Times", "pattern": "hallowe", "max": 3, "license": "Public domain (1913 newspaper)"},
-    {"name": "sbnt-1914", "lccn": "sn87055779", "date": "1914-10-31", "paper": "South Bend News-Times", "pattern": "hallowe", "max": 3, "license": "Public domain (1914 newspaper)"},
-    {"name": "sbnt-1916", "lccn": "sn87055779", "date": "1916-11-01", "paper": "South Bend News-Times", "pattern": "hallowe", "max": 3, "license": "Public domain (1916 newspaper)"},
-    {"name": "sbnt-1919", "lccn": "sn87055779", "date": "1919-11-01", "paper": "South Bend News-Times", "pattern": "hallowe", "max": 3, "license": "Public domain (1919 newspaper)"},
-    {"name": "sbnt-1921", "lccn": "sn87055779", "date": "1921-11-01", "paper": "South Bend News-Times", "pattern": "hallowe", "max": 3, "license": "Public domain (1921 newspaper)"},
-    {"name": "sbnt-1923", "lccn": "sn87055779", "date": "1923-11-01", "paper": "South Bend News-Times", "pattern": "hallowe", "max": 3, "license": "Public domain (1923 newspaper)"},
-    {"name": "sbnt-1926", "lccn": "sn87055779", "date": "1926-11-01", "paper": "South Bend News-Times", "pattern": "hallowe", "max": 3, "license": "Public domain (1926 newspaper)"},
-    {"name": "sbnt-1928", "lccn": "sn87055779", "date": "1928-11-01", "paper": "South Bend News-Times", "pattern": "hallowe", "max": 3, "license": "Public domain (1928 newspaper)"},
-    {"name": "sbnt-1931", "lccn": "sn87055779", "date": "1931-11-01", "paper": "South Bend News-Times", "pattern": "hallowe", "max": 3, "license": "No known restrictions (Library of Congress, Chronicling America)"},
-    {"name": "sbnt-1934", "lccn": "sn87055779", "date": "1934-11-01", "paper": "South Bend News-Times", "pattern": "hallowe|trick", "max": 3, "license": "No known restrictions (Library of Congress, Chronicling America)"},
-    {"name": "sbnt-1937", "lccn": "sn87055779", "date": "1937-11-01", "paper": "South Bend News-Times", "pattern": "hallowe|trick", "max": 3, "license": "No known restrictions (Library of Congress, Chronicling America)"},
-    {"name": "lct-1906", "lccn": "sn86058242", "date": "1906-11-01", "paper": "Lake County Times (Hammond)", "pattern": "hallowe", "max": 3, "license": "Public domain (1906 newspaper)"},
-    {"name": "lct-1909", "lccn": "sn86058242", "date": "1909-11-01", "paper": "Lake County Times (Hammond)", "pattern": "hallowe", "max": 3, "license": "Public domain (1909 newspaper)"},
-    {"name": "lct-1910", "lccn": "sn86058242", "date": "1910-11-01", "paper": "Lake County Times (Hammond)", "pattern": "hallowe", "max": 3, "license": "Public domain (1910 newspaper)"},
-    {"name": "lct-1912", "lccn": "sn86058242", "date": "1912-11-01", "paper": "Lake County Times (Hammond)", "pattern": "hallowe", "max": 3, "license": "Public domain (1912 newspaper)"},
-    {"name": "lct-1920", "lccn": "sn86058242", "date": "1920-11-01", "paper": "Lake County Times (Hammond)", "pattern": "hallowe", "max": 3, "license": "Public domain (1920 newspaper)"},
-    {"name": "indy-1891", "lccn": "sn82015679", "date": "1891-11-02", "paper": "Indianapolis Journal", "pattern": "door.?bell|hallowe", "max": 3, "license": "Public domain (1891 newspaper)"},
-    {"name": "indy-1895", "lccn": "sn82015679", "date": "1895-11-01", "paper": "Indianapolis Journal", "pattern": "hallowe", "max": 3, "license": "Public domain (1895 newspaper)"},
-    {"name": "indy-1899", "lccn": "sn82015679", "date": "1899-11-01", "paper": "Indianapolis Journal", "pattern": "hallowe", "max": 3, "license": "Public domain (1899 newspaper)"},
-    {"name": "indy-1903", "lccn": "sn82015679", "date": "1903-11-01", "paper": "Indianapolis Journal", "pattern": "hallowe", "max": 3, "license": "Public domain (1903 newspaper)"},
-    {"name": "phila-1866", "lccn": "sn83025925", "date": "1866-10-31", "paper": "Evening Telegraph (Philadelphia)", "pattern": "hallow|cats", "max": 2, "license": "Public domain (1866 newspaper)"},
-    {"name": "star-1914", "lccn": "sn83045462", "date": "1914-10-25", "paper": "Evening Star (Washington)", "pattern": "hallowe", "max": 2, "editions": ["ed-1"], "pages": 70, "license": "Public domain (1914 newspaper)"},
-    {"name": "star-1917", "lccn": "sn83045462", "date": "1917-11-01", "paper": "Evening Star (Washington)", "pattern": "hallowe", "max": 2, "pages": 40, "license": "Public domain (1917 newspaper)"},
-    {"name": "world-1921", "lccn": "sn83030193", "date": "1921-10-28", "paper": "New York Evening World", "pattern": "hallowe", "max": 2, "pages": 40, "license": "Public domain (1921 newspaper)"}
+    {
+      "name": "sbnt-1913",
+      "lccn": "sn87055779",
+      "date": "1913-11-01",
+      "paper": "South Bend News-Times",
+      "pattern": "hallowe",
+      "max": 3,
+      "license": "Public domain (1913 newspaper)"
+    },
+    {
+      "name": "sbnt-1914",
+      "lccn": "sn87055779",
+      "date": "1914-10-31",
+      "paper": "South Bend News-Times",
+      "pattern": "hallowe",
+      "max": 3,
+      "license": "Public domain (1914 newspaper)"
+    },
+    {
+      "name": "sbnt-1916",
+      "lccn": "sn87055779",
+      "date": "1916-11-01",
+      "paper": "South Bend News-Times",
+      "pattern": "hallowe",
+      "max": 3,
+      "license": "Public domain (1916 newspaper)"
+    },
+    {
+      "name": "sbnt-1919",
+      "lccn": "sn87055779",
+      "date": "1919-11-01",
+      "paper": "South Bend News-Times",
+      "pattern": "hallowe",
+      "max": 3,
+      "license": "Public domain (1919 newspaper)"
+    },
+    {
+      "name": "sbnt-1921",
+      "lccn": "sn87055779",
+      "date": "1921-11-01",
+      "paper": "South Bend News-Times",
+      "pattern": "hallowe",
+      "max": 3,
+      "license": "Public domain (1921 newspaper)"
+    },
+    {
+      "name": "sbnt-1923",
+      "lccn": "sn87055779",
+      "date": "1923-11-01",
+      "paper": "South Bend News-Times",
+      "pattern": "hallowe",
+      "max": 3,
+      "license": "Public domain (1923 newspaper)"
+    },
+    {
+      "name": "sbnt-1926",
+      "lccn": "sn87055779",
+      "date": "1926-11-01",
+      "paper": "South Bend News-Times",
+      "pattern": "hallowe",
+      "max": 3,
+      "license": "Public domain (1926 newspaper)"
+    },
+    {
+      "name": "sbnt-1928",
+      "lccn": "sn87055779",
+      "date": "1928-11-01",
+      "paper": "South Bend News-Times",
+      "pattern": "hallowe",
+      "max": 3,
+      "license": "Public domain (1928 newspaper)"
+    },
+    {
+      "name": "sbnt-1931",
+      "lccn": "sn87055779",
+      "date": "1931-11-01",
+      "paper": "South Bend News-Times",
+      "pattern": "hallowe",
+      "max": 3,
+      "license": "No known restrictions (Library of Congress, Chronicling America)"
+    },
+    {
+      "name": "sbnt-1934",
+      "lccn": "sn87055779",
+      "date": "1934-11-01",
+      "paper": "South Bend News-Times",
+      "pattern": "hallowe|trick",
+      "max": 3,
+      "license": "No known restrictions (Library of Congress, Chronicling America)"
+    },
+    {
+      "name": "sbnt-1937",
+      "lccn": "sn87055779",
+      "date": "1937-11-01",
+      "paper": "South Bend News-Times",
+      "pattern": "hallowe|trick",
+      "max": 3,
+      "license": "No known restrictions (Library of Congress, Chronicling America)"
+    },
+    {
+      "name": "lct-1906",
+      "lccn": "sn86058242",
+      "date": "1906-11-01",
+      "paper": "Lake County Times (Hammond)",
+      "pattern": "hallowe",
+      "max": 3,
+      "license": "Public domain (1906 newspaper)"
+    },
+    {
+      "name": "lct-1909",
+      "lccn": "sn86058242",
+      "date": "1909-11-01",
+      "paper": "Lake County Times (Hammond)",
+      "pattern": "hallowe",
+      "max": 3,
+      "license": "Public domain (1909 newspaper)"
+    },
+    {
+      "name": "lct-1910",
+      "lccn": "sn86058242",
+      "date": "1910-11-01",
+      "paper": "Lake County Times (Hammond)",
+      "pattern": "hallowe",
+      "max": 3,
+      "license": "Public domain (1910 newspaper)"
+    },
+    {
+      "name": "lct-1912",
+      "lccn": "sn86058242",
+      "date": "1912-11-01",
+      "paper": "Lake County Times (Hammond)",
+      "pattern": "hallowe",
+      "max": 3,
+      "license": "Public domain (1912 newspaper)"
+    },
+    {
+      "name": "lct-1920",
+      "lccn": "sn86058242",
+      "date": "1920-11-01",
+      "paper": "Lake County Times (Hammond)",
+      "pattern": "hallowe",
+      "max": 3,
+      "license": "Public domain (1920 newspaper)"
+    },
+    {
+      "name": "indy-1891",
+      "lccn": "sn82015679",
+      "date": "1891-11-02",
+      "paper": "Indianapolis Journal",
+      "pattern": "door.?bell|hallowe",
+      "max": 3,
+      "license": "Public domain (1891 newspaper)"
+    },
+    {
+      "name": "indy-1895",
+      "lccn": "sn82015679",
+      "date": "1895-11-01",
+      "paper": "Indianapolis Journal",
+      "pattern": "hallowe",
+      "max": 3,
+      "license": "Public domain (1895 newspaper)"
+    },
+    {
+      "name": "indy-1899",
+      "lccn": "sn82015679",
+      "date": "1899-11-01",
+      "paper": "Indianapolis Journal",
+      "pattern": "hallowe",
+      "max": 3,
+      "license": "Public domain (1899 newspaper)"
+    },
+    {
+      "name": "indy-1903",
+      "lccn": "sn82015679",
+      "date": "1903-11-01",
+      "paper": "Indianapolis Journal",
+      "pattern": "hallowe",
+      "max": 3,
+      "license": "Public domain (1903 newspaper)"
+    },
+    {
+      "name": "phila-1866",
+      "lccn": "sn83025925",
+      "date": "1866-10-31",
+      "paper": "Evening Telegraph (Philadelphia)",
+      "pattern": "hallow|cats",
+      "max": 2,
+      "license": "Public domain (1866 newspaper)"
+    },
+    {
+      "name": "star-1914",
+      "lccn": "sn83045462",
+      "date": "1914-10-25",
+      "paper": "Evening Star (Washington)",
+      "pattern": "hallowe",
+      "max": 2,
+      "editions": [
+        "ed-1"
+      ],
+      "pages": 70,
+      "license": "Public domain (1914 newspaper)"
+    },
+    {
+      "name": "star-1917",
+      "lccn": "sn83045462",
+      "date": "1917-11-01",
+      "paper": "Evening Star (Washington)",
+      "pattern": "hallowe",
+      "max": 2,
+      "pages": 40,
+      "license": "Public domain (1917 newspaper)"
+    },
+    {
+      "name": "world-1921",
+      "lccn": "sn83030193",
+      "date": "1921-10-28",
+      "paper": "New York Evening World",
+      "pattern": "hallowe",
+      "max": 2,
+      "pages": 40,
+      "license": "Public domain (1921 newspaper)"
+    }
+  ],
+  "news_clips": [
+    {
+      "file": "np-mc-06.jpg",
+      "pattern": "hallowe",
+      "out": "clip-indy-1895",
+      "note": "Indianapolis Journal, Nov. 1, 1895"
+    },
+    {
+      "file": "np-mc-06.jpg",
+      "pattern": "hallowe",
+      "n": 1,
+      "out": "clip-indy-1895b"
+    },
+    {
+      "file": "np-pranks-01.jpg",
+      "pattern": "hallowe|pranks",
+      "out": "clip-topeka-1895",
+      "pad_y": 0.6
+    },
+    {
+      "file": "np-pranks-10.jpg",
+      "pattern": "hallowe",
+      "out": "clip-topeka-1905",
+      "pad_y": 0.6
+    },
+    {
+      "file": "np-pranks-18.jpg",
+      "pattern": "hallowe",
+      "out": "clip-laramie-1908",
+      "pad_y": 0.6
+    },
+    {
+      "file": "np-tot-03.jpg",
+      "pattern": "trick|treat",
+      "out": "clip-star-1948",
+      "pad_y": 0.3
+    },
+    {
+      "file": "np-tot-08.jpg",
+      "pattern": "treaters|trick",
+      "out": "clip-star-1951a",
+      "pad_y": 0.3
+    },
+    {
+      "file": "np-tot-09.jpg",
+      "pattern": "korean|trick",
+      "out": "clip-star-1951b",
+      "pad_y": 0.2
+    },
+    {
+      "file": "np-tot-09.jpg",
+      "box": [
+        0.0,
+        0.0,
+        0.42,
+        0.22
+      ],
+      "out": "clip-star-1951b-photo",
+      "note": "the Janney School children at the police station"
+    },
+    {
+      "file": "np-tot-06.jpg",
+      "pattern": "trick|treat|hallowe",
+      "out": "clip-star-1950"
+    },
+    {
+      "file": "np-tot-16.jpg",
+      "pattern": "trick|treat|hallowe",
+      "out": "clip-star-1954"
+    },
+    {
+      "file": "np-sugar-03.jpg",
+      "pattern": "sugar|ration",
+      "out": "clip-waterbury-1942",
+      "pad_y": 0.5
+    },
+    {
+      "file": "np-sugar-05.jpg",
+      "pattern": "sugar",
+      "out": "clip-monitor-1942",
+      "pad_y": 0.5
+    },
+    {
+      "file": "np-unicef-01.jpg",
+      "pattern": "unicef|trick",
+      "out": "clip-camas-1954",
+      "pad_y": 0.5
+    },
+    {
+      "file": "np-indiana-03.jpg",
+      "pattern": "hallowe",
+      "out": "clip-tribune-1902",
+      "pad_y": 0.5
+    },
+    {
+      "file": "np-jol-10.jpg",
+      "pattern": "lantern|hallowe",
+      "out": "clip-star-1905",
+      "pad_y": 0.5
+    }
   ]
 }

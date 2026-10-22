@@ -589,7 +589,28 @@ def news_clips(items, old):
         if big is None:
             continue
         bw, bh = big.size
+        alto_cache = {}
         for c in clips:
+            if "box" not in c and c.get("pattern"):
+                # find the words on the page (ALTO word coordinates) and cut around the best block
+                try:
+                    if "blocks" not in alto_cache:
+                        pj = getjson(src["page"] + ("&" if "?" in src["page"] else "?") + "fo=json", loc=True)
+                        alto = find_alto_url(pj)
+                        alto_cache["blocks"] = alto_blocks(get(alto, loc=True), c["pattern"]) if alto else (None, None, [])
+                    pw, ph, blocks = alto_cache["blocks"]
+                except Exception as e:
+                    log("  word positions failed:", pfile, e)
+                    continue
+                blocks = [b for b in blocks if re.search(c["pattern"], b[5], re.I)]
+                if not blocks:
+                    log("  no block matches", c["pattern"], "on", pfile)
+                    continue
+                score, x, y, w, h, text = blocks[min(int(c.get("n", 0)), len(blocks) - 1)]
+                px, py = float(c.get("pad", 0.12)), float(c.get("pad_y", 0.4))
+                c["box"] = [max(0.0, (x - w * px) / pw), max(0.0, (y - h * py) / ph), min(1.0, (x + w * (1 + px)) / pw), min(1.0, (y + h * (1 + py)) / ph)]
+                c["note"] = (c.get("note", "") + " | " + text[:160]).strip(" |")
+                log("  found", c["pattern"], "on", pfile, "box", [round(v, 3) for v in c["box"]], "|", text[:80])
             x0, y0, x1, y1 = c["box"]
             box = (int(max(0, x0) * bw), int(max(0, y0) * bh), int(min(1, x1) * bw), int(min(1, y1) * bh))
             crop = big.crop(box)
