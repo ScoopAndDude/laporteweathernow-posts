@@ -1,6 +1,6 @@
 {
  "about": "Official weather for La Porte, Indiana, saved by a GitHub job for the Daily Scoop (laporteweathernow.com/daily-scoop). Copied from NWS, SPC and WPC as-is; see scripts/nws_snapshot.py.",
- "fetched": "2026-10-23T09:56:52-05:00",
+ "fetched": "2026-10-24T05:02:10-05:00",
  "place": "La Porte, IN",
  "lat": 41.6081,
  "lon": -86.7189,
@@ -23,40 +23,29 @@
  },
  "observation": {
   "station": "KPPO (La Porte Municipal Airport)",
-  "time": "2026-10-23T08:55:00-05:00",
+  "time": "2026-10-24T04:35:00-05:00",
   "weather": "Clear",
-  "temperatureF": 54,
-  "dewpointF": 54,
+  "temperatureF": 45,
+  "dewpointF": 45,
   "humidityPercent": 100,
   "wind": {
-   "from": "ESE",
-   "degrees": 110,
+   "from": "E",
+   "degrees": 80,
    "mph": 3,
    "gustMph": null
   },
   "visibilityMiles": 10.0,
-  "pressureInHg": 30.36,
-  "metar": "KPPO 231355Z AUTO 11003KT 10SM CLR 12/12 A3036 RMK AO2"
+  "pressureInHg": 30.39,
+  "metar": "KPPO 240935Z AUTO 08003KT 10SM CLR 07/07 A3039 RMK AO2"
  },
  "forecast": {
-  "updated": "2026-10-23T13:15:39+00:00",
-  "generated": "2026-10-23T14:02:20+00:00",
+  "updated": "2026-10-24T09:30:15+00:00",
+  "generated": "2026-10-24T09:47:02+00:00",
   "timesNote": "Clock times in the forecast wording are already in America/Chicago (La Porte's real time). NWS writes them in America/Indiana/Indianapolis, which it has on file for La Porte by mistake.",
   "periods": [
    {
-    "name": "Today",
-    "start": "2026-10-23T10:00:00-04:00",
-    "end": "2026-10-23T18:00:00-04:00",
-    "isDaytime": true,
-    "temperatureF": 71,
-    "rainChancePercent": 0,
-    "wind": "SE 5 mph",
-    "short": "Sunny",
-    "detailed": "Sunny, with a high near 71. Southeast wind around 5 mph."
-   },
-   {
-    "name": "Tonight",
-    "start": "2026-10-23T18:00:00-04:00",
+    "name": "Overnight",
+    "start": "2026-10-24T05:00:00-04:00",
     "end": "2026-10-24T06:00:00-04:00",
     "isDaytime": false,
     "temperatureF": 44,
@@ -71,21 +60,21 @@
     "end": "2026-10-24T18:00:00-04:00",
     "isDaytime": true,
     "temperatureF": 69,
-    "rainChancePercent": 0,
+    "rainChancePercent": 1,
     "wind": "SE 5 mph",
-    "short": "Mostly Sunny",
-    "detailed": "Mostly sunny, with a high near 69. Southeast wind around 5 mph."
+    "short": "Patchy Fog then Mostly Sunny",
+    "detailed": "Patchy fog before 9am. Mostly sunny, with a high near 69. Southeast wind around 5 mph."
    },
    {
     "name": "Saturday Night",
     "start": "2026-10-24T18:00:00-04:00",
     "end": "2026-10-25T06:00:00-04:00",
     "isDaytime": false,
-    "temperatureF": 46,
-    "rainChancePercent": 0,
-    "wind": "S 5 mph",
+    "temperatureF": 45,
+    "rainChancePercent": 2,
+    "wind": "SE 5 mph",
     "short": "Partly Cloudy",
-    "detailed": "Partly cloudy, with a low around 46. South wind around 5 mph."
+    "detailed": "Partly cloudy, with a low around 45. Southeast wind around 5 mph."
    },
    {
     "name": "Sunday",
@@ -93,7 +82,7 @@
     "end": "2026-10-25T18:00:00-04:00",
     "isDaytime": true,
     "temperatureF": 72,
-    "rainChancePercent": 0,
+    "rainChancePercent": 2,
     "wind": "S 5 mph",
     "short": "Mostly Sunny",
     "detailed": "Mostly sunny, with a high near 72. South wind around 5 mph."
@@ -103,11 +92,11 @@
     "start": "2026-10-25T18:00:00-04:00",
     "end": "2026-10-26T06:00:00-04:00",
     "isDaytime": false,
-    "temperatureF": 48,
+    "temperatureF": 47,
     "rainChancePercent": 0,
     "wind": "S 0 to 5 mph",
     "short": "Partly Cloudy",
-    "detailed": "Partly cloudy, with a low around 48."
+    "detailed": "Partly cloudy, with a low around 47. South wind 0 to 5 mph."
    },
    {
     "name": "Monday",
@@ -136,66 +125,77 @@
     "start": "2026-10-27T06:00:00-04:00",
     "end": "2026-10-27T18:00:00-04:00",
     "isDaytime": true,
-    "temperatureF": 64,
-    "rainChancePercent": 3,
-    "wind": "E 5 mph",
+    "temperatureF": 66,
+    "rainChancePercent": 0,
+    "wind": "E 5 to 10 mph",
     "short": "Mostly Cloudy",
-    "detailed": "Mostly cloudy, with a high near 64."
+    "detailed": "Mostly cloudy, with a high near 66."
    },
    {
     "name": "Tuesday Night",
     "start": "2026-10-27T18:00:00-04:00",
     "end": "2026-10-28T06:00:00-04:00",
     "isDaytime": false,
-    "temperatureF": 45,
-    "rainChancePercent": 3,
+    "temperatureF": 48,
+    "rainChancePercent": 1,
     "wind": "SE 5 mph",
     "short": "Mostly Cloudy",
-    "detailed": "Mostly cloudy, with a low around 45."
+    "detailed": "Mostly cloudy, with a low around 48."
    },
    {
     "name": "Wednesday",
     "start": "2026-10-28T06:00:00-04:00",
     "end": "2026-10-28T18:00:00-04:00",
     "isDaytime": true,
-    "temperatureF": 67,
+    "temperatureF": 71,
     "rainChancePercent": 3,
-    "wind": "SE 5 mph",
-    "short": "Partly Sunny",
-    "detailed": "Partly sunny, with a high near 67."
+    "wind": "S 5 to 10 mph",
+    "short": "Mostly Sunny",
+    "detailed": "Mostly sunny, with a high near 71."
    },
    {
     "name": "Wednesday Night",
     "start": "2026-10-28T18:00:00-04:00",
     "end": "2026-10-29T06:00:00-04:00",
     "isDaytime": false,
-    "temperatureF": 47,
-    "rainChancePercent": 8,
-    "wind": "S 5 mph",
-    "short": "Partly Cloudy",
-    "detailed": "Partly cloudy, with a low around 47."
+    "temperatureF": 52,
+    "rainChancePercent": 12,
+    "wind": "S 5 to 10 mph",
+    "short": "Mostly Clear",
+    "detailed": "Mostly clear, with a low around 52."
    },
    {
     "name": "Thursday",
     "start": "2026-10-29T06:00:00-04:00",
     "end": "2026-10-29T18:00:00-04:00",
     "isDaytime": true,
-    "temperatureF": 68,
-    "rainChancePercent": 15,
+    "temperatureF": 69,
+    "rainChancePercent": 12,
     "wind": "SW 5 to 10 mph",
-    "short": "Mostly Sunny then Slight Chance Rain Showers",
-    "detailed": "A slight chance of rain showers after 1pm. Mostly sunny, with a high near 68."
+    "short": "Mostly Sunny",
+    "detailed": "Mostly sunny, with a high near 69."
    },
    {
     "name": "Thursday Night",
     "start": "2026-10-29T18:00:00-04:00",
     "end": "2026-10-30T06:00:00-04:00",
     "isDaytime": false,
-    "temperatureF": 45,
-    "rainChancePercent": 19,
-    "wind": "W 5 mph",
-    "short": "Slight Chance Rain Showers",
-    "detailed": "A slight chance of rain showers. Mostly cloudy, with a low around 45."
+    "temperatureF": 46,
+    "rainChancePercent": 5,
+    "wind": "SW 5 mph",
+    "short": "Partly Cloudy",
+    "detailed": "Partly cloudy, with a low around 46."
+   },
+   {
+    "name": "Friday",
+    "start": "2026-10-30T06:00:00-04:00",
+    "end": "2026-10-30T18:00:00-04:00",
+    "isDaytime": true,
+    "temperatureF": 67,
+    "rainChancePercent": 13,
+    "wind": "S 5 mph",
+    "short": "Mostly Sunny",
+    "detailed": "Mostly sunny, with a high near 67."
    }
   ]
  },
@@ -205,11 +205,7 @@
   "next72hInches": 0.0,
   "byPeriod": [
    {
-    "name": "Today",
-    "inches": 0.0
-   },
-   {
-    "name": "Tonight",
+    "name": "Overnight",
     "inches": 0.0
    },
    {
@@ -234,11 +230,11 @@
    },
    {
     "name": "Monday Night",
-    "inches": 0
+    "inches": 0.0
    },
    {
     "name": "Tuesday",
-    "inches": 0
+    "inches": 0.0
    },
    {
     "name": "Tuesday Night",
@@ -259,37 +255,99 @@
    {
     "name": "Thursday Night",
     "inches": 0
+   },
+   {
+    "name": "Friday",
+    "inches": 0
    }
   ]
  },
- "alertsLaPorteCounty": [],
+ "alertsLaPorteCounty": [
+  {
+   "id": "urn:oid:2.49.0.1.840.0.700b5a8d5ff789f9f7702214c39b2d79be6c6173.001.1",
+   "event": "Dense Fog Advisory",
+   "headline": "Dense Fog Advisory issued October 24 at 5:22AM EDT until October 24 at 10:00AM EDT by NWS Northern Indiana",
+   "nwsHeadline": "DENSE FOG ADVISORY IN EFFECT UNTIL 10 AM EDT /9 AM CDT/ THIS MORNING",
+   "area": "Marshall; Fulton; Miami; Grant; Blackford; Jay; Northern La Porte; Eastern St. Joseph; Western St. Joseph; Cass; Northern Berrien; Southern Berrien",
+   "sender": "NWS Northern Indiana",
+   "sent": "2026-10-24T05:22:00-04:00",
+   "onset": "2026-10-24T05:22:00-04:00",
+   "ends": "2026-10-24T10:00:00-04:00",
+   "expires": "2026-10-24T10:00:00-04:00",
+   "messageType": "Alert",
+   "severity": "Moderate",
+   "certainty": "Likely",
+   "urgency": "Expected",
+   "description": "* WHAT...Visibility one quarter mile or less in dense fog.\n\n* WHERE...Portions of northern Indiana and southwest Michigan.\n\n* WHEN...Until 10 AM EDT /9 AM CDT/ this morning.\n\n* IMPACTS...Low visibility could make driving conditions hazardous.",
+   "instruction": "If driving, slow down, use your headlights, and leave plenty of\ndistance ahead of you."
+  }
+ ],
  "alertsNearby": {
-  "indiana": [],
-  "nearbyCountiesFullText": []
+  "indiana": [
+   {
+    "id": "urn:oid:2.49.0.1.840.0.700b5a8d5ff789f9f7702214c39b2d79be6c6173.001.1",
+    "event": "Dense Fog Advisory",
+    "headline": "Dense Fog Advisory issued October 24 at 5:22AM EDT until October 24 at 10:00AM EDT by NWS Northern Indiana",
+    "nwsHeadline": "DENSE FOG ADVISORY IN EFFECT UNTIL 10 AM EDT /9 AM CDT/ THIS MORNING",
+    "area": "Marshall; Fulton; Miami; Grant; Blackford; Jay; Northern La Porte; Eastern St. Joseph; Western St. Joseph; Cass; Northern Berrien; Southern Berrien",
+    "sender": "NWS Northern Indiana",
+    "sent": "2026-10-24T05:22:00-04:00",
+    "onset": "2026-10-24T05:22:00-04:00",
+    "ends": "2026-10-24T10:00:00-04:00",
+    "expires": "2026-10-24T10:00:00-04:00",
+    "messageType": "Alert",
+    "severity": "Moderate",
+    "certainty": "Likely",
+    "urgency": "Expected"
+   },
+   {
+    "id": "urn:oid:2.49.0.1.840.0.700b5a8d5ff789f9f7702214c39b2d79be6c6173.002.1",
+    "event": "Dense Fog Advisory",
+    "headline": "Dense Fog Advisory issued October 24 at 5:22AM EDT until October 24 at 10:00AM EDT by NWS Northern Indiana",
+    "nwsHeadline": "DENSE FOG ADVISORY REMAINS IN EFFECT UNTIL 10 AM EDT THIS MORNING",
+    "area": "Elkhart; Lagrange; Steuben; Noble; De Kalb; Whitley; Allen; Wabash; Huntington; Wells; Adams; Northern Kosciusko; Southern Kosciusko; St. Joseph; Branch; Hillsdale; Williams; Fulton; Defiance; Henry; Paulding; Putnam; Van Wert; Allen",
+    "sender": "NWS Northern Indiana",
+    "sent": "2026-10-24T05:22:00-04:00",
+    "onset": "2026-10-24T05:22:00-04:00",
+    "ends": "2026-10-24T10:00:00-04:00",
+    "expires": "2026-10-24T10:00:00-04:00",
+    "messageType": "Update",
+    "severity": "Moderate",
+    "certainty": "Likely",
+    "urgency": "Expected"
+   }
+  ],
+  "nearbyCountiesFullText": [
+   {
+    "id": "urn:oid:2.49.0.1.840.0.700b5a8d5ff789f9f7702214c39b2d79be6c6173.002.1",
+    "event": "Dense Fog Advisory",
+    "headline": "Dense Fog Advisory issued October 24 at 5:22AM EDT until October 24 at 10:00AM EDT by NWS Northern Indiana",
+    "nwsHeadline": "DENSE FOG ADVISORY REMAINS IN EFFECT UNTIL 10 AM EDT THIS MORNING",
+    "area": "Elkhart; Lagrange; Steuben; Noble; De Kalb; Whitley; Allen; Wabash; Huntington; Wells; Adams; Northern Kosciusko; Southern Kosciusko; St. Joseph; Branch; Hillsdale; Williams; Fulton; Defiance; Henry; Paulding; Putnam; Van Wert; Allen",
+    "sender": "NWS Northern Indiana",
+    "sent": "2026-10-24T05:22:00-04:00",
+    "onset": "2026-10-24T05:22:00-04:00",
+    "ends": "2026-10-24T10:00:00-04:00",
+    "expires": "2026-10-24T10:00:00-04:00",
+    "messageType": "Update",
+    "severity": "Moderate",
+    "certainty": "Likely",
+    "urgency": "Expected",
+    "description": "* WHAT...Visibility one quarter mile or less in dense fog.\n\n* WHERE...Portions of northern Indiana, southwest Michigan, and\nnorthwest Ohio.\n\n* WHEN...Until 10 AM EDT this morning.\n\n* IMPACTS...Low visibility could make driving conditions hazardous.",
+    "instruction": "If driving, slow down, use your headlights, and leave plenty of\ndistance ahead of you."
+   }
+  ]
  },
  "discussion": {
-  "issued": "2026-10-23T05:27:00-05:00",
-  "ageHours": 4.5,
-  "text": "000\nFXUS63 KIWX 231027\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n627 AM EDT Fri Oct 23 2026\n\n.KEY MESSAGES...\n\n- Areas of fog are possible north of US-30 this morning. Some locally\n  dense fog may be possible in far NW Ohio and southern \n  Michigan.\n\n- Warm, dry and pleasant weather will continue well into next week \n  with highs around 70 and lows in the 40s.\n\n&&\n\n.DISCUSSION...\nIssued at 130 AM EDT Fri Oct 23 2026\n\nFog is the main forecast concern again this morning. Light NNE flow \noff Lake Huron supporting widespread dense fog over parts of SE MI \nand continuing to expand SW with time. Models split on exactly how \nfar SW this fog gets but there is a decent chance our NE counties \ncould get clipped. A few HRRR and RAP runs have also indicated \nadditional fog development possible around KFWA and points SE. Low \nforecast confidence precludes any proactive headline decisions for \nnow but will continue to monitor satellite/surface obs closely \nthrough the early morning and issue advisories or SPS's as \nnecessary. Otherwise, incredibly high amplitude/short wavelength \nridge continues to build over the Great Lakes through the weekend \nwith strong AVA/subsidence maintaining high pressure across the \nLower Great Lakes/northeast CONUS. Surface winds slowly veer to a \nmore SE and eventually S/SW direction tonight through the weekend. \nThat coupled with some increasing high clouds from upstream \ntrough/front should limit the fog threat for Sat AM though some \npatchy fog can't be ruled out for our eastern zones. High temps \nlikely reach the low 70s again today given sunny skies (outside of \nmorning fog/stratus) and deep mixing. Leaned on the warmer and drier \nside of guidance for today which gives afternoon RH values around 35 \npercent. This is not low enough for a substantive fire wx concern \n(especially given very light wind) but imagine finer fuels are \nstarting to get pretty dry. Similar story over the weekend. Sunday's \nhighs will be a little warmer given increasing SW flow/light WAA but \ndewpoints also creep up a bit as well. Strong ridge holds firm over \nthe Ohio Valley this weekend as upstream surface front stalls and \nwashes out well to our NW. Our next chance of rain doesn't arrive \nuntil next Thu and even that is highly questionable as numerous \nsolutions show this front stalling to our NW as well. Real rainfall \nchances don't arrive until around Halloween but that is far enough \nout that many things could still change. Main story is that warm, \ndry and pleasant fall weather will continue well into next week.\n\n&&\n\n.AVIATION /12Z TAFS THROUGH 12Z SATURDAY/...\nIssued at 622 AM EDT Fri Oct 23 2026\n\nThe amplification of a low level ridge axis across the Great\nLakes and Ohio Valley will maintain the influence of the\nanticyclone across northern Indiana through much of the \nweekend. Easterly flow associated with this high pressure is \nallowing stratus/fog to advect westward into far northwest Ohio,\nbut expectation is that fog at KSBN/KFWA will remain more \npatchy in nature with anything lower than MVFR vsbys likely \nshort-lived over the next few hours before patchy fog \ndissipates. Otherwise VFR conditions and light winds to persist \nthrough this forecast valid period, and persistence of this \npattern suggests more patchy fog is possible tonight, although \nconfidence of impacts at terminals is on the low side.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...None.\n\n&&\n\n$$\n\nDISCUSSION...AGD\nAVIATION...Marsili"
+  "issued": "2026-10-24T01:40:00-05:00",
+  "ageHours": 3.4,
+  "text": "000\nFXUS63 KIWX 240640\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n240 AM EDT Sat Oct 24 2026\n\n.KEY MESSAGES...\n\n- Dense fog will impacts portions of the area through late\n  morning. An advisory is in effect.\n\n- Otherwise, pleasant weather persists through the upcoming week\n  with highs around 70, lows in the 40s, and no rain expected.\n\n&&\n\n.DISCUSSION...\nIssued at 240 AM EDT Sat Oct 24 2026\n\nAnother day with fog as the only sensible weather concern. Latest \nsatellite and surface obs show dense fog rapidly expanding across \nour eastern CWA thanks to another night of light easterly flow off \nLake Erie and prime radiational cooling. High clouds that were in \nplace earlier thanks to upstream trough have now largely dissipated \nfor most of the area and see no reason why fog won't continue to \nexpand and persist through the late morning as suggested by plethora \nof latest guidance. Only question is how far west and south it will \nbuild. With light E to even ESE flow, confidence is not high for our \nsouthwest zones. Latest satellite shows a rapid expansion to the NW \nbut very little southward expansion. Issued a dense fog advisory but \nleft off the far west and southern counties for now. Will continue \nto monitor obs and expand as necessary. Surface winds finally veer \nto the south tonight and more high clouds should limit fog potential \n(save perhaps for our extreme NE areas where Lake Erie could still \nbe a factor).\n\nHighs today a near carbon copy from yesterday given no thermal \nadvection. Highs do creep up a few degrees Sun and Mon as very light \nsoutherly flow/minor WAA takes shape. A weak backdoor front then \nbrings a brief return to cool easterly flow for Tue but WAA \nincreases again for Wed and Thu as a decaying cold front approaches \nthe region. This front looks to stall and wash out just to our NW \nwith just some very low chances for light rain near Lake MI Thu into \nFri. Better rain chances arrive over the weekend but there is still \na high degree of spread regarding exact timing and amounts.\n\n&&\n\n.AVIATION /06Z TAFS THROUGH 06Z SUNDAY/...\nIssued at 130 AM EDT Sat Oct 24 2026\n\nA stagnant weather pattern is allowing for a repeat fog\npotential setup through early this morning. Satellite imagery \nand sfc observations indicate an expanding area of stratus and \ndense fog across northwest Ohio, with a westward movement of 15 \nto 20 mph. This fog has been favored in a pattern with good \nradiational cooling and a weak easterly flow regime from the \neastern Great Lakes. Based on satellite and observational \ntrends, confidence continues to increase in dense fog potential \nat KFWA from roughly 0730Z to possibly mid morning. The greatest\nuncertainty deals with westward extent of dense fog with some \nhigher res guidance suggesting pockets of dense fog as far west \nas KSBN. Given uncertainty, did limit mention to MVFR vsbys \ntrend by 10Z at KSBN with TEMPO IFR vsbys. Improvement this \nmorning will likely be slow at KFWA given very poor mixing \ncontinuing. Otherwise, quiet aviation weather today as an upper \nridge axis finally begins to shift eastward a bit, allowing for \neventual veering of low level flow to the south late this \nperiod. The combination of this southerly flow and increased \nhigh clouds tonight should limit coverage of the significant fog\nfor Saturday night/early Sunday.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...Dense Fog Advisory until 10 AM EDT this morning for INZ005>009-\n     017-018-024>027-116-216.\nOH...Dense Fog Advisory until 10 AM EDT this morning for OHZ001-002-\n     004-005-015-016-024-025.\nMI...Dense Fog Advisory until 10 AM EDT this morning for MIZ079>081.\nMARINE...None.\n\n&&\n\n$$\n\nDISCUSSION...AGD\nAVIATION...Marsili"
  },
  "hazardousWeatherOutlook": null,
  "hydrologicOutlook": null,
  "spc": [
   {
    "day": 1,
-   "valid": "202610231300",
-   "expires": "202610241200",
-   "riskAtLaPorte": "No thunderstorm or severe risk area",
-   "riskAreasAnywhere": [
-    "General Thunderstorms Risk",
-    "Marginal Risk",
-    "Slight Risk"
-   ],
-   "summary": "Severe thunderstorms with hail, damaging gusts and a tornado or two are possible across portions of New Mexico, southern Colorado, and far west Texas today into tonight.",
-   "text": "SPC AC 231245\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   0745 AM CDT Fri Oct 23 2026\n\n   Valid 231300Z - 241200Z\n\n   ...THERE IS A SLIGHT RISK OF SEVERE THUNDERSTORMS THIS AFTERNOON AND\n   EVENING OVER PARTS OF NEW MEXICO....\n\n   ...SUMMARY...\n   Severe thunderstorms with hail, damaging gusts and a tornado or two\n   are possible across portions of New Mexico, southern Colorado, and\n   far west Texas today into tonight.\n\n   ...NM/CO/Far West TX...\n   A large upper trough remains over the western states today, with\n   strong southwesterly mid-level winds extending across the southern\n   Rockies.  A shortwave trough now moving across northern NM/southern\n   CO will depart the area, leaving a few hours of subsidence before a\n   combination of daytime heating and subtle forcing within the upper\n   jet aid in afternoon thunderstorm development over NM.  Favorable\n   deep-layer shear profiles and MLCAPE of 1000-1500 J/kg will support\n   a risk of supercell structures through the afternoon and evening\n   from southern NM/far west TX into southeast CO.  Relatively steep\n   mid level lapse rates and cool temperatures aloft suggest that large\n   hail is the main concern from these storms, but locally damaging\n   winds could also occur where daytime heating is maximized. A tornado\n   or two could occur in terrain-favored areas.\n\n   ..Hart/Dean.. 10/23/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 1630Z"
-  },
-  {
-   "day": 2,
    "valid": "202610241200",
    "expires": "202610251200",
    "riskAtLaPorte": "No thunderstorm or severe risk area",
@@ -298,11 +356,11 @@
     "Marginal Risk",
     "Slight Risk"
    ],
-   "summary": "Severe wind/hail and a tornado are possible across portions of central New Mexico into Far West Texas on Saturday.",
-   "text": "SPC AC 230533\n\n   Day 2 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1233 AM CDT Fri Oct 23 2026\n\n   Valid 241200Z - 251200Z\n\n   ...THERE IS A SLIGHT RISK OF SEVERE THUNDERSTORMS ACROSS PARTS OF\n   SOUTHERN NEW MEXICO AND FAR WESTERN TEXAS...\n\n   ...SUMMARY...\n   Severe wind/hail and a tornado are possible across portions of\n   central New Mexico into Far West Texas on Saturday.\n\n   ...NM into southwest TX vicinity...\n\n   Strong upper ridging across the MS Valley will prevent much\n   eastward-advancement of the upper cyclone over AZ. As a result, a\n   belt of enhanced mid/upper southwesterly flow will persist from\n   eastern AZ into NM. At the surface, lower pressure will be oriented\n   across southern AZ and southwest NM while surface high pressure\n   builds across the northern/central Plains in the wake of a surface\n   cold front. As a result of the increased surface pressure gradient\n   across the southern Rockies, southeasterly low-level winds will\n   transport/maintain modest boundary layer moisture across\n   central/eastern NM and western TX. Modest destabilization, and large\n   scale ascent overspreading the region ahead of the upper cyclone,\n   will support thunderstorm development by early to mid-afternoon.\n\n   Vertically veering wind profiles, increasing in speed with height,\n   will result in supercell wind profiles and elongated hodographs.\n   Midlevel lapse rates will remain modest (to around 7 C/km), with\n   cool 500 mb temperatures around -10 to -13 C noted in regional\n   forecast soundings. This will result in mainly a large hail risk.\n   However, given stronger midlevel flow and somewhat fast storm motion\n   (40 kt or so), some risk for strong gusts also will be possible\n   where stronger heating occurs. While boundary layer moisture will\n   remain modest (generally 50s F dewpoints max), some risk for a\n   tornado is possible given favorable low-level shear. This risk will\n   likely be focused further south across south-central NM into Far\n   West TX where instability and surface heating may be maximized.\n\n   ..Leitman.. 10/23/2026\n\n   CLICK TO GET WUUS02 PTSDY2 PRODUCT\n\n   NOTE: THE NEXT DAY 2 OUTLOOK IS SCHEDULED BY 1730Z"
+   "summary": "Severe wind/hail and a tornado are possible across portions of New Mexico and far west Texas today.",
+   "text": "SPC AC 240559\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1259 AM CDT Sat Oct 24 2026\n\n   Valid 241200Z - 251200Z\n\n   ...THERE IS A SLIGHT RISK OF SEVERE THUNDERSTORMS ACROSS PORTIONS OF\n   NEW MEXICO AND WEST TEXAS...\n\n   ...SUMMARY...\n   Severe wind/hail and a tornado are possible across portions of New\n   Mexico and far west Texas today.\n\n   ...Synopsis...\n   An upper trough over the western US and Rockies is forecast to\n   become increasingly fragmented as the primary vort max lifts\n   northeastward from the northern Rockies into southern Canada.\n   Southern portions of the main trough will be reinforced by an\n   upper-level cyclone emerging from northern Baja, forecast to deepen\n   modestly as it moves over the Desert Southwest. Relatively strong\n   southwesterly flow aloft will precede the southern stream low\n   extending eastward across New Mexico and west/southwest Texas. At\n   the surface, a cold front will move southward across the Plains\n   trailing from a deepening surface low in southern Canada. A much\n   weaker surface cyclone is forecast to develop over the Four Corners.\n   A relatively moist air mass will be enhanced by weak height falls,\n   and the developing surface cyclones, which should gradually\n   strengthen south-southeast winds in the lowest 1-2km AGL.\n\n   ...Southwest and Four Corners...\n   Initial ascent from the approaching upper low will begin to\n   overspread the Four Corners relatively early in the forecast period.\n   Despite cooler surface temperatures, the moist air mass and\n   steepening mid-level lapse rates will contribute to sufficient\n   buoyancy (MUCAPE 500-1000 J/kg) for storm\n   development/intensification as early as 12-13z. As wind fields aloft\n   strengthen (40-50 kt EBWD), at least an isolated risk for hail may\n   materialize.\n\n   More robust storm development is expected to gradually occur east of\n   a weak surface trough later in the diurnal cycle as destabilization\n   increases across south-central NM into northern Mexico and Far West\n   TX. MLCAPE of 1500-2500 J/kg amidst modestly veering, but elongated\n   hodographs promoting organized clusters and supercells. Large hail\n   (1-2 inches) will be possible given the degree of buoyancy and\n   cooler mid-level temperatures. The most likely corridor for larger\n   hail may be confined to the greater instability reservoir across\n   southern portions of the risk area. While low-level shear will\n   remain on the weaker side, at least some curvature in the lowest 1-2\n   km of model hodographs could support an isolated tornado risk with\n   the more strongly rotating storms.\n\n   Eventually, the meridional nature of the upper-level flow and\n   increasing storm coverage should favor a transition to more\n   cluster/linear storm modes into the evening across southern NM and\n   West TX. Severe gusts will be possible, though eventually convection\n   should weaken as it encounters a more stable and drier environment\n   farther east.\n\n   ...Northeast NM and southeast CO...\n   The surface cold front is forecast to move southward over the Plains\n   through the day. Ahead of it, low-level upslope flow will maintain\n   modest surface moisture sufficient for weak destabilization.\n   Scattered thunderstorms are expected along the frontal zone and\n   across the higher terrain through the afternoon. While weak buoyancy\n   should temper overall intensity, veering wind profiles could support\n   occasional intensification of some clusters. A low-end risk for\n   severe gusts or isolated hail is possible.\n\n   ..Lyons/Thornton.. 10/24/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 1300Z"
   },
   {
-   "day": 3,
+   "day": 2,
    "valid": "202610251200",
    "expires": "202610261200",
    "riskAtLaPorte": "No thunderstorm or severe risk area",
@@ -310,8 +368,19 @@
     "General Thunderstorms Risk",
     "Marginal Risk"
    ],
-   "summary": "Isolated strong to severe thunderstorms, posing mainly a risk for hail, are possible on Sunday across portions of southern New Mexico and Far West Texas.",
-   "text": "SPC AC 230651\n\n   Day 3 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   0151 AM CDT Fri Oct 23 2026\n\n   Valid 251200Z - 261200Z\n\n   ...THERE IS A MARGINAL RISK OF SEVERE THUNDERSTORMS ACROSS PARTS OF\n   SOUTHERN NEW MEXICO AND FAR WESTERN TEXAS...\n\n   ...SUMMARY...\n   Isolated strong to severe thunderstorms, posing mainly a risk for\n   hail, are possible on Sunday across portions of southern New Mexico\n   and Far West Texas.\n\n   ...Synopsis...\n\n   An upper cyclone/trough over UT/AZ will lift northeast across the\n   southern/central Rockies on Sunday into early Monday. A belt of\n   enhanced southwesterly flow aloft will persist across the southern\n   Rockies and adjacent High Plains. Modest southeasterly low-level\n   flow will maintain 50s F surface dewpoints across western TX into\n   southern/eastern NM to the south of a stalled surface boundary \n   oriented from northeast NM into western KS.\n\n   Convection is likely to be ongoing Sunday morning, lending to some\n   uncertainty in northward extent of low severe probabilities. Further\n   south across southern/southeast NM into Far West Texas, forecast\n   guidance suggests muted daytime heating could occur across the\n   modestly moist airmass, resulting in weak destabilization. Supercell\n   wind profiles will again be present given vertically veering winds\n   and increasing southwesterly flow with height. Cool midlevel\n   temperatures and elongated hodographs suggest hail will be the main\n   risk with stronger convection.\n\n   ..Leitman.. 10/23/2026\n\n   CLICK TO GET WUUS03 PTSDY3 PRODUCT\n\n   NOTE: THE NEXT DAY 3 OUTLOOK IS SCHEDULED BY 1930Z"
+   "summary": "Isolated strong to severe thunderstorms, posing mainly a risk for hail, are possible on Sunday across southern/eastern New Mexico and far west Texas.",
+   "text": "SPC AC 240519\n\n   Day 2 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1219 AM CDT Sat Oct 24 2026\n\n   Valid 251200Z - 261200Z\n\n   ...THERE IS A MARGINAL RISK OF SEVERE THUNDERSTORMS ACROSS PARTS OF\n   SOUTHERN AND EASTERN NEW MEXICO AND SOUTHWEST TEXAS...\n\n   ...SUMMARY...\n   Isolated strong to severe thunderstorms, posing mainly a risk for\n   hail, are possible on Sunday across southern/eastern New Mexico and\n   far west Texas.\n\n   ...Southern/Eastern NM into Southwest TX...\n\n   The upper cyclone and attendant trough over UT/AZ early Sunday will\n   weaken as it lifts northeast toward the central Plains through early\n   Monday. As this occurs, a belt of enhanced southwesterly mid/upper\n   flow will persist across portions of the southern Rockies and\n   adjacent High Plains. At the surface, a stalled surface boundary is\n   forecast from central NM northeastward into the central Plains.\n   Southeasterly low-level flow on the warm side of the boundary will\n   maintain 50s F dewpoints across the region. \n\n   Cloudiness and possibly ongoing showers/thunderstorms early in the\n   period lend to uncertainty regarding degree of daytime heating and\n   thus, destabilization. Nevertheless, modest instability is expected\n   amid vertically veering/supercell wind profiles. Elongated\n   hodographs and cool temperatures near -10 to -12 C at 500 mb suggest\n   isolated hail will be possible with strongest storms.\n\n   ..Leitman.. 10/24/2026\n\n   CLICK TO GET WUUS02 PTSDY2 PRODUCT\n\n   NOTE: THE NEXT DAY 2 OUTLOOK IS SCHEDULED BY 1730Z"
+  },
+  {
+   "day": 3,
+   "valid": "202610261200",
+   "expires": "202610271200",
+   "riskAtLaPorte": "No thunderstorm or severe risk area",
+   "riskAreasAnywhere": [
+    "General Thunderstorms Risk"
+   ],
+   "summary": "Severe thunderstorm potential is expected to be low on Monday.",
+   "text": "SPC AC 240656\n\n   Day 3 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   0156 AM CDT Sat Oct 24 2026\n\n   Valid 261200Z - 271200Z\n\n   ...NO SEVERE THUNDERSTORM AREAS FORECAST...\n\n   ...SUMMARY...\n   Severe thunderstorm potential is expected to be low on Monday.\n\n   ...Synopsis...\n\n   An upper shortwave trough over the central Plains will continue\n   weakening as it lifts northeast to the Upper MS Valley on Monday.\n   Meanwhile, a weak upper shortwave impulse will move across the\n   southern High Plains vicinity and a stronger/deepening upper\n   cyclone/trough will dig over the Intermountain West. At the surface,\n   a cold front will develop southward across the central Plains and\n   Mid-MO Valley. Southerly low-level flow will maintain modest\n   boundary layer moisture across the southern High Plains into the\n   KS/NE ahead of the surface front. Instability is expected to remain\n   weak, and vertical shear will also be weaker than the previous few\n   days. As a result, severe thunderstorm potential appears limited.\n\n   ..Leitman.. 10/24/2026\n\n   CLICK TO GET WUUS03 PTSDY3 PRODUCT\n\n   NOTE: THE NEXT DAY 3 OUTLOOK IS SCHEDULED BY 1930Z"
   }
  ],
  "wpcExcessiveRain": [
@@ -340,9 +409,21 @@
   "about": "NWS hour-by-hour rain chances for work hours, 6 a.m. to 6 p.m. Central (30-49% = possible, 50%+ = likely).",
   "days": [
    {
-    "date": "2026-10-23",
+    "date": "2026-10-24",
     "summary": "dry through work hours (6 a.m. to 6 p.m.)",
     "hours": [
+     {
+      "hour": 6,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 7,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 8,
+      "rainChancePercent": 0
+     },
      {
       "hour": 9,
       "rainChancePercent": 0
@@ -353,41 +434,41 @@
      },
      {
       "hour": 11,
-      "rainChancePercent": 0
+      "rainChancePercent": 1
      },
      {
       "hour": 12,
-      "rainChancePercent": 0
+      "rainChancePercent": 1
      },
      {
       "hour": 13,
-      "rainChancePercent": 0
+      "rainChancePercent": 1
      },
      {
       "hour": 14,
-      "rainChancePercent": 0
+      "rainChancePercent": 1
      },
      {
       "hour": 15,
-      "rainChancePercent": 0
+      "rainChancePercent": 1
      },
      {
       "hour": 16,
-      "rainChancePercent": 0
+      "rainChancePercent": 1
      },
      {
       "hour": 17,
-      "rainChancePercent": 0
+      "rainChancePercent": 1
      }
     ]
    },
    {
-    "date": "2026-10-24",
+    "date": "2026-10-25",
     "summary": "dry through work hours (6 a.m. to 6 p.m.)",
     "hours": [
      {
       "hour": 6,
-      "rainChancePercent": 0
+      "rainChancePercent": 2
      },
      {
       "hour": 7,
@@ -456,88 +537,45 @@
   },
   "days": [
    {
-    "date": "2026-10-23",
-    "nws": {
-     "high": 71,
-     "low": null,
-     "rain": 0
-    },
-    "models": {
-     "ncep_nbm_conus": {
-      "high": 70,
-      "low": 44,
-      "rain": 0
-     },
-     "ncep_hrrr_conus": {
-      "high": 68,
-      "low": 42,
-      "rain": 0
-     },
-     "gfs_seamless": {
-      "high": 68,
-      "low": 42,
-      "rain": 0
-     },
-     "ecmwf_ifs025": {
-      "high": 67,
-      "low": 42,
-      "rain": 0
-     }
-    },
-    "blend": {
-     "high": 68,
-     "low": 42
-    },
-    "adjusted": {
-     "high": 70,
-     "low": 40
-    },
-    "spread": {
-     "high": 4,
-     "low": 2
-    },
-    "note": "NWS and the models agree within a few degrees"
-   },
-   {
     "date": "2026-10-24",
     "nws": {
      "high": 69,
-     "low": 44,
-     "rain": 0
+     "low": null,
+     "rain": 2
     },
     "models": {
      "ncep_nbm_conus": {
       "high": 69,
       "low": 44,
-      "rain": 3
+      "rain": 2
      },
      "ncep_hrrr_conus": {
-      "high": 68,
-      "low": 44,
-      "rain": 3
+      "high": 67,
+      "low": 42,
+      "rain": 2
      },
      "gfs_seamless": {
-      "high": 68,
-      "low": 44,
-      "rain": 3
+      "high": 67,
+      "low": 42,
+      "rain": 2
      },
      "ecmwf_ifs025": {
-      "high": 66,
-      "low": 44,
+      "high": 67,
+      "low": 45,
       "rain": 0
      }
     },
     "blend": {
-     "high": 68,
-     "low": 44
+     "high": 67,
+     "low": 43
     },
     "adjusted": {
-     "high": 70,
+     "high": 69,
      "low": 42
     },
     "spread": {
-     "high": 3,
-     "low": 0
+     "high": 2,
+     "low": 3
     },
     "note": "NWS and the models agree within a few degrees"
    },
@@ -545,22 +583,24 @@
     "date": "2026-10-25",
     "nws": {
      "high": 72,
-     "low": 46,
-     "rain": 0
+     "low": 45,
+     "rain": 2
     },
     "models": {
      "ncep_nbm_conus": {
       "high": 72,
-      "low": 45,
-      "rain": 0
+      "low": 46,
+      "rain": 4
      },
      "ncep_hrrr_conus": {
-      "rain": 0
+      "high": 71,
+      "low": 45,
+      "rain": 4
      },
      "gfs_seamless": {
-      "high": 69,
-      "low": 47,
-      "rain": 0
+      "high": 71,
+      "low": 45,
+      "rain": 4
      },
      "ecmwf_ifs025": {
       "high": 68,
@@ -569,16 +609,16 @@
      }
     },
     "blend": {
-     "high": 70,
-     "low": 46
+     "high": 71,
+     "low": 45
     },
     "adjusted": {
-     "high": 72,
+     "high": 73,
      "low": 44
     },
     "spread": {
      "high": 4,
-     "low": 2
+     "low": 1
     },
     "note": "NWS and the models agree within a few degrees"
    },
@@ -586,55 +626,96 @@
     "date": "2026-10-26",
     "nws": {
      "high": 69,
-     "low": 48,
+     "low": 47,
      "rain": 0
     },
     "models": {
      "ncep_nbm_conus": {
-      "high": 68,
-      "low": 48,
-      "rain": 1
-     },
-     "ncep_hrrr_conus": {
-      "rain": 1
-     },
-     "gfs_seamless": {
       "high": 69,
-      "low": 53,
-      "rain": 1
-     },
-     "ecmwf_ifs025": {
-      "high": 68,
       "low": 48,
       "rain": 0
+     },
+     "ncep_hrrr_conus": {
+      "rain": 0
+     },
+     "gfs_seamless": {
+      "high": 68,
+      "low": 53,
+      "rain": 0
+     },
+     "ecmwf_ifs025": {
+      "high": 69,
+      "low": 47,
+      "rain": 2
      }
     },
     "blend": {
-     "high": 68,
+     "high": 69,
      "low": 48
     },
     "adjusted": {
-     "high": 70,
+     "high": 71,
      "low": 46
     },
     "spread": {
      "high": 1,
-     "low": 5
+     "low": 6
+    },
+    "note": "the models disagree on the low by 6 degrees (less certain)"
+   },
+   {
+    "date": "2026-10-27",
+    "nws": {
+     "high": 66,
+     "low": 47,
+     "rain": 1
+    },
+    "models": {
+     "ncep_nbm_conus": {
+      "high": 67,
+      "low": 48,
+      "rain": 0
+     },
+     "ncep_hrrr_conus": {
+      "rain": 0
+     },
+     "gfs_seamless": {
+      "high": 66,
+      "low": 50,
+      "rain": 0
+     },
+     "ecmwf_ifs025": {
+      "high": 66,
+      "low": 50,
+      "rain": 2
+     }
+    },
+    "blend": {
+     "high": 66,
+     "low": 49
+    },
+    "adjusted": {
+     "high": 68,
+     "low": 48
+    },
+    "spread": {
+     "high": 1,
+     "low": 3
     },
     "note": "NWS and the models agree within a few degrees"
    }
   ],
   "suggested": [
    {
-    "date": "2026-10-24",
-    "high": 70,
-    "low": 42,
-    "rain": 0
+    "date": "2026-10-25",
+    "high": 73,
+    "low": 44,
+    "rain": 2
    },
    {
-    "date": "2026-10-25",
-    "high": 72,
-    "low": 44,
+    "date": "2026-10-26",
+    "high": 71,
+    "low": 46,
     "rain": 0
    }
   ]
