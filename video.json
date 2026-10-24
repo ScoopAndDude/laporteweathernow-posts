@@ -43,6 +43,20 @@
       "permalink": "https://www.instagram.com/reel/De3-45tjD7Z/",
       "place": "La Porte, Indiana",
       "at": "2026-10-24T06:04:00-05:00"
+    },
+    "tiktok": {
+      "id": "6adc90df6887a2efc1b18844",
+      "via": "buffer",
+      "status": "sent",
+      "permalink": "https://tiktok.com/@scoopanddude/video/7700188708951182606",
+      "at": "2026-10-24T06:05:00-05:00"
+    },
+    "x": {
+      "id": "6adc90e90b5343d0707bfc2a",
+      "via": "buffer",
+      "status": "sent",
+      "permalink": "https://twitter.com/ScoopAndDude/status/2113949957090607551",
+      "at": "2026-10-24T06:05:00-05:00"
     }
   },
   "errors": [
@@ -51,5 +65,10 @@
       "error": "facebook: Meta answered 400: Unsupported get request. Object with ID '1116539021230013' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api (code 100, 33)"
     }
   ],
-  "postNote": "Not posted on facebook (see errors)."
+  "postNote": "Not posted on facebook (see errors).",
+  "bufferTries": {
+    "tiktok": 1,
+    "x": 1
+  },
+  "bufferNote": "Posted on TikTok and X."
 }
