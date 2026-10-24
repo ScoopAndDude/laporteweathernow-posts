@@ -260,12 +260,14 @@
   "hourlyFrom": "2026-10-24T05:47:00-05:00"
  },
  "published": {
-  "time": "2026-10-24T09:02:00-05:00",
+  "time": "2026-10-24T12:02:00-05:00",
   "alertKeys": [],
   "alerts": [],
   "changes": [],
-  "off": [],
-  "paragraph": "Automatic update, 9:02 a.m.: The Dense Fog Advisory for northern La Porte County has ended. At 8:35 a.m. the La Porte airport reported fog/mist and 50 degrees. There are no watches, warnings, or advisories for La Porte County right now."
+  "off": [
+   "wet"
+  ],
+  "paragraph": "Automatic update, 12:02 p.m.: The Dense Fog Advisory for northern La Porte County has ended. At 11:35 a.m. the La Porte airport reported light rain and 64 degrees. NWS's earlier hour-by-hour forecast gave that hour only a 1% chance of rain. There are no watches, warnings, or advisories for La Porte County right now."
  },
  "alertRows": [],
  "missing": [],
@@ -273,6 +275,10 @@
   {
    "time": "2026-10-24T09:02:00-05:00",
    "why": "alerts changed (none now)"
+  },
+  {
+   "time": "2026-10-24T12:02:00-05:00",
+   "why": "airport running wet"
   }
  ]
 }
