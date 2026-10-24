@@ -1,20 +1,14 @@
 {
  "about": "State for scripts/scoop_update.py, the automatic updates to today's Daily Scoop: the forecast the Scoop was written from (baseline), what was last published, the alerts last seen, and today's updates. Replaced each day. Safe to delete: the job starts over from the current post.",
- "date": "2026-10-23",
- "post": "2026-10-23T05:32:00-05:00",
+ "date": "2026-10-24",
+ "post": "2026-10-24T05:32:00-05:00",
  "kind": "written",
  "baseline": {
-  "from": "2026-10-23T05:02:11-05:00",
+  "from": "2026-10-24T05:02:10-05:00",
   "source": "nws-snapshot.json (what the Scoop was written from)",
   "periods": {
-   "day 2026-10-23": {
-    "name": "Today",
-    "temp": 71,
-    "rain": 0,
-    "short": "Patchy Fog then Sunny"
-   },
    "night 2026-10-23": {
-    "name": "Tonight",
+    "name": "Overnight",
     "temp": 44,
     "rain": 0,
     "short": "Mostly Clear"
@@ -23,11 +17,11 @@
     "name": "Saturday",
     "temp": 69,
     "rain": 0,
-    "short": "Mostly Sunny"
+    "short": "Patchy Fog then Mostly Sunny"
    },
    "night 2026-10-24": {
     "name": "Saturday Night",
-    "temp": 46,
+    "temp": 45,
     "rain": 0,
     "short": "Partly Cloudy"
    },
@@ -39,7 +33,7 @@
    },
    "night 2026-10-25": {
     "name": "Sunday Night",
-    "temp": 48,
+    "temp": 47,
     "rain": 0,
     "short": "Partly Cloudy"
    },
@@ -57,146 +51,73 @@
    },
    "day 2026-10-27": {
     "name": "Tuesday",
-    "temp": 64,
+    "temp": 66,
     "rain": 0,
     "short": "Mostly Cloudy"
    },
    "night 2026-10-27": {
     "name": "Tuesday Night",
-    "temp": 45,
+    "temp": 48,
     "rain": 0,
     "short": "Mostly Cloudy"
    },
    "day 2026-10-28": {
     "name": "Wednesday",
-    "temp": 67,
+    "temp": 71,
     "rain": 0,
-    "short": "Partly Sunny"
+    "short": "Mostly Sunny"
    },
    "night 2026-10-28": {
     "name": "Wednesday Night",
-    "temp": 47,
+    "temp": 52,
     "rain": 0,
-    "short": "Partly Cloudy"
+    "short": "Mostly Clear"
    },
    "day 2026-10-29": {
     "name": "Thursday",
-    "temp": 68,
-    "rain": 20,
-    "short": "Mostly Sunny then Slight Chance Rain Showers"
+    "temp": 69,
+    "rain": 0,
+    "short": "Mostly Sunny"
    },
    "night 2026-10-29": {
     "name": "Thursday Night",
-    "temp": 45,
-    "rain": 20,
-    "short": "Slight Chance Rain Showers"
+    "temp": 46,
+    "rain": 0,
+    "short": "Partly Cloudy"
+   },
+   "day 2026-10-30": {
+    "name": "Friday",
+    "temp": 67,
+    "rain": 0,
+    "short": "Mostly Sunny"
    }
   },
-  "alerts": [],
-  "alertRows": [],
+  "alerts": [
+   {
+    "key": "Dense Fog Advisory | northern La Porte County | 2026-10-24 09:00",
+    "event": "Dense Fog Advisory",
+    "where": "northern La Porte County"
+   }
+  ],
+  "alertRows": [
+   {
+    "id": "urn:oid:2.49.0.1.840.0.700b5a8d5ff789f9f7702214c39b2d79be6c6173.001.1",
+    "event": "Dense Fog Advisory",
+    "area": "Marshall; Fulton; Miami; Grant; Blackford; Jay; Northern La Porte; Eastern St. Joseph; Western St. Joseph; Cass; Northern Berrien; Southern Berrien",
+    "onset": "2026-10-24T05:22:00-04:00",
+    "ends": "2026-10-24T10:00:00-04:00",
+    "expires": "2026-10-24T10:00:00-04:00",
+    "sent": "2026-10-24T05:22:00-04:00",
+    "messageType": "Alert"
+   }
+  ],
   "hourly": {
-   "2026-10-23T05": {
-    "temp": 44,
-    "rain": 0
-   },
-   "2026-10-23T06": {
-    "temp": 44,
-    "rain": 0
-   },
-   "2026-10-23T07": {
-    "temp": 44,
-    "rain": 0
-   },
-   "2026-10-23T08": {
-    "temp": 46,
-    "rain": 0
-   },
-   "2026-10-23T09": {
-    "temp": 52,
-    "rain": 0
-   },
-   "2026-10-23T10": {
-    "temp": 58,
-    "rain": 0
-   },
-   "2026-10-23T11": {
-    "temp": 62,
-    "rain": 0
-   },
-   "2026-10-23T12": {
-    "temp": 65,
-    "rain": 0
-   },
-   "2026-10-23T13": {
-    "temp": 69,
-    "rain": 0
-   },
-   "2026-10-23T14": {
-    "temp": 70,
-    "rain": 0
-   },
-   "2026-10-23T15": {
-    "temp": 71,
-    "rain": 0
-   },
-   "2026-10-23T16": {
-    "temp": 71,
-    "rain": 0
-   },
-   "2026-10-23T17": {
-    "temp": 67,
-    "rain": 0
-   },
-   "2026-10-23T18": {
-    "temp": 62,
-    "rain": 0
-   },
-   "2026-10-23T19": {
-    "temp": 58,
-    "rain": 0
-   },
-   "2026-10-23T20": {
-    "temp": 56,
-    "rain": 0
-   },
-   "2026-10-23T21": {
-    "temp": 53,
-    "rain": 0
-   },
-   "2026-10-23T22": {
-    "temp": 51,
-    "rain": 0
-   },
-   "2026-10-23T23": {
-    "temp": 50,
-    "rain": 0
-   },
-   "2026-10-24T00": {
-    "temp": 49,
-    "rain": 0
-   },
-   "2026-10-24T01": {
-    "temp": 48,
-    "rain": 0
-   },
-   "2026-10-24T02": {
-    "temp": 47,
-    "rain": 0
-   },
-   "2026-10-24T03": {
-    "temp": 46,
-    "rain": 0
-   },
-   "2026-10-24T04": {
-    "temp": 46,
-    "rain": 0
-   },
    "2026-10-24T05": {
-    "temp": 45,
+    "temp": 43,
     "rain": 0
    },
    "2026-10-24T06": {
-    "temp": 45,
+    "temp": 43,
     "rain": 0
    },
    "2026-10-24T07": {
@@ -212,52 +133,145 @@
     "rain": 0
    },
    "2026-10-24T10": {
-    "temp": 57,
+    "temp": 56,
     "rain": 0
    },
    "2026-10-24T11": {
     "temp": 61,
-    "rain": 0
+    "rain": 1
    },
    "2026-10-24T12": {
-    "temp": 65,
-    "rain": 0
+    "temp": 64,
+    "rain": 1
    },
    "2026-10-24T13": {
     "temp": 67,
-    "rain": 0
+    "rain": 1
    },
    "2026-10-24T14": {
     "temp": 68,
-    "rain": 0
+    "rain": 1
    },
    "2026-10-24T15": {
     "temp": 69,
-    "rain": 0
+    "rain": 1
    },
    "2026-10-24T16": {
     "temp": 69,
+    "rain": 1
+   },
+   "2026-10-24T17": {
+    "temp": 67,
+    "rain": 1
+   },
+   "2026-10-24T18": {
+    "temp": 64,
+    "rain": 1
+   },
+   "2026-10-24T19": {
+    "temp": 60,
+    "rain": 1
+   },
+   "2026-10-24T20": {
+    "temp": 56,
+    "rain": 1
+   },
+   "2026-10-24T21": {
+    "temp": 54,
+    "rain": 1
+   },
+   "2026-10-24T22": {
+    "temp": 53,
+    "rain": 1
+   },
+   "2026-10-24T23": {
+    "temp": 52,
+    "rain": 1
+   },
+   "2026-10-25T00": {
+    "temp": 50,
+    "rain": 1
+   },
+   "2026-10-25T01": {
+    "temp": 49,
+    "rain": 1
+   },
+   "2026-10-25T02": {
+    "temp": 48,
+    "rain": 1
+   },
+   "2026-10-25T03": {
+    "temp": 48,
+    "rain": 1
+   },
+   "2026-10-25T04": {
+    "temp": 47,
+    "rain": 2
+   },
+   "2026-10-25T05": {
+    "temp": 47,
+    "rain": 2
+   },
+   "2026-10-25T06": {
+    "temp": 46,
+    "rain": 2
+   },
+   "2026-10-25T07": {
+    "temp": 45,
+    "rain": 0
+   },
+   "2026-10-25T08": {
+    "temp": 47,
+    "rain": 0
+   },
+   "2026-10-25T09": {
+    "temp": 54,
+    "rain": 0
+   },
+   "2026-10-25T10": {
+    "temp": 58,
+    "rain": 0
+   },
+   "2026-10-25T11": {
+    "temp": 63,
+    "rain": 0
+   },
+   "2026-10-25T12": {
+    "temp": 67,
+    "rain": 0
+   },
+   "2026-10-25T13": {
+    "temp": 69,
+    "rain": 0
+   },
+   "2026-10-25T14": {
+    "temp": 70,
+    "rain": 0
+   },
+   "2026-10-25T15": {
+    "temp": 71,
+    "rain": 0
+   },
+   "2026-10-25T16": {
+    "temp": 72,
     "rain": 0
    }
   },
-  "hourlyFrom": "2026-10-23T05:47:00-05:00"
+  "hourlyFrom": "2026-10-24T05:47:00-05:00"
  },
- "published": {
-  "time": "2026-10-23T08:17:00-05:00",
-  "alertKeys": [],
-  "alerts": [],
-  "changes": [],
-  "off": [
-   "cool"
-  ],
-  "paragraph": "Automatic update, 8:17 a.m.: It's running cooler than NWS's earlier hour-by-hour forecast: at 7:35 a.m. the La Porte airport reported clear and 41 degrees, where that forecast had about 46. There are no watches, warnings, or advisories for La Porte County right now."
- },
- "alertRows": [],
- "missing": [],
- "updates": [
+ "published": null,
+ "alertRows": [
   {
-   "time": "2026-10-23T08:17:00-05:00",
-   "why": "airport running cool"
+   "id": "urn:oid:2.49.0.1.840.0.700b5a8d5ff789f9f7702214c39b2d79be6c6173.001.1",
+   "event": "Dense Fog Advisory",
+   "area": "Marshall; Fulton; Miami; Grant; Blackford; Jay; Northern La Porte; Eastern St. Joseph; Western St. Joseph; Cass; Northern Berrien; Southern Berrien",
+   "onset": "2026-10-24T05:22:00-04:00",
+   "ends": "2026-10-24T10:00:00-04:00",
+   "expires": "2026-10-24T10:00:00-04:00",
+   "sent": "2026-10-24T05:22:00-04:00",
+   "messageType": "Alert"
   }
- ]
+ ],
+ "missing": [],
+ "updates": []
 }
