@@ -259,19 +259,20 @@
   },
   "hourlyFrom": "2026-10-24T05:47:00-05:00"
  },
- "published": null,
- "alertRows": [
-  {
-   "id": "urn:oid:2.49.0.1.840.0.700b5a8d5ff789f9f7702214c39b2d79be6c6173.001.1",
-   "event": "Dense Fog Advisory",
-   "area": "Marshall; Fulton; Miami; Grant; Blackford; Jay; Northern La Porte; Eastern St. Joseph; Western St. Joseph; Cass; Northern Berrien; Southern Berrien",
-   "onset": "2026-10-24T05:22:00-04:00",
-   "ends": "2026-10-24T10:00:00-04:00",
-   "expires": "2026-10-24T10:00:00-04:00",
-   "sent": "2026-10-24T05:22:00-04:00",
-   "messageType": "Alert"
-  }
- ],
+ "published": {
+  "time": "2026-10-24T09:02:00-05:00",
+  "alertKeys": [],
+  "alerts": [],
+  "changes": [],
+  "off": [],
+  "paragraph": "Automatic update, 9:02 a.m.: The Dense Fog Advisory for northern La Porte County has ended. At 8:35 a.m. the La Porte airport reported fog/mist and 50 degrees. There are no watches, warnings, or advisories for La Porte County right now."
+ },
+ "alertRows": [],
  "missing": [],
- "updates": []
+ "updates": [
+  {
+   "time": "2026-10-24T09:02:00-05:00",
+   "why": "alerts changed (none now)"
+  }
+ ]
 }
