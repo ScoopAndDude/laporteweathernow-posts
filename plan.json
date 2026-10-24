@@ -1,0 +1,195 @@
+{
+  "about": "The Daily Video for La Porte Weather Now (scripts/daily_video.py): official NWS weather, read aloud.",
+  "date": "2026-10-24",
+  "planned": "2026-10-24T06:02:00-05:00",
+  "source": "nws",
+  "forecastUpdated": "2026-10-24T09:45:17+00:00",
+  "observationTime": "2026-10-24T05:15:00-05:00",
+  "alerts": [
+    {
+      "event": "Dense Fog Advisory",
+      "ends": "2026-10-24T10:00:00-04:00",
+      "id": "urn:oid:2.49.0.1.840.0.700b5a8d5ff789f9f7702214c39b2d79be6c6173.001.1"
+    }
+  ],
+  "shortFused": [],
+  "hook": {
+    "kind": "alert",
+    "score": 110,
+    "big": "Dense Fog Advisory",
+    "small": "for northern La Porte County until 9 a.m. today",
+    "say": "The National Weather Service has a Dense Fog Advisory for northern La Porte County until 9 a.m. today.",
+    "when": "now"
+  },
+  "hookOptions": [
+    {
+      "kind": "alert",
+      "score": 110,
+      "say": "The National Weather Service has a Dense Fog Advisory for northern La Porte County until 9 a.m. today."
+    },
+    {
+      "kind": "normal",
+      "score": 61,
+      "say": "Today: 69°, about 11° above normal for Oct. 24."
+    },
+    {
+      "kind": "normal",
+      "score": 54,
+      "say": "Sunday: 72°, about 14° above normal for Oct. 25."
+    },
+    {
+      "kind": "plain",
+      "score": 10,
+      "say": "Today in La Porte: areas of fog, then mostly sunny, high near 69°."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "hook",
+      "label": "NATIONAL WEATHER SERVICE",
+      "big": "Dense Fog Advisory",
+      "small": "for northern La Porte County until 9 a.m. today",
+      "icon": "alert",
+      "tone": "alert",
+      "hookKind": "alert",
+      "say": "The National Weather Service has a Dense Fog Advisory for northern La Porte County until 9 a.m. today.",
+      "spoken": "The National Weather Service has a Dense Fog Advisory for northern La Port County until nine this morning.",
+      "voiceFile": "voice/hook.wav",
+      "voiceSeconds": 6.55,
+      "start": 0.0,
+      "duration": 6.95,
+      "voiceAt": 0.04
+    },
+    {
+      "id": "today",
+      "sun": null,
+      "kind": "period",
+      "title": "TODAY",
+      "date": "Saturday, Oct. 24",
+      "temp": 69,
+      "tempLabel": "HIGH",
+      "icon": "fog",
+      "text": "Areas of fog, then mostly sunny",
+      "sentence": "Areas of fog, then mostly sunny",
+      "rain": null,
+      "note": null,
+      "hours": [
+        {
+          "label": "6 AM",
+          "temp": 43,
+          "pop": 0
+        },
+        {
+          "label": "8 AM",
+          "temp": 46,
+          "pop": 0
+        },
+        {
+          "label": "10 AM",
+          "temp": 56,
+          "pop": 0
+        },
+        {
+          "label": "12 PM",
+          "temp": 64,
+          "pop": 1
+        },
+        {
+          "label": "2 PM",
+          "temp": 68,
+          "pop": 1
+        },
+        {
+          "label": "4 PM",
+          "temp": 69,
+          "pop": 1
+        }
+      ],
+      "say": "Today: areas of fog, then mostly sunny. High 69. Tonight: low 45.",
+      "next": {
+        "name": "Tonight",
+        "temp": 45,
+        "tempLabel": "LOW"
+      },
+      "spoken": "Today: areas of fog, then mostly sunny. High sixty-nine. Tonight: low forty-five.",
+      "voiceFile": "voice/today.wav",
+      "voiceSeconds": 5.75,
+      "start": 6.95,
+      "duration": 6.15,
+      "voiceAt": 7.05
+    },
+    {
+      "id": "days",
+      "kind": "days",
+      "title": "NEXT 3 DAYS",
+      "days": [
+        {
+          "name": "Sun",
+          "day": "Sunday",
+          "hi": 72,
+          "lo": 47,
+          "pop": null,
+          "icon": "sun-small-cloud",
+          "text": "Mostly sunny",
+          "short": "Mostly Sunny",
+          "star": false
+        },
+        {
+          "name": "Mon",
+          "day": "Monday",
+          "hi": 69,
+          "lo": 47,
+          "pop": null,
+          "icon": "sun-cloud",
+          "text": "Partly sunny",
+          "short": "Partly Sunny",
+          "star": false
+        },
+        {
+          "name": "Tue",
+          "day": "Tuesday",
+          "hi": 66,
+          "lo": 48,
+          "pop": null,
+          "icon": "cloud",
+          "text": "Mostly cloudy",
+          "short": "Mostly Cloudy",
+          "star": false
+        }
+      ],
+      "say": "Sunday: mostly sunny, 72.",
+      "spoken": "Sunday: mostly sunny, seventy-two.",
+      "voiceFile": "voice/days.wav",
+      "voiceSeconds": 2.67,
+      "start": 13.1,
+      "duration": 3.2,
+      "voiceAt": 13.2
+    },
+    {
+      "id": "end",
+      "kind": "end",
+      "say": "laporteweathernow.com.",
+      "spoken": "La Port Weather Now dot com.",
+      "voiceFile": "voice/end.wav",
+      "voiceSeconds": 2.02,
+      "start": 16.3,
+      "duration": 2.42,
+      "voiceAt": 16.4
+    }
+  ],
+  "caption": "La Porte weather for Saturday, Oct. 24, from the National Weather Service:\nOfficial alerts for La Porte County: Dense Fog Advisory until 9 a.m. today.\nToday: Areas of fog, then mostly sunny. High 69.\nTonight: Partly cloudy. Low 45.\nSunday: Mostly sunny, high 72. Monday: Partly sunny, high 69. Tuesday: Mostly cloudy, high 66.\nToday's Daily Scoop: Dense Fog Advisory until 9 a.m., then mostly sunny near 69; dry all week\nFree forecast every morning: laporteweathernow.com\nNo hype. Just the forecast.\n#LaPorte #LaPorteIndiana #LaPorteCounty #IndianaWeather #NWIndiana",
+  "words": 40,
+  "mode": "auto",
+  "normalsStation": {
+    "id": "USC00124837",
+    "name": "LAPORTE, IN US",
+    "km": 1.0
+  },
+  "seconds": 18.72,
+  "voice": "Kokoro-82M af_heart, speed 1.1",
+  "video": "laporte-2026-10-24.mp4",
+  "cover": "cover.jpg",
+  "bytes": 8024486,
+  "rendered": "2026-10-24T06:04:04-05:00"
+}

@@ -1,0 +1,55 @@
+{
+  "about": "The newest Daily Video for La Porte Weather Now (scripts/daily_video.py). Official NWS weather, read by an open-source voice (Kokoro-82M). Replaced every morning; only the newest is kept.",
+  "date": "2026-10-24",
+  "planned": "2026-10-24T06:02:00-05:00",
+  "made": "2026-10-24T06:04:04-05:00",
+  "mode": "auto",
+  "video": "laporte-2026-10-24.mp4",
+  "cover": "cover.jpg",
+  "seconds": 18.72,
+  "megabytes": 8.0,
+  "voice": "Kokoro-82M af_heart, speed 1.1",
+  "hook": {
+    "kind": "alert",
+    "score": 110,
+    "big": "Dense Fog Advisory",
+    "small": "for northern La Porte County until 9 a.m. today",
+    "say": "The National Weather Service has a Dense Fog Advisory for northern La Porte County until 9 a.m. today.",
+    "when": "now"
+  },
+  "alerts": [
+    {
+      "event": "Dense Fog Advisory",
+      "ends": "2026-10-24T10:00:00-04:00",
+      "id": "urn:oid:2.49.0.1.840.0.700b5a8d5ff789f9f7702214c39b2d79be6c6173.001.1"
+    }
+  ],
+  "forecastUpdated": "2026-10-24T09:45:17+00:00",
+  "normalsStation": {
+    "id": "USC00124837",
+    "name": "LAPORTE, IN US",
+    "km": 1.0
+  },
+  "words": [
+    "The National Weather Service has a Dense Fog Advisory for northern La Porte County until 9 a.m. today.",
+    "Today: areas of fog, then mostly sunny. High 69. Tonight: low 45.",
+    "Sunday: mostly sunny, 72.",
+    "laporteweathernow.com."
+  ],
+  "caption": "La Porte weather for Saturday, Oct. 24, from the National Weather Service:\nOfficial alerts for La Porte County: Dense Fog Advisory until 9 a.m. today.\nToday: Areas of fog, then mostly sunny. High 69.\nTonight: Partly cloudy. Low 45.\nSunday: Mostly sunny, high 72. Monday: Partly sunny, high 69. Tuesday: Mostly cloudy, high 66.\nToday's Daily Scoop: Dense Fog Advisory until 9 a.m., then mostly sunny near 69; dry all week\nFree forecast every morning: laporteweathernow.com\nNo hype. Just the forecast.\n#LaPorte #LaPorteIndiana #LaPorteCounty #IndianaWeather #NWIndiana",
+  "posted": {
+    "instagram": {
+      "id": "18123201412937180",
+      "permalink": "https://www.instagram.com/reel/De3-45tjD7Z/",
+      "place": "La Porte, Indiana",
+      "at": "2026-10-24T06:04:00-05:00"
+    }
+  },
+  "errors": [
+    {
+      "at": "2026-10-24T06:04:00-05:00",
+      "error": "facebook: Meta answered 400: Unsupported get request. Object with ID '1116539021230013' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api (code 100, 33)"
+    }
+  ],
+  "postNote": "Not posted on facebook (see errors)."
+}
