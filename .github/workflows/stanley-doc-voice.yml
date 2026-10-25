@@ -1,0 +1,59 @@
+name: Stanley Hotel documentary voice (one-off, Oct. 2026)
+
+# Records the documentary's narration (tools/video/stanley-doc/lines.json) with the same voice as the shorts
+# and the Belle Gunness documentary, and saves it on the stanley-doc branch. Runs only on that branch, only
+# when the words change, and only re-records lines that changed. Nothing is posted.
+on:
+  push:
+    branches: [stanley-doc]
+    paths:
+      - tools/video/stanley-doc/lines.json
+      - tools/video/stanley-doc/voice.py
+      - .github/workflows/stanley-doc-voice.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stanley-doc-voice
+  cancel-in-progress: true
+
+jobs:
+  voice:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Voice cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.cache/huggingface
+          key: kokoro-voice-${{ runner.os }}-py312-v1
+
+      - name: Install the voice
+        run: |
+          sudo apt-get install -y -qq espeak-ng > /dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq espeak-ng > /dev/null)
+          pip install -q torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -q "kokoro>=0.9.4" soundfile numpy
+          python3 -m spacy download en_core_web_sm -q || true
+
+      - name: Record
+        run: python3 tools/video/stanley-doc/voice.py 2>&1 | tee tools/video/stanley-doc/voice-log.txt
+
+      - name: Save the recording on this branch
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A tools/video/stanley-doc/voice tools/video/stanley-doc/voice-log.txt || true
+          git commit -q -m "Stanley documentary: the narration (Kokoro-82M af_heart)" || echo "nothing new"
+          for i in 1 2 3; do git pull -q --rebase origin stanley-doc && git push -q origin HEAD:stanley-doc && break; sleep 5; done
