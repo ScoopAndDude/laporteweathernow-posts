@@ -586,6 +586,19 @@ def _sfx(name, seed=0):
         x = np.sign(np.sin(ph)) * (0.5 + 0.5 * np.sin(2 * np.pi * 7 * tt) ** 2)
         x = bandpass(x.astype(np.float32), 300, 2600) * np.sin(np.pi * np.clip(tt / 2.2, 0, 1)).astype(np.float32) ** 0.6
         return reverb(x * 0.35, 2.4, 0.4)
+    if name == "steps":                       # small feet running down a wooden hallway, somewhere above
+        out = np.zeros((int(3.2 * SR), 2), np.float32)
+        t = 0.1
+        k = 0
+        while t < 2.6:
+            tt = t_axis(0.12)
+            f0 = rng.uniform(70, 110)
+            th = (np.sin(2 * np.pi * f0 * tt) * np.exp(-tt * 45) + lowpass(noise(0.12, seed + k), 900) * np.exp(-tt * 70) * 0.6).astype(np.float32)
+            pan = -0.8 + 1.6 * t / 2.6
+            place(out, th * rng.uniform(0.6, 1.0), t, 1.0, pan)
+            t += rng.uniform(0.17, 0.24)
+            k += 1
+        return reverb(lowpass(out, 1400), 2.2, 0.5) * 0.9
     if name == "gavel":
         tt = t_axis(0.8)
         knock = (np.sin(2 * np.pi * 180 * tt) * np.exp(-tt * 40) + lowpass(noise(0.8, seed), 2000) * np.exp(-tt * 60)).astype(np.float32)

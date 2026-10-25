@@ -1401,15 +1401,43 @@ class Corridor(_LayeredScene):
         return Image.fromarray(np.clip(f, 0, 255).astype(np.uint8))
 
 
-def _ridge(sw, n, seed, base, rough, amp):
+def _ridge(sw, seed, base, amp, octaves=7, f0=3.0, sharp=1.4):
+    """A mountain skyline (fraction of the height, per column): ridged fractal noise, so peaks come out sharp."""
     rng = np.random.default_rng(seed)
-    xs = np.linspace(0, 1, sw)
+    x = np.linspace(0, 1, sw)
     y = np.zeros(sw)
-    for octv in range(6):
-        fr = 2 ** octv * rough
-        ph = rng.uniform(0, 100)
-        y += amp / (1.9 ** octv) * np.abs(np.sin(xs * fr * 6.2831 + ph) * np.cos(xs * fr * 3.7 + ph * 0.7))
-    return base - y
+    a, f, norm = 1.0, f0, 0.0
+    for _ in range(octaves):
+        pts = rng.uniform(-1, 1, int(f) + 3)
+        xi = x * f
+        i0 = np.floor(xi).astype(int)
+        t = xi - i0
+        t = t * t * (3 - 2 * t)
+        v = pts[i0] * (1 - t) + pts[i0 + 1] * t
+        y += a * (1 - np.abs(v)) ** sharp
+        norm += a
+        a *= 0.5
+        f *= 2.1
+    y /= norm
+    y = (y - y.min()) / max(1e-6, y.max() - y.min())
+    return base - amp * y, y
+
+
+def _mountains(img, yy, sw, sh, seed, layers, snow_layers=(0,), moon=None):
+    """Paint mountain ranges back to front into img (float RGB). layers: [(base, amp, color, f0)]."""
+    for k, (base, amp, col, f0) in enumerate(layers):
+        line, height = _ridge(sw, seed + 17 * k, base, amp, f0=f0)
+        top = line * sh
+        mask = yy > top[None, :]
+        shade = 0.92 + 0.08 * np.asarray(noise_tex(sw, sh, 18, seed + k, 4), np.float32) / 255.0
+        img[mask] = (np.array(col, np.float32)[None, :] * shade[mask][:, None])
+        if k in snow_layers:                  # snow on the high parts: deeper where the mountain is higher
+            depth = sh * 0.07 * np.clip((height - 0.45) / 0.55, 0, 1) ** 0.8
+            streak = np.asarray(noise_tex(sw, sh, 7, seed + 40 + k, 1), np.float32) / 255.0
+            below = yy - top[None, :]
+            snow = mask & (below < depth[None, :] * (0.6 + 0.8 * streak))
+            img[snow] = img[snow] * 0.35 + np.array((182, 190, 208), np.float32) * 0.65
+    return img
 
 
 @functools.lru_cache(maxsize=2)
@@ -1423,14 +1451,10 @@ def window_scene(seed=3):
     img = sky.copy()
     stars = rng.random((sh, sw)) > 0.9993
     img[stars & (yy < sh * 0.6)] = (230, 232, 240)
-    for k, (base, rough, amp, col) in enumerate(((0.52, 1.2, 0.28, (52, 62, 86)), (0.64, 1.9, 0.20, (30, 38, 56)), (0.78, 2.8, 0.14, (14, 18, 28)))):
-        ridge = _ridge(sw, 0, seed + k, base, rough, amp) * sh
-        mask = yy > ridge[None, :]
-        c = np.array(col, np.float32)
-        img[mask] = c * (0.9 + 0.1 * np.asarray(noise_tex(sw, sh, 30, seed + k, 6), np.float32)[mask][:, None] / 255.0)
-        if k == 0:                                     # moonlight on the snow of the far peaks
-            snow = mask & (yy < ridge[None, :] + sh * 0.05) & (np.asarray(noise_tex(sw, sh, 12, seed + 9, 2), np.float32) > 110)
-            img[snow] = img[snow] * 0.4 + np.array((170, 180, 200), np.float32) * 0.6
+    glow = np.exp(-(((xx - sw * 0.72) / (sw * 0.35)) ** 2 + ((yy - sh * 0.2) / (sh * 0.35)) ** 2))
+    img += glow[..., None] * np.array((26, 30, 40), np.float32)            # moonlight in the sky
+    img = _mountains(img, yy, sw, sh, seed, [(0.62, 0.30, (66, 76, 102), 2.6), (0.74, 0.16, (36, 44, 62), 4.0),
+                                              (0.86, 0.09, (16, 20, 30), 9.0)], snow_layers=(0,))
     out = Image.fromarray(np.clip(img, 0, 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(1.2)).convert("RGBA")
     # the window: a dark room around it, mullions in front
     room = Image.new("RGBA", (sw, sh), (0, 0, 0, 0))
@@ -1477,12 +1501,7 @@ def snow_hotel_scene(seed=5):
     yy, xx = np.mgrid[0:sh, 0:sw].astype(np.float32)
     t = yy / sh
     img = np.stack([18 + 26 * t, 22 + 30 * t, 34 + 40 * t], axis=-1)
-    for k, (base, rough, amp, col) in enumerate(((0.50, 1.0, 0.30, (70, 78, 96)), (0.62, 1.7, 0.18, (46, 52, 66)))):
-        ridge = _ridge(sw, 0, seed + k, base, rough, amp) * sh
-        mask = yy > ridge[None, :]
-        img[mask] = np.array(col, np.float32)
-        snow = mask & (yy < ridge[None, :] + sh * (0.06 - 0.02 * k))
-        img[snow] = img[snow] * 0.35 + np.array((190, 198, 214), np.float32) * 0.65
+    img = _mountains(img, yy, sw, sh, seed, [(0.56, 0.34, (74, 82, 102), 2.4), (0.66, 0.18, (50, 56, 72), 4.2)], snow_layers=(0,))
     gy = int(sh * 0.80)
     img[gy:] = np.array((176, 184, 200), np.float32) * (0.85 + 0.15 * (yy[gy:] - gy)[..., None] / (sh - gy))
     out = Image.fromarray(np.clip(img, 0, 255).astype(np.uint8)).convert("RGBA")
@@ -1499,7 +1518,8 @@ def snow_hotel_scene(seed=5):
     for gx in (int(sw * 0.2), int(sw * 0.8)):
         d.polygon([(gx - 90, top + 60), (gx + 90, top + 60), (gx, top - 20)], fill=body)
     # snow on the roofs
-    d.line([(x0, top + 60), (x1, top + 60)], fill=(220, 226, 236, 255), width=8)
+    d.line([(x0, top + 60), (mx0, top + 60)], fill=(220, 226, 236, 255), width=8)
+    d.line([(mx1, top + 60), (x1, top + 60)], fill=(220, 226, 236, 255), width=8)
     d.line([(mx0 - 20, top - 40), ((mx0 + mx1) // 2, top - 150), (mx1 + 20, top - 40)], fill=(220, 226, 236, 255), width=8)
     for gx in (int(sw * 0.2), int(sw * 0.8)):
         d.line([(gx - 90, top + 60), (gx, top - 20), (gx + 90, top + 60)], fill=(220, 226, 236, 255), width=7)
@@ -1519,7 +1539,7 @@ def snow_hotel_scene(seed=5):
             if on:
                 ld.rectangle((wx, wy, wx + 16, wy + 30), fill=c)
     for row in range(2):
-        wy = top - 10 + row * 60
+        wy = top - 5 + row * 75
         for wx in range(mx0 + 30, mx1 - 30, 40):
             on = rng.random() < 0.2
             c = (255, 200, 120) if on else (34, 34, 40)
@@ -1538,6 +1558,7 @@ def snow_hotel_scene(seed=5):
 
 def snowfall(f, t, seed=1, n=420, speed=1.0, amount=1.0):
     """Snow falling over a frame (drawn fresh each frame, so it moves)."""
+    n = int(n * max(1.0, amount))
     rng = np.random.default_rng(seed)
     x0 = rng.uniform(0, W, n)
     y0 = rng.uniform(0, H, n)
@@ -1545,7 +1566,7 @@ def snowfall(f, t, seed=1, n=420, speed=1.0, amount=1.0):
     vy = (40 + 70 * sz / 4.2) * speed
     sway = rng.uniform(0, 6.28, n)
     d = ImageDraw.Draw(f)
-    for i in range(int(n * amount)):
+    for i in range(min(n, int(n * amount))):
         x = (x0[i] + 30 * math.sin(t * 0.8 + sway[i]) + t * 18) % W
         y = (y0[i] + t * vy[i]) % H
         r = sz[i]
@@ -1569,6 +1590,128 @@ class SnowHotel(_LayeredScene):
         f = self.base.view_array(box).astype(np.float32) + self.lit.view_array(box).astype(np.float32) * 0.6 * self.flick(t)
         im = Image.fromarray(np.clip(f, 0, 255).astype(np.uint8))
         return snowfall(im, t - self.start, seed=int(self.spec.get("seed", 5)), amount=float(self.spec.get("snow", 1.0)))
+
+
+@functools.lru_cache(maxsize=2)
+def dining_scene(seed=2):
+    """A big hotel dining room after closing (drawn): moonlight through tall windows, every chair upside down on
+    the tables except at one table that's still set, with a lamp lit. Returns (base, warm-light layer, size)."""
+    sw, sh = int(W * Scene.MARGIN), int(H * Scene.MARGIN)
+    vx, vy = sw * 0.5, sh * 0.40
+    f = sw * 0.42
+    FLOOR, TOP, CEIL, HALFW, BACK = 1.0, 0.53, -1.6, 3.4, 10.0
+
+    def P(X, Y, Z):
+        return (vx + X / Z * f, vy + Y / Z * f)
+
+    img = Image.new("RGB", (sw, sh), (0, 0, 0))
+    d = ImageDraw.Draw(img)
+    ZN = 0.8
+    d.polygon([P(-HALFW, CEIL, ZN), P(HALFW, CEIL, ZN), P(HALFW, CEIL, BACK), P(-HALFW, CEIL, BACK)], fill=(30, 30, 36))
+    d.polygon([P(-HALFW, FLOOR, ZN), P(HALFW, FLOOR, ZN), P(HALFW, FLOOR, BACK), P(-HALFW, FLOOR, BACK)], fill=(58, 40, 28))
+    for k in range(-14, 15):                         # floorboards
+        xk = k * 0.24
+        d.line([P(xk, FLOOR, ZN), P(xk, FLOOR, BACK)], fill=(46, 31, 22), width=2)
+    for side in (-1, 1):
+        d.polygon([P(side * HALFW, CEIL, ZN), P(side * HALFW, FLOOR, ZN), P(side * HALFW, FLOOR, BACK), P(side * HALFW, CEIL, BACK)], fill=(44, 46, 50))
+    d.polygon([P(-HALFW, CEIL, BACK), P(HALFW, CEIL, BACK), P(HALFW, FLOOR, BACK), P(-HALFW, FLOOR, BACK)], fill=(40, 42, 48))
+    moon = Image.new("RGB", (sw, sh), (0, 0, 0))
+    md = ImageDraw.Draw(moon)
+    for wxk in (-2.4, -1.2, 0.0, 1.2, 2.4):           # tall windows in the back wall, moonlit
+        q = [P(wxk - 0.38, -1.25, BACK), P(wxk + 0.38, -1.25, BACK), P(wxk + 0.38, 0.75, BACK), P(wxk - 0.38, 0.75, BACK)]
+        d.polygon(q, fill=(70, 86, 120))
+        md.polygon(q, fill=(110, 130, 170))
+        cx_, cy_ = P(wxk, -1.25, BACK)
+        rw = 0.38 / BACK * f
+        d.pieslice((cx_ - rw, cy_ - rw, cx_ + rw, cy_ + rw), 180, 360, fill=(70, 86, 120))
+        md.pieslice((cx_ - rw, cy_ - rw, cx_ + rw, cy_ + rw), 180, 360, fill=(110, 130, 170))
+        for yk in (-0.6, 0.05):
+            d.line([P(wxk - 0.38, yk, BACK), P(wxk + 0.38, yk, BACK)], fill=(30, 30, 36), width=4)
+        d.line([P(wxk, -1.25, BACK), P(wxk, 0.75, BACK)], fill=(30, 30, 36), width=4)
+    tables = []
+    for zi, Z in enumerate((8.6, 7.4, 6.2, 5.0, 3.8, 2.7)):
+        for X in (-2.5, -1.2, 0.1, 1.4, 2.6):
+            X2 = X + (0.35 if zi % 2 else 0.0)
+            if abs(X2) < HALFW - 0.4:
+                tables.append((Z, X2))
+    SET = (2.7, -1.2 + 0.35)                          # the one table still set
+    warm = Image.new("RGB", (sw, sh), (0, 0, 0))
+    wd = ImageDraw.Draw(warm)
+    R = 0.42
+    for (Z, X) in sorted(tables, key=lambda t: -t[0]):
+        cx_, cy_ = P(X, TOP, Z)
+        rx = R / Z * f
+        ry = max(2.0, (TOP / (Z - R) - TOP / (Z + R)) / 2 * f)
+        bx0, by0 = P(X - R, FLOOR - 0.05, Z)
+        bx1, _ = P(X + R, FLOOR - 0.05, Z)
+        cloth = (204, 198, 186) if (Z, X) == SET else (118, 120, 128)
+        d.polygon([(cx_ - rx, cy_), (cx_ + rx, cy_), (bx1, by0), (bx0, by0)], fill=tuple(int(c * 0.55) for c in cloth))
+        d.ellipse((bx0, by0 - ry * 1.6, bx1, by0 + ry * 1.6), fill=tuple(int(c * 0.55) for c in cloth))
+        d.ellipse((cx_ - rx, cy_ - ry, cx_ + rx, cy_ + ry), fill=cloth)
+        if (Z, X) == SET:
+            for sgn in (-1, 1):                       # two plates and two chairs pulled up to it
+                px_, py_ = P(X + sgn * 0.2, TOP - 0.005, Z - 0.05)
+                pr = 0.09 / Z * f
+                d.ellipse((px_ - pr, py_ - pr * 0.35, px_ + pr, py_ + pr * 0.35), fill=(236, 234, 228))
+                bx = X + sgn * 0.62                      # the chair's back, seen from the side: post, seat, legs
+                lw = max(2, int(0.03 / Z * f))
+                d.line([P(bx, FLOOR, Z), P(bx, 0.42, Z)], fill=(30, 22, 16), width=lw)
+                d.line([P(bx, 0.72, Z), P(bx - sgn * 0.26, 0.72, Z)], fill=(30, 22, 16), width=lw + 1)
+                d.line([P(bx - sgn * 0.26, 0.72, Z), P(bx - sgn * 0.26, FLOOR, Z)], fill=(30, 22, 16), width=lw)
+                d.line([P(bx, 0.45, Z), P(bx, 0.62, Z)], fill=(48, 34, 24), width=lw * 3)
+            lx_, ly_ = P(X, TOP - 0.22, Z)
+            lr = 0.07 / Z * f
+            d.polygon([(lx_ - lr, ly_), (lx_ + lr, ly_), (lx_ + lr * 0.6, ly_ - lr * 1.4), (lx_ - lr * 0.6, ly_ - lr * 1.4)], fill=(255, 220, 160))
+            d.line([P(X, TOP, Z), (lx_, ly_)], fill=(150, 110, 60), width=max(2, int(0.02 / Z * f)))
+            wd.ellipse((lx_ - lr, ly_ - lr * 1.4, lx_ + lr, ly_), fill=(255, 210, 140))
+            continue
+        for sgn in (-1, 1):                           # chairs upside down on the table: seat, then legs up
+            sx0, sy0 = P(X + sgn * 0.08 - 0.13, TOP - 0.02, Z - 0.08)
+            sx1, sy1 = P(X + sgn * 0.08 + 0.13, TOP - 0.05, Z + 0.06)
+            col = (24, 19, 15)
+            lw = max(1, int(0.014 / Z * f))
+            d.rectangle((min(sx0, sx1), min(sy0, sy1), max(sx0, sx1), max(sy0, sy1)), fill=col)
+            for (dx, dz) in ((-0.12, -0.06), (0.12, -0.06), (-0.12, 0.05), (0.12, 0.05)):
+                a = P(X + sgn * 0.08 + dx, TOP - 0.05, Z + dz)
+                b = P(X + sgn * 0.08 + dx, TOP - 0.30, Z + dz)
+                d.line([a, b], fill=col, width=lw)
+    # a dark chandelier
+    hx, hy = P(0.2, -1.05, 5.6)
+    d.line([P(0.2, CEIL, 5.6), (hx, hy)], fill=(20, 18, 16), width=3)
+    d.ellipse((hx - 60, hy - 14, hx + 60, hy + 22), fill=(28, 24, 20))
+    for k in range(-3, 4):
+        bx_, by_ = hx + k * 18, hy + 26 + abs(k) * 3
+        d.line([(hx + k * 8, hy + 10), (bx_, by_)], fill=(28, 24, 20), width=2)
+        d.ellipse((bx_ - 4, by_ - 4, bx_ + 4, by_ + 4), fill=(70, 64, 56))
+    arr = np.asarray(img, np.float32)
+    yy, xx = np.mgrid[0:sh, 0:sw].astype(np.float32)
+    lx_, ly_ = P(SET[1], TOP - 0.25, SET[0])
+    warm_glow = np.exp(-(((xx - lx_) / (sw * 0.16)) ** 2 + ((yy - ly_) / (sh * 0.2)) ** 2))
+    moon_glow = np.exp(-(((yy - vy) / (sh * 0.55)) ** 2)) * np.exp(-(((xx - vx) / (sw * 0.6)) ** 2))
+    light = 0.22 + 0.45 * moon_glow + 1.3 * warm_glow
+    tint = np.stack([0.80 + 0.35 * warm_glow, 0.86 + 0.12 * warm_glow, 1.05 - 0.25 * warm_glow], axis=-1)
+    tex = 0.95 + 0.05 * np.asarray(noise_tex(sw, sh, 5, seed + 3, 1), np.float32)[..., None] / 255.0
+    out = arr * tex * light[..., None] * tint
+    out += np.asarray(moon.filter(ImageFilter.GaussianBlur(40)), np.float32) * 0.35
+    v = np.sqrt(((xx - sw / 2) / (sw * 0.62)) ** 2 + ((yy - sh / 2) / (sh * 0.64)) ** 2)
+    out *= np.clip(1.2 - v * 0.6, 0.3, 1.0)[..., None]
+    return Pyramid(Image.fromarray(np.clip(out, 0, 255).astype(np.uint8))), Pyramid(glow_rgb(warm, 30)), (sw, sh)
+
+
+@shot("dining")
+class Dining(_LayeredScene):
+    FLICKER = 0.06
+
+    def prepare(self):
+        s = self.spec
+        self.z = s.get("z", [1.0, 1.12])
+        self.f0, self.f1 = s.get("f0", [0.5, 0.5]), s.get("f1", s.get("f0", [0.45, 0.52]))
+        self.base, self.lamp, (self.sw, self.sh) = dining_scene(int(s.get("seed", 2)))
+
+    def frame(self, t):
+        box = self.view(t)
+        f = self.base.view_array(box).astype(np.float32) + self.lamp.view_array(box).astype(np.float32) * 0.8 * self.flick(t)
+        return Image.fromarray(np.clip(f, 0, 255).astype(np.uint8))
 
 
 @functools.lru_cache(maxsize=2)
@@ -1636,8 +1779,12 @@ MAPS = {
     "usa": {"bbox": [-131.0, 21.0, -59.0, 53.0], "px": 5200, "grid": 10,
             "files": ["world-land", "world-lakes", "world-borders", "world-states"]},
     "colorado": {"bbox": [-109.8, 36.4, -101.4, 41.6], "px": 5200, "grid": 1,
-                 "files": ["world-land", "world-lakes", "world-borders", "world-states"]},
-    "north": {"bbox": [-130.0, 28.0, 12.0, 62.0], "px": 5600, "grid": 10,
+                 "files": ["world-land", "world-lakes", "world-borders", "world-states"],
+                 # the mountains west of the Front Range, drawn as little old-map peaks
+                 "peaks": [[[-105.22, 41.2], [-105.26, 40.62], [-105.28, 40.2], [-105.24, 39.75], [-105.16, 39.3], [-104.95, 38.95],
+                            [-105.0, 38.4], [-105.1, 37.6], [-105.15, 36.6], [-109.6, 36.6], [-109.6, 41.4]]],
+                 "peak_step": 0.042},
+    "north": {"bbox": [-134.0, 14.0, 16.0, 68.0], "px": 5600, "grid": 10,
               "files": ["world-land", "world-lakes", "world-borders", "world-states"]},
 }
 LAND, WATER, COAST = (228, 214, 180), (172, 180, 168), (64, 50, 36)
@@ -1732,6 +1879,8 @@ class MapBase:
                 for ln in lines(f["geometry"]):
                     pts = P(ln)
                     d.line(pts, fill=(150, 128, 102), width=max(1, lw - 1))
+        if m.get("peaks"):
+            self.draw_peaks(d, m)
         # graticule
         g = m["grid"]
         lon = math.ceil(self.lon0 / g) * g
@@ -1750,6 +1899,44 @@ class MapBase:
         n = np.asarray(noise_tex(self.wpx // 8, self.hpx // 8, 60, 3, 10).resize((self.wpx, self.hpx), Image.BICUBIC), np.float32)[..., None] / 255.0
         arr *= 0.93 + 0.09 * n
         return Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8))
+
+
+def _inside(pt, poly):
+    x, y = pt
+    inside = False
+    for i in range(len(poly)):
+        (x1, y1), (x2, y2) = poly[i], poly[(i + 1) % len(poly)]
+        if (y1 > y) != (y2 > y) and x < (x2 - x1) * (y - y1) / (y2 - y1 + 1e-12) + x1:
+            inside = not inside
+    return inside
+
+
+def _draw_peaks(self, d, m):
+    """Little hand-drawn mountains (a lit and a shaded side), on a jittered grid inside each area."""
+    rng = np.random.default_rng(11)
+    step = m.get("peak_step", 0.1)
+    for poly in m["peaks"]:
+        lons = [p[0] for p in poly]
+        lats = [p[1] for p in poly]
+        lat = max(lats)
+        row = 0
+        while lat > min(lats):
+            lon = min(lons) + (step / 2 if row % 2 else 0)
+            while lon < max(lons):
+                jl, jt = lon + rng.uniform(-0.3, 0.3) * step, lat + rng.uniform(-0.3, 0.3) * step
+                if _inside((jl, jt), poly):
+                    x, y = self.xy(jl, jt)
+                    hpx = math.radians(step) * self.k * rng.uniform(0.4, 0.7)
+                    wpx = hpx * rng.uniform(1.1, 1.6)
+                    d.polygon([(x - wpx / 2, y), (x, y - hpx), (x + wpx / 2, y)], fill=(216, 200, 166))
+                    d.polygon([(x, y - hpx), (x + wpx / 2, y), (x + wpx * 0.12, y)], fill=(184, 162, 126))
+                    d.line([(x - wpx / 2, y), (x, y - hpx), (x + wpx / 2, y)], fill=(132, 108, 80), width=max(1, int(hpx / 22)))
+                lon += step
+            lat -= step * 0.75
+            row += 1
+
+
+MapBase.draw_peaks = _draw_peaks
 
 
 def dashed(d, pts, fill, width, dash, gap):
