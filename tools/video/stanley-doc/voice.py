@@ -21,6 +21,7 @@ VOICE, SPEED, RATE = "af_heart", 0.94, 24000
 PRONOUNCE = {
     "F.O.": "ˌɛfˈO", "F.E.": "ˌɛfˈi", "Estes": "ˈɛstɪs", "Dunraven": "dʌnɹˈAvən", "Freelan": "fɹˈilən",
     "Kubrick": "kˈubɹɪk", "Kubrick's": "kˈubɹɪks", "Darkshine": "dˈɑɹkʃˌIn", "Kingfield": "kˈɪŋfˌild",
+    "Lyons": "lˈIənz", "Tabitha": "tˈæbɪθə", "tours": "tˈʊɹz", "Oregon": "ˈɔɹəɡən",
 }
 
 
