@@ -125,6 +125,13 @@ Script: `src/film/reel_trends.py` (`python3 film/reel_trends.py moon|candy|dst s
 `reels_vo.py` (`moon`, `candy`, `dst`). Post text: `posts-trends-oct-25.json` (`src/film/reel_posts3.py`); Facebook
 captions: `facebook-captions-trends-oct-25.txt`.
 
-Posted (Scoop's OK, Oct. 25: "post the moon"), Buffer share-now at 11:38 AM CDT: Hunter's Moon on YouTube
-(6ade30788b3d437ddc18bc37), TikTok (6ade307cbd33ce99c37f03fb) and X (6ade30866887a2efc114df71). The candy and clocks
-reels wait for his OK.
+Posted through Buffer (Scoop's OKs, Oct. 25: "post the moon", then "Candy now, clocks at 2 PM"):
+
+| Reel | When (CDT) | YouTube | TikTok | X |
+|---|---|---|---|---|
+| Hunter's Moon | Sun., Oct. 25, 11:38 AM (share-now) | 6ade30788b3d437ddc18bc37 | 6ade307cbd33ce99c37f03fb | 6ade30866887a2efc114df71 |
+| Indiana's #1 Halloween candy | Sun., Oct. 25, 11:49 AM (share-now) | 6ade32f10b5343d070e062f2 | 6ade32f63d5b27036be1a083 | 6ade3300bd33ce99c37f857e |
+| Clocks fall back | Sun., Oct. 25, 2 PM (scheduled) | 6ade3a810b5343d070e2962c | 6ade3a848b3d437ddc1b8f85 | 6ade3a873d5b27036be3c631 |
+
+The clocks posts use the queue slot the 12:15 PM post freed and give it back at 2 PM, so the three slots tonight's
+7:10 PM batch needs (Patton, Orr Lake, Part 6) are still there after the 4:30 and 7 PM posts go out.
