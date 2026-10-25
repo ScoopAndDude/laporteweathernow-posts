@@ -150,3 +150,7 @@ County's Top 10 Most Haunted," The News-Dispatch (Oct. 23, 2011). Everything is 
 other spots (Gravity Hill's railroad legend, a drowned-boy story, an operating clinic) were left out on purpose.
 Script: `src/film/reel_haunts2.py` (`python3 film/reel_haunts2.py pinelake|orr2|top4 stills|video`); post text
 `posts-legends-oct-25.json` (`src/film/reel_posts4.py`); Facebook captions `facebook-captions-legends-oct-25.txt`.
+
+Planned (Scoop's OK, Oct. 25: "Spread out"): Orr Lake Road's doctor Sun. Oct. 25 at 8:30 PM CDT (share-now; the Buffer
+queues are full until tonight's posts go out), Pine Lake Cemetery Tue. Oct. 27 at 8:30 PM, the countdown Sat. Oct. 31
+at 7 PM. Pine Lake and the countdown go into Buffer Monday evening, once the Monday posts free two slots.
