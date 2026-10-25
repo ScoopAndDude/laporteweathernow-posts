@@ -135,3 +135,18 @@ Posted through Buffer (Scoop's OKs, Oct. 25: "post the moon", then "Candy now, c
 
 The clocks posts use the queue slot the 12:15 PM post freed and give it back at 2 PM, so the three slots tonight's
 7:10 PM batch needs (Patton, Orr Lake, Part 6) are still there after the 4:30 and 7 PM posts go out.
+
+## Oct. 25: three more La Porte legends
+
+| Reel | Length | What it says |
+|---|---|---|
+| `orr-lake-road-the-doctors-lantern` | 28.5 s | Orr Lake Road's second legend: a doctor who kept his wife and daughter in barrels, and his lantern moving into the woods on full-moon nights with a hook-handed servant. Opens "Tonight's a full moon," so it's for Oct. 25 |
+| `pine-lake-cemetery-buried-alive` | 32.1 s | The 1871 move of the old city cemetery, the woman said to be found upside down and twisted in her coffin, and the mass grave of about ten unknown men from Belle Gunness's farm |
+| `la-porte-county-4-places-the-dead-dont-rest` | 33.1 s | A countdown: Orr Lake Road, Pine Lake, Patton and Posey Chapel, ending "Which one would you visit?" |
+
+Sources: Pine Lake Cemetery from Ashley Hood's Haunted Cemeteries of Indiana (2020), via Jeff Mayes in the La Porte
+County Herald-Dispatch (Oct. 22, 2020); the doctor legend and Patton's voices from Patricia Harrison's "La Porte
+County's Top 10 Most Haunted," The News-Dispatch (Oct. 23, 2011). Everything is drawn; no bodies are shown. The list's
+other spots (Gravity Hill's railroad legend, a drowned-boy story, an operating clinic) were left out on purpose.
+Script: `src/film/reel_haunts2.py` (`python3 film/reel_haunts2.py pinelake|orr2|top4 stills|video`); post text
+`posts-legends-oct-25.json` (`src/film/reel_posts4.py`); Facebook captions `facebook-captions-legends-oct-25.txt`.

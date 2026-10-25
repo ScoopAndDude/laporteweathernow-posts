@@ -20,7 +20,8 @@ SAY = [(r"\bLa Porte\b", "Luh-Port"), (r"\bHelgelien\b", "Hel-guh-leen"), (r"\b1
        (r"\b1841\b", "eighteen forty-one"), (r"\b2008\b", "two thousand eight"), (r"\b5:16\b", "five sixteen"),
        (r"\b5:51\b", "five fifty-one"), (r"\b11:12\b", "eleven twelve"), (r"\b10:49\b", "ten forty-nine"),
        (r"\b4:41\b", "four forty-one"), (r"\b4:17\b", "four seventeen"), (r"\b2 AM\b", "two A M"),
-       (r"\bNERDS\b", "Nerds"), (r"M&M's", "M and M's"), (r"CandyStore\.com", "Candy Store dot com")]
+       (r"\bNERDS\b", "Nerds"), (r"M&M's", "M and M's"), (r"CandyStore\.com", "Candy Store dot com"),
+       (r"\b1871\b", "eighteen seventy-one"), (r"\b1900s\b", "nineteen hundreds")]
 
 # name: [(paragraph, pause after it)]
 REELS = {
@@ -103,6 +104,37 @@ REELS = {
         ("Halloween's sunset is 5:43. The next night, it's 4:41.", 0.45),
         ("And it keeps sliding, to 4:17 by early December.", 0.5),
         ("Love it or hate it? Double-tap if you'll take the extra hour of sleep.", 0.0),
+    ],
+    # more La Porte legends, Oct. 25: Pine Lake Cemetery (Haunted Cemeteries of Indiana, via the Herald-Dispatch, 2020),
+    # Orr Lake Road's doctor and the countdown (the News-Dispatch's "La Porte County's Top 10 Most Haunted", 2011)
+    "pinelake": [
+        ("When La Porte moved its old city cemetery in 1871, a story came up with the coffins.", 0.45),
+        ("Many of the dead were reburied at Pine Lake Cemetery, marked only as unknown.", 0.45),
+        ("People say one woman was found upside down and twisted in her coffin, as if she'd been buried alive.", 0.5),
+        ("Pine Lake also holds a mass grave: the bones of about ten unknown men from Belle Gunness's farm, in two "
+         "caskets.", 0.5),
+        ("Visitors report shadows like mist above the stones. Visit in daylight, and double-tap for the next legend.",
+         0.0),
+    ],
+    "orr2": [
+        ("Tonight's a full moon. On Orr Lake Road, legend says that's when the doctor walks.", 0.45),
+        ("Sometime in the 1900s, the story goes, a doctor lived out here with his wife and daughter.", 0.45),
+        ("When they died, he couldn't let them go. He kept their bodies in barrels.", 0.5),
+        ("On full-moon nights, people say his lantern moves into the woods, with a servant who has a hook for a hand.",
+         0.5),
+        ("There's no record any of it happened. People live out here, so keep rolling, and double-tap for the next "
+         "legend.", 0.0),
+    ],
+    "top4": [
+        ("Four places in La Porte County where people say the dead don't rest.", 0.45),
+        ("Number four: Orr Lake Road, where a doctor's lantern is said to move through the woods under a full moon.",
+         0.4),
+        ("Number three: Pine Lake Cemetery, where shadows like mist drift over a mass grave of Belle Gunness's victims.",
+         0.4),
+        ("Number two: Patton Cemetery, where a neighbor says they hear people talking at night, and no one's there.",
+         0.4),
+        ("And number one: Posey Chapel Cemetery near Hesston, with bells, bouncing lights and a woman in white.", 0.5),
+        ("Which one would you visit? Tell us in the comments.", 0.0),
     ],
     # La Porte's own legends (from laporteweathernow.com/hauntings)
     "posey": [
