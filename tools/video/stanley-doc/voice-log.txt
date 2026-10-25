@@ -5,46 +5,64 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
   WeightNorm.apply(module, name, dim)
 /opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
   warnings.warn(
-Traceback (most recent call last):
-  File "/home/runner/work/laporteweathernow-posts/laporteweathernow-posts/tools/video/stanley-doc/voice.py", line 81, in <module>
-    main()
-  File "/home/runner/work/laporteweathernow-posts/laporteweathernow-posts/tools/video/stanley-doc/voice.py", line 35, in main
-    pipe = KPipeline(lang_code="a", repo_id="hexgrad/Kokoro-82M")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/kokoro/pipeline.py", line 113, in __init__
-    self.g2p = en.G2P(trf=trf, british=lang_code=='b', fallback=fallback, unk='')
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/misaki/en.py", line 503, in __init__
-    self.nlp = spacy.load(name, enable=components)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/spacy/__init__.py", line 74, in load
-    return util.load_model(
-           ^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/spacy/util.py", line 524, in load_model
-    return load_model_from_package(name, **kwargs)  # type: ignore[arg-type]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/spacy/util.py", line 560, in load_model_from_package
-    return cls.load(
-           ^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/en_core_web_sm/__init__.py", line 10, in load
-    return load_model_from_init_py(__file__, **overrides)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/spacy/util.py", line 743, in load_model_from_init_py
-    return load_model_from_path(
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/spacy/util.py", line 608, in load_model_from_path
-    return nlp.from_disk(model_path, exclude=exclude, overrides=overrides)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/spacy/language.py", line 2249, in from_disk
-    util.from_disk(path, deserializers, exclude)  # type: ignore[arg-type]
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/spacy/util.py", line 1450, in from_disk
-    reader(path / key)
-  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/spacy/language.py", line 2235, in <lambda>
-    deserializers["tokenizer"] = lambda p: self.tokenizer.from_disk(  # type: ignore[union-attr]
-                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "spacy/tokenizer.pyx", line 787, in spacy.tokenizer.Tokenizer.from_disk
-  File "spacy/tokenizer.pyx", line 833, in spacy.tokenizer.Tokenizer.from_bytes
-  File "spacy/tokenizer.pyx", line 128, in spacy.tokenizer.Tokenizer.rules.__set__
-  File "spacy/tokenizer.pyx", line 239, in spacy.tokenizer.Tokenizer._flush_specials
-OverflowError: Python int too large to convert to C ssize_t
+o01 9.875 s
+o02 6.175 s
+o03 9.2 s
+o04 10.7 s
+o05 9.5 s
+o06 5.675 s
+o07 8.65 s
+c1-01 11.35 s
+c1-02 8.625 s
+c1-03 5.375 s
+c1-04 10.5 s
+c1-05 13.9 s
+c1-06 15.3 s
+c1-07 5.025 s
+c1-08 6.025 s
+c2-01 10.4 s
+c2-02 10.85 s
+c2-03 12.275 s
+c2-04 7.75 s
+c2-05 11.6 s
+c2-06 4.2 s
+c2-07 5.55 s
+c2-07b 12.15 s
+c2-08 12.225 s
+c3-01 8.475 s
+c3-02 11.3 s
+c3-03 12.9 s
+c3-04 13.925 s
+c3-05 6.75 s
+c3-06 3.35 s
+c4-01 9.525 s
+c4-02 9.125 s
+c4-03 14.9 s
+c4-04 5.375 s
+c5-01 9.575 s
+c5-02 8.35 s
+c5-03 6.275 s
+c5-04 3.65 s
+c5-05 14.95 s
+c5-06 7.425 s
+c5-07 8.2 s
+c5-08 5.9 s
+c6-01 6.725 s
+c6-02 10.975 s
+c6-03 14.15 s
+c6-04 9.175 s
+c6-05 6.375 s
+c6-06 12.875 s
+c7-01 6.175 s
+c7-02 12.25 s
+c7-03 4.325 s
+c7-04 11.1 s
+c7-05 10.175 s
+c7-06 6.075 s
+c7-07 7.75 s
+c8-01 13.0 s
+c8-02 10.325 s
+e01 11.475 s
+e02 7.125 s
+e03 7.25 s
+60 lines recorded, 60 in all, 9.2 minutes
