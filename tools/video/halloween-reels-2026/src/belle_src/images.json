@@ -1,0 +1,14 @@
+{
+  "about": "Real pictures for the Halloween shorts (Oct. 20, 2026; Scoop: 'use real images'). fetch_images.py (GitHub Actions, belle-images.yml) looks these up on Wikimedia Commons and the Library of Congress, keeps only files that are public domain or free to reuse with credit, and saves them with their license and credit in images/manifest.json.",
+  "commons": [
+    {"name": "belle", "category": "Category:Belle Gunness", "max": 30},
+    {"name": "belle-search", "search": "Gunness", "max": 30},
+    {"name": "belle-farm", "search": "Gunness farm La Porte", "max": 15},
+    {"name": "hesston", "category": "Category:Hesston Steam Museum", "max": 25},
+    {"name": "hesston-search", "search": "Hesston Steam Museum", "max": 20},
+    {"name": "jackolantern", "category": "Category:Jack-o'-lanterns", "max": 40},
+    {"name": "pumpkins", "search": "pumpkin patch", "max": 25},
+    {"name": "laporte", "search": "La Porte Indiana", "max": 25}
+  ],
+  "loc_newspapers": {"text": "Gunness", "from": "04/28/1908", "to": "07/31/1908", "max": 12}
+}

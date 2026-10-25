@@ -70,3 +70,36 @@ the free plan's 10 scheduled posts per channel.
 
 The narrator is a computer voice; the photos are real and the drawings are plainly drawings, so the posts
 aren't labeled AI-generated (same as the earlier Belle shorts).
+
+## Oct. 25: five more (Scoop's OK, Oct. 25: "Yes, those times")
+
+| Reel | Length | What it says |
+|---|---|---|
+| `posey-chapel-cemetery-the-bells` | 28.7 s | Posey Chapel Cemetery near Hesston: 1833, the 1972 arson, the preacher legend, the woman in white, the bouncing lights |
+| `patton-cemetery-belle-gunness-victims` | 28.1 s | Patton Cemetery (1841): Jennie Olson and Andrew Helgelien are buried there; shadows, voices, sadness |
+| `orr-lake-road-hangmans-road` | 25.0 s | "Hangman's Road": the Boyfriend's Death legend, told and never shown; no record it happened |
+| `belle-gunness-part-6-the-dna-test` | 26.4 s | The 1908 burial near Chicago, the Nov. 2007 exhumation, the DNA test that couldn't be run, the April 2008 headstones |
+| `halloween-trick-or-treat-forecast` | 26 s | Trick-or-treat night's NWS forecast, sunset and dark; remade from the newest forecast the morning it posts |
+
+The three hauntings reels are drawn (Belle's portrait in the Patton one is public domain); their history and legends
+are the hauntings page's case files. Part 6's sources: Forest Park Review (Dec. 4, 2007), Chicagoist (Feb. 12, 2008),
+WBEZ (Apr. 28, 2008), Wikipedia. Post text: `posts-oct-25.json`; Facebook captions: `facebook-captions-oct-25.txt`.
+
+Planned (Central): Posey Thu. Oct. 29, 12:15 PM; Patton Thu., 7 PM; the forecast Fri. Oct. 30, 7:30 AM (remade that
+morning); Orr Lake Fri., 7 PM; Part 6 Sat. Oct. 31, 12:15 PM. They go into Buffer as the free plan's 10-per-channel
+queue frees up.
+
+## Rebuilding the workspace
+
+`src/` holds everything that isn't already in this repo: `src/film/*.py` (the drawing, sound and narration code; it
+expects to sit in `<root>/film/`), `src/doc/fonts` and the logos (`<root>/doc/`), and `src/belle_src` (copies of the
+belle-video branch's `shorts.py`, the halloween-video branch's `make.py` and main's `scripts/video_render.py`;
+the pictures are the belle-video branch's `tools/video/belle-2026/images/`). The voice is Kokoro-82M (`kokoro-onnx`,
+`models/kokoro-v1.0.onnx` and `models/voices-v1.0.bin` from that project's GitHub release), voice `af_heart` at
+1.02x. Map data: Natural Earth (`<root>/dl/geo`, `dl/geo10`) and plotly's Census `counties.json`.
+
+```
+python3 film/reels_vo.py hwfc            # narration -> shorts/r_hwfc/
+python3 film/reel_hwfc.py stills         # a contact sheet in shorts/out/
+python3 film/reel_hwfc.py video          # the reel in shorts/out/
+```
