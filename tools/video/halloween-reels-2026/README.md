@@ -103,3 +103,28 @@ python3 film/reels_vo.py hwfc            # narration -> shorts/r_hwfc/
 python3 film/reel_hwfc.py stills         # a contact sheet in shorts/out/
 python3 film/reel_hwfc.py video          # the reel in shorts/out/
 ```
+
+## Oct. 25: three trend reels
+
+Made from what was trending that Sunday morning (vidIQ's trending Shorts were general entertainment, so these tie the
+week's big searches to La Porte):
+
+| Reel | Length | What it says |
+|---|---|---|
+| `hunters-moon-tonight-la-porte` | 25.2 s | Tonight's Hunter's Moon: moonrise 5:16 PM CDT (east-northeast) before the 5:51 sunset, full at 11:12 PM, NWS "partly cloudy"; Halloween moonrise 10:49 PM, so bring a flashlight |
+| `indiana-favorite-halloween-candy-2026` | 27.9 s | CandyStore.com's 2026 rankings: Indiana NERDS Gummy Clusters; Illinois Sour Patch Kids, Michigan Starburst, Ohio Blow Pops (Kentucky Reese's Cups on the map); the U.S. top five |
+| `clocks-fall-back-la-porte-sunsets` | 23.2 s | DST ends 2 AM Sun. Nov. 1; sunset 5:43 PM (Oct. 31) to 4:41 PM (Nov. 1), 4:17 by early December; sunrise 7:18 to 6:19 AM. It says "one week from today", so it's for Sun. Oct. 25 |
+
+Moon and sun times: PyEphem for La Porte (41.6106 N, 86.7225 W), standard refraction, rounded to the minute (they
+agree with Almanac.com's Hunter's Moon listing and sunrise-sunset.org's La Porte table to the rounding). It's not a
+supermoon (368,900 km), so nothing says it is. Candy: CandyStore.com 2026 (projected sales, 18 years of data), as
+reported by NBC (Oct. 8) and BroBible (Oct. 5). Everything is drawn; the candy is generic (no packaging, logos or
+characters) and brand names appear only as text.
+
+Script: `src/film/reel_trends.py` (`python3 film/reel_trends.py moon|candy|dst stills|video`), narration in
+`reels_vo.py` (`moon`, `candy`, `dst`). Post text: `posts-trends-oct-25.json` (`src/film/reel_posts3.py`); Facebook
+captions: `facebook-captions-trends-oct-25.txt`.
+
+Posted (Scoop's OK, Oct. 25: "post the moon"), Buffer share-now at 11:38 AM CDT: Hunter's Moon on YouTube
+(6ade30788b3d437ddc18bc37), TikTok (6ade307cbd33ce99c37f03fb) and X (6ade30866887a2efc114df71). The candy and clocks
+reels wait for his OK.

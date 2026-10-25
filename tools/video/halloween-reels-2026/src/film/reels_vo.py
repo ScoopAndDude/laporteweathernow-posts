@@ -17,7 +17,10 @@ SAY = [(r"\bLa Porte\b", "Luh-Port"), (r"\bHelgelien\b", "Hel-guh-leen"), (r"\b1
        (r"\b1815\b", "eighteen fifteen"), (r"\b1931\b", "nineteen thirty-one"),
        (r"\bmid-1900s\b", "mid-nineteen-hundreds"), (r"\b5:43\b", "five forty-three"), (r"\b6:10\b", "six ten"),
        (r"\b5 to 7\b", "five to seven"), (r"\b1833\b", "eighteen thirty-three"), (r"\b1972\b", "nineteen seventy-two"),
-       (r"\b1841\b", "eighteen forty-one"), (r"\b2008\b", "two thousand eight")]
+       (r"\b1841\b", "eighteen forty-one"), (r"\b2008\b", "two thousand eight"), (r"\b5:16\b", "five sixteen"),
+       (r"\b5:51\b", "five fifty-one"), (r"\b11:12\b", "eleven twelve"), (r"\b10:49\b", "ten forty-nine"),
+       (r"\b4:41\b", "four forty-one"), (r"\b4:17\b", "four seventeen"), (r"\b2 AM\b", "two A M"),
+       (r"\bNERDS\b", "Nerds"), (r"M&M's", "M and M's"), (r"CandyStore\.com", "Candy Store dot com")]
 
 # name: [(paragraph, pause after it)]
 REELS = {
@@ -78,6 +81,29 @@ REELS = {
         ("But the old sample couldn't be properly tested. The answer is still buried.", 0.5),
         ("In 2008, her victims' descendants finally gave their graves headstones. Double-tap to remember them.", 0.0),
     ],
+    # trend reels, Oct. 25: tonight's Hunter's Moon, Indiana's favorite candy, the clocks falling back
+    "moon": [
+        ("Tonight's full moon, the Hunter's Moon, rises over La Porte at 5:16.", 0.45),
+        ("Look east-northeast. The sun doesn't set until 5:51, so you'll catch it coming up in daylight.", 0.45),
+        ("It's officially full at 11:12 tonight, and the forecast is partly cloudy.", 0.45),
+        ("On Halloween, the moon won't rise until 10:49, so bring a flashlight for trick-or-treat.", 0.5),
+        ("Double-tap if you're going out to see it.", 0.0),
+    ],
+    "candy": [
+        ("Indiana's favorite Halloween candy this year isn't chocolate.", 0.45),
+        ("It's NERDS Gummy Clusters, in CandyStore.com's new state-by-state rankings.", 0.45),
+        ("Next door, Illinois picked Sour Patch Kids. Michigan went with Starburst, and Ohio chose Blow Pops.", 0.45),
+        ("Across the country, the top five are M&M's, Sour Patch Kids, Skittles, Reese's and NERDS Gummy Clusters.",
+         0.5),
+        ("Agree? Double-tap, and tell us the best candy to get in La Porte.", 0.0),
+    ],
+    "dst": [
+        ("One week from today, La Porte's sunsets jump an hour earlier.", 0.45),
+        ("Daylight saving time ends at 2 AM next Sunday, so set your clocks back an hour Saturday night.", 0.45),
+        ("Halloween's sunset is 5:43. The next night, it's 4:41.", 0.45),
+        ("And it keeps sliding, to 4:17 by early December.", 0.5),
+        ("Love it or hate it? Double-tap if you'll take the extra hour of sleep.", 0.0),
+    ],
     # La Porte's own legends (from laporteweathernow.com/hauntings)
     "posey": [
         ("Near Hesston, there's a country cemetery where people say they hear bells.", 0.45),
@@ -116,9 +142,9 @@ def spoken(t):
 
 
 def sentences(p):
-    p = p.replace("Mrs.", "Mrs\u00a7")
+    p = p.replace("Mrs.", "Mrs\u00a7").replace(".com", "\u00b6com")
     out = re.findall(r"[^.?!]+(?:\.\.\.[^.?!]+)*[.?!]+[\"”]?", p)
-    return [s.strip().replace("Mrs\u00a7", "Mrs.") for s in out if s.strip()]
+    return [s.strip().replace("Mrs\u00a7", "Mrs.").replace("\u00b6com", ".com") for s in out if s.strip()]
 
 
 def trim(a, thr=0.004, pad=0.03):

@@ -1,0 +1,79 @@
+"""TikTok, YouTube and X text for the Oct. 25 trend reels (not posted until Scoop OKs them).
+
+python3 reel_posts3.py  ->  shorts/out/posts-trends-oct-25.json
+"""
+import json
+import os
+
+from reel_posts import x_len
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+P = [
+    {
+        "file": "hunters-moon-tonight-la-porte.mp4", "cover_ms": 4600,
+        "youtube_title": "Hunter's Moon tonight: when it rises over La Porte, Indiana",
+        "body": "Tonight's full moon is the Hunter's Moon 🌕 It rises over La Porte at 5:16 p.m., low in the east-northeast. "
+                "The sun doesn't set until 5:51, so you can catch it coming up in daylight. It's officially full at 11:12 "
+                "tonight, and the forecast is partly cloudy with a low around 47. On Halloween, the moon won't rise until "
+                "10:49 p.m., so bring a flashlight for trick-or-treat. Going out to see it? Share your moon photos! "
+                "#LaPorte #HuntersMoon #FullMoon #Indiana #MichiganCity #Halloween",
+        "credit_short": "Forecast: National Weather Service. Moon and sun times calculated for La Porte. All pictures are "
+                        "drawn.",
+        "credit": "Forecast: National Weather Service, as of Sun., Oct. 25. Moon and sun times calculated for La Porte "
+                  "(41.61 N, 86.72 W), rounded to the minute. All pictures are drawn.",
+        "x": "Tonight's full moon, the Hunter's Moon, rises over La Porte at 5:16 p.m. 🌕 Look east-northeast: sunset isn't "
+             "until 5:51, so it comes up in daylight. Officially full at 11:12 p.m. #LaPorte #HuntersMoon\n\n"
+             "Times calculated for La Porte. Pictures drawn.",
+    },
+    {
+        "file": "indiana-favorite-halloween-candy-2026.mp4", "cover_ms": 3400,
+        "youtube_title": "Indiana's #1 Halloween candy isn't chocolate (2026 rankings)",
+        "body": "Indiana's most popular Halloween candy this year isn't chocolate 🍬 It's NERDS Gummy Clusters, in "
+                "CandyStore.com's 2026 state-by-state rankings. Next door, Illinois picked Sour Patch Kids, Michigan went "
+                "with Starburst, Ohio chose Blow Pops, and in Kentucky it's Reese's Cups. Nationally, the top five are "
+                "M&M's, Sour Patch Kids, Skittles, Reese's Cups and NERDS Gummy Clusters. Agree? Tell us the best candy "
+                "to get in La Porte! #LaPorte #Halloween #HalloweenCandy #Indiana #MichiganCity #TrickOrTreat",
+        "credit_short": "Rankings: CandyStore.com, 2026 (based on sales data). Map: Natural Earth. All pictures are "
+                        "drawn.",
+        "credit": "Rankings: CandyStore.com's 2026 most popular Halloween candy by state (based on 18 years of sales "
+                  "data), as reported by NBC and BroBible. Map: Natural Earth. All pictures are drawn.",
+        "x": "Indiana's most popular Halloween candy this year isn't chocolate 🍬 It's NERDS Gummy Clusters, per "
+             "CandyStore.com's 2026 rankings. Illinois: Sour Patch Kids. Michigan: Starburst. Ohio: Blow Pops. Agree? "
+             "#LaPorte #Halloween\n\nPictures drawn.",
+    },
+    {
+        "file": "clocks-fall-back-la-porte-sunsets.mp4", "cover_ms": 3600,
+        "youtube_title": "Clocks fall back Nov. 1: La Porte's sunsets jump an hour earlier",
+        "body": "Clocks fall back one week from today ⏰ Daylight saving time ends at 2 a.m. next Sunday, Nov. 1, so set "
+                "your clocks back an hour Saturday night (yes, Halloween night). Phones change on their own; the oven "
+                "and microwave won't. La Porte's sunset jumps from 5:43 p.m. on Halloween to 4:41 p.m. the next day, and "
+                "keeps sliding to 4:17 by early December. The upside: sunrise moves from 7:18 to 6:19 a.m. Love it or "
+                "hate it? #LaPorte #FallBack #DaylightSaving #Indiana #MichiganCity",
+        "credit_short": "Sun times calculated for La Porte (Central time). All pictures are drawn.",
+        "credit": "Sun times calculated for La Porte (41.61 N, 86.72 W, Central time), rounded to the minute. All "
+                  "pictures are drawn.",
+        "x": "Clocks fall back one week from today ⏰ DST ends at 2 a.m. Sun., Nov. 1. La Porte's sunset goes from 5:43 "
+             "p.m. on Halloween to 4:41 p.m. the next day, and 4:17 by early December. Love it or hate it? #LaPorte "
+             "#FallBack\n\nSun times calculated for La Porte. Pictures drawn.",
+    },
+]
+
+
+def main():
+    out = []
+    for p in P:
+        q = dict(p)
+        q["tiktok"] = p["body"] + "\n\n" + p["credit_short"]
+        q["youtube"] = p["body"] + "\n\n" + p["credit"]
+        q["x_length"] = x_len(p["x"])
+        assert q["x_length"] <= 280, (p["file"], q["x_length"])
+        assert len(p["youtube_title"]) <= 100 and "<" not in q["youtube"] and ">" not in q["youtube"]
+        out.append(q)
+        print("%-48s x=%3d yt_title=%2d yt=%4d tt=%4d" % (p["file"], q["x_length"], len(p["youtube_title"]),
+                                                          len(q["youtube"]), len(q["tiktok"])))
+    json.dump(out, open(os.path.join(ROOT, "shorts", "out", "posts-trends-oct-25.json"), "w"), indent=1,
+              ensure_ascii=False)
+
+
+if __name__ == "__main__":
+    main()
