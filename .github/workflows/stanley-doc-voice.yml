@@ -37,13 +37,16 @@ jobs:
           path: |
             ~/.cache/pip
             ~/.cache/huggingface
-          key: kokoro-voice-${{ runner.os }}-py312-v1
+          key: kokoro-voice-${{ runner.os }}-py312-v2
 
       - name: Install the voice
         run: |
           sudo apt-get install -y -qq espeak-ng > /dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq espeak-ng > /dev/null)
           pip install -q torch --index-url https://download.pytorch.org/whl/cpu
-          pip install -q "kokoro>=0.9.4" soundfile numpy
+          # preshed, cymem and murmurhash released new versions on Oct. 24, 2026 that break spaCy's tokenizer
+          # ("OverflowError: Python int too large to convert to C ssize_t"), so stay on the ones from before
+          pip install -q "kokoro>=0.9.4" soundfile numpy "preshed==3.0.13" "cymem==2.0.13" "murmurhash==1.0.15" "srsly==2.5.4"
+          pip list 2>/dev/null | grep -i -E "^(spacy|thinc|preshed|cymem|murmurhash|srsly|blis|misaki|kokoro|numpy|torch) " || true
           python3 -m spacy download en_core_web_sm -q || true
 
       - name: Record
