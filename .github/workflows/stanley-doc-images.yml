@@ -1,0 +1,57 @@
+name: Stanley Hotel documentary pictures (one-off, Oct. 2026)
+
+# Finds public-domain and free-to-reuse pictures and 1909-1912 newspaper pages for tools/video/stanley-doc on
+# Wikimedia Commons and the Library of Congress. The pictures go in a zip on a "stanley-doc-images" pre-release
+# (so the branch stays small); the list with every picture's license and credit, and the log, are saved on
+# the stanley-doc branch. Runs only on that branch, only when the list changes. Nothing is posted.
+on:
+  push:
+    branches: [stanley-doc]
+    paths:
+      - tools/video/stanley-doc/sources.json
+      - tools/video/stanley-doc/fetch.py
+      - .github/workflows/stanley-doc-images.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stanley-doc-images
+  cancel-in-progress: true
+
+jobs:
+  pictures:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 80
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Get ready
+        run: pip install -q pillow
+      - name: Find and download
+        run: python3 tools/video/stanley-doc/fetch.py || echo "fetch.py stopped with an error; see images/fetch-log.txt"
+      - name: Zip the pictures onto the pre-release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd tools/video/stanley-doc/images
+          ls *.jpg >/dev/null 2>&1 || { echo "no pictures"; exit 0; }
+          zip -q ../stanley-doc-images-${{ github.run_number }}.zip *.jpg manifest.json
+          cd ..
+          ls -la stanley-doc-images-*.zip
+          gh release view stanley-doc-images >/dev/null 2>&1 || gh release create stanley-doc-images --prerelease --target stanley-doc \
+            --title "Stanley Hotel documentary pictures (working files)" \
+            --notes "Working pictures for the documentary in tools/video/stanley-doc on the stanley-doc branch: public domain, CC0 or CC BY only. Each picture's source, license and credit are in images/manifest.json."
+          gh release upload stanley-doc-images stanley-doc-images-${{ github.run_number }}.zip --clobber
+      - name: Save the list and the log on this branch
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/video/stanley-doc/images/manifest.json tools/video/stanley-doc/images/fetch-log.txt || true
+          git commit -q -m "Stanley documentary: picture list (licenses and credits) and search log" || echo "nothing new"
+          for i in 1 2 3; do git pull -q --rebase origin stanley-doc && git push -q origin HEAD:stanley-doc && break; sleep 5; done

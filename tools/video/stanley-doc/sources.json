@@ -1,0 +1,38 @@
+{
+  "about": "Real pictures for the Stanley Hotel documentary (Oct. 25, 2026; Scoop: \"make a youtube documentary on the stanley hotel\"). fetch.py (GitHub Actions, stanley-doc-images.yml) looks these up and keeps only public domain, CC0 and CC BY files (no share-alike, no non-commercial), each with its credit, in images/manifest.json. Library of Congress pictures are kept only when the Library says there are no known restrictions; 1909-1912 newspaper pages are public domain.",
+  "commons": [
+    {"name": "stanley-cat", "category": "Category:Stanley Hotel", "depth": 2, "max": 160},
+    {"name": "stanley-cat2", "category": "Category:The Stanley Hotel", "depth": 1, "max": 80},
+    {"name": "stanley-search", "search": "\"Stanley Hotel\" Estes Park", "max": 140},
+    {"name": "stanley-old", "search": "Stanley Hotel Estes Park postcard", "max": 60},
+    {"name": "fo-stanley", "search": "\"F. O. Stanley\"", "max": 50},
+    {"name": "fo-stanley-cat", "category": "Category:Freelan Oscar Stanley", "depth": 1, "max": 40},
+    {"name": "flora-stanley", "search": "\"Flora Stanley\"", "max": 20},
+    {"name": "steamer-cat", "category": "Category:Stanley Motor Carriage Company", "depth": 1, "max": 60},
+    {"name": "steamer", "search": "Stanley Steamer", "max": 60},
+    {"name": "estes-park-cat", "category": "Category:Estes Park, Colorado", "depth": 1, "max": 100},
+    {"name": "estes-park-old", "search": "Estes Park 1910", "max": 60},
+    {"name": "rmnp-cat", "category": "Category:Rocky Mountain National Park", "depth": 1, "max": 70},
+    {"name": "longs-peak", "category": "Category:Longs Peak", "depth": 1, "max": 30},
+    {"name": "timberline", "category": "Category:Timberline Lodge", "depth": 1, "max": 30},
+    {"name": "king", "search": "\"Stephen King\" author photograph", "max": 40},
+    {"name": "tb", "search": "tuberculosis sanatorium Colorado 1900s", "max": 30},
+    {"name": "elk-estes", "search": "elk Estes Park", "max": 30}
+  ],
+  "loc_photos": [
+    {"name": "loc-stanley-hotel", "q": "stanley hotel estes park", "max": 40},
+    {"name": "loc-stanley", "q": "stanley hotel colorado", "max": 30},
+    {"name": "loc-estes-park", "q": "estes park colorado", "dates": "1890/1935", "max": 60},
+    {"name": "loc-steamer", "q": "stanley steamer", "dates": "1897/1930", "max": 30},
+    {"name": "loc-stanley-brothers", "q": "stanley brothers automobile", "dates": "1897/1930", "max": 20},
+    {"name": "loc-rmnp", "q": "rocky mountain national park", "dates": "1910/1940", "max": 40},
+    {"name": "loc-longs-peak", "q": "longs peak", "dates": "1890/1935", "max": 20},
+    {"name": "loc-big-thompson", "q": "big thompson canyon", "dates": "1890/1935", "max": 20}
+  ],
+  "loc_maps": [
+    {"name": "map-estes-park", "q": "estes park", "dates": "1900/1935", "max": 20},
+    {"name": "map-colorado", "q": "colorado", "dates": "1905/1915", "max": 15}
+  ],
+  "newspapers": {"name": "news", "q": "stanley hotel", "place": "estes park", "dates": "1909-01-01/1912-12-31", "max": 40,
+                 "crops_per_page": 2, "license": "Public domain (1909-1912 newspaper)"}
+}
