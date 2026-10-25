@@ -54,14 +54,19 @@ share-alike pictures.
 ## Posted
 
 Through Buffer on TikTok (@scoopanddude), YouTube (LaPorteWeatherNow) and X (@ScoopAndDude), with the
-videos in `out/` at this branch's first commit (Scoop's OK, Oct. 25, 2026: "Put the five new reels in Buffer
-for YouTube, TikTok and X. Facebook stays by hand."):
+videos in `out/` at commit 7f805ce (Scoop's OK, Oct. 25, 2026: "Put the five new reels in Buffer for
+YouTube, TikTok and X. Facebook stays by hand."). Buffer post IDs:
 
-- Weather anomaly: Sun., Oct. 25, 4:30 PM CDT
-- Belle Gunness, Part 3: Sun., Oct. 25, 7 PM
-- Belle Gunness, Part 4: Mon., Oct. 26, 7 PM
-- Frankenstein, Dracula and the Year Without a Summer: Tue., Oct. 27, 12:15 PM
-- Belle Gunness, Part 5: Wed., Oct. 28, 7 PM
+| Reel | When (CDT) | YouTube | TikTok | X |
+|---|---|---|---|---|
+| Weather anomaly | Sun., Oct. 25, 4:30 PM | 6ade202ce4be8a4d86b3547e | 6ade202fbd33ce99c37a85fc | 6ade20323d5b27036bdc1ee0 |
+| Belle Gunness, Part 3 | Sun., Oct. 25, 7 PM | 6ade203b8b3d437ddc143207 | 6ade203f3d5b27036bdc2058 | 6ade20420b5343d070dafa5d |
+| Belle Gunness, Part 4 | Mon., Oct. 26, 7 PM | 6ade20460b5343d070dafae8 | 6ade20498b3d437ddc1433f2 | 6ade204c6887a2efc1101ec6 |
+| Frankenstein, Dracula and the Year Without a Summer | Tue., Oct. 27, 12:15 PM | 6ade20536887a2efc1102000 | 6ade20576887a2efc110206c | 6ade2059bd33ce99c37a8ac9 |
+| Belle Gunness, Part 5 | Wed., Oct. 28, 7 PM | 6ade205e8b3d437ddc14364f | 6ade2062e4be8a4d86b35bc5 | 6ade20643d5b27036bdc2ab6 |
+
+With the four posts already queued (rain chances, Hard Hat, the haunted flagman, lake effect), that's 9 of
+the free plan's 10 scheduled posts per channel.
 
 The narrator is a computer voice; the photos are real and the drawings are plainly drawings, so the posts
 aren't labeled AI-generated (same as the earlier Belle shorts).
