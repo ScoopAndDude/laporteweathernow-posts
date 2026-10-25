@@ -1,0 +1,59 @@
+name: Stanley Hotel documentary pictures, quick pass (one-off, Oct. 2026)
+
+# A smaller, faster run of the picture search (fewer pictures per source, only the most important sources),
+# in case the full search (stanley-doc-images.yml) runs out of time. Uploads a zip to its own pre-release,
+# "stanley-doc-images-quick", and changes nothing on the branch. Nothing is posted.
+on:
+  push:
+    branches: [stanley-doc]
+    paths:
+      - .github/workflows/stanley-doc-images-quick.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stanley-doc-images-quick
+  cancel-in-progress: true
+
+jobs:
+  pictures:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Get ready
+        run: pip install -q pillow
+      - name: Fewer pictures per source
+        run: |
+          python3 - <<'PY'
+          import json
+          p = "tools/video/stanley-doc/sources.json"
+          s = json.load(open(p))
+          keep = {"stanley-cat": 60, "stanley-search": 50, "stanley-old": 30, "fo-stanley-cat": 15, "fo-stanley": 12,
+                  "steamer-cat": 20, "timberline": 15, "estes-park-old": 20, "longs-peak": 10, "elk-estes": 10,
+                  "loc-stanley-hotel": 25, "loc-estes-park": 25, "loc-steamer": 10}
+          s["commons"] = [dict(q, max=keep[q["name"]]) for q in s["commons"] if q["name"] in keep]
+          s["loc_photos"] = [dict(q, max=keep[q["name"]]) for q in s["loc_photos"] if q["name"] in keep]
+          s["loc_maps"] = []
+          s["newspapers"]["max"] = 20
+          json.dump(s, open(p, "w"), indent=1)
+          PY
+      - name: Find and download
+        run: timeout 50m python3 tools/video/stanley-doc/fetch.py || echo "fetch.py stopped; see images/fetch-log.txt"
+      - name: Zip the pictures onto the pre-release
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd tools/video/stanley-doc/images
+          ls *.jpg >/dev/null 2>&1 || { echo "no pictures"; exit 0; }
+          zip -q ../stanley-doc-images-quick.zip *.jpg manifest.json fetch-log.txt
+          cd ..
+          gh release view stanley-doc-images-quick >/dev/null 2>&1 || gh release create stanley-doc-images-quick --prerelease --target stanley-doc \
+            --title "Stanley Hotel documentary pictures, quick pass (working files)" \
+            --notes "A smaller picture search for tools/video/stanley-doc: public domain, CC0 or CC BY only. Each picture's source, license and credit are in manifest.json in the zip."
+          gh release upload stanley-doc-images-quick stanley-doc-images-quick.zip --clobber
