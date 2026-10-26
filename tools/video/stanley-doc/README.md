@@ -7,7 +7,8 @@ Halloween shorts and the Belle Gunness documentary. Nothing here posts anything:
 Scoop, and he uploads it himself.
 
 It is built with the Belle Gunness documentary's engine (tools/video/belle-doc on the belle-doc branch), with
-a new script, new music cues (an original waltz) and two drawn scenes: a hotel room door, and the closing
+a new script, new music cues (an original waltz) and drawn night scenes (a hallway, a dining room after
+closing, a window on the mountains, a room door, a snowed-in hotel for the novel's Overlook) and the closing
 "comment your city or town" card.
 
 ## What's here

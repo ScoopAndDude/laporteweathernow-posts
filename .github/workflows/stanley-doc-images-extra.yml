@@ -1,0 +1,52 @@
+name: Stanley Hotel documentary pictures, extra pass (one-off, Oct. 2026)
+
+# The second, smaller picture search (fetch.py --extra, sources-extra.json): the 1911 newspapers about the
+# explosion, the 1909 opening and a few specific pictures. Adds to images/manifest.json without renumbering what
+# is already there; the new pictures go in a zip on the "stanley-doc-images" pre-release. Nothing is posted.
+on:
+  push:
+    branches: [stanley-doc]
+    paths:
+      - tools/video/stanley-doc/sources-extra.json
+      - .github/workflows/stanley-doc-images-extra.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stanley-doc-images-extra
+  cancel-in-progress: true
+
+jobs:
+  pictures:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Get ready
+        run: pip install -q pillow
+      - name: Find and download
+        run: timeout 35m python3 tools/video/stanley-doc/fetch.py --extra || echo "fetch.py stopped; see images/fetch-log-extra.txt"
+      - name: Zip the new pictures onto the pre-release
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd tools/video/stanley-doc/images
+          [ -s extra-files.txt ] || { echo "no new pictures"; exit 0; }
+          zip -q ../stanley-doc-images-extra-${{ github.run_number }}.zip $(cat extra-files.txt) manifest.json fetch-log-extra.txt
+          cd ..
+          gh release upload stanley-doc-images stanley-doc-images-extra-${{ github.run_number }}.zip --clobber
+      - name: Save the list and the log on this branch
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/video/stanley-doc/images/manifest.json tools/video/stanley-doc/images/fetch-log-extra.txt tools/video/stanley-doc/images/extra-files.txt || true
+          git commit -q -m "Stanley documentary: extra pictures (list and log)" || echo "nothing new"
+          for i in 1 2 3; do git pull -q --rebase origin stanley-doc && git push -q origin HEAD:stanley-doc && break; sleep 5; done

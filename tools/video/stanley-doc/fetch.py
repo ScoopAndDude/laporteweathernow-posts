@@ -326,7 +326,7 @@ def newspapers(spec):
             res_json = getjson(rid.split("#")[0] + ("&" if "?" in rid else "?") + "fo=json", loc=True)
             alto_url = find_alto_url(res_json)
             if alto_url:
-                pw, ph, blocks = alto_blocks(get(alto_url, loc=True), spec["q"])
+                pw, ph, blocks = alto_blocks(get(alto_url, loc=True), spec.get("pattern", spec["q"]))
                 sx, sy = iw / pw, ih / ph
                 for score, x, y, w, h, text in blocks[: spec.get("crops_per_page", 3)]:
                     pad = 0.15
@@ -555,7 +555,7 @@ def main_extra():
             continue
         log("Chronicling America:", q)
         try:
-            newspapers(dict(q, crops_per_page=0))
+            newspapers(dict(q, crops_per_page=q.get("crops_per_page", 0)))
         except Exception as e:
             log("  stopped:", e)
         write_manifest()

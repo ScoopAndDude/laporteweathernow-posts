@@ -1,0 +1,16 @@
+{
+ "about": "A second, smaller picture search for the Stanley Hotel documentary (fetch.py --extra): the 1911 newspaper stories about the explosion, the 1909 opening, and a few specific pictures. Same rules: public domain, CC0 and CC BY only.",
+ "commons": [
+  {"name": "dunraven", "search": "\"Earl of Dunraven\" Windham Wyndham-Quin", "max": 6},
+  {"name": "rocket", "search": "Stanley Rocket 1906 steam car Ormond", "max": 8},
+  {"name": "mtwagon", "search": "\"Stanley\" \"Mountain Wagon\"", "max": 8},
+  {"name": "stanley-postcard", "search": "\"Stanley Hotel\" Estes postcard", "max": 12},
+  {"name": "stanley-old", "search": "\"Stanley Hotel\" Colorado 1910s", "max": 10}
+ ],
+ "newspapers": [
+  {"name": "news1911", "q": "stanley hotel explosion", "dates": "1911-06-25/1911-07-31", "max": 14, "crops_per_page": 2,
+   "pattern": "Stanley|explosion|Wilson|Lambert", "license": "Public domain (1911 newspaper)"},
+  {"name": "news1909", "q": "stanley hotel estes park opened", "dates": "1909-06-01/1909-08-31", "max": 8, "crops_per_page": 2,
+   "pattern": "Stanley", "license": "Public domain (1909 newspaper)"}
+ ]
+}

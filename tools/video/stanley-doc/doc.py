@@ -13,7 +13,7 @@ with the same engine as the Belle Gunness documentary (tools/video/belle-doc on 
 The narrator (Kokoro-82M af_heart, like the shorts) is recorded by voice.py in GitHub Actions; each line's
 length and word timings set the timing of everything else. The pictures are real photos, postcards and
 1911 newspaper pages (public domain or CC BY, credited on screen), plus maps, title cards and a few scenes
-drawn here (a hotel room door, the closing card).
+drawn here (a hallway, a dining room, a window, a room door, a snowed-in hotel, the closing card).
 Music and sounds are written in code (music.py), so there's nothing for YouTube's Content ID to match.
 """
 import functools
@@ -2413,7 +2413,7 @@ def cmd_srt(outdir):
                 cur.append(w)
                 txt = " ".join(cur)
                 end_sentence = w.endswith((".", "?", "!"))
-                if len(txt) >= 70 or (end_sentence and len(txt) > 25) or (b - cs) > 5.5:
+                if len(txt) >= 70 or (end_sentence and len(txt) > 25) or (w.endswith((",", ":", ";")) and len(txt) > 40) or (b - cs) > 5.5:
                     cues.append((ln["_start"] + cs, ln["_start"] + b + 0.15, txt))
                     cur, cs = [], None
             if cur:
@@ -2614,7 +2614,7 @@ def cmd_credits(outdir=None):
         lic = f"[{p['license']}]({p['license_url']})" if p["license_url"] else p["license"]
         src = f"[{p['source'] or 'link'}]({p['page']})" if p["page"] else p["source"]
         rows.append(f"| {p['title']} | {p['who'] or '-'} | {lic} | {src} |")
-    rows += ["", "Music and sound effects were written for the film (tools/video/stanley-doc/music.py). The hotel room door and the closing card were drawn for the film (tools/video/stanley-doc/doc.py). Fonts: IM Fell English and Old Standard TT (SIL Open Font License), Special Elite (Apache 2.0), Lora (OFL), Inter (OFL). Maps from Natural Earth (public domain)."]
+    rows += ["", "Music and sound effects were written for the film (tools/video/stanley-doc/music.py). The night scenes (the hallway, the dining room, the window, the room door, the snowed-in Overlook) and the closing card were drawn for the film (tools/video/stanley-doc/doc.py). Fonts: IM Fell English and Old Standard TT (SIL Open Font License), Special Elite (Apache 2.0), Lora (OFL), Inter (OFL). Maps from Natural Earth (public domain)."]
     path = os.path.join(HERE, "CREDITS.md")
     open(path, "w", encoding="utf-8").write("\n".join(rows) + "\n")
     print("credits:", path, len(pics), "pictures")
