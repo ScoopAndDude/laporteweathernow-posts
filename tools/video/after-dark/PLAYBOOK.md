@@ -43,7 +43,8 @@ keep working.
 ## 1. Pick the topic
 
 1. Read `queue.json`. Take the first entry whose status is `"todo"`, keeping the series varied: don't do two jails,
-   two cemeteries or the same town back to back (`log.md` lists what ran).
+   two cemeteries or the same town back to back (`log.md` lists what ran). Follow the entry's `notes`: where they
+   differ from this playbook (a history-only story, a different ending), the notes win.
 2. Check what viewers asked for: with the vidIQ tools (load them with ToolSearch), read the comments on the
    La Porte Weather Now channel's 5 newest Shorts (`vidiq_user_videos`, then `vidiq_video_comments`). A town or
    place someone named in reply to "Comment your town" goes into `queue.json` as a new `"todo"` entry with
@@ -74,7 +75,7 @@ keep working.
 
 - 6 to 8 beats (paragraphs), 95 to 135 words in all (35 to 50 seconds). One beat = one scene.
 - Beat 1 is the hook and names the place. The last beat is "Comment your town, and it could be next." with
-  `"end": true`.
+  `"end": true`, unless the topic's notes give another ending.
 - Plain spoken English, short sentences. Write numbers and dates as digits ("In 1934", "On March 3"): the engine
   says years and dates right. Mark legends ("Legend says", "Visitors say").
 - No more certainty than the sources have: "was supposed to be escape-proof", not "was escape-proof"; "some say it
