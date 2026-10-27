@@ -21,7 +21,9 @@ SAY = [(r"\bLa Porte\b", "Luh-Port"), (r"\bHelgelien\b", "Hel-guh-leen"), (r"\b1
        (r"\b5:51\b", "five fifty-one"), (r"\b11:12\b", "eleven twelve"), (r"\b10:49\b", "ten forty-nine"),
        (r"\b4:41\b", "four forty-one"), (r"\b4:17\b", "four seventeen"), (r"\b2 AM\b", "two A M"),
        (r"\bNERDS\b", "Nerds"), (r"M&M's", "M and M's"), (r"CandyStore\.com", "Candy Store dot com"),
-       (r"\b1871\b", "eighteen seventy-one"), (r"\b1900s\b", "nineteen hundreds")]
+       (r"\b1871\b", "eighteen seventy-one"), (r"\b1900s\b", "nineteen hundreds"), (r"\b1891\b", "eighteen ninety-one"),
+       (r"\b1850s\b", "eighteen-fifties"),
+       (r"\bdiphtheria\b", "difftheeria"), (r"\bCanton\b", "Cantun")]
 
 # name: [(paragraph, pause after it)]
 REELS = {
@@ -135,6 +137,19 @@ REELS = {
          0.4),
         ("And number one: Posey Chapel Cemetery near Hesston, with bells, bouncing lights and a woman in white.", 0.5),
         ("Which one would you visit? Tell us in the comments.", 0.0),
+    ],
+    # Canton, Georgia (Oct. 26, Scoop's request): Riverview Cemetery's baby Marie (Rebecca Johnston, Cherokee Tribune,
+    # Oct. 29, 2016) and the Chastain House in Fannin County (Fannin County Chamber's Historic Heritage Trail; visitors'
+    # accounts)
+    "canton": [
+        ("At Riverview Cemetery in Canton, Georgia, a ghost-tour guide says a toddler pointed and said: baby.", 0.45),
+        ("There was no baby anyone else could see. When they asked its name, he said: Marie.", 0.45),
+        ("The baby buried right there was named Marie. She died in 1891.", 0.55),
+        ("An hour north, in Fannin County, the Chastain House has stood since the 1850s.", 0.4),
+        ("The Chastains lost their daughter Alice to diphtheria when she was ten. In bad weather, neighbors laid out "
+         "their dead in a room downstairs.", 0.5),
+        ("Visitors say they hear children laughing, and little footsteps.", 0.55),
+        ("Comment your town, and it could be next.", 0.0),
     ],
     # La Porte's own legends (from laporteweathernow.com/hauntings)
     "posey": [

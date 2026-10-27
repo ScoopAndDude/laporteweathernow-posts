@@ -85,9 +85,17 @@ The three hauntings reels are drawn (Belle's portrait in the Patton one is publi
 are the hauntings page's case files. Part 6's sources: Forest Park Review (Dec. 4, 2007), Chicagoist (Feb. 12, 2008),
 WBEZ (Apr. 28, 2008), Wikipedia. Post text: `posts-oct-25.json`; Facebook captions: `facebook-captions-oct-25.txt`.
 
-Planned (Central): Posey Thu. Oct. 29, 12:15 PM; Patton Thu., 7 PM; the forecast Fri. Oct. 30, 7:30 AM (remade that
-morning); Orr Lake Fri., 7 PM; Part 6 Sat. Oct. 31, 12:15 PM. They go into Buffer as the free plan's 10-per-channel
-queue frees up.
+In Buffer (the videos at commit 7599159), put in as the free plan's 10-per-channel queue freed up:
+
+| Reel | When (CDT) | YouTube | TikTok | X |
+|---|---|---|---|---|
+| Posey Chapel Cemetery | Thu., Oct. 29, 12:15 PM | 6ade2985e4be8a4d86b64754 | 6ade29886887a2efc1130387 | 6ade298be4be8a4d86b6487e |
+| Patton Cemetery | Thu., Oct. 29, 7 PM | 6adfe5dfc426e60252ceea65 | 6adfe5e3f266a5f7e103a85f | 6adfe5e6c426e60252ceec39 |
+| Hangman's Road | Fri., Oct. 30, 7 PM | 6adfe5eac426e60252ceed42 | 6adfea145837b0fb9bf97e42 | 6adfe5ec14a7789a82f79b4a |
+| Belle Gunness, Part 6 | Sat., Oct. 31, 12:15 PM | 6adfea0d0565644c947ff291 | 6adfff0da6170f32b17091eb | 6adfea10f266a5f7e104d7eb |
+
+The trick-or-treat forecast isn't in Buffer: it's remade from the newest NWS forecast the morning of Fri., Oct. 30
+(a scheduled task) and goes out at 7:30 AM after Scoop's OK.
 
 ## Rebuilding the workspace
 
@@ -151,6 +159,31 @@ other spots (Gravity Hill's railroad legend, a drowned-boy story, an operating c
 Script: `src/film/reel_haunts2.py` (`python3 film/reel_haunts2.py pinelake|orr2|top4 stills|video`); post text
 `posts-legends-oct-25.json` (`src/film/reel_posts4.py`); Facebook captions `facebook-captions-legends-oct-25.txt`.
 
-Planned (Scoop's OK, Oct. 25: "Spread out"): Orr Lake Road's doctor Sun. Oct. 25 at 8:30 PM CDT (share-now; the Buffer
-queues are full until tonight's posts go out), Pine Lake Cemetery Tue. Oct. 27 at 8:30 PM, the countdown Sat. Oct. 31
-at 7 PM. Pine Lake and the countdown go into Buffer Monday evening, once the Monday posts free two slots.
+In Buffer (Scoop's OK, Oct. 25: "Spread out"; the videos at commit c3a01fa). Orr Lake Road's doctor was planned for
+Sun. Oct. 25 at 8:30 PM; that reminder came a day late, and Scoop moved it to Monday ("Post it at 8:30 tonight"):
+
+| Reel | When (CDT) | YouTube | TikTok | X |
+|---|---|---|---|---|
+| Orr Lake Road's doctor | Mon., Oct. 26, 8:30 PM | 6adfe5c7c426e60252cee620 | 6adfe5cb3bff354cec674557 | 6adfe5cef266a5f7e1039e50 |
+| Pine Lake Cemetery | Tue., Oct. 27, 8:30 PM | 6adfe5d3c426e60252cee8b4 | 6adfe5d73bff354cec67473d | 6adfe5dac426e60252cee987 |
+| The countdown (4 places) | Sat., Oct. 31, 7 PM | 6adfff02457d00458c0f736f | (Tue., Oct. 27, after the 12:15 PM post frees a slot) | 6adfff05e322dad8011a435c |
+
+## Oct. 26: Canton, Georgia
+
+Scoop's request: "make me another spooky short on Canton GA, including the champlain house in fennin county." The
+haunted house the Fannin County Chamber of Commerce lists there is the Chastain House, so that's the one in the reel.
+
+| Reel | Length | What it says |
+|---|---|---|
+| `canton-georgia-baby-marie-and-the-chastain-house` | 37.1 s | Riverview Cemetery in Canton: a ghost-tour guide says a toddler pointed and said "baby," and named it "Marie"; a baby named Marie, who died in 1891, is buried there. Then the Chastain House in Fannin County (1850s; the Chastains' daughter Alice died of diphtheria at 10; in bad weather, a downstairs room held neighbors' dead); visitors say they hear children laughing and little footsteps. Ends "Comment your town, and it could be next." |
+
+Sources: Rebecca Johnston, "Cemeteries offer haunting experience," Cherokee Tribune (Oct. 29, 2016), for the Riverview
+story (the guide, Wilkie, wrote "The Haunting History of Canton"); the Fannin County Chamber's Historic Heritage Trail,
+Lower Loop, stop 3, for the Chastain House's history ("reportedly haunted"); what visitors say is from a 2011 visitor's
+blog post and Georgia Cabins For You's Blue Ridge ghost-tour page. Everything is drawn; no one is shown in the viewing
+room. On screen: "The Chastain House: view it from the road."
+Script: `src/film/reel_canton.py` (`python3 film/reel_canton.py stills|video`); narration `src/film/reels_vo.py canton`;
+post text `posts-canton-oct-26.json`; Facebook caption `facebook-caption-canton.txt`. Not posted: waiting for Scoop's OK.
+
+The countdown's YouTube text points to laporteweathernow.com/history (the site's Haunted La Porte County section)
+instead of laporteweathernow.com/hauntings, which isn't on the site (Oct. 26).
