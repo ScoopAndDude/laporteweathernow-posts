@@ -187,7 +187,7 @@ CHAPTERS = [
                       {"name": "Lyons", "at": [-105.27, 40.22], "show": 0.25, "off": [18, -10]},
                       {"name": "Estes Park", "at": [-105.52, 40.38], "show": 0.75, "off": [-262, -72]},
                       {"name": "ROCKY MOUNTAINS", "at": [-105.78, 40.05], "dot": 0, "font": "fell-sc", "size": 44, "tracking": 6}], w=1.25),
-           P("mtwagon-05.jpg", tone="warm", z=[1.04, 1.14], f0=[0.40, 0.62], f1=[0.56, 0.62], w=0.9,
+           P("mtwagon-01.jpg", tone="warm", crop=[0.10, 0.08, 0.94, 0.82], z=[1.0, 1.1], f0=[0.40, 0.5], f1=[0.56, 0.5], w=0.9,
              lower="A 1913 Stanley Mountain Wagon | at a steam rally in the Netherlands, 2015")],
           sfx=[["train", 1.5]]),
         L("c2-06", "The Stanley Hotel opened on July 4th, 1909.", BIG("July 4, 1909", cap="The Stanley Hotel opens", file="stanley-search-21.jpg", tone="sepia"), gap=0.8,
@@ -211,12 +211,12 @@ CHAPTERS = [
         L("c3-02", "As the hotel tells the story, the power was out, and a chambermaid named Elizabeth Wilson walked into Room 217 with a flame, not knowing the room was full of gas.",
           dict(type="door", number="217", z=[1.0, 1.18], f0=[0.5, 0.5], f1=[0.5, 0.42]), sfx=[["creak", 1.0]]),
         L("c3-03", "The newspapers reported eight people hurt, none of them guests. The worst hurt was the chambermaid. The Associated Press said she was hurled from the second floor to the first, and that both her ankles were broken.",
-          [dict(type="pile", w=0.95, lower="Papers across the West | June 26 and 27, 1911", items=[
+          [dict(type="pile", w=1.0, lower="Papers across the country | June 26 and 27, 1911", items=[
               {"file": "clip1911-sfcall.jpg", "width": 0.34, "at": [0.30, 0.31], "rot": -3.0},
               {"file": "clip1911-honolulu.jpg", "width": 0.30, "at": [0.72, 0.29], "rot": 2.8},
               {"file": "clip1911-saltlake.jpg", "width": 0.27, "max_h": 0.5, "at": [0.33, 0.68], "rot": 1.8},
               {"file": "clip1911-tonopah.jpg", "width": 0.26, "max_h": 0.5, "at": [0.67, 0.66], "rot": -1.6}]),
-           NEWS("clip1911-topeka.jpg", mode="clip", size=[0.84, 0.76], z=[1.0, 1.09], f0=[0.5, 0.48], f1=[0.5, 0.58], w=1.25,
+           NEWS("clip1911-topeka.jpg", mode="clip", size=[0.84, 0.76], z=[1.0, 1.09], f0=[0.5, 0.48], f1=[0.5, 0.58], w=1.04,
                 lower="The Topeka State Journal | June 26, 1911")]),
         L("c3-04", "Not every paper agreed. Colorado papers gave her name as Elizabeth Lambert. And four days later, the Fort Collins Express printed a long, detailed account saying she had never fallen through the floor at all.",
           TYPED("NOT EVERY PAPER AGREED", ["Colorado papers named her", "Elizabeth Lambert.", "The Fort Collins Express, June 29:", "she never fell through the floor."])),

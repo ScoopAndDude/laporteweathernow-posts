@@ -2282,9 +2282,16 @@ def fmt_t(t):
     return f"{int(t // 60)}:{t % 60:04.1f}"
 
 
+def render_source():
+    """doc.py without the credits and description block."""
+    src = open(__file__, "rb").read()
+    a, b = src.find(b"# >>> not part" + b" of the picture"), src.find(b"# <<< not part" + b" of the picture")
+    return src[:a] + src[b:] if 0 <= a < b else src
+
+
 def seg_key(c):
     h = hashlib.sha1()
-    h.update(open(__file__, "rb").read())
+    h.update(render_source())
     h.update(json.dumps([(s.kind, s.spec, round(s.start, 3), round(s.end, 3)) for s in c["shots"]], sort_keys=True, default=str).encode())
     h.update(json.dumps(c["overlays"], sort_keys=True, default=str).encode())
     h.update(json.dumps([(ln["id"], ln.get("say"), round(ln["_start"], 3)) for ln in c["lines"]]).encode())
@@ -2573,13 +2580,16 @@ def clean_credit(c):
     return clean_who(c)
 
 
+# >>> not part of the picture: credits and the description (seg_key leaves this block out, so changes here
+# don't make the video render again)
 WHO_FIXES = [   # Commons "author" fields that don't read well as a credit
     (r"Beinecke Rare Book &(amp;)? Manuscript Library.*", "Beinecke Rare Book & Manuscript Library, Yale University"),
     (r"Library of Congress\s*''Catalog:''.*", "Library of Congress"),
-    (r"This file was contributed to Wikimedia Commons by (University of Colorado[^.]*).*", r"\1"),
-    (r"This file was contributed to Wikimedia Commons by University of Colora.*", "University of Colorado Boulder Libraries"),
+    (r"^(This file was contributed to Wikimedia Commons by )?University of Colorado.*", "University of Colorado Boulder Libraries"),
+    (r"^Miscellaneous Items in High Demand, PPOC, Library of Congress$", "Library of Congress"),
+    (r"^U\.S\. Forest Service-\s*", "U.S. Forest Service, "),
     (r"Jacket by Alex Gotfryd Photo by Alex Gotfryd", "Alex Gotfryd"),
-    (r"^Anonymous$", "unknown photographers"),
+    (r"^Anonymous$", ""),
     (r"^Wikimedia Commons$", ""),
     (r"^User:", ""),
 ]
@@ -2588,9 +2598,9 @@ WHO_FIXES = [   # Commons "author" fields that don't read well as a credit
 def clean_who(w):
     import re
     w = (w or "").replace("&amp;", "&")
+    w = re.sub(r"(Unknown author|Unknown photographer|or not provided|Unknown)", "", w, flags=re.I).strip()
     for pat, rep in WHO_FIXES:
         w = re.sub(pat, rep, w.strip())
-    w = re.sub(r"(Unknown author|Unknown photographer|or not provided|Unknown)", "", w or "", flags=re.I)
     w = re.sub(r"\s+from\s.*$", "", w).strip(" ,;")
     w = re.split(r"(?<=[a-z])\.\s", w)[0]            # a long credit line: its first sentence
     return w[:70].strip()
@@ -2598,6 +2608,7 @@ def clean_who(w):
 
 def used_pictures(chapters):
     """Every picture shown, in order of first use, with what its credit needs."""
+    import re
     out, seen = [], set()
     for c in chapters:
         for sh in c["shots"]:
@@ -2611,8 +2622,11 @@ def used_pictures(chapters):
                 lic = (m.get("license") or "").strip()
                 low = lic.lower()
                 pd = low.startswith(("public domain", "pd", "no known", "no restrictions"))
-                title = f"{paper_name(m.get('artist', ''))}, {nice_date(m.get('date', ''))}" if m.get("kind") == "newspaper-page" else clean_title(m.get("title", f))
-                out.append({"file": f, "title": title, "who": clean_who(m.get("artist", "")) or clean_credit(m.get("credit", "")),
+                paper = m.get("kind") == "newspaper-page"
+                title = f"{paper_name(m.get('artist', ''))}, {nice_date(m.get('date', ''))}" if paper else clean_title(m.get("title", f))
+                title = re.sub(r"\s*\[oahu, hawaii\]", ", Hawaii", title, flags=re.I)
+                who = "" if paper else (clean_who(m.get("artist", "")) or clean_who(clean_credit(m.get("credit", ""))))
+                out.append({"file": f, "title": title, "who": who,
                             "license": "public domain" if pd else lic, "license_url": LICENSE_URL.get(low, ""),
                             "page": m.get("page", ""), "source": m.get("source", ""), "kind": m.get("kind", ""),
                             "date": m.get("date", "")})
@@ -2638,6 +2652,7 @@ def cmd_credits(outdir=None):
 
 def cmd_description(outdir):
     """The YouTube description: chapter times from the finished timing, and the picture credits."""
+    import re
     script = load_script()
     yt = json.load(open(os.path.join(HERE, "youtube.json"), encoding="utf-8"))
     chapters = build(script)
@@ -2658,19 +2673,19 @@ def cmd_description(outdir):
     groups = {}
     for p in pics:
         if p["kind"] == "newspaper-page":
-            key = ("newspaper pages", "public domain, from the Library of Congress (Chronicling America)")
+            key = ("newspaper pages", "public domain, Library of Congress, Chronicling America")
         elif p["license"] == "public domain":
-            key = ("Public domain", p["who"] or p["source"])
+            key = ("Public domain", p["who"])
         else:
             key = (p["who"] or "Unknown", f"{p['license']} ({p['license_url'].replace('https://', '')})")
-        groups.setdefault(key, []).append(p["title"])
+        groups.setdefault(key, []).append(re.sub(r"\s*\[oahu, hawaii\]", ", Hawaii", p["title"], flags=re.I))
     full_list = "Full list with titles and links: https://github.com/ScoopAndDude/laporteweathernow-posts/blob/stanley-doc/tools/video/stanley-doc/CREDITS.md"
 
     def credit_lines(compact):
         out, pd = [], []
         for (who, lic), titles in groups.items():
             if who == "newspaper pages":
-                out.append(f"Newspaper pages: {lic}")
+                out.append(f"Newspaper pages ({lic}): " + "; ".join(titles))
             elif who == "Public domain":
                 pd.append((lic, titles))
             elif compact and len(titles) > 2:
@@ -2679,9 +2694,12 @@ def cmd_description(outdir):
                 out.append(f"{who}, {lic}: " + "; ".join(titles))
         if pd:
             if compact:
-                out.append("Public domain: " + "; ".join(sorted({lic for lic, _ in pd if lic})))
+                names = sorted({lic for lic, _ in pd if lic})
+                if any(not lic for lic, _ in pd):
+                    names.append("and photographers whose names weren't recorded")
+                out.append("Public domain: " + "; ".join(names))
             else:
-                out += [f"Public domain ({lic}): " + "; ".join(titles) for lic, titles in pd]
+                out += [f"Public domain ({lic or 'photographer not recorded'}): " + "; ".join(titles) for lic, titles in pd]
         return out + [full_list]
 
     desc = ""
@@ -2695,6 +2713,9 @@ def cmd_description(outdir):
     open(meta, "w", encoding="utf-8").write(f"Title: {yt['title']}\n\nTags: {', '.join(yt['tags'])}\n\nCategory: Education\nMade for kids: No\n")
     print("description:", path, len(desc), "characters (YouTube allows 5,000)")
     return path
+
+
+# <<< not part of the picture
 
 
 def main():
