@@ -41,4 +41,4 @@ python3 kit_sheet.py jail cell 'dunes:{"trees":true}'   # preview scene kinds
 
 | Date | Short | Length | Posted |
 |---|---|---|---|
-| Oct. 27, 2026 | `crown-point-old-jail-dillinger`: Crown Point's "escape-proof" jail, Dillinger's 1934 escape, the voices visitors report | 43 s | Wed., Oct. 28, 6:30 PM (see log.md) |
+| Oct. 27, 2026 | `crown-point-old-jail-dillinger`: Crown Point's "escape-proof" jail, Dillinger's 1934 escape, the voices visitors report | 44 s | Wed., Oct. 28, 6:30 PM (see log.md) |
