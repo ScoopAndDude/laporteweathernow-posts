@@ -1,0 +1,75 @@
+name: Stanley Hotel documentary, 1911 newspaper stories at full size (one-off, Oct. 2026)
+
+# Cuts the 1911 stories about the Stanley Hotel explosion out of the Library of Congress page scans at full
+# resolution (tools/video/stanley-doc/news-crops.json), for chapter 3 of the documentary. The pictures go in a zip
+# on the "stanley-doc-images" pre-release; nothing on the branch changes and nothing is posted.
+on:
+  push:
+    branches: [stanley-doc]
+    paths:
+      - tools/video/stanley-doc/news-crops.json
+      - .github/workflows/stanley-doc-news-crops.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stanley-doc-news-crops
+  cancel-in-progress: true
+
+jobs:
+  crops:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Get ready
+        run: pip install -q pillow
+      - name: Download the stories
+        run: |
+          mkdir -p crops
+          python3 - <<'PY'
+          import io, json, time, urllib.request
+          from PIL import Image
+          UA = "LaPorteWeatherNow/1.0 (https://laporteweathernow.com; laporteweathernow@gmail.com) documentary picture search"
+          spec = json.load(open("tools/video/stanley-doc/news-crops.json"))
+          log = []
+          for it in spec["items"]:
+              reg = it["region"]
+              region = "full" if reg == "full" else ",".join(str(v) for v in reg)
+              ok = False
+              for size in ("full", "pct:75", "!5200,5200"):
+                  url = f'{it["iiif"]}/{region}/{size}/0/default.jpg'
+                  for attempt in range(4):
+                      try:
+                          req = urllib.request.Request(url, headers={"User-Agent": UA})
+                          raw = urllib.request.urlopen(req, timeout=180).read()
+                          im = Image.open(io.BytesIO(raw)).convert("RGB")
+                          im.save("crops/" + it["out"], quality=93)
+                          log.append(f'{it["out"]}: {im.size} from {url}')
+                          ok = True
+                          break
+                      except Exception as e:
+                          log.append(f'  {url}: {e}')
+                          time.sleep(6 * (attempt + 1))
+                  if ok:
+                      break
+              if not ok:
+                  log.append(f'{it["out"]}: FAILED')
+              time.sleep(2)
+          open("crops/crops-log.txt", "w").write("\n".join(log) + "\n")
+          print("\n".join(log))
+          PY
+      - name: Zip them onto the pre-release
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd crops
+          ls *.jpg >/dev/null 2>&1 || { echo "no pictures"; exit 0; }
+          zip -q ../stanley-doc-news-crops.zip *.jpg crops-log.txt
+          cd ..
+          gh release upload stanley-doc-images stanley-doc-news-crops.zip --clobber

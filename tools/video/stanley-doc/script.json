@@ -11,12 +11,30 @@
      "say": "On October 30th, 1974, the night before Halloween, a young writer and his wife checked into an old hotel in the Colorado Rockies.",
      "tts": "On October 30th, nineteen seventy-four, the night before Halloween, a young writer and his wife checked into an old hotel in the Colorado Rockies.",
      "v": {
-      "type": "quote",
-      "text": "the hotel at night",
-      "by": "picture to come",
-      "size": 48
+      "type": "photo",
+      "file": "stanley-search-02.jpg",
+      "fit": "cover",
+      "tone": "night",
+      "z": [
+       1.0,
+       1.16
+      ],
+      "f0": [
+       0.55,
+       0.62
+      ],
+      "f1": [
+       0.56,
+       0.56
+      ]
      },
-     "lower": "Estes Park, Colorado | October 30, 1974"
+     "lower": "Estes Park, Colorado | October 30, 1974",
+     "sfx": [
+      [
+       "creak",
+       6.0
+      ]
+     ]
     },
     {
      "id": "o02",
@@ -87,22 +105,58 @@
     {
      "id": "o06",
      "say": "The writer was Stephen King. The book became The Shining. And the hotel was the Stanley.",
-     "v": {
-      "type": "quote",
-      "text": "the Stanley",
-      "by": "picture to come",
-      "size": 48
-     },
+     "v": [
+      {
+       "type": "photo",
+       "file": "king-15.jpg",
+       "fit": "print",
+       "tone": "bw",
+       "z": [
+        1.0,
+        1.08
+       ],
+       "w": 1.0,
+       "lower": "Stephen King | 1974"
+      },
+      {
+       "type": "photo",
+       "file": "stanley-search-15.jpg",
+       "fit": "cover",
+       "tone": "warm",
+       "z": [
+        1.0,
+        1.18
+       ],
+       "f0": [
+        0.5,
+        0.55
+       ],
+       "f1": [
+        0.5,
+        0.34
+       ],
+       "w": 1.5,
+       "lower": "The Stanley Hotel | Estes Park, Colorado"
+      }
+     ],
      "gap": 0.8
     },
     {
      "id": "o07",
      "say": "But the Stanley's story starts more than seventy years earlier, with a man from Maine who came to these mountains expecting to die.",
      "v": {
-      "type": "quote",
-      "text": "old photo of the hotel",
-      "by": "picture to come",
-      "size": 48
+      "type": "photo",
+      "file": "fo-stanley-47.jpg",
+      "fit": "print",
+      "tone": "bw",
+      "z": [
+       1.0,
+       1.1
+      ],
+      "f0": [
+       0.5,
+       0.45
+      ]
      },
      "gap": 0.6
     }
@@ -140,42 +194,85 @@
      "say": "Freelan Oscar Stanley was born on June 1st, 1849, in Kingfield, Maine. He had an identical twin, Francis. People knew them as F.O. and F.E.",
      "tts": "Freelan Oscar Stanley was born on June 1st, eighteen forty-nine, in Kingfield, Maine. He had an identical twin, Francis. People knew them as F.O. and F.E.",
      "v": {
-      "type": "quote",
-      "text": "F.O. Stanley",
-      "by": "picture to come",
-      "size": 48
-     }
+      "type": "photo",
+      "file": "stanley-search-13.jpg",
+      "fit": "cover",
+      "tone": "sepia",
+      "z": [
+       1.0,
+       1.16
+      ],
+      "f0": [
+       0.45,
+       0.5
+      ],
+      "f1": [
+       0.42,
+       0.32
+      ]
+     },
+     "lower": "The Stanley twins | a trial run in Newton, Massachusetts, 1897"
     },
     {
      "id": "c1-02",
      "say": "The twins were inventors. Their company made photographic dry plates, and in 1905, they sold it to Eastman Kodak.",
      "tts": "The twins were inventors. Their company made photographic dry plates, and in nineteen oh five, they sold it to Eastman Kodak.",
      "v": {
-      "type": "quote",
-      "text": "dry plates",
-      "by": "picture to come",
-      "size": 48
+      "type": "typed",
+      "head": "THE STANLEY TWINS",
+      "rows": [
+       "Born: Kingfield, Maine, 1849.",
+       "Business: photographic dry plates.",
+       "Sold to Eastman Kodak: 1905."
+      ]
      }
     },
     {
      "id": "c1-03",
      "say": "By then, they had a new business: steam-powered automobiles. The Stanley Steamer.",
-     "v": {
-      "type": "quote",
-      "text": "Stanley Steamer",
-      "by": "picture to come",
-      "size": 48
-     }
+     "v": [
+      {
+       "type": "photo",
+       "file": "steamer-16.jpg",
+       "fit": "print",
+       "tone": "paper",
+       "z": [
+        1.0,
+        1.08
+       ],
+       "lower": "A Stanley steam car | in a German car magazine, 1900"
+      },
+      {
+       "type": "photo",
+       "file": "steamer-07.jpg",
+       "fit": "cover",
+       "tone": "warm",
+       "z": [
+        1.0,
+        1.12
+       ],
+       "f0": [
+        0.5,
+        0.55
+       ],
+       "f1": [
+        0.42,
+        0.6
+       ],
+       "lower": "A 1906 Stanley Steamer | Collings Foundation"
+      }
+     ]
     },
     {
      "id": "c1-04",
      "say": "In 1906, a Stanley steam racer set a world speed record on the sand at Ormond Beach, Florida: more than 127 miles an hour.",
      "tts": "In nineteen oh six, a Stanley steam racer set a world speed record on the sand at Ormond Beach, Florida: more than a hundred and twenty-seven miles an hour.",
      "v": {
-      "type": "quote",
-      "text": "Rocket racer",
-      "by": "picture to come",
-      "size": 48
+      "type": "big",
+      "text": "127 mph",
+      "tone": "bw",
+      "cap": "A world speed record, Ormond Beach, Florida, 1906",
+      "file": "steamer-30.jpg"
      }
     },
     {
@@ -183,10 +280,13 @@
      "say": "But F.O. Stanley was sick. He had survived tuberculosis once, in 1881, the year the disease killed one of his brothers. In 1903, it came back, and this time it looked like it would kill him.",
      "tts": "But F.O. Stanley was sick. He had survived tuberculosis once, in eighteen eighty-one, the year the disease killed one of his brothers. In nineteen oh three, it came back, and this time it looked like it would kill him.",
      "v": {
-      "type": "quote",
-      "text": "F.O. portrait",
-      "by": "picture to come",
-      "size": 48
+      "type": "typed",
+      "head": "TUBERCULOSIS",
+      "rows": [
+       "1881: F.O. Stanley survives it.",
+       "That year, it kills his brother Solomon.",
+       "1903: it comes back."
+      ]
      },
      "gap": 0.7
     },
@@ -285,21 +385,59 @@
      "say": "Stanley arrived on June 30th, 1903, with his wife, Flora.",
      "tts": "Stanley arrived on June 30th, nineteen oh three, with his wife, Flora.",
      "v": {
-      "type": "quote",
-      "text": "Estes Park 1900s",
-      "by": "picture to come",
-      "size": 48
-     }
+      "type": "photo",
+      "file": "estes-park-cat-33.jpg",
+      "fit": "cover",
+      "tone": "sepia",
+      "z": [
+       1.0,
+       1.12
+      ],
+      "f0": [
+       0.5,
+       0.55
+      ],
+      "f1": [
+       0.55,
+       0.62
+      ],
+      "crop": [
+       0.02,
+       0.03,
+       0.98,
+       0.9
+      ]
+     },
+     "lower": "Estes Park | 1907"
     },
     {
      "id": "c1-08",
      "say": "The mountains worked, or something did. He got better. He would live another thirty-seven years.",
      "v": {
-      "type": "quote",
-      "text": "valley",
-      "by": "picture to come",
-      "size": 48
+      "type": "photo",
+      "file": "longs-peak-14.jpg",
+      "fit": "cover",
+      "tone": "warm",
+      "z": [
+       1.0,
+       1.12
+      ],
+      "f0": [
+       0.5,
+       0.45
+      ],
+      "f1": [
+       0.55,
+       0.35
+      ],
+      "crop": [
+       0.01,
+       0.02,
+       0.99,
+       0.97
+      ]
      },
+     "lower": "Longs Peak, from Estes Park | Detroit Publishing Co., about 1900",
      "gap": 0.8
     }
    ]
@@ -317,149 +455,264 @@
     {
      "id": "c2-01",
      "say": "Stanley fell in love with the valley. He and Flora built a summer house there, and he decided to build a grand hotel, for friends from back East who came out to visit.",
-     "v": {
-      "type": "quote",
-      "text": "Estes Park valley",
-      "by": "picture to come",
-      "size": 48
-     }
+     "v": [
+      {
+       "type": "photo",
+       "file": "longs-peak-20.jpg",
+       "fit": "cover",
+       "tone": "warm",
+       "z": [
+        1.0,
+        1.1
+       ],
+       "f0": [
+        0.5,
+        0.5
+       ],
+       "f1": [
+        0.45,
+        0.4
+       ],
+       "crop": [
+        0.02,
+        0.02,
+        0.98,
+        0.96
+       ],
+       "w": 1.3
+      },
+      {
+       "type": "photo",
+       "file": "estes-park-old-07.jpg",
+       "fit": "print",
+       "tone": "warm",
+       "z": [
+        1.0,
+        1.08
+       ],
+       "lower": "Beautiful Estes Park | a 1912 booklet"
+      }
+     ]
     },
     {
      "id": "c2-02",
      "say": "He bought the land from the ranch of an Irish earl, Lord Dunraven, who back in the 1870s had tried to take over the whole valley as his private hunting preserve.",
      "tts": "He bought the land from the ranch of an Irish earl, Lord Dunraven, who back in the eighteen seventies had tried to take over the whole valley as his private hunting preserve.",
-     "v": {
-      "type": "quote",
-      "text": "Dunraven / map",
-      "by": "picture to come",
-      "size": 48
-     }
+     "v": [
+      {
+       "type": "photo",
+       "file": "dunraven-01.jpg",
+       "fit": "print",
+       "tone": "bw",
+       "z": [
+        1.0,
+        1.06
+       ],
+       "w": 0.85,
+       "lower": "The 4th Earl of Dunraven | 1841 – 1926"
+      },
+      {
+       "type": "photo",
+       "file": "longs-peak-02.jpg",
+       "fit": "cover",
+       "tone": "warm",
+       "z": [
+        1.0,
+        1.14
+       ],
+       "f0": [
+        0.35,
+        0.55
+       ],
+       "f1": [
+        0.62,
+        0.45
+       ],
+       "w": 1.15,
+       "lower": "Estes Park, by Albert Bierstadt | 1877"
+      }
+     ]
     },
     {
      "id": "c2-03",
      "say": "Construction began in 1907. Stanley helped design it himself, in the Colonial Revival style of the East: white walls, red roofs and a long porch facing the peaks.",
      "tts": "Construction began in nineteen oh seven. Stanley helped design it himself, in the Colonial Revival style of the East: white walls, red roofs and a long porch facing the peaks.",
      "v": {
-      "type": "quote",
-      "text": "hotel, early photo",
-      "by": "picture to come",
-      "size": 48
-     }
+      "type": "photo",
+      "file": "stanley-search-16.jpg",
+      "fit": "cover",
+      "tone": "warm",
+      "z": [
+       1.08,
+       1.2
+      ],
+      "f0": [
+       0.25,
+       0.5
+      ],
+      "f1": [
+       0.72,
+       0.5
+      ]
+     },
+     "lower": "The Stanley Hotel | today"
     },
     {
      "id": "c2-04",
      "say": "To light it, he built a hydroelectric plant on the Fall River, which brought electricity to Estes Park for the first time.",
      "v": {
-      "type": "quote",
-      "text": "Fall River",
-      "by": "picture to come",
-      "size": 48
-     }
+      "type": "photo",
+      "file": "estes-park-cat-15.jpg",
+      "fit": "cover",
+      "tone": "sepia",
+      "z": [
+       1.0,
+       1.12
+      ],
+      "f0": [
+       0.5,
+       0.5
+      ],
+      "f1": [
+       0.45,
+       0.6
+      ],
+      "crop": [
+       0.0,
+       0.0,
+       1.0,
+       0.92
+      ]
+     },
+     "lower": "The Fall River, Estes Park | 1921"
     },
     {
      "id": "c2-05",
      "say": "Getting there was half the adventure. Guests rode the train as far as Lyons, in the foothills. From there, Stanley's company carried them up the canyon in steam-powered Mountain Wagons.",
-     "v": {
-      "type": "map",
-      "map": "colorado",
-      "cam0": [
-       -105.2,
-       40.0,
-       2.4
-      ],
-      "cam1": [
-       -105.33,
-       40.16,
-       1.5
-      ],
-      "move_end": 0.6,
-      "title": "1909",
-      "route": [
-       [
-        -104.99,
-        39.74
+     "v": [
+      {
+       "type": "map",
+       "map": "colorado",
+       "cam0": [
+        -105.2,
+        40.0,
+        2.4
        ],
-       [
-        -105.08,
-        39.95
-       ],
-       [
-        -105.27,
-        40.22
-       ],
-       [
+       "cam1": [
         -105.33,
-        40.25
+        40.16,
+        1.5
        ],
-       [
-        -105.4,
-        40.3
-       ],
-       [
-        -105.47,
-        40.35
-       ],
-       [
-        -105.52,
-        40.38
-       ]
-      ],
-      "route_from": 0.15,
-      "route_to": 0.85,
-      "places": [
-       {
-        "name": "Denver",
-        "at": [
+       "move_end": 0.6,
+       "title": "1909",
+       "route": [
+        [
          -104.99,
          39.74
         ],
-        "show": 0.0
-       },
-       {
-        "name": "Boulder",
-        "at": [
-         -105.27,
-         40.01
+        [
+         -105.08,
+         39.95
         ],
-        "show": 0.0
-       },
-       {
-        "name": "Lyons",
-        "at": [
+        [
          -105.27,
          40.22
         ],
-        "show": 0.25,
-        "off": [
-         18,
-         -10
-        ]
-       },
-       {
-        "name": "Estes Park",
-        "at": [
+        [
+         -105.33,
+         40.25
+        ],
+        [
+         -105.4,
+         40.3
+        ],
+        [
+         -105.47,
+         40.35
+        ],
+        [
          -105.52,
          40.38
-        ],
-        "show": 0.75,
-        "off": [
-         -262,
-         -72
         ]
-       },
-       {
-        "name": "ROCKY MOUNTAINS",
-        "at": [
-         -105.78,
-         40.05
-        ],
-        "dot": 0,
-        "font": "fell-sc",
-        "size": 44,
-        "tracking": 6
-       }
-      ]
-     },
+       ],
+       "route_from": 0.15,
+       "route_to": 0.85,
+       "places": [
+        {
+         "name": "Denver",
+         "at": [
+          -104.99,
+          39.74
+         ],
+         "show": 0.0
+        },
+        {
+         "name": "Boulder",
+         "at": [
+          -105.27,
+          40.01
+         ],
+         "show": 0.0
+        },
+        {
+         "name": "Lyons",
+         "at": [
+          -105.27,
+          40.22
+         ],
+         "show": 0.25,
+         "off": [
+          18,
+          -10
+         ]
+        },
+        {
+         "name": "Estes Park",
+         "at": [
+          -105.52,
+          40.38
+         ],
+         "show": 0.75,
+         "off": [
+          -262,
+          -72
+         ]
+        },
+        {
+         "name": "ROCKY MOUNTAINS",
+         "at": [
+          -105.78,
+          40.05
+         ],
+         "dot": 0,
+         "font": "fell-sc",
+         "size": 44,
+         "tracking": 6
+        }
+       ],
+       "w": 1.25
+      },
+      {
+       "type": "photo",
+       "file": "mtwagon-05.jpg",
+       "fit": "cover",
+       "tone": "warm",
+       "z": [
+        1.04,
+        1.14
+       ],
+       "f0": [
+        0.4,
+        0.62
+       ],
+       "f1": [
+        0.56,
+        0.62
+       ],
+       "w": 0.9,
+       "lower": "A 1913 Stanley Mountain Wagon | at a steam rally in the Netherlands, 2015"
+      }
+     ],
      "sfx": [
       [
        "train",
@@ -474,40 +727,133 @@
      "v": {
       "type": "big",
       "text": "July 4, 1909",
-      "cap": "The Stanley Hotel opens"
+      "tone": "sepia",
+      "cap": "The Stanley Hotel opens",
+      "file": "stanley-search-21.jpg"
      },
-     "gap": 0.8
+     "gap": 0.8,
+     "sfx": [
+      [
+       "bell",
+       0.2
+      ]
+     ]
     },
     {
      "id": "c2-07",
      "say": "That same year, he built a concert hall beside it, for Flora, who played the piano.",
      "v": {
-      "type": "quote",
-      "text": "concert hall",
-      "by": "picture to come",
-      "size": 48
-     }
+      "type": "photo",
+      "file": "stanley-search-03.jpg",
+      "fit": "cover",
+      "tone": "warm",
+      "z": [
+       1.0,
+       1.12
+      ],
+      "f0": [
+       0.5,
+       0.5
+      ],
+      "f1": [
+       0.5,
+       0.4
+      ]
+     },
+     "lower": "The Concert Hall | today"
     },
     {
      "id": "c2-07b",
      "say": "He also helped bring elk back to the valley from Yellowstone, in 1913, and backed the campaign for Rocky Mountain National Park, which was created right next door in 1915.",
      "tts": "He also helped bring elk back to the valley from Yellowstone, in nineteen thirteen, and backed the campaign for Rocky Mountain National Park, which was created right next door in nineteen fifteen.",
-     "v": {
-      "type": "quote",
-      "text": "elk / park",
-      "by": "picture to come",
-      "size": 48
-     }
+     "v": [
+      {
+       "type": "photo",
+       "file": "elk-estes-01.jpg",
+       "fit": "cover",
+       "tone": "warm",
+       "z": [
+        1.0,
+        1.12
+       ],
+       "f0": [
+        0.55,
+        0.6
+       ],
+       "f1": [
+        0.6,
+        0.55
+       ],
+       "lower": "Elk in Estes Park | today"
+      },
+      {
+       "type": "photo",
+       "file": "longs-peak-15.jpg",
+       "fit": "print",
+       "tone": "bw",
+       "z": [
+        1.0,
+        1.08
+       ],
+       "lower": "Enos Mills | who led the campaign for the park"
+      },
+      {
+       "type": "photo",
+       "file": "longs-peak-09.jpg",
+       "fit": "cover",
+       "tone": "bw",
+       "z": [
+        1.0,
+        1.1
+       ],
+       "f0": [
+        0.5,
+        0.45
+       ],
+       "f1": [
+        0.5,
+        0.35
+       ],
+       "lower": "Rocky Mountain National Park | Ansel Adams, 1930s"
+      }
+     ]
     },
     {
      "id": "c2-08",
      "say": "It was a summer resort, for wealthy travelers, and for people who came west for their health, the way Stanley had. For decades, the hotel had no heat. Every fall, it closed for the winter.",
-     "v": {
-      "type": "quote",
-      "text": "winter",
-      "by": "picture to come",
-      "size": 48
-     },
+     "v": [
+      {
+       "type": "photo",
+       "file": "estes-park-old-13.jpg",
+       "fit": "print",
+       "tone": "warm",
+       "z": [
+        1.0,
+        1.08
+       ],
+       "w": 1.4,
+       "lower": "A summer resort | an Estes Park postcard, 1910s",
+       "credit": "Postcard: UBC Library"
+      },
+      {
+       "type": "photo",
+       "file": "stanley-search-14.jpg",
+       "fit": "cover",
+       "tone": "bw",
+       "z": [
+        1.0,
+        1.12
+       ],
+       "f0": [
+        0.5,
+        0.55
+       ],
+       "f1": [
+        0.6,
+        0.5
+       ]
+      }
+     ],
      "gap": 0.8
     }
    ]
@@ -527,10 +873,19 @@
      "say": "On June 25th, 1911, in the hotel's third summer, a gas explosion went off inside the Stanley.",
      "tts": "On June 25th, nineteen eleven, in the hotel's third summer, a gas explosion went off inside the Stanley.",
      "v": {
-      "type": "quote",
-      "text": "1911 newspaper",
-      "by": "picture to come",
-      "size": 48
+      "type": "news",
+      "file": "news1911-05-hi.jpg",
+      "mode": "zoom",
+      "box": [
+       0.2597,
+       0.5462,
+       0.4038,
+       0.6308
+      ],
+      "margin": 1.12,
+      "hold": 0.32,
+      "max_side": 8700,
+      "lower": "The Salt Lake Tribune | front page, June 26, 1911"
      },
      "sfx": [
       [
@@ -568,13 +923,77 @@
     },
     {
      "id": "c3-03",
-     "say": "The newspapers reported eight workers hurt, and no guests. The worst hurt was the chambermaid. The Associated Press said she was hurled from the second floor to the first, and that both her ankles were broken.",
-     "v": {
-      "type": "quote",
-      "text": "AP story",
-      "by": "picture to come",
-      "size": 48
-     }
+     "say": "The newspapers reported eight people hurt, none of them guests. The worst hurt was the chambermaid. The Associated Press said she was hurled from the second floor to the first, and that both her ankles were broken.",
+     "v": [
+      {
+       "type": "pile",
+       "w": 0.95,
+       "lower": "Papers across the West | June 26 and 27, 1911",
+       "items": [
+        {
+         "file": "clip1911-sfcall.jpg",
+         "width": 0.34,
+         "at": [
+          0.3,
+          0.31
+         ],
+         "rot": -3.0
+        },
+        {
+         "file": "clip1911-honolulu.jpg",
+         "width": 0.3,
+         "at": [
+          0.72,
+          0.29
+         ],
+         "rot": 2.8
+        },
+        {
+         "file": "clip1911-saltlake.jpg",
+         "width": 0.27,
+         "max_h": 0.5,
+         "at": [
+          0.33,
+          0.68
+         ],
+         "rot": 1.8
+        },
+        {
+         "file": "clip1911-tonopah.jpg",
+         "width": 0.26,
+         "max_h": 0.5,
+         "at": [
+          0.67,
+          0.66
+         ],
+         "rot": -1.6
+        }
+       ]
+      },
+      {
+       "type": "news",
+       "file": "clip1911-topeka.jpg",
+       "mode": "clip",
+       "size": [
+        0.84,
+        0.76
+       ],
+       "z": [
+        1.0,
+        1.09
+       ],
+       "f0": [
+        0.5,
+        0.48
+       ],
+       "f1": [
+        0.5,
+        0.58
+       ],
+       "w": 1.25,
+       "lower": "The Topeka State Journal | June 26, 1911"
+      }
+     ]
     },
     {
      "id": "c3-04",
@@ -594,11 +1013,24 @@
      "id": "c3-05",
      "say": "She survived. In the hotel's telling, she healed, went back to work at the Stanley, and stayed for years.",
      "v": {
-      "type": "quote",
-      "text": "the hotel",
-      "by": "picture to come",
-      "size": 48
-     }
+      "type": "photo",
+      "file": "stanley-search-12.jpg",
+      "fit": "cover",
+      "tone": "warm",
+      "z": [
+       1.0,
+       1.12
+      ],
+      "f0": [
+       0.5,
+       0.5
+      ],
+      "f1": [
+       0.45,
+       0.55
+      ]
+     },
+     "lower": "A guest room at the Stanley | today"
     },
     {
      "id": "c3-06",
@@ -643,10 +1075,15 @@
      "say": "Flora died in 1939. Freelan Oscar Stanley died the next year, on October 2nd, 1940. He was ninety-one.",
      "tts": "Flora died in nineteen thirty-nine. Freelan Oscar Stanley died the next year, on October 2nd, nineteen forty. He was ninety-one.",
      "v": {
-      "type": "quote",
-      "text": "Stanley",
-      "by": "picture to come",
-      "size": 48
+      "type": "photo",
+      "file": "fo-stanley-46.jpg",
+      "fit": "print",
+      "tone": "warm",
+      "z": [
+       1.0,
+       1.1
+      ],
+      "lower": "F.O. and Flora Stanley | driving up Mount Washington, 1899"
      }
     },
     {
@@ -654,10 +1091,22 @@
      "say": "The hotel passed from owner to owner. With no heat, it still shut down every winter. By the 1970s, its glory days seemed long gone, and the hotel's own history admits it might have ended up under the wrecking ball.",
      "tts": "The hotel passed from owner to owner. With no heat, it still shut down every winter. By the nineteen seventies, its glory days seemed long gone, and the hotel's own history admits it might have ended up under the wrecking ball.",
      "v": {
-      "type": "quote",
-      "text": "faded hotel",
-      "by": "picture to come",
-      "size": 48
+      "type": "photo",
+      "file": "stanley-search-17.jpg",
+      "fit": "cover",
+      "tone": "bw",
+      "z": [
+       1.0,
+       1.16
+      ],
+      "f0": [
+       0.5,
+       0.55
+      ],
+      "f1": [
+       0.55,
+       0.45
+      ]
      }
     },
     {
@@ -718,8 +1167,8 @@
         "size": 46,
         "tracking": 4,
         "off": [
-         -80,
-         -90
+         -190,
+         -96
         ]
        },
        {
@@ -754,11 +1203,20 @@
      "id": "c5-01",
      "say": "Stephen King was twenty-seven. His first novel, Carrie, had come out that spring, and he and his wife, Tabitha, had moved their family to Boulder.",
      "v": {
-      "type": "quote",
-      "text": "Boulder",
-      "by": "picture to come",
-      "size": 48
-     }
+      "type": "photo",
+      "file": "king-15.jpg",
+      "fit": "print",
+      "tone": "bw",
+      "z": [
+       1.0,
+       1.1
+      ],
+      "f0": [
+       0.5,
+       0.45
+      ]
+     },
+     "lower": "Stephen King | 1974 (photo: Alex Gotfryd)"
     },
     {
      "id": "c5-02",
@@ -812,17 +1270,24 @@
      "say": "The hotel says the Kings stayed in Room 217.",
      "tts": "The hotel says the Kings stayed in Room two-seventeen.",
      "v": {
-      "type": "door",
-      "number": "217",
+      "type": "photo",
+      "file": "stanley-search-11.jpg",
+      "fit": "cover",
+      "tone": "warm",
       "z": [
-       1.0,
-       1.1
+       1.1,
+       1.35
       ],
       "f0": [
-       0.5,
-       0.48
+       0.3,
+       0.8
+      ],
+      "f1": [
+       0.78,
+       0.2
       ]
-     }
+     },
+     "lower": "Room 217 | the Stanley Hotel, today"
     },
     {
      "id": "c5-05",
@@ -878,11 +1343,24 @@
      "id": "c5-08",
      "say": "That May, the Stanley Hotel was added to the National Register of Historic Places.",
      "v": {
-      "type": "quote",
-      "text": "NRHP",
-      "by": "picture to come",
-      "size": 48
+      "type": "photo",
+      "file": "stanley-search-21.jpg",
+      "fit": "cover",
+      "tone": "warm",
+      "z": [
+       1.0,
+       1.12
+      ],
+      "f0": [
+       0.5,
+       0.5
+      ],
+      "f1": [
+       0.5,
+       0.42
+      ]
      },
+     "lower": "National Register of Historic Places | May 26, 1977",
      "gap": 0.8
     }
    ]
@@ -910,54 +1388,76 @@
     {
      "id": "c6-02",
      "say": "Kubrick didn't film at the Stanley. The outside of his Overlook is Timberline Lodge, on Mount Hood in Oregon, and the inside was built on sound stages in England.",
-     "v": {
-      "type": "map",
-      "map": "north",
-      "cam0": [
-       -60.0,
-       45.9,
-       135
-      ],
-      "title": "THE SHINING, 1980",
-      "places": [
-       {
-        "name": "The Stanley (not used)",
-        "at": [
-         -105.52,
-         40.38
-        ],
-        "show": 0.02,
-        "off": [
-         18,
-         4
-        ]
-       },
-       {
-        "name": "Timberline Lodge",
-        "at": [
-         -121.71,
-         45.33
-        ],
-        "show": 0.3,
-        "off": [
-         18,
-         -72
-        ]
-       },
-       {
-        "name": "Elstree Studios, England",
-        "at": [
-         -0.3,
-         51.65
-        ],
-        "show": 0.62,
-        "off": [
-         -560,
-         -72
-        ]
-       }
-      ]
-     }
+     "v": [
+      {
+       "type": "map",
+       "map": "north",
+       "cam0": [
+        -60.0,
+        45.9,
+        135
+       ],
+       "title": "THE SHINING, 1980",
+       "w": 1.4,
+       "places": [
+        {
+         "name": "The Stanley (not used)",
+         "at": [
+          -105.52,
+          40.38
+         ],
+         "show": 0.02,
+         "off": [
+          18,
+          4
+         ]
+        },
+        {
+         "name": "Timberline Lodge",
+         "at": [
+          -121.71,
+          45.33
+         ],
+         "show": 0.3,
+         "off": [
+          18,
+          -72
+         ]
+        },
+        {
+         "name": "Elstree Studios, England",
+         "at": [
+          -0.3,
+          51.65
+         ],
+         "show": 0.62,
+         "off": [
+          -560,
+          -72
+         ]
+        }
+       ]
+      },
+      {
+       "type": "photo",
+       "file": "timberline-06.jpg",
+       "fit": "cover",
+       "tone": "bw",
+       "z": [
+        1.0,
+        1.1
+       ],
+       "f0": [
+        0.55,
+        0.5
+       ],
+       "f1": [
+        0.6,
+        0.45
+       ],
+       "lower": "Timberline Lodge, Mount Hood, Oregon | 1930s"
+      }
+     ]
     },
     {
      "id": "c6-03",
@@ -988,20 +1488,45 @@
      "say": "King never liked Kubrick's version. In 1997, he made his own, a TV miniseries, and this time it was filmed at the Stanley.",
      "tts": "King never liked Kubrick's version. In nineteen ninety-seven, he made his own, a TV miniseries, and this time it was filmed at the Stanley.",
      "v": {
-      "type": "quote",
-      "text": "Stanley",
-      "by": "picture to come",
-      "size": 48
-     }
+      "type": "photo",
+      "file": "stanley-search-05.jpg",
+      "fit": "cover",
+      "tone": "warm",
+      "z": [
+       1.0,
+       1.12
+      ],
+      "f0": [
+       0.5,
+       0.45
+      ],
+      "f1": [
+       0.5,
+       0.55
+      ]
+     },
+     "lower": "The Stanley's lobby | today"
     },
     {
      "id": "c6-05",
      "say": "Hollywood kept coming back. In Dumb and Dumber, the Stanley played a fancy hotel in Aspen.",
      "v": {
-      "type": "quote",
-      "text": "Stanley",
-      "by": "picture to come",
-      "size": 48
+      "type": "photo",
+      "file": "stanley-search-07.jpg",
+      "fit": "cover",
+      "tone": "warm",
+      "z": [
+       1.0,
+       1.12
+      ],
+      "f0": [
+       0.4,
+       0.5
+      ],
+      "f1": [
+       0.6,
+       0.5
+      ]
      }
     },
     {
@@ -1009,11 +1534,24 @@
      "say": "And in 2015, the hotel planted a hedge maze, a nod to Kubrick's film. There's no hedge maze in King's book. He wrote topiary animals instead, the kind that move when you aren't looking.",
      "tts": "And in twenty fifteen, the hotel planted a hedge maze, a nod to Kubrick's film. There's no hedge maze in King's book. He wrote topiary animals instead, the kind that move when you aren't looking.",
      "v": {
-      "type": "quote",
-      "text": "hedge maze",
-      "by": "picture to come",
-      "size": 48
+      "type": "photo",
+      "file": "stanley-search-06.jpg",
+      "fit": "cover",
+      "tone": "warm",
+      "z": [
+       1.0,
+       1.12
+      ],
+      "f0": [
+       0.45,
+       0.5
+      ],
+      "f1": [
+       0.7,
+       0.55
+      ]
      },
+     "lower": "The hedge maze | planted in 2015",
      "gap": 0.8
     }
    ]
@@ -1032,10 +1570,22 @@
      "id": "c7-01",
      "say": "Ever since The Shining, people have come to the Stanley hoping to meet a ghost. Some say they have.",
      "v": {
-      "type": "quote",
-      "text": "night",
-      "by": "picture to come",
-      "size": 48
+      "type": "photo",
+      "file": "stanley-search-21.jpg",
+      "fit": "cover",
+      "tone": "night",
+      "z": [
+       1.0,
+       1.15
+      ],
+      "f0": [
+       0.5,
+       0.5
+      ],
+      "f1": [
+       0.5,
+       0.4
+      ]
      }
     },
     {
@@ -1071,13 +1621,24 @@
      "id": "c7-04",
      "say": "On the fourth floor, guests report hearing children laughing and running in the halls at night. When they look, no one's there. And there's no known record of a child ever dying there.",
      "v": {
-      "type": "corridor",
+      "type": "photo",
+      "file": "stanley-search-04.jpg",
+      "fit": "cover",
+      "tone": "night",
       "z": [
        1.0,
-       1.22
+       1.3
       ],
-      "seed": 1
+      "f0": [
+       0.5,
+       0.5
+      ],
+      "f1": [
+       0.5,
+       0.48
+      ]
      },
+     "lower": "A hallway at the Stanley | today",
      "sfx": [
       [
        "steps",
@@ -1088,21 +1649,68 @@
     {
      "id": "c7-05",
      "say": "Some say they've seen F.O. Stanley himself, in the billiard room and the bar. And in the music room, people say Flora's piano sometimes plays by itself.",
-     "v": {
-      "type": "quote",
-      "text": "piano",
-      "by": "picture to come",
-      "size": 48
-     }
+     "v": [
+      {
+       "type": "photo",
+       "file": "stanley-search-09.jpg",
+       "fit": "cover",
+       "tone": "sepia-soft",
+       "z": [
+        1.0,
+        1.1
+       ],
+       "f0": [
+        0.4,
+        0.5
+       ],
+       "f1": [
+        0.6,
+        0.45
+       ],
+       "lower": "The music room | today"
+      },
+      {
+       "type": "photo",
+       "file": "stanley-search-01.jpg",
+       "fit": "cover",
+       "tone": "warm",
+       "z": [
+        1.0,
+        1.16
+       ],
+       "f0": [
+        0.5,
+        0.6
+       ],
+       "f1": [
+        0.5,
+        0.45
+       ],
+       "w": 1.3,
+       "lower": "An antique piano at the Stanley"
+      }
+     ]
     },
     {
      "id": "c7-06",
      "say": "Ghost-hunting TV shows have investigated the hotel, and it runs ghost tours of its own.",
      "v": {
-      "type": "quote",
-      "text": "tour",
-      "by": "picture to come",
-      "size": 48
+      "type": "photo",
+      "file": "stanley-search-23.jpg",
+      "fit": "cover",
+      "tone": "night",
+      "z": [
+       1.0,
+       1.12
+      ],
+      "f0": [
+       0.55,
+       0.5
+      ],
+      "f1": [
+       0.4,
+       0.4
+      ]
      }
     },
     {
@@ -1137,21 +1745,38 @@
      "say": "Since 1983, the Stanley has stayed open all year. In 2025, it was sold in a four-hundred-million-dollar deal, to a nonprofit created through a Colorado state authority.",
      "tts": "Since nineteen eighty-three, the Stanley has stayed open all year. In twenty twenty-five, it was sold in a four-hundred-million-dollar deal, to a nonprofit created through a Colorado state authority.",
      "v": {
-      "type": "quote",
-      "text": "hotel today",
-      "by": "picture to come",
-      "size": 48
-     }
+      "type": "photo",
+      "file": "stanley-search-16.jpg",
+      "fit": "cover",
+      "tone": "warm",
+      "z": [
+       1.0,
+       1.1
+      ],
+      "f0": [
+       0.4,
+       0.5
+      ],
+      "f1": [
+       0.6,
+       0.5
+      ]
+     },
+     "lower": "The Stanley Hotel | today"
     },
     {
      "id": "c8-02",
      "say": "On the grounds, construction is under way on the Stanley Film Center, with a new theater and a museum of horror films. It's set to open in 2028.",
      "tts": "On the grounds, construction is under way on the Stanley Film Center, with a new theater and a museum of horror films. It's set to open in twenty twenty-eight.",
      "v": {
-      "type": "quote",
-      "text": "film center",
-      "by": "picture to come",
-      "size": 48
+      "type": "typed",
+      "head": "THE STANLEY FILM CENTER",
+      "rows": [
+       "Being built on the hotel grounds.",
+       "A new theater,",
+       "and a museum of horror films.",
+       "Set to open: 2028."
+      ]
      },
      "gap": 0.8
     }
@@ -1172,21 +1797,58 @@
      "id": "e01",
      "say": "F.O. Stanley came west expecting to die, and lived thirty-seven more years. The hotel he built nearly faded away, until a writer spent one night there, and had a nightmare.",
      "v": {
-      "type": "quote",
-      "text": "hotel",
-      "by": "picture to come",
-      "size": 48
-     }
+      "type": "photo",
+      "file": "stanley-search-19.jpg",
+      "fit": "cover",
+      "tone": "warm",
+      "z": [
+       1.0,
+       1.14
+      ],
+      "f0": [
+       0.5,
+       0.4
+      ],
+      "f1": [
+       0.5,
+       0.3
+      ]
+     },
+     "lower": "F.O. Stanley in bronze | at the hotel today"
     },
     {
      "id": "e02",
      "say": "Is the Stanley haunted? You'll have to decide that for yourself. But few buildings owe as much to a ghost story.",
-     "v": {
-      "type": "quote",
-      "text": "hotel at dusk",
-      "by": "picture to come",
-      "size": 48
-     },
+     "v": [
+      {
+       "type": "photo",
+       "file": "stanley-search-15.jpg",
+       "fit": "cover",
+       "tone": "night",
+       "z": [
+        1.08,
+        1.24
+       ],
+       "f0": [
+        0.5,
+        0.42
+       ],
+       "f1": [
+        0.5,
+        0.3
+       ]
+      },
+      {
+       "type": "photo",
+       "file": "estes-park-cat-29.jpg",
+       "fit": "cover",
+       "tone": "night",
+       "z": [
+        1.0,
+        1.1
+       ]
+      }
+     ],
      "gap": 1.2
     },
     {

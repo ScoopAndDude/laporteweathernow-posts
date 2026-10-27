@@ -592,8 +592,8 @@ class Photo(Shot):
 
 
 @functools.lru_cache(maxsize=6)
-def paper_page(name, tone="paper"):
-    return Pyramid(picture(name, tone, None, max_side=4000))
+def paper_page(name, tone="paper", max_side=4000):
+    return Pyramid(picture(name, tone, None, max_side=max_side))
 
 
 def fit_aspect(box, iw, ih, aspect=W / H, margin=1.0):
@@ -651,7 +651,7 @@ class News(Shot):
             self.z = s.get("z", [1.0, 1.10])
             self.f0, self.f1 = s.get("f0", [0.5, 0.5]), s.get("f1", s.get("f0", [0.5, 0.5]))
             return
-        self.pyr = paper_page(s["file"], self.tone)
+        self.pyr = paper_page(s["file"], self.tone, int(s.get("max_side", 4000)))
         iw, ih = self.pyr.size
         whole = fit_aspect((0, 0, iw, ih), iw, ih, margin=1.08)
         b = self.box_from_spec(iw, ih)
@@ -2573,8 +2573,23 @@ def clean_credit(c):
     return clean_who(c)
 
 
+WHO_FIXES = [   # Commons "author" fields that don't read well as a credit
+    (r"Beinecke Rare Book &(amp;)? Manuscript Library.*", "Beinecke Rare Book & Manuscript Library, Yale University"),
+    (r"Library of Congress\s*''Catalog:''.*", "Library of Congress"),
+    (r"This file was contributed to Wikimedia Commons by (University of Colorado[^.]*).*", r"\1"),
+    (r"This file was contributed to Wikimedia Commons by University of Colora.*", "University of Colorado Boulder Libraries"),
+    (r"Jacket by Alex Gotfryd Photo by Alex Gotfryd", "Alex Gotfryd"),
+    (r"^Anonymous$", "unknown photographers"),
+    (r"^Wikimedia Commons$", ""),
+    (r"^User:", ""),
+]
+
+
 def clean_who(w):
     import re
+    w = (w or "").replace("&amp;", "&")
+    for pat, rep in WHO_FIXES:
+        w = re.sub(pat, rep, w.strip())
     w = re.sub(r"(Unknown author|Unknown photographer|or not provided|Unknown)", "", w or "", flags=re.I)
     w = re.sub(r"\s+from\s.*$", "", w).strip(" ,;")
     w = re.split(r"(?<=[a-z])\.\s", w)[0]            # a long credit line: its first sentence
@@ -2631,7 +2646,12 @@ def cmd_description(outdir):
         card = ch.get("card")
         if c["id"] == "title":
             continue
-        name = "Intro" if c["id"] == "open" else ((f"{card['n']}. " if card.get("n") else "") + card["title"] + (f" ({card['sub']})" if card.get("sub") else ""))
+        if c["id"] == "open":
+            name = "Intro"
+        elif card.get("kicker") == "EPILOGUE":
+            name = "Epilogue: comment your city or town"
+        else:
+            name = (f"{card['n']}. " if card.get("n") else "") + card["title"] + (f" ({card['sub']})" if card.get("sub") else "")
         t = 0 if c["id"] == "open" else int(c["start"])
         lines.append(f"{t // 60}:{t % 60:02d} {name}")
     pics = cmd_credits()
@@ -2659,7 +2679,7 @@ def cmd_description(outdir):
                 out.append(f"{who}, {lic}: " + "; ".join(titles))
         if pd:
             if compact:
-                out.append("Public domain: " + "; ".join(sorted({lic for lic, _ in pd})))
+                out.append("Public domain: " + "; ".join(sorted({lic for lic, _ in pd if lic})))
             else:
                 out += [f"Public domain ({lic}): " + "; ".join(titles) for lic, titles in pd]
         return out + [full_list]

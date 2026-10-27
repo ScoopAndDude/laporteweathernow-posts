@@ -1,0 +1,96 @@
+{
+ "about": "One-off (Oct. 2026): the 1911 newspaper stories about the Stanley Hotel explosion, cut from the Library of Congress page scans at full resolution for the documentary (chapter 3). Pages found by the extra picture pass (fetch.py --extra); the boxes are in the full-size page's pixels. Public domain (1911 newspapers). Used by .github/workflows/stanley-doc-news-crops.yml.",
+ "items": [
+  {
+   "out": "news1911-05-hi.jpg",
+   "from": "news1911-05.jpg",
+   "what": "The Salt Lake Tribune's front page, June 26, 1911, at full size",
+   "iiif": "https://tile.loc.gov/image-services/iiif/service:ndnp:uuml:batch_uuml_pereiro_ver01:data:sn83045396:print:1911062601:0498",
+   "region": "full",
+   "page_size": [
+    6308,
+    8621
+   ]
+  },
+  {
+   "out": "clip1911-saltlake.jpg",
+   "from": "news1911-05.jpg",
+   "what": "The Salt Lake Tribune's story (front page)",
+   "iiif": "https://tile.loc.gov/image-services/iiif/service:ndnp:uuml:batch_uuml_pereiro_ver01:data:sn83045396:print:1911062601:0498",
+   "region": [
+    1631,
+    4696,
+    922,
+    961
+   ],
+   "page_size": [
+    6308,
+    8621
+   ]
+  },
+  {
+   "out": "clip1911-sfcall.jpg",
+   "from": "news1911-09.jpg",
+   "what": "The San Francisco Call's story",
+   "iiif": "https://tile.loc.gov/image-services/iiif/service:ndnp:curiv:batch_curiv_betteravia_ver02:data:sn85066387:00175035990:1911062601:0653",
+   "region": [
+    1782,
+    6707,
+    808,
+    548
+   ],
+   "page_size": [
+    6031,
+    8535
+   ]
+  },
+  {
+   "out": "clip1911-honolulu.jpg",
+   "from": "news1911-04.jpg",
+   "what": "The Evening Bulletin's story (Honolulu)",
+   "iiif": "https://tile.loc.gov/image-services/iiif/service:ndnp:hihouml:batch_hihouml_lion_ver01:data:sn82016413:00237289560:1911062601:1132",
+   "region": [
+    3038,
+    4626,
+    599,
+    420
+   ],
+   "page_size": [
+    4492,
+    5648
+   ]
+  },
+  {
+   "out": "clip1911-tonopah.jpg",
+   "from": "news1911-13.jpg",
+   "what": "The Tonopah Daily Bonanza's story",
+   "iiif": "https://tile.loc.gov/image-services/iiif/service:ndnp:nvln:batch_nvln_aurora_ver02:data:sn86076142:00415626976:1911062701:0608",
+   "region": [
+    3054,
+    4675,
+    667,
+    818
+   ],
+   "page_size": [
+    4584,
+    6775
+   ]
+  },
+  {
+   "out": "clip1911-topeka.jpg",
+   "from": "news1911-03.jpg",
+   "what": "The Topeka State Journal's story (the AP report)",
+   "iiif": "https://tile.loc.gov/image-services/iiif/service:ndnp:khi:batch_khi_edelbrock_ver01:data:sn82016014:00295870679:1911062601:0121",
+   "region": [
+    1603,
+    4794,
+    712,
+    495
+   ],
+   "page_size": [
+    5304,
+    6432
+   ]
+  }
+ ]
+}
