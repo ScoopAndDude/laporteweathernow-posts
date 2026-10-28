@@ -129,9 +129,9 @@ def pistol_icon(w, color):
 class EndCard:
     """La Porte After Dark's end card: the series name, the site, the sources, and the AI-voice disclosure."""
 
-    def __init__(self, bgname, sources, line2):
+    def __init__(self, bgname, sources, line2, series="LA PORTE AFTER DARK"):
         self.bg = blur_bg(bgname, blur=10) if isinstance(bgname, str) else bgname
-        self.a = glow(fitT("LA PORTE AFTER DARK", "bask", 112, BONE, max_w=C.CW + 40, min_size=50), (0, 0, 0),
+        self.a = glow(fitT(series, "bask", 112, BONE, max_w=C.CW + 40, min_size=50), (0, 0, 0),
                       radius=26, strength=0.9)
         self.b = glow(fitT(line2, "lora", 56, (250, 70, 56), max_w=C.CW + 40, min_size=34), (0, 0, 0), radius=18,
                       strength=0.9)
