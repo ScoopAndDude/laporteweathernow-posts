@@ -827,7 +827,7 @@ def brand_row():
     mark = Image.open(os.path.join(ASSETS, "logo-mark.png")).convert("RGBA")
     mark = rounded(mark.resize((int(mark.width * 60 / mark.height), 60), Image.LANCZOS), 10)
     img.alpha_composite(mark, (X0, 30))
-    t = text_img("LA PORTE WEATHER NOW", "xbold", 30, INK, tracking=2)
+    t = text_img("LAPORTE WEATHER NOW", "xbold", 30, INK, tracking=2)
     img.alpha_composite(t, (X0 + mark.width + 22, 30 + (60 - t.height) // 2))
     return img
 

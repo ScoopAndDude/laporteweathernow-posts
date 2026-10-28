@@ -253,7 +253,7 @@ _logo = None
 def header(frame, t, dur, n_seg, line2=None, a=1.0):
     global _logo
     if _logo is None:
-        _logo = (SH.rounded_logo(), txt("LA PORTE WEATHER NOW", "inter_b", 30, (233, 227, 214), tracking=0.03,
+        _logo = (SH.rounded_logo(), txt("LAPORTE WEATHER NOW", "inter_b", 30, (233, 227, 214), tracking=0.03,
                                         shadow=0.6))
     SH.progress_bar(frame, min(1.0, t / dur), n_seg, a)
     paste(frame, _logo[0], 80, 206, a=a, anchor="lt")

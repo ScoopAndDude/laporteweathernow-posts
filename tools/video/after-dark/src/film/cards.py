@@ -187,7 +187,7 @@ class TextScene(Scene):
 
 def title_card(dur):
     blocks = [
-        Block("LA PORTE WEATHER NOW PRESENTS", "sans", 26, GHOST, W / 2, 330, t_in=0.3, fade=1.0, tracking=0.32,
+        Block("LAPORTE WEATHER NOW PRESENTS", "sans", 26, GHOST, W / 2, 330, t_in=0.3, fade=1.0, tracking=0.32,
               alpha=0.75),
         Block("Before", "black", 170, "#f3e6c8", W / 2, 478, t_in=0.8, fade=1.6, glow="#ff7a1a",
               glow_a=0.55, rise=0, scale_in=0.05),

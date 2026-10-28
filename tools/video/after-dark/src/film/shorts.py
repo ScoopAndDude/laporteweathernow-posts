@@ -597,7 +597,7 @@ def build(name):
 
     # --- static overlays
     logo = rounded_logo()
-    brand = text_layer("LA PORTE WEATHER NOW", "sans_b", 30, "#e9e3d6", tracking=0.04, shadow=0.6)
+    brand = text_layer("LAPORTE WEATHER NOW", "sans_b", 30, "#e9e3d6", tracking=0.04, shadow=0.6)
     title = text_layer(cfg["title"], "fell", 68, CREAM, glow="#ff7a1a", glow_a=0.45, shadow=0.8)
     tw = title.shape[1]
     if tw > VW - 40:

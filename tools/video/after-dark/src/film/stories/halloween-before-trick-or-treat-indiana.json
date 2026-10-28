@@ -1,0 +1,236 @@
+{
+  "slug": "halloween-before-trick-or-treat-indiana",
+  "title": "Halloween Before Trick-or-Treat: What Indiana's Old Newspapers Reported",
+  "series": "HALLOWEEN HISTORY",
+  "music": {
+    "seed": 163,
+    "prog": 6
+  },
+  "say": [
+    [
+      "\\bRecht's\\b",
+      "Rekts"
+    ],
+    [
+      "\\bWhiting\\b",
+      "Whyting"
+    ]
+  ],
+  "sources": [
+    {
+      "what": "Whiting, 1906: 'About ten extra policemen in addition to the usual force'; gates 'mysteriously carried away'; 'another window being broken, this time at Recht's Department store'",
+      "who": "Whiting-Robertsdale Historical Society, 'Halloween Has Always Brought Out the Wickedly in Whiting' (2018), quoting the paper",
+      "url": "https://www.wrhistoricalsociety.com/news/2018/10/15/halloween-has-always-brought-out-the-wickedly-in-whiting"
+    },
+    {
+      "what": "Whiting, 1909: 'more quietly ... than it ever has been'; 'door mats and gates were stolen by the wholesale'; 'someone put soap on the rails'; the motorman had 'to get off the car and throw sand on the rails'",
+      "who": "Whiting-Robertsdale Historical Society (2018), quoting the paper",
+      "url": "https://www.wrhistoricalsociety.com/news/2018/10/15/halloween-has-always-brought-out-the-wickedly-in-whiting"
+    },
+    {
+      "what": "the Whiting Halloween reports, 1906 and 1909",
+      "who": "Lake County Times (Hammond), via Library of Congress, Chronicling America",
+      "url": "https://chroniclingamerica.loc.gov/lccn/sn86058242/"
+    },
+    {
+      "what": "earliest known printing of 'tricks or treats': Sault Daily Star, Sault Ste. Marie, Ont., Nov. 1, 1917",
+      "who": "SooToday",
+      "url": "https://sootoday.com/rooted/origin-of-phrase-trick-or-treat-in-print-traced-to-the-sault-6033664"
+    },
+    {
+      "what": "the 1917 Sault Daily Star citation",
+      "who": "Barry Popik, 'Trick or Treat'",
+      "url": "https://barrypopik.com/blog/trick_or_treat"
+    },
+    {
+      "what": "Anoka, Minn., 1920: a citywide parade to keep pranksters busy",
+      "who": "Mental Floss",
+      "url": "https://www.mentalfloss.com/holidays/halloween/halloween-capital-of-the-world-anoka-minnesota"
+    },
+    {
+      "what": "Anoka's 1920 parade and its anti-prank purpose",
+      "who": "Star Tribune",
+      "url": "https://www.startribune.com/article/601165608"
+    },
+    {
+      "what": "'By the 1920s some communities even had parades and citywide parties'",
+      "who": "Wisconsin Historical Society",
+      "url": "https://wisconsinhistory.org/Records/Article/CS2771"
+    },
+    {
+      "what": "'Tricks or treats' you could hear the gangs call out (1917)",
+      "who": "Dictionary of Canadianisms on Historical Principles",
+      "url": "https://dchp.arts.ubc.ca/entries/trick%20or%20treat"
+    }
+  ],
+  "beats": [
+    {
+      "text": "Before trick-or-treat, Halloween in northwest Indiana was a night of pranks, and the papers kept score.",
+      "scene": {
+        "kind": "town",
+        "seed": 1,
+        "tower": "none",
+        "move": "in",
+        "amount": 0.07,
+        "fog": 0.2
+      },
+      "label": "NORTHWEST INDIANA",
+      "title": {
+        "text": "HALLOWEEN, BEFORE CANDY",
+        "at": "Halloween in",
+        "size": 82
+      },
+      "credit": "Whiting-Robertsdale Historical Society"
+    },
+    {
+      "text": "In 1906, Whiting put about 10 extra policemen on watch. Gates still vanished, and a window was broken at Recht's department store.",
+      "scene": {
+        "kind": "town",
+        "seed": 4,
+        "tower": "none",
+        "move": "left",
+        "amount": 0.06,
+        "fog": 0.12
+      },
+      "label": "WHITING, INDIANA, 1906",
+      "typed": [
+        {
+          "text": "10 EXTRA POLICEMEN",
+          "at": "10 extra",
+          "y": 440,
+          "size": 78
+        },
+        {
+          "text": "GATES STILL VANISHED",
+          "at": "Gates still",
+          "y": 545,
+          "size": 70
+        }
+      ],
+      "sfx": [
+        {
+          "kind": "hit",
+          "at": "window was broken",
+          "gain": 0.45
+        }
+      ],
+      "credit": "As quoted by the Whiting-Robertsdale Historical Society"
+    },
+    {
+      "text": "In 1909, the paper said Halloween had gone more quietly than ever. Then it listed the damage.",
+      "scene": {
+        "kind": "card",
+        "seed": 2,
+        "move": "still"
+      },
+      "label": "WHITING, INDIANA",
+      "card": {
+        "kind": "year",
+        "label": "HALLOWEEN",
+        "value": "1909",
+        "note": "\"MORE QUIETLY THAN IT EVER HAS BEEN\"",
+        "at": "In 1909"
+      },
+      "credit": "As quoted by the Whiting-Robertsdale Historical Society"
+    },
+    {
+      "text": "Door mats and gates were stolen by the wholesale. Somebody soaped the streetcar rails, and the motorman had to climb down and throw sand on them.",
+      "scene": {
+        "kind": "town",
+        "seed": 6,
+        "tower": "none",
+        "move": "in",
+        "amount": 0.07,
+        "fog": 0.15
+      },
+      "label": "THE DAMAGE, 1909",
+      "card": {
+        "kind": "quote",
+        "lines": [
+          "Door mats and gates",
+          "were stolen by",
+          "the wholesale."
+        ],
+        "by": "THE PAPER, 1909, VIA WHITING-ROBERTSDALE HIST. SOCIETY",
+        "at": "Door mats",
+        "until": "Somebody soaped"
+      },
+      "typed": [
+        {
+          "text": "SOAP ON THE RAILS",
+          "at": "soaped the",
+          "y": 545,
+          "size": 76
+        }
+      ],
+      "credit": "As quoted by the Whiting-Robertsdale Historical Society"
+    },
+    {
+      "text": "By the 1920s, some towns tried to tame the night with parties and parades. Anoka, Minnesota, started its Halloween parade in 1920.",
+      "scene": {
+        "kind": "house",
+        "style": "victorian",
+        "seed": 2,
+        "move": "in",
+        "amount": 0.07
+      },
+      "label": "THE 1920s",
+      "typed": [
+        {
+          "text": "PARTIES AND PARADES",
+          "at": "parties and",
+          "y": 440,
+          "size": 76
+        },
+        {
+          "text": "ANOKA, MINN., 1920",
+          "at": "Anoka",
+          "y": 545,
+          "size": 66
+        }
+      ],
+      "credit": "Mental Floss; Star Tribune; Wisconsin Historical Society"
+    },
+    {
+      "text": "And trick-or-treat? Its earliest known printing, from 1917 in Ontario, meant just what it said: a treat, or a trick.",
+      "scene": {
+        "kind": "woods",
+        "seed": 2,
+        "lantern": true,
+        "move": "in",
+        "amount": 0.07
+      },
+      "label": "THE WORDS",
+      "card": {
+        "kind": "year",
+        "label": "FIRST KNOWN IN PRINT",
+        "value": "1917",
+        "note": "\"TRICKS OR TREATS\"",
+        "at": "earliest known"
+      },
+      "credit": "Barry Popik; SooToday (Sault Daily Star, 1917)"
+    },
+    {
+      "text": "What did Halloween look like where you grew up? Tell us in the comments.",
+      "end": true,
+      "end_card": {
+        "q": "YOUR HALLOWEEN?",
+        "q2": "TELL US BELOW",
+        "bubble": "Where you grew up",
+        "pill": "More local history: laporteweathernow.com/history",
+        "scene": {
+          "kind": "town",
+          "seed": 9,
+          "tower": "none",
+          "move": "still"
+        }
+      },
+      "credit": "All pictures drawn"
+    }
+  ],
+  "factcheck": {
+    "date": "2026-10-28",
+    "by": "independent subagent",
+    "result": "Lines 3, 4, 6, 7 supported. Changed: 'northwest Indiana' (line 1); 'It didn't help' dropped (line 2); Anoka named as the 1920s example (line 5); History.com credit dropped; the 1906 and 1909 reports credited as quoted by the Whiting-Robertsdale Historical Society because the Lake County Times scans in the repo are too low-resolution to read; no courthouse tower over Whiting."
+  }
+}

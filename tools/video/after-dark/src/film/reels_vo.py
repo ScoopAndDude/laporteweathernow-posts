@@ -13,7 +13,7 @@ from kokoro_onnx import Kokoro
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 VOICE, SPEED, LANG, RATE = "af_heart", 1.02, "en-us", 24000
-SAY = [(r"\bLa Porte\b", "Luh-Port"), (r"\bHelgelien\b", "Hel-guh-leen"), (r"\b1908\b", "nineteen-oh-eight"),
+SAY = [(r"\bLa ?Porte\b", "le-port"), (r"\bHelgelien\b", "Hel-guh-leen"), (r"\b1908\b", "nineteen-oh-eight"),
        (r"\b1815\b", "eighteen fifteen"), (r"\b1931\b", "nineteen thirty-one"),
        (r"\bmid-1900s\b", "mid-nineteen-hundreds"), (r"\b5:43\b", "five forty-three"), (r"\b6:10\b", "six ten"),
        (r"\b5 to 7\b", "five to seven"), (r"\b1833\b", "eighteen thirty-three"), (r"\b1972\b", "nineteen seventy-two"),
@@ -190,8 +190,10 @@ def spoken(t):
 
 def sentences(p):
     p = p.replace("Mrs.", "Mrs\u00a7").replace(".com", "\u00b6com")
+    p = re.sub(r"(\d)\.(\d)", "\\1\u00a4\\2", p)                     # a decimal point (2.98) does not end a sentence
     out = re.findall(r"[^.?!]+(?:\.\.\.[^.?!]+)*[.?!]+[\"”]?", p)
-    return [s.strip().replace("Mrs\u00a7", "Mrs.").replace("\u00b6com", ".com") for s in out if s.strip()]
+    return [s.strip().replace("Mrs\u00a7", "Mrs.").replace("\u00b6com", ".com").replace("\u00a4", ".")
+            for s in out if s.strip()]
 
 
 # Names the voice gets wrong from spelling alone, given as sound symbols instead. La Porte is one word, luh-PORT

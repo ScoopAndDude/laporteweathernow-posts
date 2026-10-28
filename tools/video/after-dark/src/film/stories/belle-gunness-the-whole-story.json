@@ -1,0 +1,257 @@
+{
+  "slug": "belle-gunness-the-whole-story",
+  "title": "Belle Gunness: LaPorte's Unsolved Mystery, the Whole Story",
+  "series": "LAPORTE'S UNSOLVED MYSTERY",
+  "music": {
+    "seed": 171,
+    "prog": 6
+  },
+  "say": [
+    [
+      "\\bGunness\\b",
+      "Gunniss"
+    ],
+    [
+      "\\bLamphere\\b",
+      "Lamfeer"
+    ],
+    [
+      "\\bMcClung\\b",
+      "Mc-Clung"
+    ]
+  ],
+  "sources": [
+    {
+      "what": "widow with a farm on McClung Road, LaPorte (moved there in 1901); ads in marriage columns, many in Norwegian-language papers; the ad 'Comely widow, who owns large farm... desires to make the acquaintance of gentleman equally well provided, with view of joining fortunes'",
+      "who": "La Porte County Historical Society; Ted Hartzell, HistoryNet (from Belle's letters)",
+      "url": "https://www.historynet.com/belle-gunness-poisonous-pen/"
+    },
+    {
+      "what": "Scandinavian-language ads; suitors came; April 28, 1908 fire: 'three children and an adult female' in the basement; digging in the hog lot; Lamphere acquitted of murder, guilty of arson; sightings; 2008 DNA sample 'too degraded to provide conclusive results'",
+      "who": "Mental Floss, Lucas Reilly (2018)",
+      "url": "https://www.mentalfloss.com/article/562322/belle-gunness-murders"
+    },
+    {
+      "what": "2007 exhumation by the University of Indianapolis; DNA comparison planned",
+      "who": "ScienceDaily / University of Indianapolis (Jan. 2008)",
+      "url": "https://www.sciencedaily.com/releases/2008/01/080109105956.htm"
+    },
+    {
+      "what": "Belle Gunness exhibit; 'Belle Gunness: The Mystery Continues' program, Nov. 7",
+      "who": "La Porte County Historical Society Museum",
+      "url": "https://laportecountyhistory.org/exhibits"
+    },
+    {
+      "what": "the overall story, the trial and later sightings",
+      "who": "Encyclopaedia Britannica; Wikipedia, Belle Gunness",
+      "url": "https://en.wikipedia.org/wiki/Belle_Gunness"
+    },
+    {
+      "what": "'identified two men, Andrew Helgelien and Ole Budsberg'; eight listed as unknowns; sightings from all 48 states",
+      "who": "HistoryNet",
+      "url": "https://www.historynet.com/belle-gunness-poisonous-pen/"
+    },
+    {
+      "what": "'matrimonial columns of Chicago dailies and Norwegian language newspapers'; the farm on McClung Road",
+      "who": "Indiana Public Media, Moment of Indiana History",
+      "url": "https://indianapublicmedia.org/momentofindianahistory/bell-gunness"
+    },
+    {
+      "what": "'Belle Gunness: The Mystery Continues Event (Tickets Required!)', Saturday, Nov. 7",
+      "who": "La Porte County Historical Society",
+      "url": "https://laportecountyhistory.org/event/belle-gunness-the-mystery-continues-event-tickets-required/"
+    }
+  ],
+  "beats": [
+    {
+      "text": "Belle Gunness was a widow with a farm in LaPorte, Indiana. Many men who answered her ads were never seen again.",
+      "scene": {
+        "kind": "house",
+        "style": "farmhouse",
+        "seed": 1,
+        "move": "in",
+        "amount": 0.06,
+        "fog": 0.2
+      },
+      "card": {
+        "kind": "photo",
+        "file": "photos/belle-gunness-children-loc.jpg",
+        "y": 840,
+        "max_h": 760
+      },
+      "title": {
+        "text": "BELLE GUNNESS",
+        "at": "Belle Gunness",
+        "y": 400,
+        "size": 90
+      },
+      "credit": "Photo: Bain Collection, Library of Congress"
+    },
+    {
+      "text": "She placed ads in marriage columns, many in Norwegian-language papers.",
+      "scene": {
+        "kind": "card",
+        "seed": 2,
+        "move": "still"
+      },
+      "label": "THE FARM ON McCLUNG ROAD",
+      "card": {
+        "kind": "photo",
+        "file": "photos/gunness-farm-1908-shook.jpg",
+        "y": 800,
+        "max_h": 760
+      },
+      "credit": "Photo: Steve Shook, CC BY 2.0"
+    },
+    {
+      "text": "One ad attributed to her sought a gentleman equally well provided, with a view of joining fortunes.",
+      "scene": {
+        "kind": "card",
+        "seed": 3,
+        "move": "still"
+      },
+      "label": "THE AD",
+      "card": {
+        "kind": "quote",
+        "lines": [
+          "Comely widow, who owns",
+          "large farm... desires",
+          "to make the acquaintance",
+          "of a gentleman equally",
+          "well provided, with view",
+          "of joining fortunes."
+        ],
+        "by": "AN AD ATTRIBUTED TO HER",
+        "y": 800
+      },
+      "credit": "HistoryNet; La Porte County Historical Society"
+    },
+    {
+      "text": "Men came from across the Midwest, many with their savings.",
+      "scene": {
+        "kind": "road",
+        "seed": 3,
+        "fog": 0.25,
+        "move": "in",
+        "amount": 0.08
+      },
+      "label": "THE SUITORS",
+      "typed": [
+        {
+          "text": "MANY WITH THEIR SAVINGS",
+          "at": "many with",
+          "y": 545,
+          "size": 70
+        }
+      ],
+      "credit": "La Porte County Historical Society; Mental Floss"
+    },
+    {
+      "text": "On April 28, 1908, the farmhouse burned. The three children in her care died, and a woman was found in the ruins. Was it Belle?",
+      "scene": {
+        "kind": "card",
+        "seed": 4,
+        "move": "still"
+      },
+      "label": "APRIL 28, 1908",
+      "card": {
+        "kind": "photo",
+        "file": "photos/gunness-farm-ruins-1908-shook.jpg",
+        "y": 800,
+        "max_h": 760
+      },
+      "typed": [
+        {
+          "text": "WAS IT BELLE?",
+          "at": "Was it Belle",
+          "y": 1180,
+          "size": 78
+        }
+      ],
+      "credit": "Photo: Steve Shook, CC BY 2.0"
+    },
+    {
+      "text": "Then searchers dug in the yard. At least a dozen people were buried there. Two were identified as men who had answered her ads. Most were never named.",
+      "scene": {
+        "kind": "card",
+        "seed": 5,
+        "move": "still"
+      },
+      "label": "MAY 1908",
+      "card": {
+        "kind": "photo",
+        "file": "photos/gunness-farm-birdseye-1908-shook.jpg",
+        "y": 800,
+        "max_h": 760
+      },
+      "credit": "Photo: Steve Shook, CC BY 2.0",
+      "typed": [
+        {
+          "text": "MOST NEVER NAMED",
+          "at": "Most were",
+          "y": 1180,
+          "size": 72
+        }
+      ]
+    },
+    {
+      "text": "Her hired man, Ray Lamphere, was convicted of setting the fire. No one was ever convicted of the murders.",
+      "scene": {
+        "kind": "card",
+        "seed": 6,
+        "move": "still"
+      },
+      "label": "THE TRIAL, 1908",
+      "card": {
+        "kind": "photo",
+        "file": "photos/ray-lamphere-1908-shook.jpg",
+        "y": 800,
+        "max_h": 760
+      },
+      "credit": "Photo: Steve Shook, CC BY 2.0"
+    },
+    {
+      "text": "For years, people said they'd seen her. A DNA test in 2008 couldn't settle it. LaPorte still doesn't know if Belle died in that fire.",
+      "scene": {
+        "kind": "house",
+        "style": "farmhouse",
+        "seed": 2,
+        "fog": 0.3,
+        "move": "in",
+        "amount": 0.08
+      },
+      "label": "STILL UNSOLVED",
+      "typed": [
+        {
+          "text": "DNA, 2008: NO ANSWER",
+          "at": "A DNA test",
+          "y": 440,
+          "size": 72
+        }
+      ],
+      "credit": "Mental Floss; University of Indianapolis"
+    },
+    {
+      "text": "Did Belle get away? Tell us in the comments.",
+      "end": true,
+      "end_card": {
+        "q": "DID BELLE GET AWAY?",
+        "q2": "TELL US BELOW",
+        "bubble": "Full documentary on our channel",
+        "pill": "Nov. 7: Belle Gunness program, La Porte Co. Historical Society (tickets)",
+        "scene": {
+          "kind": "house",
+          "style": "farmhouse",
+          "seed": 4,
+          "move": "still"
+        }
+      },
+      "credit": "All pictures drawn"
+    }
+  ],
+  "factcheck": {
+    "date": "2026-10-28",
+    "by": "independent subagent",
+    "result": "Lines 1, 2, 4, 7, 8 supported. Changed: 'an ad attributed to her' and 'a gentleman' restored (line 3); 'the three children in her care' (line 5); line 6 rewritten to what the inquests found (at least a dozen; two identified; most never named); end card names the historical society and tickets; Bain credit without a license claim."
+  }
+}

@@ -252,13 +252,16 @@ def map_card(spec, w=960, h=860):
 # --------------------------------------------------------------------------------------------- photo
 
 def photo_card(spec):
+    """max_h (optional): a tall picture is shrunk to this height (narrower than 900) instead of being cropped."""
     im = Image.open(spec["file"]).convert("RGB")
     w = 900
     s = w / im.width
-    im = im.resize((w, int(im.height * s)), Image.LANCZOS)
+    if spec.get("max_h") and im.height * s > float(spec["max_h"]):
+        s = float(spec["max_h"]) / im.height
+    im = im.resize((int(im.width * s), int(im.height * s)), Image.LANCZOS)
     if im.height > 1000:
         y0 = (im.height - 1000) // 2
-        im = im.crop((0, y0, w, y0 + 1000))
+        im = im.crop((0, y0, im.width, y0 + 1000))
     a = np.asarray(im, np.float32)
     if spec.get("tone", "sepia") == "sepia":
         g = a.mean(axis=2, keepdims=True)

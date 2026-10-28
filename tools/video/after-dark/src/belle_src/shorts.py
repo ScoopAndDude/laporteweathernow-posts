@@ -630,7 +630,7 @@ def draw_a1(frame, u, words, ctx):
     img = paper.resize((int(paper.width * z), int(paper.height * z)), Image.BICUBIC).rotate(-2 + 1.2 * min(1, u / 5), expand=True, resample=Image.BICUBIC)
     paste_c(frame, img, W / 2 + 24 * min(1, u / 5), 745)
     never = word_at(words, "never", 3.0)
-    label = T("LA PORTE, INDIANA", "bold", 34, BONE + (255,), tracking=4)
+    label = T("LAPORTE, INDIANA", "bold", 34, BONE + (255,), tracking=4)
     paste_c(frame, label, W / 2, 284)
     if u < never:
         title(frame, "THEY ANSWERED HER ADS", "bask", 84, BONE, 1222, glow=(0, 0, 0), alpha=appear(u, 0.0, 0.12))
@@ -1384,7 +1384,7 @@ def pp_face(ctx):
 def p_a1(frame, u, words, ctx):
     float_in(frame, ctx["face"], u, 5.6, w=(1180, 1400))
     shade(frame)
-    paste_c(frame, T("LA PORTE, INDIANA", "bold", 34, BONE + (255,), tracking=4), W / 2, 284)
+    paste_c(frame, T("LAPORTE, INDIANA", "bold", 34, BONE + (255,), tracking=4), W / 2, 284)
     never = word_at(words, "never", 3.0)
     if u < never:
         title(frame, "THEY ANSWERED HER ADS", "bask", 84, BONE, 1205, glow=(0, 0, 0), alpha=appear(u, 0.0, 0.12))

@@ -203,3 +203,10 @@ Flag anything a picture or map could make misleading, and anything a local who k
 Finish with: lines that are fine, lines that need a change (with a short accurate rewording), and the sources you'd
 cite in the description. Plain text, under 900 words.
 ```
+
+## Spelling and saying the town (Scoop, Oct. 28, 2026)
+
+The town is spelled **LaPorte**, one word, in narration, captions, on-screen text and post text (the official names
+"La Porte County Historical Society" and "La Porte Weather Now LLC" keep their own spelling; URLs are unchanged).
+The voice says it as one word, luh-PORT: reels_vo.py maps `La ?Porte` to `le-port` (ləˈpɔːɹt). Don't use "Luh-Port"
+or "la-port", which the voice reads as two words or as "lah".

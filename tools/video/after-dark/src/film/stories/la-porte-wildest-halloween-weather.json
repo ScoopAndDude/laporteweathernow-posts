@@ -1,0 +1,239 @@
+{
+  "slug": "la-porte-wildest-halloween-weather",
+  "title": "LaPorte's Wildest Halloween Weather",
+  "series": "LAPORTE WEATHER NOW",
+  "music": {
+    "seed": 157,
+    "prog": 6
+  },
+  "say": [
+    [
+      "laporteweathernow\\.com",
+      "LaPorte Weather Now dot com"
+    ]
+  ],
+  "sources": [
+    {
+      "what": "Oct. 31-Nov. 1, 2013: Laporte 2.98 in. (by 1 a.m. Nov. 1), Kingsbury 2.65, Long Beach 2.22, LaPorte 1.95; 'the wettest Halloween on record at Fort Wayne with 1.73\"' and 2nd wettest at South Bend (1.20\")",
+      "who": "NWS Northern Indiana, Halloween 2013 rain",
+      "url": "https://www.weather.gov/iwx/20131031_rain"
+    },
+    {
+      "what": "Oct. 31, 2014: 67 mph gust 3 WNW Michigan City (marine, 11 a.m.); mid-lake south buoy waves peaked at 21.7 ft",
+      "who": "NWS Chicago, Oct. 31, 2014 event summary",
+      "url": "https://www.weather.gov/lot/2014Oct31"
+    },
+    {
+      "what": "Oct. 31, 2014: 'the highest gust was 67mph, recorded over Lake Michigan, two miles northwest of Potawatomi Park'",
+      "who": "ABC57, 'The Winds Were Howling This Halloween' (Oct. 31, 2014)",
+      "url": "https://www.abc57.com/news/the-winds-were-howling-this-halloween"
+    },
+    {
+      "what": "Oct. 30-31, 2019: Valparaiso 4SW 2.2 in.; O'Hare's 3.4 in. on Oct. 31 broke the Oct. 31 record (0.1 in., 2014)",
+      "who": "NWS Chicago, Oct. 30-31, 2019 snow",
+      "url": "https://weather.gov/lot/3031Oct2019_snow"
+    },
+    {
+      "what": "Chicago's snowiest Halloween ever (2019)",
+      "who": "CBS Chicago",
+      "url": "https://www.cbsnews.com/chicago/news/snowiest-halloween-ever"
+    },
+    {
+      "what": "Halloween 2023: 1.4 inches of snow in South Bend; a high of only 36",
+      "who": "ABC57 (Oct. 31, 2024)",
+      "url": "https://abc57.com/news/halloween-2023-and-2024-two-different-spooky-forecasts-103124"
+    },
+    {
+      "what": "South Bend's Halloween records: coldest high 35 degrees (1917); snowfall record 1.6\" (1956)",
+      "who": "WSBT",
+      "url": "https://wsbt.com/newsletter-daily/morning-drive-forecast-for-tuesday-october-31"
+    },
+    {
+      "what": "2023: 'the second-snowiest Halloween on record'",
+      "who": "WISH-TV",
+      "url": "https://wishtv.com/?p=1044611"
+    },
+    {
+      "what": "1.6 in. of snow dated 1954 (WSBT says 1956): the year is disputed, so the video says 'the 1950s'",
+      "who": "ABC57, 'Flurries flew for just three Halloweens of the past'",
+      "url": "https://www.abc57.com/news/flurries-flew-for-just-three-halloweens-of-the-past"
+    },
+    {
+      "what": "Fort Wayne: 'The most precipitation ever on Halloween was in 2013, when 1.73 inches of rain fell'",
+      "who": "WANE",
+      "url": "https://www.wane.com/weather/fort-waynes-halloween-weather-history/amp/"
+    }
+  ],
+  "beats": [
+    {
+      "text": "Think Halloween weather can't get wild around LaPorte? The records say otherwise.",
+      "scene": {
+        "kind": "town",
+        "seed": 2,
+        "tower": "clock",
+        "move": "in",
+        "amount": 0.07,
+        "fog": 0.22
+      },
+      "label": "HALLOWEEN, ON THE RECORD",
+      "title": {
+        "text": "WILD HALLOWEENS",
+        "at": "can't get wild",
+        "size": 96
+      },
+      "credit": "Records: National Weather Service"
+    },
+    {
+      "text": "In 2013, a storm soaked Halloween night. One LaPorte gauge caught 2.98 inches of rain, and Fort Wayne had its wettest Halloween on record.",
+      "scene": {
+        "kind": "town",
+        "seed": 3,
+        "tower": "none",
+        "rain": true,
+        "move": "in",
+        "amount": 0.07
+      },
+      "label": "HALLOWEEN 2013",
+      "card": {
+        "kind": "year",
+        "label": "LAPORTE GAUGE",
+        "value": "2.98\"",
+        "note": "OF RAIN",
+        "at": "One LaPorte",
+        "until": "and Fort Wayne"
+      },
+      "typed": [
+        {
+          "text": "FORT WAYNE'S WETTEST",
+          "at": "Fort Wayne",
+          "y": 545,
+          "size": 72
+        }
+      ],
+      "flash": [
+        "soaked"
+      ],
+      "credit": "NWS Northern Indiana"
+    },
+    {
+      "text": "In 2014, a gust hit 67 miles an hour over the lake off Michigan City, and out in the middle of Lake Michigan, waves topped 21 feet.",
+      "scene": {
+        "kind": "lighthouse",
+        "seed": 1,
+        "move": "in",
+        "amount": 0.08,
+        "fog": 0.15
+      },
+      "label": "HALLOWEEN 2014",
+      "typed": [
+        {
+          "text": "67 MPH GUST",
+          "at": "67 miles",
+          "y": 440,
+          "size": 84
+        },
+        {
+          "text": "MID-LAKE WAVES OVER 21 FT",
+          "at": "waves topped",
+          "y": 545,
+          "size": 66
+        }
+      ],
+      "credit": "NWS Chicago; ABC57"
+    },
+    {
+      "text": "In 2019, Halloween brought snow: 2.2 inches near Valparaiso, and Chicago's snowiest Halloween on record.",
+      "scene": {
+        "kind": "road",
+        "seed": 2,
+        "snow": true,
+        "move": "in",
+        "amount": 0.07
+      },
+      "label": "HALLOWEEN 2019",
+      "typed": [
+        {
+          "text": "2.2\" OF SNOW",
+          "at": "2.2 inches",
+          "y": 440,
+          "size": 84
+        },
+        {
+          "text": "NEAR VALPARAISO",
+          "at": "near Valparaiso",
+          "y": 545,
+          "size": 66
+        }
+      ],
+      "credit": "NWS Chicago; CBS Chicago"
+    },
+    {
+      "text": "In 2023, South Bend got 1.4 inches of snow on Halloween, its second-snowiest ever, just behind a record 1.6 inches in the 1950s.",
+      "scene": {
+        "kind": "town",
+        "seed": 5,
+        "tower": "dome",
+        "snow": true,
+        "move": "out",
+        "amount": 0.07
+      },
+      "label": "HALLOWEEN 2023",
+      "typed": [
+        {
+          "text": "1.4\" IN SOUTH BEND",
+          "at": "1.4 inches",
+          "y": 440,
+          "size": 76
+        },
+        {
+          "text": "RECORD: 1.6\" (1950s)",
+          "at": "just behind",
+          "y": 545,
+          "size": 66
+        }
+      ],
+      "credit": "ABC57; WSBT"
+    },
+    {
+      "text": "And the coldest? In 1917, South Bend's high on Halloween was just 35 degrees.",
+      "scene": {
+        "kind": "woods",
+        "seed": 1,
+        "fog": 0.3,
+        "move": "in",
+        "amount": 0.08
+      },
+      "label": "THE COLDEST",
+      "card": {
+        "kind": "year",
+        "label": "SOUTH BEND, HALLOWEEN",
+        "value": "1917",
+        "note": "HIGH: 35 DEGREES",
+        "at": "In 1917"
+      },
+      "credit": "WSBT; NWS South Bend records"
+    },
+    {
+      "text": "What's the wildest Halloween you remember? Tell us in the comments. Saturday's trick-or-treat forecast is at laporteweathernow.com.",
+      "end": true,
+      "end_card": {
+        "q": "WILDEST HALLOWEEN?",
+        "q2": "TELL US BELOW",
+        "bubble": "Your town, your year",
+        "pill": "Trick-or-treat forecast: laporteweathernow.com",
+        "scene": {
+          "kind": "town",
+          "seed": 7,
+          "tower": "clock",
+          "move": "still"
+        }
+      },
+      "credit": "All pictures drawn"
+    }
+  ],
+  "factcheck": {
+    "date": "2026-10-28",
+    "by": "independent subagent",
+    "result": "Lines 1, 2, 4, 6, 7 supported. Line 3: the 21-ft waves were at the mid-lake buoy, so 'in the middle of Lake Michigan' and the rain taken off the lighthouse scene. Line 5: WSBT dates the 1.6-in. record 1956, ABC57 1954, so the video says 'the 1950s'."
+  }
+}

@@ -1,0 +1,277 @@
+{
+  "slug": "michigan-city-prison-break-1933",
+  "title": "The 1933 Michigan City Prison Break That Freed John Dillinger",
+  "series": "LAPORTE AFTER DARK",
+  "music": {
+    "seed": 149,
+    "prog": 6
+  },
+  "say": [
+    [
+      "\\bLima\\b",
+      "Lye-muh"
+    ],
+    [
+      "\\bPierpont\\b",
+      "Peer-pont"
+    ]
+  ],
+  "sources": [
+    {
+      "what": "ten inmates escaped Sept. 26, 1933 ('Escaped from prison enclosure 9-26-33'); roster of the ten",
+      "who": "Indiana Archives and Records Administration, Dillinger collection",
+      "url": "https://www.in.gov/iara/services-for-public/search-archives-holdings/department-of-correction/dillinger-collection/"
+    },
+    {
+      "what": "'he and nine other convicts shot their way out of Indiana State prison last Tuesday'; a clerk shot; Sheriff Neel kidnapped; two motorists' cars commandeered",
+      "who": "The Michigan Daily, Sept. 28 and Oct. 1, 1933",
+      "url": "https://digital.bentley.umich.edu/midaily/mdp.39015071755941/39"
+    },
+    {
+      "what": "'Using guns smuggled in by the newly freed Dillinger'; Oct. 12: Pierpont, Makley and Clark free Dillinger at Lima; Jan. 25, 1934 arrests in Tucson",
+      "who": "PBS American Experience",
+      "url": "https://www.pbs.org/wgbh/americanexperience/features/dillinger-john-dillinger/"
+    },
+    {
+      "what": "an escape Dillinger 'had earlier financed and plotted'; paroled May 1933",
+      "who": "Encyclopaedia Britannica, John Dillinger",
+      "url": "https://www.britannica.com/print/article/163575"
+    },
+    {
+      "what": "guns 'hidden in a crate of thread bound for the jail's shirt making factory'",
+      "who": "History.com, 10 things about John Dillinger",
+      "url": "https://www.history.com/articles/10-things-you-may-not-know-about-john-dillinger"
+    },
+    {
+      "what": "'a shipment of merchandise consigned to the prison shirt factory'",
+      "who": "Melvin Purvis in the Chicago Tribune, Oct. 9, 1938",
+      "url": "https://archive.lib.msu.edu/DMC/tribune/trib10091938/trib10091938004.pdf"
+    },
+    {
+      "what": "Dillinger arrested in Dayton, Ohio, Sept. 22, 1933",
+      "who": "Wright State University archives; Encyclopedia of Indianapolis",
+      "url": "https://indyencyclopedia.org/?p=1343"
+    },
+    {
+      "what": "Lima, Oct. 12, 1933: Sheriff Jess Sarber shot, 'he died at 8:05 p.m.'; Pierpont and Makley sentenced to death, Clark to life",
+      "who": "Allen County (Ohio) Sheriff's Office, Sheriff Jess Sarber tribute",
+      "url": "https://acso-oh.us/sheriff-jess-sarber-tribute/"
+    },
+    {
+      "what": "Sarber 'shot and killed the evening of Oct. 12, 1933'",
+      "who": "Lima News via Yahoo News",
+      "url": "https://www.yahoo.com/news/museum-discusses-dillinger-gang-035900285.html"
+    },
+    {
+      "what": "Makley killed and Pierpont wounded in a Sept. 1934 escape attempt; Pierpont executed Oct. 17, 1934",
+      "who": "Indiana Historical Bureau; Wikipedia, Harry Pierpont",
+      "url": "https://blog.history.in.gov/tag/john-dillinger/"
+    },
+    {
+      "what": "Dillinger killed by federal agents in Chicago, July 22, 1934",
+      "who": "U.S. Census Bureau; FBI Indianapolis field office history",
+      "url": "https://www.fbi.gov/history/field-office-histories/indianapolis"
+    },
+    {
+      "what": "the prison dates to 1860 (Indiana State Prison North); a level-four maximum-security prison today, to stay open indefinitely",
+      "who": "Indiana State Library; Indiana DOC; Indiana Capital Chronicle (Aug. 22, 2025)",
+      "url": "https://indianacapitalchronicle.com/2025/08/22/indiana-doc-shifts-course-plans-to-keep-michigan-city-prison-open-beyond-2027/"
+    }
+  ],
+  "beats": [
+    {
+      "text": "In September 1933, ten men broke out of the Indiana State Prison in Michigan City. The guns had been smuggled in.",
+      "scene": {
+        "kind": "prison",
+        "seed": 0,
+        "move": "in",
+        "amount": 0.08,
+        "fog": 0.2
+      },
+      "label": "MICHIGAN CITY, INDIANA",
+      "title": {
+        "text": "THE 1933 PRISON BREAK",
+        "at": "broke out",
+        "size": 86
+      },
+      "typed": [
+        {
+          "text": "TEN MEN",
+          "at": "The guns",
+          "y": 545,
+          "size": 80
+        }
+      ],
+      "credit": "Indiana Archives; The Michigan Daily (1933)"
+    },
+    {
+      "text": "John Dillinger, paroled from that prison in May, helped plan it, and had pistols hidden in a shipment to the prison's shirt shop.",
+      "scene": {
+        "kind": "room",
+        "seed": 1,
+        "move": "in",
+        "amount": 0.07
+      },
+      "label": "THE PLAN",
+      "typed": [
+        {
+          "text": "PISTOLS IN A SHIPMENT",
+          "at": "had pistols",
+          "y": 440,
+          "size": 72
+        },
+        {
+          "text": "TO THE SHIRT SHOP",
+          "at": "shirt shop",
+          "y": 545,
+          "size": 72
+        }
+      ],
+      "credit": "PBS American Experience; Britannica; History.com; Purvis (1938)"
+    },
+    {
+      "text": "By then, Dillinger was locked up again himself, arrested in Dayton, Ohio, four days earlier.",
+      "scene": {
+        "kind": "cell",
+        "seed": 2,
+        "move": "in",
+        "amount": 0.08
+      },
+      "label": "SEPT. 22, 1933",
+      "card": {
+        "kind": "year",
+        "label": "DILLINGER ARRESTED",
+        "value": "SEPT. 22",
+        "note": "DAYTON, OHIO",
+        "at": "arrested in"
+      },
+      "credit": "Wright State University; Encyclopedia of Indianapolis"
+    },
+    {
+      "text": "On September 26, the ten forced their way out at gunpoint, shooting a prison clerk. They took a visiting sheriff hostage and fled in commandeered cars.",
+      "scene": {
+        "kind": "road",
+        "seed": 4,
+        "tail_lights": true,
+        "move": "in",
+        "amount": 0.07,
+        "fog": 0.18
+      },
+      "label": "SEPT. 26, 1933",
+      "typed": [
+        {
+          "text": "A VISITING SHERIFF",
+          "at": "took a visiting",
+          "y": 440,
+          "size": 70
+        },
+        {
+          "text": "TAKEN HOSTAGE",
+          "at": "hostage",
+          "y": 545,
+          "size": 70
+        }
+      ],
+      "sfx": [
+        {
+          "kind": "hit",
+          "at": "shooting a",
+          "gain": 0.5
+        }
+      ],
+      "credit": "The Michigan Daily (1933); Indiana Archives"
+    },
+    {
+      "text": "Two weeks later, three of them walked into the jail in Lima, Ohio, posing as Indiana officers, and freed Dillinger. Sheriff Jess Sarber was shot, and died that night.",
+      "scene": {
+        "kind": "jail",
+        "seed": 3,
+        "lit": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "move": "in",
+        "amount": 0.08
+      },
+      "label": "LIMA, OHIO, OCT. 12, 1933",
+      "typed": [
+        {
+          "text": "SHERIFF JESS SARBER",
+          "at": "Sheriff Jess",
+          "y": 440,
+          "size": 70
+        },
+        {
+          "text": "DIED THAT NIGHT",
+          "at": "died that",
+          "y": 545,
+          "size": 70
+        }
+      ],
+      "credit": "Allen County Sheriff's Office; PBS; Lima News"
+    },
+    {
+      "text": "The gang lasted less than a year. Federal agents killed Dillinger in Chicago in July 1934, and Harry Pierpont was executed that October.",
+      "scene": {
+        "kind": "card",
+        "seed": 5,
+        "move": "still"
+      },
+      "label": "1934",
+      "card": {
+        "kind": "year",
+        "label": "THE DILLINGER GANG",
+        "value": "1934",
+        "note": "DEAD, CAUGHT OR EXECUTED",
+        "at": "The gang"
+      },
+      "credit": "U.S. Census Bureau; FBI; Indiana Historical Bureau"
+    },
+    {
+      "text": "The prison in Michigan City, near the lakefront, dates to 1860, and it still holds inmates today, so view it from the road.",
+      "pause": 0.55,
+      "scene": {
+        "kind": "prison",
+        "seed": 2,
+        "move": "out",
+        "amount": 0.08,
+        "fog": 0.28
+      },
+      "label": "INDIANA STATE PRISON",
+      "typed": [
+        {
+          "text": "STILL A PRISON TODAY",
+          "at": "still holds",
+          "y": 545,
+          "size": 70
+        }
+      ],
+      "credit": "Indiana State Library; Indiana DOC"
+    },
+    {
+      "text": "Comment your town, and it could be next.",
+      "end": true,
+      "end_card": {
+        "q": "COMMENT YOUR TOWN",
+        "q2": "IT COULD BE NEXT",
+        "bubble": "Your town, your state",
+        "pill": "Tonight: Dillinger at Crown Point's old jail",
+        "scene": {
+          "kind": "prison",
+          "seed": 4,
+          "move": "still"
+        }
+      },
+      "credit": "All pictures drawn"
+    }
+  ],
+  "factcheck": {
+    "date": "2026-10-28",
+    "by": "independent subagent",
+    "result": "Lines 1, 2, 3, 5, 6, 8 supported. Changed: line 4 to 'forced their way out at gunpoint, shooting a prison clerk' and 'a visiting sheriff' (Sheriff Neel of Harrison County); line 7 'near the lakefront' instead of 'on the lakeshore'."
+  }
+}
