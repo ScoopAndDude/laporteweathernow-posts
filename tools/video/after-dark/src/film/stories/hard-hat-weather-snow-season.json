@@ -1,0 +1,40 @@
+{
+  "slug": "hard-hat-weather-snow-season",
+  "title": "Hard Hat Weather: the plow call, the night before",
+  "series": "HARD HAT WEATHER",
+  "music": {"seed": 181, "prog": 6},
+  "say": [["laporteweathernow\\.com/hardhat", "LaPorte Weather Now dot com slash hard hat"], ["\\bNOAA\\b", "Noah"]],
+  "sources": [
+    {"what": "Snow & ice calls for plow crews around 6 PM, 3 AM update; per-lot storm record from NOAA's National Snowfall Analysis; free for one site; Crew $19/mo; rain-out guarantee; JOIN by text", "who": "laporteweathernow.com/hardhat", "url": "https://laporteweathernow.com/hardhat/"},
+    {"what": "LaPorte averages more than 60 inches of snow a year (the site's own winter pages and NWS normals)", "who": "La Porte Weather Now; NWS Northern Indiana", "url": "https://laporteweathernow.com/"}
+  ],
+  "beats": [
+    {"text": "If you plow lots in LaPorte County, your winter starts at 6 PM, not 3 AM.",
+     "scene": {"kind": "town", "seed": 11, "tower": "none", "snow": true, "move": "in", "amount": 0.07},
+     "label": "FOR PLOW AND SALT CREWS",
+     "title": {"text": "THE PLOW CALL", "at": "your winter", "size": 96},
+     "credit": "Hard Hat Weather, by La Porte Weather Now"},
+    {"text": "Hard Hat Weather texts you the night before snow or ice: plow, salt, or watch, with the inches, the hours, and the low, for every lot you name.",
+     "scene": {"kind": "road", "seed": 5, "snow": true, "tail_lights": true, "move": "in", "amount": 0.07},
+     "label": "6 PM, THE NIGHT BEFORE",
+     "card": {"kind": "quote", "lines": ["Main St lot: PLOW.", "About 4 in. of snow,", "mostly 11 PM-5 AM.", "Salt after. Low 25F."], "by": "AN EXAMPLE CALL", "at": "plow, salt", "until": "for every lot"},
+     "credit": "Example text, from made-up forecasts"},
+    {"text": "If it gets worse overnight, a 3 AM update. On a quiet night, no message at all.",
+     "scene": {"kind": "house", "style": "farmhouse", "seed": 5, "snow": true, "move": "in", "amount": 0.06},
+     "label": "3 AM, ONLY IF IT CHANGES",
+     "typed": [{"text": "QUIET NIGHT? NO TEXT.", "at": "On a quiet", "y": 545, "size": 70}],
+     "credit": "laporteweathernow.com/hardhat"},
+    {"text": "And the morning after, a dated record for each lot: how much fell, when, and what you were told. For per-push billing, and the slip-and-fall question that comes in March.",
+     "scene": {"kind": "card", "seed": 4, "move": "still"},
+     "label": "THE MORNING AFTER",
+     "card": {"kind": "year", "label": "EVERY LOT, EVERY STORM", "value": "4.1\"", "note": "WHEN IT FELL, WHAT WE SAID", "at": "a dated record"},
+     "typed": [{"text": "BILLING. CLAIMS.", "at": "For per-push", "y": 1180, "size": 76}],
+     "credit": "Snow totals from NOAA's National Snowfall Analysis"},
+    {"text": "It's free for one lot. A whole crew is 19 dollars a month. Sign up at laporteweathernow.com/hardhat before the first snow.",
+     "end": true,
+     "end_card": {"q": "FREE FOR ONE LOT", "q2": "CREW: $19 A MONTH", "bubble": "Before the first snow",
+                  "pill": "laporteweathernow.com/hardhat",
+                  "scene": {"kind": "town", "seed": 12, "tower": "none", "snow": true, "move": "still"}},
+     "credit": "All pictures drawn"}
+  ]
+}

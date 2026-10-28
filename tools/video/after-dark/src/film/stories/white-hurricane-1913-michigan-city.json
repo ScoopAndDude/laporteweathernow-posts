@@ -1,0 +1,157 @@
+{
+  "slug": "white-hurricane-1913-michigan-city",
+  "title": "The White Hurricane of 1913 and the Michigan City pier",
+  "series": "LAPORTE AFTER DARK",
+  "music": {
+    "seed": 1913,
+    "prog": 3
+  },
+  "say": [
+    [
+      "\\bNOAA\\b",
+      "Noah"
+    ],
+    [
+      "\\b1913\\b",
+      "nineteen thirteen"
+    ],
+    [
+      "\\b250\\b",
+      "two hundred fifty"
+    ]
+  ],
+  "sources": [
+    {
+      "what": "Storm Nov. 7-10, 1913; peak Nov. 9; a dozen ships sunk; roughly 250 sailors lost, most on Lake Huron; only one vessel lost on Lake Michigan, the barge Plymouth near Green Bay",
+      "who": "NWS Detroit; NWS Great Lakes retrospective; Lake Carriers' Association 1913 report",
+      "url": "https://www.weather.gov/dtx/strm_1913"
+    },
+    {
+      "what": "Chicago: Lincoln Park breakwater swept away; waterfront damage",
+      "who": "Wikipedia, Great Lakes Storm of 1913; Sault Ste. Marie Evening News, Nov. 10, 1913",
+      "url": "https://en.wikipedia.org/wiki/Great_Lakes_Storm_of_1913"
+    },
+    {
+      "what": "Michigan City: the storm destroyed 200 feet of the elevated walk to the East Pierhead light; keepers used a breeches buoy to reach it",
+      "who": "Lighthousefriends; U.S. Lighthouse Society archive photos dated Nov. 18, 1913, 'Michigan City East Pierhead, Storm Damage 1913' and 'Breeches Buoy'",
+      "url": "https://www.lighthousefriends.com/light.asp?ID=233"
+    },
+    {
+      "what": "Steamer Louisiana burned and sank at Washington Island, crew survived; barge Plymouth lost with all hands at the mouth of Green Bay",
+      "who": "Wisconsin Historical Society NRHP record; Wikipedia, Plymouth (schooner barge)",
+      "url": "https://www.wisconsinhistory.org/Records/NationalRegister/NR2088"
+    }
+  ],
+  "beats": [
+    {
+      "text": "In November 1913, the worst storm in Great Lakes history blew for four days. Here's what it did to Michigan City.",
+      "scene": {
+        "kind": "lighthouse",
+        "seed": 13,
+        "snow": true,
+        "move": "in",
+        "amount": 0.07
+      },
+      "label": "NOVEMBER 7 TO 10, 1913",
+      "title": {
+        "text": "THE WHITE HURRICANE",
+        "at": "the worst storm",
+        "size": 84
+      },
+      "credit": "Sources: National Weather Service; Lake Carriers' Association"
+    },
+    {
+      "text": "Sailors called it the White Hurricane. Hurricane-force winds, whiteout snow, and waves taller than a house. About a dozen ships went to the bottom, and roughly 250 sailors died, most of them on Lake Huron.",
+      "scene": {
+        "kind": "lighthouse",
+        "seed": 14,
+        "snow": true,
+        "move": "pan",
+        "amount": 0.06
+      },
+      "label": "THE WHITE HURRICANE",
+      "card": {
+        "kind": "year",
+        "label": "NOVEMBER 9, 1913",
+        "value": "~250",
+        "note": "SAILORS LOST, A DOZEN SHIPS SUNK",
+        "at": "About a dozen"
+      },
+      "credit": "Sources: NWS Great Lakes retrospective; Lake Carriers' Association, 1913"
+    },
+    {
+      "text": "At the south end of Lake Michigan, Chicago's brand-new Lincoln Park breakwater was wrecked.",
+      "scene": {
+        "kind": "town",
+        "seed": 19,
+        "snow": true,
+        "move": "in",
+        "amount": 0.06
+      },
+      "label": "CHICAGO'S LAKEFRONT",
+      "typed": [
+        {
+          "text": "BREAKWATER: GONE.",
+          "at": "was wrecked",
+          "y": 545,
+          "size": 70
+        }
+      ],
+      "credit": "Sources: Wikipedia; Sault Ste. Marie Evening News, Nov. 10, 1913"
+    },
+    {
+      "text": "And in Michigan City, the waves tore away about 200 feet of the elevated catwalk out to the East Pierhead lighthouse.",
+      "scene": {
+        "kind": "lighthouse",
+        "seed": 15,
+        "snow": true,
+        "move": "in",
+        "amount": 0.08
+      },
+      "label": "MICHIGAN CITY'S EAST PIER",
+      "card": {
+        "kind": "year",
+        "label": "MICHIGAN CITY",
+        "value": "~200 FT",
+        "note": "OF THE PIER CATWALK, TORN AWAY",
+        "at": "about 200"
+      },
+      "credit": "Source: Lighthousefriends; U.S. Lighthouse Society photos, Nov. 18, 1913"
+    },
+    {
+      "text": "To reach the light, the keepers rode a breeches buoy: a canvas seat on a rope, slung over the gap, above the surf.",
+      "scene": {
+        "kind": "lighthouse",
+        "seed": 16,
+        "snow": true,
+        "move": "still"
+      },
+      "label": "THE KEEPERS' COMMUTE",
+      "typed": [
+        {
+          "text": "A SEAT ON A ROPE, OVER THE WAVES.",
+          "at": "a canvas seat",
+          "y": 545,
+          "size": 60
+        }
+      ],
+      "credit": "Source: U.S. Lighthouse Society archive, 'Breeches Buoy,' 1913"
+    },
+    {
+      "text": "No ship was lost anywhere near Michigan City. The only one lost with her crew on Lake Michigan went down at the mouth of Green Bay. But the lighthouse that guided boats home that week is still standing on the pier today.",
+      "end": true,
+      "end_card": {
+        "q": "WHICH TOWN NEXT?",
+        "bubble": "Comment your town",
+        "pill": "laporteweathernow.com/history",
+        "scene": {
+          "kind": "lighthouse",
+          "seed": 17,
+          "move": "still"
+        }
+      },
+      "credit": "All pictures drawn. Sources: NWS; Lake Carriers' Association; Lighthousefriends"
+    }
+  ],
+  "factcheck": "Oct. 28, 2026, independent subagent: supported after softening lines 3, 4 and 6."
+}
