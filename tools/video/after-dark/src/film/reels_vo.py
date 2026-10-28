@@ -196,6 +196,11 @@ def sentences(p):
             for s in out if s.strip()]
 
 
+def create(k, text, voice=VOICE, speed=SPEED, lang=LANG):
+    """Speech for text that has already been through spoken(); reel_story.py records every sentence with this."""
+    return k.create(text, voice=voice, speed=speed, lang=lang)
+
+
 def trim(a, thr=0.004, pad=0.03):
     idx = np.nonzero(np.abs(a) > thr)[0]
     if len(idx) == 0:
