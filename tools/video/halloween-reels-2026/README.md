@@ -105,6 +105,11 @@ re-recorded; their 18 Buffer posts now use the videos at commit ad40a78. The sch
 still runs Fri., Oct. 30 at 5:30 AM: it refreshes the numbers from the newest forecast and updates these three posts
 (edit_post with the new video), never adds new ones.
 
+Later on Oct. 28 Scoop chose to spell it **LaPorte**, one word, on screen too. Belle Part 5 (commit c334cec) and the
+other five reels (commit 2666267) show LaPorte in their labels and captions; the voice still says luh-PORT. Their 18
+Buffer posts use those videos, and the post text and YouTube titles say LaPorte (names stay as published: "La Porte
+After Dark", "La Porte County Herald-Dispatch", the News-Dispatch's "La Porte County's Top 10 Most Haunted").
+
 ## Rebuilding the workspace
 
 `src/` holds everything that isn't already in this repo: `src/film/*.py` (the drawing, sound and narration code; it
