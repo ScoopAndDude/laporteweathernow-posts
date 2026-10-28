@@ -95,8 +95,13 @@ In Buffer (the videos at commit 7599159), put in as the free plan's 10-per-chann
 | Belle Gunness, Part 6 | Sat., Oct. 31, 12:15 PM | 6adfea0d0565644c947ff291 | 6adfff0da6170f32b17091eb | 6adfea10f266a5f7e104d7eb |
 
 The trick-or-treat forecast was remade on Wed., Oct. 28 from that morning's NWS forecast (high 64, a 40% chance of
-light showers by day, 20% Saturday night) and is in Buffer for Fri., Oct. 30, 7:30 AM (the video at commit 6f069b2):
-YouTube 6ae1fb4dbaa95856b5f2b331, TikTok 6ae1fb51f8ac381631f619bb, X 6ae1fb54e7fe9e2e3ebf199f. The scheduled task
+light showers by day, 20% Saturday night) and is in Buffer for Fri., Oct. 30, 7:30 AM (the video at commit ad40a78):
+YouTube 6ae1fb4dbaa95856b5f2b331, TikTok 6ae1fb51f8ac381631f619bb, X 6ae1fb54e7fe9e2e3ebf199f.
+
+Oct. 28, 2026: La Porte is said as one word, luh-PORT (Scoop: "Laporte is pronounced as one word not 2").
+`src/film/reels_vo.py` now says it from sound symbols (`ləpˈɔɹt`, the weather radio's), and the six scheduled reels
+that say it (Belle Part 5, Posey Chapel, Patton, Hangman's Road, the countdown, the trick-or-treat forecast) were
+re-recorded; their 18 Buffer posts now use the videos at commit ad40a78. The scheduled task
 still runs Fri., Oct. 30 at 5:30 AM: it refreshes the numbers from the newest forecast and updates these three posts
 (edit_post with the new video), never adds new ones.
 
