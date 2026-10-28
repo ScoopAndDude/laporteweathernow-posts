@@ -172,9 +172,13 @@ New La Porte After Dark short: <title> (<seconds> s)
 YouTube, TikTok and X: <scheduled for 6:30 PM | posted now>
 Facebook caption (for you to post):
 <facebook text>
+Facebook topics to tag: History, Local News
 Video: <raw URL>
 Fact-check: <n> claims checked, all supported
 ```
+
+(Facebook's Page assistant, Oct. 28, 2026: tagging topics with "Add Topics" when posting helps reels reach people who
+don't follow the Page yet. Facebook's posting API can't add them, so Scoop picks them when he posts.)
 
 If something stopped the run, say what and what's needed in one or two lines instead.
 
