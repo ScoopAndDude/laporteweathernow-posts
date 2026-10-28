@@ -22,6 +22,8 @@ Rules, the same as the radio and the Daily Scoop:
   (HOOKS below): an NWS alert first, then freeze or frost, snow, the Storm Prediction Center's risk,
   heat, wind, likely rain, then a big change, an unusual temperature, the weekend's best day, a nice day.
   No fear words and never a warning of our own: when there's an alert, the alert is the news, in NWS's words.
+  Since Oct. 29, 2026 the opening is asked as a question ("LaPorte, ready for 74° in late October?") and
+  answered with the fact ("That's about 18° above normal."); alerts, the SPC risk and storms stay statements.
 - No video while a short-fused warning (tornado, severe thunderstorm, flash flood, snow squall, extreme
   wind) is in effect for La Porte County: a recorded video would be out of date within minutes, and
   people need the warning itself (phone alerts, NOAA Weather Radio, the Alerts page).
@@ -56,6 +58,13 @@ NCEI = "https://www.ncei.noaa.gov/access/services"
 HASHTAGS = "#LaPorte #LaPorteIndiana #LaPorteCounty #IndianaWeather #NWIndiana"
 CUTOFFS = {"hook": 2.4, "period": 3.0, "radar": 3.2, "days": 3.2, "end": 2.0}   # shortest each scene can be (s)
 LEAD, TAIL = 0.10, 0.30                     # voice starts this far into a scene; the scene runs this long after it
+# The town is spelled LaPorte, one word, on screen and in the caption (Scoop, Oct. 28, 2026). The voice says it
+# as one word, luh-PORT: radio_broadcast's SAY_AS and PRONOUNCE handle both spellings.
+TOWN = "LaPorte"
+# Since Oct. 29, 2026 the opening is asked as a question (Facebook's tips on the first three seconds): the question
+# and its number are on screen from the first frame, the voice asks it, and the answer lands as a second line.
+# Alerts, the Storm Prediction Center's risk and thunderstorms stay in NWS's own words, as statements.
+ASK_GAP = 0.18                              # pause between the question and its answer (s)
 
 
 # ---------------------------------------------------------------------------------------------
@@ -367,6 +376,12 @@ def periods_ahead(data, now):
     return [p for p in (data["forecast"].get("periods") or []) if dt(p["end"]) > now]
 
 
+def month_words(d):
+    """Oct. 28 -> 'late October'; Oct. 4 -> 'early October'; Oct. 15 -> 'mid-October'."""
+    name = d.strftime("%B")
+    return f"early {name}" if d.day <= 10 else f"mid-{name}" if d.day <= 20 else f"late {name}"
+
+
 def when_word(t, now):
     """'today', 'tonight' (6 p.m. or later today), or the weekday."""
     w = bs.day_word(t, now)
@@ -390,9 +405,11 @@ def hooks(data, now, normals):
     tomorrow = days_after[0] if days_after else None
     out = []
 
-    def add(score, kind, big, small, say, icon, tone, label=None, when=None):
-        out.append({"score": score, "kind": kind, "big": big, "small": small, "say": say, "icon": icon,
-                    "tone": tone, "label": label, "when": when})
+    def add(score, kind, big, small, say, icon, tone, label=None, when=None, ask=None, parts=None):
+        # ask: the question on screen, (words above the big number, words below it). parts: what the voice says,
+        # [the question, its answer]; the answer's words go in `small` on screen.
+        out.append({"score": score, "kind": kind, "big": big, "small": small, "say": " ".join(parts) if parts else say,
+                    "icon": icon, "tone": tone, "label": label, "when": when, "ask": ask, "parts": parts})
 
     # 1. An official alert for La Porte County, in NWS's words.
     for a in active_alerts(data.get("alerts"), now):
@@ -408,7 +425,7 @@ def hooks(data, now, normals):
                 span += f" until {bs.clock(dt(end_s))} {when_word(dt(end_s), now)}"
         except Exception:
             pass
-        where = rb.where_words(a.get("area"))
+        where = rb.where_words(a.get("area")).replace("La Porte", TOWN)      # "LaPorte County" on screen
         article = "an" if event[:1].upper() in "AEIOU" else "a"
         add(130 - 10 * kind, "alert", event, f"for {where}{span}",
             f"The National Weather Service has {article} {event} for {where}{span}.",
@@ -423,14 +440,15 @@ def hooks(data, now, normals):
         tn = day_name(night, now)
         edge = now.month in (4, 5, 9, 10, 11)
         if lo <= 32 and edge:
-            add(92, "freeze", deg(lo), f"Below freezing {tn}",
-                f"Below freezing {tn} in La Porte, with a low around {lo}°.", icon_for(night["short"], False), "cold", when=tn)
+            add(92, "freeze", deg(lo), "Below freezing", None, icon_for(night["short"], False), "cold", when=tn,
+                ask=(f"{TOWN}, ready for", f"{tn}?"), parts=[f"{TOWN}, ready for {lo}° {tn}?", "That's below freezing."])
         elif fw and edge:
-            add(90, "frost", f"{fw}", f"possible {tn} · low {lo}°",
-                f"{fw} is possible {tn}, with a low around {lo}°.", "frost", "cold", when=tn)
+            add(90, "frost", f"{fw}", f"Possible · low {lo}°", None, "frost", "cold", when=tn,
+                ask=(f"{TOWN}, ready for", f"{tn}?"),
+                parts=[f"{TOWN}, ready for {fw.lower()} {tn}?", f"It's possible, with a low around {lo}°."])
         elif lo <= 0:
-            add(84, "cold", deg(lo), f"Low {tn}", f"A bitter cold night: a low around {lo}°.", icon_for(night["short"], False),
-                "cold", when=tn)
+            add(84, "cold", deg(lo), "A bitter cold night", None, icon_for(night["short"], False), "cold", when=tn,
+                ask=(f"{TOWN}, ready for", f"{tn}?"), parts=[f"{TOWN}, ready for {lo}° {tn}?", "That's a bitter cold night."])
 
     # 3. Snow today or tonight.
     for p in [x for x in (day, night) if x]:
@@ -438,9 +456,13 @@ def hooks(data, now, normals):
             amt = snow_words(p)
             when = day_name(p, now)
             if amt:
-                add(93, "snow", amt, f"of snow {when}", f"Snow {when}: {amt} possible, says the Weather Service.", "snow", "cold", when=when)
+                add(93, "snow", amt, "Possible, says the NWS", None, "snow", "cold", when=when,
+                    ask=(f"{TOWN}, ready for", f"of snow {when}?"),
+                    parts=[f"{TOWN}, ready for {amt} of snow {when}?", "The Weather Service says it's possible."])
             else:
-                add(86, "snow", "Snow", f"in the forecast {when}", f"{friendly(p['short'])} {when}.", "snow", "cold", when=when)
+                add(86, "snow", "Snow", friendly(p["short"]), None, "snow", "cold", when=when,
+                    ask=(f"{TOWN}, ready for", f"{when}?"),
+                    parts=[f"{TOWN}, ready for snow {when}?", bs.end_sentence(f"{friendly(p['short'])}, says the Weather Service")])
             break
 
     # 4. NOAA's Storm Prediction Center risk for today.
@@ -464,13 +486,17 @@ def hooks(data, now, normals):
     # 6. Heat and wind.
     if day and day.get("temperatureF") is not None and day["temperatureF"] >= 90:
         hi = day["temperatureF"]
-        add(80 if hi >= 95 else 76, "heat", deg(hi), f"High {day_name(day, now)}",
-            f"A hot one {day_name(day, now)}: a high near {hi}°. Drink water and take breaks in the shade.", "sun", "warm", when=day_name(day, now))
+        dn = day_name(day, now)
+        add(80 if hi >= 95 else 76, "heat", deg(hi), "Drink water · find shade", None, "sun", "warm", when=dn,
+            ask=(f"{TOWN}, ready for", f"{dn}?"),
+            parts=[f"{TOWN}, ready for {hi}° {dn}?", "Drink water and take breaks in the shade."])
     for p in [x for x in (day, night) if x]:
         g = gust_of(p)
         if g and g >= 35:
-            add(78 if g < 45 else 84, "wind", f"Gusts to {g}", f"mph {day_name(p, now)}",
-                f"Gusts could reach {g} mph {day_name(p, now)}, says the Weather Service.", "wind", "storm", when=day_name(p, now))
+            dn = day_name(p, now)
+            add(78 if g < 45 else 84, "wind", f"{g} mph", f"Wind {p['wind']}" if p.get("wind") else None, None, "wind",
+                "storm", when=dn, ask=(f"{TOWN}, ready for gusts to", f"{dn}?"),
+                parts=[f"{TOWN}, ready for gusts to {g} mph {dn}?", "That's the Weather Service forecast."])
             break
 
     # 7. Rain likely today.
@@ -478,8 +504,10 @@ def hooks(data, now, normals):
         chance = bs.nws_chance(day.get("rainChancePercent"))
         if chance and chance >= 50 and re.search(r"rain|shower|drizzle", day.get("short") or "", re.I):
             peak, window = rain_window(hours, local(day["start"]), local(day["end"]))
-            add(66 if chance >= 60 else 60, "rain", f"{chance}%", "chance of rain today" + (f" · {window}" if window else ""),
-                f"Rain likely today: a {chance}% chance" + (f", mostly {window}." if window else "."), "rain", "rain", when="today")
+            add(66 if chance >= 60 else 60, "rain", f"{chance}%", f"Mostly {window}" if window else "Rain likely today", None,
+                "rain", "rain", when="today", ask=("Need an umbrella today?", "chance of rain"),
+                parts=[f"Need an umbrella today, {TOWN}?",
+                       bs.end_sentence(f"There's a {chance}% chance of rain" + (f", mostly {window}" if window else ""))])
 
     # 8. A big change from yesterday at the La Porte airport.
     sc = (data.get("scorecard") or {}).get("latest") or {}
@@ -488,9 +516,12 @@ def hooks(data, now, normals):
         diff = day["temperatureF"] - int(y_high)
         if abs(diff) >= 12:
             word = "warmer" if diff > 0 else "cooler"
-            add(56 + min(abs(diff), 25) // 3, "change", f"{abs(diff)}° {word}", "than yesterday",
-                f"About {abs(diff)}° {word} than yesterday, with a high near {day['temperatureF']}°.",
-                icon_for(day["short"], True), "warm" if diff > 0 else "cold", when="today")
+            hi = day["temperatureF"]
+            add(56 + min(abs(diff), 25) // 3, "change", f"{abs(diff)}° {word}", f"High near {hi}°", None,
+                icon_for(day["short"], True), "warm" if diff > 0 else "cold", when="today",
+                ask=(f"Feel the difference, {TOWN}?", "than yesterday"),
+                parts=[f"Feel the difference, {TOWN}?",
+                       f"Today's about {abs(diff)}° {word} than yesterday, with a high near {hi}°."])
 
     # 9. Unusually warm or cool for the date (NOAA 1991-2020 normals), today or tomorrow.
     for p, base in ((day, 58), (tomorrow, 50)):
@@ -504,10 +535,11 @@ def hooks(data, now, normals):
         if abs(diff) >= 10:
             word = "above" if diff > 0 else "below"
             when = day_name(p, now)
-            date_words = f"{AP_MONTHS[d.month - 1]} {d.day}"
-            add(base + min(abs(diff), 24) // 3, "normal", deg(p["temperatureF"]), f"{upper_first(when)}. {abs(diff)}° {word} normal.",
-                f"{upper_first(when)}: {p['temperatureF']}°, about {abs(diff)}° {word} normal for {date_words}.",
-                icon_for(p["short"], True), "warm" if diff > 0 else "cold", when=when)
+            asked = f"in {month_words(d)}?" if when == "today" else f"{when}?"
+            add(base + min(abs(diff), 24) // 3, "normal", deg(p["temperatureF"]), f"{abs(diff)}° {word} normal", None,
+                icon_for(p["short"], True), "warm" if diff > 0 else "cold", when=when,
+                ask=(f"{TOWN}, ready for", asked),
+                parts=[f"{TOWN}, ready for {p['temperatureF']}° {asked}", f"That's about {abs(diff)}° {word} normal."])
 
     # 10. The weekend's best day (Thursday and Friday videos).
     if now.weekday() in (3, 4):
@@ -517,9 +549,10 @@ def hooks(data, now, normals):
         if len(wk) == 2 and len(good) == 1:
             p = good[0]
             name = WEEKDAYS[local(p["start"]).weekday()]
-            add(46, "weekend", name, "is the pick of the weekend",
-                f"{name} is the pick of the weekend: {lower_first(friendly(p['short']))}, with a high near {p['temperatureF']}°.",
-                icon_for(p["short"], True), "warm", when=name)
+            add(46, "weekend", name, f"{friendly(p['short'])} · {p['temperatureF']}°", None, icon_for(p["short"], True),
+                "warm", when=name, ask=("Planning your weekend?", "looks like the pick"),
+                parts=[f"Planning your weekend, {TOWN}?",
+                       f"{name} looks like the pick: {lower_first(friendly(p['short']))}, with a high near {p['temperatureF']}°."])
 
     # 11. A nice day.
     if day and day.get("temperatureF") is not None:
@@ -527,16 +560,18 @@ def hooks(data, now, normals):
         chance = bs.nws_chance(day.get("rainChancePercent"))
         if not chance and 62 <= hi <= 84 and re.search(r"sunny|clear", day.get("short") or "", re.I) \
                 and not re.search(r"rain|shower|snow|storm|fog", day.get("short") or "", re.I):
-            add(40, "nice", deg(hi), f"and {lower_first(friendly(day['short']))} today",
-                f"{friendly(day['short'])} and {hi}° today in La Porte.", icon_for(day["short"], True), "warm", when="today")
+            add(40, "nice", deg(hi), None, None, icon_for(day["short"], True), "warm", when="today",
+                ask=("Got plans outside today?", f"and {lower_first(friendly(day['short']))}"),
+                parts=[f"Got plans outside today, {TOWN}?", f"{friendly(day['short'])}, with a high near {hi}°."])
 
     # 12. Otherwise, just the forecast.
     p = day or first
     t = p.get("temperatureF")
-    add(10, "plain", deg(t), f"{friendly(p['short'])}",
-        f"{upper_first(day_name(p, now))} in La Porte: {lower_first(friendly(p['short']))}, "
-        f"{'high near' if p.get('isDaytime') else 'low around'} {t}°.", icon_for(p["short"], p.get("isDaytime")), "plain",
-        when=day_name(p, now))
+    dn = day_name(p, now)
+    add(10, "plain", deg(t), None, None, icon_for(p["short"], p.get("isDaytime")), "plain", when=dn,
+        ask=(f"How's {dn} looking?", lower_first(friendly(p["short"]))),
+        parts=[f"How's {dn} looking, {TOWN}?",
+               f"{friendly(p['short'])}, {'high near' if p.get('isDaytime') else 'low around'} {t}°."])
     out.sort(key=lambda h: -h["score"])
     return out
 
@@ -647,7 +682,7 @@ def until_words(a, now):
 
 
 def caption(plan_scenes, hook, data, now, alerts):
-    lines = [f"La Porte weather for {ap_day(now.date())}, from the National Weather Service:"]
+    lines = [f"{TOWN} weather for {ap_day(now.date())}, from the National Weather Service:"]
     if alerts:
         lines.append(bs.end_sentence("Official alerts for La Porte County: " + "; ".join(
             f"{a['event']}{until_words(a, now)}" for a in alerts)))
@@ -677,9 +712,12 @@ def build_plan(data, now, normals, radar_ok=None):
     options = hooks(data, now, normals)
     hook = options[0]
     hours = data.get("hours") or []
-    scenes = [{"id": "hook", "kind": "hook", "label": hook.get("label") or f"LA PORTE · {ap_day(now.date()).upper()}",
+    scenes = [{"id": "hook", "kind": "hook", "label": hook.get("label") or f"{TOWN.upper()} · {ap_day(now.date()).upper()}",
                "big": hook["big"], "small": hook["small"], "icon": hook["icon"], "tone": hook["tone"],
                "hookKind": hook["kind"], "say": hook["say"]}]
+    if hook.get("ask") and hook.get("parts"):
+        scenes[0]["ask"] = list(hook["ask"])
+        scenes[0]["sayParts"] = list(hook["parts"])
     if hook["kind"] == "alert" and len(alerts) > 1:
         scenes[0]["more"] = [a["event"] for a in alerts[1:4]]
     first, second = ps[0], ps[1]
@@ -708,6 +746,9 @@ def build_plan(data, now, normals, radar_ok=None):
     scenes.append({"id": "end", "kind": "end", "say": "laporteweathernow.com."})
     for s in scenes:
         s["spoken"] = rb.for_ear(s["say"])
+        if s.get("sayParts"):                    # recorded in two pieces, so the answer appears as it's said
+            s["spokenParts"] = [rb.for_ear(x) for x in s["sayParts"]]
+            s["spoken"] = " ".join(s["spokenParts"])
     obs = data.get("observation") or {}
     return {
         "about": "The Daily Video for La Porte Weather Now (scripts/daily_video.py): official NWS weather, read aloud.",
@@ -811,7 +852,13 @@ def speak_all(plan, outdir, speak, rate):
     vdir = os.path.join(outdir, "voice")
     os.makedirs(vdir, exist_ok=True)
     for s in plan["scenes"]:
-        audio = speak(s["spoken"])
+        if s.get("spokenParts"):                 # a question, then its answer: factAfter is when the answer starts
+            ask = np.asarray(speak(s["spokenParts"][0]), dtype=np.float32)
+            answer = np.asarray(speak(s["spokenParts"][1]), dtype=np.float32)
+            audio = np.concatenate([ask, np.zeros(int(ASK_GAP * rate), dtype=np.float32), answer])
+            s["factAfter"] = round(len(ask) / rate + ASK_GAP, 2)
+        else:
+            audio = speak(s["spoken"])
         audio = np.asarray(audio, dtype=np.float32)
         path = os.path.join(vdir, f"{s['id']}.wav")
         sf.write(path, audio, rate)
@@ -825,6 +872,8 @@ def timeline(plan):
         v = s.get("voiceSeconds") or 0.0
         dur = max(CUTOFFS.get(s["kind"], 3.0), LEAD + v + TAIL)
         s["start"], s["duration"], s["voiceAt"] = round(t, 2), round(dur, 2), round(t + (0.04 if s["kind"] == "hook" else LEAD), 2)
+        if s.get("factAfter") is not None:       # the answer's line appears just before the voice says it
+            s["factAt"] = round(max(0.6, s["voiceAt"] - s["start"] + s["factAfter"] - 0.12), 2)
         t += dur
     plan["seconds"] = round(t, 2)
 

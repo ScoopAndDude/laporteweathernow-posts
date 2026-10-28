@@ -129,6 +129,22 @@ def run():
     dv.timeline(timed)
     check(timed["seconds"] <= 16, f"about 15 seconds at reading speed (got {timed['seconds']})")
 
+    # 1c. The opening asked as a question (Oct. 29, 2026) and answered with the fact; LaPorte as one word.
+    hook = p["scenes"][0]
+    check(hook.get("ask", [None])[0] == "Got plans outside today?" and hook["ask"][1].startswith("and ")
+          and len(hook.get("sayParts") or []) == 2 and hook["sayParts"][0].endswith("?"),
+          f"nice day: asked as a question, then answered: {hook.get('ask')} / {hook.get('sayParts')}")
+    check(hook["say"] == " ".join(hook["sayParts"]) and hook["spoken"] == " ".join(hook["spokenParts"]),
+          "the question and its answer are the whole opening line")
+    check("La Port" in hook["spokenParts"][0], f"the voice gets the one-word name to say: {hook['spokenParts'][0]}")
+    check(hook["label"].startswith("LAPORTE · ") and p["caption"].startswith("LaPorte weather for"),
+          f"LaPorte, one word, on screen and in the caption: {hook['label']} / {p['caption'][:30]}")
+    timed["scenes"][0]["factAfter"] = 1.5
+    dv.timeline(timed)
+    check(abs(timed["scenes"][0]["factAt"] - 1.42) < 0.01, f"the answer appears as it's said (factAt {timed['scenes'][0]['factAt']})")
+    check(dv.month_words(datetime.date(2026, 10, 28)) == "late October" and dv.month_words(datetime.date(2026, 11, 3))
+          == "early November" and dv.month_words(datetime.date(2026, 12, 15)) == "mid-December", "month words")
+
     # 2. Rain likely, mostly in the afternoon (hours from 6 a.m.: dry until 1 p.m., then 60-70%).
     d = data(periods(today=("Rain Showers Likely", 62, 70, "Rain showers likely, mainly after 1pm. High near 62.")),
              hs=hours([0, 0, 5, 10, 10, 15, 20, 60, 70, 70, 70, 65, 60]))
@@ -171,6 +187,7 @@ def run():
     p = plan_for(d)
     check(p["hook"]["kind"] == "alert" and p["hook"]["big"] == "Freeze Warning", f"alert first (got {p['hook']['kind']})")
     check("until 9 a.m. Saturday" in p["hook"]["say"], f"alert end time in Central: {p['hook']['say']}")
+    check("ask" not in p["scenes"][0] and "spokenParts" not in p["scenes"][0], "an alert is never asked as a question")
     check("Freeze Warning" in p["caption"], "the caption lists the alert")
 
     # 5b. Frost tonight under a different opening line still gets said and shown on today's scene.

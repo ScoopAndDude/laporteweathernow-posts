@@ -341,9 +341,9 @@ BOX = (-87.55, 41.00, -85.90, 42.23)            # west, south, east, north: La P
 MAP = 920
 WMS = "https://opengeo.ncep.noaa.gov/geoserver/conus/conus_bref_qcd/ows"
 CENSUS_ZIP = "https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_county_500k.zip"
-BASEMAP_VERSION = 2
+BASEMAP_VERSION = 3                    # 3 (Oct. 29, 2026): the town is labeled LaPorte, one word
 CITIES = [  # name, lat, lon, label side
-    ("La Porte", 41.6106, -86.7225, "e"), ("Michigan City", 41.7075, -86.8950, "w"), ("Valparaiso", 41.4731, -87.0611, "w"),
+    ("LaPorte", 41.6106, -86.7225, "e"), ("Michigan City", 41.7075, -86.8950, "w"), ("Valparaiso", 41.4731, -87.0611, "w"),
     ("South Bend", 41.6764, -86.2520, "e"), ("Gary", 41.5934, -87.3464, "s"), ("Knox", 41.2959, -86.6250, "e"),
     ("Plymouth", 41.3436, -86.3097, "e"), ("Benton Harbor", 42.1167, -86.4542, "e"), ("Niles", 41.8297, -86.2542, "e"),
 ]
@@ -425,7 +425,7 @@ def draw_basemap(counties):
     for name, lat, lon, side in CITIES:
         x, y = xy(lon, lat)
         x, y = x * S, y * S
-        home = name == "La Porte"
+        home = name == "LaPorte"
         r = (9 if home else 6) * S
         do.ellipse((x - r - 3 * S, y - r - 3 * S, x + r + 3 * S, y + r + 3 * S), fill=(10, 10, 12, 255))
         do.ellipse((x - r, y - r, x + r, y + r), fill=(GOLD if home else INK) + (255,))
@@ -561,10 +561,16 @@ def clock_words(dt_local):
 # Scenes
 # ---------------------------------------------------------------------------------------------
 class Layer:
-    def __init__(self, img, x, y, delay=0.0, fixed=False, zoom=0.0, frames=None, frame_every=0.5, rise=34):
+    def __init__(self, img, x, y, delay=0.0, fixed=False, zoom=0.0, frames=None, frame_every=0.5, rise=34,
+                 punch=0.0, bob=0):
         self.img, self.x, self.y = img, int(x), int(y)
         self.delay, self.fixed, self.zoom, self.rise = delay, fixed, zoom, rise
         self.frames, self.frame_every = frames, frame_every
+        self.punch, self.bob = punch, bob          # punch: starts this much bigger and settles in 0.4 s; bob: px
+
+    @property
+    def moving(self):
+        return bool(self.frames or self.zoom or self.punch or self.bob)
 
 
 def centered(img):
@@ -595,10 +601,47 @@ def stack_center(items, top=330, bottom=1440, gap=36):
     return ys
 
 
-def hook_scene(s, plan):
+def ask_scene(s, plan):
+    """The opening as a question (Oct. 2026, after Facebook's tips on the first three seconds): the whole question is
+    on screen from the first frame, the number punches in, the icon floats, and the fact lands as the voice says it."""
     tone = s.get("tone") or "plain"
     color = TONE.get(tone, INK)
-    label = label_img(s.get("label") or "La Porte")
+    label = label_img(s.get("label") or "LaPorte")
+    ic = icon(s.get("icon"), 330)
+    q1 = fit_line(s["ask"][0], "xbold", 90, INK, CW, min_size=52) if s["ask"][0] else None
+    big = fit_line(s.get("big") or "", "black", 340, color, CW, min_size=150)
+    bigg = glow(big, GLOW.get(tone, AMBER), radius=30, strength=0.55)
+    pad = bigg.info["pad"]
+    q2 = fit_line(s["ask"][1], "xbold", 96, INK, CW, min_size=56) if s["ask"][1] else None
+    fact = pill(s.get("small") or "", "bold", 62, (16, 16, 20), color + (255,), padx=40, pady=20) if s.get("small") else None
+    items = [(label, 48), (ic, 40)]
+    if q1 is not None:
+        items.append((q1, 44))
+    items.append((big, 44))
+    if q2 is not None:
+        items.append((q2, 56))
+    if fact is not None:
+        items.append((fact, 0))
+    ys = stack_center(items, top=300, bottom=1440)
+    k = iter(ys)
+    layers = [Layer(label, centered(label), next(k), fixed=True),
+              Layer(ic, centered(ic), next(k), fixed=True, bob=10)]
+    if q1 is not None:
+        layers.append(Layer(q1, centered(q1), next(k), fixed=True))
+    layers.append(Layer(bigg, centered(big) - pad, next(k) - pad, fixed=True, punch=0.12, zoom=0.03))
+    if q2 is not None:
+        layers.append(Layer(q2, centered(q2), next(k), fixed=True))
+    if fact is not None:
+        layers.append(Layer(fact, centered(fact), next(k), delay=float(s.get("factAt") or 1.8)))
+    return layers
+
+
+def hook_scene(s, plan):
+    if s.get("ask"):
+        return ask_scene(s, plan)
+    tone = s.get("tone") or "plain"
+    color = TONE.get(tone, INK)
+    label = label_img(s.get("label") or "LaPorte")
     ic = icon(s.get("icon"), 360)
     big_text = s.get("big") or ""
     big = fit_line(big_text, "black", 300, color, CW, min_size=150)
@@ -897,7 +940,7 @@ def frame_at(t, scenes, base, cache):
     else:
         frame = base.copy()
         for L in sc["layers"]:
-            if L.frames or L.zoom:
+            if L.moving:
                 continue
             a = 1.0 if L.fixed else ease((u - L.delay) / ENTER)
             if a <= 0:
@@ -907,7 +950,7 @@ def frame_at(t, scenes, base, cache):
         if settled:
             cache[key] = frame.copy()
     for L in sc["layers"]:
-        if not (L.frames or L.zoom):
+        if not L.moving:
             continue
         a = (1.0 if L.fixed else ease((u - L.delay) / ENTER)) * exit_a
         if a <= 0:
@@ -917,12 +960,18 @@ def frame_at(t, scenes, base, cache):
         if L.frames:
             k = min(len(L.frames) - 1, int(max(0.0, u - L.delay) / L.frame_every))
             img = L.frames[k]
+        z = 1.0
         if L.zoom:
-            z = 1 + L.zoom * min(1.0, u / max(0.1, sc["dur"]))
+            z *= 1 + L.zoom * min(1.0, u / max(0.1, sc["dur"]))
+        if L.punch:
+            z *= 1 + L.punch * (1 - ease(u / 0.4))
+        if z != 1.0:
             nw, nh = int(img.width * z), int(img.height * z)
             img = img.resize((nw, nh), Image.BILINEAR)
             x -= (nw - L.img.width) // 2
             y -= (nh - L.img.height) // 2
+        if L.bob:
+            y += int(L.bob * math.sin(2 * math.pi * u / 2.4))
         dy = 0 if L.fixed else int(L.rise * (1 - min(1.0, a / max(exit_a, 1e-6))))
         frame.alpha_composite(with_alpha(img, a), (x, y + dy))
     return frame
