@@ -23,7 +23,11 @@ SAY = [(r"\bLa ?Porte\b", "Luh-Port"), (r"\bHelgelien\b", "Hel-guh-leen"), (r"\b
        (r"\bNERDS\b", "Nerds"), (r"M&M's", "M and M's"), (r"CandyStore\.com", "Candy Store dot com"),
        (r"\b1871\b", "eighteen seventy-one"), (r"\b1900s\b", "nineteen hundreds"), (r"\b1891\b", "eighteen ninety-one"),
        (r"\b1850s\b", "eighteen-fifties"),
-       (r"\bdiphtheria\b", "difftheeria"), (r"\bCanton\b", "Cantun")]
+       (r"\bdiphtheria\b", "difftheeria"), (r"\bCanton\b", "Cantun"),
+       # power-outage shorts (Oct. 28, 2026)
+       (r"NIPSCO\.com", "Nip-sco dot com"), (r"\bNIPSCO\b", "Nip-sco"), (r"\b444111\b", "four four four, one one one"),
+       (r"\b911\b", "nine-one-one"), (r"\b2-1-1\b", "two-one-one"), (r"\bFORTRESS\b", "Fortress"),
+       (r"\bOUT\b", "out"), (r"\bSeptember 30\b", "September thirtieth")]
 
 # name: [(paragraph, pause after it)]
 REELS = {
@@ -176,6 +180,46 @@ REELS = {
         ("All night, she heard a slow scraping across the roof.", 0.55),
         ("At dawn, police told her not to look back. It was his shoes, scraping the roof all night.", 0.55),
         ("There's no record it ever happened. It's an old Indiana legend. Double-tap if you heard it growing up.", 0.0),
+    ],
+    # power-outage prep, Oct. 28, 2026: FORTRESS America (Fox News, Oct. 25; DefenseScoop; Daily Wire; Air & Space
+    # Forces Magazine) and outage safety (Ready.gov/FEMA, CDC, CPSC, NWS, FoodSafety.gov, FDA, Red Cross, NIPSCO,
+    # Indiana FSSA); sources per claim in tools/video/halloween-reels-2026/posts-blackout.json
+    "bo1": [
+        ("Fox News reports Pentagon documents call for major bases to run 90 days on their own. Could your house "
+         "last 3?", 0.45),
+        ("It's part of FORTRESS America, announced September 30 by Pentagon chief Pete Hegseth. One goal: bases that "
+         "make their own power. His words: \"our bases stay lit.\"", 0.45),
+        ("What it isn't: a blackout notice. Nothing announced schedules power cuts for homes. It's a long-term "
+         "military plan, starting with bases.", 0.45),
+        ("Now, your first hour of an outage. Flashlights, not candles. Unplug electronics. Power can surge when it "
+         "comes back.", 0.45),
+        ("Keep the fridge and freezer shut. Report the outage to your power company. For NIPSCO, text OUT to "
+         "444111.", 0.45),
+        ("Check on neighbors, if it's safe to go out. Follow for part 2.", 0.0),
+    ],
+    "bo2": [
+        ("Part 2: staying warm. Generator? Outside only, at least 20 feet from windows, doors and vents.", 0.45),
+        ("Never in the garage, even with the door open. The exhaust carries carbon monoxide. You can't see or smell "
+         "it.", 0.45),
+        ("Your carbon monoxide alarm needs batteries or battery backup. Never heat with a gas oven or stove. No grills "
+         "indoors.", 0.45),
+        ("Carbon monoxide signs include headache, dizziness, weakness, upset stomach, vomiting, chest pain and "
+         "confusion. Alarm or symptoms? Get outside, then call 911.", 0.45),
+        ("Stay warm with loose layers, a hat and blankets. Close off rooms you don't need.", 0.45),
+        ("Can't keep your home warm? Go somewhere with heat, like a friend's or a warming center. In Indiana, call "
+         "2-1-1 to find one. Follow for part 3.", 0.0),
+    ],
+    "bo3": [
+        ("Could your house last 3 days? Part 3: food and water. Keep the doors shut. Your fridge keeps food cold "
+         "about 4 hours.", 0.45),
+        ("A full freezer holds about 48 hours. Half full, about 24.", 0.45),
+        ("Put an appliance thermometer in each. In the fridge, 40 degrees or colder is safe.", 0.45),
+        ("Fridge without power more than 4 hours? Toss perishables like meat, milk, eggs and leftovers. Don't "
+         "taste-test. When in doubt, throw it out.", 0.45),
+        ("Water: at least 1 gallon per person, per day, for at least 3 days. A family of 4 needs at least 12 "
+         "gallons.", 0.45),
+        ("Medicine that needs the fridge? Ask your pharmacist now what to do in an outage.", 0.45),
+        ("Save this, and send it to someone who lives alone.", 0.0),
     ],
 }
 LEAD = 0.3
