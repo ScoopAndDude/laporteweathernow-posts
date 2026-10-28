@@ -2,8 +2,8 @@
 
     python3 reel_hwfc.py stills|video [times]
 
-Forecast: the NWS point forecast for La Porte (the posts repo's nws-snapshot.json), as of FC["asof"]; the
-"best chance later Saturday night into Sunday" line is the NWS Northern Indiana forecast discussion's.
+Forecast: the NWS point forecast for La Porte (the posts repo's nws-snapshot.json), as of FC["asof"]; "light"
+showers and "better rain chances arrive Sunday" are the NWS Northern Indiana forecast discussion's (Oct. 28, 2:26 AM EDT).
 Sunset and dark (civil dusk): NOAA's solar calculation for La Porte (41.61 N, 86.72 W), Sat. Oct. 31, 2026, CDT.
 Hours: trick-or-treat.json (La Porte and Michigan City official, 5 to 7 PM; most other towns reported the same).
 To refresh before posting: update FC from the newest snapshot, the "hwfc" lines in reels_vo.py, re-record, re-render.
@@ -25,15 +25,15 @@ CARD = (40, 17, 64, 236)
 SKYBLUE = (150, 196, 255)
 
 FC = {
-    "asof": "Sun., Oct. 25",
-    "day": {"icon": "cloud", "hi": 71, "sky": "Mostly cloudy and mild", "pop": 22,
-            "pop_text": "Slight chance of a shower"},
-    "night": {"icon": "rain", "lo": 54, "pop": 57, "sky": "Showers likely",
-              "note": "Best chance: later Saturday night into Sunday"},
+    "asof": "Wed., Oct. 28",
+    "day": {"icon": "cloud", "hi": 64, "sky": "Mostly cloudy and mild", "pop": 40,
+            "pop_text": "Chance of a few light showers"},
+    "night": {"icon": "cloud", "lo": 48, "pop": 20, "sky": "Slight chance of a shower",
+              "note": "Better rain chances arrive Sunday"},
     "hours": "5 to 7 PM", "where": "La Porte, Michigan City and most towns",
     "sunset": "5:43 PM", "dark": "about 6:10",
 }
-C.WEIGHT.update({"71": 4.0, "543": 4.3, "610": 2.4, "5": 1.2, "7": 2.0})
+C.WEIGHT.update({"64": 4.0, "543": 4.3, "610": 2.4, "5": 1.2, "7": 2.0})
 OUTFILE = "halloween-trick-or-treat-forecast.mp4"
 
 
@@ -130,15 +130,15 @@ def night_card():
 
 def build(R):
     t_sat = R.at("Saturday looks")
-    t_slight = R.at("slight chance")
+    t_slight = R.at("a chance")
     t_tot = R.at("Trick-or-treat is")
     t_sun = R.at("The sun")
     t_dark = R.at("dark by")
-    t_show = R.at("Showers are")
-    t_best = R.at("the best")
+    t_show = R.at("Saturday night")
+    t_best = R.at("The better")
     t_dbl = R.at("double-tap")
     c1 = (R.end("Porte.") + t_sat) / 2
-    c2 = (R.end("shower.") + t_tot) / 2
+    c2 = (R.end("showers.") + t_tot) / 2
     c3 = (R.end("6:10.") + t_show) / 2
     c4 = (R.end("Sunday.") + R.at("It can")) / 2
     src = "Forecast: National Weather Service, " + FC["asof"]
@@ -210,7 +210,7 @@ def build(R):
     def draw_night(f, u, t, ctx):
         f.alpha_composite(ctx["bg"])
         night_layers(f, t, bats=False)
-        f.alpha_composite(C.alpha(rain_layer(t), appear(u, 0.0, 0.6)))
+        f.alpha_composite(C.alpha(rain_layer(t, n=70, a=45), appear(u, 0.0, 0.6)))   # a sprinkle: only a 20% chance
         f.alpha_composite(C.alpha(ctx["lab"], appear(u, 0.0, 0.3)), (X0, 330))
         a = appear(t, t_show - 0.15, 0.35)
         f.alpha_composite(C.alpha(ctx["card"], a), (X0 - 10, int(410 + 40 * (1 - a))))
@@ -245,7 +245,7 @@ def build(R):
     rain[-int(0.9 * SR):] *= np.linspace(1, 0, int(0.9 * SR))
     ev = [("pop", 0.35, 0.6), ("whoosh", c1, 0.6), ("pop", t_sat - 0.1, 0.5), ("pop", t_slight - 0.08, 0.6),
           ("whoosh", c2, 0.6), ("pop", t_tot - 0.08, 0.6), ("pop", t_sun - 0.05, 0.6), ("pop", t_dark - 0.05, 0.6),
-          ("whoosh", c3, 0.6), (rain * 0.8, c3, 1.0, "bed"), ("pop", t_show - 0.1, 0.5), ("pop", t_best - 0.08, 0.5),
+          ("whoosh", c3, 0.6), (rain * 0.3, c3, 1.0, "bed"), ("pop", t_show - 0.1, 0.5), ("pop", t_best - 0.08, 0.5),
           ("pop", c4 + 0.12, 0.9), ("pop", c4 + 0.42, 0.9), ("hit", c4 + 0.5, 0.5)]
     music = spooky_music(R.dur + 1, theremin=((0.0, 2.6, (69, 74, 72, 69)), (c4 + 0.2, 2.4, (74, 77, 74))))
     return film, ev, music, "Halloween Trick-or-Treat Forecast"
