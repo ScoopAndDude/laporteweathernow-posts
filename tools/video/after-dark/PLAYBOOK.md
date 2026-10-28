@@ -80,6 +80,9 @@ keep working.
   says years and dates right. Mark legends ("Legend says", "Visitors say").
 - No more certainty than the sources have: "was supposed to be escape-proof", not "was escape-proof"; "some say it
   was real", when sources disagree.
+- Write the town as **LaPorte**, one word, everywhere it shows on screen: in the narration (the captions are the
+  narration's words), on cards and on map labels ("LAPORTE"). Scoop's choice, Oct. 28, 2026. Names stay as they are:
+  "La Porte After Dark", "La Porte Weather Now", and any published title you quote word for word.
 
 ## 4. Make the storyboard
 
@@ -109,6 +112,10 @@ python3 reel_story.py stories/<slug>.json check     # must end "check: all good"
   Fix any that come out wrong with a `"say"` rule in the storyboard (for example `["\\bGipp\\b", "Ghip"]`), test with
   `python3 -c "from kokoro_onnx.tokenizer import Tokenizer; print(Tokenizer().phonemize('Ghip', 'en-us'))"`, and
   record again. Add names that will come up again to `LOCAL_SAY` in reel_story.py.
+- **LaPorte is said as one word, luh-PORT** ("Laporte is pronounced as one word not 2", Scoop, Oct. 28, 2026).
+  reels_vo.py handles both spellings (`SAY` and `PHONES`), so don't add a "say" rule of your own for it. To check,
+  `python3 -c "import reels_vo as V; print(V.phonemes(V.spoken('LaPorte County.')))"` in `~/afterdark/film` must
+  print `ləpˈɔɹt kˈaʊnti.`; two stresses (`lˈʌpˈɔːɹt`) is wrong.
 - **Look at the stills:** text must not cover text, nothing important under the captions (y 1290 to 1400), no frame
   that is just black, and the drawing must match what's said at that moment.
 
@@ -203,10 +210,3 @@ Flag anything a picture or map could make misleading, and anything a local who k
 Finish with: lines that are fine, lines that need a change (with a short accurate rewording), and the sources you'd
 cite in the description. Plain text, under 900 words.
 ```
-
-## Spelling and saying the town (Scoop, Oct. 28, 2026)
-
-The town is spelled **LaPorte**, one word, in narration, captions, on-screen text and post text (the official names
-"La Porte County Historical Society" and "La Porte Weather Now LLC" keep their own spelling; URLs are unchanged).
-The voice says it as one word, luh-PORT: reels_vo.py maps `La ?Porte` to `le-port` (ləˈpɔːɹt). Don't use "Luh-Port"
-or "la-port", which the voice reads as two words or as "lah".

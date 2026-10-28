@@ -13,7 +13,7 @@ from kokoro_onnx import Kokoro
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 VOICE, SPEED, LANG, RATE = "af_heart", 1.02, "en-us", 24000
-SAY = [(r"\bLa ?Porte\b", "le-port"), (r"\bHelgelien\b", "Hel-guh-leen"), (r"\b1908\b", "nineteen-oh-eight"),
+SAY = [(r"\bLa ?Porte\b", "Luh-Port"), (r"\bHelgelien\b", "Hel-guh-leen"), (r"\b1908\b", "nineteen-oh-eight"),
        (r"\b1815\b", "eighteen fifteen"), (r"\b1931\b", "nineteen thirty-one"),
        (r"\bmid-1900s\b", "mid-nineteen-hundreds"), (r"\b5:43\b", "five forty-three"), (r"\b6:10\b", "six ten"),
        (r"\b5 to 7\b", "five to seven"), (r"\b1833\b", "eighteen thirty-three"), (r"\b1972\b", "nineteen seventy-two"),
@@ -29,7 +29,7 @@ SAY = [(r"\bLa ?Porte\b", "le-port"), (r"\bHelgelien\b", "Hel-guh-leen"), (r"\b1
 REELS = {
     "belle3": [
         ("Men answered her newspaper ad. Then one of them disappeared.", 0.5),
-        ("Her ad read: comely widow, owns a large farm in La Porte County. Triflers need not apply.", 0.45),
+        ("Her ad read: comely widow, owns a large farm in LaPorte County. Triflers need not apply.", 0.45),
         ("Andrew Helgelien, a South Dakota farmer, wrote back. Her letters told him to bring his money, "
          "and to come prepared to stay forever.", 0.45),
         ("In January 1908, he arrived with nearly three thousand dollars, and was never seen alive again.", 0.55),
@@ -48,7 +48,7 @@ REELS = {
         ("In Los Angeles, a housekeeper named Esther Carlson was charged with poisoning the eighty-one-year-old "
          "man she worked for.", 0.45),
         ("She died of tuberculosis before her trial.", 0.45),
-        ("Two people from La Porte viewed her body and swore it was Belle. In her trunk was a photo of three "
+        ("Two people from LaPorte viewed her body and swore it was Belle. In her trunk was a photo of three "
          "children, said to be Belle's.", 0.55),
         ("No one ever proved it. Double-tap if you think Belle got away with it.", 0.0),
     ],
@@ -58,23 +58,23 @@ REELS = {
         ("Stuck inside on Lake Geneva, Lord Byron, Mary Shelley and John Polidori bet on who could write "
          "the scariest story.", 0.45),
         ("Mary wrote Frankenstein. Polidori wrote The Vampyre, which started the craze that led to Dracula.", 0.55),
-        ("Double-tap for La Porte's own Halloween stories. They're just as strange.", 0.0),
+        ("Double-tap for LaPorte's own Halloween stories. They're just as strange.", 0.0),
     ],
     "wx": [
-        ("La Porte's weather was once so strange, scientists studied it.", 0.45),
+        ("LaPorte's weather was once so strange, scientists studied it.", 0.45),
         ("This week? Mostly dry and near seventy, right up to Halloween.", 0.45),
-        ("But for decades in the mid-1900s, La Porte got more rain, thunderstorms and hail than the towns "
+        ("But for decades in the mid-1900s, LaPorte got more rain, thunderstorms and hail than the towns "
          "around it.", 0.45),
         ("One scientist blamed pollution from the steel mills upwind, in Chicago and Gary. "
          "Others still argue about it.", 0.55),
-        ("Double-tap for the full weather update, and more La Porte weather history.", 0.0),
+        ("Double-tap for the full weather update, and more LaPorte weather history.", 0.0),
     ],
     # Halloween forecast: NWS as of Sun., Oct. 25 (re-record with the newest forecast before it posts)
     "hwfc": [
-        ("Will it rain on trick-or-treat? Here's the latest look at Halloween in La Porte.", 0.45),
-        ("Saturday looks mild and mostly cloudy, with a high near 71 and only a slight chance of a shower.", 0.45),
+        ("Will it rain on trick-or-treat? Here's the latest look at Halloween in LaPorte.", 0.45),
+        ("Saturday looks mostly cloudy, with a high near 64 and a chance of a few light showers.", 0.45),
         ("Trick-or-treat is 5 to 7. The sun sets at 5:43, and it's dark by about 6:10.", 0.45),
-        ("Showers are likely Saturday night, but the best chance looks later, into Sunday.", 0.5),
+        ("Saturday night, there's only a slight chance of a shower. The better rain chances arrive Sunday.", 0.5),
         ("It can still change, so double-tap for the update.", 0.0),
     ],
     "belle6": [
@@ -86,7 +86,7 @@ REELS = {
     ],
     # trend reels, Oct. 25: tonight's Hunter's Moon, Indiana's favorite candy, the clocks falling back
     "moon": [
-        ("Tonight's full moon, the Hunter's Moon, rises over La Porte at 5:16.", 0.45),
+        ("Tonight's full moon, the Hunter's Moon, rises over LaPorte at 5:16.", 0.45),
         ("Look east-northeast. The sun doesn't set until 5:51, so you'll catch it coming up in daylight.", 0.45),
         ("It's officially full at 11:12 tonight, and the forecast is partly cloudy.", 0.45),
         ("On Halloween, the moon won't rise until 10:49, so bring a flashlight for trick-or-treat.", 0.5),
@@ -98,19 +98,19 @@ REELS = {
         ("Next door, Illinois picked Sour Patch Kids. Michigan went with Starburst, and Ohio chose Blow Pops.", 0.45),
         ("Across the country, the top five are M&M's, Sour Patch Kids, Skittles, Reese's and NERDS Gummy Clusters.",
          0.5),
-        ("Agree? Double-tap, and tell us the best candy to get in La Porte.", 0.0),
+        ("Agree? Double-tap, and tell us the best candy to get in LaPorte.", 0.0),
     ],
     "dst": [
-        ("One week from today, La Porte's sunsets jump an hour earlier.", 0.45),
+        ("One week from today, LaPorte's sunsets jump an hour earlier.", 0.45),
         ("Daylight saving time ends at 2 AM next Sunday, so set your clocks back an hour Saturday night.", 0.45),
         ("Halloween's sunset is 5:43. The next night, it's 4:41.", 0.45),
         ("And it keeps sliding, to 4:17 by early December.", 0.5),
         ("Love it or hate it? Double-tap if you'll take the extra hour of sleep.", 0.0),
     ],
-    # more La Porte legends, Oct. 25: Pine Lake Cemetery (Haunted Cemeteries of Indiana, via the Herald-Dispatch, 2020),
-    # Orr Lake Road's doctor and the countdown (the News-Dispatch's "La Porte County's Top 10 Most Haunted", 2011)
+    # more LaPorte legends, Oct. 25: Pine Lake Cemetery (Haunted Cemeteries of Indiana, via the Herald-Dispatch, 2020),
+    # Orr Lake Road's doctor and the countdown (the News-Dispatch's "LaPorte County's Top 10 Most Haunted", 2011)
     "pinelake": [
-        ("When La Porte moved its old city cemetery in 1871, a story came up with the coffins.", 0.45),
+        ("When LaPorte moved its old city cemetery in 1871, a story came up with the coffins.", 0.45),
         ("Many of the dead were reburied at Pine Lake Cemetery, marked only as unknown.", 0.45),
         ("People say one woman was found upside down and twisted in her coffin, as if she'd been buried alive.", 0.5),
         ("Pine Lake also holds a mass grave: the bones of about ten unknown men from Belle Gunness's farm, in two "
@@ -128,7 +128,7 @@ REELS = {
          "legend.", 0.0),
     ],
     "top4": [
-        ("Four places in La Porte County where people say the dead don't rest.", 0.45),
+        ("Four places in LaPorte County where people say the dead don't rest.", 0.45),
         ("Number four: Orr Lake Road, where a doctor's lantern is said to move through the woods under a full moon.",
          0.4),
         ("Number three: Pine Lake Cemetery, where shadows like mist drift over a mass grave of Belle Gunness's victims.",
@@ -151,26 +151,26 @@ REELS = {
         ("Visitors say they hear children laughing, and little footsteps.", 0.55),
         ("Comment your town, and it could be next.", 0.0),
     ],
-    # La Porte's own legends (from laporteweathernow.com/hauntings)
+    # LaPorte's own legends (from laporteweathernow.com/hauntings)
     "posey": [
         ("Near Hesston, there's a country cemetery where people say they hear bells.", 0.45),
         ("Posey Chapel Cemetery dates to 1833. Its last chapel was destroyed by arson in 1972.", 0.45),
         ("But legend tells of an older fire, set by a deranged preacher, that killed members of his own "
          "congregation.", 0.5),
         ("Visitors report a woman in white, singing, and lights that bounce between the graves.", 0.5),
-        ("Visit in daylight, and double-tap for the next La Porte legend.", 0.0),
+        ("Visit in daylight, and double-tap for the next LaPorte legend.", 0.0),
     ],
     "patton": [
-        ("Some of Belle Gunness's victims are buried right here in La Porte.", 0.45),
+        ("Some of Belle Gunness's victims are buried right here in LaPorte.", 0.45),
         ("Patton Cemetery dates to 1841, and holds some of the oldest graves in the area.", 0.45),
         ("Her teenage foster daughter, Jennie Olson, rests here. So does Andrew Helgelien, the farmer who answered "
          "her ad.", 0.5),
         ("Visitors describe shadows between the stones, voices with no one there, and a heavy sadness near her "
          "victims.", 0.5),
-        ("Please visit in daylight, and double-tap for the next La Porte legend.", 0.0),
+        ("Please visit in daylight, and double-tap for the next LaPorte legend.", 0.0),
     ],
     "orr": [
-        ("Some people in La Porte call Orr Lake Road Hangman's Road.", 0.45),
+        ("Some people in LaPorte call Orr Lake Road Hangman's Road.", 0.45),
         ("The story goes, a couple's car died out here one night. He went for help, and told her to lock the "
          "doors.", 0.45),
         ("All night, she heard a slow scraping across the roof.", 0.55),
@@ -190,10 +190,39 @@ def spoken(t):
 
 def sentences(p):
     p = p.replace("Mrs.", "Mrs\u00a7").replace(".com", "\u00b6com")
-    p = re.sub(r"(\d)\.(\d)", "\\1\u00a4\\2", p)                     # a decimal point (2.98) does not end a sentence
     out = re.findall(r"[^.?!]+(?:\.\.\.[^.?!]+)*[.?!]+[\"”]?", p)
-    return [s.strip().replace("Mrs\u00a7", "Mrs.").replace("\u00b6com", ".com").replace("\u00a4", ".")
-            for s in out if s.strip()]
+    return [s.strip().replace("Mrs\u00a7", "Mrs.").replace("\u00b6com", ".com") for s in out if s.strip()]
+
+
+# Names the voice gets wrong from spelling alone, given as sound symbols instead. LaPorte is one word, luh-PORT
+# (Scoop, Oct. 28, 2026: "Laporte is pronounced as one word not 2"); the SAY rules turn it into "Luh-Port" first, and
+# these are the same symbols the weather radio and the Daily Video use (radio_broadcast.PRONOUNCE).
+PHONES = {"Luh-Port": "ləpˈɔɹt"}
+_tok = None
+
+
+def phonemes(text, lang=LANG):
+    """The whole sentence phonemized with a stand-in word ("Lapport"), whose sounds are then swapped for the right
+    ones, so the words around the name keep their natural stress."""
+    global _tok
+    if _tok is None:
+        from kokoro_onnx.tokenizer import Tokenizer
+        _tok = Tokenizer()
+    t = text
+    for w in PHONES:
+        t = t.replace(w, "Lapport")
+    ph = _tok.phonemize(t, lang)
+    ph, n = re.subn(r"l[ˈˌ]?æp[ˈˌ]?ɔːɹt", PHONES["Luh-Port"], ph)
+    if n != text.count("Luh-Port"):
+        raise ValueError("couldn't place LaPorte's sounds in: %r -> %r" % (text, ph))
+    return ph
+
+
+def create(k, text, voice=VOICE, speed=SPEED, lang=LANG):
+    """k.create, but names in PHONES are said from their sound symbols."""
+    if any(w in text for w in PHONES):
+        return k.create(phonemes(text, lang), voice=voice, speed=speed, lang=lang, is_phonemes=True)
+    return k.create(text, voice=voice, speed=speed, lang=lang)
 
 
 def trim(a, thr=0.004, pad=0.03):
@@ -214,7 +243,7 @@ def main(names):
         for pi, (p, after) in enumerate(REELS[name]):
             ss = sentences(p)
             for si, s in enumerate(ss):
-                a, rate = k.create(spoken(s.replace('"', "")), voice=VOICE, speed=SPEED, lang=LANG)
+                a, rate = create(k, spoken(s.replace('"', "")))
                 a = trim(np.asarray(a, np.float32))
                 d = len(a) / RATE
                 items.append({"para": pi, "sent": si, "text": s, "s": round(t, 3), "e": round(t + d, 3)})
