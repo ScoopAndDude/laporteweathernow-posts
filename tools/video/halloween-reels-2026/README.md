@@ -200,3 +200,36 @@ post text `posts-canton-oct-26.json`; Facebook caption `facebook-caption-canton.
 
 The countdown's YouTube text points to laporteweathernow.com/history (the site's Haunted La Porte County section)
 instead of laporteweathernow.com/hauntings, which isn't on the site (Oct. 26).
+
+## Oct. 28: power-outage prep, parts 1-3 ("Could your house last 3 days?")
+
+Scoop's requests: "we should make some shorts on survining the upcoming blackout", "its called fortress", "make sure
+you know the facts", "you can say your power company", then "post them all through chrome" and "now".
+
+| Reel | Length | What it says |
+|---|---|---|
+| `outage-part-1-fortress-90-days` | 46.6 s | FORTRESS America as Fox News reported it (Pentagon documents call for major bases to run 90 days on their own); not a blackout notice for homes; your first hour of an outage. |
+| `outage-part-2-staying-warm` | 47.5 s | Generators outside only, carbon monoxide, staying warm, Indiana 2-1-1 for a warming center. |
+| `outage-part-3-food-and-water` | 41.7 s | Fridge about 4 hours, freezer 48/24, 40°F, when in doubt throw it out, water for 3 days, ask your pharmacist. |
+
+Script `src/film/reel_blackout.py` (`python3 film/reel_blackout.py 1|2|3 stills|video`), drawings
+`src/film/blackout_art.py`, narration `src/film/reels_vo.py bo1 bo2 bo3`; post text `posts-blackout.json`, Facebook
+captions `facebook-captions-blackout.txt`, sources and fact-check notes `sources-blackout.txt`.
+
+Pentagon is said PEN-tuh-gahn, one word (Scoop, Oct. 28: "its pronounced pent a gone all one word penta gon"). Left
+alone, the voice said pen-TAG-un; `reels_vo.py` now swaps in the right sounds (`FIX`), and Part 1 was re-recorded and
+re-rendered (commit c30230d). Only Part 1 says it.
+
+Posted Oct. 28:
+- YouTube (LaPorteWeatherNow): Part 1 https://youtube.com/shorts/jJupooE451A, Part 2
+  https://youtube.com/shorts/PgmE1b0_jSQ, Part 3 https://youtube.com/shorts/mluCQ2bSRLU (Education; AI use disclosed
+  for the computer voice).
+- TikTok (@scoopanddude): 5:57, 5:59 and 6:01 PM, AI-generated label on.
+- X, through Buffer's Share now (Claude in Chrome can't open x.com):
+  https://x.com/2103134688416067584/status/2115580294937899018,
+  https://x.com/2103134688416067584/status/2115580324260327605,
+  https://x.com/2103134688416067584/status/2115580399237660794
+- Facebook Page: Part 1 https://facebook.com/reel/2454929945031140 went out at 5:44 PM, just before the Pentagon fix,
+  so that copy has the old pronunciation; Part 2 https://facebook.com/reel/1809919187007193 and Part 3
+  https://facebook.com/reel/1673470677500357 have tags Local News and Community and are shared to Scoop's personal
+  timeline.
