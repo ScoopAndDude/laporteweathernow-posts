@@ -1,0 +1,172 @@
+{
+  "about": "The Daily Video for La Porte Weather Now (scripts/daily_video.py): official NWS weather, read aloud.",
+  "date": "2026-10-28",
+  "planned": "2026-10-28T16:50:00-05:00",
+  "source": "nws",
+  "forecastUpdated": "2026-10-28T18:29:53+00:00",
+  "observationTime": "2026-10-28T15:35:00-05:00",
+  "alerts": [],
+  "shortFused": [],
+  "hook": {
+    "kind": "normal",
+    "score": 64,
+    "big": "74°",
+    "small": "18° above normal",
+    "say": "LaPorte, ready for 74° in late October? That's about 18° above normal.",
+    "when": "today"
+  },
+  "hookOptions": [
+    {
+      "kind": "normal",
+      "score": 64,
+      "say": "LaPorte, ready for 74° in late October? That's about 18° above normal."
+    },
+    {
+      "kind": "normal",
+      "score": 54,
+      "say": "LaPorte, ready for 70° Thursday? That's about 14° above normal."
+    },
+    {
+      "kind": "nice",
+      "score": 40,
+      "say": "Got plans outside today, LaPorte? Sunny, with a high near 74°."
+    },
+    {
+      "kind": "plain",
+      "score": 10,
+      "say": "How's today looking, LaPorte? Sunny, high near 74°."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "hook",
+      "label": "LAPORTE · WEDNESDAY, OCT. 28",
+      "big": "74°",
+      "small": "18° above normal",
+      "icon": "sun",
+      "tone": "warm",
+      "hookKind": "normal",
+      "say": "LaPorte, ready for 74° in late October? That's about 18° above normal.",
+      "ask": [
+        "LaPorte, ready for",
+        "in late October?"
+      ],
+      "sayParts": [
+        "LaPorte, ready for 74° in late October?",
+        "That's about 18° above normal."
+      ],
+      "spoken": "La Port, ready for seventy-four degrees in late October? That's about eighteen degrees above normal.",
+      "spokenParts": [
+        "La Port, ready for seventy-four degrees in late October?",
+        "That's about eighteen degrees above normal."
+      ],
+      "factAfter": 3.85,
+      "voiceFile": "voice/hook.wav",
+      "voiceSeconds": 6.68,
+      "start": 0.0,
+      "duration": 7.08,
+      "voiceAt": 0.04,
+      "factAt": 3.77
+    },
+    {
+      "id": "today",
+      "sun": null,
+      "kind": "period",
+      "title": "TODAY",
+      "date": "Wednesday, Oct. 28",
+      "temp": 74,
+      "tempLabel": "HIGH",
+      "icon": "sun",
+      "text": "Sunny",
+      "sentence": "Sunny",
+      "rain": null,
+      "note": null,
+      "hours": [],
+      "say": "Today: sunny. High 74. Tonight: low 57.",
+      "next": {
+        "name": "Tonight",
+        "temp": 57,
+        "tempLabel": "LOW"
+      },
+      "spoken": "Today: sunny. High seventy-four. Tonight: low fifty-seven.",
+      "voiceFile": "voice/today.wav",
+      "voiceSeconds": 3.88,
+      "start": 7.08,
+      "duration": 4.28,
+      "voiceAt": 7.18
+    },
+    {
+      "id": "days",
+      "kind": "days",
+      "title": "NEXT 3 DAYS",
+      "days": [
+        {
+          "name": "Thu",
+          "day": "Thursday",
+          "hi": 70,
+          "lo": 44,
+          "pop": 50,
+          "icon": "sun-rain",
+          "text": "A chance of showers",
+          "short": "Chance Rain Showers",
+          "star": false
+        },
+        {
+          "name": "Fri",
+          "day": "Friday",
+          "hi": 64,
+          "lo": 47,
+          "pop": null,
+          "icon": "sun-small-cloud",
+          "text": "Mostly sunny",
+          "short": "Mostly Sunny",
+          "star": false
+        },
+        {
+          "name": "Sat",
+          "day": "Saturday",
+          "hi": 63,
+          "lo": 48,
+          "pop": 50,
+          "icon": "storm",
+          "text": "A chance of showers and thunderstorms",
+          "short": "Chance Showers And Thunderstorms",
+          "star": false
+        }
+      ],
+      "say": "Thursday: a chance of showers, 70.",
+      "spoken": "Thursday: a chance of showers, seventy.",
+      "voiceFile": "voice/days.wav",
+      "voiceSeconds": 2.7,
+      "start": 11.36,
+      "duration": 3.2,
+      "voiceAt": 11.46
+    },
+    {
+      "id": "end",
+      "kind": "end",
+      "say": "laporteweathernow.com.",
+      "spoken": "La Port Weather Now dot com.",
+      "voiceFile": "voice/end.wav",
+      "voiceSeconds": 2.02,
+      "start": 14.56,
+      "duration": 2.42,
+      "voiceAt": 14.66
+    }
+  ],
+  "caption": "LaPorte weather for Wednesday, Oct. 28, from the National Weather Service:\nToday: Sunny. High 74.\nTonight: Mostly clear. Low 57.\nThursday: A chance of showers, high 70. Friday: Mostly sunny, high 64. Saturday: A chance of showers and thunderstorms, high 63.\nToday's Daily Scoop: Sunny near 74; rain likely Thursday\nFree forecast every morning: laporteweathernow.com\nNo hype. Just the forecast.\n#LaPorte #LaPorteIndiana #LaPorteCounty #IndianaWeather #NWIndiana",
+  "words": 34,
+  "mode": "preview",
+  "normalsStation": {
+    "id": "USC00124837",
+    "name": "LAPORTE, IN US",
+    "km": 1.0
+  },
+  "seconds": 16.98,
+  "voice": "Kokoro-82M af_heart, speed 1.1",
+  "video": "laporte-2026-10-28.mp4",
+  "cover": "cover.jpg",
+  "bytes": 7352569,
+  "rendered": "2026-10-28T16:52:15-05:00"
+}
