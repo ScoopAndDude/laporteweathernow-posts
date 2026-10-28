@@ -628,7 +628,7 @@ def build_patton(R):
     t_farmer = R.at("the farmer")
     t_vis = R.at("Visitors describe")
     t_please = R.at("Please visit")
-    c1 = (R.end("Porte.") + t_patton) / 2
+    c1 = (R.end("LaPorte.") + t_patton) / 2
     c2 = (R.end("area.") + t_her) / 2
     c3 = (R.end("ad.") + t_vis) / 2
     c4 = (R.end("victims.", t_vis) + t_please) / 2
@@ -636,7 +636,7 @@ def build_patton(R):
 
     def p_face(ctx):
         ctx["face"] = bs.emerging("belle-08.jpg", "sepia", scale=3.0, blur=0.5)
-        ctx["l"] = label_fn("PATTON CEMETERY · LA PORTE", c1, y=300)
+        ctx["l"] = label_fn("PATTON CEMETERY · LAPORTE", c1, y=300)
 
     def d_face(f, u, t, ctx):
         bs.float_in(f, ctx["face"], u, c1, w=(1420, 1280), focus=((0.41, 0.40), (0.42, 0.42)), at=(540, 640))
@@ -649,7 +649,7 @@ def build_patton(R):
         f.alpha_composite(to_pil(ctx["s"].render(t, u)))
         bs.shade(f)
         if "l" not in ctx:
-            ctx["l"] = lab("ONE OF LA PORTE'S OLDEST")
+            ctx["l"] = lab("ONE OF LAPORTE'S OLDEST")
             ctx["l0"] = lab("1401 RUMELY STREET")
         paste(f, ctx["l0"], W / 2, 300, appear(t, c1 + 0.05, 0.3))
         typed(f, "1841", t, t_1841 - 0.1, 400, size=120, rate=0.07)
@@ -898,7 +898,7 @@ def build_orr(R):
         f.alpha_composite(to_pil(ctx["s"].render(t, u)))
         bs.shade(f)
         if "l" not in ctx:
-            ctx["l"] = lab("LA PORTE · WEST OF PINE LAKE")
+            ctx["l"] = lab("LAPORTE · WEST OF PINE LAKE")
         paste(f, ctx["l"], W / 2, 300)
         red_title(f, "HANGMAN'S ROAD", 120, t, -0.2)
 
@@ -956,7 +956,7 @@ def build_orr(R):
 
     def p_end(ctx):
         ctx["s"] = LakeRoad(sign=False)
-        ctx["cta"] = C.DoubleTap("IF YOU HEARD IT", "growing up around La Porte", color1=(255, 120, 100),
+        ctx["cta"] = C.DoubleTap("IF YOU HEARD IT", "growing up around LaPorte", color1=(255, 120, 100),
                                  glow1=(140, 0, 0), kind1="bask", size1=110, y=520)
 
     def d_end(f, u, t, ctx):

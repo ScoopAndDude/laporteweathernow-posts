@@ -30,7 +30,7 @@ FC = {
             "pop_text": "Chance of a few light showers"},
     "night": {"icon": "cloud", "lo": 48, "pop": 20, "sky": "Slight chance of a shower",
               "note": "Better rain chances arrive Sunday"},
-    "hours": "5 to 7 PM", "where": "La Porte, Michigan City and most towns",
+    "hours": "5 to 7 PM", "where": "LaPorte, Michigan City and most towns",
     "sunset": "5:43 PM", "dark": "about 6:10",
 }
 C.WEIGHT.update({"64": 4.0, "543": 4.3, "610": 2.4, "5": 1.2, "7": 2.0})
@@ -137,7 +137,7 @@ def build(R):
     t_show = R.at("Saturday night")
     t_best = R.at("The better")
     t_dbl = R.at("double-tap")
-    c1 = (R.end("Porte.") + t_sat) / 2
+    c1 = (R.end("LaPorte.") + t_sat) / 2
     c2 = (R.end("showers.") + t_tot) / 2
     c3 = (R.end("6:10.") + t_show) / 2
     c4 = (R.end("Sunday.") + R.at("It can")) / 2
@@ -150,7 +150,7 @@ def build(R):
 
     def prep_hook(ctx):
         prep_base(ctx)
-        ctx["lab"] = label("La Porte · Sat., Oct. 31")
+        ctx["lab"] = label("LaPorte · Sat., Oct. 31")
         big = vr.fit_line("TRICK-OR-TREAT", "black", 150, ORANGE, CW + 40, min_size=90)
         ctx["t1"] = vr.glow(big, (255, 110, 0), radius=30, strength=0.65)
         ctx["t2"] = vr.glow(vr.fit_line("FORECAST", "black", 150, CREAM, CW, min_size=90), (0, 0, 0), radius=20,
@@ -200,7 +200,7 @@ def build(R):
             if a > 0:
                 f.alpha_composite(C.alpha(card, a), (int(X0 - 10 - 40 * (1 - a)), 420 + i * 208))
         paste(f, ctx["more"], W / 2, 1085 + ctx["more"].height / 2, appear(t, t_dark + 0.3, 0.3))
-        bs.credit_line(f, "Hours: City of La Porte, City of Michigan City · Sunset: NOAA")
+        bs.credit_line(f, "Hours: City of LaPorte, City of Michigan City · Sunset: NOAA")
 
     def prep_night(ctx):
         prep_base(ctx)

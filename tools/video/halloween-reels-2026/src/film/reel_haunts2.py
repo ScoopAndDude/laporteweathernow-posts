@@ -321,7 +321,7 @@ def build_pinelake(R):
         f.alpha_composite(to_pil(ctx["s"].render(t, u)))
         bs.shade(f)
         if "l" not in ctx:
-            ctx["l"] = lab("LA PORTE'S OLD CITY CEMETERY")
+            ctx["l"] = lab("LAPORTE'S OLD CITY CEMETERY")
         paste(f, ctx["l"], W / 2, 300)
         typed(f, "1871", t, t_1871 - 0.1, 420, size=120, rate=0.07)
         red_title(f, "BURIED ALIVE?", 120, t, -0.2)
@@ -330,7 +330,7 @@ def build_pinelake(R):
         f.alpha_composite(to_pil(ctx["s"].render(t, u)))
         bs.shade(f)
         if "l" not in ctx:
-            ctx["l"] = lab("PINE LAKE CEMETERY · LA PORTE")
+            ctx["l"] = lab("PINE LAKE CEMETERY · LAPORTE")
             ctx["l2"] = lab("FIRST BURIAL: 1858", 30, (200, 214, 206))
         paste(f, ctx["l"], W / 2, 300, appear(t, c1 + 0.05, 0.3))
         paste(f, ctx["l2"], W / 2, 350, appear(t, t_pine + 0.3, 0.3))
@@ -637,7 +637,7 @@ def build_orr2(R):
 
     def p_folk(ctx):
         ctx["s"] = Folklore()
-        ctx["card"] = folk_card("Orr Lake Road's Doctor", ["A La Porte County legend", "",
+        ctx["card"] = folk_card("Orr Lake Road's Doctor", ["A LaPorte County legend", "",
                                                            "\"La Porte County's Top 10", "Most Haunted,\"",
                                                            "The News-Dispatch, 2011"])
         ctx["stamp"] = bs.stamp([("NO", 96), ("RECORD", 104)], color=(220, 58, 44))
@@ -714,7 +714,7 @@ def build_top4(R):
         f.alpha_composite(to_pil(ctx["s"].render(t, u)))
         bs.shade(f)
         if "l" not in ctx:
-            ctx["l"] = lab("LA PORTE COUNTY · 4 PLACES")
+            ctx["l"] = lab("LAPORTE COUNTY · 4 PLACES")
             ctx["t1"] = glow(fitT("WHERE THE DEAD", "bask", 104, BONE, max_w=C.CW, min_size=60), (0, 0, 0), radius=24,
                              strength=0.95)
             ctx["t2"] = glow(fitT("DON'T REST", "bask", 150, (250, 70, 56), max_w=C.CW, min_size=60), (150, 0, 0),
