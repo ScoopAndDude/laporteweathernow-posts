@@ -204,7 +204,7 @@ def narrate(st):
             raise ValueError("beat %d: couldn't split into sentences cleanly: %r" % (pi, ss))
         after = float(b.get("pause", 0.0 if pi == len(beats) - 1 else 0.45))
         for si, s in enumerate(ss):
-            a, rate = k.create(spoken(s.replace('"', "").replace("“", "").replace("”", ""), rules),
+            a, rate = V.create(k, spoken(s.replace('"', "").replace("“", "").replace("”", ""), rules),
                                voice=voice, speed=speed, lang="en-us")
             a = V.trim(np.asarray(a, np.float32))
             d = len(a) / RATE
