@@ -94,8 +94,11 @@ In Buffer (the videos at commit 7599159), put in as the free plan's 10-per-chann
 | Hangman's Road | Fri., Oct. 30, 7 PM | 6adfe5eac426e60252ceed42 | 6adfea145837b0fb9bf97e42 | 6adfe5ec14a7789a82f79b4a |
 | Belle Gunness, Part 6 | Sat., Oct. 31, 12:15 PM | 6adfea0d0565644c947ff291 | 6adfff0da6170f32b17091eb | 6adfea10f266a5f7e104d7eb |
 
-The trick-or-treat forecast isn't in Buffer: it's remade from the newest NWS forecast the morning of Fri., Oct. 30
-(a scheduled task) and goes out at 7:30 AM after Scoop's OK.
+The trick-or-treat forecast was remade on Wed., Oct. 28 from that morning's NWS forecast (high 64, a 40% chance of
+light showers by day, 20% Saturday night) and is in Buffer for Fri., Oct. 30, 7:30 AM (the video at commit 6f069b2):
+YouTube 6ae1fb4dbaa95856b5f2b331, TikTok 6ae1fb51f8ac381631f619bb, X 6ae1fb54e7fe9e2e3ebf199f. The scheduled task
+still runs Fri., Oct. 30 at 5:30 AM: it refreshes the numbers from the newest forecast and updates these three posts
+(edit_post with the new video), never adds new ones.
 
 ## Rebuilding the workspace
 
