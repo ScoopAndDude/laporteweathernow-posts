@@ -318,7 +318,7 @@ def red_title(f, text, size, t, at, color=(250, 70, 56)):
 def build_belle3(R):
     t_ad, t_dis = R.at("Then one"), R.at("disappeared.")
     t_her = R.at("Her ad read:")
-    t_com, t_owns, t_la = R.at("comely"), R.at("owns"), R.at("La Porte County.")
+    t_com, t_owns, t_la = R.at("comely"), R.at("owns"), R.at("LaPorte County.")
     t_tri = R.at("Triflers")
     t_and, t_hel = R.at("Andrew"), R.at("Helgelien,")
     t_wrote, t_back = R.at("wrote back."), R.end("wrote back.")
@@ -397,7 +397,7 @@ def build_belle3(R):
         ctx["env"] = envelope()
         ctx["dot"] = dot(13, BLOOD)
         ctx["ab"] = glow(T("ABERDEEN, S.D.", "oldst_b", 40, INKC), (244, 234, 214), radius=10, strength=0.9)
-        ctx["lp"] = glow(T("LA PORTE, IND.", "oldst_b", 40, INKC), (244, 234, 214), radius=10, strength=0.9)
+        ctx["lp"] = glow(T("LAPORTE, IND.", "oldst_b", 40, INKC), (244, 234, 214), radius=10, strength=0.9)
 
     def draw_map(f, u, t, ctx):
         P = ctx["P"]
@@ -833,7 +833,7 @@ def build_belle5(R):
         if "map" not in shared:
             shared["map"], shared["P"] = build_us_map()
         ctx.update(map=shared["map"], P=shared["P"], dot=dot(13, BLOOD), env=None,
-                   lp=glow(T("LA PORTE, IND.", "oldst_b", 40, INKC), (244, 234, 214), radius=10, strength=0.9),
+                   lp=glow(T("LAPORTE, IND.", "oldst_b", 40, INKC), (244, 234, 214), radius=10, strength=0.9),
                    la=glow(T("LOS ANGELES, CALIF.", "oldst_b", 40, INKC), (244, 234, 214), radius=10, strength=0.9))
 
     def route(ctx, to):
