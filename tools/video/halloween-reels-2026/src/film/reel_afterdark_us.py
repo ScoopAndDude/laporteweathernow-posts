@@ -143,7 +143,7 @@ def build_wh(R):
     end = EndCard("ad-lincoln.jpg",
                   ["Wikipedia: Lincoln's ghost · Queen Wilhelmina",
                    "White House Historical Association",
-                   "Photos: A. Gardner · Library of Congress"],
+                   "Photos: A. Gardner, 1863 · Yellow Oval Room: LoC"],
                   "The White House and Lincoln's Ghost", series=SERIES)
 
     def d_end(f, u, t, ctx):
