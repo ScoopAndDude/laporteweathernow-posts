@@ -72,9 +72,9 @@ REELS = {
     # Halloween forecast: NWS as of Sun., Oct. 25 (re-record with the newest forecast before it posts)
     "hwfc": [
         ("Will it rain on trick-or-treat? Here's the latest look at Halloween in La Porte.", 0.45),
-        ("Saturday looks mostly cloudy, with a high near 64 and a chance of a few light showers.", 0.45),
+        ("Saturday looks mild and mostly cloudy, with a high near 71 and only a slight chance of a shower.", 0.45),
         ("Trick-or-treat is 5 to 7. The sun sets at 5:43, and it's dark by about 6:10.", 0.45),
-        ("Saturday night, there's only a slight chance of a shower. The better rain chances arrive Sunday.", 0.5),
+        ("Showers are likely Saturday night, but the best chance looks later, into Sunday.", 0.5),
         ("It can still change, so double-tap for the update.", 0.0),
     ],
     "belle6": [
@@ -196,37 +196,6 @@ def sentences(p):
             for s in out if s.strip()]
 
 
-# Names the voice gets wrong from spelling alone, given as sound symbols instead. La Porte is one word, luh-PORT
-# (Scoop, Oct. 28, 2026: "Laporte is pronounced as one word not 2"); the SAY rules turn it into "Luh-Port" first, and
-# these are the same symbols the weather radio and the Daily Video use (radio_broadcast.PRONOUNCE).
-PHONES = {"Luh-Port": "ləpˈɔɹt"}
-_tok = None
-
-
-def phonemes(text, lang=LANG):
-    """The whole sentence phonemized with a stand-in word ("Lapport"), whose sounds are then swapped for the right
-    ones, so the words around the name keep their natural stress."""
-    global _tok
-    if _tok is None:
-        from kokoro_onnx.tokenizer import Tokenizer
-        _tok = Tokenizer()
-    t = text
-    for w in PHONES:
-        t = t.replace(w, "Lapport")
-    ph = _tok.phonemize(t, lang)
-    ph, n = re.subn(r"l[ˈˌ]?æp[ˈˌ]?ɔːɹt", PHONES["Luh-Port"], ph)
-    if n != text.count("Luh-Port"):
-        raise ValueError("couldn't place La Porte's sounds in: %r -> %r" % (text, ph))
-    return ph
-
-
-def create(k, text, voice=VOICE, speed=SPEED, lang=LANG):
-    """k.create, but names in PHONES are said from their sound symbols."""
-    if any(w in text for w in PHONES):
-        return k.create(phonemes(text, lang), voice=voice, speed=speed, lang=lang, is_phonemes=True)
-    return k.create(text, voice=voice, speed=speed, lang=lang)
-
-
 def trim(a, thr=0.004, pad=0.03):
     idx = np.nonzero(np.abs(a) > thr)[0]
     if len(idx) == 0:
@@ -245,7 +214,7 @@ def main(names):
         for pi, (p, after) in enumerate(REELS[name]):
             ss = sentences(p)
             for si, s in enumerate(ss):
-                a, rate = create(k, spoken(s.replace('"', "")))
+                a, rate = k.create(spoken(s.replace('"', "")), voice=VOICE, speed=SPEED, lang=LANG)
                 a = trim(np.asarray(a, np.float32))
                 d = len(a) / RATE
                 items.append({"para": pi, "sent": si, "text": s, "s": round(t, 3), "e": round(t + d, 3)})
