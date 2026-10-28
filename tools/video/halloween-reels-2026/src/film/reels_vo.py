@@ -194,6 +194,37 @@ def sentences(p):
     return [s.strip().replace("Mrs\u00a7", "Mrs.").replace("\u00b6com", ".com") for s in out if s.strip()]
 
 
+# Names the voice gets wrong from spelling alone, given as sound symbols instead. La Porte is one word, luh-PORT
+# (Scoop, Oct. 28, 2026: "Laporte is pronounced as one word not 2"); the SAY rules turn it into "Luh-Port" first, and
+# these are the same symbols the weather radio and the Daily Video use (radio_broadcast.PRONOUNCE).
+PHONES = {"Luh-Port": "ləpˈɔɹt"}
+_tok = None
+
+
+def phonemes(text, lang=LANG):
+    """The whole sentence phonemized with a stand-in word ("Lapport"), whose sounds are then swapped for the right
+    ones, so the words around the name keep their natural stress."""
+    global _tok
+    if _tok is None:
+        from kokoro_onnx.tokenizer import Tokenizer
+        _tok = Tokenizer()
+    t = text
+    for w in PHONES:
+        t = t.replace(w, "Lapport")
+    ph = _tok.phonemize(t, lang)
+    ph, n = re.subn(r"l[ˈˌ]?æp[ˈˌ]?ɔːɹt", PHONES["Luh-Port"], ph)
+    if n != text.count("Luh-Port"):
+        raise ValueError("couldn't place La Porte's sounds in: %r -> %r" % (text, ph))
+    return ph
+
+
+def create(k, text, voice=VOICE, speed=SPEED, lang=LANG):
+    """k.create, but names in PHONES are said from their sound symbols."""
+    if any(w in text for w in PHONES):
+        return k.create(phonemes(text, lang), voice=voice, speed=speed, lang=lang, is_phonemes=True)
+    return k.create(text, voice=voice, speed=speed, lang=lang)
+
+
 def trim(a, thr=0.004, pad=0.03):
     idx = np.nonzero(np.abs(a) > thr)[0]
     if len(idx) == 0:
@@ -212,7 +243,7 @@ def main(names):
         for pi, (p, after) in enumerate(REELS[name]):
             ss = sentences(p)
             for si, s in enumerate(ss):
-                a, rate = k.create(spoken(s.replace('"', "")), voice=VOICE, speed=SPEED, lang=LANG)
+                a, rate = create(k, spoken(s.replace('"', "")))
                 a = trim(np.asarray(a, np.float32))
                 d = len(a) / RATE
                 items.append({"para": pi, "sent": si, "text": s, "s": round(t, 3), "e": round(t + d, 3)})
