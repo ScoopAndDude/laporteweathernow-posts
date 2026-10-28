@@ -242,12 +242,16 @@ def sentences(p):
 # (Scoop, Oct. 28, 2026: "Laporte is pronounced as one word not 2"); the SAY rules turn it into "Luh-Port" first, and
 # these are the same symbols the weather radio and the Daily Video use (radio_broadcast.PRONOUNCE).
 PHONES = {"Luh-Port": "ləpˈɔɹt"}
+# Words the voice spells out wrong on its own: word -> (the sounds it makes, the right sounds). Pentagon is said
+# PEN-tuh-gahn, one word (Scoop, Oct. 28, 2026: "its pronounced pent a gone all one word"); left alone the voice
+# says pen-TAG-un.
+FIX = {"pentagon": ("pˈɛntæɡən", "pˈɛntəɡˌɑːn")}
 _tok = None
 
 
 def phonemes(text, lang=LANG):
     """The whole sentence phonemized with a stand-in word ("Lapport"), whose sounds are then swapped for the right
-    ones, so the words around the name keep their natural stress."""
+    ones, so the words around the name keep their natural stress. Words in FIX get their right sounds the same way."""
     global _tok
     if _tok is None:
         from kokoro_onnx.tokenizer import Tokenizer
@@ -259,12 +263,21 @@ def phonemes(text, lang=LANG):
     ph, n = re.subn(r"l[ˈˌ]?æp[ˈˌ]?ɔːɹt", PHONES["Luh-Port"], ph)
     if n != text.count("Luh-Port"):
         raise ValueError("couldn't place LaPorte's sounds in: %r -> %r" % (text, ph))
+    for w, (bad, good) in FIX.items():
+        want = len(re.findall(r"\b%s\b" % w, text, re.I))
+        ph, n = re.subn(bad, good, ph)
+        if n != want:
+            raise ValueError("couldn't place %s's sounds in: %r -> %r" % (w, text, ph))
     return ph
 
 
+def needs_phonemes(text):
+    return any(w in text for w in PHONES) or any(re.search(r"\b%s\b" % w, text, re.I) for w in FIX)
+
+
 def create(k, text, voice=VOICE, speed=SPEED, lang=LANG):
-    """k.create, but names in PHONES are said from their sound symbols."""
-    if any(w in text for w in PHONES):
+    """k.create, but names in PHONES and words in FIX are said from their sound symbols."""
+    if needs_phonemes(text):
         return k.create(phonemes(text, lang), voice=voice, speed=speed, lang=lang, is_phonemes=True)
     return k.create(text, voice=voice, speed=speed, lang=lang)
 
