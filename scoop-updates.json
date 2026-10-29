@@ -1,263 +1,249 @@
 {
  "about": "State for scripts/scoop_update.py, the automatic updates to today's Daily Scoop: the forecast the Scoop was written from (baseline), what was last published, the alerts last seen, and today's updates. Replaced each day. Safe to delete: the job starts over from the current post.",
- "date": "2026-10-28",
- "post": "2026-10-28T05:32:00-05:00",
+ "date": "2026-10-29",
+ "post": "2026-10-29T05:32:00-05:00",
  "kind": "written",
  "baseline": {
-  "from": "2026-10-28T05:02:17-05:00",
+  "from": "2026-10-29T05:02:15-05:00",
   "source": "nws-snapshot.json (what the Scoop was written from)",
   "periods": {
-   "night 2026-10-27": {
-    "name": "Overnight",
-    "temp": 50,
-    "rain": 0,
-    "short": "Mostly Cloudy"
+   "day 2026-10-29": {
+    "name": "Today",
+    "temp": 70,
+    "rain": 40,
+    "short": "Partly Sunny then Chance Rain Showers"
    },
-   "day 2026-10-28": {
-    "name": "Wednesday",
-    "temp": 74,
-    "rain": 0,
-    "short": "Sunny"
-   },
-   "night 2026-10-28": {
-    "name": "Wednesday Night",
-    "temp": 56,
+   "night 2026-10-29": {
+    "name": "Tonight",
+    "temp": 43,
     "rain": 0,
     "short": "Mostly Clear"
    },
-   "day 2026-10-29": {
-    "name": "Thursday",
-    "temp": 72,
-    "rain": 60,
-    "short": "Rain Showers Likely"
-   },
-   "night 2026-10-29": {
-    "name": "Thursday Night",
-    "temp": 44,
-    "rain": 20,
-    "short": "Slight Chance Rain Showers then Partly Cloudy"
-   },
    "day 2026-10-30": {
     "name": "Friday",
-    "temp": 65,
+    "temp": 63,
     "rain": 0,
     "short": "Mostly Sunny"
    },
    "night 2026-10-30": {
     "name": "Friday Night",
-    "temp": 47,
-    "rain": 20,
-    "short": "Slight Chance Rain Showers"
+    "temp": 48,
+    "rain": 40,
+    "short": "Mostly Cloudy then Chance Rain Showers"
    },
    "day 2026-10-31": {
     "name": "Saturday",
-    "temp": 64,
+    "temp": 62,
     "rain": 40,
     "short": "Chance Rain Showers"
    },
    "night 2026-10-31": {
     "name": "Saturday Night",
-    "temp": 48,
-    "rain": 20,
-    "short": "Slight Chance Rain Showers"
+    "temp": 47,
+    "rain": 40,
+    "short": "Chance Rain Showers then Cloudy"
    },
    "day 2026-11-01": {
     "name": "Sunday",
     "temp": 67,
-    "rain": 40,
-    "short": "Chance Rain Showers"
+    "rain": 20,
+    "short": "Mostly Cloudy then Slight Chance Rain Showers"
    },
    "night 2026-11-01": {
     "name": "Sunday Night",
     "temp": 50,
-    "rain": 30,
-    "short": "Chance Rain Showers"
+    "rain": 20,
+    "short": "Slight Chance Rain Showers then Mostly Cloudy"
    },
    "day 2026-11-02": {
     "name": "Monday",
     "temp": 67,
-    "rain": 40,
+    "rain": 30,
     "short": "Chance Rain Showers"
    },
    "night 2026-11-02": {
     "name": "Monday Night",
-    "temp": 52,
+    "temp": 54,
     "rain": 50,
     "short": "Chance Rain Showers"
    },
    "day 2026-11-03": {
     "name": "Tuesday",
-    "temp": 66,
+    "temp": 68,
     "rain": 60,
     "short": "Rain Showers Likely"
+   },
+   "night 2026-11-03": {
+    "name": "Tuesday Night",
+    "temp": 52,
+    "rain": 60,
+    "short": "Rain Showers Likely"
+   },
+   "day 2026-11-04": {
+    "name": "Wednesday",
+    "temp": 65,
+    "rain": 60,
+    "short": "Rain Showers Likely"
+   },
+   "night 2026-11-04": {
+    "name": "Wednesday Night",
+    "temp": 47,
+    "rain": 50,
+    "short": "Chance Rain Showers"
    }
   },
   "alerts": [],
   "alertRows": [],
   "hourly": {
-   "2026-10-28T05": {
-    "temp": 52,
-    "rain": 2
-   },
-   "2026-10-28T06": {
-    "temp": 50,
-    "rain": 2
-   },
-   "2026-10-28T07": {
-    "temp": 50,
-    "rain": 2
-   },
-   "2026-10-28T08": {
-    "temp": 51,
-    "rain": 1
-   },
-   "2026-10-28T09": {
-    "temp": 56,
-    "rain": 1
-   },
-   "2026-10-28T10": {
-    "temp": 61,
-    "rain": 1
-   },
-   "2026-10-28T11": {
-    "temp": 66,
-    "rain": 1
-   },
-   "2026-10-28T12": {
-    "temp": 69,
-    "rain": 1
-   },
-   "2026-10-28T13": {
-    "temp": 71,
-    "rain": 1
-   },
-   "2026-10-28T14": {
-    "temp": 73,
-    "rain": 1
-   },
-   "2026-10-28T15": {
-    "temp": 74,
-    "rain": 0
-   },
-   "2026-10-28T16": {
-    "temp": 73,
-    "rain": 1
-   },
-   "2026-10-28T17": {
-    "temp": 72,
-    "rain": 1
-   },
-   "2026-10-28T18": {
-    "temp": 68,
-    "rain": 1
-   },
-   "2026-10-28T19": {
-    "temp": 63,
-    "rain": 0
-   },
-   "2026-10-28T20": {
-    "temp": 61,
-    "rain": 1
-   },
-   "2026-10-28T21": {
-    "temp": 60,
-    "rain": 1
-   },
-   "2026-10-28T22": {
-    "temp": 59,
-    "rain": 1
-   },
-   "2026-10-28T23": {
-    "temp": 59,
-    "rain": 1
-   },
-   "2026-10-29T00": {
-    "temp": 59,
-    "rain": 1
-   },
-   "2026-10-29T01": {
-    "temp": 58,
-    "rain": 1
-   },
-   "2026-10-29T02": {
-    "temp": 58,
-    "rain": 1
-   },
-   "2026-10-29T03": {
-    "temp": 58,
-    "rain": 2
-   },
-   "2026-10-29T04": {
-    "temp": 58,
-    "rain": 2
-   },
    "2026-10-29T05": {
-    "temp": 58,
+    "temp": 59,
     "rain": 2
    },
    "2026-10-29T06": {
-    "temp": 57,
-    "rain": 1
+    "temp": 58,
+    "rain": 2
    },
    "2026-10-29T07": {
-    "temp": 57,
-    "rain": 13
+    "temp": 58,
+    "rain": 5
    },
    "2026-10-29T08": {
     "temp": 58,
-    "rain": 13
+    "rain": 6
    },
    "2026-10-29T09": {
-    "temp": 61,
-    "rain": 13
+    "temp": 62,
+    "rain": 7
    },
    "2026-10-29T10": {
-    "temp": 64,
-    "rain": 20
+    "temp": 65,
+    "rain": 7
    },
    "2026-10-29T11": {
-    "temp": 68,
-    "rain": 20
+    "temp": 67,
+    "rain": 18
    },
    "2026-10-29T12": {
-    "temp": 70,
-    "rain": 20
+    "temp": 69,
+    "rain": 29
    },
    "2026-10-29T13": {
-    "temp": 71,
-    "rain": 60
+    "temp": 68,
+    "rain": 40
    },
    "2026-10-29T14": {
-    "temp": 70,
-    "rain": 60
+    "temp": 67,
+    "rain": 31
    },
    "2026-10-29T15": {
-    "temp": 71,
-    "rain": 60
+    "temp": 65,
+    "rain": 26
    },
    "2026-10-29T16": {
-    "temp": 69,
-    "rain": 20
+    "temp": 63,
+    "rain": 13
+   },
+   "2026-10-29T17": {
+    "temp": 61,
+    "rain": 9
+   },
+   "2026-10-29T18": {
+    "temp": 60,
+    "rain": 5
+   },
+   "2026-10-29T19": {
+    "temp": 57,
+    "rain": 0
+   },
+   "2026-10-29T20": {
+    "temp": 54,
+    "rain": 0
+   },
+   "2026-10-29T21": {
+    "temp": 53,
+    "rain": 0
+   },
+   "2026-10-29T22": {
+    "temp": 51,
+    "rain": 0
+   },
+   "2026-10-29T23": {
+    "temp": 50,
+    "rain": 0
+   },
+   "2026-10-30T00": {
+    "temp": 50,
+    "rain": 0
+   },
+   "2026-10-30T01": {
+    "temp": 48,
+    "rain": 0
+   },
+   "2026-10-30T02": {
+    "temp": 48,
+    "rain": 0
+   },
+   "2026-10-30T03": {
+    "temp": 47,
+    "rain": 0
+   },
+   "2026-10-30T04": {
+    "temp": 45,
+    "rain": 1
+   },
+   "2026-10-30T05": {
+    "temp": 44,
+    "rain": 0
+   },
+   "2026-10-30T06": {
+    "temp": 44,
+    "rain": 1
+   },
+   "2026-10-30T07": {
+    "temp": 43,
+    "rain": 0
+   },
+   "2026-10-30T08": {
+    "temp": 44,
+    "rain": 0
+   },
+   "2026-10-30T09": {
+    "temp": 50,
+    "rain": 0
+   },
+   "2026-10-30T10": {
+    "temp": 54,
+    "rain": 0
+   },
+   "2026-10-30T11": {
+    "temp": 57,
+    "rain": 0
+   },
+   "2026-10-30T12": {
+    "temp": 59,
+    "rain": 0
+   },
+   "2026-10-30T13": {
+    "temp": 61,
+    "rain": 0
+   },
+   "2026-10-30T14": {
+    "temp": 61,
+    "rain": 0
+   },
+   "2026-10-30T15": {
+    "temp": 61,
+    "rain": 0
+   },
+   "2026-10-30T16": {
+    "temp": 62,
+    "rain": 0
    }
   },
-  "hourlyFrom": "2026-10-28T05:47:00-05:00"
+  "hourlyFrom": "2026-10-29T05:47:00-05:00"
  },
- "published": {
-  "time": "2026-10-28T07:02:00-05:00",
-  "alertKeys": [],
-  "alerts": [],
-  "changes": [],
-  "off": [
-   "cool"
-  ],
-  "paragraph": "Automatic update, 7:02 a.m.: It's running cooler than NWS's earlier hour-by-hour forecast: at 6:35 a.m. the La Porte airport reported fog and 45 degrees, where that forecast had about 50. There are no watches, warnings, or advisories for La Porte County right now."
- },
+ "published": null,
  "alertRows": [],
  "missing": [],
- "updates": [
-  {
-   "time": "2026-10-28T07:02:00-05:00",
-   "why": "airport running cool"
-  }
- ]
+ "updates": []
 }
