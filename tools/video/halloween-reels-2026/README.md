@@ -229,7 +229,9 @@ Posted Oct. 28:
   https://x.com/2103134688416067584/status/2115580294937899018,
   https://x.com/2103134688416067584/status/2115580324260327605,
   https://x.com/2103134688416067584/status/2115580399237660794
-- Facebook Page: Part 1 https://facebook.com/reel/2454929945031140 went out at 5:44 PM, just before the Pentagon fix,
-  so that copy has the old pronunciation; Part 2 https://facebook.com/reel/1809919187007193 and Part 3
-  https://facebook.com/reel/1673470677500357 have tags Local News and Community and are shared to Scoop's personal
-  timeline.
+- Facebook Page: Part 1 first went out at 5:44 PM (https://facebook.com/reel/2454929945031140), just before the Pentagon
+  fix, so that copy had the old pronunciation. Scoop: "remake part 1 and post it" (7:01 PM): the fixed Part 1 is
+  https://facebook.com/reel/4579080018972484 (7:04 PM), and the 5:44 copy was set to expired in Meta Business Suite
+  (hidden from everyone but the Page's admins; not deleted). Part 2 https://facebook.com/reel/1809919187007193 and
+  Part 3 https://facebook.com/reel/1673470677500357. All three have tags Local News and Community and are shared to
+  Scoop's personal timeline.
