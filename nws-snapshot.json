@@ -1,6 +1,6 @@
 {
  "about": "Official weather for La Porte, Indiana, saved by a GitHub job for the Daily Scoop (laporteweathernow.com/daily-scoop). Copied from NWS, SPC and WPC as-is; see scripts/nws_snapshot.py.",
- "fetched": "2026-10-30T05:02:13-05:00",
+ "fetched": "2026-10-30T11:39:58-05:00",
  "place": "La Porte, IN",
  "lat": 41.6081,
  "lon": -86.7189,
@@ -23,50 +23,39 @@
  },
  "observation": {
   "station": "KPPO (La Porte Municipal Airport)",
-  "time": "2026-10-30T04:35:00-05:00",
+  "time": "2026-10-30T11:15:00-05:00",
   "weather": "Clear",
-  "temperatureF": 41,
-  "dewpointF": 41,
-  "humidityPercent": 100,
+  "temperatureF": null,
+  "dewpointF": null,
+  "humidityPercent": null,
   "wind": {
-   "from": "WSW",
-   "degrees": 240,
-   "mph": 2,
+   "from": null,
+   "degrees": null,
+   "mph": null,
    "gustMph": null
   },
   "visibilityMiles": 10.0,
-  "pressureInHg": 30.29,
-  "metar": "KPPO 300935Z AUTO 24002KT 10SM CLR 05/05 A3029 RMK AO2"
+  "pressureInHg": null,
+  "metar": "KPPO 301615Z AUTO 09007KT 10SM CLR 14/08 A3038 RMK AO2"
  },
  "forecast": {
-  "updated": "2026-10-30T08:00:36+00:00",
-  "generated": "2026-10-30T09:32:08+00:00",
+  "updated": "2026-10-30T12:45:33+00:00",
+  "generated": "2026-10-30T13:02:06+00:00",
   "timesNote": "Clock times in the forecast wording are already in America/Chicago (La Porte's real time). NWS writes them in America/Indiana/Indianapolis, which it has on file for La Porte by mistake.",
   "periods": [
    {
-    "name": "Overnight",
-    "start": "2026-10-30T05:00:00-04:00",
-    "end": "2026-10-30T06:00:00-04:00",
-    "isDaytime": false,
-    "temperatureF": 43,
-    "rainChancePercent": 0,
-    "wind": "N 5 mph",
-    "short": "Areas Of Fog",
-    "detailed": "Areas of fog. Mostly clear, with a low around 43. North wind around 5 mph."
-   },
-   {
-    "name": "Friday",
-    "start": "2026-10-30T06:00:00-04:00",
+    "name": "Today",
+    "start": "2026-10-30T09:00:00-04:00",
     "end": "2026-10-30T18:00:00-04:00",
     "isDaytime": true,
     "temperatureF": 62,
     "rainChancePercent": 0,
     "wind": "NE 0 to 5 mph",
-    "short": "Areas Of Fog then Mostly Sunny",
-    "detailed": "Areas of fog before 6am. Mostly sunny, with a high near 62. Northeast wind 0 to 5 mph."
+    "short": "Partly Sunny",
+    "detailed": "Partly sunny, with a high near 62. Northeast wind 0 to 5 mph."
    },
    {
-    "name": "Friday Night",
+    "name": "Tonight",
     "start": "2026-10-30T18:00:00-04:00",
     "end": "2026-10-31T06:00:00-04:00",
     "isDaytime": false,
@@ -107,7 +96,7 @@
     "rainChancePercent": 24,
     "wind": "SE 5 mph",
     "short": "Slight Chance Rain Showers",
-    "detailed": "A slight chance of rain showers after 6am. Mostly cloudy, with a high near 65. Chance of precipitation is 20%."
+    "detailed": "A slight chance of rain showers after 6am. Mostly cloudy, with a high near 65. Southeast wind around 5 mph. Chance of precipitation is 20%."
    },
    {
     "name": "Sunday Night",
@@ -173,7 +162,7 @@
     "rainChancePercent": 56,
     "wind": "S 5 to 10 mph",
     "short": "Rain Showers Likely",
-    "detailed": "Rain showers likely. Partly sunny, with a high near 67."
+    "detailed": "Rain showers likely. Partly sunny, with a high near 67. Chance of precipitation is 60%."
    },
    {
     "name": "Wednesday Night",
@@ -196,6 +185,17 @@
     "wind": "NW 5 to 10 mph",
     "short": "Chance Rain Showers",
     "detailed": "A chance of rain showers. Mostly cloudy, with a high near 61."
+   },
+   {
+    "name": "Thursday Night",
+    "start": "2026-11-05T18:00:00-05:00",
+    "end": "2026-11-06T06:00:00-05:00",
+    "isDaytime": false,
+    "temperatureF": 43,
+    "rainChancePercent": 27,
+    "wind": "N 5 mph",
+    "short": "Chance Rain Showers",
+    "detailed": "A chance of rain showers. Mostly cloudy, with a low around 43."
    }
   ]
  },
@@ -205,15 +205,11 @@
   "next72hInches": 0.0,
   "byPeriod": [
    {
-    "name": "Overnight",
+    "name": "Today",
     "inches": 0.0
    },
    {
-    "name": "Friday",
-    "inches": 0.0
-   },
-   {
-    "name": "Friday Night",
+    "name": "Tonight",
     "inches": 0.0
    },
    {
@@ -259,85 +255,21 @@
    {
     "name": "Thursday",
     "inches": 0
+   },
+   {
+    "name": "Thursday Night",
+    "inches": 0
    }
   ]
  },
- "alertsLaPorteCounty": [
-  {
-   "id": "urn:oid:2.49.0.1.840.0.04b85d5d6a9d2c1085e7de41e44036242ab9e06f.001.1",
-   "event": "Special Weather Statement",
-   "headline": "Special Weather Statement issued October 30 at 2:51AM EDT by NWS Northern Indiana",
-   "nwsHeadline": "Patchy Dense Fog Early this Morning",
-   "area": "Starke; Pulaski; Marshall; Fulton; White; Cass; Miami; Wabash; Huntington; Grant; Blackford; Northern La Porte; Northern Kosciusko; Southern La Porte; Southern Kosciusko",
-   "sender": "NWS Northern Indiana",
-   "sent": "2026-10-30T02:51:00-04:00",
-   "onset": "2026-10-30T02:51:00-04:00",
-   "ends": null,
-   "expires": "2026-10-30T07:00:00-04:00",
-   "messageType": "Alert",
-   "severity": "Moderate",
-   "certainty": "Observed",
-   "urgency": "Expected",
-   "description": "Patchy dense fog has reduced visiblilty of one-quarter mile or\nless. Fog as been most prolonged along the corridors of US-35 and\nUS-421. Motorists should be prepared for rapidly changing\nvisibility; reduce speed and use low-beam headlights.\n\nVisibility is expected to improve around sunrise.",
-   "instruction": null
-  }
- ],
+ "alertsLaPorteCounty": [],
  "alertsNearby": {
-  "indiana": [
-   {
-    "id": "urn:oid:2.49.0.1.840.0.9854f8497ef29f56304068f9c20ff3e34d128aba.001.1",
-    "event": "Special Weather Statement",
-    "headline": "Special Weather Statement issued October 30 at 5:04AM EDT by NWS Wilmington OH",
-    "nwsHeadline": "PATCHY DENSE FOG THIS MORNING",
-    "area": "Wayne; Mercer; Auglaize; Darke",
-    "sender": "NWS Wilmington OH",
-    "sent": "2026-10-30T05:04:00-04:00",
-    "onset": "2026-10-30T05:04:00-04:00",
-    "ends": null,
-    "expires": "2026-10-30T09:00:00-04:00",
-    "messageType": "Alert",
-    "severity": "Moderate",
-    "certainty": "Observed",
-    "urgency": "Expected"
-   },
-   {
-    "id": "urn:oid:2.49.0.1.840.0.a1e7ef7c61e5c01094d9e3a19e04285912e2bd6c.001.1",
-    "event": "Special Weather Statement",
-    "headline": "Special Weather Statement issued October 30 at 3:13AM EDT by NWS Indianapolis IN",
-    "nwsHeadline": "Patchy Dense fog this morning",
-    "area": "Carroll; Warren; Tippecanoe; Clinton; Howard; Fountain; Montgomery; Boone; Tipton; Hamilton; Madison; Delaware; Randolph; Vermillion",
-    "sender": "NWS Indianapolis IN",
-    "sent": "2026-10-30T03:13:00-04:00",
-    "onset": "2026-10-30T03:13:00-04:00",
-    "ends": null,
-    "expires": "2026-10-30T08:00:00-04:00",
-    "messageType": "Alert",
-    "severity": "Moderate",
-    "certainty": "Observed",
-    "urgency": "Expected"
-   },
-   {
-    "id": "urn:oid:2.49.0.1.840.0.04b85d5d6a9d2c1085e7de41e44036242ab9e06f.001.1",
-    "event": "Special Weather Statement",
-    "headline": "Special Weather Statement issued October 30 at 2:51AM EDT by NWS Northern Indiana",
-    "nwsHeadline": "Patchy Dense Fog Early this Morning",
-    "area": "Starke; Pulaski; Marshall; Fulton; White; Cass; Miami; Wabash; Huntington; Grant; Blackford; Northern La Porte; Northern Kosciusko; Southern La Porte; Southern Kosciusko",
-    "sender": "NWS Northern Indiana",
-    "sent": "2026-10-30T02:51:00-04:00",
-    "onset": "2026-10-30T02:51:00-04:00",
-    "ends": null,
-    "expires": "2026-10-30T07:00:00-04:00",
-    "messageType": "Alert",
-    "severity": "Moderate",
-    "certainty": "Observed",
-    "urgency": "Expected"
-   }
-  ],
+  "indiana": [],
   "nearbyCountiesFullText": []
  },
  "discussion": {
   "issued": "2026-10-30T01:58:00-05:00",
-  "ageHours": 3.1,
+  "ageHours": 9.7,
   "text": "000\nFXUS63 KIWX 300658\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n258 AM EDT Fri Oct 30 2026\n\n.KEY MESSAGES...\n\n- Patchy dense fog early this morning.\n\n- Not as warm today through the weekend with highs in the low-\n  to-mid 60s.\n\n- Plenty of dry time on Halloween, but there is a 20-30% chance\n  of rain showers west of I-69.\n\n- Periods of rain next week and very mild on Tuesday.\n  \n\n&&\n\n.DISCUSSION...\nIssued at 258 AM EDT Fri Oct 30 2026\n\nHigh pressure seeps in today in the wake of yesterday's cold front. \nLight northwesterly flow after sunset prompted areas of lake-\nenhanced fog generally along and west of US 31, with patchy \ninstances of dense fog as far east as Huntington and Marion. Overall \nthis fog has been rather transient, with observations bouncing \naround except in a couple pesky locations. Water vapor depicts \na mid- level trough axis now exiting MI which should prompt \nnortheast flow to bring drier air into the region over these \nnext few hours, working to mix out locally dense fog.\n\nFalling shy of a record high temperature by 1 degree at Fort \nWayne yesterday, today will be cooler with highs only in the \nlow-to-mid 60s area-wide (yet normal for this date is 57). \nTemperatures of this magnitude are in store for much of the \nforecast period with the exception of Tuesday and Wednesday when\n70s return thanks to robust warm air advection ahead of a mid \nlatitude cyclone. But first, a weak warm front attempts to lifts\ninto the mid-Missippi valley Saturday morning bringing a 20-30%\nchance of isolated rain showers to areas west of I-69. Plenty \nof dry hours on Halloween but rather cloudy with high \ntemperatures generally near 60.\n\nRain chances become more widespread next week starting with a \ntrough passing through the Ohio valley Sunday afternoon and \nevening (20-30% chance for now, with the trough's track still in\nflux). The primary system we've been monitoring spills onshore \nof the West Coast this weekend, arriving to our doorstep \nTuesday/Wednesday. Low pressure emerges in the Lee of the \nRockies as a deep trough pushes inland. A surface low wraps up \nover the Northern Plains, occludes, prompting renewed \ncyclogenesis of the Central Plains. This spells a period of \nmild and breezy conditions locally on Tuesday and Wednesday as \nthe upper-level pattern becomes highly amplified over the \neastern Great Lakes. A period of steady rain is probable \nWednesday as this system moves through. At this distance, any \nsevere weather risk appears to lie elsewhere owing to a \ndistinct lack of instability. Wet weather may linger into the \nend of the week depending on how the low wraps up over the \neastern CONUS. No significant cool-downs noted in its wake. &&\n\n.AVIATION /06Z TAFS THROUGH 06Z SATURDAY/...\nIssued at 1249 AM EDT Fri Oct 30 2026\n\nA cold front has now exited the area which ultimately prompted a\nbrief period of marine-enhanced fog. This area of fog appears to\nbe drifting SSE based on satellite and surface observations.\nMedium-high confidence this marine-modified air mass will\nbypass KFWA. Flow veers to become NNE later this morning which \nwill disrupt the modified air mass. Otherwise today, increasing \nhigh clouds as a disorganized area of low pressure lifts into \nthe Midwest. Rain is possible at KSBN just beyond this TAF \nperiod.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...None.\n\n&&\n\n$$\n\nDISCUSSION...Brown\nAVIATION...Brown"
  },
  "hazardousWeatherOutlook": null,
@@ -345,15 +277,15 @@
  "spc": [
   {
    "day": 1,
-   "valid": "202610301200",
+   "valid": "202610301630",
    "expires": "202610311200",
    "riskAtLaPorte": "No thunderstorm or severe risk area",
    "riskAreasAnywhere": [
     "General Thunderstorms Risk",
     "Marginal Risk"
    ],
-   "summary": "Thunderstorms with isolated severe wind gusts and hail will be possible in parts of Arizona today.",
-   "text": "SPC AC 300539\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1239 AM CDT Fri Oct 30 2026\n\n   Valid 301200Z - 311200Z\n\n   ...THERE IS A MARGINAL RISK OF SEVERE THUNDERSTORMS ACROSS PARTS OF\n   ARIZONA...\n\n   ...SUMMARY...\n   Thunderstorms with isolated severe wind gusts and hail will be\n   possible in parts of Arizona today.\n\n   ...Arizona...\n   An upper-level trough will move northeastward today from the eastern\n   Pacific into California and Arizona. Ahead of the trough, a\n   north-to-south corridor of low-level moisture and instability will\n   be in place over parts of southern and western Arizona. Along the\n   moist axis, surface dewpoints in the 60s F will contribute to weak\n   destabilization by afternoon. As surface temperatures warm,\n   scattered thunderstorm development is expected near the moisture and\n   instability axis. RAP forecast soundings from 22Z to 00Z near this\n   axis have 0-6 km shear in the 30 to 40 knot range with 700-500 mb\n   lapse rates near 7 C/km. This should be enough for a marginal hail\n   threat with rotating cells. Low-level lapse rates will also become\n   steep from the surface to near 850 mb suggesting isolated severe\n   wind gusts will also be possible. The storms associated with any\n   severe threat are expected to remain unorganized.\n\n   ..Broyles/Weinman.. 10/30/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 1300Z"
+   "summary": "An isolated risk for severe weather is possible today along the middle coast of Texas and central into southern Arizona.",
+   "text": "SPC AC 301619\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1119 AM CDT Fri Oct 30 2026\n\n   Valid 301630Z - 311200Z\n\n   ...THERE IS A MARGINAL RISK OF SEVERE THUNDERSTORMS FOR THE MIDDLE\n   COAST OF TEXAS AND CENTRAL INTO SOUTHERN ARIZONA...\n\n   ...SUMMARY...\n   An isolated risk for severe weather is possible today along the\n   middle coast of Texas and central into southern Arizona.\n\n   ...Middle Coast of TX...\n   An upper trough and associated vorticity maximum evident in midday\n   water-vapor imagery over the Rio Grande Valley will continue\n   east-northeast and reach the Ark-La-Tex and northwest Gulf Coast by\n   late evening.  A zone of warm advection immediately ahead of the\n   disturbance will advance northeast up the coast during the\n   afternoon.  The inland penetration of higher theta-e into the\n   coastal counties may result in sufficient buoyancy for a couple of\n   stronger updrafts.  Some enlargement of the low-level portion of the\n   hodograph within a moist environment may yield a risk for a brief\n   tornado near the coast this afternoon.  \n\n   ...Arizona...\n   A shortwave trough moving into southern CA will continue northeast\n   towards the Four Corners during the period.  Copious mid to\n   high-level cloud cover will likely limit heating of a seasonably\n   moist boundary layer across the lower desert.  Model guidance\n   continues to indicate the possibility for a few stronger\n   thunderstorms developing later today.  An isolated risk for\n   marginally severe hail and localized severe gusts may accompany the\n   stronger thunderstorms.\n\n   ..Smith/Chalmers.. 10/30/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 2000Z"
   },
   {
    "day": 2,
@@ -408,26 +340,6 @@
     "date": "2026-10-30",
     "summary": "dry through work hours (6 a.m. to 6 p.m.)",
     "hours": [
-     {
-      "hour": 6,
-      "rainChancePercent": 0
-     },
-     {
-      "hour": 7,
-      "rainChancePercent": 0
-     },
-     {
-      "hour": 8,
-      "rainChancePercent": 0
-     },
-     {
-      "hour": 9,
-      "rainChancePercent": 0
-     },
-     {
-      "hour": 10,
-      "rainChancePercent": 0
-     },
      {
       "hour": 11,
       "rainChancePercent": 0
@@ -525,7 +437,7 @@
   "bias": {
    "days": 26,
    "ready": true,
-   "high": -1.8,
+   "high": -1.6,
    "highDays": 26,
    "low": 1.3,
    "lowDays": 26,
@@ -541,37 +453,37 @@
     },
     "models": {
      "ncep_nbm_conus": {
-      "high": 62,
+      "high": 61,
       "low": 44,
-      "rain": 0
+      "rain": 12
      },
      "ncep_hrrr_conus": {
-      "high": 61,
-      "low": 43,
-      "rain": 0
+      "high": 62,
+      "low": 41,
+      "rain": 12
      },
      "gfs_seamless": {
-      "high": 61,
-      "low": 43,
-      "rain": 0
+      "high": 62,
+      "low": 41,
+      "rain": 12
      },
      "ecmwf_ifs025": {
-      "high": 61,
+      "high": 59,
       "low": 46,
-      "rain": 11
+      "rain": 1
      }
     },
     "blend": {
-     "high": 61,
-     "low": 44
+     "high": 62,
+     "low": 42
     },
     "adjusted": {
-     "high": 63,
-     "low": 43
+     "high": 64,
+     "low": 41
     },
     "spread": {
-     "high": 1,
-     "low": 3
+     "high": 3,
+     "low": 5
     },
     "note": "NWS and the models agree within a few degrees"
    },
@@ -586,37 +498,37 @@
      "ncep_nbm_conus": {
       "high": 61,
       "low": 49,
-      "rain": 11
+      "rain": 30
      },
      "ncep_hrrr_conus": {
-      "high": 56,
-      "low": 48,
-      "rain": 11
+      "high": 63,
+      "low": 46,
+      "rain": 30
      },
      "gfs_seamless": {
-      "high": 56,
-      "low": 48,
-      "rain": 11
+      "high": 63,
+      "low": 46,
+      "rain": 30
      },
      "ecmwf_ifs025": {
       "high": 62,
       "low": 50,
-      "rain": 53
+      "rain": 43
      }
     },
     "blend": {
-     "high": 60,
-     "low": 48
-    },
-    "adjusted": {
      "high": 62,
      "low": 47
     },
-    "spread": {
-     "high": 6,
-     "low": 3
+    "adjusted": {
+     "high": 64,
+     "low": 46
     },
-    "note": "the models disagree on the high by 6 degrees (less certain)"
+    "spread": {
+     "high": 3,
+     "low": 4
+    },
+    "note": "our blend's high (64) differs from NWS (60) by 4 degrees"
    },
    {
     "date": "2026-11-01",
@@ -627,31 +539,31 @@
     },
     "models": {
      "ncep_nbm_conus": {
-      "high": 64,
-      "low": 52,
-      "rain": 28
+      "high": 65,
+      "low": 51,
+      "rain": 13
      },
      "ncep_hrrr_conus": {
-      "rain": 28
+      "rain": 13
      },
      "gfs_seamless": {
-      "high": 60,
-      "low": 53,
-      "rain": 28
+      "high": 58,
+      "low": 52,
+      "rain": 13
      },
      "ecmwf_ifs025": {
-      "high": 68,
-      "low": 49,
-      "rain": 8
+      "high": 66,
+      "low": 53,
+      "rain": 7
      }
     },
     "blend": {
-     "high": 64,
-     "low": 50
+     "high": 65,
+     "low": 52
     },
     "adjusted": {
-     "high": 66,
-     "low": 49
+     "high": 67,
+     "low": 51
     },
     "spread": {
      "high": 8,
@@ -670,48 +582,48 @@
      "ncep_nbm_conus": {
       "high": 65,
       "low": 52,
-      "rain": 30
+      "rain": 37
      },
      "ncep_hrrr_conus": {
-      "rain": 30
+      "rain": 37
      },
      "gfs_seamless": {
-      "high": 60,
-      "low": 54,
-      "rain": 30
+      "high": 58,
+      "low": 53,
+      "rain": 37
      },
      "ecmwf_ifs025": {
-      "high": 65,
-      "low": 51,
-      "rain": 22
+      "high": 64,
+      "low": 56,
+      "rain": 20
      }
     },
     "blend": {
-     "high": 65,
+     "high": 64,
      "low": 52
     },
     "adjusted": {
-     "high": 67,
+     "high": 66,
      "low": 51
     },
     "spread": {
-     "high": 6,
-     "low": 4
+     "high": 8,
+     "low": 6
     },
-    "note": "the models disagree on the high by 6 degrees (less certain)"
+    "note": "the models disagree on the high by 8 degrees (less certain); the models disagree on the low by 6 degrees (less certain)"
    }
   ],
   "suggested": [
    {
     "date": "2026-10-31",
-    "high": 62,
-    "low": 47,
+    "high": 64,
+    "low": 46,
     "rain": 29
    },
    {
     "date": "2026-11-01",
-    "high": 66,
-    "low": 49,
+    "high": 67,
+    "low": 51,
     "rain": 24
    }
   ]
