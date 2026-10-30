@@ -962,7 +962,7 @@ def vertical_sign(text, w=110):
 
 class Courthouse(Shot):
     """A county courthouse square at night: a big stone courthouse with a clock tower (tower="clock") or a dome
-    (tower="dome"), lit windows, lamps along the walk and bare trees."""
+    (tower="dome"), or no tower (tower="none", an old hall), lit windows, lamps along the walk and bare trees."""
     focus = (540, 900)
     fog_d = 0.14
     ghost_xy = (760, 1250)
@@ -991,6 +991,8 @@ class Courthouse(Shot):
             c.c.drawPath(smooth_path([(448, 650), (460, 560), (540, 510), (620, 560), (632, 650)], True),
                          paint("#0c0b0a"))
             c.rect(530, 450, 550, 520, "#0c0b0a")
+        elif p.get("tower", "clock") == "none":
+            pass
         else:
             c.rect(470, 520, 610, 760, "#0c0b0a")
             c.poly([(460, 524), (540, 400), (620, 524)], "#090808")

@@ -127,7 +127,7 @@ def num_words(s):
 
 # How the voice gets local names right (checked with kokoro_onnx's phonemizer, Oct. 26, 2026). Add to these, and to a
 # story's own "say", whenever the "pronunciation" listing from the vo step shows a name coming out wrong.
-LOCAL_SAY = [(r"\bDillinger\b", "Dillinjer"), (r"\bGipp\b", "Ghip"), (r"\bValparaiso\b", "Valparayzo")]
+LOCAL_SAY = [(r"\bDillinger\b", "Dillinjer"), (r"\bGipp\b", "Ghip"), (r"\bGipper\b", "Ghipper"), (r"\bValparaiso\b", "Valparayzo")]
 MONTHS = "January|February|March|April|May|June|July|August|September|October|November|December"
 ORD = {1: "first", 2: "second", 3: "third", 4: "fourth", 5: "fifth", 6: "sixth", 7: "seventh", 8: "eighth",
        9: "ninth", 10: "tenth", 11: "eleventh", 12: "twelfth", 13: "thirteenth", 14: "fourteenth", 15: "fifteenth",
