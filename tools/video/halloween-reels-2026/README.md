@@ -110,6 +110,13 @@ other five reels (commit 2666267) show LaPorte in their labels and captions; the
 Buffer posts use those videos, and the post text and YouTube titles say LaPorte (names stay as published: "La Porte
 After Dark", "La Porte County Herald-Dispatch", the News-Dispatch's "La Porte County's Top 10 Most Haunted").
 
+Fri., Oct. 30, 5:30 AM: the trick-or-treat forecast was remade from the 5:02 AM CDT NWS snapshot: mostly cloudy, high
+near 60, a 30% chance of a few showers by day; Saturday night a 20% (slight) chance before midnight, low 49. The
+forecast discussion (2:58 AM EDT) says "plenty of dry time on Halloween" with isolated showers west of I-69, so the
+reel and its posts now say that, and drop "mild" and "the better rain chances arrive Sunday" (Sunday is only 20% now).
+No alerts for Saturday and no storm risk (the only statement was patchy dense fog Friday morning). The three Buffer
+posts above were edited with the new video and text; still Fri., Oct. 30, 7:30 AM.
+
 ## Rebuilding the workspace
 
 `src/` holds everything that isn't already in this repo: `src/film/*.py` (the drawing, sound and narration code; it

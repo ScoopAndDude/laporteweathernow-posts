@@ -2,8 +2,8 @@
 
     python3 reel_hwfc.py stills|video [times]
 
-Forecast: the NWS point forecast for La Porte (the posts repo's nws-snapshot.json), as of FC["asof"]; "light"
-showers and "better rain chances arrive Sunday" are the NWS Northern Indiana forecast discussion's (Oct. 28, 2:26 AM EDT).
+Forecast: the NWS point forecast for La Porte (the posts repo's nws-snapshot.json), as of FC["asof"]; "a few" (isolated)
+showers and "plenty of dry time" are the NWS Northern Indiana forecast discussion's (Oct. 30, 2:58 AM EDT).
 Sunset and dark (civil dusk): NOAA's solar calculation for La Porte (41.61 N, 86.72 W), Sat. Oct. 31, 2026, CDT.
 Hours: trick-or-treat.json (La Porte and Michigan City official, 5 to 7 PM; most other towns reported the same).
 To refresh before posting: update FC from the newest snapshot, the "hwfc" lines in reels_vo.py, re-record, re-render.
@@ -25,15 +25,15 @@ CARD = (40, 17, 64, 236)
 SKYBLUE = (150, 196, 255)
 
 FC = {
-    "asof": "Wed., Oct. 28",
-    "day": {"icon": "cloud", "hi": 64, "sky": "Mostly cloudy and mild", "pop": 40,
-            "pop_text": "Chance of a few light showers"},
-    "night": {"icon": "cloud", "lo": 48, "pop": 20, "sky": "Slight chance of a shower",
-              "note": "Better rain chances arrive Sunday"},
+    "asof": "Fri., Oct. 30",
+    "day": {"icon": "cloud", "hi": 60, "sky": "Mostly cloudy", "pop": 30,
+            "pop_text": "Chance of a few showers"},
+    "night": {"icon": "cloud", "lo": 49, "pop": 20, "sky": "Slight chance of a shower",
+              "note": "Plenty of dry time expected"},
     "hours": "5 to 7 PM", "where": "LaPorte, Michigan City and most towns",
     "sunset": "5:43 PM", "dark": "about 6:10",
 }
-C.WEIGHT.update({"64": 4.0, "543": 4.3, "610": 2.4, "5": 1.2, "7": 2.0})
+C.WEIGHT.update({"60": 2.6, "543": 4.3, "610": 2.4, "5": 1.2, "7": 2.0})
 OUTFILE = "halloween-trick-or-treat-forecast.mp4"
 
 
@@ -135,12 +135,12 @@ def build(R):
     t_sun = R.at("The sun")
     t_dark = R.at("dark by")
     t_show = R.at("Saturday night")
-    t_best = R.at("The better")
+    t_best = R.at("The Weather")
     t_dbl = R.at("double-tap")
     c1 = (R.end("LaPorte.") + t_sat) / 2
     c2 = (R.end("showers.") + t_tot) / 2
     c3 = (R.end("6:10.") + t_show) / 2
-    c4 = (R.end("Sunday.") + R.at("It can")) / 2
+    c4 = (R.end("time.") + R.at("It can")) / 2
     src = "Forecast: National Weather Service, " + FC["asof"]
 
     def prep_base(ctx):

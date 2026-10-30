@@ -76,9 +76,10 @@ REELS = {
     # Halloween forecast: NWS as of Sun., Oct. 25 (re-record with the newest forecast before it posts)
     "hwfc": [
         ("Will it rain on trick-or-treat? Here's the latest look at Halloween in LaPorte.", 0.45),
-        ("Saturday looks mostly cloudy, with a high near 64 and a chance of a few light showers.", 0.45),
+        ("Saturday looks mostly cloudy, with a high near 60 and a chance of a few showers.", 0.45),
         ("Trick-or-treat is 5 to 7. The sun sets at 5:43, and it's dark by about 6:10.", 0.45),
-        ("Saturday night, there's only a slight chance of a shower. The better rain chances arrive Sunday.", 0.5),
+        ("Saturday night, there's only a slight chance of a shower. The Weather Service expects plenty of dry time.",
+         0.5),
         ("It can still change, so double-tap for the update.", 0.0),
     ],
     "belle6": [
