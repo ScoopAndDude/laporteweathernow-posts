@@ -1,0 +1,209 @@
+{
+  "about": "The Daily Video for La Porte Weather Now (scripts/daily_video.py): official NWS weather, read aloud.",
+  "date": "2026-10-31",
+  "planned": "2026-10-31T06:02:00-05:00",
+  "source": "nws",
+  "forecastUpdated": "2026-10-31T10:30:01+00:00",
+  "observationTime": "2026-10-31T05:15:00-05:00",
+  "alerts": [],
+  "shortFused": [],
+  "hook": {
+    "kind": "normal",
+    "score": 53,
+    "big": "66°",
+    "small": "11° above normal",
+    "say": "LaPorte, ready for 66° Sunday? That's about 11° above normal.",
+    "when": "Sunday"
+  },
+  "hookOptions": [
+    {
+      "kind": "normal",
+      "score": 53,
+      "say": "LaPorte, ready for 66° Sunday? That's about 11° above normal."
+    },
+    {
+      "kind": "plain",
+      "score": 10,
+      "say": "How's today looking, LaPorte? A chance of showers, high near 61°."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "hook",
+      "label": "LAPORTE · SATURDAY, OCT. 31",
+      "big": "66°",
+      "small": "11° above normal",
+      "icon": "cloud",
+      "tone": "warm",
+      "hookKind": "normal",
+      "say": "LaPorte, ready for 66° Sunday? That's about 11° above normal.",
+      "ask": [
+        "LaPorte, ready for",
+        "Sunday?"
+      ],
+      "sayParts": [
+        "LaPorte, ready for 66° Sunday?",
+        "That's about 11° above normal."
+      ],
+      "spoken": "La Port, ready for sixty-six degrees Sunday? That's about eleven degrees above normal.",
+      "spokenParts": [
+        "La Port, ready for sixty-six degrees Sunday?",
+        "That's about eleven degrees above normal."
+      ],
+      "factAfter": 3.26,
+      "voiceFile": "voice/hook.wav",
+      "voiceSeconds": 6.05,
+      "start": 0.0,
+      "duration": 6.45,
+      "voiceAt": 0.04,
+      "factAt": 3.18
+    },
+    {
+      "id": "today",
+      "sun": null,
+      "kind": "period",
+      "title": "TODAY",
+      "date": "Saturday, Oct. 31",
+      "temp": 61,
+      "tempLabel": "HIGH",
+      "icon": "sun-rain",
+      "text": "A chance of showers",
+      "sentence": "A 30% chance of showers until 3 p.m.",
+      "rain": {
+        "pct": 30,
+        "what": "rain",
+        "window": "until 3 p.m."
+      },
+      "note": null,
+      "hours": [
+        {
+          "label": "6 AM",
+          "temp": 51,
+          "pop": 20
+        },
+        {
+          "label": "8 AM",
+          "temp": 48,
+          "pop": 26
+        },
+        {
+          "label": "10 AM",
+          "temp": 54,
+          "pop": 30
+        },
+        {
+          "label": "12 PM",
+          "temp": 58,
+          "pop": 28
+        },
+        {
+          "label": "2 PM",
+          "temp": 60,
+          "pop": 21
+        },
+        {
+          "label": "4 PM",
+          "temp": 61,
+          "pop": 14
+        }
+      ],
+      "say": "Today: a 30% chance of rain. High 61. Tonight: low 50.",
+      "next": {
+        "name": "Tonight",
+        "temp": 50,
+        "tempLabel": "LOW"
+      },
+      "spoken": "Today: a thirty percent chance of rain. High sixty-one. Tonight: low fifty.",
+      "voiceFile": "voice/today.wav",
+      "voiceSeconds": 5.1,
+      "start": 6.45,
+      "duration": 5.5,
+      "voiceAt": 6.55
+    },
+    {
+      "id": "radar",
+      "kind": "radar",
+      "title": "RADAR",
+      "say": "Here's the radar right now.",
+      "spoken": "Here's the radar right now.",
+      "voiceFile": "voice/radar.wav",
+      "voiceSeconds": 1.98,
+      "start": 11.95,
+      "duration": 3.2,
+      "voiceAt": 12.05
+    },
+    {
+      "id": "days",
+      "kind": "days",
+      "title": "NEXT 3 DAYS",
+      "days": [
+        {
+          "name": "Sun",
+          "day": "Sunday",
+          "hi": 66,
+          "lo": 51,
+          "pop": null,
+          "icon": "cloud",
+          "text": "Mostly cloudy",
+          "short": "Mostly Cloudy",
+          "star": true
+        },
+        {
+          "name": "Mon",
+          "day": "Monday",
+          "hi": 65,
+          "lo": 56,
+          "pop": 30,
+          "icon": "sun-rain",
+          "text": "A chance of showers",
+          "short": "Mostly Cloudy then Chance Rain Showers",
+          "star": false
+        },
+        {
+          "name": "Tue",
+          "day": "Tuesday",
+          "hi": 71,
+          "lo": 56,
+          "pop": 60,
+          "icon": "rain",
+          "text": "Showers likely",
+          "short": "Rain Showers Likely",
+          "star": false
+        }
+      ],
+      "say": "Monday: a chance of showers, 65.",
+      "spoken": "Monday: a chance of showers, sixty-five.",
+      "voiceFile": "voice/days.wav",
+      "voiceSeconds": 2.9,
+      "start": 15.15,
+      "duration": 3.3,
+      "voiceAt": 15.25
+    },
+    {
+      "id": "end",
+      "kind": "end",
+      "say": "laporteweathernow.com.",
+      "spoken": "La Port Weather Now dot com.",
+      "voiceFile": "voice/end.wav",
+      "voiceSeconds": 2.02,
+      "start": 18.45,
+      "duration": 2.42,
+      "voiceAt": 18.55
+    }
+  ],
+  "caption": "LaPorte weather for Saturday, Oct. 31, from the National Weather Service:\nToday: A 30% chance of showers until 3 p.m. High 61.\nTonight: A 20% chance of showers, then cloudy. Low 50.\nSunday: Mostly cloudy, high 66. Monday: A chance of showers, high 65. Tuesday: Showers likely, high 71.\nToday's Daily Scoop: A slight chance of showers near 61; rain possible Monday\nFree forecast every morning: laporteweathernow.com\nNo hype. Just the forecast.\n#LaPorte #LaPorteIndiana #LaPorteCounty #IndianaWeather #NWIndiana",
+  "words": 42,
+  "mode": "auto",
+  "normalsStation": {
+    "id": "USC00124837",
+    "name": "LAPORTE, IN US",
+    "km": 1.0
+  },
+  "seconds": 20.87,
+  "voice": "Kokoro-82M af_heart, speed 1.1",
+  "video": "laporte-2026-10-31.mp4",
+  "cover": "cover.jpg",
+  "bytes": 9372706,
+  "rendered": "2026-10-31T06:04:15-05:00"
+}
