@@ -1,82 +1,70 @@
 {
  "about": "State for scripts/scoop_update.py, the automatic updates to today's Daily Scoop: the forecast the Scoop was written from (baseline), what was last published, the alerts last seen, and today's updates. Replaced each day. Safe to delete: the job starts over from the current post.",
- "date": "2026-10-30",
- "post": "2026-10-30T05:32:00-05:00",
+ "date": "2026-10-31",
+ "post": "2026-10-31T05:32:00-05:00",
  "kind": "written",
  "baseline": {
-  "from": "2026-10-30T05:02:13-05:00",
+  "from": "2026-10-31T05:02:14-05:00",
   "source": "nws-snapshot.json (what the Scoop was written from)",
   "periods": {
-   "night 2026-10-29": {
-    "name": "Overnight",
-    "temp": 43,
-    "rain": 0,
-    "short": "Areas Of Fog"
-   },
-   "day 2026-10-30": {
-    "name": "Friday",
-    "temp": 62,
-    "rain": 0,
-    "short": "Areas Of Fog then Mostly Sunny"
-   },
    "night 2026-10-30": {
-    "name": "Friday Night",
-    "temp": 47,
-    "rain": 0,
-    "short": "Mostly Cloudy"
+    "name": "Overnight",
+    "temp": 48,
+    "rain": 20,
+    "short": "Slight Chance Rain Showers"
    },
    "day 2026-10-31": {
     "name": "Saturday",
-    "temp": 60,
-    "rain": 30,
-    "short": "Chance Rain Showers"
+    "temp": 61,
+    "rain": 20,
+    "short": "Slight Chance Rain Showers"
    },
    "night 2026-10-31": {
     "name": "Saturday Night",
-    "temp": 49,
+    "temp": 50,
     "rain": 20,
-    "short": "Slight Chance Rain Showers"
+    "short": "Slight Chance Rain Showers then Cloudy"
    },
    "day 2026-11-01": {
     "name": "Sunday",
-    "temp": 65,
-    "rain": 20,
-    "short": "Slight Chance Rain Showers"
+    "temp": 66,
+    "rain": 0,
+    "short": "Mostly Cloudy"
    },
    "night 2026-11-01": {
     "name": "Sunday Night",
-    "temp": 50,
-    "rain": 20,
-    "short": "Slight Chance Rain Showers"
+    "temp": 51,
+    "rain": 0,
+    "short": "Mostly Cloudy"
    },
    "day 2026-11-02": {
     "name": "Monday",
-    "temp": 66,
-    "rain": 40,
+    "temp": 65,
+    "rain": 30,
     "short": "Mostly Cloudy then Chance Rain Showers"
    },
    "night 2026-11-02": {
     "name": "Monday Night",
     "temp": 56,
-    "rain": 50,
+    "rain": 30,
     "short": "Chance Rain Showers"
    },
    "day 2026-11-03": {
     "name": "Tuesday",
-    "temp": 70,
-    "rain": 50,
-    "short": "Chance Rain Showers"
+    "temp": 71,
+    "rain": 60,
+    "short": "Rain Showers Likely"
    },
    "night 2026-11-03": {
     "name": "Tuesday Night",
-    "temp": 54,
-    "rain": 50,
-    "short": "Chance Rain Showers"
+    "temp": 56,
+    "rain": 60,
+    "short": "Rain Showers Likely"
    },
    "day 2026-11-04": {
     "name": "Wednesday",
-    "temp": 67,
-    "rain": 60,
+    "temp": 66,
+    "rain": 70,
     "short": "Rain Showers Likely"
    },
    "night 2026-11-04": {
@@ -87,211 +75,171 @@
    },
    "day 2026-11-05": {
     "name": "Thursday",
-    "temp": 61,
+    "temp": 64,
+    "rain": 30,
+    "short": "Chance Rain Showers"
+   },
+   "night 2026-11-05": {
+    "name": "Thursday Night",
+    "temp": 45,
+    "rain": 20,
+    "short": "Slight Chance Rain Showers"
+   },
+   "day 2026-11-06": {
+    "name": "Friday",
+    "temp": 62,
     "rain": 30,
     "short": "Chance Rain Showers"
    }
   },
-  "alerts": [
-   {
-    "key": "Special Weather Statement | La Porte County | no set end",
-    "event": "Special Weather Statement",
-    "where": "La Porte County"
-   }
-  ],
-  "alertRows": [
-   {
-    "id": "urn:oid:2.49.0.1.840.0.04b85d5d6a9d2c1085e7de41e44036242ab9e06f.001.1",
-    "event": "Special Weather Statement",
-    "area": "Starke; Pulaski; Marshall; Fulton; White; Cass; Miami; Wabash; Huntington; Grant; Blackford; Northern La Porte; Northern Kosciusko; Southern La Porte; Southern Kosciusko",
-    "onset": "2026-10-30T02:51:00-04:00",
-    "ends": null,
-    "expires": "2026-10-30T07:00:00-04:00",
-    "sent": "2026-10-30T02:51:00-04:00",
-    "messageType": "Alert"
-   }
-  ],
+  "alerts": [],
+  "alertRows": [],
   "hourly": {
-   "2026-10-30T05": {
-    "temp": 41,
-    "rain": 0
-   },
-   "2026-10-30T06": {
-    "temp": 42,
-    "rain": 0
-   },
-   "2026-10-30T07": {
-    "temp": 44,
-    "rain": 0
-   },
-   "2026-10-30T08": {
-    "temp": 45,
-    "rain": 0
-   },
-   "2026-10-30T09": {
-    "temp": 50,
-    "rain": 0
-   },
-   "2026-10-30T10": {
-    "temp": 54,
-    "rain": 0
-   },
-   "2026-10-30T11": {
-    "temp": 57,
-    "rain": 0
-   },
-   "2026-10-30T12": {
-    "temp": 59,
-    "rain": 0
-   },
-   "2026-10-30T13": {
-    "temp": 61,
-    "rain": 0
-   },
-   "2026-10-30T14": {
-    "temp": 61,
-    "rain": 0
-   },
-   "2026-10-30T15": {
-    "temp": 62,
-    "rain": 0
-   },
-   "2026-10-30T16": {
-    "temp": 61,
-    "rain": 0
-   },
-   "2026-10-30T17": {
-    "temp": 60,
-    "rain": 0
-   },
-   "2026-10-30T18": {
-    "temp": 58,
-    "rain": 0
-   },
-   "2026-10-30T19": {
-    "temp": 53,
-    "rain": 0
-   },
-   "2026-10-30T20": {
-    "temp": 52,
-    "rain": 0
-   },
-   "2026-10-30T21": {
-    "temp": 51,
-    "rain": 0
-   },
-   "2026-10-30T22": {
-    "temp": 51,
-    "rain": 0
-   },
-   "2026-10-30T23": {
-    "temp": 50,
-    "rain": 0
-   },
-   "2026-10-31T00": {
-    "temp": 50,
-    "rain": 0
-   },
-   "2026-10-31T01": {
-    "temp": 50,
-    "rain": 0
-   },
-   "2026-10-31T02": {
-    "temp": 49,
-    "rain": 2
-   },
-   "2026-10-31T03": {
-    "temp": 49,
-    "rain": 4
-   },
-   "2026-10-31T04": {
-    "temp": 49,
-    "rain": 6
-   },
    "2026-10-31T05": {
-    "temp": 48,
-    "rain": 9
+    "temp": 52,
+    "rain": 18
    },
    "2026-10-31T06": {
-    "temp": 49,
-    "rain": 19
+    "temp": 51,
+    "rain": 20
    },
    "2026-10-31T07": {
     "temp": 49,
-    "rain": 29
+    "rain": 21
    },
    "2026-10-31T08": {
-    "temp": 49,
-    "rain": 27
+    "temp": 48,
+    "rain": 26
    },
    "2026-10-31T09": {
     "temp": 51,
-    "rain": 24
+    "rain": 30
    },
    "2026-10-31T10": {
-    "temp": 53,
-    "rain": 22
+    "temp": 54,
+    "rain": 30
    },
    "2026-10-31T11": {
-    "temp": 55,
-    "rain": 21
+    "temp": 56,
+    "rain": 30
    },
    "2026-10-31T12": {
-    "temp": 57,
-    "rain": 21
+    "temp": 58,
+    "rain": 28
    },
    "2026-10-31T13": {
-    "temp": 58,
-    "rain": 20
+    "temp": 59,
+    "rain": 25
    },
    "2026-10-31T14": {
-    "temp": 59,
-    "rain": 20
+    "temp": 60,
+    "rain": 21
    },
    "2026-10-31T15": {
-    "temp": 59,
-    "rain": 20
+    "temp": 61,
+    "rain": 17
    },
    "2026-10-31T16": {
+    "temp": 61,
+    "rain": 14
+   },
+   "2026-10-31T17": {
     "temp": 60,
-    "rain": 20
+    "rain": 10
+   },
+   "2026-10-31T18": {
+    "temp": 59,
+    "rain": 13
+   },
+   "2026-10-31T19": {
+    "temp": 56,
+    "rain": 15
+   },
+   "2026-10-31T20": {
+    "temp": 54,
+    "rain": 18
+   },
+   "2026-10-31T21": {
+    "temp": 54,
+    "rain": 18
+   },
+   "2026-10-31T22": {
+    "temp": 54,
+    "rain": 18
+   },
+   "2026-10-31T23": {
+    "temp": 53,
+    "rain": 18
+   },
+   "2026-11-01T00": {
+    "temp": 53,
+    "rain": 13
+   },
+   "2026-11-01T01": {
+    "temp": 52,
+    "rain": 10
+   },
+   "2026-11-01T02": {
+    "temp": 52,
+    "rain": 10
+   },
+   "2026-11-01T03": {
+    "temp": 52,
+    "rain": 10
+   },
+   "2026-11-01T04": {
+    "temp": 52,
+    "rain": 10
+   },
+   "2026-11-01T05": {
+    "temp": 51,
+    "rain": 10
+   },
+   "2026-11-01T06": {
+    "temp": 52,
+    "rain": 9
+   },
+   "2026-11-01T07": {
+    "temp": 52,
+    "rain": 8
+   },
+   "2026-11-01T08": {
+    "temp": 56,
+    "rain": 8
+   },
+   "2026-11-01T09": {
+    "temp": 59,
+    "rain": 7
+   },
+   "2026-11-01T10": {
+    "temp": 62,
+    "rain": 5
+   },
+   "2026-11-01T11": {
+    "temp": 64,
+    "rain": 4
+   },
+   "2026-11-01T12": {
+    "temp": 64,
+    "rain": 3
+   },
+   "2026-11-01T13": {
+    "temp": 65,
+    "rain": 10
+   },
+   "2026-11-01T14": {
+    "temp": 65,
+    "rain": 5
+   },
+   "2026-11-01T15": {
+    "temp": 66,
+    "rain": 0
    }
   },
-  "hourlyFrom": "2026-10-30T05:47:00-05:00"
+  "hourlyFrom": "2026-10-31T05:47:00-05:00"
  },
- "published": {
-  "time": "2026-10-30T21:02:00-05:00",
-  "alertKeys": [],
-  "alerts": [],
-  "changes": [
-   {
-    "k": "night 2026-10-30",
-    "was": "Friday Night",
-    "now": "Tonight",
-    "shortWas": "Mostly Cloudy",
-    "shortNow": "Cloudy then Slight Chance Rain Showers",
-    "field": "rain",
-    "from": 0,
-    "to": 20
-   }
-  ],
-  "off": [],
-  "paragraph": "Automatic update, 9:02 p.m.: The Special Weather Statement for La Porte County has ended. Since the Scoop below was written, NWS has added a 20% chance of rain for tonight. At 8:35 p.m. the La Porte airport reported cloudy and 54 degrees. There are no watches, warnings, or advisories for La Porte County right now."
- },
+ "published": null,
  "alertRows": [],
  "missing": [],
- "updates": [
-  {
-   "time": "2026-10-30T06:17:00-05:00",
-   "why": "alerts changed (none now)"
-  },
-  {
-   "time": "2026-10-30T17:02:00-05:00",
-   "why": "airport running cool"
-  },
-  {
-   "time": "2026-10-30T21:02:00-05:00",
-   "why": "NWS forecast night 2026-10-30 rain 0->20"
-  }
- ]
+ "updates": []
 }
