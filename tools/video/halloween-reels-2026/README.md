@@ -250,3 +250,10 @@ said "double-tap for the update": cloudy, high near 61, a slight (20%) chance of
 low around 50; the NWS forecast discussion's key message, "little, if any impacts expected for Halloween evening" (NWS
 point forecast fetched 5:02 AM CDT; discussion 2:40 AM CDT). No alerts and no storm risk. Script
 `src/film/reel_totup.py`, narration `src/film/reels_vo.py totup`, post text `posts-trick-or-treat-update.json`.
+
+12:15 PM check: the NWS forecast had changed (updated 10:15 AM CDT): a 30% chance of showers before 4 PM today, mostly
+cloudy; the 5:17 AM CDT discussion's key message is now "light rain showers this morning gradually move out by the mid
+afternoon" (no more "little, if any impacts"). The YouTube, TikTok and X posts were held (moved to 2:30 PM) and the
+reel was remade: "There's a chance of showers until about 4 this afternoon, with a high near 61" and "The Weather
+Service says the light showers move out by mid-afternoon"; tonight is unchanged (20%, low around 50). The Facebook Page
+copy, scheduled for 1:00 PM in Meta Business Suite, couldn't be held in time (the browser step was waiting on approval).

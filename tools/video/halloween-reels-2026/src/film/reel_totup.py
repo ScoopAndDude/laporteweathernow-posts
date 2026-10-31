@@ -2,10 +2,12 @@
 
     python3 reel_totup.py stills|video [times]
 
-Forecast: the NWS point forecast for La Porte (the posts repo's nws-snapshot.json, fetched Oct. 31, 5:02 AM CDT):
-cloudy, high near 61, a slight (20%) chance of showers today; tonight a 20% chance before midnight, low around 50.
-"Showers or sprinkles" and "little, if any impacts expected for Halloween evening" are the NWS Northern Indiana forecast
-discussion's key messages (Oct. 31, 2:40 AM CDT). Sunset, dark and trick-or-treat hours as in reel_hwfc.py.
+Forecast: the NWS point forecast for La Porte (the posts repo's nws-snapshot.json, fetched Oct. 31, 10:41 AM CDT;
+NWS updated 10:15 AM CDT): mostly cloudy, high near 61, a 30% chance of showers before 4 PM; tonight a 20% (slight)
+chance before midnight, low around 50. "Light rain showers ... gradually move out by the mid afternoon" is the NWS
+Northern Indiana forecast discussion's key message (Oct. 31, 5:17 AM CDT). The first version (5:02 AM forecast: 20%
+today, "little, if any impacts expected for Halloween evening") was held when the forecast changed.
+Sunset, dark and trick-or-treat hours as in reel_hwfc.py.
 """
 import math
 import os
@@ -25,14 +27,14 @@ SKYBLUE = (150, 196, 255)
 
 FC = {
     "asof": "Sat., Oct. 31",
-    "day": {"icon": "cloud", "hi": 61, "sky": "Cloudy", "pop": 20,
-            "pop_text": "Slight chance of a shower"},
+    "day": {"icon": "rain", "hi": 61, "sky": "Mostly cloudy", "pop": 30,
+            "pop_text": "Chance of showers before 4 PM"},
     "night": {"icon": "cloud", "lo": 50, "pop": 20, "sky": "Slight chance of a shower",
-              "note": "Little, if any, impact this evening"},
+              "note": "Light showers move out by mid-afternoon"},
     "hours": "5 to 7 PM", "where": "LaPorte, Michigan City and most towns",
     "sunset": "5:43 PM", "dark": "about 6:10",
 }
-C.WEIGHT.update({"61": 4.0, "543": 4.3, "610": 2.4, "5": 1.2, "7": 2.0, "20": 2.2})
+C.WEIGHT.update({"61": 4.0, "543": 4.3, "610": 2.4, "5": 1.2, "7": 2.0, "20": 2.2, "4": 1.2})
 OUTFILE = "trick-or-treat-update-oct-31.mp4"
 
 
@@ -128,8 +130,8 @@ def night_card():
 
 
 def build(R):
-    t_sat = R.at("Today stays")
-    t_slight = R.at("only a slight")
+    t_sat = R.at("There's a chance")
+    t_slight = R.at("until about")
     t_tot = R.at("Trick-or-treat is")
     t_sun = R.at("The sun")
     t_dark = R.at("dark by")
@@ -137,9 +139,9 @@ def build(R):
     t_best = R.at("The Weather")
     t_dbl = R.at("double-tap")
     c1 = (R.end("news.") + t_sat) / 2
-    c2 = (R.end("sprinkle.") + t_tot) / 2
+    c2 = (R.end("near 61.") + t_tot) / 2
     c3 = (R.end("6:10.") + t_show) / 2
-    c4 = (R.end("evening.") + R.at("Double-tap")) / 2
+    c4 = (R.end("mid-afternoon.") + R.at("Double-tap")) / 2
     src = "Forecast: National Weather Service, " + FC["asof"]
 
     def prep_base(ctx):

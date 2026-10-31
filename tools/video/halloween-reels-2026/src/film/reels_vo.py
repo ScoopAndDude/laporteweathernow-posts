@@ -82,13 +82,14 @@ REELS = {
          0.5),
         ("It can still change, so double-tap for the update.", 0.0),
     ],
-    # Halloween day-of update, Oct. 31: NWS point forecast (5:02 AM CDT) and forecast discussion key messages
+    # Halloween day-of update, Oct. 31: NWS point forecast (updated 10:15 AM CDT) and the forecast discussion's key
+    # message (5:17 AM CDT); the 5:02 AM version said 20% today and "little, if any impact" and was held when it changed
     "totup": [
         ("Trick-or-treat update for LaPorte, and it's good news.", 0.45),
-        ("Today stays cloudy, with a high near 61 and only a slight chance of a shower or sprinkle.", 0.45),
+        ("There's a chance of showers until about 4 this afternoon, with a high near 61.", 0.45),
         ("Trick-or-treat is 5 to 7. The sun sets at 5:43, and it's dark by about 6:10.", 0.45),
-        ("Tonight's chance of a shower is just 20 percent. The Weather Service expects little, if any, impact this "
-         "evening.", 0.5),
+        ("Tonight's chance of a shower is just 20 percent. The Weather Service says the light showers move out by "
+         "mid-afternoon.", 0.5),
         ("Double-tap if you're going out, and bring a flashlight.", 0.0),
     ],
     "belle6": [
