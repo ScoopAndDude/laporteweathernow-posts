@@ -1,0 +1,47 @@
+{
+ "about": "Official air quality for La Porte, Indiana: EPA AirNow's current NowCast AQI from the closest monitor for each pollutant within 50 miles of ZIP 46350 (scripts/air_now.py).",
+ "source": "EPA AirNow",
+ "zip": "46350",
+ "checked": "2026-10-31T16:32:09+00:00",
+ "observed": "2026-10-31T11:00:00-05:00",
+ "aqi": 34,
+ "category": "Good",
+ "main": "PM2.5",
+ "mainAbout": "fine particles (PM2.5, which includes smoke)",
+ "site": "Michigan City - Marsh Elementary",
+ "readings": [
+  {
+   "pollutant": "PM2.5",
+   "about": "fine particles (PM2.5, which includes smoke)",
+   "aqi": 34,
+   "category": "Good",
+   "site": "Michigan City - Marsh Elementary",
+   "siteId": "840180910011",
+   "reportingArea": null,
+   "agency": "Indiana Dept. of Environmental Management",
+   "observed": "2026-10-31T11:00:00-05:00"
+  },
+  {
+   "pollutant": "OZONE",
+   "about": "ozone",
+   "aqi": 19,
+   "category": "Good",
+   "site": "LaPorte-E. Lincolnway",
+   "siteId": "180910010",
+   "reportingArea": null,
+   "agency": "Indiana Dept. of Environmental Management",
+   "observed": "2026-10-31T11:00:00-05:00"
+  },
+  {
+   "pollutant": "PM10",
+   "about": "coarse particles (PM10, dust)",
+   "aqi": 13,
+   "category": "Good",
+   "site": "Portage-Hwy 12",
+   "siteId": "181270023",
+   "reportingArea": null,
+   "agency": "Indiana Dept. of Environmental Management",
+   "observed": "2026-10-31T11:00:00-05:00"
+  }
+ ]
+}
