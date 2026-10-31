@@ -260,14 +260,23 @@
   "hourlyFrom": "2026-10-30T05:47:00-05:00"
  },
  "published": {
-  "time": "2026-10-30T17:02:00-05:00",
+  "time": "2026-10-30T21:02:00-05:00",
   "alertKeys": [],
   "alerts": [],
-  "changes": [],
-  "off": [
-   "cool"
+  "changes": [
+   {
+    "k": "night 2026-10-30",
+    "was": "Friday Night",
+    "now": "Tonight",
+    "shortWas": "Mostly Cloudy",
+    "shortNow": "Cloudy then Slight Chance Rain Showers",
+    "field": "rain",
+    "from": 0,
+    "to": 20
+   }
   ],
-  "paragraph": "Automatic update, 5:02 p.m.: The Special Weather Statement for La Porte County has ended. It's running cooler than NWS's earlier hour-by-hour forecast: at 4:35 p.m. the La Porte airport reported mostly cloudy and 55 degrees, where that forecast had about 60. There are no watches, warnings, or advisories for La Porte County right now."
+  "off": [],
+  "paragraph": "Automatic update, 9:02 p.m.: The Special Weather Statement for La Porte County has ended. Since the Scoop below was written, NWS has added a 20% chance of rain for tonight. At 8:35 p.m. the La Porte airport reported cloudy and 54 degrees. There are no watches, warnings, or advisories for La Porte County right now."
  },
  "alertRows": [],
  "missing": [],
@@ -279,6 +288,10 @@
   {
    "time": "2026-10-30T17:02:00-05:00",
    "why": "airport running cool"
+  },
+  {
+   "time": "2026-10-30T21:02:00-05:00",
+   "why": "NWS forecast night 2026-10-30 rain 0->20"
   }
  ]
 }
