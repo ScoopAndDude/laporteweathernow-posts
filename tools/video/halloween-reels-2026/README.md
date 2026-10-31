@@ -242,3 +242,11 @@ Posted Oct. 28:
   (hidden from everyone but the Page's admins; not deleted). Part 2 https://facebook.com/reel/1809919187007193 and
   Part 3 https://facebook.com/reel/1673470677500357. All three have tags Local News and Community and are shared to
   Scoop's personal timeline.
+
+## Oct. 31: trick-or-treat update (Scoop's OK, Oct. 31: "Yes")
+
+`trick-or-treat-update-oct-31` (25.8 s) is the forecast reel's cards with the day-of forecast, because the Oct. 30 reel
+said "double-tap for the update": cloudy, high near 61, a slight (20%) chance of a shower or sprinkle today; tonight 20%,
+low around 50; the NWS forecast discussion's key message, "little, if any impacts expected for Halloween evening" (NWS
+point forecast fetched 5:02 AM CDT; discussion 2:40 AM CDT). No alerts and no storm risk. Script
+`src/film/reel_totup.py`, narration `src/film/reels_vo.py totup`, post text `posts-trick-or-treat-update.json`.
