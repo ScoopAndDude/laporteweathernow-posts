@@ -1,38 +1,38 @@
 {
  "about": "Daily Scoop forecasts graded against the La Porte airport (KPPO), same rules as laporteweathernow.com/track-record: temperatures count if within 3 degrees F; rain calls count at 50%+ (should rain) and 20% or less (should stay dry). Made by scripts/scorecard.py.",
- "generated": "2026-11-02T14:16:10-06:00",
+ "generated": "2026-11-03T05:02:25-06:00",
  "station": "La Porte Municipal Airport (KPPO)",
  "tolerance": 3,
  "since": "2026-09-27",
  "window": {
   "days": 30,
-  "from": "2026-10-03",
-  "to": "2026-11-01"
+  "from": "2026-10-04",
+  "to": "2026-11-02"
  },
  "last30": {
-  "days": 25,
+  "days": 24,
   "highs": [
    18,
-   25
+   24
   ],
   "lows": [
    18,
-   25
+   24
   ],
   "rainLikely": [
    2,
    4
   ],
   "rainDry": [
-   16,
-   16
+   15,
+   15
   ],
   "rain": [
-   18,
-   20
+   17,
+   19
   ],
-  "highAvgOff": 2.4,
-  "lowAvgOff": 2.8
+  "highAvgOff": 2.3,
+  "lowAvgOff": 2.7
  },
  "allTime": {
   "days": 31,
@@ -60,34 +60,43 @@
   "lowAvgOff": 2.8
  },
  "bias": {
-  "days": 25,
+  "days": 24,
   "ready": true,
-  "high": -1.1,
-  "highDays": 25,
-  "low": 1.3,
-  "lowDays": 25,
+  "high": -1.0,
+  "highDays": 24,
+  "low": 1.5,
+  "lowDays": 24,
   "note": "Average of (forecast minus airport reading) over the last 30 graded days; positive means we ran warm. Used to nudge the model blend once 14+ days are graded."
  },
  "morning": {
   "about": "Same-morning forecasts (saved about 5 a.m., when Hard Hat Weather makes its calls), graded against the La Porte airport: today's high within 3 degrees, and the rain call (50%+ should rain, 20% or less should stay dry). nws = the NWS forecast; blend = our model blend (from Oct. 2, 2026).",
   "last30": {
-   "days": 27,
+   "days": 26,
    "nwsHighs": [
     22,
-    27
+    26
    ],
    "blendHighs": [
     22,
-    27
+    26
    ],
    "rain": [
-    21,
-    24
+    20,
+    23
    ],
-   "nwsHighAvgOff": 2.4,
-   "blendHighAvgOff": 1.9
+   "nwsHighAvgOff": 2.3,
+   "blendHighAvgOff": 1.8
   },
   "days": [
+   {
+    "date": "2026-11-02",
+    "said": {
+     "nwsHigh": 63,
+     "blendHigh": 63,
+     "rain": 16
+    },
+    "status": "nodata"
+   },
    {
     "date": "2026-11-01",
     "said": {
@@ -929,7 +938,7 @@
     "low": 52,
     "rain": 20
    },
-   "status": "pending"
+   "status": "nodata"
   },
   {
    "date": "2026-11-01",
@@ -1901,7 +1910,8 @@
  "thinDays": {
   "2026-10-10": 1,
   "2026-10-20": 15,
-  "2026-11-01": 0
+  "2026-11-01": 0,
+  "2026-11-02": 0
  },
  "coverage": {
   "2026-09-27": 24,
@@ -1939,6 +1949,7 @@
   "2026-10-29": 24,
   "2026-10-30": 24,
   "2026-10-31": 18,
-  "2026-11-01": 0
+  "2026-11-01": 0,
+  "2026-11-02": 0
  }
 }
