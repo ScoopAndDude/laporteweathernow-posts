@@ -243,25 +243,15 @@
   "hourlyFrom": "2026-11-02T05:47:00-06:00"
  },
  "published": {
-  "time": "2026-11-02T16:02:00-06:00",
+  "time": "2026-11-02T18:32:00-06:00",
   "alertKeys": [],
   "alerts": [],
   "changes": [
    {
-    "k": "day 2026-11-02",
-    "was": "Monday",
-    "now": "This Afternoon",
-    "shortWas": "Cloudy then Slight Chance Rain Showers",
-    "shortNow": "Cloudy",
-    "field": "temp",
-    "from": 63,
-    "to": 58
-   },
-   {
-    "k": "day 2026-11-02",
-    "was": "Monday",
-    "now": "This Afternoon",
-    "shortWas": "Cloudy then Slight Chance Rain Showers",
+    "k": "night 2026-11-02",
+    "was": "Monday Night",
+    "now": "Tonight",
+    "shortWas": "Slight Chance Rain Showers then Cloudy",
     "shortNow": "Cloudy",
     "field": "rain",
     "from": 20,
@@ -279,7 +269,7 @@
    }
   ],
   "off": [],
-  "paragraph": "Automatic update, 4:02 p.m.: Since the Scoop below was written, NWS has lowered its high for today to 58 (from 63), taken the rain out of its forecast for this afternoon (it had 20% for the whole day) and raised its high for Tuesday to 75 (from 72). There are no watches, warnings, or advisories for La Porte County right now."
+  "paragraph": "Automatic update, 6:32 p.m.: Since the Scoop below was written, NWS has taken the rain out of its forecast for tonight (it had 20%) and raised its high for Tuesday to 75 (from 72). There are no watches, warnings, or advisories for La Porte County right now."
  },
  "alertRows": [],
  "missing": [],
@@ -291,6 +281,10 @@
   {
    "time": "2026-11-02T16:02:00-06:00",
    "why": "NWS forecast day 2026-11-02 temp 63->58; day 2026-11-02 rain 20->0; day 2026-11-03 temp 72->75"
+  },
+  {
+   "time": "2026-11-02T18:32:00-06:00",
+   "why": "NWS forecast night 2026-11-02 rain 20->0; day 2026-11-03 temp 72->75"
   }
  ]
 }
