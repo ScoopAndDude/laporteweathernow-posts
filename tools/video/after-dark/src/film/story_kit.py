@@ -691,7 +691,8 @@ class Dunes(Shot):
 
 class Lake(Shot):
     """Lake Michigan at night from the beach: waves rolling in, the moon's path, a pier on the left.
-    city=True adds the glow of a city on the far horizon (Chicago, from the Indiana shore)."""
+    city=True adds the glow of a city on the far horizon (Chicago, from the Indiana shore); boat=True a small white
+    boat far offshore with no one shown (boat_x moves it); pier=False leaves the pier out."""
     focus = (540, 1060)
     fog_d = 0.14
     ghost_xy = (560, 1320)
@@ -736,6 +737,10 @@ class Lake(Shot):
             self.pier_light = (430, 986)
         else:
             self.pier_light = None
+        if p.get("boat"):                                                                 # a small white boat far out
+            bx, by = float(p.get("boat_x", 760)), hz + 34
+            c.poly([(bx - 34, by - 6), (bx + 30, by - 6), (bx + 22, by + 5), (bx - 28, by + 5)], "#c9cfcc", 0.9)
+            c.rect(bx - 10, by - 15, bx + 8, by - 6, "#aab2b0", 0.85)
         rr = np.random.default_rng(556 + self.seed)
         for k in range(18):
             grass_tuft(c, rr.uniform(0, W), rr.uniform(1560, 1900), rr.uniform(0.4, 0.9), rr, color="#0a110d")
