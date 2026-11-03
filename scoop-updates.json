@@ -1,290 +1,249 @@
 {
  "about": "State for scripts/scoop_update.py, the automatic updates to today's Daily Scoop: the forecast the Scoop was written from (baseline), what was last published, the alerts last seen, and today's updates. Replaced each day. Safe to delete: the job starts over from the current post.",
- "date": "2026-11-02",
- "post": "2026-11-02T05:32:00-06:00",
+ "date": "2026-11-03",
+ "post": "2026-11-03T05:32:00-06:00",
  "kind": "written",
  "baseline": {
-  "from": "2026-11-02T05:02:24-06:00",
+  "from": "2026-11-03T05:02:19-06:00",
   "source": "nws-snapshot.json (what the Scoop was written from)",
   "periods": {
-   "night 2026-11-01": {
-    "name": "Overnight",
-    "temp": 53,
-    "rain": 0,
-    "short": "Cloudy"
-   },
-   "day 2026-11-02": {
-    "name": "Monday",
-    "temp": 63,
-    "rain": 20,
-    "short": "Cloudy then Slight Chance Rain Showers"
-   },
-   "night 2026-11-02": {
-    "name": "Monday Night",
-    "temp": 59,
-    "rain": 20,
-    "short": "Slight Chance Rain Showers then Cloudy"
-   },
    "day 2026-11-03": {
-    "name": "Tuesday",
-    "temp": 72,
+    "name": "Today",
+    "temp": 74,
     "rain": 0,
     "short": "Mostly Cloudy"
    },
    "night 2026-11-03": {
-    "name": "Tuesday Night",
+    "name": "Tonight",
     "temp": 61,
-    "rain": 90,
-    "short": "Rain Showers"
+    "rain": 80,
+    "short": "Mostly Cloudy then Rain Showers"
    },
    "day 2026-11-04": {
     "name": "Wednesday",
     "temp": 67,
-    "rain": 90,
-    "short": "Rain Showers"
+    "rain": 60,
+    "short": "Rain Showers Likely"
    },
    "night 2026-11-04": {
     "name": "Wednesday Night",
     "temp": 48,
-    "rain": 30,
-    "short": "Chance Rain Showers then Mostly Cloudy"
+    "rain": 0,
+    "short": "Mostly Cloudy"
    },
    "day 2026-11-05": {
     "name": "Thursday",
-    "temp": 61,
-    "rain": 20,
-    "short": "Partly Sunny then Slight Chance Rain Showers"
+    "temp": 60,
+    "rain": 0,
+    "short": "Mostly Sunny"
    },
    "night 2026-11-05": {
     "name": "Thursday Night",
     "temp": 45,
-    "rain": 20,
-    "short": "Slight Chance Rain Showers"
+    "rain": 30,
+    "short": "Mostly Cloudy then Chance Rain Showers"
    },
    "day 2026-11-06": {
     "name": "Friday",
     "temp": 55,
-    "rain": 30,
+    "rain": 40,
     "short": "Chance Rain Showers"
    },
    "night 2026-11-06": {
     "name": "Friday Night",
-    "temp": 41,
-    "rain": 20,
-    "short": "Slight Chance Rain Showers"
+    "temp": 39,
+    "rain": 30,
+    "short": "Chance Rain Showers"
    },
    "day 2026-11-07": {
     "name": "Saturday",
-    "temp": 56,
+    "temp": 52,
     "rain": 20,
     "short": "Slight Chance Rain Showers then Partly Sunny"
    },
    "night 2026-11-07": {
     "name": "Saturday Night",
-    "temp": 38,
-    "rain": 0,
-    "short": "Mostly Cloudy"
+    "temp": 35,
+    "rain": 20,
+    "short": "Mostly Cloudy then Slight Chance Rain Showers"
    },
    "day 2026-11-08": {
     "name": "Sunday",
-    "temp": 56,
+    "temp": 53,
     "rain": 20,
     "short": "Slight Chance Rain Showers"
+   },
+   "night 2026-11-08": {
+    "name": "Sunday Night",
+    "temp": 36,
+    "rain": 20,
+    "short": "Slight Chance Rain Showers"
+   },
+   "day 2026-11-09": {
+    "name": "Monday",
+    "temp": 54,
+    "rain": 0,
+    "short": "Mostly Sunny"
+   },
+   "night 2026-11-09": {
+    "name": "Monday Night",
+    "temp": 37,
+    "rain": 0,
+    "short": "Mostly Clear"
    }
   },
   "alerts": [],
   "alertRows": [],
   "hourly": {
-   "2026-11-02T05": {
-    "temp": 54,
-    "rain": 13
-   },
-   "2026-11-02T06": {
-    "temp": 54,
-    "rain": 13
-   },
-   "2026-11-02T07": {
-    "temp": 53,
-    "rain": 13
-   },
-   "2026-11-02T08": {
-    "temp": 56,
-    "rain": 12
-   },
-   "2026-11-02T09": {
-    "temp": 58,
-    "rain": 12
-   },
-   "2026-11-02T10": {
-    "temp": 60,
-    "rain": 13
-   },
-   "2026-11-02T11": {
-    "temp": 61,
-    "rain": 13
-   },
-   "2026-11-02T12": {
-    "temp": 61,
-    "rain": 14
-   },
-   "2026-11-02T13": {
-    "temp": 62,
-    "rain": 14
-   },
-   "2026-11-02T14": {
-    "temp": 62,
-    "rain": 15
-   },
-   "2026-11-02T15": {
-    "temp": 62,
-    "rain": 15
-   },
-   "2026-11-02T16": {
-    "temp": 63,
-    "rain": 16
-   },
-   "2026-11-02T17": {
-    "temp": 61,
-    "rain": 16
-   },
-   "2026-11-02T18": {
-    "temp": 60,
-    "rain": 16
-   },
-   "2026-11-02T19": {
-    "temp": 59,
-    "rain": 15
-   },
-   "2026-11-02T20": {
-    "temp": 59,
-    "rain": 14
-   },
-   "2026-11-02T21": {
-    "temp": 59,
-    "rain": 13
-   },
-   "2026-11-02T22": {
-    "temp": 59,
-    "rain": 11
-   },
-   "2026-11-02T23": {
-    "temp": 59,
-    "rain": 9
-   },
-   "2026-11-03T00": {
-    "temp": 59,
-    "rain": 7
-   },
-   "2026-11-03T01": {
-    "temp": 60,
-    "rain": 7
-   },
-   "2026-11-03T02": {
-    "temp": 60,
-    "rain": 7
-   },
-   "2026-11-03T03": {
-    "temp": 60,
-    "rain": 7
-   },
-   "2026-11-03T04": {
-    "temp": 60,
-    "rain": 6
-   },
    "2026-11-03T05": {
     "temp": 60,
-    "rain": 5
+    "rain": 4
    },
    "2026-11-03T06": {
     "temp": 60,
-    "rain": 4
+    "rain": 3
    },
    "2026-11-03T07": {
     "temp": 60,
-    "rain": 4
+    "rain": 3
    },
    "2026-11-03T08": {
     "temp": 62,
     "rain": 4
    },
    "2026-11-03T09": {
-    "temp": 65,
+    "temp": 64,
     "rain": 4
    },
    "2026-11-03T10": {
     "temp": 67,
-    "rain": 6
+    "rain": 2
    },
    "2026-11-03T11": {
-    "temp": 70,
-    "rain": 7
+    "temp": 69,
+    "rain": 3
    },
    "2026-11-03T12": {
-    "temp": 71,
-    "rain": 9
+    "temp": 72,
+    "rain": 3
    },
    "2026-11-03T13": {
-    "temp": 72,
-    "rain": 9
+    "temp": 73,
+    "rain": 3
    },
    "2026-11-03T14": {
-    "temp": 72,
-    "rain": 9
+    "temp": 73,
+    "rain": 4
    },
    "2026-11-03T15": {
-    "temp": 71,
-    "rain": 9
+    "temp": 73,
+    "rain": 4
    },
    "2026-11-03T16": {
+    "temp": 74,
+    "rain": 4
+   },
+   "2026-11-03T17": {
     "temp": 72,
+    "rain": 5
+   },
+   "2026-11-03T18": {
+    "temp": 70,
     "rain": 11
+   },
+   "2026-11-03T19": {
+    "temp": 68,
+    "rain": 11
+   },
+   "2026-11-03T20": {
+    "temp": 68,
+    "rain": 10
+   },
+   "2026-11-03T21": {
+    "temp": 67,
+    "rain": 9
+   },
+   "2026-11-03T22": {
+    "temp": 67,
+    "rain": 8
+   },
+   "2026-11-03T23": {
+    "temp": 67,
+    "rain": 10
+   },
+   "2026-11-04T00": {
+    "temp": 67,
+    "rain": 12
+   },
+   "2026-11-04T01": {
+    "temp": 66,
+    "rain": 24
+   },
+   "2026-11-04T02": {
+    "temp": 66,
+    "rain": 46
+   },
+   "2026-11-04T03": {
+    "temp": 65,
+    "rain": 62
+   },
+   "2026-11-04T04": {
+    "temp": 63,
+    "rain": 76
+   },
+   "2026-11-04T05": {
+    "temp": 63,
+    "rain": 53
+   },
+   "2026-11-04T06": {
+    "temp": 62,
+    "rain": 41
+   },
+   "2026-11-04T07": {
+    "temp": 61,
+    "rain": 44
+   },
+   "2026-11-04T08": {
+    "temp": 62,
+    "rain": 46
+   },
+   "2026-11-04T09": {
+    "temp": 63,
+    "rain": 49
+   },
+   "2026-11-04T10": {
+    "temp": 65,
+    "rain": 53
+   },
+   "2026-11-04T11": {
+    "temp": 65,
+    "rain": 56
+   },
+   "2026-11-04T12": {
+    "temp": 65,
+    "rain": 60
+   },
+   "2026-11-04T13": {
+    "temp": 66,
+    "rain": 42
+   },
+   "2026-11-04T14": {
+    "temp": 65,
+    "rain": 25
+   },
+   "2026-11-04T15": {
+    "temp": 64,
+    "rain": 7
+   },
+   "2026-11-04T16": {
+    "temp": 63,
+    "rain": 7
    }
   },
-  "hourlyFrom": "2026-11-02T05:47:00-06:00"
+  "hourlyFrom": "2026-11-03T05:47:00-06:00"
  },
- "published": {
-  "time": "2026-11-02T18:32:00-06:00",
-  "alertKeys": [],
-  "alerts": [],
-  "changes": [
-   {
-    "k": "night 2026-11-02",
-    "was": "Monday Night",
-    "now": "Tonight",
-    "shortWas": "Slight Chance Rain Showers then Cloudy",
-    "shortNow": "Cloudy",
-    "field": "rain",
-    "from": 20,
-    "to": 0
-   },
-   {
-    "k": "day 2026-11-03",
-    "was": "Tuesday",
-    "now": "Tuesday",
-    "shortWas": "Mostly Cloudy",
-    "shortNow": "Mostly Cloudy",
-    "field": "temp",
-    "from": 72,
-    "to": 75
-   }
-  ],
-  "off": [],
-  "paragraph": "Automatic update, 6:32 p.m.: Since the Scoop below was written, NWS has taken the rain out of its forecast for tonight (it had 20%) and raised its high for Tuesday to 75 (from 72). There are no watches, warnings, or advisories for La Porte County right now."
- },
+ "published": null,
  "alertRows": [],
  "missing": [],
- "updates": [
-  {
-   "time": "2026-11-02T12:32:00-06:00",
-   "why": "NWS forecast day 2026-11-02 rain 20->0; day 2026-11-03 temp 72->75"
-  },
-  {
-   "time": "2026-11-02T16:02:00-06:00",
-   "why": "NWS forecast day 2026-11-02 temp 63->58; day 2026-11-02 rain 20->0; day 2026-11-03 temp 72->75"
-  },
-  {
-   "time": "2026-11-02T18:32:00-06:00",
-   "why": "NWS forecast night 2026-11-02 rain 20->0; day 2026-11-03 temp 72->75"
-  }
- ]
+ "updates": []
 }
