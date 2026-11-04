@@ -1,0 +1,190 @@
+{
+  "slug": "stillwell-headless-ghost-columbus-cole",
+  "title": "The Headless Ghost of 'Flaherty Station' Near LaPorte, and What Really Happened",
+  "series": "LA PORTE AFTER DARK",
+  "music": {
+    "seed": 105,
+    "prog": 6
+  },
+  "say": [
+    [
+      "\\bFlaherty's\\b",
+      "Flairty's"
+    ],
+    [
+      "\\bFlaherty\\b",
+      "Flairty"
+    ]
+  ],
+  "sources": [
+    {
+      "what": "1905 printings: Richmond Planet (Aug. 12, 1905) 'Appears in Attitude of Switchman Flagging a Train', 'Flaherty station'; Morning Journal and Courier, New Haven (Aug. 14, 1905): water tank on the 'Lake-Erie Railway', Cole 'run over by an engine'; Cole's real death Nov. 14, 1903, a boiler explosion on the Flaherty farm (Indianapolis Journal, Nov. 15, 1903; Walkerton Independent, Nov. 21, 1903); no real Flaherty station; LE&W stops at Walkerton, Kankakee and Stillwell",
+      "who": "Tim Prasil, Brom Bones Books, 'A Headless Ghost Near Stillwell, Indiana' (2025)",
+      "url": "https://brombonesbooks.com/2025/09/15/railroad-hauntings-you-can-still-visit-a-headless-ghost-near-stillwell-indiana/"
+    },
+    {
+      "what": "Barbour County Index (Kan.), Aug. 16, 1905: headless apparition 'as if it were flagging a passing train', 'Flaherty station is avoided', Columbus Cole 'lost his life years ago in a boiler explosion'",
+      "who": "Strange Ago, 'Headless ghost sightings from long ago' (2023)",
+      "url": "https://strangeago.com/2023/09/03/headless-ghosts/"
+    },
+    {
+      "what": "Cole died Nov. 14, 1903, when a steam boiler for a corn shredder exploded while he and his children farmed near Stillwell, on Flaherty's farm (La Porte Weekly Herald, Nov. 19, 1903); his death certificate; no 'Flaherty Siding' on Lake Erie & Western maps; the LE&W whistle-stop Kankakee near the Kankakee River crossing",
+      "who": "La Porte County Historical Society Museum (Danielle Adams, museum director), Nov. 4, 2026",
+      "url": "https://www.laportecountyhistory.org/"
+    },
+    {
+      "what": "Stillwell, an unincorporated community in Pleasant Township, LaPorte County",
+      "who": "Wikipedia, Stillwell, Indiana",
+      "url": "https://en.wikipedia.org/wiki/Stillwell,_Indiana"
+    }
+  ],
+  "beats": [
+    {
+      "text": "In 1905, newspapers around the country ran a ghost story from LaPorte County.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "train",
+        "seed": 0,
+        "dune": false,
+        "move": "in",
+        "amount": 0.06
+      },
+      "label": "LAPORTE COUNTY, INDIANA",
+      "title": {
+        "text": "THE GHOST OF FLAHERTY STATION",
+        "at": "ghost story",
+        "size": 76
+      },
+      "credit": "1905 papers, via Brom Bones Books and Strange Ago"
+    },
+    {
+      "text": "Legend said a headless figure stood by the tracks at Flaherty station, as if it were flagging down a train.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "woods",
+        "seed": 1,
+        "lantern": true,
+        "move": "in",
+        "amount": 0.08,
+        "fog": 0.2
+      },
+      "label": "THE LEGEND",
+      "typed": [
+        {
+          "text": "FLAGGING A TRAIN",
+          "at": "flagging down",
+          "y": 545,
+          "size": 76
+        }
+      ],
+      "credit": "Richmond Planet and Barbour County Index (1905)"
+    },
+    {
+      "text": "The papers said it was a local man, Columbus Cole, and some versions blamed a train for his death.",
+      "pause": 0.45,
+      "scene": {
+        "kind": "train",
+        "seed": 1,
+        "dune": false,
+        "moving": false,
+        "move": "left",
+        "amount": 0.06,
+        "fog": 0.15
+      },
+      "label": "COLUMBUS COLE",
+      "credit": "1905 papers, via Brom Bones Books and Strange Ago"
+    },
+    {
+      "text": "The 1903 papers tell what really happened. On November 14, 1903, Cole was killed when a steam boiler exploded on the Flaherty farm, south of Stillwell.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "card",
+        "seed": 0,
+        "move": "still"
+      },
+      "label": "WHAT REALLY HAPPENED",
+      "card": {
+        "kind": "map",
+        "center": [
+          41.5,
+          -86.65
+        ],
+        "span": 0.45,
+        "pins": [
+          "La Porte",
+          "Stillwell"
+        ],
+        "hot": "Stillwell",
+        "notes": {
+          "Stillwell": "the farm was to the south"
+        },
+        "y": 860
+      },
+      "credit": "La Porte County Historical Society Museum; Indianapolis Journal (1903)"
+    },
+    {
+      "text": "No train was involved. And the museum found no Flaherty station on Lake Erie and Western maps.",
+      "pause": 0.45,
+      "scene": {
+        "kind": "card",
+        "seed": 1,
+        "move": "still"
+      },
+      "label": "NO TRAIN",
+      "card": {
+        "kind": "year",
+        "label": "COLUMBUS COLE DIED",
+        "value": "1903",
+        "note": "A FARM BOILER EXPLOSION"
+      },
+      "credit": "La Porte County Historical Society Museum; Brom Bones Books"
+    },
+    {
+      "text": "Nearby was a Lake Erie and Western whistle-stop called Kankakee, near the river crossing.",
+      "pause": 0.45,
+      "scene": {
+        "kind": "train",
+        "seed": 2,
+        "dune": false,
+        "move": "right",
+        "amount": 0.06
+      },
+      "label": "KANKAKEE WHISTLE-STOP",
+      "credit": "La Porte County Historical Society Museum; Brom Bones Books"
+    },
+    {
+      "text": "The ghost is a legend. The man was real.",
+      "pause": 0.55,
+      "scene": {
+        "kind": "road",
+        "seed": 2,
+        "move": "out",
+        "amount": 0.07,
+        "fog": 0.25
+      },
+      "label": "COLUMBUS COLE",
+      "credit": "La Porte County Historical Society Museum"
+    },
+    {
+      "text": "Comment your town for the next La Porte After Dark.",
+      "end": true,
+      "end_card": {
+        "q": "COMMENT YOUR TOWN",
+        "q2": "FOR THE NEXT STORY",
+        "bubble": "Your town, your state",
+        "pill": "Thanks: La Porte County Historical Society Museum",
+        "scene": {
+          "kind": "road",
+          "seed": 3,
+          "move": "still"
+        }
+      },
+      "credit": "All pictures drawn"
+    }
+  ],
+  "factcheck": {
+    "date": "2026-11-04",
+    "by": "independent subagent",
+    "result": "Legend lines supported by three 1905 papers (via Brom Bones Books and Strange Ago); death date, boiler and the Flaherty farm by the 1903 Indianapolis Journal and Walkerton Independent (via Brom Bones Books) and the museum's Weekly Herald find. 'No railroad map' narrowed to the museum's LE&W maps; 'closest stop' became 'nearby'; 'the records' became 'the 1903 papers'."
+  }
+}
