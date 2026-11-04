@@ -1,0 +1,209 @@
+{
+  "slug": "michigan-city-old-lighthouse-harriet-colfax",
+  "title": "Michigan City's Old Lighthouse: Harriet Colfax Kept the Light for 43 Years",
+  "series": "LA PORTE AFTER DARK",
+  "music": {
+    "seed": 158,
+    "prog": 6
+  },
+  "say": [],
+  "sources": [
+    {
+      "what": "rebuilt 1858; appointed 1861; 'I light them after sunset, every day and extinguish them after daylight'; the 1873 log 'A terrible hurricane to-night'; 43 years; Ann Hartwell; died April 1905",
+      "who": "National Park Service, Harriet Colfax",
+      "url": "https://www.nps.gov/people/harriet-colfax.htm"
+    },
+    {
+      "what": "new lighthouse 1858; appointed 1861; elevated walk on the east pier 1871; companion Ann Hartwell; resigned Oct. 1904 at 80; died April 16, 1905; museum opened June 9, 1973",
+      "who": "Lighthousefriends, Michigan City Old Lighthouse",
+      "url": "https://www.lighthousefriends.com/light.asp?ID=233"
+    },
+    {
+      "what": "March 1861; 'a perilous walk down a long, icy causeway in winter'; 43 years; the 1873 hurricane log; retired Oct. 1904",
+      "who": "Indiana State Library, Hoosier State Chronicles blog, 'Harriet A. Colfax'",
+      "url": "https://blog.newspapers.library.in.gov/harriet-a-colfax/"
+    },
+    {
+      "what": "43 years; 'lifelong companion, Ann Hartwell'; out to the pier light twice a day into old age",
+      "who": "WTTW",
+      "url": "https://www.wttw.com/node/7522"
+    },
+    {
+      "what": "built 1858; museum since June 1973; season April 1 to Oct. 31",
+      "who": "Michigan City Historical Society",
+      "url": "https://mchistorical.org/digital-exhibits/old-lighthouse"
+    },
+    {
+      "what": "43 years, retired 1904; restored as a museum in 1973",
+      "who": "Indiana Landmarks",
+      "url": "https://www.indianalandmarks.org/2012/09/michigan-city-lighthouses/"
+    }
+  ],
+  "beats": [
+    {
+      "text": "In 1861, Harriet Colfax took charge of Michigan City's lighthouse. She kept the light burning for 43 years.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "lighthouse",
+        "seed": 0,
+        "style": "house",
+        "move": "in",
+        "amount": 0.07
+      },
+      "label": "MICHIGAN CITY, INDIANA",
+      "title": {
+        "text": "THE KEEPER OF THE LIGHT",
+        "at": "Harriet Colfax",
+        "size": 80
+      },
+      "typed": [
+        {
+          "text": "43 YEARS",
+          "at": "43 years",
+          "y": 545,
+          "size": 84
+        }
+      ],
+      "credit": "History: National Park Service; Lighthousefriends"
+    },
+    {
+      "text": "She lived in the lighthouse with her lifelong companion, Ann Hartwell.",
+      "pause": 0.45,
+      "scene": {
+        "kind": "lighthouse",
+        "seed": 1,
+        "style": "house",
+        "move": "left",
+        "amount": 0.06
+      },
+      "label": "HARRIET AND ANN",
+      "credit": "Lighthousefriends; WTTW; National Park Service"
+    },
+    {
+      "text": "Every night of the shipping season, she lit the lights after sunset.",
+      "pause": 0.45,
+      "scene": {
+        "kind": "lighthouse",
+        "seed": 2,
+        "style": "house",
+        "move": "in",
+        "amount": 0.08
+      },
+      "label": "AFTER SUNSET",
+      "card": {
+        "kind": "quote",
+        "lines": [
+          "I light them after sunset,",
+          "every day."
+        ],
+        "by": "HARRIET COLFAX"
+      },
+      "credit": "National Park Service; WTTW"
+    },
+    {
+      "text": "After 1871, she also walked a long, raised walkway out the pier to a second light, even when ice coated the walk.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "lake",
+        "seed": 0,
+        "pier": true,
+        "move": "in",
+        "amount": 0.07,
+        "focus": [
+          430,
+          1000
+        ]
+      },
+      "label": "OUT THE PIER",
+      "typed": [
+        {
+          "text": "EVEN IN WINTER",
+          "at": "ice coated",
+          "y": 545,
+          "size": 76
+        }
+      ],
+      "credit": "Lighthousefriends; Indiana State Library"
+    },
+    {
+      "text": "In 1873, she wrote in her log: A terrible hurricane tonight.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "lake",
+        "seed": 2,
+        "pier": true,
+        "move": "still",
+        "rain": true,
+        "fog": 0.1
+      },
+      "label": "HER LOG, 1873",
+      "flash": [
+        "terrible"
+      ],
+      "card": {
+        "kind": "quote",
+        "at": "terrible",
+        "lines": [
+          "A terrible hurricane",
+          "to-night."
+        ],
+        "by": "HER LOG, 1873"
+      },
+      "credit": "National Park Service; Indiana State Library"
+    },
+    {
+      "text": "Harriet retired in 1904, at about 80. She died the next spring.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "lake",
+        "seed": 1,
+        "pier": true,
+        "move": "out",
+        "amount": 0.06
+      },
+      "label": "1904",
+      "credit": "Lighthousefriends; Indiana State Library; National Park Service"
+    },
+    {
+      "text": "Her 1858 lighthouse still stands. It's been a museum since 1973, open April through October.",
+      "pause": 0.55,
+      "scene": {
+        "kind": "lighthouse",
+        "seed": 3,
+        "style": "house",
+        "move": "in",
+        "amount": 0.06
+      },
+      "label": "THE OLD LIGHTHOUSE",
+      "card": {
+        "kind": "year",
+        "label": "BUILT",
+        "value": "1858",
+        "note": "A MUSEUM SINCE 1973"
+      },
+      "credit": "Michigan City Historical Society; Lighthousefriends; Indiana Landmarks"
+    },
+    {
+      "text": "Comment your town, and it could be next.",
+      "end": true,
+      "end_card": {
+        "q": "COMMENT YOUR TOWN",
+        "q2": "IT COULD BE NEXT",
+        "bubble": "Your town, your state",
+        "pill": "Old Lighthouse Museum: open April to October",
+        "scene": {
+          "kind": "lighthouse",
+          "seed": 2,
+          "style": "house",
+          "move": "still"
+        }
+      },
+      "credit": "All pictures drawn"
+    }
+  ],
+  "factcheck": {
+    "date": "2026-11-04",
+    "by": "independent subagent",
+    "result": "All dates supported. 'Every night' became 'every night of the shipping season' (lights, plural); 'catwalk' became 'raised walkway'; museum season named (April-October) since it closed Oct. 31; the 1904 pierhead tower drawing replaced by a plain pier (her 1871 light was a wooden tower)."
+  }
+}
