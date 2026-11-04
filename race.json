@@ -1,6 +1,6 @@
 {
  "about": "The Forecast Race: NOAA's new AI weather model, the National Weather Service's own forecasters and three other computer models, graded every day against the La Porte airport (KPPO). Each morning we save what each racer says about tomorrow (temperatures at four checkpoints and the 24-hour rain total) and grade it the next day. Saved forecasts are never changed. Run by La Porte Weather Now (scripts/forecast_race.py).",
- "generated": "2026-11-03T07:32:24-06:00",
+ "generated": "2026-11-04T05:32:24-06:00",
  "started": "2026-10-06",
  "station": {
   "id": "KPPO",
@@ -74,55 +74,55 @@
   "last30": [
    {
     "id": "nws",
-    "days": 25,
+    "days": 24,
     "avgMiss": 2.6,
-    "hitPct": 64,
-    "rainRight": 20,
-    "rainCalls": 22,
+    "hitPct": 65,
+    "rainRight": 19,
+    "rainCalls": 21,
     "wins": 9,
     "ties": 1,
     "rank": 1
    },
    {
     "id": "aifs",
-    "days": 25,
+    "days": 24,
     "avgMiss": 2.6,
     "hitPct": 60,
-    "rainRight": 16,
-    "rainCalls": 22,
-    "wins": 10,
+    "rainRight": 15,
+    "rainCalls": 21,
+    "wins": 9,
     "ties": 2,
     "rank": 2
    },
    {
     "id": "ifs",
-    "days": 25,
-    "avgMiss": 3.3,
+    "days": 24,
+    "avgMiss": 3.2,
     "hitPct": 51,
-    "rainRight": 20,
-    "rainCalls": 22,
+    "rainRight": 19,
+    "rainCalls": 21,
     "wins": 0,
     "ties": 0,
     "rank": 3
    },
    {
     "id": "aigfs",
-    "days": 25,
-    "avgMiss": 3.8,
+    "days": 24,
+    "avgMiss": 3.7,
     "hitPct": 50,
-    "rainRight": 20,
-    "rainCalls": 22,
+    "rainRight": 19,
+    "rainCalls": 21,
     "wins": 2,
     "ties": 1,
     "rank": 4
    },
    {
     "id": "gfs",
-    "days": 25,
+    "days": 24,
     "avgMiss": 4.1,
-    "hitPct": 50,
-    "rainRight": 21,
-    "rainCalls": 22,
+    "hitPct": 51,
+    "rainRight": 20,
+    "rainCalls": 21,
     "wins": 1,
     "ties": 3,
     "rank": 5
@@ -4623,7 +4623,19 @@
      "saved": "2026-11-02T11:33Z"
     }
    },
-   "status": "waiting"
+   "status": "no-observations",
+   "observed": {
+    "temps": [
+     null,
+     null,
+     null,
+     69.8
+    ],
+    "rainIn": null,
+    "rainHours": 12
+   },
+   "scores": {},
+   "winners": []
   },
   {
    "target": "2026-11-04",
@@ -4701,6 +4713,86 @@
      "rainIn": 0.13,
      "run": "2026-11-03T00:00Z",
      "saved": "2026-11-03T11:32Z"
+    }
+   },
+   "status": "waiting"
+  },
+  {
+   "target": "2026-11-05",
+   "made": "2026-11-04",
+   "checkpoints": [
+    {
+     "utc": "2026-11-05T06:00Z",
+     "local": "midnight"
+    },
+    {
+     "utc": "2026-11-05T12:00Z",
+     "local": "6 AM"
+    },
+    {
+     "utc": "2026-11-05T18:00Z",
+     "local": "noon"
+    },
+    {
+     "utc": "2026-11-06T00:00Z",
+     "local": "6 PM"
+    }
+   ],
+   "forecasts": {
+    "nws": {
+     "temps": [
+      51.0,
+      47.9,
+      55.0,
+      53.0
+     ],
+     "rainIn": 0.03,
+     "issued": "2026-11-04T11:16Z",
+     "saved": "2026-11-04T11:32Z"
+    },
+    "aigfs": {
+     "temps": [
+      54.8,
+      52.2,
+      54.6,
+      52.0
+     ],
+     "rainIn": 0.06,
+     "run": "2026-11-04T00:00Z",
+     "saved": "2026-11-04T11:32Z"
+    },
+    "gfs": {
+     "temps": [
+      54.9,
+      51.8,
+      56.7,
+      50.7
+     ],
+     "rainIn": 0.02,
+     "run": "2026-11-04T00:00Z",
+     "saved": "2026-11-04T11:32Z"
+    },
+    "aifs": {
+     "temps": [
+      53.1,
+      52.3,
+      53.6,
+      52.2
+     ],
+     "rainIn": 108.51,
+     "run": "2026-11-04T00:00Z",
+     "saved": "2026-11-04T11:32Z"
+    },
+    "ifs": {
+     "temps": [
+      55.1,
+      53.4,
+      55.0,
+      52.3
+     ],
+     "rainIn": 0.06,
+     "run": "2026-11-04T00:00Z",
+     "saved": "2026-11-04T11:33Z"
     }
    },
    "status": "waiting"
