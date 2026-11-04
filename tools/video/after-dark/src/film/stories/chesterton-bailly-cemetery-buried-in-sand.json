@@ -1,0 +1,191 @@
+{
+  "slug": "chesterton-bailly-cemetery-buried-in-sand",
+  "title": "Bailly Cemetery Near Chesterton: The Graveyard That Was Buried in Sand",
+  "series": "LA PORTE AFTER DARK",
+  "music": {
+    "seed": 127,
+    "prog": 6
+  },
+  "say": [
+    [
+      "\\bBailly\\b",
+      "Bay-lee"
+    ]
+  ],
+  "sources": [
+    {
+      "what": "earliest non-Indigenous cemetery in Porter County; first burial Napoleon 'Robert' 1827; wooden fence 1866; at least three Swedish immigrants buried 1869-74; six-foot limestone wall topped with iron spikes, 1885; 1914 Frances Rose Howe, Joseph's granddaughter, had local builder Theodore Stephens encase the wall in concrete and fill it with sand, the cemetery 'beneath seven feet of earth'; a letter reversed on the plaque",
+      "who": "National Park Service, Bailly Cemetery",
+      "url": "https://www.nps.gov/places/bailly-cemetery.htm"
+    },
+    {
+      "what": "first recorded burial about 1827; six-foot limestone wall topped with iron spikes; Frances R. Howe 'had Theodore Stephens of Chesterton construct a concrete block wall around the old one'; interior filled with sand",
+      "who": "Wikipedia, Bailly Cemetery (citing Schiemann, 1952, and the Chesterton Tribune, 1949)",
+      "url": "https://en.wikipedia.org/wiki/Bailly_Cemetery"
+    },
+    {
+      "what": "Bailly entered northern Indiana in 1822; Swedish immigrants buried there; Howe 'contracted with Theodore Stephens of Chesterton' (ca. 1913); concrete between the walls",
+      "who": "NPS Historic Structure Report, 1976, via Historical Images of Porter County",
+      "url": "https://inportercounty.org/Data/Cemeteries/BaillyCemetery-HistoricalDetail-1976.html"
+    },
+    {
+      "what": "'a six-foot high stone wall, iron spiked'; 'the old walled cemetery was filled with sand'; 'The bronze N ... is placed backward in the plaque'",
+      "who": "Theodore Stephens, 'Bailly Cemetery - Roman Style' (1956), via Historical Images of Porter County",
+      "url": "https://inportercounty.org/Data/Cemeteries/BaillyCemetery-HistoricalDetail-1956.html"
+    },
+    {
+      "what": "Bailly Cemetery Trail, a 0.6-mile round-trip extension from the Bailly-Chellberg trail; sections may be closed",
+      "who": "National Park Service, Bailly/Chellberg trails",
+      "url": "https://www.nps.gov/indu/planyourvisit/bc16.htm"
+    }
+  ],
+  "beats": [
+    {
+      "text": "In Porter, next to Chesterton, in the Indiana Dunes, there's a cemetery that was buried on purpose.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "cemetery",
+        "seed": 0,
+        "style": "country",
+        "move": "in",
+        "amount": 0.07
+      },
+      "label": "PORTER, NEAR CHESTERTON",
+      "title": {
+        "text": "BAILLY CEMETERY",
+        "at": "cemetery",
+        "size": 88
+      },
+      "credit": "History: National Park Service; Wikipedia"
+    },
+    {
+      "text": "Fur trader Joseph Bailly settled here in the 1820s, and burials on this sand ridge go back at least that far.",
+      "pause": 0.45,
+      "scene": {
+        "kind": "woods",
+        "seed": 0,
+        "move": "in",
+        "amount": 0.06
+      },
+      "label": "THE 1820s",
+      "credit": "National Park Service; NPS Historic Structure Report (1976)"
+    },
+    {
+      "text": "Neighbors buried their dead there too, including Swedish immigrants.",
+      "pause": 0.45,
+      "scene": {
+        "kind": "woods",
+        "seed": 3,
+        "move": "left",
+        "amount": 0.06,
+        "fog": 0.12
+      },
+      "label": "NEIGHBORS TOO",
+      "credit": "National Park Service; NPS Historic Structure Report (1976)"
+    },
+    {
+      "text": "In the 1880s, the family walled it in with stone, six feet high and topped with iron spikes.",
+      "pause": 0.45,
+      "scene": {
+        "kind": "cemetery",
+        "seed": 2,
+        "style": "country",
+        "move": "in",
+        "amount": 0.08
+      },
+      "label": "THE WALL",
+      "typed": [
+        {
+          "text": "SIX FEET OF STONE",
+          "at": "six feet",
+          "y": 440,
+          "size": 72
+        },
+        {
+          "text": "IRON SPIKES",
+          "at": "iron spikes",
+          "y": 545,
+          "size": 76
+        }
+      ],
+      "credit": "National Park Service; Wikipedia; Theodore Stephens (1956)"
+    },
+    {
+      "text": "Around 1914, granddaughter Frances Howe hired a Chesterton builder to wrap the walls in concrete and fill the inside with sand.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "cemetery",
+        "seed": 5,
+        "style": "country",
+        "move": "in",
+        "amount": 0.07,
+        "fog": 0.15
+      },
+      "label": "AROUND 1914",
+      "typed": [
+        {
+          "text": "FILLED WITH SAND",
+          "at": "fill the inside",
+          "y": 545,
+          "size": 76
+        }
+      ],
+      "credit": "National Park Service; Wikipedia; NPS report (1976); Stephens (1956)"
+    },
+    {
+      "text": "The family's graves are still under that sand. And on a copy of the plaque, one letter is backward.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "cemetery",
+        "seed": 3,
+        "style": "country",
+        "move": "in",
+        "amount": 0.08,
+        "fog": 0.15
+      },
+      "label": "FAMILY GRAVES STILL THERE",
+      "credit": "National Park Service; Theodore Stephens (1956)"
+    },
+    {
+      "text": "Today it's part of Indiana Dunes National Park, and a short trail leads up to it.",
+      "pause": 0.55,
+      "scene": {
+        "kind": "woods",
+        "seed": 2,
+        "lantern": true,
+        "move": "in",
+        "amount": 0.06
+      },
+      "label": "INDIANA DUNES NATIONAL PARK",
+      "card": {
+        "kind": "year",
+        "label": "FILLED WITH SAND",
+        "value": "1914",
+        "note": "INDIANA DUNES NATIONAL PARK"
+      },
+      "credit": "National Park Service"
+    },
+    {
+      "text": "Comment your town, and it could be next.",
+      "end": true,
+      "end_card": {
+        "q": "COMMENT YOUR TOWN",
+        "q2": "IT COULD BE NEXT",
+        "bubble": "Your town, your state",
+        "scene": {
+          "kind": "cemetery",
+          "seed": 4,
+          "style": "country",
+          "move": "still"
+        },
+        "pill": "Check trail status: nps.gov/indu"
+      },
+      "credit": "All pictures drawn"
+    }
+  ],
+  "factcheck": {
+    "date": "2026-11-04",
+    "by": "independent subagent",
+    "result": "Lines 2-5 and 7 supported. Line 1 now 'In Porter, next to Chesterton'; 'old graves' became 'the family's graves' (other remains found in 1914 were moved outside); the backward letter is on a copy of the plaque; year card 'filled with sand'; obelisk/rows and lakeshore dune drawings replaced (the site is a walled platform on an inland wooded ridge)."
+  }
+}
