@@ -1,0 +1,196 @@
+{
+  "slug": "valparaiso-old-porter-county-jail",
+  "title": "Valparaiso's Old Porter County Jail: 1871, and the Voices People Report",
+  "series": "LA PORTE AFTER DARK",
+  "music": {
+    "seed": 171,
+    "prog": 6
+  },
+  "say": [],
+  "sources": [
+    {
+      "what": "built 1871; architect R. Rose; Italianate sheriff's house; stone jail 'connected or tied into this home'; 153 Franklin Street",
+      "who": "National Register of Historic Places nomination (NPS)",
+      "url": "https://npgallery.nps.gov/pdfhost/docs/NRHP/Text/76000017.pdf"
+    },
+    {
+      "what": "contract March 8, 1871; museum moved in Sept. 17, 1974, opened May 11, 1975; left the jail March 12, 2020; reopened at 20 Indiana Ave. May 19, 2022; 'Active for 101 years as a jail'",
+      "who": "Porter County Museum",
+      "url": "https://pocomuse.org/history-1"
+    },
+    {
+      "what": "served as a jail until 1974",
+      "who": "Historical Images of Porter County",
+      "url": "https://inportercounty.org/PhotoPages/Valparaiso/PublicBuildings/Valparaiso-PublicBldgs014.html"
+    },
+    {
+      "what": "museum in the old jail May 11, 1975 to March 12, 2020; National Register 1976",
+      "who": "Wikipedia, Porter County Museum",
+      "url": "https://en.wikipedia.org/wiki/Porter_County_Museum"
+    },
+    {
+      "what": "sheriffs' families lived in the residence",
+      "who": "valpo.life",
+      "url": "https://valpo.life/article/porter-county-sheriffs-residence-holds-memories-for-former-residents"
+    },
+    {
+      "what": "October ghost tours benefiting the museum (2009 on); a later tour presented by the Porter County Museum: 'Hear about haunted happenings in the old jail'",
+      "who": "valpo.life",
+      "url": "https://valpo.life/article/ghost-tours-benefit-porter-county-museum"
+    },
+    {
+      "what": "reported voices, footsteps, doors closing on their own",
+      "who": "Hauntings Around America; Ghost Research Society (2011 investigation)",
+      "url": "https://ghostresearch.org/Investigations/porter.html"
+    },
+    {
+      "what": "Indiana Ghost Trackers member describes a recorded voice",
+      "who": "Dig the Dunes, 'Tracking ghosts in the dunes' (2019)",
+      "url": "https://www.digthedunes.com/post/tracking-ghosts-in-the-dunes"
+    },
+    {
+      "what": "the museum's new home 'on the southeast corner of Franklin Street and Indiana Avenue on the courthouse square'",
+      "who": "Porter County Museum, directions",
+      "url": "https://pocomuse.org/directions-parking"
+    }
+  ],
+  "beats": [
+    {
+      "text": "In Valparaiso, the 1871 Porter County Jail held prisoners for more than 100 years.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "town",
+        "seed": 0,
+        "tower": "none",
+        "move": "in",
+        "amount": 0.07
+      },
+      "label": "VALPARAISO, INDIANA",
+      "title": {
+        "text": "THE OLD PORTER COUNTY JAIL",
+        "at": "Porter County Jail",
+        "size": 80
+      },
+      "credit": "History: National Register of Historic Places; Porter County Museum"
+    },
+    {
+      "text": "The sheriff and his family lived in the brick house attached to it.",
+      "pause": 0.45,
+      "scene": {
+        "kind": "cell",
+        "seed": 2,
+        "move": "left",
+        "amount": 0.06
+      },
+      "label": "THE SHERIFF'S HOUSE",
+      "credit": "National Register of Historic Places; valpo.life"
+    },
+    {
+      "text": "The jail closed in 1974. The next year, it became the county museum.",
+      "pause": 0.45,
+      "scene": {
+        "kind": "card",
+        "seed": 0,
+        "move": "still"
+      },
+      "label": "1871 TO 1974",
+      "card": {
+        "kind": "year",
+        "label": "A JAIL UNTIL",
+        "value": "1974",
+        "note": "THEN THE COUNTY MUSEUM"
+      },
+      "credit": "Porter County Museum; Historical Images of Porter County; Wikipedia"
+    },
+    {
+      "text": "October ghost tours have told of haunted happenings in the old jail.",
+      "pause": 0.45,
+      "scene": {
+        "kind": "cell",
+        "seed": 0,
+        "move": "in",
+        "amount": 0.08
+      },
+      "label": "GHOST TOURS",
+      "credit": "valpo.life; Porter County Museum"
+    },
+    {
+      "text": "Paranormal groups say they've recorded voices, and that doors open and close on their own.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "cell",
+        "seed": 1,
+        "ghost": "shadow",
+        "ghost_x": 720,
+        "ghost_y": 1240,
+        "move": "in",
+        "amount": 0.1,
+        "fog": 0.1
+      },
+      "label": "WHAT PARANORMAL GROUPS SAY",
+      "typed": [
+        {
+          "text": "VOICES",
+          "at": "voices",
+          "y": 440,
+          "size": 76
+        },
+        {
+          "text": "DOORS",
+          "at": "doors",
+          "y": 545,
+          "size": 76
+        }
+      ],
+      "credit": "Ghost Research Society (2011); Dig the Dunes; Hauntings Around America"
+    },
+    {
+      "text": "In 2020, the museum moved out, and in 2022 it opened in a new home nearby.",
+      "pause": 0.45,
+      "scene": {
+        "kind": "town",
+        "seed": 1,
+        "tower": "none",
+        "move": "in",
+        "amount": 0.06
+      },
+      "label": "A NEW HOME",
+      "credit": "Porter County Museum; Wikipedia"
+    },
+    {
+      "text": "The old jail still stands on Franklin Street, just off the courthouse square.",
+      "pause": 0.55,
+      "scene": {
+        "kind": "town",
+        "seed": 2,
+        "tower": "none",
+        "move": "out",
+        "amount": 0.08,
+        "fog": 0.2
+      },
+      "label": "153 S. FRANKLIN ST.",
+      "credit": "National Register of Historic Places; Porter County Museum; Wikipedia"
+    },
+    {
+      "text": "Comment your town, and it could be next.",
+      "end": true,
+      "end_card": {
+        "q": "COMMENT YOUR TOWN",
+        "q2": "IT COULD BE NEXT",
+        "bubble": "Your town, your state",
+        "scene": {
+          "kind": "cell",
+          "seed": 3,
+          "move": "still"
+        },
+        "pill": "153 S. Franklin St., Valparaiso"
+      },
+      "credit": "All pictures drawn"
+    }
+  ],
+  "factcheck": {
+    "date": "2026-11-04",
+    "by": "independent subagent",
+    "result": "Lines 1-3, 6 supported. Tours line made less sweeping; 'footsteps' dropped (one blog only), now recorded voices and doors (Ghost Research Society, Dig the Dunes, Hauntings Around America); 'view from the sidewalk' dropped (part of the residence may be leased to a shop); mansard brick jail and domed courthouse drawings replaced (the real house has a hipped roof, the jail is stone, the courthouse has no dome). Round 2: 'seen doors' became 'say ... that doors open and close'; all supported."
+  }
+}
