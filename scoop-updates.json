@@ -242,8 +242,22 @@
   },
   "hourlyFrom": "2026-11-05T05:47:00-06:00"
  },
- "published": null,
+ "published": {
+  "time": "2026-11-05T06:17:00-06:00",
+  "alertKeys": [],
+  "alerts": [],
+  "changes": [],
+  "off": [
+   "warm"
+  ],
+  "paragraph": "Automatic update, 6:17 a.m.: It's running warmer than NWS's earlier hour-by-hour forecast: at 5:35 a.m. the La Porte airport reported cloudy and 52 degrees, where that forecast had about 47. Over the next 12 hours, NWS's hour-by-hour forecast has rain possible from 3 p.m. to 5 p.m. (up to 47%) and rain likely from 5 p.m. to 7 p.m. (up to 80%). There are no watches, warnings, or advisories for La Porte County right now."
+ },
  "alertRows": [],
  "missing": [],
- "updates": []
+ "updates": [
+  {
+   "time": "2026-11-05T06:17:00-06:00",
+   "why": "airport running warm"
+  }
+ ]
 }
