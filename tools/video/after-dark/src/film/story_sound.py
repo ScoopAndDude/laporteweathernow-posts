@@ -150,6 +150,14 @@ def accent(kind, seed=1):
         N = AU.N
         return X.music_box([(N["E5"], 1), (N["G5"], 1), (N["E5"], 1), (N["D5"], 1), (N["C5"], 2), (None, 1),
                             (N["E5"], 1), (N["D5"], 1), (N["C5"], 1), (N["A4"], 2)], start_gap=0.5, seed=27).mean(1)
+    if kind == "static":
+        return X.radio_static(3.0, seed=15 + seed).mean(1) * 0.7
+    if kind == "dance":
+        return X.reverb(X.stereo(X.dance_music(6.0, seed=17 + seed).mean(1) if X.dance_music(1.0).ndim > 1 else X.dance_music(6.0, seed=17 + seed)), rt=3.0, wet=0.6).mean(1) * 0.5
+    if kind == "whoosh":
+        return X.whoosh(1.2, seed=21 + seed).mean(1)
+    if kind == "crow":
+        return X.crow(3, seed=2 + seed).mean(1)
     if kind == "siren_far":
         return None                     # left out on purpose: an active prison's siren isn't a sound effect
     return None

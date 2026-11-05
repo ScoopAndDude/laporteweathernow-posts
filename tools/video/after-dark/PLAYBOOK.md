@@ -28,6 +28,16 @@ with a message to his phone that has the Facebook caption and the video link.
    email, and never paste a key or token into a file or a message.
 7. If any step fails, or a fact can't be pinned down, don't post. Tell Scoop what happened instead.
 
+## Making it scary (Scoop, Nov. 5, 2026: "make them terrifying... as scary as you can")
+
+Scary comes from the story, the pacing and the sound, never from gore. All of Scoop's rules above still hold.
+- Cold open: beat 1 starts mid-story with the most frightening reported detail, in under 10 words, then names the place.
+- Short sentences. Let silence work: pause 0.7 to 0.9 s before the worst line.
+- Build: each beat a little closer, a little darker (camera "in", more fog, fewer lit windows).
+- For a legend, the faint ghost figure ("woman", "man", "shadow") may appear in a scene once or twice, small, at the edge, never a real person.
+- Sound: "sfx" accents at the words that matter: heartbeat under the build, knock, creak, crow, thunder with "flash", music_box, whoosh at the turn, static (radio), dance (distant 1930s band, for a ballroom story).
+- End on the unsettling line before the call to comment (for legends: "And some say she's still out there."), only if sources report it.
+
 ## 0. Set up (about 5 minutes)
 
 ```
