@@ -1,0 +1,246 @@
+{
+  "slug": "gary-demon-house",
+  "title": "The Gary 'Demon House': What Police and Caseworkers Reported",
+  "series": "LA PORTE AFTER DARK",
+  "music": {
+    "seed": 66,
+    "prog": 6
+  },
+  "say": [
+    [
+      "\\bMaginot\\b",
+      "Madge-in-oh"
+    ]
+  ],
+  "sources": [
+    {
+      "what": "moved in Nov. 2011; flies swarming the porch in December; footsteps on the basement stairs; Capt. Charles Austin first thought them 'liars', later 'a believer'; DCS caseworker's report of the boy moving backward up a wall; psychologists' explanations; exorcisms by Rev. Michael Maginot with Bishop Melczek's approval, 2012; DCS custody 2012, returned Nov. 2012; house demolished early 2016; Austin: 'Why go where evil possibly is there?'",
+      "who": "The Indianapolis Star (Marisa Kwiatkowski, Jan. 25, 2014, and follow-ups), as carried by Gannett papers and WKYC",
+      "url": "https://wkyc.com/article/news/nation-now/indiana-family-has-a-real-life-exorcism-story/95-345008546"
+    },
+    {
+      "what": "'phantom footsteps'; the police captain became 'a believer'; Zak Bagans bought the house for $35,000",
+      "who": "ABC News (Feb. 3, 2014)",
+      "url": "https://abcnews.com/blogs/headlines/2014/02/reality-tv-star-snaps-up-indiana-demon-house"
+    },
+    {
+      "what": "from the records: the boy 'walked up the wall'; DCS removed the children; Rev. Maginot interview",
+      "who": "KTRK ABC13 (Oct. 30, 2014)",
+      "url": "https://abc13.com/post/priest-inside-this-home-is-a-portal-to-hell/372817/"
+    },
+    {
+      "what": "bishop allowed the exorcism; house demolished early 2016",
+      "who": "EWTN / Catholic News Agency (Feb. 29, 2016)",
+      "url": "https://www.ewtnnews.com/world/us/demonic-house-in-indiana-demolished?redirectedfrom=cna"
+    },
+    {
+      "what": "Austin: 'Why go where evil possibly is there?'; exorcisms",
+      "who": "National Catholic Register",
+      "url": "https://www.ncregister.com/blog/satan-is-scary-but-god-is-great-details-on-indianas-possessed-house"
+    },
+    {
+      "what": "skeptical review: the grandmother held the boy's hand; 'no demons possessed anyone'",
+      "who": "Joe Nickell, Skeptical Inquirer (May/June 2014)",
+      "url": "https://www.csicop.org/si/show/the_200_demons_house_a_skeptical_demonologists_report"
+    },
+    {
+      "what": "demolished; Austin quote",
+      "who": "First Coast News (Gannett)",
+      "url": "https://firstcoastnews.com/article/news/weird/indiana-exorcism-house-is-demolished/77-32691542"
+    }
+  ],
+  "beats": [
+    {
+      "text": "The family said black flies swarmed their porch in the dead of winter. That's how it started, in a house in Gary.",
+      "pause": 0.6,
+      "scene": {
+        "kind": "town",
+        "seed": 4,
+        "tower": "none",
+        "move": "in",
+        "amount": 0.1,
+        "fog": 0.25
+      },
+      "label": "GARY, INDIANA",
+      "title": {
+        "text": "THE DEMON HOUSE",
+        "at": "a house in Gary",
+        "size": 96,
+        "style": "red"
+      },
+      "sfx": [
+        {
+          "kind": "heartbeat",
+          "at": "black flies",
+          "gain": 0.5
+        }
+      ],
+      "credit": "The Indianapolis Star (2014)"
+    },
+    {
+      "text": "In 2011, a mother and her three children moved in. Soon, they said, they heard footsteps on the basement stairs, late at night.",
+      "pause": 0.7,
+      "scene": {
+        "kind": "cellar",
+        "seed": 0,
+        "move": "in",
+        "amount": 0.1
+      },
+      "label": "WHAT THE FAMILY SAID",
+      "typed": [
+        {
+          "text": "FOOTSTEPS",
+          "at": "footsteps",
+          "y": 545,
+          "size": 80
+        }
+      ],
+      "sfx": [
+        {
+          "kind": "creak",
+          "at": "basement stairs",
+          "gain": 0.7
+        },
+        {
+          "kind": "knock",
+          "at": "late at night",
+          "gain": 0.6
+        }
+      ],
+      "credit": "The Indianapolis Star; ABC News"
+    },
+    {
+      "text": "A Gary police captain first suspected they'd made it up. After visiting the house, he said: I am a believer.",
+      "pause": 0.7,
+      "scene": {
+        "kind": "road",
+        "seed": 4,
+        "tail_lights": true,
+        "move": "in",
+        "amount": 0.06,
+        "fog": 0.2
+      },
+      "label": "THE POLICE CAPTAIN",
+      "card": {
+        "kind": "quote",
+        "at": "I am a believer",
+        "lines": [
+          "I am a believer."
+        ],
+        "by": "GARY POLICE CAPT. CHARLES AUSTIN"
+      },
+      "credit": "The Indianapolis Star; ABC News; WKYC"
+    },
+    {
+      "text": "A state caseworker's report described a boy moving backward up a wall. Doctors and psychologists offered other explanations.",
+      "pause": 0.8,
+      "scene": {
+        "kind": "room",
+        "seed": 0,
+        "move": "in",
+        "amount": 0.12,
+        "fog": 0.15
+      },
+      "label": "THE CASEWORKER'S REPORT",
+      "flash": [
+        "backward"
+      ],
+      "sfx": [
+        {
+          "kind": "whoosh",
+          "at": "backward",
+          "gain": 0.7
+        }
+      ],
+      "credit": "The Indianapolis Star (DCS records); KTRK ABC13; Skeptical Inquirer"
+    },
+    {
+      "text": "In 2012, with his bishop's approval, a Catholic priest performed exorcisms on the mother, at his church.",
+      "pause": 0.6,
+      "scene": {
+        "kind": "chapel",
+        "seed": 1,
+        "move": "in",
+        "amount": 0.08,
+        "fog": 0.2
+      },
+      "label": "THE EXORCISMS",
+      "sfx": [
+        {
+          "kind": "bell",
+          "at": "exorcisms",
+          "gain": 0.5
+        }
+      ],
+      "credit": "The Indianapolis Star; EWTN/CNA; National Catholic Register"
+    },
+    {
+      "text": "No one ever proved anything supernatural. In 2016, the house was torn down.",
+      "pause": 0.8,
+      "scene": {
+        "kind": "card",
+        "seed": 0,
+        "move": "still"
+      },
+      "label": "TORN DOWN",
+      "card": {
+        "kind": "year",
+        "label": "DEMOLISHED",
+        "value": "2016",
+        "note": "NOTHING SUPERNATURAL WAS EVER PROVEN"
+      },
+      "credit": "The Indianapolis Star; EWTN/CNA; Skeptical Inquirer"
+    },
+    {
+      "text": "In 2014, the captain put it this way: Why go where evil possibly is there?",
+      "pause": 0.9,
+      "scene": {
+        "kind": "town",
+        "seed": 5,
+        "tower": "none",
+        "move": "out",
+        "amount": 0.1,
+        "fog": 0.35
+      },
+      "label": "THE CAPTAIN",
+      "card": {
+        "kind": "quote",
+        "at": "Why go",
+        "lines": [
+          "Why go where evil",
+          "possibly is there?"
+        ],
+        "by": "CAPT. CHARLES AUSTIN, 2014"
+      },
+      "sfx": [
+        {
+          "kind": "heartbeat",
+          "at": "Why go",
+          "gain": 0.6
+        }
+      ],
+      "credit": "The Indianapolis Star; National Catholic Register"
+    },
+    {
+      "text": "Comment your town for the next La Porte After Dark.",
+      "end": true,
+      "end_card": {
+        "q": "COMMENT YOUR TOWN",
+        "q2": "FOR THE NEXT STORY",
+        "bubble": "Your town, your state",
+        "scene": {
+          "kind": "town",
+          "seed": 6,
+          "tower": "none",
+          "move": "still"
+        }
+      },
+      "credit": "All pictures drawn"
+    }
+  ],
+  "factcheck": {
+    "date": "2026-11-05",
+    "by": "independent subagent",
+    "result": "Lines 2, 4, 6 supported. Flies attributed to the family; 'lying' became 'suspected they'd made it up' and 'went inside' became 'visiting'; the exorcisms were on the mother at the priest's church, not in the house; the 'evil' quote dated 2014 (before the demolition)."
+  }
+}
