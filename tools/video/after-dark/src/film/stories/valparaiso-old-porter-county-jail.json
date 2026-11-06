@@ -69,9 +69,17 @@
       "title": {
         "text": "THE OLD PORTER COUNTY JAIL",
         "at": "Porter County Jail",
-        "size": 80
+        "size": 80,
+        "style": "red"
       },
-      "credit": "History: National Register of Historic Places; Porter County Museum"
+      "credit": "History: National Register of Historic Places; Porter County Museum",
+      "sfx": [
+        {
+          "kind": "clang",
+          "at": "Porter County Jail",
+          "gain": 0.5
+        }
+      ]
     },
     {
       "text": "The sheriff and his family lived in the brick house attached to it.",
@@ -83,7 +91,14 @@
         "amount": 0.06
       },
       "label": "THE SHERIFF'S HOUSE",
-      "credit": "National Register of Historic Places; valpo.life"
+      "credit": "National Register of Historic Places; valpo.life",
+      "sfx": [
+        {
+          "kind": "keys",
+          "at": "sheriff",
+          "gain": 0.5
+        }
+      ]
     },
     {
       "text": "The jail closed in 1974. The next year, it became the county museum.",
@@ -112,11 +127,18 @@
         "amount": 0.08
       },
       "label": "GHOST TOURS",
-      "credit": "valpo.life; Porter County Museum"
+      "credit": "valpo.life; Porter County Museum",
+      "sfx": [
+        {
+          "kind": "creak",
+          "at": "haunted happenings",
+          "gain": 0.6
+        }
+      ]
     },
     {
       "text": "Paranormal groups say they've recorded voices, and that doors open and close on their own.",
-      "pause": 0.5,
+      "pause": 0.9,
       "scene": {
         "kind": "cell",
         "seed": 1,
@@ -142,7 +164,19 @@
           "size": 76
         }
       ],
-      "credit": "Ghost Research Society (2011); Dig the Dunes; Hauntings Around America"
+      "credit": "Ghost Research Society (2011); Dig the Dunes; Hauntings Around America",
+      "sfx": [
+        {
+          "kind": "heartbeat",
+          "at": "recorded voices",
+          "gain": 0.6
+        },
+        {
+          "kind": "knock",
+          "at": "doors open",
+          "gain": 0.6
+        }
+      ]
     },
     {
       "text": "In 2020, the museum moved out, and in 2022 it opened in a new home nearby.",
