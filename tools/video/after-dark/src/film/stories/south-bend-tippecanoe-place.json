@@ -1,0 +1,262 @@
+{
+  "slug": "south-bend-tippecanoe-place",
+  "title": "Tippecanoe Place: the Studebaker Mansion in South Bend, and the Voices People Report",
+  "series": "LA PORTE AFTER DARK",
+  "music": {
+    "seed": 77,
+    "prog": 6
+  },
+  "say": [],
+  "sources": [
+    {
+      "what": "built for Clement Studebaker; designed by Henry Ives Cobb; finished 1889; glacial boulders with Bedford limestone trim; Red Cross HQ in WWII, then a school for disabled children; restaurant 1980 to 2026; NRHP 1973, NHL 1977",
+      "who": "Wikipedia, Tippecanoe Place",
+      "url": "https://en.wikipedia.org/wiki/Tippecanoe_Place"
+    },
+    {
+      "what": "construction began 1886, 'not ready for occupancy until February, 1889'; 'approximately 40 major rooms on its four levels'; glacial boulders set in concrete; 'fire completely burned the roof and gutted much of the interior' 'only a few months after the Studebakers had moved into the house'; Clement's death Nov. 27, 1901; school for handicapped children; Red Cross headquarters in WWII",
+      "who": "National Register / National Historic Landmark nomination (NPS, 1977)",
+      "url": "https://npgallery.nps.gov/NRHP/GetAsset/NHLS/73000044_text"
+    },
+    {
+      "what": "'forty primary rooms'; Red Cross headquarters during WWII; E.M. Morris School for Crippled Children 1947-1970; restaurant 1980",
+      "who": "SAH Archipedia (Society of Architectural Historians)",
+      "url": "https://sah-archipedia.org/node/13018"
+    },
+    {
+      "what": "'The 26,000 square-foot house was nearly lost in an 1889 fire'; Henry Ives Cobb",
+      "who": "Building South Bend (University of Notre Dame)",
+      "url": "https://buildingsouthbend.nd.edu/properties/nd-sb-00083/"
+    },
+    {
+      "what": "fire Oct. 9, 1889, 'barely six months after Clem Studebaker and his family had moved in'; 'the beautiful stone... survived the fire'; restored by 1890; Red Cross; Morris school 1947; restaurant 1980; closure announced Jan. 5, 2026",
+      "who": "South Bend News-Times, Aaron Helman, Apr. 6, 2026",
+      "url": "https://southbendnewstimes.com/community/helman-tippecanoe-place/"
+    },
+    {
+      "what": "Studebaker 'died at his home in South Bend on November 27, 1901'; the Studebaker wagon company",
+      "who": "Wikipedia, Clement Studebaker",
+      "url": "https://en.wikipedia.org/wiki/Clement_Studebaker"
+    },
+    {
+      "what": "'a reputation as one of the most haunted places in Indiana'; house historian: 'People have reported hearing voices, seeing shadows and balls of light, and even pictures swinging on the walls'",
+      "who": "ABC57, Haunted locations in Michiana (Oct. 29, 2019)",
+      "url": "https://www.abc57.com/news/haunted-locations-in-michiana"
+    },
+    {
+      "what": "'People have claimed to hear footsteps when no one else is there, eerie voices'; 'It is rumored that the ghosts are in fact the deceased family of the Studebakers'",
+      "who": "Saint Joseph Square (Oct. 19, 2024)",
+      "url": "https://saintjosephsquare.com/15871/news/the-haunted-tales-of-south-bend"
+    },
+    {
+      "what": "'pictures on the walls began to move, as if wind was blowing them' (visitor's account, 2003)",
+      "who": "Castle of Spirits",
+      "url": "https://www.castleofspirits.com/ghost-stories/haunted-mansion-&-restaurant,-in,-usa"
+    },
+    {
+      "what": "house historian: 'Ol' Clem is known to visit his office'",
+      "who": "Enterprise, Haunted Indiana",
+      "url": "https://www.enterprise.com/en/inspiration/drives/haunted-indiana.html"
+    },
+    {
+      "what": "patrons and staff report ghosts since the restaurant opened in 1980; Clement died in the mansion of natural causes at 70",
+      "who": "Michael Kleen (2018)",
+      "url": "https://michaelkleen.com/2018/10/03/tippecanoe-places-mysterious-woman-in-white/"
+    },
+    {
+      "what": "restaurant closed for good Monday, Jan. 5, 2026; future of the mansion unclear; owners didn't comment",
+      "who": "WVPE; WNDU; WSBT (Jan. 2026)",
+      "url": "https://www.wvpe.org/wvpe/2026-01-06/south-bend-fine-dining-landmark-tippecanoe-place-closes-doors"
+    }
+  ],
+  "beats": [
+    {
+      "text": "Voices. Pictures, swinging on the walls. That's what people have reported inside Tippecanoe Place, in South Bend.",
+      "pause": 0.6,
+      "scene": {
+        "kind": "courthouse",
+        "tower": "turret",
+        "seed": 0,
+        "move": "in",
+        "amount": 0.1,
+        "fog": 0.2
+      },
+      "label": "SOUTH BEND, INDIANA",
+      "title": {
+        "text": "TIPPECANOE PLACE",
+        "at": "Tippecanoe Place",
+        "size": 92,
+        "style": "red"
+      },
+      "sfx": [
+        {
+          "kind": "whoosh",
+          "at": "Voices",
+          "gain": 0.5
+        },
+        {
+          "kind": "creak",
+          "at": "swinging",
+          "gain": 0.7
+        }
+      ],
+      "credit": "What people report: ABC57 (2019); visitor accounts"
+    },
+    {
+      "text": "Wagon maker Clem Studebaker had this 40-room stone mansion built. It was finished in 1889.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "courthouse",
+        "tower": "turret",
+        "seed": 1,
+        "move": "in",
+        "amount": 0.08
+      },
+      "label": "THE STUDEBAKER MANSION",
+      "typed": [
+        {
+          "text": "40 ROOMS",
+          "at": "40-room",
+          "y": 545,
+          "size": 80
+        }
+      ],
+      "sfx": [
+        {
+          "kind": "heartbeat",
+          "at": "stone mansion",
+          "gain": 0.4
+        }
+      ],
+      "credit": "History: National Park Service; SAH Archipedia"
+    },
+    {
+      "text": "That same year, fire tore through it. The roof burned. Much of the inside was gutted. But the stone walls survived.",
+      "pause": 0.6,
+      "scene": {
+        "kind": "card",
+        "seed": 1,
+        "move": "still"
+      },
+      "label": "FIRE",
+      "card": {
+        "kind": "year",
+        "at": "That same year",
+        "label": "THE FIRE",
+        "value": "1889",
+        "note": "THE STONE WALLS SURVIVED"
+      },
+      "sfx": [
+        {
+          "kind": "thunder",
+          "at": "fire tore",
+          "gain": 0.5
+        }
+      ],
+      "credit": "National Park Service; Univ. of Notre Dame; South Bend News-Times"
+    },
+    {
+      "text": "It was restored within a year. Clem died in 1901. In World War 2, the house was a Red Cross headquarters. Later, it was a school for disabled children.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "courthouse",
+        "tower": "turret",
+        "seed": 2,
+        "move": "in",
+        "amount": 0.07,
+        "fog": 0.22
+      },
+      "label": "AFTER THE STUDEBAKERS",
+      "credit": "National Park Service; SAH Archipedia; Wikipedia"
+    },
+    {
+      "text": "In 1980, it became a restaurant.",
+      "pause": 0.7,
+      "scene": {
+        "kind": "courthouse",
+        "tower": "turret",
+        "seed": 5,
+        "move": "in",
+        "amount": 0.12,
+        "fog": 0.28
+      },
+      "label": "THE RESTAURANT",
+      "sfx": [
+        {
+          "kind": "heartbeat",
+          "at": "restaurant",
+          "gain": 0.5
+        }
+      ],
+      "credit": "WNDU; SAH Archipedia; Wikipedia"
+    },
+    {
+      "text": "Legend says some of the Studebakers never left.",
+      "pause": 0.9,
+      "scene": {
+        "kind": "courthouse",
+        "tower": "turret",
+        "seed": 3,
+        "move": "in",
+        "amount": 0.1,
+        "fog": 0.3,
+        "ghost": "shadow",
+        "ghost_x": 880
+      },
+      "label": "THE LEGEND",
+      "sfx": [
+        {
+          "kind": "music_box",
+          "at": "never left",
+          "gain": 0.5
+        }
+      ],
+      "credit": "Legend: Enterprise; Saint Joseph Square"
+    },
+    {
+      "text": "The restaurant closed in January 2026. Please view it from the road.",
+      "pause": 0.6,
+      "scene": {
+        "kind": "courthouse",
+        "tower": "turret",
+        "seed": 4,
+        "move": "out",
+        "amount": 0.08,
+        "fog": 0.26
+      },
+      "label": "TODAY",
+      "typed": [
+        {
+          "text": "CLOSED",
+          "at": "closed",
+          "y": 545,
+          "size": 80
+        }
+      ],
+      "credit": "WVPE; WNDU; WSBT (Jan. 2026)"
+    },
+    {
+      "text": "Comment your town, and it could be next.",
+      "end": true,
+      "end_card": {
+        "q": "COMMENT YOUR TOWN",
+        "q2": "IT COULD BE NEXT",
+        "bubble": "Your town, your state",
+        "pill": "South Bend, Indiana: view it from the road",
+        "scene": {
+          "kind": "courthouse",
+          "tower": "turret",
+          "seed": 6,
+          "move": "still",
+          "amount": 0.08
+        }
+      },
+      "credit": "All pictures drawn"
+    }
+  ],
+  "factcheck": {
+    "date": "2026-11-06",
+    "by": "independent subagent, 2 rounds",
+    "result": "Line 1 'have reported' (closed now); line 3 'much of the inside'; line 4 restored within a year, school came after WWII; line 5 trimmed; mansion redrawn with a square tower and a small round turret, no interiors; adult shadow figure; all supported"
+  }
+}

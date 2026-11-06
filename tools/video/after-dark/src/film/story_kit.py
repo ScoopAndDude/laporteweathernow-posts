@@ -967,7 +967,7 @@ def vertical_sign(text, w=110):
 
 class Courthouse(Shot):
     """A county courthouse square at night: a big stone courthouse with a clock tower (tower="clock") or a dome
-    (tower="dome"), or no tower (tower="none", an old hall), lit windows, lamps along the walk and bare trees."""
+    (tower="dome"), a stone mansion with a square tower, gables and a small round turret (tower="turret"), or no tower (tower="none", an old hall), lit windows, lamps along the walk and bare trees."""
     focus = (540, 900)
     fog_d = 0.14
     ghost_xy = (760, 1250)
@@ -998,6 +998,25 @@ class Courthouse(Shot):
             c.rect(530, 450, 550, 520, "#0c0b0a")
         elif p.get("tower", "clock") == "none":
             pass
+        elif p.get("tower") == "turret":
+            # a stone mansion: a tall square tower with a hipped roof, two steep gables and a smaller round
+            # turret with a conical roof on the far corner (no clock)
+            c.rect(120, 600, 300, base, "#0d0c0b")
+            c.poly([(104, 606), (170, 500), (250, 500), (316, 606)], "#090808")
+            c.rect(890, 800, 990, base, "#0c0b0a")
+            c.poly([(878, 806), (940, 680), (1002, 806)], "#090808")
+            c.rect(924, 880, 956, 950, "#070809")
+            if hash2(940, 880, self.seed) > 0.5:
+                lights.rect(924, 880, 956, 950, WARM, 0.55)
+            for wy in (660, 820, 980, 1110):
+                c.rect(186, wy, 234, wy + 90, "#070809")
+                if hash2(210, wy, self.seed) > 0.55:
+                    lights.rect(186, wy, 234, wy + 90, WARM, 0.6)
+            for gx in (520, 760):
+                c.poly([(gx - 110, top + 6), (gx, top - 190), (gx + 110, top + 6)], "#0b0a09")
+                c.rect(gx - 22, top - 90, gx + 22, top - 20, "#070809")
+                if hash2(gx, top, self.seed) > 0.5:
+                    lights.rect(gx - 22, top - 90, gx + 22, top - 20, WARM, 0.55)
         else:
             c.rect(470, 520, 610, 760, "#0c0b0a")
             c.poly([(460, 524), (540, 400), (620, 524)], "#090808")

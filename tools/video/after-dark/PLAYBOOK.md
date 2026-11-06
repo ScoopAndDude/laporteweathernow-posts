@@ -78,6 +78,11 @@ keep working.
 - Maps show only what sources document: no straight line to a city the sources don't put on the route.
 - Use the name things had then: in 1934 the FBI was the Division of Investigation, so "federal agents".
 - Check today's details too: tours that run only in season are "tours in season".
+- Say who else did the work: the Harriet Colfax short (Nov. 2026) made it sound like she kept the light alone,
+  and a viewer pointed out she had assistant keepers after 1871 (NPS; Lighthousefriends). Check for assistants,
+  crews and partners before saying one person did something.
+- Draw the building's real shape: a fact-check flagged a two-storey drawing of a four-storey mansion with a
+  square tower (courthouse tower="turret" was added for Tippecanoe Place).
 - Mount Baldy (Oct. 2026): the boy fell into a hole that opened in the sand. A video said he crawled in, and
   viewers corrected it in the comments.
 
