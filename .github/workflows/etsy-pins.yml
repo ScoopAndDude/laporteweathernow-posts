@@ -1,0 +1,47 @@
+name: Etsy pins
+
+# Renders tall Pinterest pins for the ScoopAndDude Etsy shop from etsy-pins/pins.json
+# and commits them to etsy-pins/out/. Buffer schedules the pins from the raw GitHub URLs.
+on:
+  push:
+    branches: [main]
+    paths:
+      - etsy-pins/pins.json
+      - etsy-pins/render.py
+      - .github/workflows/etsy-pins.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: etsy-pins
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            etsy-pins
+            video/fonts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install "pillow>=10"
+      - run: python etsy-pins/render.py
+      - name: Commit the pins
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add etsy-pins/out
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "Render Etsy Pinterest pins"
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep $((i * 5))
+          done
+          exit 1
