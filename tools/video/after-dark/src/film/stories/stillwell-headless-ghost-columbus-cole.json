@@ -6,16 +6,7 @@
     "seed": 105,
     "prog": 6
   },
-  "say": [
-    [
-      "\\bFlaherty's\\b",
-      "Flairty's"
-    ],
-    [
-      "\\bFlaherty\\b",
-      "Flairty"
-    ]
-  ],
+  "say": [],
   "sources": [
     {
       "what": "1905 printings: Richmond Planet (Aug. 12, 1905) 'Appears in Attitude of Switchman Flagging a Train', 'Flaherty station'; Morning Journal and Courier, New Haven (Aug. 14, 1905): water tank on the 'Lake-Erie Railway', Cole 'run over by an engine'; Cole's real death Nov. 14, 1903, a boiler explosion on the Flaherty farm (Indianapolis Journal, Nov. 15, 1903; Walkerton Independent, Nov. 21, 1903); no real Flaherty station; LE&W stops at Walkerton, Kankakee and Stillwell",
@@ -40,8 +31,8 @@
   ],
   "beats": [
     {
-      "text": "In 1905, newspapers around the country ran a ghost story from LaPorte County.",
-      "pause": 0.5,
+      "text": "A headless figure by the tracks, flagging down trains. In 1905, newspapers around the country ran this ghost story from LaPorte County.",
+      "pause": 0.7,
       "scene": {
         "kind": "train",
         "seed": 0,
@@ -52,13 +43,25 @@
       "label": "LAPORTE COUNTY, INDIANA",
       "title": {
         "text": "THE GHOST OF FLAHERTY STATION",
-        "at": "ghost story",
+        "at": "headless figure",
         "size": 76
       },
-      "credit": "1905 papers, via Brom Bones Books and Strange Ago"
+      "credit": "1905 papers, via Brom Bones Books and Strange Ago",
+      "sfx": [
+        {
+          "kind": "whistle",
+          "at": "flagging down",
+          "gain": 0.5
+        },
+        {
+          "kind": "heartbeat",
+          "at": "ghost story",
+          "gain": 0.5
+        }
+      ]
     },
     {
-      "text": "Legend said a headless figure stood by the tracks at Flaherty station, as if it were flagging down a train.",
+      "text": "Legend said it stood at Flaherty station, as if it were waiting for a train.",
       "pause": 0.5,
       "scene": {
         "kind": "woods",
@@ -71,13 +74,20 @@
       "label": "THE LEGEND",
       "typed": [
         {
-          "text": "FLAGGING A TRAIN",
-          "at": "flagging down",
+          "text": "FLAHERTY STATION",
+          "at": "Flaherty station",
           "y": 545,
           "size": 76
         }
       ],
-      "credit": "Richmond Planet and Barbour County Index (1905)"
+      "credit": "Richmond Planet and Barbour County Index (1905)",
+      "sfx": [
+        {
+          "kind": "crow",
+          "at": "Legend",
+          "gain": 0.4
+        }
+      ]
     },
     {
       "text": "The papers said it was a local man, Columbus Cole, and some versions blamed a train for his death.",
@@ -96,7 +106,7 @@
     },
     {
       "text": "The 1903 papers tell what really happened. On November 14, 1903, Cole was killed when a steam boiler exploded on the Flaherty farm, south of Stillwell.",
-      "pause": 0.5,
+      "pause": 0.8,
       "scene": {
         "kind": "card",
         "seed": 0,
@@ -154,7 +164,7 @@
     },
     {
       "text": "The ghost is a legend. The man was real.",
-      "pause": 0.55,
+      "pause": 0.9,
       "scene": {
         "kind": "road",
         "seed": 2,
@@ -163,7 +173,14 @@
         "fog": 0.25
       },
       "label": "COLUMBUS COLE",
-      "credit": "La Porte County Historical Society Museum"
+      "credit": "La Porte County Historical Society Museum",
+      "sfx": [
+        {
+          "kind": "heartbeat",
+          "at": "The man was real",
+          "gain": 0.5
+        }
+      ]
     },
     {
       "text": "Comment your town for the next La Porte After Dark.",
