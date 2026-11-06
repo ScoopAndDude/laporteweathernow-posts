@@ -6,12 +6,7 @@
     "seed": 127,
     "prog": 6
   },
-  "say": [
-    [
-      "\\bBailly\\b",
-      "Bay-lee"
-    ]
-  ],
+  "say": [],
   "sources": [
     {
       "what": "earliest non-Indigenous cemetery in Porter County; first burial Napoleon 'Robert' 1827; wooden fence 1866; at least three Swedish immigrants buried 1869-74; six-foot limestone wall topped with iron spikes, 1885; 1914 Frances Rose Howe, Joseph's granddaughter, had local builder Theodore Stephens encase the wall in concrete and fill it with sand, the cemetery 'beneath seven feet of earth'; a letter reversed on the plaque",
@@ -54,9 +49,17 @@
       "title": {
         "text": "BAILLY CEMETERY",
         "at": "cemetery",
-        "size": 88
+        "size": 88,
+        "style": "red"
       },
-      "credit": "History: National Park Service; Wikipedia"
+      "credit": "History: National Park Service; Wikipedia",
+      "sfx": [
+        {
+          "kind": "crow",
+          "at": "cemetery",
+          "gain": 0.4
+        }
+      ]
     },
     {
       "text": "Fur trader Joseph Bailly settled here in the 1820s, and burials on this sand ridge go back at least that far.",
@@ -108,7 +111,14 @@
           "size": 76
         }
       ],
-      "credit": "National Park Service; Wikipedia; Theodore Stephens (1956)"
+      "credit": "National Park Service; Wikipedia; Theodore Stephens (1956)",
+      "sfx": [
+        {
+          "kind": "clang",
+          "at": "iron spikes",
+          "gain": 0.4
+        }
+      ]
     },
     {
       "text": "Around 1914, granddaughter Frances Howe hired a Chesterton builder to wrap the walls in concrete and fill the inside with sand.",
@@ -130,11 +140,18 @@
           "size": 76
         }
       ],
-      "credit": "National Park Service; Wikipedia; NPS report (1976); Stephens (1956)"
+      "credit": "National Park Service; Wikipedia; NPS report (1976); Stephens (1956)",
+      "sfx": [
+        {
+          "kind": "heartbeat",
+          "at": "fill the inside",
+          "gain": 0.5
+        }
+      ]
     },
     {
       "text": "The family's graves are still under that sand. And on a copy of the plaque, one letter is backward.",
-      "pause": 0.5,
+      "pause": 0.9,
       "scene": {
         "kind": "cemetery",
         "seed": 3,
@@ -144,7 +161,19 @@
         "fog": 0.15
       },
       "label": "FAMILY GRAVES STILL THERE",
-      "credit": "National Park Service; Theodore Stephens (1956)"
+      "credit": "National Park Service; Theodore Stephens (1956)",
+      "sfx": [
+        {
+          "kind": "heartbeat",
+          "at": "still under",
+          "gain": 0.6
+        },
+        {
+          "kind": "whoosh",
+          "at": "backward",
+          "gain": 0.5
+        }
+      ]
     },
     {
       "text": "Today it's part of Indiana Dunes National Park, and a short trail leads up to it.",
