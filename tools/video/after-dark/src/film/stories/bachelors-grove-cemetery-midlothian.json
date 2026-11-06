@@ -1,0 +1,204 @@
+{
+  "slug": "bachelors-grove-cemetery-midlothian",
+  "title": "Bachelor's Grove: The Cemetery in the Woods Outside Chicago",
+  "series": "LA PORTE AFTER DARK",
+  "music": {
+    "seed": 91,
+    "prog": 6
+  },
+  "say": [],
+  "sources": [
+    {
+      "what": "first recorded burial 1838; settler families; headstones stolen and thrown into the lagoon; Cook County took over maintenance 1975; the 1991 photo ran in the Sun-Times and Tribune",
+      "who": "WBEZ Curious City (2024)",
+      "url": "https://www.wbez.org/curious-city/2024/05/16/bachelors-grove-cemetery-ghost-stories-chicago-illinois"
+    },
+    {
+      "what": "first burials 1838/1844; last burial 1989; 'few of these tales have any apparent basis in fact' (historian Brad Bettenhausen)",
+      "who": "Wikipedia, Bachelor's Grove Cemetery",
+      "url": "https://en.wikipedia.org/wiki/Bachelor%27s_Grove_Cemetery"
+    },
+    {
+      "what": "road closed to vehicles since the 1960s; vandalism peaked in the 1970s",
+      "who": "Chicago & Cook County Cemeteries",
+      "url": "https://chicagoandcookcountycemeteries.com/2017/10/30/bachelors-grove-struggling-to-survive/"
+    },
+    {
+      "what": "Aug. 1991 infrared photo of a woman on a tombstone by Jude Huff-Felz; phantom farmhouse; blue and red lights",
+      "who": "Ghost Research Society",
+      "url": "https://ghostresearch.org/sites/bachelors.html"
+    },
+    {
+      "what": "the road closed in the 1960s; phantom farmhouse accounts (Richard Crowe); orbs",
+      "who": "Michael Kleen (2018)",
+      "url": "https://michaelkleen.com/2018/05/15/the-many-mysteries-of-bachelors-grove/"
+    },
+    {
+      "what": "fewer than two dozen gravestones remain; phantom farmhouse; visit sunrise to sundown",
+      "who": "Nature in Chicago (2020)",
+      "url": "https://natureinchicago.com/2020/12/12/visit-bachelors-grove-cemetery-not-only-for-spooks-and-scares-but-also-for-its-rich-local-history/"
+    },
+    {
+      "what": "Rubio Woods: sunrise to sunset",
+      "who": "Forest Preserves of Cook County",
+      "url": "https://fpdcc.com/places/locations/rubio-woods"
+    }
+  ],
+  "beats": [
+    {
+      "text": "Deep in the woods outside Chicago, there's a cemetery the road forgot.",
+      "pause": 0.7,
+      "scene": {
+        "kind": "woods",
+        "seed": 4,
+        "move": "in",
+        "amount": 0.1,
+        "fog": 0.3
+      },
+      "label": "NEAR MIDLOTHIAN, ILLINOIS",
+      "title": {
+        "text": "BACHELOR'S GROVE",
+        "at": "cemetery",
+        "size": 92,
+        "style": "red"
+      },
+      "sfx": [
+        {
+          "kind": "crow",
+          "at": "woods",
+          "gain": 0.5
+        }
+      ],
+      "credit": "History: WBEZ; Atlas Obscura"
+    },
+    {
+      "text": "Settlers were burying their dead here by the 1840s, and some say earlier.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "cemetery",
+        "seed": 6,
+        "style": "country",
+        "move": "in",
+        "amount": 0.07
+      },
+      "label": "SINCE THE 1800s",
+      "credit": "WBEZ; Wikipedia"
+    },
+    {
+      "text": "In the 1960s, the road beside it closed. Then vandals came, toppling and stealing headstones.",
+      "pause": 0.6,
+      "scene": {
+        "kind": "cemetery",
+        "seed": 7,
+        "style": "country",
+        "move": "left",
+        "amount": 0.06,
+        "fog": 0.2
+      },
+      "label": "FORGOTTEN",
+      "credit": "Chicago & Cook County Cemeteries; Michael Kleen; WBEZ"
+    },
+    {
+      "text": "And the stories spread. Lights drifting between the graves. A farmhouse that appears, then fades away.",
+      "pause": 0.8,
+      "scene": {
+        "kind": "house",
+        "seed": 2,
+        "style": "farmhouse",
+        "lit": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "orbs": 5,
+        "move": "in",
+        "amount": 0.1,
+        "fog": 0.35
+      },
+      "label": "WHAT PEOPLE REPORT",
+      "sfx": [
+        {
+          "kind": "music_box",
+          "at": "farmhouse",
+          "gain": 0.4
+        }
+      ],
+      "credit": "Ghost Research Society; Michael Kleen; Nature in Chicago"
+    },
+    {
+      "text": "In 1991, a ghost hunter's infrared photo seemed to show a woman in an old-fashioned dress, sitting alone on a tombstone.",
+      "pause": 0.9,
+      "scene": {
+        "kind": "cemetery",
+        "seed": 8,
+        "style": "country",
+        "ghost": "woman",
+        "move": "in",
+        "amount": 0.12,
+        "fog": 0.3
+      },
+      "label": "1991",
+      "flash": [
+        "sitting alone"
+      ],
+      "sfx": [
+        {
+          "kind": "heartbeat",
+          "at": "old-fashioned dress",
+          "gain": 0.6
+        }
+      ],
+      "credit": "Ghost Research Society; WBEZ"
+    },
+    {
+      "text": "Most of the gravestones are gone now. The stories never stopped.",
+      "pause": 0.8,
+      "scene": {
+        "kind": "woods",
+        "seed": 5,
+        "orbs": 4,
+        "move": "out",
+        "amount": 0.1,
+        "fog": 0.4
+      },
+      "label": "STILL TOLD",
+      "credit": "Nature in Chicago; WBEZ"
+    },
+    {
+      "text": "It's surrounded by the Rubio Woods forest preserve, open sunrise to sunset. Don't be there after dark.",
+      "pause": 0.7,
+      "scene": {
+        "kind": "woods",
+        "seed": 6,
+        "lantern": true,
+        "move": "in",
+        "amount": 0.06
+      },
+      "label": "RUBIO WOODS",
+      "credit": "Forest Preserves of Cook County; Nature in Chicago"
+    },
+    {
+      "text": "Comment your town, and it could be next.",
+      "end": true,
+      "end_card": {
+        "q": "COMMENT YOUR TOWN",
+        "q2": "IT COULD BE NEXT",
+        "bubble": "Your town, your state",
+        "scene": {
+          "kind": "cemetery",
+          "seed": 9,
+          "style": "country",
+          "move": "still"
+        },
+        "pill": "Open sunrise to sunset"
+      },
+      "credit": "All pictures drawn"
+    }
+  ],
+  "factcheck": {
+    "date": "2026-11-05",
+    "by": "independent subagent",
+    "result": "Lines 1, 3, 6 supported. Start date now 'by the 1840s, some say earlier'; 'stories began' became 'spread'; the 1991 woman is in an old-fashioned dress (black-and-white infrared), not 'white'; it's county cemetery land surrounded by the forest preserve; 'near Midlothian'; obelisk and town-house drawings replaced."
+  }
+}
