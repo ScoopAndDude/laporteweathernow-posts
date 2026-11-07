@@ -173,21 +173,21 @@ Load the Buffer tools with ToolSearch (`list_posts`, `create_post`, `get_post`).
 | X (@ScoopAndDude) | `6abd7b5bea19ca0bde39378f` | text only besides the video |
 | Instagram (@laporteweathernow) | `6aef3283e29c69a171942104` | metadata.instagram: type "reel", shouldShareToFeed true, isAiGenerated false; text = the `tiktok` caption |
 | Threads (@danielscoop420) | `6aef3318e29c69a171942800` | metadata.threads: type "post"; text = the `x` text with only one hashtag, #LaPorteAfterDark (Threads allows one), and "Pictures drawn. Narration is a computer voice." |
+| Facebook (La Porte Weather Now page) | `6aeddf15e29c69a171821e16` | metadata.facebook: type "reel"; text = the `facebook` caption. Scoop asked on Nov. 7, 2026 for Facebook to be scheduled through Buffer too (Buffer can't add Facebook topics; that's accepted) |
 
-- Facebook (La Porte Weather Now page) and Pinterest are connected in Buffer too, but don't post there: Facebook
-  stays Scoop's (he posts by hand to add topics), and Pinterest waits until he picks a board.
+- Pinterest is connected in Buffer too, but don't post there until Scoop picks a board.
 - Asset: `[{"video": {"url": "<raw URL>", "metadata": {"thumbnailOffset": 800}}}]`, schedulingType `"automatic"`.
 - Buffer is on a paid plan since Nov. 7, 2026 (5,000 scheduled posts), so there's no queue limit. The goal is one
   After Dark short every night at 6:30 PM Central, scheduled about two weeks ahead (Scoop, Nov. 7, 2026).
 - List the scheduled YouTube posts first (status scheduled, sorted by dueAt). Each new short goes at 6:30 PM on the
   first night after the last scheduled After Dark short that has no After Dark short yet (skip nights that already
   have one; other posts, like weather promos, don't count). Use mode `"customScheduled"` with that dueAt on all
-  five channels. If nothing is scheduled, use 6:30 PM today (or tomorrow if that has passed).
+  six channels. If nothing is scheduled, use 6:30 PM today (or tomorrow if that has passed).
 - Each run makes up to 4 shorts, one at a time (research, make, fact-check, post), and stops early once the queue
   reaches 14 nights ahead. Keep the run varied (no two jails, cemeteries or same town on back-to-back nights).
 - Don't post the same short twice: if `log.md` or Buffer already has this slug, stop.
-- Instagram and Threads were added Nov. 7, 2026: every short goes to all five channels at the same time.
-- Write the five Buffer post IDs into `posts/<slug>.json` and `log.md`, commit and push.
+- Instagram and Threads were added Nov. 7, 2026: every short goes to all six channels (with Facebook, from Nov. 7) at the same time.
+- Write the six Buffer post IDs into `posts/<slug>.json` and `log.md`, commit and push.
 
 ## 10. Tell Scoop
 
