@@ -1,6 +1,6 @@
 {
  "about": "Official weather for La Porte, Indiana, saved by a GitHub job for the Daily Scoop (laporteweathernow.com/daily-scoop). Copied from NWS, SPC and WPC as-is; see scripts/nws_snapshot.py.",
- "fetched": "2026-11-07T05:02:11-06:00",
+ "fetched": "2026-11-07T10:19:44-06:00",
  "place": "La Porte, IN",
  "lat": 41.6081,
  "lon": -86.7189,
@@ -23,50 +23,39 @@
  },
  "observation": {
   "station": "KPPO (La Porte Municipal Airport)",
-  "time": "2026-11-07T04:35:00-06:00",
-  "weather": "Partly Cloudy",
-  "temperatureF": 36,
-  "dewpointF": 36,
-  "humidityPercent": 100,
+  "time": "2026-11-07T09:35:00-06:00",
+  "weather": "Cloudy",
+  "temperatureF": 46,
+  "dewpointF": null,
+  "humidityPercent": null,
   "wind": {
-   "from": "WSW",
-   "degrees": 250,
-   "mph": 6,
+   "from": "W",
+   "degrees": 280,
+   "mph": 10,
    "gustMph": null
   },
   "visibilityMiles": 10.0,
-  "pressureInHg": 30.13,
-  "metar": "KPPO 071035Z AUTO 25005KT 10SM SCT036 02/02 A3013 RMK AO2"
+  "pressureInHg": 30.18,
+  "metar": "KPPO 071535Z AUTO 28009KT 10SM OVC028 08/08 A3018 RMK AO2"
  },
  "forecast": {
-  "updated": "2026-11-07T09:15:20+00:00",
-  "generated": "2026-11-07T10:17:02+00:00",
+  "updated": "2026-11-07T14:00:56+00:00",
+  "generated": "2026-11-07T14:32:03+00:00",
   "timesNote": "Clock times in the forecast wording are already in America/Chicago (La Porte's real time). NWS writes them in America/Indiana/Indianapolis, which it has on file for La Porte by mistake.",
   "periods": [
    {
-    "name": "Overnight",
-    "start": "2026-11-07T05:00:00-05:00",
-    "end": "2026-11-07T06:00:00-05:00",
-    "isDaytime": false,
-    "temperatureF": 36,
-    "rainChancePercent": 2,
-    "wind": "NW 5 mph",
-    "short": "Mostly Cloudy",
-    "detailed": "Mostly cloudy, with a low around 36. Northwest wind around 5 mph."
-   },
-   {
-    "name": "Saturday",
-    "start": "2026-11-07T06:00:00-05:00",
+    "name": "Today",
+    "start": "2026-11-07T09:00:00-05:00",
     "end": "2026-11-07T18:00:00-05:00",
     "isDaytime": true,
     "temperatureF": 49,
     "rainChancePercent": 1,
     "wind": "NW 5 to 10 mph",
-    "short": "Partly Sunny",
-    "detailed": "Partly sunny, with a high near 49. Northwest wind 5 to 10 mph."
+    "short": "Mostly Sunny",
+    "detailed": "Mostly sunny, with a high near 49. Northwest wind 5 to 10 mph."
    },
    {
-    "name": "Saturday Night",
+    "name": "Tonight",
     "start": "2026-11-07T18:00:00-05:00",
     "end": "2026-11-08T06:00:00-05:00",
     "isDaytime": false,
@@ -107,7 +96,7 @@
     "rainChancePercent": 0,
     "wind": "W 5 mph",
     "short": "Sunny",
-    "detailed": "Sunny, with a high near 57."
+    "detailed": "Sunny, with a high near 57. West wind around 5 mph."
    },
    {
     "name": "Monday Night",
@@ -173,7 +162,7 @@
     "rainChancePercent": 32,
     "wind": "NE 5 to 10 mph",
     "short": "Chance Rain Showers",
-    "detailed": "A chance of rain showers. Mostly cloudy, with a high near 48."
+    "detailed": "A chance of rain showers. Mostly cloudy, with a high near 48. Chance of precipitation is 30%."
    },
    {
     "name": "Thursday Night",
@@ -196,6 +185,17 @@
     "wind": "N 5 to 10 mph",
     "short": "Slight Chance Rain And Snow Showers",
     "detailed": "A slight chance of rain and snow showers before noon. Partly sunny, with a high near 46."
+   },
+   {
+    "name": "Friday Night",
+    "start": "2026-11-13T18:00:00-05:00",
+    "end": "2026-11-14T06:00:00-05:00",
+    "isDaytime": false,
+    "temperatureF": 32,
+    "rainChancePercent": 14,
+    "wind": "N 0 to 5 mph",
+    "short": "Partly Cloudy",
+    "detailed": "Partly cloudy, with a low around 32."
    }
   ]
  },
@@ -205,15 +205,11 @@
   "next72hInches": 0.0,
   "byPeriod": [
    {
-    "name": "Overnight",
+    "name": "Today",
     "inches": 0.0
    },
    {
-    "name": "Saturday",
-    "inches": 0.0
-   },
-   {
-    "name": "Saturday Night",
+    "name": "Tonight",
     "inches": 0.0
    },
    {
@@ -259,6 +255,10 @@
    {
     "name": "Friday",
     "inches": 0
+   },
+   {
+    "name": "Friday Night",
+    "inches": 0
    }
   ]
  },
@@ -266,18 +266,34 @@
  "alertsNearby": {
   "indiana": [
    {
-    "id": "urn:oid:2.49.0.1.840.0.73e8bd76c8756004c29617ff8231429d1d1707bf.002.3",
-    "event": "Frost Advisory",
-    "headline": "Frost Advisory issued November 6 at 11:22PM CST until November 7 at 8:00AM CST by NWS Paducah KY",
-    "nwsHeadline": "FREEZE WARNING IN EFFECT FROM 11 PM CST /MIDNIGHT EST/ SATURDAY TO 8 AM CST /9 AM EST/ SUNDAY... ...FROST ADVISORY REMAINS IN EFFECT UNTIL 8 AM CST /9 AM EST/ SATURDAY",
-    "area": "Edwards; Wabash; White; Gallatin; Johnson; Pope; Hardin; Alexander; Pulaski; Massac; Gibson; Pike; Posey; Vanderburgh; Warrick; Spencer; Fulton; Hickman; Carlisle; Ballard; McCracken; Graves; Livingston; Marshall; Calloway; Crittenden; Lyon; Trigg; Caldwell; Union; Webster; Hopkins; Christian; Henderson; Daviess; McLean; Muhlenberg; Todd; Scott; Mississippi; New Madrid",
-    "sender": "NWS Paducah KY",
-    "sent": "2026-11-06T23:22:00-06:00",
-    "onset": "2026-11-06T23:22:00-06:00",
-    "ends": "2026-11-07T08:00:00-06:00",
-    "expires": "2026-11-07T12:00:00-06:00",
-    "messageType": "Update",
-    "severity": "Minor",
+    "id": "urn:oid:2.49.0.1.840.0.4d2afdcc7ed3ed586d7ba0382235367c4a33d173.002.1",
+    "event": "Freeze Warning",
+    "headline": "Freeze Warning issued November 7 at 9:37AM EST until November 8 at 10:00AM EST by NWS Wilmington OH",
+    "nwsHeadline": "FREEZE WARNING REMAINS IN EFFECT FROM MIDNIGHT TONIGHT TO 10 AM EST SUNDAY",
+    "area": "Ripley; Dearborn; Ohio; Switzerland; Carroll; Gallatin; Boone; Kenton; Campbell; Owen; Grant; Pendleton; Bracken; Robertson; Mason; Lewis; Ross; Hamilton; Clermont; Brown; Highland; Adams; Pike; Scioto",
+    "sender": "NWS Wilmington OH",
+    "sent": "2026-11-07T09:37:00-05:00",
+    "onset": "2026-11-08T00:00:00-05:00",
+    "ends": "2026-11-08T10:00:00-05:00",
+    "expires": "2026-11-07T20:00:00-05:00",
+    "messageType": "Alert",
+    "severity": "Severe",
+    "certainty": "Likely",
+    "urgency": "Expected"
+   },
+   {
+    "id": "urn:oid:2.49.0.1.840.0.b1f50a0e7f7440ee49f67b241e7f9f2237e62012.001.2",
+    "event": "Freeze Warning",
+    "headline": "Freeze Warning issued November 7 at 9:04AM EST until November 8 at 10:00AM EST by NWS Louisville KY",
+    "nwsHeadline": "FROST ADVISORY HAS EXPIRED... ...FREEZE WARNING REMAINS IN EFFECT FROM MIDNIGHT EST /11 PM CST/ TONIGHT TO 10 AM EST /9 AM CST/ SUNDAY",
+    "area": "Orange; Washington; Scott; Jefferson; Dubois; Crawford; Perry; Harrison; Floyd; Clark; Hancock; Breckinridge; Meade; Ohio; Grayson; Hardin; Bullitt; Jefferson; Oldham; Trimble; Henry; Shelby; Franklin; Scott; Harrison; Spencer; Anderson; Woodford; Fayette; Bourbon; Nicholas; Nelson; Washington; Mercer; Jessamine; Clark; Larue; Marion; Boyle; Garrard; Madison; Butler; Edmonson; Hart; Green; Taylor; Casey; Lincoln; Logan; Warren; Simpson; Allen; Barren; Monroe; Metcalfe; Adair; Russell; Cumberland; Clinton",
+    "sender": "NWS Louisville KY",
+    "sent": "2026-11-07T09:04:00-05:00",
+    "onset": "2026-11-08T00:00:00-05:00",
+    "ends": "2026-11-08T10:00:00-05:00",
+    "expires": "2026-11-08T05:00:00-05:00",
+    "messageType": "Alert",
+    "severity": "Severe",
     "certainty": "Likely",
     "urgency": "Expected"
    },
@@ -296,77 +312,13 @@
     "severity": "Severe",
     "certainty": "Likely",
     "urgency": "Expected"
-   },
-   {
-    "id": "urn:oid:2.49.0.1.840.0.4c55f037a285b4e1252c66073b35844dbea6759c.001.2",
-    "event": "Frost Advisory",
-    "headline": "Frost Advisory issued November 6 at 11:56PM EST until November 7 at 9:00AM EST by NWS Louisville KY",
-    "nwsHeadline": "FREEZE WARNING IN EFFECT FROM MIDNIGHT EST /11 PM CST/ SATURDAY NIGHT TO 10 AM EST /9 AM CST/ SUNDAY... ...FROST ADVISORY REMAINS IN EFFECT UNTIL 9 AM EST /8 AM CST/ SATURDAY",
-    "area": "Orange; Washington; Scott; Jefferson; Dubois; Crawford; Perry; Harrison; Floyd; Clark; Hancock; Breckinridge; Meade; Ohio; Grayson; Hardin; Bullitt; Jefferson; Oldham; Trimble; Henry; Shelby; Franklin; Scott; Harrison; Spencer; Anderson; Woodford; Fayette; Bourbon; Nicholas; Nelson; Washington; Mercer; Jessamine; Clark; Larue; Marion; Boyle; Garrard; Madison; Butler; Edmonson; Hart; Green; Taylor; Casey; Lincoln; Logan; Warren; Simpson; Allen; Barren; Monroe; Metcalfe; Adair; Russell; Cumberland; Clinton",
-    "sender": "NWS Louisville KY",
-    "sent": "2026-11-06T23:56:00-05:00",
-    "onset": "2026-11-07T00:00:00-05:00",
-    "ends": "2026-11-07T09:00:00-05:00",
-    "expires": "2026-11-07T09:00:00-05:00",
-    "messageType": "Update",
-    "severity": "Minor",
-    "certainty": "Likely",
-    "urgency": "Expected"
-   },
-   {
-    "id": "urn:oid:2.49.0.1.840.0.4c55f037a285b4e1252c66073b35844dbea6759c.001.1",
-    "event": "Freeze Warning",
-    "headline": "Freeze Warning issued November 6 at 11:56PM EST until November 8 at 10:00AM EST by NWS Louisville KY",
-    "nwsHeadline": "FREEZE WARNING IN EFFECT FROM MIDNIGHT EST /11 PM CST/ SATURDAY NIGHT TO 10 AM EST /9 AM CST/ SUNDAY... ...FROST ADVISORY REMAINS IN EFFECT UNTIL 9 AM EST /8 AM CST/ SATURDAY",
-    "area": "Orange; Washington; Scott; Jefferson; Dubois; Crawford; Perry; Harrison; Floyd; Clark; Hancock; Breckinridge; Meade; Ohio; Grayson; Hardin; Bullitt; Jefferson; Oldham; Trimble; Henry; Shelby; Franklin; Scott; Harrison; Spencer; Anderson; Woodford; Fayette; Bourbon; Nicholas; Nelson; Washington; Mercer; Jessamine; Clark; Larue; Marion; Boyle; Garrard; Madison; Butler; Edmonson; Hart; Green; Taylor; Casey; Lincoln; Logan; Warren; Simpson; Allen; Barren; Monroe; Metcalfe; Adair; Russell; Cumberland; Clinton",
-    "sender": "NWS Louisville KY",
-    "sent": "2026-11-06T23:56:00-05:00",
-    "onset": "2026-11-08T00:00:00-05:00",
-    "ends": "2026-11-08T10:00:00-05:00",
-    "expires": "2026-11-07T09:00:00-05:00",
-    "messageType": "Alert",
-    "severity": "Severe",
-    "certainty": "Likely",
-    "urgency": "Expected"
-   },
-   {
-    "id": "urn:oid:2.49.0.1.840.0.7a008dec84b9b3b12257dc12be93c6a63f00277d.001.2",
-    "event": "Frost Advisory",
-    "headline": "Frost Advisory issued November 6 at 11:38PM EST until November 7 at 9:00AM EST by NWS Wilmington OH",
-    "nwsHeadline": "FREEZE WARNING IN EFFECT FROM MIDNIGHT SATURDAY NIGHT TO 10 AM EST SUNDAY... ...FROST ADVISORY REMAINS IN EFFECT UNTIL 9 AM EST SATURDAY",
-    "area": "Ripley; Dearborn; Ohio; Switzerland; Carroll; Gallatin; Boone; Kenton; Campbell; Owen; Grant; Pendleton; Bracken; Robertson; Mason; Lewis; Ross; Hamilton; Clermont; Brown; Highland; Adams; Pike; Scioto",
-    "sender": "NWS Wilmington OH",
-    "sent": "2026-11-06T23:38:00-05:00",
-    "onset": "2026-11-07T00:00:00-05:00",
-    "ends": "2026-11-07T09:00:00-05:00",
-    "expires": "2026-11-07T07:45:00-05:00",
-    "messageType": "Update",
-    "severity": "Minor",
-    "certainty": "Likely",
-    "urgency": "Expected"
-   },
-   {
-    "id": "urn:oid:2.49.0.1.840.0.7a008dec84b9b3b12257dc12be93c6a63f00277d.001.1",
-    "event": "Freeze Warning",
-    "headline": "Freeze Warning issued November 6 at 11:38PM EST until November 8 at 10:00AM EST by NWS Wilmington OH",
-    "nwsHeadline": "FREEZE WARNING IN EFFECT FROM MIDNIGHT SATURDAY NIGHT TO 10 AM EST SUNDAY... ...FROST ADVISORY REMAINS IN EFFECT UNTIL 9 AM EST SATURDAY",
-    "area": "Ripley; Dearborn; Ohio; Switzerland; Carroll; Gallatin; Boone; Kenton; Campbell; Owen; Grant; Pendleton; Bracken; Robertson; Mason; Lewis; Ross; Hamilton; Clermont; Brown; Highland; Adams; Pike; Scioto",
-    "sender": "NWS Wilmington OH",
-    "sent": "2026-11-06T23:38:00-05:00",
-    "onset": "2026-11-08T00:00:00-05:00",
-    "ends": "2026-11-08T10:00:00-05:00",
-    "expires": "2026-11-07T07:45:00-05:00",
-    "messageType": "Alert",
-    "severity": "Severe",
-    "certainty": "Likely",
-    "urgency": "Expected"
    }
   ],
   "nearbyCountiesFullText": []
  },
  "discussion": {
   "issued": "2026-11-07T04:05:00-06:00",
-  "ageHours": 1.0,
+  "ageHours": 6.2,
   "text": "000\nFXUS63 KIWX 071005\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n505 AM EST Sat Nov 7 2026\n\n.KEY MESSAGES...\n\n- Seasonably cool conditions continue today into tonight. \n\n- A slow warming trend commences Sunday through Tuesday, with highs \n  in the 60s by Tuesday. \n\n- Cooler temperatures return for the second half of next week. \n\n- Dry through the middle of next week.\n\n&&\n\n.DISCUSSION...\nIssued at 214 AM EST Sat Nov 7 2026\n\nHeights will be on the rise and warm advection will commence today \ninto tonight as a well defined upper low exits east through the\neastern Great Lakes and New England. Lake clouds will linger \nfor much of the day in lingering nw flow, though partial \nafternoon clearing and WAA could allow temps to recover into the\nlow-mid 50s.\n\nSeveral northern stream shortwaves and associated mid-upper level \njet streaks bypass north-northeast of the area Sunday through \nTuesday allowing for dry conditions, a gradual warming trend, and \nsomewhat breezy conditions at times. \n\nEnsemble guidance continues to come into better agreement in a \ndeeper negative height anomaly emerging over the eastern CONUS by \nthe second half of next week. This likely draws a cold front through \nthe area around Wednesday with another shot of cooler/breezy wx \nThursday through Saturday. Chances for measurable rain appear on the \nlow side however with flow trajectories favoring far NW IN and ne IL \naround Thu-Fri for higher lake effect rain chances.\n\n&&\n\n.AVIATION /12Z TAFS THROUGH 12Z SUNDAY/...\nIssued at 504 AM EST Sat Nov 7 2026\n\nLake plume will continue to offer high MVFR to low VFR cigs this\nmorning into the early afternoon. Clearing thereafter with\nwesterly winds up to near 10 knots diminishing to around 5 \nknots tonight. \n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...Small Craft Advisory until 4 PM EST this afternoon for LMZ043-\n     046.\n\n&&\n\n$$\n\nDISCUSSION...Steinwedel\nAVIATION...Steinwedel"
  },
  "hazardousWeatherOutlook": null,
@@ -374,14 +326,14 @@
  "spc": [
   {
    "day": 1,
-   "valid": "202611071200",
+   "valid": "202611071300",
    "expires": "202611081200",
    "riskAtLaPorte": "No thunderstorm or severe risk area",
    "riskAreasAnywhere": [
     "General Thunderstorms Risk"
    ],
-   "summary": "Severe thunderstorms are not forecast across the U.S. today and tonight.",
-   "text": "SPC AC 070559\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1159 PM CST Fri Nov 06 2026\n\n   Valid 071200Z - 081200Z\n\n   ...NO SEVERE THUNDERSTORM AREAS FORECAST...\n\n   ...SUMMARY...\n   Severe thunderstorms are not forecast across the U.S. today and\n   tonight.\n\n   ...Synopsis...\n   An upper cyclone and attendant trough will pivot east/northeast\n   across the Mid-Atlantic and Northeast states today. In the wake of\n   the trough, a surface low will deepen off the coast of New England.\n   A strong surface cold front will move offshore with the low into the\n   Atlantic and Gulf waters early this morning. Isolated elevated\n   thunderstorms may occur with warm air advection ahead of the upper\n   cyclone across New England, though severe storms are not expected.\n\n   Along southern portions of the front near the Gulf Coast, additional\n   showers and thunderstorms are expected across portions of\n   southern/central TX. An upper cyclone moving out of northern MX will\n   bolster isentropic ascent behind the southward moving front\n   supporting scattered elevated thunderstorms. Instability will remain\n   meager and not supportive of severe storms.\n\n   Elsewhere, surface high pressure and offshore flow will favor dry\n   and stable conditions over the majority of the CONUS. The only\n   exception may be across the Olympic Peninsula where shallow\n   convection ahead of another upper trough may allow for a few\n   lightning strikes overnight.\n\n   ..Lyons/Halbert-K.. 11/07/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 1300Z"
+   "summary": "Organized severe thunderstorms are not forecast through tonight.",
+   "text": "SPC AC 071246\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   0646 AM CST Sat Nov 07 2026\n\n   Valid 071300Z - 081200Z\n\n   ...NO SEVERE THUNDERSTORM AREAS FORECAST...\n\n   ...SUMMARY...\n   Organized severe thunderstorms are not forecast through tonight.\n\n   ...Synopsis and Discussion...\n   An upper trough/low over the lower Great Lakes this morning will\n   move eastward across the Mid-Atlantic and Northeast today. Modest\n   low-level warm advection and cool mid-level temperatures may support\n   weak but sufficient MUCAPE for occasional lightning flashes with\n   convection that develops across parts of New England through the\n   day. Instability is expected to remain too limited to support\n   organized severe thunderstorms.\n\n   Mainly elevated thunderstorms should occur through the period across\n   parts of west/central/south TX, as a separate mid-level trough/low\n   translates east-southeastward from the Southwest into north-central\n   Mexico. A surface front will generally remain offshore from the\n   lower TX Coast, but large-scale ascent preceding the upper trough\n   and a modest increase in low-level warm advection late this\n   afternoon into tonight will aid the development of MUCAPE up to 500\n   J/kg, which should support some lightning with this elevated\n   activity.\n\n   Across the coastal Pacific Northwest, a low-topped line of\n   convection is forecast to approach the WA Coast after 00Z, with\n   strong low and mid-level winds expected to be present ahead of an\n   approaching upper trough. Low 50s surface dewpoints and minimal\n   diurnal heating both appear marginal to support more than very weak\n   surface-based instability, and updrafts may not reach sufficient\n   height to induce charge separation and lightning flashes. Even so,\n   strong/gusty winds may occur with this convection as it spreads\n   inland across parts of coastal WA this evening/tonight. However,\n   given the very limited thermodynamic environment, confidence in\n   severe gusts remains too low to include any severe probabilities.\n\n   ..Gleason.. 11/07/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 1630Z"
   },
   {
    "day": 2,
@@ -436,18 +388,6 @@
     "summary": "dry through work hours (6 a.m. to 6 p.m.)",
     "hours": [
      {
-      "hour": 6,
-      "rainChancePercent": 0
-     },
-     {
-      "hour": 7,
-      "rainChancePercent": 0
-     },
-     {
-      "hour": 8,
-      "rainChancePercent": 0
-     },
-     {
       "hour": 9,
       "rainChancePercent": 0
      },
@@ -457,7 +397,7 @@
      },
      {
       "hour": 11,
-      "rainChancePercent": 1
+      "rainChancePercent": 0
      },
      {
       "hour": 12,
@@ -465,15 +405,15 @@
      },
      {
       "hour": 13,
-      "rainChancePercent": 1
+      "rainChancePercent": 0
      },
      {
       "hour": 14,
-      "rainChancePercent": 1
+      "rainChancePercent": 0
      },
      {
       "hour": 15,
-      "rainChancePercent": 1
+      "rainChancePercent": 0
      },
      {
       "hour": 16,
@@ -552,9 +492,9 @@
   "bias": {
    "days": 24,
    "ready": true,
-   "high": -0.8,
+   "high": -0.5,
    "highDays": 24,
-   "low": 1.4,
+   "low": 1.2,
    "lowDays": 24,
    "note": "Average of (forecast minus airport reading) over the last 30 graded days; positive means we ran warm. Used to nudge the model blend once 14+ days are graded."
   },
@@ -568,7 +508,7 @@
     },
     "models": {
      "ncep_nbm_conus": {
-      "high": 50,
+      "high": 48,
       "low": 36,
       "rain": 0
      },
@@ -583,7 +523,7 @@
       "rain": 0
      },
      "ecmwf_ifs025": {
-      "high": 48,
+      "high": 47,
       "low": 37,
       "rain": 0
      }
@@ -593,7 +533,7 @@
      "low": 36
     },
     "adjusted": {
-     "high": 49,
+     "high": 48,
      "low": 35
     },
     "spread": {
@@ -611,22 +551,22 @@
     },
     "models": {
      "ncep_nbm_conus": {
-      "high": 58,
+      "high": 55,
       "low": 35,
       "rain": 1
      },
      "ncep_hrrr_conus": {
-      "high": 53,
+      "high": 52,
       "low": 34,
       "rain": 1
      },
      "gfs_seamless": {
-      "high": 53,
+      "high": 52,
       "low": 34,
       "rain": 1
      },
      "ecmwf_ifs025": {
-      "high": 57,
+      "high": 56,
       "low": 36,
       "rain": 0
      }
@@ -640,7 +580,7 @@
      "low": 33
     },
     "spread": {
-     "high": 5,
+     "high": 4,
      "low": 3
     },
     "note": "NWS and the models agree within a few degrees"
@@ -654,8 +594,8 @@
     },
     "models": {
      "ncep_nbm_conus": {
-      "high": 58,
-      "low": 38,
+      "high": 55,
+      "low": 39,
       "rain": 0
      },
      "ncep_hrrr_conus": {
@@ -668,20 +608,20 @@
      },
      "ecmwf_ifs025": {
       "high": 56,
-      "low": 42,
+      "low": 41,
       "rain": 0
      }
     },
     "blend": {
-     "high": 58,
+     "high": 56,
      "low": 40
     },
     "adjusted": {
-     "high": 59,
+     "high": 56,
      "low": 39
     },
     "spread": {
-     "high": 3,
+     "high": 4,
      "low": 5
     },
     "note": "NWS and the models agree within a few degrees"
@@ -695,7 +635,7 @@
     },
     "models": {
      "ncep_nbm_conus": {
-      "high": 60,
+      "high": 58,
       "low": 42,
       "rain": 0
      },
@@ -703,27 +643,27 @@
       "rain": 0
      },
      "gfs_seamless": {
-      "high": 59,
+      "high": 60,
       "low": 46,
       "rain": 0
      },
      "ecmwf_ifs025": {
-      "high": 60,
-      "low": 42,
+      "high": 59,
+      "low": 41,
       "rain": 0
      }
     },
     "blend": {
-     "high": 60,
+     "high": 59,
      "low": 42
     },
     "adjusted": {
-     "high": 61,
+     "high": 60,
      "low": 41
     },
     "spread": {
-     "high": 1,
-     "low": 4
+     "high": 2,
+     "low": 5
     },
     "note": "NWS and the models agree within a few degrees"
    }
@@ -737,7 +677,7 @@
    },
    {
     "date": "2026-11-09",
-    "high": 59,
+    "high": 56,
     "low": 39,
     "rain": 0
    }
