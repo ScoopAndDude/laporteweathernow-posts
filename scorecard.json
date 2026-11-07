@@ -1,13 +1,13 @@
 {
  "about": "Daily Scoop forecasts graded against the La Porte airport (KPPO), same rules as laporteweathernow.com/track-record: temperatures count if within 3 degrees F; rain calls count at 50%+ (should rain) and 20% or less (should stay dry). Made by scripts/scorecard.py.",
- "generated": "2026-11-06T11:24:59-06:00",
+ "generated": "2026-11-07T05:02:20-06:00",
  "station": "La Porte Municipal Airport (KPPO)",
  "tolerance": 3,
  "since": "2026-09-27",
  "window": {
   "days": 30,
-  "from": "2026-10-07",
-  "to": "2026-11-05"
+  "from": "2026-10-08",
+  "to": "2026-11-06"
  },
  "last30": {
   "days": 24,
@@ -20,12 +20,12 @@
    24
   ],
   "rainLikely": [
-   4,
-   6
+   5,
+   7
   ],
   "rainDry": [
-   13,
-   13
+   12,
+   12
   ],
   "rain": [
    17,
@@ -35,26 +35,26 @@
   "lowAvgOff": 2.5
  },
  "allTime": {
-  "days": 33,
+  "days": 34,
   "highs": [
-   22,
-   33
+   23,
+   34
   ],
   "lows": [
-   23,
-   33
+   24,
+   34
   ],
   "rainLikely": [
-   5,
-   7
+   6,
+   8
   ],
   "rainDry": [
    19,
    19
   ],
   "rain": [
-   24,
-   26
+   25,
+   27
   ],
   "highAvgOff": 2.9,
   "lowAvgOff": 2.6
@@ -62,9 +62,9 @@
  "bias": {
   "days": 24,
   "ready": true,
-  "high": -0.8,
+  "high": -0.5,
   "highDays": 24,
-  "low": 1.4,
+  "low": 1.2,
   "lowDays": 24,
   "note": "Average of (forecast minus airport reading) over the last 30 graded days; positive means we ran warm. Used to nudge the model blend once 14+ days are graded."
  },
@@ -88,6 +88,32 @@
    "blendHighAvgOff": 1.6
   },
   "days": [
+   {
+    "date": "2026-11-06",
+    "said": {
+     "nwsHigh": 48,
+     "blendHigh": 49,
+     "rain": 59
+    },
+    "status": "scored",
+    "observed": {
+     "high": 46,
+     "rained": true,
+     "rainText": "0.01 in of rain"
+    },
+    "nwsHigh": {
+     "off": 2.0,
+     "hit": true
+    },
+    "blendHigh": {
+     "off": 3.0,
+     "hit": true
+    },
+    "rain": {
+     "hit": true,
+     "kind": "likely"
+    }
+   },
    {
     "date": "2026-11-05",
     "said": {
@@ -939,27 +965,27 @@
   ]
  },
  "latest": {
-  "date": "2026-11-05",
-  "fromPost": "2026-11-04",
+  "date": "2026-11-06",
+  "fromPost": "2026-11-05",
   "leadDays": 1,
   "forecast": {
-   "high": 56,
-   "low": 46,
-   "rain": 60
+   "high": 49,
+   "low": 42,
+   "rain": 70
   },
   "status": "scored",
   "observed": {
-   "high": 54,
-   "low": 46,
+   "high": 46,
+   "low": 43,
    "rained": true,
-   "rainText": "0.07 in of rain"
+   "rainText": "0.01 in of rain"
   },
   "high": {
-   "off": 2.0,
+   "off": 3.0,
    "hit": true
   },
   "low": {
-   "off": 0.0,
+   "off": 1.0,
    "hit": true
   },
   "rain": {
@@ -1000,7 +1026,26 @@
     "low": 42,
     "rain": 70
    },
-   "status": "pending"
+   "status": "scored",
+   "observed": {
+    "high": 46,
+    "low": 43,
+    "rained": true,
+    "rainText": "0.01 in of rain"
+   },
+   "high": {
+    "off": 3.0,
+    "hit": true
+   },
+   "low": {
+    "off": 1.0,
+    "hit": true
+   },
+   "rain": {
+    "hit": true,
+    "kind": "likely"
+   },
+   "verdict": "hit"
   },
   {
    "date": "2026-11-05",
@@ -2099,6 +2144,7 @@
   "2026-11-02": 0,
   "2026-11-03": 13,
   "2026-11-04": 24,
-  "2026-11-05": 24
+  "2026-11-05": 24,
+  "2026-11-06": 24
  }
 }
