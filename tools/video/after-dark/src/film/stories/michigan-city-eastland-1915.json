@@ -1,0 +1,250 @@
+{
+  "slug": "michigan-city-eastland-1915",
+  "title": "The Eastland, 1915: the Picnic Boat to Michigan City That Never Left the Dock",
+  "series": "LA PORTE AFTER DARK",
+  "music": {
+    "seed": 105,
+    "prog": 6
+  },
+  "say": [],
+  "sources": [
+    {
+      "what": "'traveling to a picnic in Michigan City'; 'partially capsized in the Chicago River'",
+      "who": "National Archives at Chicago, Eastland",
+      "url": "https://www.archives.gov/chicago/holdings/eastland"
+    },
+    {
+      "what": "July 24, 1915; at least 844 lives; one of the worst maritime disasters in American history",
+      "who": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/print/article/177429"
+    },
+    {
+      "what": "Western Electric employee picnic in Michigan City; about 2,500 aboard; capsized at the dock; 844 died; the armory as a temporary morgue",
+      "who": "WTTW",
+      "url": "https://www.wttw.com/node/1019"
+    },
+    {
+      "what": "more than 2,500 aboard; Hawthorne Works picnic",
+      "who": "WBEZ",
+      "url": "https://www.wbez.org/stories/eastland-disaster-100-years-later/d6640683-de2c-4b96-bb8e-c8306431cd83"
+    },
+    {
+      "what": "about 2,500 aboard; 844 killed",
+      "who": "CBS Chicago",
+      "url": "https://www.cbsnews.com/amp/chicago/news/remembering-eastland-disaster-almost-100-years-later"
+    },
+    {
+      "what": "'The anchor chain before you is comprised of 844 individual links'",
+      "who": "Historical marker, Michigan City (HMdb)",
+      "url": "https://www.hmdb.org/m.asp?m=193955"
+    },
+    {
+      "what": "'Each anchor chain link represents the 844 passengers who lost their lives'; annual July memorial",
+      "who": "Michigan City Historical Society",
+      "url": "https://www.mchistorical.org/events/790rrl24pvrzyjrdn3qlor93dipwk1"
+    },
+    {
+      "what": "'deadliest shipwreck on the Great Lakes'; Michigan City memorial",
+      "who": "95.3 MNC / Associated Press (2019)",
+      "url": "https://www.953mnc.com/2019/07/22/indiana-museum-to-honor-victims-of-1915-ss-eastland-disaster/"
+    },
+    {
+      "what": "people report 'faces of people floating in the water' from the Clark Street Bridge",
+      "who": "CBS Chicago (2021)",
+      "url": "https://www.cbsnews.com/chicago/news/chicago-hauntings-ghosts-eastland-disaster"
+    },
+    {
+      "what": "passersby report 'strange reflections of faces, not their own' in the river",
+      "who": "Ghost Research Society",
+      "url": "https://ghostresearch.org/sites/eastland.html"
+    },
+    {
+      "what": "'Western Electric Company workers and their families'; 'still tied to the dock'; 'most deadly shipwreck in Great Lakes history'",
+      "who": "Smithsonian Magazine",
+      "url": "https://www.smithsonianmag.com/history/eastland-disaster-killed-more-passengers-titanic-and-lusitania-why-has-it-been-forgotten-180953146/"
+    },
+    {
+      "what": "'tied to a dock in the Chicago River'; 'largest loss of life... from a single shipwreck on the Great Lakes'",
+      "who": "U.S. Coast Guard history",
+      "url": "https://www.dco.uscg.mil/Portals/9/DCO%20Documents/5p/CG-5PC/CG-CVC/MIR/Readings/Trident-History-1915-EASTLAND.pdf"
+    }
+  ],
+  "beats": [
+    {
+      "text": "They were headed for a picnic in Michigan City. 844 of them never left the dock.",
+      "pause": 0.7,
+      "scene": {
+        "kind": "lake",
+        "seed": 0,
+        "city": true,
+        "pier": false,
+        "move": "in",
+        "amount": 0.08,
+        "fog": 0.2
+      },
+      "label": "JULY 24, 1915",
+      "title": {
+        "text": "THE EASTLAND",
+        "at": "never left",
+        "size": 96,
+        "style": "red"
+      },
+      "sfx": [
+        {
+          "kind": "heartbeat",
+          "at": "844",
+          "gain": 0.5
+        }
+      ],
+      "credit": "History: National Archives; Britannica; WTTW"
+    },
+    {
+      "text": "On July 24, 1915, Western Electric workers and their families boarded the steamer Eastland in Chicago.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "card",
+        "seed": 0,
+        "move": "still"
+      },
+      "label": "THE PICNIC",
+      "card": {
+        "kind": "map",
+        "center": "Michigan City",
+        "span": 1.1,
+        "pins": [
+          "Chicago",
+          "Michigan City"
+        ],
+        "hot": "Michigan City",
+        "notes": {
+          "Michigan City": "the picnic"
+        }
+      },
+      "credit": "National Archives; WTTW; WBEZ"
+    },
+    {
+      "text": "About 2,500 people were aboard. Still tied up in the Chicago River, the ship rolled over onto its side.",
+      "pause": 0.8,
+      "scene": {
+        "kind": "town",
+        "seed": 2,
+        "tower": "none",
+        "move": "in",
+        "amount": 0.1,
+        "fog": 0.25
+      },
+      "label": "THE CHICAGO RIVER",
+      "flash": [
+        "rolled over"
+      ],
+      "sfx": [
+        {
+          "kind": "whoosh",
+          "at": "rolled over",
+          "gain": 0.6
+        }
+      ],
+      "credit": "WTTW; CBS Chicago; National Archives"
+    },
+    {
+      "text": "844 people died. It's the deadliest shipwreck on the Great Lakes.",
+      "pause": 0.8,
+      "scene": {
+        "kind": "card",
+        "seed": 1,
+        "move": "still"
+      },
+      "label": "844",
+      "card": {
+        "kind": "year",
+        "label": "PEOPLE LOST",
+        "value": "844",
+        "note": "THE DEADLIEST GREAT LAKES SHIPWRECK"
+      },
+      "credit": "Britannica; WTTW; Associated Press"
+    },
+    {
+      "text": "Today, beside the Old Lighthouse in Michigan City, an anchor chain stretches across the grounds. 844 links. One for each person who died.",
+      "pause": 0.8,
+      "scene": {
+        "kind": "lighthouse",
+        "style": "house",
+        "seed": 1,
+        "move": "in",
+        "amount": 0.07
+      },
+      "label": "THE MEMORIAL",
+      "typed": [
+        {
+          "text": "844 LINKS",
+          "at": "844 links",
+          "y": 545,
+          "size": 84
+        }
+      ],
+      "sfx": [
+        {
+          "kind": "bell",
+          "at": "One for each",
+          "gain": 0.5
+        }
+      ],
+      "credit": "Michigan City Historical Society; historical marker"
+    },
+    {
+      "text": "And in Chicago, people say that from the river bridges, they still see faces in the water.",
+      "pause": 0.8,
+      "scene": {
+        "kind": "card",
+        "seed": 2,
+        "move": "in",
+        "amount": 0.06,
+        "fog": 0.4
+      },
+      "label": "WHAT PEOPLE SAY",
+      "sfx": [
+        {
+          "kind": "heartbeat",
+          "at": "faces",
+          "gain": 0.6
+        }
+      ],
+      "credit": "Legend: CBS Chicago (2021); Ghost Research Society"
+    },
+    {
+      "text": "Michigan City still remembers them.",
+      "pause": 0.6,
+      "scene": {
+        "kind": "lighthouse",
+        "style": "house",
+        "seed": 2,
+        "move": "out",
+        "amount": 0.06
+      },
+      "label": "WE REMEMBER",
+      "credit": "Michigan City Historical Society; Associated Press"
+    },
+    {
+      "text": "Comment your town for the next La Porte After Dark.",
+      "end": true,
+      "end_card": {
+        "q": "COMMENT YOUR TOWN",
+        "q2": "FOR THE NEXT STORY",
+        "bubble": "Your town, your state",
+        "pill": "Eastland memorial: Old Lighthouse grounds, Michigan City",
+        "scene": {
+          "kind": "lighthouse",
+          "style": "house",
+          "seed": 3,
+          "move": "still"
+        }
+      },
+      "credit": "All pictures drawn"
+    }
+  ],
+  "factcheck": {
+    "date": "2026-11-07",
+    "by": "independent subagent, 2 rounds",
+    "result": "'Every July' became 'still remembers them' (ceremonies documented 2015, 2019, 2023); chain 'stretches across the grounds'; death card labeled 'people lost'; river scene not shown as the lake; all supported (the river faces are reported lore, 'people say')"
+  }
+}
