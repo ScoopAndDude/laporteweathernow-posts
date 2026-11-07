@@ -171,6 +171,8 @@ Load the Buffer tools with ToolSearch (`list_posts`, `create_post`, `get_post`).
 | YouTube (LaPorteWeatherNow) | `6abd7b7dea19ca0bde393d07` | metadata.youtube: title, categoryId "27", privacy "public", madeForKids false, notifySubscribers false, isAiGenerated false |
 | TikTok (@scoopanddude) | `6ad3ae0d778b240e2f3c2f77` | metadata.tiktok: isAiGenerated false |
 | X (@ScoopAndDude) | `6abd7b5bea19ca0bde39378f` | text only besides the video |
+| Instagram (@laporteweathernow) | `6aef3283e29c69a171942104` | metadata.instagram: type "reel", shouldShareToFeed true, isAiGenerated false; text = the `tiktok` caption |
+| Threads (@danielscoop420) | `6aef3318e29c69a171942800` | metadata.threads: type "post"; text = the `x` text with only one hashtag, #LaPorteAfterDark (Threads allows one), and "Pictures drawn. Narration is a computer voice." |
 
 - Facebook (La Porte Weather Now page) and Pinterest are connected in Buffer too, but don't post there: Facebook
   stays Scoop's (he posts by hand to add topics), and Pinterest waits until he picks a board.
@@ -180,11 +182,12 @@ Load the Buffer tools with ToolSearch (`list_posts`, `create_post`, `get_post`).
 - List the scheduled YouTube posts first (status scheduled, sorted by dueAt). Each new short goes at 6:30 PM on the
   first night after the last scheduled After Dark short that has no After Dark short yet (skip nights that already
   have one; other posts, like weather promos, don't count). Use mode `"customScheduled"` with that dueAt on all
-  three channels. If nothing is scheduled, use 6:30 PM today (or tomorrow if that has passed).
+  five channels. If nothing is scheduled, use 6:30 PM today (or tomorrow if that has passed).
 - Each run makes up to 4 shorts, one at a time (research, make, fact-check, post), and stops early once the queue
   reaches 14 nights ahead. Keep the run varied (no two jails, cemeteries or same town on back-to-back nights).
 - Don't post the same short twice: if `log.md` or Buffer already has this slug, stop.
-- Write the three Buffer post IDs into `posts/<slug>.json` and `log.md`, commit and push.
+- Instagram and Threads were added Nov. 7, 2026: every short goes to all five channels at the same time.
+- Write the five Buffer post IDs into `posts/<slug>.json` and `log.md`, commit and push.
 
 ## 10. Tell Scoop
 
