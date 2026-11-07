@@ -1,0 +1,188 @@
+{
+  "about": "The Daily Video for La Porte Weather Now (scripts/daily_video.py): official NWS weather, read aloud.",
+  "date": "2026-11-07",
+  "planned": "2026-11-07T06:02:00-06:00",
+  "source": "nws",
+  "forecastUpdated": "2026-11-07T10:30:14+00:00",
+  "observationTime": "2026-11-07T04:55:00-06:00",
+  "alerts": [],
+  "shortFused": [],
+  "hook": {
+    "kind": "plain",
+    "score": 10,
+    "big": "49°",
+    "small": null,
+    "say": "How's today looking, LaPorte? Partly sunny, high near 49°.",
+    "when": "today"
+  },
+  "hookOptions": [
+    {
+      "kind": "plain",
+      "score": 10,
+      "say": "How's today looking, LaPorte? Partly sunny, high near 49°."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "hook",
+      "label": "LAPORTE · SATURDAY, NOV. 7",
+      "big": "49°",
+      "small": null,
+      "icon": "sun-cloud",
+      "tone": "plain",
+      "hookKind": "plain",
+      "say": "How's today looking, LaPorte? Partly sunny, high near 49°.",
+      "ask": [
+        "How's today looking?",
+        "partly sunny"
+      ],
+      "sayParts": [
+        "How's today looking, LaPorte?",
+        "Partly sunny, high near 49°."
+      ],
+      "spoken": "How's today looking, La Port? Partly sunny, high near forty-nine degrees.",
+      "spokenParts": [
+        "How's today looking, La Port?",
+        "Partly sunny, high near forty-nine degrees."
+      ],
+      "factAfter": 2.16,
+      "voiceFile": "voice/hook.wav",
+      "voiceSeconds": 5.16,
+      "start": 0.0,
+      "duration": 5.56,
+      "voiceAt": 0.04,
+      "factAt": 2.08
+    },
+    {
+      "id": "today",
+      "sun": null,
+      "kind": "period",
+      "title": "TODAY",
+      "date": "Saturday, Nov. 7",
+      "temp": 49,
+      "tempLabel": "HIGH",
+      "icon": "sun-cloud",
+      "text": "Partly sunny",
+      "sentence": "Partly sunny",
+      "rain": null,
+      "note": null,
+      "hours": [
+        {
+          "label": "6 AM",
+          "temp": 38,
+          "pop": 2
+        },
+        {
+          "label": "8 AM",
+          "temp": 41,
+          "pop": 1
+        },
+        {
+          "label": "10 AM",
+          "temp": 46,
+          "pop": 0
+        },
+        {
+          "label": "12 PM",
+          "temp": 48,
+          "pop": 1
+        },
+        {
+          "label": "2 PM",
+          "temp": 48,
+          "pop": 0
+        },
+        {
+          "label": "4 PM",
+          "temp": 47,
+          "pop": 0
+        }
+      ],
+      "say": "Today: partly sunny. High 49. Tonight: low 33.",
+      "next": {
+        "name": "Tonight",
+        "temp": 33,
+        "tempLabel": "LOW"
+      },
+      "spoken": "Today: partly sunny. High forty-nine. Tonight: low thirty-three.",
+      "voiceFile": "voice/today.wav",
+      "voiceSeconds": 4.2,
+      "start": 5.56,
+      "duration": 4.6,
+      "voiceAt": 5.66
+    },
+    {
+      "id": "days",
+      "kind": "days",
+      "title": "NEXT 3 DAYS",
+      "days": [
+        {
+          "name": "Sun",
+          "day": "Sunday",
+          "hi": 55,
+          "lo": 38,
+          "pop": null,
+          "icon": "sun-small-cloud",
+          "text": "Mostly sunny",
+          "short": "Mostly Sunny",
+          "star": false
+        },
+        {
+          "name": "Mon",
+          "day": "Monday",
+          "hi": 57,
+          "lo": 42,
+          "pop": null,
+          "icon": "sun",
+          "text": "Sunny",
+          "short": "Sunny",
+          "star": false
+        },
+        {
+          "name": "Tue",
+          "day": "Tuesday",
+          "hi": 59,
+          "lo": 37,
+          "pop": null,
+          "icon": "sun",
+          "text": "Sunny",
+          "short": "Sunny",
+          "star": false
+        }
+      ],
+      "say": "Sunday: mostly sunny, 55.",
+      "spoken": "Sunday: mostly sunny, fifty-five.",
+      "voiceFile": "voice/days.wav",
+      "voiceSeconds": 2.65,
+      "start": 10.16,
+      "duration": 3.2,
+      "voiceAt": 10.26
+    },
+    {
+      "id": "end",
+      "kind": "end",
+      "say": "laporteweathernow.com.",
+      "spoken": "La Port Weather Now dot com.",
+      "voiceFile": "voice/end.wav",
+      "voiceSeconds": 2.02,
+      "start": 13.36,
+      "duration": 2.42,
+      "voiceAt": 13.46
+    }
+  ],
+  "caption": "LaPorte weather for Saturday, Nov. 7, from the National Weather Service:\nToday: Partly sunny. High 49.\nTonight: Partly cloudy. Low 33.\nSunday: Mostly sunny, high 55. Monday: Sunny, high 57. Tuesday: Sunny, high 59.\nToday's Daily Scoop: Partly sunny near 49; dry all week, highs near 59 by Tuesday\nFree forecast every morning: laporteweathernow.com\nNo hype. Just the forecast.\n#LaPorte #LaPorteIndiana #LaPorteCounty #IndianaWeather #NWIndiana",
+  "words": 29,
+  "mode": "auto",
+  "normalsStation": {
+    "id": "USC00124837",
+    "name": "LAPORTE, IN US",
+    "km": 1.0
+  },
+  "seconds": 15.78,
+  "voice": "Kokoro-82M af_heart, speed 1.1",
+  "video": "laporte-2026-11-07.mp4",
+  "cover": "cover.jpg",
+  "bytes": 6591737,
+  "rendered": "2026-11-07T06:03:58-06:00"
+}
