@@ -1,6 +1,7 @@
-# La Porte After Dark: how each twice-weekly short gets made and posted
+# La Porte After Dark: how each short gets made and posted
 
-This is the checklist the scheduled Claude task follows every Tuesday and Friday. Each run starts in a fresh cloud
+This is the checklist the scheduled Claude task follows every Tuesday and Friday (each run makes up to 4 shorts and
+keeps the queue about two weeks ahead). Each run starts in a fresh cloud
 session with nothing from earlier runs, so everything it needs is in this folder (`tools/video/after-dark/` on the
 `after-dark` branch of ScoopAndDude/laporteweathernow-posts).
 
@@ -171,10 +172,17 @@ Load the Buffer tools with ToolSearch (`list_posts`, `create_post`, `get_post`).
 | TikTok (@scoopanddude) | `6ad3ae0d778b240e2f3c2f77` | metadata.tiktok: isAiGenerated false |
 | X (@ScoopAndDude) | `6abd7b5bea19ca0bde39378f` | text only besides the video |
 
+- Facebook (La Porte Weather Now page) and Pinterest are connected in Buffer too, but don't post there: Facebook
+  stays Scoop's (he posts by hand to add topics), and Pinterest waits until he picks a board.
 - Asset: `[{"video": {"url": "<raw URL>", "metadata": {"thumbnailOffset": 800}}}]`, schedulingType `"automatic"`.
-- The free plan holds 10 scheduled posts per channel. List each channel's scheduled posts first. If it has room,
-  use mode `"customScheduled"` with dueAt at 6:30 PM Central on the run's day (or the next day at 6:30 PM if that has
-  passed). If it's full, use mode `"shareNow"`.
+- Buffer is on a paid plan since Nov. 7, 2026 (5,000 scheduled posts), so there's no queue limit. The goal is one
+  After Dark short every night at 6:30 PM Central, scheduled about two weeks ahead (Scoop, Nov. 7, 2026).
+- List the scheduled YouTube posts first (status scheduled, sorted by dueAt). Each new short goes at 6:30 PM on the
+  first night after the last scheduled After Dark short that has no After Dark short yet (skip nights that already
+  have one; other posts, like weather promos, don't count). Use mode `"customScheduled"` with that dueAt on all
+  three channels. If nothing is scheduled, use 6:30 PM today (or tomorrow if that has passed).
+- Each run makes up to 4 shorts, one at a time (research, make, fact-check, post), and stops early once the queue
+  reaches 14 nights ahead. Keep the run varied (no two jails, cemeteries or same town on back-to-back nights).
 - Don't post the same short twice: if `log.md` or Buffer already has this slug, stop.
 - Write the three Buffer post IDs into `posts/<slug>.json` and `log.md`, commit and push.
 
