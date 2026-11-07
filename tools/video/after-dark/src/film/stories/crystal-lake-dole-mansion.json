@@ -1,0 +1,237 @@
+{
+  "slug": "crystal-lake-dole-mansion",
+  "title": "The Dole Mansion in Crystal Lake, Illinois: an Ice Baron's House and the Woman People Say They've Seen",
+  "series": "LA PORTE AFTER DARK",
+  "music": {
+    "seed": 91,
+    "prog": 6
+  },
+  "say": [],
+  "sources": [
+    {
+      "what": "'a grain dealer and ice harvester'; Lou Ringling's 1922 country club; 2002 rescue from a condo developer by the Lakeside Legacy Foundation",
+      "who": "Landmarks Illinois, C.S. Dole Mansion",
+      "url": "https://www.landmarks.org/preservation-programs/success-stories/c-s-dole-mansion/"
+    },
+    {
+      "what": "'constructed in 1865 for Charles Sidney Dole'; ice houses on the lake; Crystal Lake Country Club 1922-1938; St. Mary Minor School for Boys (Franciscans) from 1944; saved 2002; hours",
+      "who": "Lakeside Arts Park at The Dole, history",
+      "url": "https://www.thedole.org/history"
+    },
+    {
+      "what": "summer home; Lou Ringling's country club; Franciscan school; community fundraising; self-guided tours",
+      "who": "Northwest Quarterly (2022)",
+      "url": "https://smartlivingchicagoland.northwestquarterly.com/2022/08/19/for-100-years-a-cultural-destination-and-more/"
+    },
+    {
+      "what": "Charles S. and James H. Dole filled ice houses on the lake in the 1870s",
+      "who": "Crystal Lake Historical Society",
+      "url": "https://cl-hs.org/?p=641"
+    },
+    {
+      "what": "worker saw 'a Victorian woman' at a First Friday event, then she vanished; 'some believe' Lou Ringling's ghost; staff report sudden temperature changes; historical society president: 'I have never seen anything'",
+      "who": "Patch, 'Is There a Dole Ghost?' (2012)",
+      "url": "https://patch.com/illinois/crystallake/is-there-a-dole-ghost"
+    },
+    {
+      "what": "medium says guests saw 'this shadow of a woman looking out the window'; she says she has seen Lou Ringling's ghost; ice shipped to Chicago",
+      "who": "Northwest Herald (June 2022)",
+      "url": "https://shawlocal.com/northwest-herald/news/2022/06/14/crystal-lake-mediums-paranormal-tours-of-dole-mansion-highlight-spaces-unique-history-energy"
+    },
+    {
+      "what": "'The mansion was built to impress'; a woman in Victorian dress reported; 'like a train station of spirits'",
+      "who": "Northwest Herald (Oct. 30, 2023)",
+      "url": "https://www.shawlocal.com/northwest-herald/2023/10/30/haunted-folklore-crystal-lakes-dole-mansion-is-like-a-train-station-of-spirits"
+    },
+    {
+      "what": "'built a three-story mansion'; grain merchant, Armour, Dole and Company; later owner used the property for harvesting lake ice",
+      "who": "The Dole, Lakeland Farm 1860-1896",
+      "url": "https://www.thedole.org/history/lakeland-farm-1860-1896"
+    },
+    {
+      "what": "Albert Ringling, 'one of the five founding brothers'",
+      "who": "Encyclopaedia Britannica, Ringling Brothers",
+      "url": "https://www.britannica.com/topic/Ringling-Brothers"
+    }
+  ],
+  "beats": [
+    {
+      "text": "A figure in Victorian dress. That's what some people say they've seen at the Dole Mansion, in Crystal Lake, Illinois.",
+      "pause": 0.6,
+      "scene": {
+        "kind": "courthouse",
+        "tower": "turret",
+        "seed": 0,
+        "move": "in",
+        "amount": 0.1,
+        "fog": 0.22,
+        "ghost": "woman",
+        "ghost_x": 900,
+        "round": false
+      },
+      "label": "CRYSTAL LAKE, ILLINOIS",
+      "title": {
+        "text": "THE DOLE MANSION",
+        "at": "Dole Mansion",
+        "size": 92,
+        "style": "red"
+      },
+      "sfx": [
+        {
+          "kind": "heartbeat",
+          "at": "Victorian dress",
+          "gain": 0.5
+        }
+      ],
+      "credit": "What people report: Patch (2012); Northwest Herald (2023)"
+    },
+    {
+      "text": "It was built in 1865 for Charles Dole, a Chicago grain merchant. Later, ice was cut from the lake here.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "lake",
+        "seed": 1,
+        "move": "in",
+        "amount": 0.07,
+        "snow": true,
+        "pier": false
+      },
+      "label": "1865",
+      "typed": [
+        {
+          "text": "THE GRAIN BARON",
+          "at": "grain merchant",
+          "y": 545,
+          "size": 80
+        }
+      ],
+      "credit": "History: Landmarks Illinois; The Dole; Crystal Lake Historical Society"
+    },
+    {
+      "text": "In 1922, a group that included Lou Ringling, widow of circus co-founder Al Ringling, turned it into a country club.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "courthouse",
+        "tower": "turret",
+        "seed": 1,
+        "move": "in",
+        "amount": 0.08,
+        "round": false
+      },
+      "label": "THE COUNTRY CLUB",
+      "card": {
+        "kind": "year",
+        "at": "turned it",
+        "label": "THE COUNTRY CLUB",
+        "value": "1922",
+        "note": "LOU RINGLING"
+      },
+      "credit": "Landmarks Illinois; The Dole; Northwest Quarterly"
+    },
+    {
+      "text": "Later, Franciscans ran a boys' school here. In 2002, the community raised the money to save it from a condo developer.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "courthouse",
+        "tower": "turret",
+        "seed": 2,
+        "move": "in",
+        "amount": 0.07,
+        "fog": 0.2,
+        "round": false
+      },
+      "label": "SAVED",
+      "credit": "Landmarks Illinois; The Dole; Northwest Quarterly"
+    },
+    {
+      "text": "Some believe Lou Ringling never left. A staff member has described drastic temperature changes. And visitors tell of a figure in Victorian dress.",
+      "pause": 0.9,
+      "scene": {
+        "kind": "courthouse",
+        "tower": "turret",
+        "seed": 3,
+        "move": "in",
+        "amount": 0.12,
+        "fog": 0.32,
+        "ghost": "woman",
+        "ghost_x": 880,
+        "round": false
+      },
+      "label": "WHAT PEOPLE REPORT",
+      "typed": [
+        {
+          "text": "VICTORIAN DRESS",
+          "at": "Victorian dress",
+          "y": 545,
+          "size": 76
+        }
+      ],
+      "sfx": [
+        {
+          "kind": "whoosh",
+          "at": "Victorian dress",
+          "gain": 0.6
+        }
+      ],
+      "credit": "Patch (2012); Northwest Herald (2022, 2023)"
+    },
+    {
+      "text": "Not everyone believes it. But the stories keep coming.",
+      "pause": 0.7,
+      "scene": {
+        "kind": "lake",
+        "seed": 2,
+        "move": "out",
+        "amount": 0.06,
+        "fog": 0.2,
+        "pier": false
+      },
+      "label": "THE LEGEND",
+      "sfx": [
+        {
+          "kind": "music_box",
+          "at": "stories",
+          "gain": 0.5
+        }
+      ],
+      "credit": "Patch (2012); Northwest Herald (2023)"
+    },
+    {
+      "text": "Today the Dole is an arts center, open to the public.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "courthouse",
+        "tower": "turret",
+        "seed": 4,
+        "move": "out",
+        "amount": 0.08,
+        "round": false
+      },
+      "label": "TODAY",
+      "credit": "The Dole; Northwest Quarterly"
+    },
+    {
+      "text": "Comment your town, and it could be next.",
+      "end": true,
+      "end_card": {
+        "q": "COMMENT YOUR TOWN",
+        "q2": "IT COULD BE NEXT",
+        "bubble": "Your town, your state",
+        "pill": "The Dole, Crystal Lake: open to the public",
+        "scene": {
+          "kind": "courthouse",
+          "tower": "turret",
+          "seed": 5,
+          "move": "still",
+          "round": false
+        }
+      },
+      "credit": "All pictures drawn"
+    }
+  ],
+  "factcheck": {
+    "date": "2026-11-07",
+    "by": "independent subagent, 2 rounds",
+    "result": "Ice harvest moved to 'later' (it was the son-in-law's era); 'grain baron' not 'ice baron'; Lou Ringling 'a group that included', Al a co-founder; 'a condo developer'; temperature changes from one staff member; 'figure' (sources say woman and girl); mansion redrawn at three storeys with a tower (exact tower shape and gables not verified); all narration supported"
+  }
+}

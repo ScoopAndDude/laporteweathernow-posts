@@ -1003,11 +1003,12 @@ class Courthouse(Shot):
             # turret with a conical roof on the far corner (no clock)
             c.rect(120, 600, 300, base, "#0d0c0b")
             c.poly([(104, 606), (170, 500), (250, 500), (316, 606)], "#090808")
-            c.rect(890, 800, 990, base, "#0c0b0a")
-            c.poly([(878, 806), (940, 680), (1002, 806)], "#090808")
-            c.rect(924, 880, 956, 950, "#070809")
-            if hash2(940, 880, self.seed) > 0.5:
-                lights.rect(924, 880, 956, 950, WARM, 0.55)
+            if p.get("round", True):                                   # round=False leaves the small turret out
+                c.rect(890, 800, 990, base, "#0c0b0a")
+                c.poly([(878, 806), (940, 680), (1002, 806)], "#090808")
+                c.rect(924, 880, 956, 950, "#070809")
+                if hash2(940, 880, self.seed) > 0.5:
+                    lights.rect(924, 880, 956, 950, WARM, 0.55)
             for wy in (660, 820, 980, 1110):
                 c.rect(186, wy, 234, wy + 90, "#070809")
                 if hash2(210, wy, self.seed) > 0.55:
