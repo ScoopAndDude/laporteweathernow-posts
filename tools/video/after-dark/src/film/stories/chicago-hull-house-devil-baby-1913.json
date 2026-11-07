@@ -1,0 +1,193 @@
+{
+  "slug": "chicago-hull-house-devil-baby-1913",
+  "title": "Hull-House, 1913: the Week Chicago Lined Up to See a 'Devil Baby'",
+  "series": "LA PORTE AFTER DARK",
+  "music": {
+    "seed": 131,
+    "prog": 6
+  },
+  "say": [],
+  "sources": [
+    {
+      "what": "'For a period of six weeks in the fall of 1913, thousands of people appeared at Hull-House'; versions by immigrant group",
+      "who": "Jane Addams Papers Project (Ramapo College)",
+      "url": "https://janeaddams.ramapo.edu/2015/10/"
+    },
+    {
+      "what": "'his cloven hoofs, his pointed ears and diminutive tail'; visitors 'poured in all day long'",
+      "who": "Jane Addams, 'The Devil Baby at Hull-House,' The Atlantic, Oct. 1916 (Ramapo digital edition)",
+      "url": "https://digital.janeaddams.ramapo.edu/items/show/10295"
+    },
+    {
+      "what": "devil baby legend; people lined up; Hull House rumored to be the dwelling of spirits",
+      "who": "WTTW, Chicago Mysteries",
+      "url": "https://www.wttw.com/node/35448"
+    },
+    {
+      "what": "'No amount of denial convinced them that he was not there'; Lady in White lore; ghost tours",
+      "who": "Jane Addams Hull-House Museum blog (2022)",
+      "url": "https://www.hullhousemuseum.org/hullhouse-blog/2022/9/14/findingfolklore"
+    },
+    {
+      "what": "Chicago Examiner, Halloween 1913: thousands believed it",
+      "who": "Hull-House Museum (UIC)",
+      "url": "https://hullhouse.uic.edu/?p=309"
+    }
+  ],
+  "beats": [
+    {
+      "text": "In 1913, crowds lined up in Chicago to see a devil baby.",
+      "pause": 0.7,
+      "scene": {
+        "kind": "town",
+        "seed": 4,
+        "tower": "none",
+        "move": "in",
+        "amount": 0.1,
+        "fog": 0.25
+      },
+      "label": "CHICAGO, 1913",
+      "title": {
+        "text": "THE DEVIL BABY",
+        "at": "devil baby",
+        "size": 96,
+        "style": "red"
+      },
+      "sfx": [
+        {
+          "kind": "heartbeat",
+          "at": "devil baby",
+          "gain": 0.6
+        }
+      ],
+      "credit": "History: Jane Addams Papers Project; WTTW"
+    },
+    {
+      "text": "The rumor said a baby with hooves and a tail was hidden at Hull-House, Jane Addams's settlement house on Halsted Street.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "courthouse",
+        "tower": "none",
+        "seed": 0,
+        "move": "in",
+        "amount": 0.08
+      },
+      "label": "HULL-HOUSE",
+      "typed": [
+        {
+          "text": "HOOVES AND A TAIL",
+          "at": "hooves",
+          "y": 545,
+          "size": 76
+        }
+      ],
+      "credit": "Jane Addams (The Atlantic, 1916); WTTW"
+    },
+    {
+      "text": "For six weeks, people streamed in from all over the city, asking to see it.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "town",
+        "seed": 5,
+        "tower": "none",
+        "move": "in",
+        "amount": 0.08
+      },
+      "label": "SIX WEEKS",
+      "credit": "Jane Addams Papers Project; Hull-House Museum"
+    },
+    {
+      "text": "Addams said there was no such baby. They didn't believe her.",
+      "pause": 0.7,
+      "scene": {
+        "kind": "card",
+        "seed": 0,
+        "move": "still"
+      },
+      "label": "JANE ADDAMS",
+      "card": {
+        "kind": "quote",
+        "at": "didn't believe",
+        "lines": [
+          "No amount of denial",
+          "convinced them that",
+          "he was not there."
+        ],
+        "by": "JANE ADDAMS"
+      },
+      "credit": "Hull-House Museum; Jane Addams (The Atlantic, 1916)"
+    },
+    {
+      "text": "Each immigrant group told its own version of the story.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "town",
+        "seed": 6,
+        "tower": "none",
+        "move": "in",
+        "amount": 0.08,
+        "fog": 0.2
+      },
+      "label": "THE STORIES",
+      "credit": "Jane Addams Papers Project; The Atlantic (1916)"
+    },
+    {
+      "text": "There never was a devil baby. But legend says Hull-House is haunted anyway.",
+      "pause": 0.8,
+      "scene": {
+        "kind": "courthouse",
+        "tower": "none",
+        "seed": 1,
+        "move": "in",
+        "amount": 0.12,
+        "fog": 0.3,
+        "ghost": "woman",
+        "ghost_x": 880
+      },
+      "label": "THE LEGEND",
+      "sfx": [
+        {
+          "kind": "whoosh",
+          "at": "haunted",
+          "gain": 0.6
+        }
+      ],
+      "credit": "Legend: Hull-House Museum; WTTW"
+    },
+    {
+      "text": "Today it's a museum, open to the public.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "courthouse",
+        "tower": "none",
+        "seed": 2,
+        "move": "out",
+        "amount": 0.07
+      },
+      "label": "TODAY",
+      "credit": "Jane Addams Hull-House Museum (UIC)"
+    },
+    {
+      "text": "Comment your town, and it could be next.",
+      "end": true,
+      "end_card": {
+        "q": "COMMENT YOUR TOWN",
+        "q2": "IT COULD BE NEXT",
+        "bubble": "Your town, your state",
+        "pill": "Jane Addams Hull-House Museum, Chicago",
+        "scene": {
+          "kind": "courthouse",
+          "tower": "none",
+          "seed": 3,
+          "move": "still"
+        }
+      },
+      "credit": "All pictures drawn"
+    }
+  ],
+  "factcheck": {
+    "date": "2026-11-07",
+    "by": "independent subagent",
+    "result": "'thousands lined up' became 'crowds lined up'; 'all day long' became 'streamed in from all over the city'; versions by immigrant group, not neighborhood; quote exact (Addams, Atlantic, 1916); all supported"
+  }
+}

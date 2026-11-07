@@ -1,0 +1,224 @@
+{
+  "slug": "hammond-1918-circus-train-wreck",
+  "title": "The 1918 Circus Train Wreck Near Hammond, and Showmen's Rest",
+  "series": "LA PORTE AFTER DARK",
+  "music": {
+    "seed": 179,
+    "prog": 6
+  },
+  "say": [],
+  "sources": [
+    {
+      "what": "'the engineer of an empty military troop train fell asleep and crashed into a Hagenbeck-Wallace Circus train near here'; 'An estimated eighty-six people died'; 'over 100 others were injured'",
+      "who": "Indiana Historical Bureau marker (2022)",
+      "url": "https://www.in.gov/history/state-historical-markers/find-a-marker/find-historical-markers-by-county/indiana-historical-markers-by-county/hagenbeck-wallace-circus-1918-circus-train-wreck"
+    },
+    {
+      "what": "around 4 a.m.; an empty train used to transport soldiers; 86 killed; more than 100 injured",
+      "who": "Smithsonian Magazine",
+      "url": "https://www.smithsonianmag.com/history/hammond-train-wreck-disaster-1918-killed-dozens-circus-performers-180969428/"
+    },
+    {
+      "what": "stopped about 4 a.m.; engineer fell asleep; 86 perished; graves marked 'unknown male'; stone elephants",
+      "who": "ABC (WLS / ABC30, 2018)",
+      "url": "https://abc30.com/hagenbeck-wallace-circus-performers-killed-train-crash-burial/3616823/"
+    },
+    {
+      "what": "'Five days after the crash ... the burial of 56'; most stones 'Unknown Male'; elephants with trunks lowered",
+      "who": "Showmen's League of America",
+      "url": "https://showmensleague.org/Showmens-Rest"
+    },
+    {
+      "what": "June 27, 1918, five days after; trumpeting from the nearby Brookfield Zoo",
+      "who": "Forest Park Review (2011)",
+      "url": "https://www.forestparkreview.com/2011/05/17/showmens-resting-place-at-woodlawn/"
+    },
+    {
+      "what": "visitors claim to hear elephants trumpeting; Brookfield Zoo nearby",
+      "who": "Patch (2022)",
+      "url": "https://patch.com/illinois/chicago/ghost-tour-explores-chicagos-clown-cemetery-showmens-rest"
+    },
+    {
+      "what": "'you can hear the trumpeting of the elephants' ... real elephants from Brookfield Zoo",
+      "who": "Riverside-Brookfield Landmark (2024)",
+      "url": "https://www.rblandmark.com/?p=88322"
+    },
+    {
+      "what": "Brookfield Zoo's last elephants left in 2010",
+      "who": "NBC Chicago",
+      "url": "https://www.nbcchicago.com/news/local/brookfield-zoo-joyce/1841043/"
+    },
+    {
+      "what": "collision about 3:57 a.m.; caused by the engineman of the troop train being asleep; rear-end collision with the stopped circus train",
+      "who": "ICC Bureau of Safety report (Aug. 8, 1918)",
+      "url": "https://rosap.ntl.bts.gov/view/dot/47790/dot_47790_DS1.pdf"
+    }
+  ],
+  "beats": [
+    {
+      "text": "4 in the morning. A troop train's engineer fell asleep.",
+      "pause": 0.7,
+      "scene": {
+        "kind": "card",
+        "seed": 3,
+        "move": "in",
+        "amount": 0.08,
+        "fog": 0.35
+      },
+      "label": "NEAR HAMMOND, 1918",
+      "title": {
+        "text": "THE CIRCUS TRAIN",
+        "at": "fell asleep",
+        "size": 92,
+        "style": "red"
+      },
+      "sfx": [
+        {
+          "kind": "heartbeat",
+          "at": "fell asleep",
+          "gain": 0.6
+        }
+      ],
+      "credit": "History: Indiana Historical Bureau; Smithsonian",
+      "typed": [
+        {
+          "text": "4 A.M.",
+          "at": "4 in",
+          "y": 545,
+          "size": 110
+        }
+      ]
+    },
+    {
+      "text": "On June 22, 1918, a circus train had stopped on the tracks between Hammond and Gary.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "card",
+        "seed": 0,
+        "move": "still"
+      },
+      "label": "JUNE 22, 1918",
+      "card": {
+        "kind": "map",
+        "center": "Gary",
+        "span": 0.8,
+        "pins": [
+          "Gary",
+          "La Porte"
+        ],
+        "hot": "Gary",
+        "notes": {
+          "Gary": "near the Hammond line"
+        }
+      },
+      "credit": "Indiana Historical Bureau; Smithsonian; ABC"
+    },
+    {
+      "text": "An empty troop train slammed into it from behind.",
+      "pause": 0.8,
+      "scene": {
+        "kind": "card",
+        "seed": 2,
+        "move": "in",
+        "amount": 0.08,
+        "fog": 0.4
+      },
+      "label": "THE CRASH",
+      "credit": "Indiana Historical Bureau; Smithsonian",
+      "sfx": [
+        {
+          "kind": "whoosh",
+          "at": "slammed",
+          "gain": 0.7
+        }
+      ],
+      "typed": [
+        {
+          "text": "FROM BEHIND",
+          "at": "from behind",
+          "y": 545,
+          "size": 84
+        }
+      ]
+    },
+    {
+      "text": "About 86 people died. More than 100 were hurt.",
+      "pause": 0.8,
+      "scene": {
+        "kind": "card",
+        "seed": 1,
+        "move": "still"
+      },
+      "label": "ABOUT 86",
+      "card": {
+        "kind": "year",
+        "label": "LIVES LOST",
+        "value": "86",
+        "note": "AN ESTIMATE"
+      },
+      "credit": "Indiana Historical Bureau; Smithsonian"
+    },
+    {
+      "text": "Five days later, dozens of them were buried together outside Chicago, at Showmen's Rest. Most of the graves are marked Unknown.",
+      "pause": 0.8,
+      "scene": {
+        "kind": "cemetery",
+        "seed": 0,
+        "move": "in",
+        "amount": 0.1,
+        "fog": 0.3
+      },
+      "label": "SHOWMEN'S REST",
+      "typed": [
+        {
+          "text": "UNKNOWN",
+          "at": "Unknown",
+          "y": 545,
+          "size": 90
+        }
+      ],
+      "credit": "Showmen's League of America; ABC; Forest Park Review"
+    },
+    {
+      "text": "Stone elephants stand around the graves, trunks lowered. Visitors say they've heard elephants trumpeting there. The nearby zoo hasn't had elephants since 2010.",
+      "pause": 0.8,
+      "scene": {
+        "kind": "cemetery",
+        "seed": 1,
+        "move": "in",
+        "amount": 0.12,
+        "fog": 0.35
+      },
+      "label": "WHAT VISITORS SAY",
+      "sfx": [
+        {
+          "kind": "whoosh",
+          "at": "trumpeting",
+          "gain": 0.5
+        }
+      ],
+      "credit": "Patch (2022); Riverside-Brookfield Landmark (2024); Forest Park Review; NBC Chicago"
+    },
+    {
+      "text": "Comment your town for the next La Porte After Dark.",
+      "end": true,
+      "end_card": {
+        "q": "COMMENT YOUR TOWN",
+        "q2": "FOR THE NEXT STORY",
+        "bubble": "Your town, your state",
+        "pill": "Showmen's Rest, Forest Park, Illinois",
+        "scene": {
+          "kind": "cemetery",
+          "seed": 2,
+          "move": "still"
+        }
+      },
+      "credit": "All pictures drawn"
+    }
+  ],
+  "factcheck": {
+    "date": "2026-11-07",
+    "by": "independent subagent",
+    "result": "'A troop train's engineer' (not the circus train's); stones 'Unknown Male/Female' became 'graves marked Unknown'; the zoo line now says it hasn't had elephants since 2010; dune and lightning removed; map pin moved toward the Hammond-Gary line; all supported"
+  }
+}

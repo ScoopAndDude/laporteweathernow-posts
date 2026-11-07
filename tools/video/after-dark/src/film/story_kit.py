@@ -461,7 +461,8 @@ class Cell(Shot):
 
 class Prison(Shot):
     """A state prison at night: a long stone wall, a guard tower whose searchlight sweeps the fog, cell houses
-    with rows of small windows behind the wall. Told as history: no prisoners or guards are shown."""
+    with rows of small windows behind the wall. dark=True turns the searchlight off (a closed prison).
+    Told as history: no prisoners or guards are shown."""
     focus = (600, 1060)
     fog_d = 0.22
     ground = (1420, 1500)
@@ -538,6 +539,8 @@ class Prison(Shot):
         return self.beams[key]
 
     def animate(self, out, t, u):
+        if self.p.get("dark"):                                   # dark=True: a closed prison, no searchlight
+            return
         ang = math.pi * (0.62 + 0.2 * math.sin(t * 0.55 + self.seed))
         m = self.beam(ang)
         fogl = self.fog.layer(t, 1.0) if self.fog is not None else 0.5

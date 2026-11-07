@@ -1,0 +1,203 @@
+{
+  "slug": "joliet-old-prison",
+  "title": "The Old Joliet Prison: Built by the Men It Held",
+  "series": "LA PORTE AFTER DARK",
+  "music": {
+    "seed": 157,
+    "prog": 6
+  },
+  "say": [
+    [
+      "\\bJoliet\\b",
+      "Joe-lee-et"
+    ],
+    [
+      "\\bLoeb\\b",
+      "Lohb"
+    ]
+  ],
+  "sources": [
+    {
+      "what": "May 22, 1858, fifty-three prisoners arrived to build the prison around themselves from local limestone; closed 2002",
+      "who": "Old Joliet Prison, Joliet Area Historical Museum",
+      "url": "https://www.jolietprison.org/history/"
+    },
+    {
+      "what": "built by convict labor starting in 1858; Blues Brothers opening; Leopold and Loeb",
+      "who": "CBS Chicago / WBBM (2014)",
+      "url": "https://www.cbsnews.com/chicago/news/officials-looking-to-turn-joliet-prison-into-tourist-attraction/"
+    },
+    {
+      "what": "built mostly by convict labor; last held inmates in 2002; Prison Break and Blues Brothers",
+      "who": "Associated Press (2005)",
+      "url": "https://www2.ljworld.com/news/2005/nov/13/prison_break/"
+    },
+    {
+      "what": "closed 2002; tours managed by the Joliet Area Historical Museum; a guide's 'intimidating presence'; a 2018 visitor photo of a woman in white floating in the yard",
+      "who": "WBEZ Curious City (2024)",
+      "url": "https://www.wbez.org/curious-city/2024/10/29/illinois-ghost-stories-old-joliet-prison-hauntings-prison-reform"
+    },
+    {
+      "what": "paranormal investigators say spirits have appeared on the stairwells",
+      "who": "ABC7 Chicago (2018)",
+      "url": "https://abc7chicago.com/post/hunt-for-ghosts-at-old-joliet-prison-this-halloween-season/4547614/"
+    },
+    {
+      "what": "Leopold and Loeb became convicts No. 9305 and 9306 at Joliet",
+      "who": "Chicago Tribune archive",
+      "url": "https://uk.news.yahoo.com/vintage-chicago-tribune-leopold-loeb-190000386.html"
+    },
+    {
+      "what": "Baby Face Nelson sentenced to Joliet; escaped while being returned there in 1932",
+      "who": "FBI, Famous Cases",
+      "url": "https://webarchive.library.unt.edu/web/20120925022314/http://www.fbi.gov/about-us/history/famous-cases/baby-face-nelson"
+    },
+    {
+      "what": "2026 tours; Baby Face Nelson; Leopold and Loeb; the museum runs tours",
+      "who": "FOX 32 Chicago (Oct. 28, 2026)",
+      "url": "https://www.fox32chicago.com/news/behind-walls-old-joliet-prison-rare-look-restricted-areas"
+    }
+  ],
+  "beats": [
+    {
+      "text": "The prisoners built the walls that held them.",
+      "pause": 0.7,
+      "scene": {
+        "kind": "prison",
+        "seed": 0,
+        "move": "in",
+        "amount": 0.1,
+        "fog": 0.25,
+        "dark": true
+      },
+      "label": "JOLIET, ILLINOIS",
+      "title": {
+        "text": "THE OLD JOLIET PRISON",
+        "at": "walls",
+        "size": 82,
+        "style": "red"
+      },
+      "sfx": [
+        {
+          "kind": "heartbeat",
+          "at": "walls",
+          "gain": 0.5
+        }
+      ],
+      "credit": "History: Old Joliet Prison (Joliet Area Historical Museum); CBS Chicago; AP"
+    },
+    {
+      "text": "In 1858, convicts began building the Joliet Prison, out of limestone quarried nearby.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "prison",
+        "seed": 1,
+        "move": "in",
+        "amount": 0.08,
+        "dark": true
+      },
+      "label": "1858",
+      "credit": "Joliet Area Historical Museum; CBS Chicago; AP"
+    },
+    {
+      "text": "Leopold and Loeb, and Baby Face Nelson, all did time here.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "cell",
+        "seed": 0,
+        "move": "in",
+        "amount": 0.08
+      },
+      "label": "ITS INMATES",
+      "credit": "Chicago Tribune; CBS Chicago; FBI"
+    },
+    {
+      "text": "It closed in 2002. You've seen it in The Blues Brothers.",
+      "pause": 0.6,
+      "scene": {
+        "kind": "card",
+        "seed": 0,
+        "move": "still"
+      },
+      "label": "CLOSED",
+      "card": {
+        "kind": "year",
+        "label": "CLOSED",
+        "value": "2002",
+        "note": "NOW A HISTORIC SITE"
+      },
+      "credit": "AP; WBEZ; CBS Chicago"
+    },
+    {
+      "text": "But a tour guide and some paranormal investigators say something is still inside.",
+      "pause": 0.8,
+      "scene": {
+        "kind": "cell",
+        "seed": 1,
+        "move": "in",
+        "amount": 0.12,
+        "fog": 0.2
+      },
+      "label": "WHAT PEOPLE SAY",
+      "sfx": [
+        {
+          "kind": "knock",
+          "at": "still inside",
+          "gain": 0.6
+        }
+      ],
+      "credit": "Legend: WBEZ (2024); ABC7 (2018)"
+    },
+    {
+      "text": "In 2018, a visitor's photo seemed to show a woman in white, floating in the prison yard.",
+      "pause": 0.8,
+      "scene": {
+        "kind": "prison",
+        "seed": 2,
+        "move": "in",
+        "amount": 0.12,
+        "fog": 0.35,
+        "ghost": "woman",
+        "ghost_x": 820,
+        "dark": true
+      },
+      "label": "THE WOMAN IN WHITE",
+      "credit": "Legend: WBEZ (2024)"
+    },
+    {
+      "text": "Today, the Joliet Area Historical Museum runs seasonal tours. Check dates before you go.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "prison",
+        "seed": 3,
+        "move": "out",
+        "amount": 0.07,
+        "dark": true
+      },
+      "label": "TODAY",
+      "credit": "WBEZ; FOX 32; Shaw Local"
+    },
+    {
+      "text": "Comment your town, and it could be next.",
+      "end": true,
+      "end_card": {
+        "q": "COMMENT YOUR TOWN",
+        "q2": "IT COULD BE NEXT",
+        "bubble": "Your town, your state",
+        "pill": "Old Joliet Prison: tours in season",
+        "scene": {
+          "kind": "prison",
+          "seed": 4,
+          "move": "still",
+          "dark": true
+        }
+      },
+      "credit": "All pictures drawn"
+    }
+  ],
+  "factcheck": {
+    "date": "2026-11-07",
+    "by": "independent subagent",
+    "result": "'tour guides and ghost hunters' narrowed to one tour guide and some paranormal investigators (the museum's historian doesn't believe it); 'did time here'; tours 'seasonal, check dates'; searchlight off (closed prison); all supported (the 2018 photo is from one outlet, WBEZ, told as 'seemed to show')"
+  }
+}
