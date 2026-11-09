@@ -1,0 +1,263 @@
+{
+  "slug": "la-porte-i-street-house-clinic",
+  "title": "The House on I Street: LaPorte's 'Granddaddy' of Ghost Stories",
+  "series": "LA PORTE AFTER DARK",
+  "music": {
+    "seed": 147,
+    "prog": 6
+  },
+  "say": [],
+  "sources": [
+    {
+      "what": "county historian Fern Eddy Schultz: the former George Andrew home on I Street 'remains the granddaddy for local ghost stories'; the Robert Zimmermann family (1958-63) heard coins drop, and a daughter saw a woman in Victorian clothing appear in an upper window; when the house was razed and the I Street Clinic erected, employees reported flickering lights, flushing toilets, drawers and doors opening and closing by themselves, and disappearing medical instruments",
+      "who": "What's New LaPorte, 'Look no further than LaPorte for plenty of great ghost stories' (Oct. 25, 2009)",
+      "url": "https://whatsnewlaporte.com/2009/10/25/look-no-further-than-laporte-for-plenty-of-great-ghost-stories/"
+    },
+    {
+      "what": "mansion at I and 10th Streets gave way in the 1970s to a medical clinic; Zimmermanns 1953-1963; a woman in an 1800s-style dress sighted in the attic dormer window; Schultz a 'non-believer'; nurse friend says instruments laid out disappeared",
+      "who": "Newspaper feature (NWI Times, 2011) reposted on CityByTheLake.org",
+      "url": "http://www.citybythelake.org/forums/index.php?showtopic=4175&mode=threaded"
+    },
+    {
+      "what": "clinic staff report doors being slammed by an unseen force",
+      "who": "GhostQuest, Haunted Locations: Indiana",
+      "url": "https://www.ghostquest.net/haunted-places-indiana-usa.html"
+    },
+    {
+      "what": "Fern Eddy Schultz, LaPorte County historian nearly 30 years, retired end of 2020, died March 2021",
+      "who": "HometownNewsNow (2021)",
+      "url": "https://hometownnewsnow.com/local-news/561182"
+    },
+    {
+      "what": "Beacon Medical Group La Porte, 900 I Street, established 1969",
+      "who": "Beacon Health System",
+      "url": "https://www.beaconhealthsystem.org/news/2015/09/21/in-the-spotlight-beacon-medical-group-laporte/"
+    }
+  ],
+  "beats": [
+    {
+      "text": "A woman in old-fashioned clothes, looking down from an upper window of a house on I Street in LaPorte.",
+      "pause": 0.6,
+      "scene": {
+        "kind": "house",
+        "style": "victorian",
+        "seed": 0,
+        "move": "in",
+        "amount": 0.09,
+        "lit": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "window_ghost": true
+      },
+      "label": "I STREET, LAPORTE",
+      "title": {
+        "text": "THE HOUSE ON I STREET",
+        "at": "I Street",
+        "size": 84,
+        "style": "red"
+      },
+      "credit": "What's New LaPorte (2009); NWI Times (2011)",
+      "sfx": [
+        {
+          "kind": "heartbeat",
+          "at": "looking down",
+          "gain": 0.33
+        }
+      ]
+    },
+    {
+      "text": "The late county historian Fern Eddy Schultz called it the granddaddy of local ghost stories.",
+      "pause": 0.45,
+      "scene": {
+        "kind": "house",
+        "style": "victorian",
+        "seed": 2,
+        "move": "in",
+        "amount": 0.06,
+        "lit": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "label": "THE GRANDDADDY",
+      "credit": "Fern Eddy Schultz, via What's New LaPorte (2009)"
+    },
+    {
+      "text": "Around 1960, a family living there said a woman in old-fashioned clothes appeared in an upper window.",
+      "pause": 0.7,
+      "scene": {
+        "kind": "house",
+        "style": "victorian",
+        "seed": 3,
+        "move": "in",
+        "amount": 0.08,
+        "fog": 0.12,
+        "lit": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "window_ghost": true
+      },
+      "label": "THE UPPER WINDOW",
+      "credit": "What's New LaPorte (2009); NWI Times (2011)",
+      "sfx": [
+        {
+          "kind": "creak",
+          "at": "upper window",
+          "gain": 0.3
+        }
+      ]
+    },
+    {
+      "text": "Later, the house came down, and a medical clinic now stands on the site.",
+      "pause": 0.45,
+      "scene": {
+        "kind": "card",
+        "seed": 3,
+        "move": "in",
+        "amount": 0.05
+      },
+      "label": "THE CLINIC",
+      "credit": "What's New LaPorte (2009); NWI Times (2011); Beacon Health System",
+      "typed": [
+        {
+          "text": "THE HOUSE CAME DOWN",
+          "at": "house came down",
+          "y": 700,
+          "size": 70
+        },
+        {
+          "text": "A CLINIC STANDS THERE NOW",
+          "at": "medical clinic",
+          "y": 800,
+          "size": 62
+        }
+      ]
+    },
+    {
+      "text": "Then the staff stories started. Instruments laid out for patients would disappear.",
+      "pause": 0.6,
+      "scene": {
+        "kind": "card",
+        "seed": 4,
+        "move": "in",
+        "amount": 0.05
+      },
+      "label": "WHAT STAFF SAID",
+      "credit": "What's New LaPorte (2009); NWI Times (2011)",
+      "sfx": [
+        {
+          "kind": "heartbeat",
+          "at": "would disappear",
+          "gain": 0.33
+        }
+      ],
+      "typed": [
+        {
+          "text": "INSTRUMENTS",
+          "at": "Instruments",
+          "y": 700,
+          "size": 84
+        },
+        {
+          "text": "VANISHED",
+          "at": "would disappear",
+          "y": 810,
+          "size": 96
+        }
+      ]
+    },
+    {
+      "text": "Workers also reported doors opening and closing on their own.",
+      "pause": 0.9,
+      "scene": {
+        "kind": "card",
+        "seed": 5,
+        "move": "in",
+        "amount": 0.05
+      },
+      "label": "DOORS ON THEIR OWN",
+      "credit": "What's New LaPorte (2009); GhostQuest",
+      "sfx": [
+        {
+          "kind": "knock",
+          "at": "doors opening",
+          "gain": 0.33
+        }
+      ],
+      "typed": [
+        {
+          "text": "DOORS OPENING",
+          "at": "doors opening",
+          "y": 700,
+          "size": 84
+        },
+        {
+          "text": "AND CLOSING",
+          "at": "and closing",
+          "y": 810,
+          "size": 84
+        }
+      ]
+    },
+    {
+      "text": "Schultz collected stories like these for years, and told them at the county museum.",
+      "pause": 0.55,
+      "scene": {
+        "kind": "house",
+        "style": "victorian",
+        "seed": 4,
+        "move": "still",
+        "amount": 0.04,
+        "lit": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "label": "THE STORYTELLER",
+      "credit": "What's New LaPorte (2009); NWI Times (2011)"
+    },
+    {
+      "text": "Comment your town, and it could be next.",
+      "end": true,
+      "end_card": {
+        "q": "COMMENT YOUR TOWN",
+        "q2": "IT COULD BE NEXT",
+        "bubble": "Your town, your state",
+        "scene": {
+          "kind": "house",
+          "style": "victorian",
+          "seed": 5,
+          "move": "still",
+          "lit": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "pill": "A working clinic: please don't bother the staff"
+      },
+      "credit": "All pictures drawn"
+    }
+  ]
+}
