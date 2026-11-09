@@ -243,14 +243,25 @@
   "hourlyFrom": "2026-11-09T05:47:00-06:00"
  },
  "published": {
-  "time": "2026-11-09T10:02:00-06:00",
+  "time": "2026-11-09T11:02:00-06:00",
   "alertKeys": [],
   "alerts": [],
-  "changes": [],
+  "changes": [
+   {
+    "k": "night 2026-11-09",
+    "was": "Monday Night",
+    "now": "Tonight",
+    "shortWas": "Partly Cloudy",
+    "shortNow": "Mostly Clear",
+    "field": "temp",
+    "from": 41,
+    "to": 44
+   }
+  ],
   "off": [
    "warm"
   ],
-  "paragraph": "Automatic update, 10:02 a.m.: It's running warmer than NWS's earlier hour-by-hour forecast: at 9:15 a.m. the La Porte airport reported clear and 54 degrees, where that forecast had about 47. There are no watches, warnings, or advisories for La Porte County right now."
+  "paragraph": "Automatic update, 11:02 a.m.: Since the Scoop below was written, NWS has raised its low for tonight to 44 (from 41). It's running warmer than NWS's earlier hour-by-hour forecast: at 10:15 a.m. the La Porte airport reported clear and 55 degrees, where that forecast had about 50. There are no watches, warnings, or advisories for La Porte County right now."
  },
  "alertRows": [],
  "missing": [],
@@ -262,6 +273,10 @@
   {
    "time": "2026-11-09T10:02:00-06:00",
    "why": "airport running warm"
+  },
+  {
+   "time": "2026-11-09T11:02:00-06:00",
+   "why": "NWS forecast night 2026-11-09 temp 41->44"
   }
  ]
 }
