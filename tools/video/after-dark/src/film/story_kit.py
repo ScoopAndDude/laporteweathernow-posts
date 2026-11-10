@@ -695,7 +695,8 @@ class Dunes(Shot):
 class Lake(Shot):
     """Lake Michigan at night from the beach: waves rolling in, the moon's path, a pier on the left.
     city=True adds the glow of a city on the far horizon (Chicago, from the Indiana shore); boat=True a small white
-    boat far offshore with no one shown (boat_x moves it); pier=False leaves the pier out."""
+    boat far offshore with no one shown (boat_x moves it); pier=False leaves the pier out; storm=True an overcast
+    night with no moon."""
     focus = (540, 1060)
     fog_d = 0.14
     ghost_xy = (560, 1320)
@@ -706,7 +707,11 @@ class Lake(Shot):
         super().__init__(p)
         p = self.p
         mx = 640
-        img = night_lake_sky(551 + self.seed, moon=(mx, 430, 64), clouds=0.32, glow_k=0.8)
+        storm = bool(p.get("storm"))                           # storm=True: an overcast night, no moon
+        img = night_lake_sky(551 + self.seed, moon=None if storm else (mx, 430, 64),
+                             clouds=0.95 if storm else 0.32, glow_k=0.8)
+        if storm:
+            img *= 0.8
         hz = 1020
         if p.get("city"):
             xx = np.arange(W, dtype=np.float32)[None, :]
@@ -717,7 +722,7 @@ class Lake(Shot):
             for k in range(70):
                 add_spot(img, r.uniform(80, 420), hz - r.uniform(1, 9), 1.0, (1.0, 0.85, 0.6), r.uniform(0.3, 0.9))
         shore = 1330
-        lake_water(img, hz, shore + 10, -40, mx, 552 + self.seed)
+        lake_water(img, hz, shore + 10, -40, mx, 552 + self.seed, k_glint=0.04 if storm else 0.9)
         yy = np.arange(H, dtype=np.float32)[:, None]
         xx = np.arange(W, dtype=np.float32)[None, :]
         beach = np.clip((yy - shore) / 3.0, 0, 1) * np.ones((1, W), np.float32)
@@ -725,7 +730,7 @@ class Lake(Shot):
         btex = sand_tex(H, W, 554 + self.seed, base=(0.1, 0.105, 0.11)) * (0.7 + 0.3 * (1 - wet))[..., None]
         btex *= np.clip(1.0 - (yy - shore) / 1400.0, 0.55, 1.0)[..., None]
         img[:] = img * (1 - beach[..., None]) + btex * beach[..., None]
-        img += (np.exp(-((xx - mx) / 70.0) ** 2) * wet * (yy > shore) * 0.2)[..., None] * \
+        img += (np.exp(-((xx - mx) / 70.0) ** 2) * wet * (yy > shore) * (0.0 if storm else 0.2))[..., None] * \
             np.array([0.7, 0.85, 0.85], np.float32)
         c = cv()
         if p.get("pier", True):                                                           # a breakwater pier, left
@@ -762,7 +767,8 @@ class Lake(Shot):
 class Lighthouse(Shot):
     """A pierhead lighthouse at night: a tapered tower on a breakwater with an elevated catwalk running back to
     shore, its light turning; waves breaking on the pier. style="house" draws an old brick keeper's house with the
-    lantern on its roof instead."""
+    lantern on its roof instead; style="tower" a tall white tapered tower on shore with a brick keeper's house
+    beside it (Seul Choix Point)."""
     focus = (640, 900)
     fog_d = 0.2
 
@@ -796,6 +802,27 @@ class Lighthouse(Shot):
             self.lamp = (tx, top - 52)
             for k in range(3):
                 c.rect(tx - 10, base - 120 - k * 120, tx + 10, base - 92 - k * 120, "#1a1e1e")
+        elif self.style == "tower":                              # a tall white tower on shore, keeper's house beside it
+            land(img, 1150, 573 + self.seed, far="#0a1418")
+            hx, hy = 150, 1190
+            c.rect(hx, hy - 200, hx + 380, hy, "#0d0807")                                        # brick dwelling
+            c.poly([(hx - 20, hy - 200), (hx + 190, hy - 300), (hx + 400, hy - 200)], "#080605")
+            for wx in (hx + 40, hx + 130, hx + 230, hx + 310):
+                c.rect(wx, hy - 150, wx + 36, hy - 80, "#0b1012")
+            tx, base, top = 700, hy, 560
+            c.poly([(tx - 62, base), (tx - 36, top), (tx + 36, top), (tx + 62, base)], "#c8ccca")   # tapered tower
+            c.poly([(tx + 6, base), (tx + 2, top), (tx + 36, top), (tx + 62, base)], "#8f9694")
+            c.rect(tx - 54, top - 14, tx + 54, top, "#2a2e2e")                                    # gallery
+            for k in range(8):
+                c.line([(tx - 50 + k * 14, top - 14), (tx - 50 + k * 14, top - 40)], "#1a1c1c", 2)
+            c.rect(tx - 28, top - 86, tx + 28, top - 14, "#1a1e1e")                               # lantern room
+            c.poly([(tx - 34, top - 86), (tx, top - 120), (tx + 34, top - 86)], "#101212")
+            lights.rect(tx - 22, top - 80, tx + 22, top - 20, "#fff2c8", 0.9)
+            for k in range(4):
+                c.rect(tx - 9, base - 130 - k * 120, tx + 9, base - 100 - k * 120, "#1a1e1e")
+            c.rect(hx + 380, hy - 90, tx - 50, hy, "#0d0807")                                     # covered way to the tower
+            c.poly([(-20, hy), (W + 20, hy - 10), (W + 20, H), (-20, H)], "#050809")
+            self.lamp = (tx, top - 52)
         else:
             land(img, 1150, 573 + self.seed, far="#0a1418")
             hx, hy = 300, 1190

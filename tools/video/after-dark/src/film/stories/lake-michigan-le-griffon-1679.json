@@ -1,0 +1,201 @@
+{
+ "slug": "lake-michigan-le-griffon-1679",
+ "title": "Le Griffon, 1679: The First Ship Lost on the Upper Great Lakes",
+ "series": "LA PORTE AFTER DARK",
+ "music": {
+  "seed": 177,
+  "prog": 6
+ },
+ "say": [
+  [
+   "\\bGriffon\\b",
+   "Griffin"
+  ]
+ ],
+ "sources": [
+  {
+   "what": "'was launched on 7 Aug. 1679'; 'a boat of about 45 tons'; 'he sent the Griffon back to Niagara loaded with a substantial cargo of furs'; 'according to certain Potawatomis, a storm had beyond all doubt sunk the bark'; 'stopping on 1 November at the mouth of the Riviere des Miamis (Saint-Joseph)', 'he caused a fort 40 feet by 30 to be built there'",
+   "who": "Dictionary of Canadian Biography, La Salle",
+   "url": "https://www.biographi.ca/en/bio/cavelier_de_la_salle_rene_robert_1E.html"
+  },
+  {
+   "what": "built 'above Niagara Falls on the shore of the Niagara River near the mouth of the Cayuga Creek'; 'On September 18, 1679, the bark Griffon was sent back'; no claimed find has sufficient evidence",
+   "who": "Wisconsin Shipwrecks (Wisconsin Historical Society / Sea Grant)",
+   "url": "https://wisconsinshipwrecks.org/Vessel/Details/252"
+  },
+  {
+   "what": "'the first vessel to sail the Upper Great Lakes other than canoes'; 'On September 18, 1679, the ship sailed east' 'with a crew of six men'; 'Neither La Salle nor Hennepin were on board'; La Salle thought his men might have stolen the furs and scuttled the ship",
+   "who": "Brock University Library",
+   "url": "https://exhibits.library.brocku.ca/s/Niagara/page/Griffon"
+  },
+  {
+   "what": "'First ship to sail Lakes Erie, Huron and Michigan'",
+   "who": "Ontario Heritage Trust plaque",
+   "url": "https://www.heritagetrust.on.ca/plaques/voyage-of-griffon-1679"
+  },
+  {
+   "what": "'The Griffin was never heard from again'; state archaeologist Dean Anderson (2014): 'I haven't seen any evidence that suggests that anyone has found wreckage of the Griffon there'",
+   "who": "Associated Press (2013, 2014)",
+   "url": "https://www.fox6now.com/news/could-it-have-finally-been-found-group-claims-it-has-located-lake-michigans-oldest-shipwreck"
+  },
+  {
+   "what": "La Salle waited at the fort at the St. Joseph River's mouth in vain for the Griffin",
+   "who": "Michigan historical marker, Fort Miami (HMdb)",
+   "url": "https://www.hmdb.org/m.asp?m=64837"
+  }
+ ],
+ "beats": [
+  {
+   "text": "The first sailing ship on the upper Great Lakes vanished on its first voyage.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "lake",
+    "seed": 0,
+    "pier": false,
+    "boat": false,
+    "move": "in",
+    "amount": 0.08,
+    "fog": 0.25
+   },
+   "label": "LAKE MICHIGAN, 1679",
+   "credit": "Brock University; Dictionary of Canadian Biography",
+   "title": {
+    "text": "LE GRIFFON",
+    "at": "vanished",
+    "size": 110,
+    "style": "red"
+   },
+   "sfx": [
+    {
+     "kind": "heartbeat",
+     "at": "vanished",
+     "gain": 0.33
+    }
+   ]
+  },
+  {
+   "text": "It was called the Griffon. The French explorer La Salle had it built in 1679, on the Niagara River above the falls.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "card",
+    "seed": 1,
+    "move": "in",
+    "amount": 0.05
+   },
+   "label": "BUILT 1679",
+   "credit": "Dictionary of Canadian Biography; Wisconsin Shipwrecks",
+   "card": {
+    "kind": "year",
+    "at": "1679",
+    "label": "LAUNCHED",
+    "value": "1679",
+    "note": "ON THE NIAGARA RIVER"
+   }
+  },
+  {
+   "text": "That September it reached Green Bay, and La Salle loaded it with furs.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "lake",
+    "seed": 1,
+    "pier": false,
+    "boat": false,
+    "move": "in",
+    "amount": 0.08
+   },
+   "label": "GREEN BAY, SEPTEMBER 1679",
+   "credit": "Dictionary of Canadian Biography; Wisconsin Shipwrecks"
+  },
+  {
+   "text": "On September 18, he sent it back with a crew of six. La Salle stayed behind.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "lake",
+    "seed": 2,
+    "pier": false,
+    "boat": false,
+    "move": "in",
+    "amount": 0.08
+   },
+   "label": "SEPTEMBER 18, 1679",
+   "credit": "Wisconsin Shipwrecks; Brock University"
+  },
+  {
+   "text": "The Griffon was never heard from again.",
+   "pause": 0.8,
+   "scene": {
+    "kind": "lake",
+    "seed": 3,
+    "pier": false,
+    "boat": false,
+    "move": "in",
+    "amount": 0.08,
+    "fog": 0.35
+   },
+   "label": "NEVER HEARD FROM AGAIN",
+   "credit": "Associated Press; Wisconsin Shipwrecks",
+   "sfx": [
+    {
+     "kind": "whoosh",
+     "at": "never",
+     "gain": 0.3
+    }
+   ]
+  },
+  {
+   "text": "That November, La Salle built a fort at the mouth of the St. Joseph River, in today's Michigan. A state marker there says he awaited his ship, and it did not come.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "card",
+    "seed": 2,
+    "move": "in",
+    "amount": 0.05
+   },
+   "label": "ST. JOSEPH, MICHIGAN",
+   "credit": "Dictionary of Canadian Biography; Michigan historical marker",
+   "card": {
+    "kind": "map",
+    "center": "St. Joseph",
+    "span": 0.9,
+    "pins": [
+     "St. Joseph"
+    ],
+    "hot": "St. Joseph"
+   }
+  },
+  {
+   "text": "A storm? A mutiny? No one knows. Wreck claims keep coming, and none has been confirmed.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "lake",
+    "seed": 4,
+    "pier": false,
+    "boat": false,
+    "move": "out",
+    "amount": 0.08,
+    "fog": 0.3
+   },
+   "label": "STILL MISSING",
+   "credit": "Brock University; Associated Press (2013, 2015)"
+  },
+  {
+   "text": "Comment your town for the next La Porte After Dark.",
+   "end": true,
+   "end_card": {
+    "q": "COMMENT YOUR TOWN",
+    "q2": "FOR THE NEXT STORY",
+    "bubble": "Your town, your state",
+    "pill": "Never found",
+    "scene": {
+     "kind": "lake",
+     "seed": 7,
+     "pier": false,
+     "boat": false,
+     "move": "still",
+     "amount": 0.08
+    }
+   },
+   "credit": "All pictures drawn"
+  }
+ ]
+}

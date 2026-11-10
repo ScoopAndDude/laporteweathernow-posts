@@ -1,0 +1,165 @@
+{
+ "slug": "whitehall-white-river-light-station",
+ "title": "White River Light Station: The Keeper Who Never Wanted to Leave",
+ "series": "LA PORTE AFTER DARK",
+ "music": {
+  "seed": 183,
+  "prog": 6
+ },
+ "say": [],
+ "sources": [
+  {
+   "what": "'Construction of the lighthouse began on August 28, 1875'; lit 'May 13, 1876'; Robinson 'the light's first official keeper'; 'the parents of thirteen children'; William Bush keeper 1919-1943; owned by Fruitland Township",
+   "who": "Lighthousefriends, White River",
+   "url": "https://www.lighthousefriends.com/light.asp?ID=192"
+  },
+  {
+   "what": "'a native of Lynemouth, England'; 'keeper of the White Lake light for 47 years'; 'On March 15, 1919, he was retired on pension'; 'died at Whitehall Wednesday morning at the age of 87 years'; 'His oldest grandson, WILLIAM BUSH, will succeed the aged captain'",
+   "who": "Muskegon Chronicle, Apr. 3, 1919 (transcription)",
+   "url": "https://www.us-data.org/mi/muskegon/obituary/robinson_william-1919.txt"
+  },
+  {
+   "what": "'In 1960 the lighthouse was deactivated'; 'opened to the public in the late summer of 1970'",
+   "who": "U.S. Coast Guard Historian's Office",
+   "url": "https://www.history.uscg.mil/Browse-by-Topic/Assets/Land/All/Article/1995610/white-river-lighthouse/"
+  },
+  {
+   "what": "'frequently heard walking around upstairs in the former bedrooms and lantern room'; 44 years",
+   "who": "Promote Michigan (Dianna Stampfler, 2015)",
+   "url": "https://promotemichigan.com/?p=10602"
+  },
+  {
+   "what": "curator would 'hear footsteps going up and down the staircase'; died April 2, 1919",
+   "who": "99.1 WFMK (2019)",
+   "url": "https://99wfmk.com/white-river-light-station/"
+  },
+  {
+   "what": "'people hearing the tapping of Robinson's cane'; guests and staff",
+   "who": "Visit Muskegon; Wikipedia",
+   "url": "https://www.visitmuskegon.org/blog/post/whispers-of-hauntings-in-muskegon-michigan"
+  },
+  {
+   "what": "season May to October, run by Lakeshore Keepers",
+   "who": "West Michigan Tourist Association (2026)",
+   "url": "https://www.wmta.org/articles/post/lakeshore-keepers-announces-2026-season-calendar-special-events-at-five-west-michigan-lighthouses/"
+  }
+ ],
+ "beats": [
+  {
+   "text": "Footsteps on the stairs, in the middle of the night. That's what a former curator reported at the White River Light Station, near Whitehall, Michigan.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "room",
+    "seed": 2
+   },
+   "label": "NEAR WHITEHALL, MICHIGAN",
+   "credit": "99.1 WFMK (2019); Michigan Blue",
+   "title": {
+    "text": "WHITE RIVER LIGHT",
+    "at": "That's what",
+    "size": 84,
+    "style": "red"
+   },
+   "sfx": [
+    {
+     "kind": "knock",
+     "at": "Footsteps",
+     "gain": 0.3
+    }
+   ]
+  },
+  {
+   "text": "The lighthouse was built in 1875 and first lit in May 1876. Its first keeper was Captain William Robinson, who came from England.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "lake",
+    "seed": 0,
+    "pier": true,
+    "boat": false,
+    "move": "in",
+    "amount": 0.08
+   },
+   "label": "FIRST LIT 1876",
+   "credit": "Lighthousefriends; U.S. Coast Guard Historian's Office"
+  },
+  {
+   "text": "He and his wife, Sarah, had 13 children. He kept the light for more than 40 years.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "room",
+    "seed": 0
+   },
+   "label": "MORE THAN 40 YEARS",
+   "credit": "Lighthousefriends; Pure Michigan"
+  },
+  {
+   "text": "In 1919, at 87, he was retired, and his grandson took over as keeper. That same spring, the old captain died.",
+   "pause": 0.8,
+   "scene": {
+    "kind": "lake",
+    "seed": 1,
+    "pier": false,
+    "boat": false,
+    "move": "in",
+    "amount": 0.08
+   },
+   "label": "SPRING 1919",
+   "credit": "Lighthousefriends; Muskegon Chronicle (1919)"
+  },
+  {
+   "text": "People say he never left. Guests and staff have reported footsteps upstairs, and the tap of a cane.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "room",
+    "seed": 1
+   },
+   "label": "WHAT PEOPLE REPORT",
+   "credit": "Visit Muskegon; Promote Michigan (2015)",
+   "sfx": [
+    {
+     "kind": "knock",
+     "at": "the tap of a cane",
+     "gain": 0.3
+    },
+    {
+     "kind": "heartbeat",
+     "at": "never left",
+     "gain": 0.33
+    }
+   ]
+  },
+  {
+   "text": "The light was shut off in 1960. Since 1970, it has been a museum.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "lake",
+    "seed": 2,
+    "pier": false,
+    "boat": false,
+    "move": "out",
+    "amount": 0.08
+   },
+   "label": "A MUSEUM SINCE 1970",
+   "credit": "U.S. Coast Guard Historian's Office; Lighthousefriends"
+  },
+  {
+   "text": "Comment your town, and it could be next.",
+   "end": true,
+   "end_card": {
+    "q": "COMMENT YOUR TOWN",
+    "q2": "IT COULD BE NEXT",
+    "bubble": "Your town, your state",
+    "pill": "A museum today: open in season",
+    "scene": {
+     "kind": "lake",
+     "seed": 3,
+     "pier": false,
+     "boat": false,
+     "move": "still",
+     "amount": 0.08
+    }
+   },
+   "credit": "All pictures drawn"
+  }
+ ]
+}

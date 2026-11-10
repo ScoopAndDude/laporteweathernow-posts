@@ -1,0 +1,216 @@
+{
+ "slug": "lake-michigan-lady-elgin-1860",
+ "title": "The Lady Elgin, 1860: About 300 Lost Off the Illinois Shore",
+ "series": "LA PORTE AFTER DARK",
+ "music": {
+  "seed": 181,
+  "prog": 6
+ },
+ "say": [
+  [
+   "\\bElgin\\b",
+   "Elljin"
+  ]
+ ],
+ "sources": [
+  {
+   "what": "'At 2:30 on the morning of September 8, 1860'; Spencer 'saved 17'; captain drowned; 'nine miles off Winnetka'",
+   "who": "Wisconsin Historical Society",
+   "url": "https://www.wisconsinhistory.org/Records/Article/CS1797"
+  },
+  {
+   "what": "'including members of Milwaukee's Union Guards militia unit'; 'the majority were Irish residents from Milwaukee's Third Ward'; inquest: 'about 400 on board and that about 300 perished'; 'sank within half an hour'; 'heavy rain and high winds'; Henry Clay Work's song",
+   "who": "Encyclopedia of Milwaukee",
+   "url": "https://emke.uwm.edu/?p=1249"
+  },
+  {
+   "what": "'sank in twenty minutes'; 'The heroic captain was among the lost'; about 10 miles offshore",
+   "who": "J.B. Mansfield, History of the Great Lakes (1899)",
+   "url": "https://www.maritimehistoryofthegreatlakes.ca/documents/HGL/default.asp?ID=s055"
+  },
+  {
+   "what": "'In 1989 Zych located the Lady Elgin'; wreckage 'about four miles off shore from Highland Park'",
+   "who": "Illinois Appellate Court (1997)",
+   "url": "https://law.justia.com/cases/illinois/court-of-appeals-first-appellate-district/1997/1962223.html"
+  },
+  {
+   "what": "'about seven miles off Winnetka'; 'penned the song Lost on the Lady Elgin'; found May 1989",
+   "who": "Brendon Baillod, maritime historian",
+   "url": "https://www.baillod.com/shipwreck/projects/elgin"
+  },
+  {
+   "what": "'Edward Spencer, class of 1862, was credited with the rescue of 17 people'",
+   "who": "Northwestern University",
+   "url": "https://www.northwestern.edu/nu150/news/stories/12_16_00_lifesavers.html"
+  },
+  {
+   "what": "Third Ward 'devastated by the loss of so many of its prominent members'",
+   "who": "Milwaukee County Historical Society",
+   "url": "https://milwaukeehistory.net/?p=4500"
+  }
+ ],
+ "beats": [
+  {
+   "text": "About 300 people were lost in one night on Lake Michigan.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "lake",
+    "seed": 0,
+    "pier": false,
+    "boat": false,
+    "move": "in",
+    "amount": 0.08,
+    "fog": 0.25,
+    "rain": true,
+    "storm": true
+   },
+   "label": "LAKE MICHIGAN, 1860",
+   "credit": "Wisconsin Historical Society; Encyclopedia of Milwaukee",
+   "title": {
+    "text": "THE LADY ELGIN",
+    "at": "one night",
+    "size": 96,
+    "style": "red"
+   },
+   "sfx": [
+    {
+     "kind": "heartbeat",
+     "at": "one night",
+     "gain": 0.33
+    }
+   ]
+  },
+  {
+   "text": "September 8, 1860. The steamer Lady Elgin was carrying an estimated 400 people home from Chicago to Milwaukee. Most were Irish residents of Milwaukee's Third Ward.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "lake",
+    "seed": 1,
+    "pier": false,
+    "boat": false,
+    "move": "in",
+    "amount": 0.08,
+    "storm": true
+   },
+   "label": "SEPTEMBER 8, 1860",
+   "credit": "Encyclopedia of Milwaukee; Milwaukee County Historical Society"
+  },
+  {
+   "text": "Around 2:30 in the morning, in high winds and heavy rain, the schooner Augusta struck her.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "lake",
+    "seed": 2,
+    "pier": false,
+    "boat": false,
+    "move": "in",
+    "amount": 0.08,
+    "rain": true,
+    "fog": 0.2,
+    "storm": true
+   },
+   "label": "2:30 IN THE MORNING",
+   "credit": "Wisconsin Historical Society; Encyclopedia of Milwaukee",
+   "flash": [
+    "struck her"
+   ]
+  },
+  {
+   "text": "The Lady Elgin broke up and sank in less than half an hour, miles off Winnetka, Illinois.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "lake",
+    "seed": 3,
+    "pier": false,
+    "boat": false,
+    "move": "in",
+    "amount": 0.08,
+    "rain": true,
+    "fog": 0.3,
+    "storm": true
+   },
+   "label": "OFF WINNETKA, ILLINOIS",
+   "credit": "History of the Great Lakes (1899); Brendon Baillod"
+  },
+  {
+   "text": "On shore, a Northwestern student named Edward Spencer pulled people from the surf. He is credited with saving 17.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "card",
+    "seed": 1,
+    "move": "in",
+    "amount": 0.05
+   },
+   "label": "EDWARD SPENCER",
+   "credit": "Wisconsin Historical Society; Northwestern University",
+   "typed": [
+    {
+     "text": "CREDITED WITH",
+     "at": "He is credited",
+     "y": 660,
+     "size": 60
+    },
+    {
+     "text": "SAVING 17",
+     "at": "saving 17",
+     "y": 743,
+     "size": 110
+    }
+   ]
+  },
+  {
+   "text": "Her captain was among the lost. Milwaukee's Third Ward was devastated.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "card",
+    "seed": 2,
+    "move": "in",
+    "amount": 0.05
+   },
+   "label": "MILWAUKEE'S THIRD WARD",
+   "credit": "Encyclopedia of Milwaukee; History of the Great Lakes (1899)",
+   "typed": [
+    {
+     "text": "ABOUT 300 LOST",
+     "at": "among the lost",
+     "y": 660,
+     "size": 80
+    }
+   ]
+  },
+  {
+   "text": "The wreck was found in 1989, off Highland Park, Illinois.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "lake",
+    "seed": 4,
+    "pier": false,
+    "boat": false,
+    "move": "out",
+    "amount": 0.08,
+    "fog": 0.25
+   },
+   "label": "FOUND IN 1989",
+   "credit": "Illinois Appellate Court (1997); Brendon Baillod"
+  },
+  {
+   "text": "Comment your town for the next La Porte After Dark.",
+   "end": true,
+   "end_card": {
+    "q": "COMMENT YOUR TOWN",
+    "q2": "FOR THE NEXT STORY",
+    "bubble": "Your town, your state",
+    "pill": "September 8, 1860",
+    "scene": {
+     "kind": "lake",
+     "seed": 8,
+     "pier": false,
+     "boat": false,
+     "move": "still",
+     "amount": 0.08
+    }
+   },
+   "credit": "All pictures drawn"
+  }
+ ]
+}
