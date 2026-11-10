@@ -70,7 +70,9 @@ ok(any("no '<'" in x for x in ww.check(bad, TODAY)), "HTML in a text is refused"
 bad = copy.deepcopy(p); bad["amazon"]["stats"][2]["source"]["url"] = "javascript:alert(1)"
 ok(len(ww.check(bad, TODAY)) >= 1, "a javascript: link is refused")
 mixed = copy.deepcopy(p); mixed["amazon"]["now"].reverse()
-ok(ww.check(mixed, TODAY) == [] and mixed["amazon"]["now"][0]["date"] == "2026-10-16", "news comes out newest first")
+_dates = [x["date"] for x in mixed["amazon"]["now"]]
+ok(ww.check(mixed, TODAY) == [] and [x["date"] for x in mixed["amazon"]["now"]] == sorted(_dates, reverse=True),
+   "news comes out newest first")
 
 # ---------------------------------------------------------------- due
 ok(ww.due(datetime.datetime(2026, 10, 20, 9, 0, tzinfo=ww.CENTRAL)) == "no", "not due on a Tuesday")
