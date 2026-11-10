@@ -1,712 +1,1126 @@
 {
  "about": "Daily health check for laporteweathernow.com (scripts/site_health.py). 'problems' lists anything to fix, in plain English.",
- "checked": "2026-11-09T16:58:44-06:00",
+ "checked": "2026-11-10T08:18:24-06:00",
  "ok": false,
  "problems": [
-  "The El Nino numbers (world-watch.json) are 21 days old; the weekly update may have stopped.",
-  "GitHub job 'World Watch update' failed 7 times in the last 7 days.",
+  "Page /websites is missing the site menu.",
+  "GitHub job 'pages build and deployment' failed 6 times in the last 7 days.",
+  "GitHub job 'World Watch update' failed 5 times in the last 7 days.",
   "GitHub job 'Morning email' failed 2 times in the last 7 days.",
   "GitHub job 'Snow totals' failed 1 time in the last 7 days.",
-  "GitHub job 'pages build and deployment' failed 4 times in the last 7 days.",
   "GitHub job 'Homepage weather copy' failed 4 times in the last 7 days.",
   "GitHub job 'Weather radio' failed 10 times in the last 7 days.",
   "GitHub job 'Daily Scoop updates' failed 1 time in the last 7 days.",
   "GitHub job 'Timer' failed 6 times in the last 7 days.",
   "GitHub job 'Earth from space data' failed 1 time in the last 7 days.",
-  "GitHub job 'Hard Hat sender watch' failed 2 times in the last 7 days.",
-  "GitHub job 'School closings' failed 1 time in the last 7 days."
+  "GitHub job 'Hard Hat sender watch' failed 2 times in the last 7 days."
  ],
- "urgent": [],
+ "urgent": [
+  "Page /websites is missing the site menu."
+ ],
  "stuck": [],
  "pages": [
   {
    "path": "/",
    "status": 200,
-   "ms": 1473,
-   "fingerprint": "1fb5a2a240",
+   "ms": 710,
+   "fingerprint": "2d717e8139",
    "groupedMenu": true
   },
   {
    "path": "/daily-scoop",
    "status": 200,
-   "ms": 373,
+   "ms": 190,
    "fingerprint": "fbe1313103",
    "groupedMenu": true
   },
   {
    "path": "/emergency",
    "status": 200,
-   "ms": 522,
+   "ms": 249,
    "fingerprint": "8c1fb56038",
    "groupedMenu": true
   },
   {
    "path": "/trip-planner",
    "status": 200,
-   "ms": 362,
+   "ms": 285,
    "fingerprint": "3246f51ce2",
    "groupedMenu": true
   },
   {
    "path": "/storm-patterns",
    "status": 200,
-   "ms": 400,
+   "ms": 290,
    "fingerprint": "2ce3bbb3e6",
    "groupedMenu": true
   },
   {
    "path": "/weather-questions",
    "status": 200,
-   "ms": 436,
+   "ms": 341,
    "fingerprint": "ab72c1d923",
    "groupedMenu": true
   },
   {
    "path": "/disasters",
    "status": 200,
-   "ms": 278,
+   "ms": 251,
    "fingerprint": "c817c52333",
    "groupedMenu": true
   },
   {
    "path": "/global",
    "status": 200,
-   "ms": 354,
+   "ms": 318,
    "fingerprint": "3d080ef652",
    "groupedMenu": true
   },
   {
    "path": "/sources",
    "status": 200,
-   "ms": 250,
+   "ms": 221,
    "fingerprint": "39b3f0800a",
    "groupedMenu": true
   },
   {
    "path": "/community",
    "status": 200,
-   "ms": 357,
+   "ms": 327,
    "fingerprint": "a3e28f2d2d",
    "groupedMenu": true
   },
   {
    "path": "/help",
    "status": 200,
-   "ms": 271,
+   "ms": 315,
    "fingerprint": "3d52f72183",
    "groupedMenu": true
   },
   {
    "path": "/history",
    "status": 200,
-   "ms": 457,
+   "ms": 330,
    "fingerprint": "d464f0b03a",
    "groupedMenu": true
   },
   {
    "path": "/after-dark",
    "status": 200,
-   "ms": 180,
+   "ms": 285,
    "fingerprint": "68eb86f633",
    "groupedMenu": true
   },
   {
    "path": "/support",
    "status": 200,
-   "ms": 225,
+   "ms": 303,
    "fingerprint": "3e213a90f0",
    "groupedMenu": true
   },
   {
    "path": "/go-no-go",
    "status": 200,
-   "ms": 334,
+   "ms": 296,
    "fingerprint": "9f962e51d8",
    "groupedMenu": false
   },
   {
    "path": "/outages",
    "status": 200,
-   "ms": 143,
+   "ms": 254,
    "fingerprint": "2ad42b8c0a",
    "groupedMenu": false
   },
   {
    "path": "/my-alerts",
    "status": 200,
-   "ms": 309,
+   "ms": 268,
    "fingerprint": "f30bb13585",
    "groupedMenu": false
   },
   {
    "path": "/business",
    "status": 200,
-   "ms": 320,
+   "ms": 321,
    "fingerprint": "e0a3aca29e",
+   "groupedMenu": false
+  },
+  {
+   "path": "/websites",
+   "status": 200,
+   "ms": 350,
+   "fingerprint": "02c6a91451",
    "groupedMenu": false
   },
   {
    "path": "/media-kit",
    "status": 200,
-   "ms": 329,
+   "ms": 355,
    "fingerprint": "44fa5d6710",
    "groupedMenu": true
   },
   {
    "path": "/about",
    "status": 200,
-   "ms": 298,
+   "ms": 258,
    "fingerprint": "59edd592bc",
    "groupedMenu": true
   },
   {
    "path": "/contact",
    "status": 200,
-   "ms": 269,
+   "ms": 286,
    "fingerprint": "7d1fdca3ff",
    "groupedMenu": true
   },
   {
    "path": "/golf",
    "status": 200,
-   "ms": 321,
+   "ms": 303,
    "fingerprint": "7a5dabbfd3",
    "groupedMenu": true
   },
   {
    "path": "/weekend",
    "status": 200,
-   "ms": 275,
+   "ms": 337,
    "fingerprint": "72150a9f9d",
    "groupedMenu": true
   },
   {
    "path": "/privacy",
    "status": 200,
-   "ms": 247,
+   "ms": 301,
    "fingerprint": "7862e324ad",
    "groupedMenu": true
   },
   {
    "path": "/track-record",
    "status": 200,
-   "ms": 303,
+   "ms": 322,
    "fingerprint": "3386375727",
    "groupedMenu": true
   },
   {
    "path": "/hardhat/",
    "status": 200,
-   "ms": 320,
-   "fingerprint": "f951692586",
+   "ms": 178,
+   "fingerprint": "c15520f7f3",
    "groupedMenu": false
   },
   {
    "path": "/hardhat/snow",
    "status": 200,
-   "ms": 259,
-   "fingerprint": "a85aa86655",
+   "ms": 244,
+   "fingerprint": "6237b76fc5",
    "groupedMenu": false
   },
   {
    "path": "/hardhat/board",
    "status": 200,
-   "ms": 333,
+   "ms": 317,
    "fingerprint": "9d3649dd82",
    "groupedMenu": false
   },
   {
    "path": "/snow-day",
    "status": 200,
-   "ms": 427,
+   "ms": 262,
    "fingerprint": "3a7b541989",
    "groupedMenu": true
   },
   {
    "path": "/closings",
    "status": 200,
-   "ms": 240,
+   "ms": 249,
    "fingerprint": "3e59509c2a",
    "groupedMenu": true
   },
   {
    "path": "/winter-planner",
    "status": 200,
-   "ms": 283,
+   "ms": 238,
    "fingerprint": "b0dde9f09f",
    "groupedMenu": true
   },
   {
    "path": "/weather-box",
    "status": 200,
-   "ms": 330,
+   "ms": 311,
    "fingerprint": "5c0321c761",
    "groupedMenu": true
   },
   {
    "path": "/desk/",
    "status": 200,
-   "ms": 319,
+   "ms": 322,
    "fingerprint": "98ae1df8b4",
    "groupedMenu": true
   },
   {
    "path": "/farm/",
    "status": 200,
-   "ms": 441,
+   "ms": 365,
    "fingerprint": "7c579c49eb",
    "groupedMenu": false
   },
   {
    "path": "/lake-michigan",
    "status": 200,
-   "ms": 279,
+   "ms": 273,
    "fingerprint": "15b9a369c0",
    "groupedMenu": true
   },
   {
    "path": "/radar",
    "status": 200,
-   "ms": 253,
+   "ms": 285,
    "fingerprint": "113ca4f74e",
    "groupedMenu": true
   },
   {
    "path": "/traffic-cameras",
    "status": 200,
-   "ms": 427,
+   "ms": 315,
    "fingerprint": "9984733e92",
    "groupedMenu": true
   },
   {
    "path": "/storm-radar",
    "status": 200,
-   "ms": 318,
+   "ms": 451,
    "fingerprint": "2c122629c9",
    "groupedMenu": true
   },
   {
    "path": "/visit",
    "status": 200,
-   "ms": 225,
+   "ms": 300,
    "fingerprint": "8f43320d86",
    "groupedMenu": true
   },
   {
    "path": "/eats",
    "status": 200,
-   "ms": 109,
+   "ms": 387,
    "fingerprint": "0167e52e7f",
    "groupedMenu": true
   },
   {
    "path": "/towns",
    "status": 200,
-   "ms": 280,
+   "ms": 159,
    "fingerprint": "5c3cd409c4",
    "groupedMenu": true
   },
   {
    "path": "/towns/michigan-city",
    "status": 200,
-   "ms": 809,
-   "fingerprint": "d3e971a636",
+   "ms": 901,
+   "fingerprint": "87376688df",
    "groupedMenu": true
   },
   {
    "path": "/towns/westville",
    "status": 200,
-   "ms": 540,
-   "fingerprint": "ec3f3376a6",
+   "ms": 707,
+   "fingerprint": "7cbddfd03b",
    "groupedMenu": true
   },
   {
    "path": "/towns/rolling-prairie",
    "status": 200,
-   "ms": 1619,
-   "fingerprint": "8b4713145f",
+   "ms": 883,
+   "fingerprint": "2954d5860d",
    "groupedMenu": true
   },
   {
    "path": "/towns/kingsford-heights",
    "status": 200,
-   "ms": 538,
-   "fingerprint": "7136b63ed6",
+   "ms": 1084,
+   "fingerprint": "182e137f61",
    "groupedMenu": true
   },
   {
    "path": "/towns/long-beach",
    "status": 200,
-   "ms": 559,
-   "fingerprint": "cbe2a69a5c",
+   "ms": 473,
+   "fingerprint": "dbbf18f0ff",
    "groupedMenu": true
   },
   {
    "path": "/towns/wanatah",
    "status": 200,
-   "ms": 594,
-   "fingerprint": "939eb1da65",
+   "ms": 738,
+   "fingerprint": "d3f3cf71cd",
    "groupedMenu": true
   },
   {
    "path": "/towns/hanna",
    "status": 200,
-   "ms": 658,
-   "fingerprint": "c8dcdd2102",
+   "ms": 848,
+   "fingerprint": "68be5309dc",
    "groupedMenu": true
   },
   {
    "path": "/towns/union-mills",
    "status": 200,
-   "ms": 694,
-   "fingerprint": "4c5cb3fb62",
+   "ms": 732,
+   "fingerprint": "93fb57b31c",
    "groupedMenu": true
   },
   {
    "path": "/towns/trail-creek",
    "status": 200,
-   "ms": 674,
-   "fingerprint": "69784a0d58",
+   "ms": 895,
+   "fingerprint": "a5096479ab",
    "groupedMenu": true
   },
   {
    "path": "/towns/la-crosse",
    "status": 200,
-   "ms": 586,
-   "fingerprint": "694f24b61b",
+   "ms": 686,
+   "fingerprint": "8920f53d23",
    "groupedMenu": true
   },
   {
    "path": "/storm-patterns/lake-effect-snow-la-porte",
    "status": 200,
-   "ms": 372,
+   "ms": 234,
    "fingerprint": "03d475d095",
    "groupedMenu": true
   },
   {
    "path": "/storm-patterns/tornado-alley-northwest-indiana",
    "status": 200,
-   "ms": 250,
+   "ms": 252,
    "fingerprint": "572cb62dec",
    "groupedMenu": true
   },
   {
    "path": "/storm-patterns/derecho",
    "status": 200,
-   "ms": 260,
+   "ms": 311,
    "fingerprint": "6f2d815a8c",
    "groupedMenu": true
   },
   {
    "path": "/storm-patterns/flooding-northwest-indiana",
    "status": 200,
-   "ms": 409,
+   "ms": 333,
    "fingerprint": "c95aecfb40",
    "groupedMenu": true
   },
   {
    "path": "/guides/school-closings-snow-days",
    "status": 200,
-   "ms": 259,
+   "ms": 238,
    "fingerprint": "a835e51739",
    "groupedMenu": true
   },
   {
    "path": "/guides/washington-park-mount-baldy-swim-safety",
    "status": 200,
-   "ms": 91,
+   "ms": 276,
    "fingerprint": "71083bd3a0",
    "groupedMenu": true
   },
   {
    "path": "/guides/toll-road-i-94-wind-whiteouts",
    "status": 200,
-   "ms": 260,
+   "ms": 269,
    "fingerprint": "a1baf25fa6",
    "groupedMenu": true
   },
   {
    "path": "/snow-totals",
    "status": 200,
-   "ms": 229,
+   "ms": 234,
    "fingerprint": "ae9bf1edb4",
    "groupedMenu": true
   },
   {
    "path": "/rain-totals",
    "status": 200,
-   "ms": 420,
+   "ms": 226,
    "fingerprint": "c8032cd7e8",
    "groupedMenu": true
   },
   {
    "path": "/storm-reports",
    "status": 200,
-   "ms": 241,
+   "ms": 224,
    "fingerprint": "edbaf8e0ad",
    "groupedMenu": true
   },
   {
    "path": "/shop",
    "status": 200,
-   "ms": 255,
+   "ms": 219,
    "fingerprint": "1e1652567b",
    "groupedMenu": true
   },
   {
    "path": "/game-night",
    "status": 200,
-   "ms": 279,
+   "ms": 226,
    "fingerprint": "b1463ef894",
    "groupedMenu": true
   },
   {
    "path": "/espanol",
    "status": 200,
-   "ms": 260,
+   "ms": 262,
    "fingerprint": "2f5fa802fb",
    "groupedMenu": true
   },
   {
    "path": "/trick-or-treat",
    "status": 200,
-   "ms": 127,
+   "ms": 323,
    "fingerprint": "7eb2e1e3e4",
    "groupedMenu": true
   },
   {
    "path": "/forecast-race",
    "status": 200,
-   "ms": 256,
+   "ms": 262,
    "fingerprint": "0d4f81fc6a",
    "groupedMenu": true
   },
   {
    "path": "/sky-devotion",
    "status": 200,
-   "ms": 254,
+   "ms": 229,
    "fingerprint": "837f66df47",
    "groupedMenu": true
   },
   {
    "path": "/almanac",
    "status": 200,
-   "ms": 270,
+   "ms": 224,
    "fingerprint": "45c82ce525",
    "groupedMenu": true
   },
   {
    "path": "/air-quality",
    "status": 200,
-   "ms": 377,
+   "ms": 231,
    "fingerprint": "68642a74c6",
    "groupedMenu": true
   },
   {
    "path": "/outdoors",
    "status": 200,
-   "ms": 305,
+   "ms": 287,
    "fingerprint": "29b204f97e",
    "groupedMenu": true
   },
   {
    "path": "/history/harriet-colfax-michigan-city-lighthouse",
    "status": 200,
-   "ms": 318,
+   "ms": 222,
    "fingerprint": "4e8b6af2fa",
    "groupedMenu": true
   },
   {
    "path": "/history/eastland-disaster-1915-michigan-city",
    "status": 200,
-   "ms": 261,
+   "ms": 278,
    "fingerprint": "d14ee17848",
    "groupedMenu": true
   },
   {
    "path": "/history/white-hurricane-1913-michigan-city",
    "status": 200,
-   "ms": 334,
+   "ms": 356,
    "fingerprint": "bc85f40106",
    "groupedMenu": true
   },
   {
    "path": "/history/chicora-shipwreck-1895",
    "status": 200,
-   "ms": 287,
+   "ms": 230,
    "fingerprint": "1edb1d1fbe",
    "groupedMenu": true
   },
   {
    "path": "/history/indiana-state-prison-1933-escape",
    "status": 200,
-   "ms": 85,
+   "ms": 243,
    "fingerprint": "8bdb9347d1",
    "groupedMenu": true
   },
   {
    "path": "/history/crown-point-jail-dillinger-escape-1934",
    "status": 200,
-   "ms": 433,
+   "ms": 287,
    "fingerprint": "da70fd7567",
    "groupedMenu": true
   },
   {
    "path": "/history/old-porter-county-jail-valparaiso",
    "status": 200,
-   "ms": 259,
+   "ms": 288,
    "fingerprint": "0257edf31c",
    "groupedMenu": true
   },
   {
    "path": "/history/kingsbury-ordnance-plant-history",
    "status": 200,
-   "ms": 296,
+   "ms": 272,
    "fingerprint": "268abdfde7",
    "groupedMenu": true
   },
   {
    "path": "/history/headless-flagman-columbus-cole-legend",
    "status": 200,
-   "ms": 254,
+   "ms": 291,
    "fingerprint": "fa3513a51b",
    "groupedMenu": true
   },
   {
    "path": "/history/bailly-cemetery-chesterton",
    "status": 200,
-   "ms": 258,
+   "ms": 268,
    "fingerprint": "f513bc4d42",
    "groupedMenu": true
   },
   {
    "path": "/history/halloween-before-trick-or-treat-indiana",
    "status": 200,
-   "ms": 94,
+   "ms": 271,
    "fingerprint": "b5cadec79e",
    "groupedMenu": true
   },
   {
    "path": "/history/tippecanoe-place-south-bend",
    "status": 200,
-   "ms": 286,
+   "ms": 238,
    "fingerprint": "bc2c1a9b4b",
    "groupedMenu": true
   },
   {
    "path": "/history/washington-hall-notre-dame-gipp-legend",
    "status": 200,
-   "ms": 238,
+   "ms": 225,
    "fingerprint": "c98fded496",
    "groupedMenu": true
   },
   {
    "path": "/history/hammond-circus-train-wreck-1918",
    "status": 200,
-   "ms": 330,
+   "ms": 250,
    "fingerprint": "f1a9c1dff3",
    "groupedMenu": true
   },
   {
    "path": "/history/northwest-flight-2501-1950",
    "status": 200,
-   "ms": 239,
+   "ms": 228,
    "fingerprint": "3c83b7dcad",
    "groupedMenu": true
   },
   {
    "path": "/history/joliet-old-prison-history",
    "status": 200,
-   "ms": 265,
+   "ms": 334,
    "fingerprint": "8a5c605ffc",
    "groupedMenu": true
   },
   {
    "path": "/guides/wind-chill-frostbite-la-porte-county",
    "status": 200,
-   "ms": 255,
+   "ms": 236,
    "fingerprint": "17d4ac5c38",
    "groupedMenu": true
   },
   {
    "path": "/guides/lake-michigan-shelf-ice-safety",
    "status": 200,
-   "ms": 327,
+   "ms": 223,
    "fingerprint": "8acc34f272",
    "groupedMenu": true
   },
   {
    "path": "/guides/lightning-safety-la-porte-county",
    "status": 200,
-   "ms": 254,
+   "ms": 304,
    "fingerprint": "f09ea9415d",
    "groupedMenu": true
   },
   {
    "path": "/guides/la-porte-halloween-weather-history",
    "status": 200,
-   "ms": 238,
+   "ms": 244,
    "fingerprint": "a5dbfcc4c8",
    "groupedMenu": true
   },
   {
    "path": "/hardhat/dashboard",
    "status": 200,
-   "ms": 253,
+   "ms": 245,
    "fingerprint": "1fab47516f",
    "groupedMenu": false
   },
   {
    "path": "/hardhat/privacy",
    "status": 200,
-   "ms": 87,
+   "ms": 256,
    "fingerprint": "6a9297f797",
    "groupedMenu": false
   },
   {
    "path": "/hardhat/terms",
    "status": 200,
-   "ms": 254,
+   "ms": 234,
    "fingerprint": "a640a2688a",
    "groupedMenu": false
   },
   {
    "path": "/morning-email",
    "status": 200,
-   "ms": 234,
+   "ms": 252,
    "fingerprint": "1288bbb5b7",
    "groupedMenu": true
   },
   {
    "path": "/reports",
    "status": 200,
-   "ms": 294,
+   "ms": 254,
    "fingerprint": "6a57c57f15",
    "groupedMenu": true
   },
   {
+   "path": "/hardhat/storm-record",
+   "status": 200,
+   "ms": 205,
+   "fingerprint": "5adb2b9815",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/towns",
+   "status": 200,
+   "ms": 238,
+   "fingerprint": "ae0a64d433",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/roofing/laporte",
+   "status": 200,
+   "ms": 216,
+   "fingerprint": "c679839ad5",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/roofing/michigan-city",
+   "status": 200,
+   "ms": 258,
+   "fingerprint": "61b25e5911",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/roofing/valparaiso",
+   "status": 200,
+   "ms": 237,
+   "fingerprint": "b73a92efec",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/roofing/chesterton",
+   "status": 200,
+   "ms": 261,
+   "fingerprint": "377c1e3abd",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/roofing/portage",
+   "status": 200,
+   "ms": 246,
+   "fingerprint": "86a4800733",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/roofing/crown-point",
+   "status": 200,
+   "ms": 281,
+   "fingerprint": "93a1e6e1eb",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/roofing/south-bend",
+   "status": 200,
+   "ms": 211,
+   "fingerprint": "d8f2a2d799",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/roofing/mishawaka",
+   "status": 200,
+   "ms": 246,
+   "fingerprint": "92fa8fc444",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/concrete/laporte",
+   "status": 200,
+   "ms": 235,
+   "fingerprint": "4d66a82df6",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/concrete/michigan-city",
+   "status": 200,
+   "ms": 252,
+   "fingerprint": "a2876104c0",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/concrete/valparaiso",
+   "status": 200,
+   "ms": 219,
+   "fingerprint": "73d3e7694c",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/concrete/chesterton",
+   "status": 200,
+   "ms": 285,
+   "fingerprint": "6dc11a998b",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/concrete/portage",
+   "status": 200,
+   "ms": 283,
+   "fingerprint": "521802f3a0",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/concrete/crown-point",
+   "status": 200,
+   "ms": 260,
+   "fingerprint": "a642cd9016",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/concrete/south-bend",
+   "status": 200,
+   "ms": 243,
+   "fingerprint": "1403bc9108",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/concrete/mishawaka",
+   "status": 200,
+   "ms": 273,
+   "fingerprint": "6e3d901580",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/painting/laporte",
+   "status": 200,
+   "ms": 259,
+   "fingerprint": "a2102ac0f7",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/painting/michigan-city",
+   "status": 200,
+   "ms": 264,
+   "fingerprint": "f43db70ee2",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/painting/valparaiso",
+   "status": 200,
+   "ms": 216,
+   "fingerprint": "961bf57a41",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/painting/chesterton",
+   "status": 200,
+   "ms": 219,
+   "fingerprint": "cadbcae4b3",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/painting/portage",
+   "status": 200,
+   "ms": 260,
+   "fingerprint": "256dc5c14a",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/painting/crown-point",
+   "status": 200,
+   "ms": 217,
+   "fingerprint": "441dff7d3b",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/painting/south-bend",
+   "status": 200,
+   "ms": 261,
+   "fingerprint": "29b6c18eba",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/painting/mishawaka",
+   "status": 200,
+   "ms": 254,
+   "fingerprint": "aab8c6cd5b",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/landscaping/laporte",
+   "status": 200,
+   "ms": 253,
+   "fingerprint": "3938984a40",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/landscaping/michigan-city",
+   "status": 200,
+   "ms": 238,
+   "fingerprint": "e9fb991fc9",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/landscaping/valparaiso",
+   "status": 200,
+   "ms": 221,
+   "fingerprint": "caffe39570",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/landscaping/chesterton",
+   "status": 200,
+   "ms": 269,
+   "fingerprint": "a443c7aadd",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/landscaping/portage",
+   "status": 200,
+   "ms": 267,
+   "fingerprint": "38447e15d7",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/landscaping/crown-point",
+   "status": 200,
+   "ms": 220,
+   "fingerprint": "b3d42fd7fa",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/landscaping/south-bend",
+   "status": 200,
+   "ms": 266,
+   "fingerprint": "4fc8115300",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/landscaping/mishawaka",
+   "status": 200,
+   "ms": 281,
+   "fingerprint": "c3379dcc1d",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/paving/laporte",
+   "status": 200,
+   "ms": 233,
+   "fingerprint": "179a61ec93",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/paving/michigan-city",
+   "status": 200,
+   "ms": 262,
+   "fingerprint": "21484ce9c3",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/paving/valparaiso",
+   "status": 200,
+   "ms": 213,
+   "fingerprint": "e836c86eee",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/paving/chesterton",
+   "status": 200,
+   "ms": 236,
+   "fingerprint": "2b11f749f2",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/paving/portage",
+   "status": 200,
+   "ms": 315,
+   "fingerprint": "445bab770d",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/paving/crown-point",
+   "status": 200,
+   "ms": 236,
+   "fingerprint": "33ba98d99d",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/paving/south-bend",
+   "status": 200,
+   "ms": 234,
+   "fingerprint": "795faca442",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/paving/mishawaka",
+   "status": 200,
+   "ms": 242,
+   "fingerprint": "4634130751",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/tree-service/laporte",
+   "status": 200,
+   "ms": 279,
+   "fingerprint": "84e144719b",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/tree-service/michigan-city",
+   "status": 200,
+   "ms": 241,
+   "fingerprint": "baf5599c7b",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/tree-service/valparaiso",
+   "status": 200,
+   "ms": 221,
+   "fingerprint": "a79bfbae0c",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/tree-service/chesterton",
+   "status": 200,
+   "ms": 263,
+   "fingerprint": "d19c75ffdb",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/tree-service/portage",
+   "status": 200,
+   "ms": 234,
+   "fingerprint": "bfcd3c4efd",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/tree-service/crown-point",
+   "status": 200,
+   "ms": 232,
+   "fingerprint": "1c9c12b6ff",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/tree-service/south-bend",
+   "status": 200,
+   "ms": 233,
+   "fingerprint": "01586b61b6",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/tree-service/mishawaka",
+   "status": 200,
+   "ms": 230,
+   "fingerprint": "210297cc69",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/snow-plow/laporte",
+   "status": 200,
+   "ms": 222,
+   "fingerprint": "71a977ef51",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/snow-plow/michigan-city",
+   "status": 200,
+   "ms": 231,
+   "fingerprint": "3d6f322e6b",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/snow-plow/valparaiso",
+   "status": 200,
+   "ms": 257,
+   "fingerprint": "84558768d3",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/snow-plow/chesterton",
+   "status": 200,
+   "ms": 220,
+   "fingerprint": "f92e9fad23",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/snow-plow/portage",
+   "status": 200,
+   "ms": 239,
+   "fingerprint": "bc92663863",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/snow-plow/crown-point",
+   "status": 200,
+   "ms": 227,
+   "fingerprint": "52171bbfef",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/snow-plow/south-bend",
+   "status": 200,
+   "ms": 239,
+   "fingerprint": "638c820d6b",
+   "groupedMenu": false
+  },
+  {
+   "path": "/hardhat/snow-plow/mishawaka",
+   "status": 200,
+   "ms": 230,
+   "fingerprint": "d744201e38",
+   "groupedMenu": false
+  },
+  {
    "path": "/hardhat/pay",
    "status": 200,
-   "ms": 244,
+   "ms": 225,
    "fingerprint": "372c633667",
    "groupedMenu": false
   },
   {
    "path": "/hardhat/thanks",
    "status": 200,
-   "ms": 230,
+   "ms": 216,
    "fingerprint": "8db0032366",
    "groupedMenu": false
   }
  ],
  "assets": {
-  "checked": 63,
+  "checked": 64,
   "notOk": []
  },
  "data": {
   "latestScoop": {
-   "date": "2026-11-09",
-   "posted": "2026-11-09T05:32:00-06:00",
+   "date": "2026-11-10",
+   "posted": "2026-11-10T05:32:00-06:00",
    "automatic": false
   },
   "scoopLast14": {
@@ -715,6 +1129,11 @@
    "backup": 0,
    "missing": 0,
    "days": [
+    {
+     "date": "2026-11-10",
+     "result": "on time",
+     "posted": "05:32"
+    },
     {
      "date": "2026-11-09",
      "result": "on time",
@@ -779,40 +1198,35 @@
      "date": "2026-10-28",
      "result": "on time",
      "posted": "05:32"
-    },
-    {
-     "date": "2026-10-27",
-     "result": "on time",
-     "posted": "05:32"
     }
    ]
   },
   "nws-snapshot.json": {
-   "ageHours": 2.3
+   "ageHours": 3.3
   },
   "scorecard.json": {
-   "ageHours": 2.3
+   "ageHours": 3.3
   },
   "world-watch.json": {
-   "updated": "2026-10-19",
-   "ageDays": 21
+   "updated": "2026-11-10",
+   "ageDays": 0
   },
   "home.json": {
    "status": 200,
-   "ageHours": 0.2
+   "ageHours": 0.0
   },
   "radio.json": {
    "status": 200,
-   "ageHours": 0.2
+   "ageHours": 0.5
   },
   "fuel-prices.json": {
    "week": "2026-11-02",
-   "ageDays": 7
+   "ageDays": 8
   },
   "tiles/index.json": {
    "made": "2026-11-09T09:22:48+00:00",
    "dataFrom": "2026-11-09T09:17:38+00:00",
-   "ageDays": 0.6
+   "ageDays": 1.2
   },
   "tiles on GitHub Pages": {
    "status": 200
@@ -820,19 +1234,33 @@
  },
  "githubJobs": {
   "failedLast7days": {
-   "World Watch update": 7,
+   "pages build and deployment": 6,
+   "World Watch update": 5,
    "Morning email": 2,
    "Snow totals": 1,
-   "pages build and deployment": 4,
    "Homepage weather copy": 4,
    "Weather radio": 10,
    "Daily Scoop updates": 1,
    "Timer": 6,
    "Earth from space data": 1,
-   "Hard Hat sender watch": 2,
-   "School closings": 1
+   "Hard Hat sender watch": 2
   },
   "failures": [
+   {
+    "name": "pages build and deployment",
+    "when": "2026-11-10T14:02:27Z",
+    "url": "https://github.com/ScoopAndDude/laporteweathernow-posts/actions/runs/42830096721"
+   },
+   {
+    "name": "pages build and deployment",
+    "when": "2026-11-10T11:02:33Z",
+    "url": "https://github.com/ScoopAndDude/laporteweathernow-posts/actions/runs/42804165107"
+   },
+   {
+    "name": "World Watch update",
+    "when": "2026-11-10T02:53:23Z",
+    "url": "https://github.com/ScoopAndDude/laporteweathernow-posts/actions/runs/42745794788"
+   },
    {
     "name": "World Watch update",
     "when": "2026-11-09T19:47:11Z",
@@ -917,23 +1345,8 @@
     "name": "pages build and deployment",
     "when": "2026-11-07T12:32:26Z",
     "url": "https://github.com/ScoopAndDude/laporteweathernow-posts/actions/runs/42372940302"
-   },
-   {
-    "name": "Morning email",
-    "when": "2026-11-06T14:47:06Z",
-    "url": "https://github.com/ScoopAndDude/laporteweathernow-posts/actions/runs/42237011578"
-   },
-   {
-    "name": "Daily Scoop updates",
-    "when": "2026-11-05T16:02:05Z",
-    "url": "https://github.com/ScoopAndDude/laporteweathernow-posts/actions/runs/42060870697"
-   },
-   {
-    "name": "Timer",
-    "when": "2026-11-05T16:01:48Z",
-    "url": "https://github.com/ScoopAndDude/laporteweathernow-posts/actions/runs/42060833124"
    }
   ],
-  "lastTick": "2026-11-09T22:46:48Z"
+  "lastTick": "2026-11-10T14:16:49Z"
  }
 }
