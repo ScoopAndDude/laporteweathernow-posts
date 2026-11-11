@@ -243,14 +243,25 @@
   "hourlyFrom": "2026-11-10T05:43:00-06:00"
  },
  "published": {
-  "time": "2026-11-10T20:02:00-06:00",
+  "time": "2026-11-10T23:17:00-06:00",
   "alertKeys": [],
   "alerts": [],
-  "changes": [],
+  "changes": [
+   {
+    "k": "day 2026-11-11",
+    "was": "Veterans Day",
+    "now": "Veterans Day",
+    "shortWas": "Mostly Cloudy then Chance Rain Showers",
+    "shortNow": "Mostly Cloudy then Rain Showers Likely",
+    "field": "rain",
+    "from": 50,
+    "to": 70
+   }
+  ],
   "off": [
    "cool"
   ],
-  "paragraph": "Automatic update, 8:02 p.m.: It's running cooler than NWS's earlier hour-by-hour forecast: at 7:15 p.m. the La Porte airport reported fog/mist and 41 degrees, where that forecast had about 46. There are no watches, warnings, or advisories for La Porte County right now."
+  "paragraph": "Automatic update, 11:17 p.m.: Since the Scoop below was written, NWS has raised its chance of rain for Wednesday to 70% (from 50%). It's running cooler than NWS's earlier hour-by-hour forecast: at 10:15 p.m. the La Porte airport reported fog and 37 degrees, where that forecast had about 43. There are no watches, warnings, or advisories for La Porte County right now."
  },
  "alertRows": [],
  "missing": [],
@@ -282,6 +293,10 @@
   {
    "time": "2026-11-10T20:02:00-06:00",
    "why": "airport running cool"
+  },
+  {
+   "time": "2026-11-10T23:17:00-06:00",
+   "why": "NWS forecast day 2026-11-11 rain 50->70"
   }
  ]
 }
