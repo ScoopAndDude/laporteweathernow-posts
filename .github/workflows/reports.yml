@@ -4,6 +4,9 @@
 # repository ScoopAndDude/laporteweathernow-reports as issues, and the ones Scoop labeled "approve" go on
 # the public "reports" branch here (reports.json and photos/), which the map on /reports reads.
 # Nothing happens until the two secrets below exist; then the form on /reports appears by itself.
+# Snow Help (Nov. 10, 2026; scripts/snow_help.py) rides along: requests and helper sign-ups from /snow-help go
+# into the same private repository as issues, and the requests Scoop approves go on the board (snow-help.json
+# on the same public branch). Its step can fail without stopping the reports from being saved.
 #   NETLIFY_FORMS_TOKEN   Netlify personal access token
 #   REPORTS_QUEUE_TOKEN   GitHub fine-grained token: only laporteweathernow-reports, Contents + Issues read/write
 name: Readers' reports
@@ -50,6 +53,14 @@ jobs:
         run: |
           pip install -q pillow
           python3 scripts/reports_queue.py
+      - name: Snow Help requests and helpers
+        if: steps.ready.outputs.ok == '1'
+        continue-on-error: true
+        env:
+          NETLIFY_FORMS_TOKEN: ${{ secrets.NETLIFY_FORMS_TOKEN }}
+          REPORTS_QUEUE_TOKEN: ${{ secrets.REPORTS_QUEUE_TOKEN }}
+          REPORTS_DIR: ${{ runner.temp }}/reports
+        run: python3 scripts/snow_help.py
       - name: Save the reports branch
         if: steps.ready.outputs.ok == '1'
         env:
@@ -62,7 +73,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -q -m "Readers' reports ($(TZ=America/Chicago date '+%Y-%m-%d %H:%M %Z'))"
+          git commit -q -m "Readers' reports and Snow Help ($(TZ=America/Chicago date '+%Y-%m-%d %H:%M %Z'))"
           OLD=$(git ls-remote "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" refs/heads/reports | cut -f1)
           NEW_TREE=$(git rev-parse HEAD^{tree})
           if [ -n "$OLD" ]; then
