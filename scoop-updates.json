@@ -243,23 +243,14 @@
   "hourlyFrom": "2026-11-10T05:43:00-06:00"
  },
  "published": {
-  "time": "2026-11-10T16:17:00-06:00",
+  "time": "2026-11-10T20:02:00-06:00",
   "alertKeys": [],
   "alerts": [],
-  "changes": [
-   {
-    "k": "day 2026-11-10",
-    "was": "Today",
-    "now": "This Afternoon",
-    "shortWas": "Sunny",
-    "shortNow": "Sunny",
-    "field": "temp",
-    "from": 58,
-    "to": 64
-   }
+  "changes": [],
+  "off": [
+   "cool"
   ],
-  "off": [],
-  "paragraph": "Automatic update, 4:17 p.m.: Since the Scoop below was written, NWS has raised its high for today to 64 (from 58). There are no watches, warnings, or advisories for La Porte County right now."
+  "paragraph": "Automatic update, 8:02 p.m.: It's running cooler than NWS's earlier hour-by-hour forecast: at 7:15 p.m. the La Porte airport reported fog/mist and 41 degrees, where that forecast had about 46. There are no watches, warnings, or advisories for La Porte County right now."
  },
  "alertRows": [],
  "missing": [],
@@ -287,6 +278,10 @@
   {
    "time": "2026-11-10T16:17:00-06:00",
    "why": "NWS forecast day 2026-11-10 temp 58->64"
+  },
+  {
+   "time": "2026-11-10T20:02:00-06:00",
+   "why": "airport running cool"
   }
  ]
 }
