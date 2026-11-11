@@ -4,9 +4,10 @@
 # repository ScoopAndDude/laporteweathernow-reports as issues, and the ones Scoop labeled "approve" go on
 # the public "reports" branch here (reports.json and photos/), which the map on /reports reads.
 # Nothing happens until the two secrets below exist; then the form on /reports appears by itself.
-# Snow Help (Nov. 10, 2026; scripts/snow_help.py) rides along: requests and helper sign-ups from /snow-help go
-# into the same private repository as issues, and the requests Scoop approves go on the board (snow-help.json
-# on the same public branch). Its step can fail without stopping the reports from being saved.
+# Snow Help (Nov. 10, 2026; scripts/snow_help.py) rides along and runs itself: requests from /snow-help go on the
+# board (snow-help.json on the same public branch) with no approval step, helpers are emailed through Brevo, and
+# the private record is kept as issues in the same private repository. Its step can fail without stopping the
+# reports from being saved.
 #   NETLIFY_FORMS_TOKEN   Netlify personal access token
 #   REPORTS_QUEUE_TOKEN   GitHub fine-grained token: only laporteweathernow-reports, Contents + Issues read/write
 name: Readers' reports
@@ -59,6 +60,7 @@ jobs:
         env:
           NETLIFY_FORMS_TOKEN: ${{ secrets.NETLIFY_FORMS_TOKEN }}
           REPORTS_QUEUE_TOKEN: ${{ secrets.REPORTS_QUEUE_TOKEN }}
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
           REPORTS_DIR: ${{ runner.temp }}/reports
         run: python3 scripts/snow_help.py
       - name: Save the reports branch
