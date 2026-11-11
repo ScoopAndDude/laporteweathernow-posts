@@ -1,0 +1,24 @@
+# One-off check (Nov. 11, 2026): why do the site's emails land in spam? Looks up the domain's public mail records
+# and asks Brevo whether the sending domain is authenticated. Prints no addresses and no keys. Run by hand only.
+name: Mail check
+on:
+  workflow_dispatch:
+permissions: {}
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Public DNS records
+        run: |
+          D=laporteweathernow.com
+          for q in "TXT $D" "MX $D" "NS $D" "TXT _dmarc.$D" "CNAME brevo1._domainkey.$D" "CNAME brevo2._domainkey.$D" "TXT mail._domainkey.$D" "TXT brevo-code.$D" "TXT brevo._domainkey.$D"; do
+            set -- $q; echo "== $1 $2"; dig +short "$1" "$2" @8.8.8.8 | cut -c1-160 || true
+          done
+      - name: Brevo sending domains and senders
+        env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+        run: |
+          curl -s -H "api-key: $BREVO_API_KEY" -H "accept: application/json" https://api.brevo.com/v3/senders/domains \
+            | python3 -c "import sys,json; d=json.load(sys.stdin); print('domains:', [(x.get('domain_name'), 'authenticated' if x.get('authenticated') else 'NOT authenticated', 'verified' if x.get('verified') else 'NOT verified') for x in d.get('domains', [])] or d.get('code') or 'none')"
+          curl -s -H "api-key: $BREVO_API_KEY" -H "accept: application/json" https://api.brevo.com/v3/senders \
+            | python3 -c "import sys,json; d=json.load(sys.stdin); print('senders:', [(x.get('email','').split('@')[-1], 'active' if x.get('active') else 'inactive') for x in d.get('senders', [])] or d.get('code') or 'none')"
