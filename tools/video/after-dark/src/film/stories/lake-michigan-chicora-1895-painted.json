@@ -1,0 +1,216 @@
+{
+ "slug": "lake-michigan-chicora-1895-painted",
+ "title": "The Steamer Chicora, 1895: the Warning That Came Too Late",
+ "series": "LA PORTE AFTER DARK",
+ "music": {
+  "seed": 143,
+  "prog": 6
+ },
+ "say": [
+  [
+   "\\bChicora\\b",
+   "Shi-cora"
+  ]
+ ],
+ "sources": [
+  {
+   "what": "left Milwaukee for St. Joseph about 5 a.m. Jan. 21; owner wired the captain, but she had sailed; spars and wreckage ashore between South Haven and Saugatuck; crew of 23 and one passenger",
+   "who": "J.B. Mansfield, History of the Great Lakes (1899)",
+   "url": "https://maritimehistoryofthegreatlakes.ca/documents/HGL/default.asp?ID=s094"
+  },
+  {
+   "what": "cargo of flour; left ten minutes ahead of a messenger with the owner's warning; no bodies recovered; never found; masts bought by Douglas",
+   "who": "Michigan Shipwreck Research Association",
+   "url": "https://www.michiganshipwrecks.org/shipwrecks-2/shipwreck-categories/shipwrecks-lost/chicora"
+  },
+  {
+   "what": "'left Milwaukee yesterday morning'; 'Twenty-six lives have been lost'",
+   "who": "Milwaukee Journal, Jan. 22 and 24, 1895",
+   "url": "https://images.maritimehistoryofthegreatlakes.ca/122304/data"
+  },
+  {
+   "what": "left Milwaukee early Monday, Jan. 21; 22 aboard; wreck never found",
+   "who": "Saugatuck-Douglas Historical Society",
+   "url": "https://hub.catalogit.app/saugatuck-douglas-historical-society/folder/entry/chicora-three-additional-victims"
+  },
+  {
+   "what": "45 mph gale that afternoon and a blizzard; a dog appeared at a door south of Benton Harbor",
+   "who": "Wisconsin Marine Historical Society",
+   "url": "https://wmhs.org/?p=5991"
+  },
+  {
+   "what": "'a snuff colored Skye terrier ... covered with ice' found near Benton Harbor",
+   "who": "Buffalo Enquirer, Jan. 28, 1895",
+   "url": "https://images.maritimehistoryofthegreatlakes.ca/57573/data"
+  }
+ ],
+ "beats": [
+  {
+   "text": "The warning came too late. The ship had already sailed.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "paint",
+    "src": "paint/lake-michigan-chicora-1895/p0.jpg",
+    "move": "in",
+    "amount": 0.1,
+    "focus": [
+     540,
+     420
+    ]
+   },
+   "label": "LAKE MICHIGAN, 1895",
+   "title": {
+    "text": "THE CHICORA",
+    "at": "already sailed",
+    "size": 96,
+    "style": "red"
+   },
+   "sfx": [
+    {
+     "kind": "heartbeat",
+     "at": "too late",
+     "gain": 0.6
+    }
+   ],
+   "credit": "Michigan Shipwreck Research Association \u00b7 AI-generated picture"
+  },
+  {
+   "text": "On January 21, 1895, the steamer Chicora left Milwaukee before dawn, bound for her home port, Saint Joseph, Michigan.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "paint",
+    "src": "paint/lake-michigan-chicora-1895/p1.jpg",
+    "move": "in",
+    "amount": 0.1,
+    "focus": [
+     520,
+     480
+    ],
+    "snow": true
+   },
+   "label": "JANUARY 21, 1895",
+   "credit": "Mansfield (1899) \u00b7 AI-generated picture"
+  },
+  {
+   "text": "Her owner sent a warning not to sail. She was already gone.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "paint",
+    "src": "paint/lake-michigan-chicora-1895/p2.jpg",
+    "move": "in",
+    "amount": 0.1,
+    "focus": [
+     500,
+     620
+    ]
+   },
+   "label": "THE WARNING",
+   "typed": [
+    {
+     "text": "TOO LATE",
+     "at": "already gone",
+     "y": 545,
+     "size": 90
+    }
+   ],
+   "credit": "Michigan Shipwreck Research Association \u00b7 AI-generated picture"
+  },
+  {
+   "text": "That day, a gale and a blizzard tore across the lake.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "paint",
+    "src": "paint/lake-michigan-chicora-1895/p3.jpg",
+    "move": "in",
+    "amount": 0.1,
+    "focus": [
+     500,
+     380
+    ],
+    "snow": true
+   },
+   "label": "THE STORM",
+   "credit": "Wisconsin Marine Historical Society \u00b7 AI-generated picture"
+  },
+  {
+   "text": "The Chicora never made port. Everyone aboard, about two dozen people, was lost.",
+   "pause": 0.8,
+   "scene": {
+    "kind": "paint",
+    "src": "paint/lake-michigan-chicora-1895/p4.jpg",
+    "move": "in",
+    "amount": 0.1,
+    "focus": [
+     640,
+     360
+    ],
+    "snow": true
+   },
+   "label": "ALL LOST",
+   "credit": "Michigan Shipwreck Research Association \u00b7 AI-generated picture"
+  },
+  {
+   "text": "Wreckage washed up between South Haven and Saugatuck. Near Saint Joseph, a little terrier known to have been aboard came ashore, alive.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "card",
+    "seed": 1,
+    "move": "still"
+   },
+   "label": "THE WRECKAGE",
+   "card": {
+    "kind": "map",
+    "center": "South Haven",
+    "span": 0.8,
+    "pins": [
+     "St. Joseph",
+     "South Haven",
+     "Saugatuck"
+    ],
+    "hot": "South Haven"
+   },
+   "credit": "Mansfield (1899); Buffalo Enquirer (1895); Wisconsin Marine Historical Society"
+  },
+  {
+   "text": "The Chicora has never been found.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "paint",
+    "src": "paint/lake-michigan-chicora-1895/p6.jpg",
+    "move": "in",
+    "amount": 0.1,
+    "focus": [
+     380,
+     480
+    ]
+   },
+   "label": "NEVER FOUND",
+   "credit": "Michigan Shipwreck Research Association \u00b7 AI-generated picture"
+  },
+  {
+   "text": "Comment your town for the next La Porte After Dark.",
+   "end": true,
+   "end_card": {
+    "q": "COMMENT YOUR TOWN",
+    "q2": "FOR THE NEXT STORY",
+    "bubble": "Your town, your state",
+    "pill": "St. Joseph, Michigan",
+    "scene": {
+     "kind": "paint",
+     "src": "paint/lake-michigan-chicora-1895/p4.jpg",
+     "move": "still",
+     "amount": 0.1,
+     "dim": 0.7
+    }
+   },
+   "credit": "Pictures: AI-generated (Canva)"
+  }
+ ],
+ "factcheck": {
+  "date": "2026-11-07",
+  "by": "independent subagent",
+  "result": "the dog came ashore near St. Joseph, not with the wreckage; 'ALL HANDS' became 'ALL LOST'; lightning and the small boat removed; all supported"
+ },
+ "illustrated": "2026-11-12",
+ "ai_pictures": true
+}
