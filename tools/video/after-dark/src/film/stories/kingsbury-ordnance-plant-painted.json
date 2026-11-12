@@ -1,0 +1,204 @@
+{
+ "slug": "kingsbury-ordnance-plant-painted",
+ "title": "The Kingsbury Ordnance Plant: the Farms LaPorte County Gave Up for World War 2",
+ "series": "LA PORTE AFTER DARK",
+ "music": {
+  "seed": 122,
+  "prog": 6
+ },
+ "say": [],
+ "sources": [
+  {
+   "what": "families given 30 days to leave; 13,454 acres; employment peak 20,785 in May 1942, nearly half women; Victory City",
+   "who": "WKVI archives (2011)",
+   "url": "https://wkvi.com/2011/09/from-the-wkvi-archives-kingsbury-ordnance-plant"
+  },
+  {
+   "what": "the plant's history; four years 'without any major accidents'",
+   "who": "Indiana Public Media, Moment of Indiana History",
+   "url": "https://www.ipm.org/show/momentofindianahistory/kingsbury-ordnance-plant"
+  },
+  {
+   "what": "the plant and the families who left",
+   "who": "The History Museum, South Bend",
+   "url": "https://www.historymuseumsb.org/jexm"
+  },
+  {
+   "what": "Kingsbury Fish & Wildlife Area on former ordnance plant land; bunkers",
+   "who": "Indiana DNR",
+   "url": "https://secure.in.gov/dnr/fish-and-wildlife/properties/kingsbury-fwa"
+  },
+  {
+   "what": "'Some 13,000 acres'; 'Initially dubbed Victory City'; private land warning",
+   "who": "Towne Post, Victory City",
+   "url": "https://townepost.com/indiana/lakes-region/victory-city/"
+  },
+  {
+   "what": "'Initially called Victory City, it would later be renamed Kingsford Heights'",
+   "who": "La Porte Herald-Dispatch",
+   "url": "https://www.lpheralddispatch.com/news/local/article_2ad07856-b7cf-5a16-acb7-e49cce1906ab.html"
+  },
+  {
+   "what": "'parallel rows of abandoned ammunition bunkers'",
+   "who": "Indiana Landmarks (2018)",
+   "url": "https://www.indianalandmarks.org/2018/06/tour-cold-war-landmarks-region/"
+  }
+ ],
+ "beats": [
+  {
+   "text": "In 1940, the Army picked the farmland around Kingsbury for a war plant. The families who lived there had to leave.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "paint",
+    "src": "paint/kingsbury-ordnance-plant/p0.jpg",
+    "move": "in",
+    "amount": 0.1,
+    "focus": [
+     540,
+     450
+    ]
+   },
+   "label": "KINGSBURY, LAPORTE COUNTY",
+   "title": {
+    "text": "THEY HAD TO LEAVE",
+    "at": "had to leave",
+    "size": 88,
+    "style": "red"
+   },
+   "sfx": [
+    {
+     "kind": "heartbeat",
+     "at": "had to leave",
+     "gain": 0.5
+    }
+   ],
+   "credit": "WKVI \u00b7 AI-generated picture"
+  },
+  {
+   "text": "More than 13,000 acres of farms became the Kingsbury Ordnance Plant.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "card",
+    "seed": 0,
+    "move": "still"
+   },
+   "label": "THE ORDNANCE PLANT",
+   "card": {
+    "kind": "map",
+    "center": "Kingsbury",
+    "span": 0.7,
+    "pins": [
+     "Kingsbury",
+     "La Porte",
+     "Michigan City"
+    ],
+    "hot": "Kingsbury"
+   },
+   "credit": "WKVI; The History Museum; Towne Post"
+  },
+  {
+   "text": "It loaded shells and ammunition for World War 2. At its peak, more than 20,000 people worked there, and nearly half were women.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "paint",
+    "src": "paint/kingsbury-ordnance-plant/p2.jpg",
+    "move": "in",
+    "amount": 0.1,
+    "focus": [
+     540,
+     420
+    ]
+   },
+   "label": "WORLD WAR 2",
+   "typed": [
+    {
+     "text": "20,000 WORKERS",
+     "at": "20,000",
+     "y": 545,
+     "size": 80
+    }
+   ],
+   "credit": "WKVI \u00b7 AI-generated picture"
+  },
+  {
+   "text": "A whole new town went up beside it. Today, it's Kingsford Heights.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "paint",
+    "src": "paint/kingsbury-ordnance-plant/p3.jpg",
+    "move": "in",
+    "amount": 0.1,
+    "focus": [
+     540,
+     600
+    ]
+   },
+   "label": "A WARTIME TOWN",
+   "credit": "La Porte Herald-Dispatch \u00b7 AI-generated picture"
+  },
+  {
+   "text": "After the war, and a second run for Korea, the plant shut down for good. But out in the woods, rows of old ammunition bunkers still stand.",
+   "pause": 0.8,
+   "scene": {
+    "kind": "paint",
+    "src": "paint/kingsbury-ordnance-plant/p4.jpg",
+    "move": "in",
+    "amount": 0.1,
+    "focus": [
+     400,
+     560
+    ]
+   },
+   "label": "IN THE WOODS",
+   "sfx": [
+    {
+     "kind": "crow",
+     "at": "bunkers",
+     "gain": 0.5
+    }
+   ],
+   "credit": "WKVI \u00b7 AI-generated picture"
+  },
+  {
+   "text": "Part of the old plant is an industrial park now. And part of it is the Kingsbury Fish and Wildlife Area, open to the public.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "paint",
+    "src": "paint/kingsbury-ordnance-plant/p5.jpg",
+    "move": "in",
+    "amount": 0.1,
+    "focus": [
+     400,
+     620
+    ]
+   },
+   "label": "TODAY",
+   "credit": "Indiana DNR \u00b7 AI-generated picture"
+  },
+  {
+   "text": "Comment your town, and it could be next.",
+   "end": true,
+   "end_card": {
+    "q": "COMMENT YOUR TOWN",
+    "q2": "IT COULD BE NEXT",
+    "bubble": "Your town, your state",
+    "pill": "Kingsbury Fish & Wildlife Area, LaPorte County",
+    "scene": {
+     "kind": "paint",
+     "src": "paint/kingsbury-ordnance-plant/p4.jpg",
+     "move": "still",
+     "amount": 0.1,
+     "dim": 0.7
+    }
+   },
+   "credit": "Pictures: AI-generated (Canva)"
+  }
+ ],
+ "factcheck": {
+  "date": "2026-11-07",
+  "by": "independent subagent, 2 rounds",
+  "result": "'30 days' dropped (blog only); '250 families' dropped; 'bombs' became 'ammunition'; Korea reopening added (closed for good 1960); 'grass-covered' dropped; private-land line replaced by the industrial park; all supported"
+ },
+ "illustrated": "2026-11-12",
+ "ai_pictures": true
+}

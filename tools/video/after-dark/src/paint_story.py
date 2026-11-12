@@ -11,6 +11,7 @@ d['slug']=slug+'-painted'; d['ai_pictures']=True
 nb=len(d['beats'])
 for i,b in enumerate(d['beats']):
     o=dict(opts[i]) if i<len(opts) else {}
+    if o.pop('keep',False): continue
     n=o.pop('n', i if not b.get('end') else 0)
     sc=dict({"kind":"paint","src":"paint/%s/p%d.jpg"%(slug,n),"move":"in","amount":0.10},**o)
     if b.get('end'):
