@@ -1508,3 +1508,6 @@ def make(spec, dur):
     if kind not in KINDS:
         raise KeyError("unknown scene kind %r (have: %s)" % (kind, ", ".join(sorted(KINDS))))
     return KINDS[kind](spec)
+
+
+import story_kit2  # noqa: E402,F401  story illustrations (registers more KINDS)

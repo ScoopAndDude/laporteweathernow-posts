@@ -1,0 +1,193 @@
+{
+  "slug": "crown-point-courthouse-marriage-mill",
+  "title": "Crown Point's Marriage Mill: the Courthouse Where Rudolph Valentino Got Married",
+  "series": "LA PORTE AFTER DARK",
+  "music": {
+    "seed": 177,
+    "prog": 6
+  },
+  "say": [
+    [
+      "\\bNatacha\\b",
+      "Nuh-tahsha"
+    ]
+  ],
+  "sources": [
+    {
+      "what": "no waiting period in Indiana, unlike neighboring states; Chicago couples to Crown Point; Illinois' 1905 law; Valentino and Rambova, 1923; blood-test law effective March 1, 1940",
+      "who": "Indiana State Library blog, 'The marrying kind; or, the tale of Indiana's Gretna Greens'",
+      "url": "https://blog.library.in.gov/the-marrying-kind-or-the-tale-of-indianas-gretna-greens/"
+    },
+    {
+      "what": "1915 start of the 'Marriage Mill'; no blood test or three-day wait; 'ended in 1940 when Indiana changed its laws'; cornerstone 1878",
+      "who": "Crown Point Community Library, historical timeline",
+      "url": "https://www.crownpointlibrary.org/research/indianaroom/historical-timeline"
+    },
+    {
+      "what": "'Marriage Mill ... between 1915 and 1940'; weddings at the courthouse again",
+      "who": "South Shore Convention and Visitors Authority",
+      "url": "https://www.southshorecva.com/blog/post/historic-marriage-mill-returns-to-crown-point"
+    },
+    {
+      "what": "'They legally remarried on March 14, 1923, in Crown Point, Indiana'",
+      "who": "Wikipedia, Natacha Rambova",
+      "url": "https://en.wikipedia.org/wiki/Natacha_Rambova"
+    },
+    {
+      "what": "'Married. Rodolfo Guglielmo ... to Winifred Hudnut, at Crown Point, Ind.'",
+      "who": "Time magazine, 1923",
+      "url": "https://content.time.com/time/magazine/article/0,9171,727044,00.html"
+    },
+    {
+      "what": "'Grand Old Lady', a landmark since 1878; 'once threatened with demolition to create a parking lot ... saved by a group of dedicated citizens'",
+      "who": "Advisory Council on Historic Preservation, Preserve America",
+      "url": "https://www.achp.gov/node/8961"
+    },
+    {
+      "what": "no waiting time in Indiana; licence at the courthouse, then married across the street in the office of Justice of the Peace Howard Kemp; shops on the ground floor",
+      "who": "WBEZ, What's That Building? (2023)",
+      "url": "https://www.wbez.org/reset-with-sasha-ann-simons/2023/03/23/crown-point-indiana-courthouse"
+    },
+    {
+      "what": "Illinois made couples wait; Crown Point as Chicago's Gretna Green",
+      "who": "Chicago Public Library",
+      "url": "https://www.chipublib.org/blogs/post/crown-point-indiana-chicagos-gretna-green/"
+    },
+    {
+      "what": "built 1878; maintained by the Lake Court House Foundation; museum and shops",
+      "who": "Lake County Courthouse marker (HMDB); Hoosier History Live",
+      "url": "https://www.hmdb.org/m.asp?m=287616"
+    }
+  ],
+  "beats": [
+    {
+      "text": "For years, couples raced to one Indiana town to get married with no waiting. Crown Point became known as the marriage mill.",
+      "pause": 0.6,
+      "scene": {
+        "kind": "cpcourt",
+        "seed": 0,
+        "car": true,
+        "move": "in",
+        "amount": 0.1
+      },
+      "label": "CROWN POINT, INDIANA",
+      "title": {
+        "text": "THE MARRIAGE MILL",
+        "at": "marriage mill",
+        "size": 88,
+        "style": "red"
+      },
+      "sfx": [
+        {
+          "kind": "bell",
+          "at": "marriage mill",
+          "gain": 0.4
+        }
+      ],
+      "credit": "History: Indiana State Library; Crown Point Community Library"
+    },
+    {
+      "text": "Indiana had no waiting period for a marriage license. So couples from Chicago crossed the state line.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "card",
+        "seed": 0,
+        "move": "still"
+      },
+      "label": "ACROSS THE STATE LINE",
+      "card": {
+        "kind": "map",
+        "center": [
+          41.62,
+          -87.5
+        ],
+        "span": 0.9,
+        "pins": [
+          "Chicago",
+          "Crown Point"
+        ],
+        "hot": "Crown Point"
+      },
+      "credit": "Indiana State Library; Crown Point Community Library"
+    },
+    {
+      "text": "On March 14, 1923, the silent film star Rudolph Valentino married Natacha Rambova in Crown Point.",
+      "pause": 0.6,
+      "scene": {
+        "kind": "jpoffice",
+        "seed": 0,
+        "move": "in",
+        "amount": 0.09
+      },
+      "label": "MARCH 14, 1923: ACROSS FROM THE COURTHOUSE",
+      "typed": [
+        {
+          "text": "VALENTINO",
+          "at": "Rudolph Valentino",
+          "y": 545,
+          "size": 84
+        }
+      ],
+      "credit": "Time magazine, 1923; WBEZ; Indiana State Library"
+    },
+    {
+      "text": "The rush faded around 1940, after Indiana tightened its marriage laws, including a required blood test.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "card",
+        "seed": 1,
+        "move": "still"
+      },
+      "label": "THE LAW CHANGED",
+      "card": {
+        "kind": "year",
+        "label": "THE MARRIAGE MILL YEARS",
+        "value": "1915-1940",
+        "note": "CROWN POINT COMMUNITY LIBRARY"
+      },
+      "credit": "Indiana State Library; Crown Point Community Library"
+    },
+    {
+      "text": "The courthouse went up starting in 1878. They call it the Grand Old Lady. It was once threatened with demolition for a parking lot, until residents saved it.",
+      "pause": 0.6,
+      "scene": {
+        "kind": "cpcourt",
+        "seed": 2,
+        "move": "up",
+        "amount": 0.1
+      },
+      "label": "THE GRAND OLD LADY",
+      "credit": "Advisory Council on Historic Preservation; Lake Court House Foundation"
+    },
+    {
+      "text": "Today it holds shops. And couples still get married there.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "cpcourt",
+        "seed": 3,
+        "dawn": true,
+        "move": "out",
+        "amount": 0.07
+      },
+      "label": "TODAY",
+      "credit": "WBEZ; South Shore CVA"
+    },
+    {
+      "text": "Comment your town, and it could be next.",
+      "end": true,
+      "end_card": {
+        "q": "COMMENT YOUR TOWN",
+        "q2": "IT COULD BE NEXT",
+        "bubble": "Your town, your state",
+        "scene": {
+          "kind": "cpcourt",
+          "seed": 4,
+          "dawn": true,
+          "move": "still"
+        },
+        "pill": "Old Lake County Courthouse, Crown Point"
+      },
+      "credit": "All pictures drawn"
+    }
+  ]
+}

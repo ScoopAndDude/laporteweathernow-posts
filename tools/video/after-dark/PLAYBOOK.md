@@ -39,6 +39,20 @@ Scary comes from the story, the pacing and the sound, never from gore. All of Sc
 - Sound: "sfx" accents at the words that matter: heartbeat under the build, knock, creak, crow, thunder with "flash", music_box, whoosh at the turn, static (radio), dance (distant 1930s band, for a ballroom story).
 - End on the unsettling line before the call to comment (for legends: "And some say she's still out there."), only if sources report it.
 
+## Illustrate the story (Scoop, Nov. 12, 2026: "we need to illustrate the stories", "dont keep using the same ones", "we can mek new backgronds")
+
+Each beat's picture should show what the narrator is describing at that moment, not a mood backdrop, and the same
+few backdrops (bare woods, the generic brick house, the generic courthouse) shouldn't carry short after short.
+- Before picking scenes, list what each beat is about (a place, a thing, an event) and pick or draw a picture of that.
+- `src/film/story_kit2.py` holds the story illustrations added so far: village, march, monument, manor, carworks,
+  hall, cpcourt, jpoffice (its docstring lists their options). Add new ones there the same way (a class, then a
+  line in KINDS and AMBIENCE at the bottom) when a story needs a picture the kit doesn't have, and commit it.
+- Draw real buildings in their real shape (storeys, towers, brick or stone) from the sources, and match the season
+  and time of day of the event (the 1838 march left in early September: trees in leaf, not bare).
+- Keep what matters above y 1250: the captions sit at y 1290 to 1400 and the frame darkens below them.
+- People are small anonymous silhouettes only. Still no bodies, no real person's likeness, no brands.
+- Vary the sky: the kit has dusk, blue-hour, dawn and night palettes. A short shouldn't be one picture seven times.
+
 ## 0. Set up (about 5 minutes)
 
 ```

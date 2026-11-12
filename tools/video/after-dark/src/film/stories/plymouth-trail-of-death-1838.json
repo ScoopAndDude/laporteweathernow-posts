@@ -1,0 +1,209 @@
+{
+  "slug": "plymouth-trail-of-death-1838",
+  "title": "The Trail of Death, 1838: the Potawatomi Forced Out of Indiana",
+  "series": "LA PORTE AFTER DARK",
+  "music": {
+    "seed": 171,
+    "prog": 6
+  },
+  "say": [
+    [
+      "\\bPotawatomi\\b",
+      "Potta-wottamee"
+    ],
+    [
+      "\\bMenominee\\b",
+      "Muh-nominee"
+    ]
+  ],
+  "sources": [
+    {
+      "what": "859 Potawatomi; Sept. 4 to Nov. 4, 1838; about 660 miles, 61 days; 42 died, 28 of them children; Tipton's militia of 100 volunteers, authorized by Gov. Wallace; chiefs in a wagon under guard; village and crops destroyed; 80 markers in four states; 1909 statue",
+      "who": "Wikipedia, Potawatomi Trail of Death; Chief Menominee",
+      "url": "https://en.wikipedia.org/wiki/Potawatomi_Trail_of_Death"
+    },
+    {
+      "what": "'a band of 859 Potawatomi, with their leaders shackled and restrained in the back of a wagon'; 'burned both fields and houses'; 660-mile trek; 'more than forty people died', usually children",
+      "who": "Citizen Potawatomi Nation Cultural Heritage Center",
+      "url": "https://www.potawatomiheritage.com/encyclopedia/trail-of-death/"
+    },
+    {
+      "what": "Menominee refused to give up the land; shackles; 660 miles, Sept. 4, 1838; plaques every 15 to 20 miles",
+      "who": "Citizen Potawatomi Nation",
+      "url": "https://potawatomi.org/?p=17533"
+    },
+    {
+      "what": "Gov. Wallace charged Gen. Tipton; Menominee and two fellow chiefs in a jail wagon; two-month trek; 660 miles; Nov. 4, 1838",
+      "who": "Indiana Public Media, Moment of Indiana History",
+      "url": "https://indianapublicmedia.org/momentofindianahistory/trail-of-death"
+    },
+    {
+      "what": "'forced 859 Potawatomi at gunpoint'",
+      "who": "ICT News",
+      "url": "https://ictnews.org/?p=72470"
+    },
+    {
+      "what": "859 removed at gunpoint; more than 600 miles; arrived Nov. 4 at Osawatomie",
+      "who": "Kansas Historical Society, Kansapedia",
+      "url": "https://www.kansashistory.gov/kansapedia/potawatomi-trail-of-death/17944"
+    },
+    {
+      "what": "'some 800' Potawatomi (state marker 50.1949.1)",
+      "who": "Indiana Historical Bureau",
+      "url": "https://www.in.gov/history/markers/3914.htm"
+    },
+    {
+      "what": "'Over half of those who died were children'; monument text",
+      "who": "Kansas Heritage, Prairie Band Potawatomi history",
+      "url": "https://www.kansasheritage.org/PBP/people/p_trail_of_death.html"
+    },
+    {
+      "what": "17-foot granite monument dedicated Sept. 4, 1909, about 5 miles southwest of Plymouth",
+      "who": "National Register nomination, Chief Menominee Memorial Site; Visit Marshall County",
+      "url": "https://npgallery.nps.gov/GetAsset/b2f75af7-daa3-4150-a800-03e98a67e5da"
+    }
+  ],
+  "beats": [
+    {
+      "text": "In 1838, a militia marched more than 800 Potawatomi out of Indiana at gunpoint. It started at Twin Lakes, near Plymouth.",
+      "pause": 0.7,
+      "scene": {
+        "kind": "village",
+        "seed": 0,
+        "move": "in",
+        "amount": 0.1
+      },
+      "label": "TWIN LAKES, NEAR PLYMOUTH, INDIANA",
+      "title": {
+        "text": "THE TRAIL OF DEATH",
+        "at": "out of Indiana",
+        "size": 88,
+        "style": "red"
+      },
+      "sfx": [
+        {
+          "kind": "heartbeat",
+          "at": "at gunpoint",
+          "gain": 0.5
+        }
+      ],
+      "credit": "History: Citizen Potawatomi Nation; Indiana Public Media"
+    },
+    {
+      "text": "Their leader, Menominee, had refused to give up his people's land. So the governor sent General John Tipton and a volunteer militia.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "card",
+        "seed": 0,
+        "move": "still"
+      },
+      "label": "MARSHALL COUNTY, 1838",
+      "card": {
+        "kind": "map",
+        "center": "Plymouth",
+        "span": 0.9,
+        "pins": [
+          "Plymouth",
+          "La Porte"
+        ],
+        "hot": "Plymouth",
+        "notes": {
+          "Plymouth": "Twin Lakes is nearby",
+          "La Porte": "for reference"
+        }
+      },
+      "credit": "Citizen Potawatomi Nation; Indiana Public Media"
+    },
+    {
+      "text": "On September 4, the march began. Menominee and two other leaders were held under guard in a wagon. The militia burned the village so no one could return.",
+      "pause": 0.8,
+      "scene": {
+        "kind": "march",
+        "seed": 0,
+        "fire": true,
+        "move": "in",
+        "amount": 0.08
+      },
+      "label": "SEPTEMBER 4, 1838",
+      "sfx": [
+        {
+          "kind": "whoosh",
+          "at": "burned the village",
+          "gain": 0.4
+        }
+      ],
+      "credit": "Indiana Public Media; Potawatomi Cultural Heritage Center"
+    },
+    {
+      "text": "They traveled about 660 miles, to what is now eastern Kansas. It took 2 months.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "march",
+        "seed": 1,
+        "far": true,
+        "move": "right",
+        "amount": 0.08
+      },
+      "label": "INDIANA TO KANSAS",
+      "typed": [
+        {
+          "text": "660 MILES",
+          "at": "660 miles",
+          "y": 545,
+          "size": 84
+        }
+      ],
+      "credit": "Indiana Public Media; Citizen Potawatomi Nation"
+    },
+    {
+      "text": "At least 42 people died on the way, many of them children. It became known as the Trail of Death.",
+      "pause": 0.9,
+      "scene": {
+        "kind": "march",
+        "seed": 2,
+        "markers": true,
+        "move": "in",
+        "amount": 0.1,
+        "fog": 0.3
+      },
+      "label": "THE TRAIL OF DEATH",
+      "credit": "Potawatomi Cultural Heritage Center; Kansas Heritage"
+    },
+    {
+      "text": "Today, markers follow the route across 4 states. And near Twin Lakes, a statue of Menominee has stood since 1909.",
+      "pause": 0.6,
+      "scene": {
+        "kind": "monument",
+        "seed": 0,
+        "move": "in",
+        "amount": 0.08
+      },
+      "label": "TODAY",
+      "typed": [
+        {
+          "text": "DEDICATED 1909",
+          "at": "since 1909",
+          "y": 545,
+          "size": 76
+        }
+      ],
+      "credit": "Citizen Potawatomi Nation; National Register of Historic Places"
+    },
+    {
+      "text": "Comment your town for the next La Porte After Dark.",
+      "end": true,
+      "end_card": {
+        "q": "COMMENT YOUR TOWN",
+        "q2": "FOR THE NEXT STORY",
+        "bubble": "Your town, your state",
+        "scene": {
+          "kind": "monument",
+          "seed": 1,
+          "move": "still"
+        },
+        "pill": "Chief Menominee Memorial, southwest of Plymouth"
+      },
+      "credit": "All pictures drawn"
+    }
+  ]
+}
