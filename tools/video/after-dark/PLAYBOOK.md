@@ -261,7 +261,7 @@ or "la-port", which the voice reads as two words or as "lah".
 
 ## Painted scenes (Scoop, Nov. 12, 2026: "i like the canva ... take advantage", "repaint the ones scheduled")
 
-Scoop approved AI-generated paintings made in Canva in place of drawn scenes. Scene kind `paint` (src/film/story_kit4.py)
+Scoop approved AI-generated paintings made in Canva in place of drawn scenes. Scene kind `paint` (src/film/story_kit5.py)
 shows a finished picture with the usual slow camera move; `src/paint_story.py <slug> '<options>'` turns a storyboard into
 `stories/<slug>-painted.json`, and `src/finish.sh <slug>` checks the render and copies it to `out/painted/<slug>.mp4`.
 Rules that come with it: every beat's credit says "AI-generated picture"; the post text says "Pictures are AI-generated
