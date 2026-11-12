@@ -50,6 +50,11 @@ few backdrops (bare woods, the generic brick house, the generic courthouse) shou
 - `src/film/story_kit4.py` (Nov. 12, 2026) adds: skijump, airliner, oldtown (town / rising / under / drought), bridge
   (barricade, tents), steamer (list, storm), wreck (under water), propeller, fieldstone, plowfield. Its docstring
   lists the options. `lake` also takes storm=True (no moon) and `lighthouse` style="tower".
+- `src/film/story_kit3.py` builds a picture from props (ships, a plane, buildings, rooms, trains, trees, people...):
+  scene kinds `tab_lake`, `tab_land`, `tab_town`, `tab_room`, `tab_rail` take a sky, a ground and a list of props.
+  `python3 story_kit3.py sheet` draws every prop (shorts/out/_props.jpg). Use these first; add a prop when one is
+  missing. Signs show only words that are really on the real sign. If `check` reports a true peak above -1 dBFS,
+  lower the finished file's volume 1 dB (`ffmpeg -i in.mp4 -c:v copy -af volume=-1dB -c:a aac -b:a 192k out.mp4`).
 - Draw real buildings in their real shape (storeys, towers, brick or stone) from the sources, and match the season
   and time of day of the event (the 1838 march left in early September: trees in leaf, not bare).
 - Keep what matters above y 1250: the captions sit at y 1290 to 1400 and the frame darkens below them.

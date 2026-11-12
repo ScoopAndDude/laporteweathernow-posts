@@ -474,7 +474,7 @@ def clinic(c, L, x, y, s=1.0, sign="CLINIC", lit=0.5, **k):
         _win(c, L, wx, y - 130 * s, wx + 64 * s, y - 60 * s, hash2(j, 3, 1) < lit, col="#0c1014")
     c.rect(x - 110 * s, y - 150 * s, x + 50 * s, y, "#0c1014")
     L.rect(x - 110 * s, y - 150 * s, x + 50 * s, y, "#cfe0ff", 0.35)
-    return ("sign", sign, x - 30 * s, y - 220 * s, 260 * s, 50 * s)
+    return ("sign", sign, x - 30 * s, y - 220 * s, 260 * s, 50 * s) if sign else None
 
 
 @prop
