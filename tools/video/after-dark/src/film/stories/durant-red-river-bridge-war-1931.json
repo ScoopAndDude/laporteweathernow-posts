@@ -1,0 +1,189 @@
+{
+ "slug": "durant-red-river-bridge-war-1931",
+ "title": "The Red River Bridge War, 1931: martial law over the Durant-Denison bridge",
+ "series": "LA PORTE AFTER DARK",
+ "music": {
+  "seed": 207,
+  "prog": 6
+ },
+ "say": [
+  [
+   "\\bDurant\\b",
+   "Doo-rant"
+  ],
+  [
+   "\\bColbert\\b",
+   "Callbert"
+  ]
+ ],
+ "sources": [
+  {
+   "what": "free bridge 'between Durant and Denison'; 'three Texas Rangers to barricade their side'; 'declared martial law over a strip of the north bank'; Murray 'strapped with a revolver'; opened 'September 7, 1931'; 'A portion of the original bridge is on display at Colbert City Park'",
+   "who": "Oklahoma Today, 'Battle of the Bilge'",
+   "url": "https://www.oklahomatoday.com/history-culture/battle-of-the-bilge"
+  },
+  {
+   "what": "'obtained a federal restraining order against the opening of the free bridge'; 'By July 17, Texas rangers guarded the southern side'; 'Murray ordered the removal of barricades'; 'officially opened on Labor Day, 1931'; 'It served until 1995'",
+   "who": "Texas Historical Commission marker, Red River Bridge War",
+   "url": "https://www.co.grayson.tx.us/upload/common/Historical/Markers/Mark054-1.htm"
+  },
+  {
+   "what": "'prompting Oklahoma Gov. William H. Murray to call out the National Guard'",
+   "who": "Oklahoma Historical Society, Encyclopedia of Oklahoma History and Culture, 'Colbert's Ferry'",
+   "url": "https://www.okhistory.org/publications/enc/entry?entry=CO016"
+  },
+  {
+   "what": "'filing for an injunction in federal court to block the opening of the new free bridge'; 'Murray sent the Oklahoma National Guard to the border'",
+   "who": "Texas State Library and Archives Commission",
+   "url": "https://www.tsl.texas.gov/exhibits/highways/depressionwar/page2.html"
+  },
+  {
+   "what": "'to link Denison, Texas, and Durant, Oklahoma'",
+   "who": "KVUE (Austin)",
+   "url": "https://www.kvue.com/article/news/history/the-backstory-when-texas-and-oklahoma-went-to-war-over-a-bridge-across-the-red-river/269-d92f07bd-df24-4572-8150-90bfb76deb9b"
+  },
+  {
+   "what": "martial law July 24; 'personally appeared at the site, armed with a revolver'; no casualties",
+   "who": "The Clio; Wikipedia, Red River Bridge War",
+   "url": "https://www.theclio.com/entry/71425"
+  },
+  {
+   "what": "Rangers' target practice: 'But those were the only shots fired'",
+   "who": "Texas Standard (author Rusty Williams)",
+   "url": "https://www.texasstandard.org/?p=43970"
+  },
+  {
+   "what": "Oklahoma marker at the surviving span, Colbert",
+   "who": "Colbert Historical Society / Oklahoma Historical Society marker (1997)",
+   "url": "https://www.waymarking.com/waymarks/wmP6GH_The_Red_River_Bridge_Colbert_OK"
+  }
+ ],
+ "beats": [
+  {
+   "text": "In July 1931, the governor of Oklahoma declared martial law over a bridge south of Durant. Then he showed up wearing a pistol.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "bridge",
+    "seed": 0,
+    "move": "in",
+    "amount": 0.08,
+    "night": true
+   },
+   "label": "SOUTH OF DURANT, OKLAHOMA",
+   "credit": "Oklahoma Today; The Clio",
+   "title": {
+    "text": "THE RED RIVER BRIDGE WAR",
+    "at": "Then he showed",
+    "size": 70,
+    "style": "red"
+   },
+   "sfx": [
+    {
+     "kind": "heartbeat",
+     "at": "wearing a pistol",
+     "gain": 0.33
+    }
+   ]
+  },
+  {
+   "text": "A new free bridge over the Red River, linking Durant and Denison, Texas, was finished. But the owners of the old toll bridge got a federal court order to keep it closed.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "bridge",
+    "seed": 1,
+    "move": "in",
+    "amount": 0.06
+   },
+   "label": "JULY 1931",
+   "credit": "Texas Historical Commission marker; Texas State Library and Archives"
+  },
+  {
+   "text": "Texas barricaded its end, and Texas Rangers were sent to guard it.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "bridge",
+    "seed": 2,
+    "move": "in",
+    "amount": 0.06,
+    "barricade": true
+   },
+   "label": "THE TEXAS SIDE",
+   "credit": "Oklahoma Today; Texas Historical Commission marker"
+  },
+  {
+   "text": "Oklahoma's governor, Alfalfa Bill Murray, had the barricades torn down, and later called out the National Guard.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "bridge",
+    "seed": 3,
+    "move": "in",
+    "amount": 0.06,
+    "tents": true
+   },
+   "label": "ALFALFA BILL MURRAY",
+   "credit": "Oklahoma Today; Oklahoma Historical Society"
+  },
+  {
+   "text": "They called it the Red River Bridge War. No one was hurt.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "bridge",
+    "seed": 4,
+    "move": "in",
+    "amount": 0.06,
+    "tents": true,
+    "night": true
+   },
+   "label": "NO ONE WAS HURT",
+   "credit": "The Clio; Wikipedia"
+  },
+  {
+   "text": "The free bridge officially opened on Labor Day, 1931, and carried traffic until the 1990s.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "card",
+    "seed": 3,
+    "move": "in",
+    "amount": 0.05
+   },
+   "label": "LABOR DAY, 1931",
+   "credit": "Oklahoma Today; Texas Historical Commission marker",
+   "card": {
+    "kind": "year",
+    "at": "1931",
+    "label": "OPENED LABOR DAY",
+    "value": "1931",
+    "note": "THE FREE BRIDGE"
+   }
+  },
+  {
+   "text": "A piece of it still sits in the city park in Colbert, Oklahoma.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "bridge",
+    "seed": 5,
+    "move": "out",
+    "amount": 0.06
+   },
+   "label": "COLBERT, OKLAHOMA",
+   "credit": "Oklahoma Today; Oklahoma marker at the span"
+  },
+  {
+   "text": "Comment your town, and it could be next.",
+   "end": true,
+   "end_card": {
+    "q": "COMMENT YOUR TOWN",
+    "q2": "IT COULD BE NEXT",
+    "bubble": "Your town, your state",
+    "pill": "A piece of the bridge: Colbert City Park, Oklahoma",
+    "scene": {
+     "kind": "bridge",
+     "seed": 6,
+     "move": "still",
+     "amount": 0.06
+    }
+   },
+   "credit": "All pictures drawn"
+  }
+ ]
+}

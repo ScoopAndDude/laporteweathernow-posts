@@ -1,0 +1,159 @@
+{
+ "slug": "south-bend-copshaholm-oliver",
+ "title": "Copshaholm: the South Bend mansion the Olivers left exactly as it was",
+ "series": "LA PORTE AFTER DARK",
+ "music": {
+  "seed": 203,
+  "prog": 6
+ },
+ "say": [],
+ "sources": [
+  {
+   "what": "'elegant 38-room Oliver Mansion'; 'The furnishings on all three floors are original'; 'one of the first homes in South Bend to have electricity'; 'native Indiana fieldstone'; family moved in New Year's Day 1897; J.D. Jr. died July 6, 1972; guided tours daily",
+   "who": "The History Museum, South Bend",
+   "url": "https://historymuseumsb.org/see-do/historic-house"
+  },
+  {
+   "what": "'The 38-room, three-story house'; 'The furniture throughout was left by the Oliver family to remain with the house'; 'the most extensive plow works in the world' (1907 history)",
+   "who": "National Register of Historic Places, additional documentation (2024)",
+   "url": "https://www.in.gov/dnr/static/historic/board/100626/hp_Oliver-House-boundary-decrease-and-additional-documentation.pdf"
+  },
+  {
+   "what": "'all of its original contents, including J.D. Oliver's hat collection'; 'Indiana granite fieldstone'",
+   "who": "Discover Indiana (IUPUI)",
+   "url": "https://discoverindianahistory.org/items/show/442"
+  },
+  {
+   "what": "'Copshaholm is the ancient name of Newcastleton, Scotland, where James Oliver was born'",
+   "who": "University of Notre Dame, Building South Bend",
+   "url": "https://buildingsouthbend.nd.edu/history/oliver-family/family-residences/"
+  },
+  {
+   "what": "'In 1857, Oliver received a patent to make chilled plows'",
+   "who": "Indiana Public Media, Moment of Indiana History",
+   "url": "https://indianapublicmedia.org/momentofindianahistory/james-oliver-and-the-chilled-plow"
+  },
+  {
+   "what": "'one of the world's largest plow manufacturing plants'",
+   "who": "American Society of Agricultural and Biological Engineers",
+   "url": "https://asabe.org/About-Us/History/ASABE-Historic-Landmarks/The-Oliver-Chilled-Cast-Iron-Plow-2008"
+  },
+  {
+   "what": "'donated to the Northern Indiana Historical Society in 1988'; moved in New Year's Day 1897",
+   "who": "Visit South Bend (2025); WNDU (2022); WSBT (2024)",
+   "url": "https://visitsouthbend.com/"
+  }
+ ],
+ "beats": [
+  {
+   "text": "When the Oliver family gave up their 38-room mansion in South Bend, they left the furniture behind. Nearly everything stayed.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "fieldstone",
+    "seed": 0,
+    "move": "in",
+    "amount": 0.08
+   },
+   "label": "SOUTH BEND, INDIANA",
+   "credit": "Discover Indiana; National Register documentation",
+   "title": {
+    "text": "COPSHAHOLM",
+    "at": "they left",
+    "size": 110,
+    "style": "red"
+   }
+  },
+  {
+   "text": "The Olivers named the house for the Scottish village James Oliver came from.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "card",
+    "seed": 1,
+    "move": "in",
+    "amount": 0.05
+   },
+   "label": "THE NAME",
+   "credit": "University of Notre Dame; state historical marker (2024)",
+   "typed": [
+    {
+     "text": "COPSHAHOLM",
+     "at": "named the house",
+     "y": 660,
+     "size": 96
+    },
+    {
+     "text": "A VILLAGE IN SCOTLAND",
+     "at": "Scottish village",
+     "y": 788,
+     "size": 56
+    }
+   ]
+  },
+  {
+   "text": "James Oliver patented his chilled plow in 1857. His South Bend factory grew into one of the largest plow works in the world.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "plowfield",
+    "seed": 0,
+    "move": "in",
+    "amount": 0.06
+   },
+   "label": "THE OLIVER PLOW",
+   "credit": "Indiana Public Media; American Society of Agricultural and Biological Engineers"
+  },
+  {
+   "text": "His son, Joseph, built the mansion of Indiana fieldstone. The family moved in on New Year's Day, 1897.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "fieldstone",
+    "seed": 1,
+    "move": "left",
+    "amount": 0.06,
+    "dawn": true
+   },
+   "label": "NEW YEAR'S DAY, 1897",
+   "credit": "The History Museum, South Bend; ABC57"
+  },
+  {
+   "text": "Olivers lived there for some 75 years. In 1988, the family gave the house to the local historical society, furnishings and all.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "hall",
+    "seed": 0,
+    "move": "in",
+    "amount": 0.06
+   },
+   "label": "ABOUT 75 YEARS",
+   "credit": "The History Museum, South Bend; ABC57"
+  },
+  {
+   "text": "Today it's part of The History Museum, and you can tour the rooms the family left behind.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "fieldstone",
+    "seed": 2,
+    "move": "in",
+    "amount": 0.06
+   },
+   "label": "OPEN FOR TOURS",
+   "credit": "The History Museum, South Bend; Visit South Bend (2025)"
+  },
+  {
+   "text": "Comment your town, and it could be next.",
+   "end": true,
+   "end_card": {
+    "q": "COMMENT YOUR TOWN",
+    "q2": "IT COULD BE NEXT",
+    "bubble": "Your town, your state",
+    "pill": "Oliver Mansion tours: The History Museum, South Bend",
+    "scene": {
+     "kind": "fieldstone",
+     "seed": 3,
+     "move": "still",
+     "amount": 0.06
+    }
+   },
+   "credit": "All pictures drawn"
+  }
+ ]
+}

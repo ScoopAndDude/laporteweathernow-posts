@@ -1,0 +1,184 @@
+{
+ "slug": "ogden-dunes-ski-jump-1928",
+ "title": "The Ogden Dunes Ski Jump, 1928: a steel tower on a sand dune",
+ "series": "LA PORTE AFTER DARK",
+ "music": {
+  "seed": 191,
+  "prog": 6
+ },
+ "say": [],
+ "sources": [
+  {
+   "what": "'Steel and wood ski jump with adjustable height and length was built here for Ogden Dunes Ski Club'; 'Reputed to be the largest artificial ski jump at the time'; 'Five annual events with international competitors were held 1928-1932, with 7,000 to 20,000 spectators'; 'Dismantled after 1932 event'",
+   "who": "Indiana Historical Bureau, state marker 'Ogden Dunes Ski Jump' (1997)",
+   "url": "https://www.in.gov/history/state-historical-markers/find-a-marker/ogden-dunes-ski-jump/"
+  },
+  {
+   "what": "'The first ski meet was held on January 22, 1928'; 'The rear towers of the slide were one hundred ninety-two feet high'; 'The Ski club met with reverses during the depression'; 'In the spring of 1935 the steel structure was sold to the Rockford, Illinois ski club'",
+   "who": "Vidette-Messenger, Aug. 18, 1936 (Porter County centennial history, transcription)",
+   "url": "https://www.inportercounty.org/Data/PorterCountyCentennial/Sec3-15-16_PortageTwpHistory.html"
+  },
+  {
+   "what": "built 1927; opened January 22, 1928; 225 ft; 'the onset of the Great Depression and little snowfall over the prior two years'; sold to Rockford; site at today's Ski Hill Road",
+   "who": "Historical Society of Ogden Dunes, 'The Ski Jump'",
+   "url": "https://odhistory.org/historic-trail/the-ski-jump/"
+  },
+  {
+   "what": "'Kratz Memorial Field was also the location of the famous ski jump'",
+   "who": "Town of Ogden Dunes",
+   "url": "https://www.ogdendunes.in.gov/history"
+  }
+ ],
+ "beats": [
+  {
+   "text": "Starting in 1928, thousands of people stood on an Indiana sand dune to watch skiers fly off a tower nearly 200 feet tall.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "skijump",
+    "seed": 0,
+    "move": "in",
+    "amount": 0.08
+   },
+   "label": "OGDEN DUNES, INDIANA",
+   "credit": "Vidette-Messenger (1936); Historical Society of Ogden Dunes",
+   "title": {
+    "text": "THE SKI JUMP ON THE DUNES",
+    "at": "to watch skiers",
+    "size": 70,
+    "style": "red"
+   },
+   "sfx": [
+    {
+     "kind": "whoosh",
+     "at": "fly off",
+     "gain": 0.3
+    }
+   ]
+  },
+  {
+   "text": "You asked for Portage. This was right next door, in Ogden Dunes.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "card",
+    "seed": 1,
+    "move": "in",
+    "amount": 0.05
+   },
+   "label": "NEXT DOOR TO PORTAGE",
+   "credit": "Town of Ogden Dunes",
+   "card": {
+    "kind": "map",
+    "center": "Portage",
+    "span": 0.7,
+    "pins": [
+     "Portage",
+     "Ogden Dunes"
+    ],
+    "hot": "Ogden Dunes"
+   }
+  },
+  {
+   "text": "The jump was built in 1927 for what became the Ogden Dunes Ski Club. A state marker calls it reputedly the largest artificial ski jump of its day.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "skijump",
+    "seed": 1,
+    "move": "left",
+    "amount": 0.06,
+    "crowd": false
+   },
+   "label": "BUILT 1927",
+   "credit": "Historical Society of Ogden Dunes; Indiana Historical Bureau marker"
+  },
+  {
+   "text": "For five winters, skiers from other countries competed here, and crowds of 7,000 to 20,000 came to watch.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "skijump",
+    "seed": 2,
+    "move": "out",
+    "amount": 0.06
+   },
+   "label": "1928 TO 1932",
+   "credit": "Indiana Historical Bureau marker",
+   "typed": [
+    {
+     "text": "5 WINTERS",
+     "at": "For five winters",
+     "y": 660,
+     "size": 96
+    },
+    {
+     "text": "7,000 TO 20,000",
+     "at": "7,000 to 20,000",
+     "y": 788,
+     "size": 84
+    },
+    {
+     "text": "SPECTATORS",
+     "at": "came to watch",
+     "y": 901,
+     "size": 72
+    }
+   ]
+  },
+  {
+   "text": "Then came the Great Depression, and winters with little snow.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "skijump",
+    "seed": 3,
+    "move": "in",
+    "amount": 0.06,
+    "crowd": false,
+    "fog": 0.25
+   },
+   "label": "THE DEPRESSION",
+   "credit": "Vidette-Messenger (1936); Historical Society of Ogden Dunes"
+  },
+  {
+   "text": "The meets ended. The tower was sold to a ski club in Rockford, Illinois, and taken down.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "skijump",
+    "seed": 4,
+    "move": "in",
+    "amount": 0.06,
+    "gone": true
+   },
+   "label": "SOLD AND TAKEN DOWN",
+   "credit": "Vidette-Messenger (1936); Town of Ogden Dunes"
+  },
+  {
+   "text": "Today, a state historical marker in Ogden Dunes tells the story. Please respect private property.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "skijump",
+    "seed": 5,
+    "move": "out",
+    "amount": 0.06,
+    "gone": true
+   },
+   "label": "TODAY",
+   "credit": "Indiana Historical Bureau marker; Town of Ogden Dunes"
+  },
+  {
+   "text": "Comment your town, and it could be next.",
+   "end": true,
+   "end_card": {
+    "q": "COMMENT YOUR TOWN",
+    "q2": "IT COULD BE NEXT",
+    "bubble": "Your town, your state",
+    "pill": "State marker: Kratz Field, Ogden Dunes",
+    "scene": {
+     "kind": "skijump",
+     "seed": 6,
+     "move": "still",
+     "amount": 0.06,
+     "gone": true
+    }
+   },
+   "credit": "All pictures drawn"
+  }
+ ]
+}
