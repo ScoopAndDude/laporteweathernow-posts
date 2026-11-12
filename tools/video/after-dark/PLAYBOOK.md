@@ -258,3 +258,14 @@ The town is spelled **LaPorte**, one word, in narration, captions, on-screen tex
 "La Porte County Historical Society" and "La Porte Weather Now LLC" keep their own spelling; URLs are unchanged).
 The voice says it as one word, luh-PORT: reels_vo.py maps `La ?Porte` to `le-port` (ləˈpɔːɹt). Don't use "Luh-Port"
 or "la-port", which the voice reads as two words or as "lah".
+
+## Painted scenes (Scoop, Nov. 12, 2026: "i like the canva ... take advantage", "repaint the ones scheduled")
+
+Scoop approved AI-generated paintings made in Canva in place of drawn scenes. Scene kind `paint` (src/film/story_kit4.py)
+shows a finished picture with the usual slow camera move; `src/paint_story.py <slug> '<options>'` turns a storyboard into
+`stories/<slug>-painted.json`, and `src/finish.sh <slug>` checks the render and copies it to `out/painted/<slug>.mp4`.
+Rules that come with it: every beat's credit says "AI-generated picture"; the post text says "Pictures are AI-generated
+illustrations" (never "drawn"); set isAiGenerated true on YouTube, Instagram, TikTok and X. All the other rules still hold
+for the paintings: no real person's likeness (figures tiny, from behind, or faceless), no bodies, remains, blood or
+hangings, no text, signs or logos in the picture, and look at every picture before it is used. The full-size pictures
+can only be fetched from Canva through a signed-in browser, so making new paintings needs someone at the computer.
