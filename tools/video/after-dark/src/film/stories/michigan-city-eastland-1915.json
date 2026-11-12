@@ -74,13 +74,45 @@
       "text": "They were headed for a picnic in Michigan City. 844 of them never left the dock.",
       "pause": 0.7,
       "scene": {
-        "kind": "lake",
-        "seed": 0,
-        "city": true,
-        "pier": false,
+        "kind": "tab_lake",
+        "sky": "dawn",
+        "ground": {
+          "type": "water",
+          "y": 1150
+        },
+        "props": [
+          {
+            "p": "rowhouses",
+            "x": 540,
+            "s": 0.45,
+            "n": 12,
+            "lit": 0.2,
+            "seed": 1,
+            "y": 1150
+          },
+          {
+            "p": "steamer",
+            "x": 600,
+            "s": 1.5,
+            "y": 1160
+          },
+          {
+            "p": "pier",
+            "x": 300,
+            "s": 1.4,
+            "y": 1260
+          },
+          {
+            "p": "people",
+            "x": 300,
+            "s": 0.9,
+            "n": 10,
+            "seed": 1,
+            "y": 1214
+          }
+        ],
         "move": "in",
-        "amount": 0.08,
-        "fog": 0.2
+        "amount": 0.08
       },
       "label": "JULY 24, 1915",
       "title": {
@@ -126,12 +158,41 @@
       "text": "About 2,500 people were aboard. Still tied up in the Chicago River, the ship rolled over onto its side.",
       "pause": 0.8,
       "scene": {
-        "kind": "town",
-        "seed": 2,
-        "tower": "none",
+        "kind": "tab_lake",
+        "sky": "storm",
+        "ground": {
+          "type": "water",
+          "y": 1150
+        },
+        "props": [
+          {
+            "p": "rowhouses",
+            "x": 540,
+            "s": 0.45,
+            "n": 12,
+            "lit": 0.25,
+            "seed": 2,
+            "y": 1150
+          },
+          {
+            "p": "steamer",
+            "x": 560,
+            "s": 1.6,
+            "lit": false,
+            "smoke": false,
+            "y": 1170
+          },
+          {
+            "p": "pier",
+            "x": 360,
+            "s": 1.5,
+            "y": 1270
+          }
+        ],
         "move": "in",
-        "amount": 0.1,
-        "fog": 0.25
+        "amount": 0.08,
+        "rain": true,
+        "fog": 0.15
       },
       "label": "THE CHICAGO RIVER",
       "flash": [
@@ -167,11 +228,41 @@
       "text": "Today, beside the Old Lighthouse in Michigan City, an anchor chain stretches across the grounds. 844 links. One for each person who died.",
       "pause": 0.8,
       "scene": {
-        "kind": "lighthouse",
-        "style": "house",
-        "seed": 1,
+        "kind": "tab_land",
+        "sky": "dusk",
+        "ground": {
+          "type": "land",
+          "y": 1150
+        },
+        "props": [
+          {
+            "p": "pine",
+            "x": 130,
+            "s": 1.2,
+            "y": 1150
+          },
+          {
+            "p": "pine",
+            "x": 950,
+            "s": 1.4,
+            "y": 1150
+          },
+          {
+            "p": "lightstation",
+            "x": 600,
+            "s": 1.0,
+            "lit": false,
+            "y": 1150
+          },
+          {
+            "p": "chain",
+            "x": 520,
+            "s": 1.1,
+            "y": 1250
+          }
+        ],
         "move": "in",
-        "amount": 0.07
+        "amount": 0.08
       },
       "label": "THE MEMORIAL",
       "typed": [
@@ -195,11 +286,36 @@
       "text": "And in Chicago, people say that from the river bridges, they still see faces in the water.",
       "pause": 0.8,
       "scene": {
-        "kind": "card",
-        "seed": 2,
+        "kind": "tab_lake",
+        "sky": "night",
+        "ground": {
+          "type": "water",
+          "y": 1010
+        },
+        "props": [
+          {
+            "p": "rowhouses",
+            "x": 540,
+            "s": 0.9,
+            "n": 8,
+            "lit": 0.3,
+            "seed": 3,
+            "y": 1010
+          }
+        ],
         "move": "in",
-        "amount": 0.06,
-        "fog": 0.4
+        "amount": 0.08,
+        "moon": [
+          820,
+          300,
+          40
+        ],
+        "orbs": 5,
+        "fog": 0.4,
+        "focus": [
+          540,
+          1200
+        ]
       },
       "label": "WHAT PEOPLE SAY",
       "sfx": [
@@ -233,10 +349,28 @@
         "bubble": "Your town, your state",
         "pill": "Eastland memorial: Old Lighthouse grounds, Michigan City",
         "scene": {
-          "kind": "lighthouse",
-          "style": "house",
-          "seed": 3,
-          "move": "still"
+          "kind": "tab_land",
+          "sky": "dawn",
+          "ground": {
+            "type": "land",
+            "y": 1150
+          },
+          "props": [
+            {
+              "p": "pine",
+              "x": 950,
+              "s": 1.4,
+              "y": 1150
+            },
+            {
+              "p": "chain",
+              "x": 520,
+              "s": 1.2,
+              "y": 1230
+            }
+          ],
+          "move": "still",
+          "amount": 0.08
         }
       },
       "credit": "All pictures drawn"
@@ -246,5 +380,6 @@
     "date": "2026-11-07",
     "by": "independent subagent, 2 rounds",
     "result": "'Every July' became 'still remembers them' (ceremonies documented 2015, 2019, 2023); chain 'stretches across the grounds'; death card labeled 'people lost'; river scene not shown as the lake; all supported (the river faces are reported lore, 'people say')"
-  }
+  },
+  "illustrated": "2026-11-12"
 }

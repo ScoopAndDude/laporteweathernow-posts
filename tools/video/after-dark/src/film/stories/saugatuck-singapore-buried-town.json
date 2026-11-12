@@ -1,187 +1,350 @@
 {
- "slug": "saugatuck-singapore-buried-town",
- "title": "Singapore, Michigan: The Town Buried Under the Dunes",
- "series": "LA PORTE AFTER DARK",
- "music": {
-  "seed": 179,
-  "prog": 6
- },
- "say": [],
- "sources": [
-  {
-   "what": "'founded by Eastern investors in 1837'; 'notorious wild cat bank which printed more money than it was able to back up with gold'; forest 'had been clear-cut'; mill 'dismantled in 1875 and shipped north to St. Ignace'",
-   "who": "Saugatuck-Douglas History Center, Singapore",
-   "url": "https://mysdhistory.org/singapore/"
+  "slug": "saugatuck-singapore-buried-town",
+  "title": "Singapore, Michigan: The Town Buried Under the Dunes",
+  "series": "LA PORTE AFTER DARK",
+  "music": {
+    "seed": 179,
+    "prog": 6
   },
-  {
-   "what": "marker S0191, erected 1958, Saugatuck City Hall: 'Founded in the 1830's by New York land speculators, who hoped it would rival Chicago or Milwaukee as a lake port'; the site lies beneath the sands near the mouth of the Kalamazoo River",
-   "who": "Michigan historical marker (DNR record; ClickOnDetroit 2026)",
-   "url": "https://clickondetroit.com/news/local/2026/10/08/the-town-that-accidentally-sacrificed-itself-for-chicago/"
-  },
-  {
-   "what": "'supplied much of the timber used to rebuild the city' after the 1871 Chicago fire",
-   "who": "Bridge Michigan (2025); Great Lakes Echo (2014)",
-   "url": "https://bridgemi.com/outdoors-life/a-michigan-town-disappeared-150-years-ago-a-cruise-can-take-you-back/"
-  },
-  {
-   "what": "'An estimated 10 buildings were moved to downtown Saugatuck'",
-   "who": "Great Lakes Echo (MSU, 2014); SDHC site inventory",
-   "url": "https://greatlakesecho.org/2014/01/28/landscope-a-city-lies-buried-under-michigans-west-coast"
-  },
-  {
-   "what": "'Going in and out of an upstairs window, legend says he stayed until the sand reached the roof'",
-   "who": "WWJ Newsradio; The 'Gander (2025)",
-   "url": "https://www.audacy.com/wwjnewsradio/news/local/best-of-the-daily-j-the-story-of-singapore-michigans-buried-ghost-town"
-  },
-  {
-   "what": "mills, hotels; 'vacated by 1875'",
-   "who": "CMU Clarke Historical Library",
-   "url": "https://abundantwaterscmich.omeka.net/exhibits/show/disasters/erosion/singaporemichigan"
-  }
- ],
- "beats": [
-  {
-   "text": "The ruins of a town lie buried under the sand dunes of Lake Michigan.",
-   "pause": 0.6,
-   "scene": {
-    "kind": "dunes",
-    "seed": 0,
-    "move": "in",
-    "amount": 0.07,
-    "trees": true,
-    "fog": 0.18
-   },
-   "label": "NEAR SAUGATUCK, MICHIGAN",
-   "credit": "Saugatuck-Douglas History Center; Michigan historical marker",
-   "title": {
-    "text": "SINGAPORE, MICHIGAN",
-    "at": "buried",
-    "size": 80,
-    "style": "red"
-   },
-   "sfx": [
+  "say": [],
+  "sources": [
     {
-     "kind": "heartbeat",
-     "at": "buried",
-     "gain": 0.33
-    }
-   ]
-  },
-  {
-   "text": "It was called Singapore. New York land speculators founded it in the 1830s, hoping it would rival Chicago or Milwaukee.",
-   "pause": 0.5,
-   "scene": {
-    "kind": "card",
-    "seed": 1,
-    "move": "in",
-    "amount": 0.05
-   },
-   "label": "FOUNDED IN THE 1830s",
-   "credit": "Michigan historical marker",
-   "card": {
-    "kind": "map",
-    "center": "Saugatuck",
-    "span": 0.9,
-    "pins": [
-     "Saugatuck",
-     "Chicago"
-    ],
-    "hot": "Saugatuck"
-   }
-  },
-  {
-   "text": "After the Great Chicago Fire of 1871, its lumber helped rebuild the city.",
-   "pause": 0.5,
-   "scene": {
-    "kind": "dunes",
-    "seed": 1,
-    "move": "in",
-    "amount": 0.07
-   },
-   "label": "AFTER THE CHICAGO FIRE, 1871",
-   "credit": "Bridge Michigan (2025); Great Lakes Echo (2014)"
-  },
-  {
-   "text": "But the forests around it had been clear-cut. In 1875, the main mill was taken apart and shipped north to St. Ignace.",
-   "pause": 0.5,
-   "scene": {
-    "kind": "dunes",
-    "seed": 2,
-    "move": "in",
-    "amount": 0.07
-   },
-   "label": "1875",
-   "credit": "Saugatuck-Douglas History Center; CMU Clarke Historical Library"
-  },
-  {
-   "text": "People left. Some buildings were moved to Saugatuck. And the sand moved in.",
-   "pause": 0.7,
-   "scene": {
-    "kind": "dunes",
-    "seed": 3,
-    "move": "in",
-    "amount": 0.07,
-    "fog": 0.22
-   },
-   "label": "THE SAND MOVED IN",
-   "credit": "Great Lakes Echo; Saugatuck-Douglas History Center",
-   "sfx": [
+      "what": "'founded by Eastern investors in 1837'; 'notorious wild cat bank which printed more money than it was able to back up with gold'; forest 'had been clear-cut'; mill 'dismantled in 1875 and shipped north to St. Ignace'",
+      "who": "Saugatuck-Douglas History Center, Singapore",
+      "url": "https://mysdhistory.org/singapore/"
+    },
     {
-     "kind": "whoosh",
-     "at": "the sand moved in",
-     "gain": 0.3
-    }
-   ]
-  },
-  {
-   "text": "Legend says one man refused to leave, climbing in and out through an upstairs window until the sand reached the roof.",
-   "pause": 0.7,
-   "scene": {
-    "kind": "dunes",
-    "seed": 4,
-    "move": "in",
-    "amount": 0.07,
-    "fog": 0.25
-   },
-   "label": "THE LEGEND",
-   "credit": "WWJ Newsradio; Wikipedia"
-  },
-  {
-   "text": "Today, a state historical marker in Saugatuck says the site of the town lies beneath the sands, near the mouth of the Kalamazoo River.",
-   "pause": 0.5,
-   "scene": {
-    "kind": "card",
-    "seed": 3,
-    "move": "in",
-    "amount": 0.05
-   },
-   "label": "THE STATE MARKER",
-   "credit": "Michigan historical marker",
-   "typed": [
+      "what": "marker S0191, erected 1958, Saugatuck City Hall: 'Founded in the 1830's by New York land speculators, who hoped it would rival Chicago or Milwaukee as a lake port'; the site lies beneath the sands near the mouth of the Kalamazoo River",
+      "who": "Michigan historical marker (DNR record; ClickOnDetroit 2026)",
+      "url": "https://clickondetroit.com/news/local/2026/10/08/the-town-that-accidentally-sacrificed-itself-for-chicago/"
+    },
     {
-     "text": "BENEATH THE SANDS",
-     "at": "beneath the sands",
-     "y": 660,
-     "size": 72
+      "what": "'supplied much of the timber used to rebuild the city' after the 1871 Chicago fire",
+      "who": "Bridge Michigan (2025); Great Lakes Echo (2014)",
+      "url": "https://bridgemi.com/outdoors-life/a-michigan-town-disappeared-150-years-ago-a-cruise-can-take-you-back/"
+    },
+    {
+      "what": "'An estimated 10 buildings were moved to downtown Saugatuck'",
+      "who": "Great Lakes Echo (MSU, 2014); SDHC site inventory",
+      "url": "https://greatlakesecho.org/2014/01/28/landscope-a-city-lies-buried-under-michigans-west-coast"
+    },
+    {
+      "what": "'Going in and out of an upstairs window, legend says he stayed until the sand reached the roof'",
+      "who": "WWJ Newsradio; The 'Gander (2025)",
+      "url": "https://www.audacy.com/wwjnewsradio/news/local/best-of-the-daily-j-the-story-of-singapore-michigans-buried-ghost-town"
+    },
+    {
+      "what": "mills, hotels; 'vacated by 1875'",
+      "who": "CMU Clarke Historical Library",
+      "url": "https://abundantwaterscmich.omeka.net/exhibits/show/disasters/erosion/singaporemichigan"
     }
-   ]
-  },
-  {
-   "text": "Comment your town, and it could be next.",
-   "end": true,
-   "end_card": {
-    "q": "COMMENT YOUR TOWN",
-    "q2": "IT COULD BE NEXT",
-    "bubble": "Your town, your state",
-    "pill": "State marker: Saugatuck City Hall, Butler Street",
-    "scene": {
-     "kind": "dunes",
-     "seed": 5,
-     "move": "still",
-     "amount": 0.07
+  ],
+  "beats": [
+    {
+      "text": "The ruins of a town lie buried under the sand dunes of Lake Michigan.",
+      "pause": 0.6,
+      "scene": {
+        "kind": "tab_land",
+        "sky": "night",
+        "ground": {
+          "type": "sand",
+          "y": 1180
+        },
+        "props": [
+          {
+            "p": "sawmill",
+            "x": 560,
+            "s": 1.15,
+            "lit": 0.0,
+            "y": 1180
+          },
+          {
+            "p": "dune",
+            "x": 540,
+            "s": 1.2,
+            "y": 1250
+          }
+        ],
+        "move": "in",
+        "amount": 0.08,
+        "grass": false,
+        "moon": [
+          220,
+          330,
+          46
+        ],
+        "fog": 0.15
+      },
+      "label": "NEAR SAUGATUCK, MICHIGAN",
+      "credit": "Saugatuck-Douglas History Center; Michigan historical marker",
+      "title": {
+        "text": "SINGAPORE, MICHIGAN",
+        "at": "buried",
+        "size": 80,
+        "style": "red"
+      },
+      "sfx": [
+        {
+          "kind": "heartbeat",
+          "at": "buried",
+          "gain": 0.33
+        }
+      ]
+    },
+    {
+      "text": "It was called Singapore. New York land speculators founded it in the 1830s, hoping it would rival Chicago or Milwaukee.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "card",
+        "seed": 1,
+        "move": "in",
+        "amount": 0.05
+      },
+      "label": "FOUNDED IN THE 1830s",
+      "credit": "Michigan historical marker",
+      "card": {
+        "kind": "map",
+        "center": "Saugatuck",
+        "span": 0.9,
+        "pins": [
+          "Saugatuck",
+          "Chicago"
+        ],
+        "hot": "Saugatuck"
+      }
+    },
+    {
+      "text": "After the Great Chicago Fire of 1871, its lumber helped rebuild the city.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "tab_lake",
+        "sky": "night",
+        "ground": {
+          "type": "water",
+          "y": 1150
+        },
+        "props": [
+          {
+            "p": "cityfire",
+            "x": 540,
+            "s": 1.1,
+            "y": 1150
+          }
+        ],
+        "move": "in",
+        "amount": 0.08,
+        "fog": 0.25
+      },
+      "label": "AFTER THE CHICAGO FIRE, 1871",
+      "credit": "Bridge Michigan (2025); Great Lakes Echo (2014)"
+    },
+    {
+      "text": "But the forests around it had been clear-cut. In 1875, the main mill was taken apart and shipped north to St. Ignace.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "tab_land",
+        "sky": "dusk",
+        "ground": {
+          "type": "sand",
+          "y": 1180
+        },
+        "props": [
+          {
+            "p": "sawmill",
+            "x": 560,
+            "s": 1.15,
+            "lit": 0.6,
+            "y": 1180
+          },
+          {
+            "p": "flotsam",
+            "x": 420,
+            "s": 1.0,
+            "n": 10,
+            "seed": 6,
+            "y": 1290
+          }
+        ],
+        "move": "in",
+        "amount": 0.08,
+        "grass": false
+      },
+      "label": "1875",
+      "credit": "Saugatuck-Douglas History Center; CMU Clarke Historical Library"
+    },
+    {
+      "text": "People left. Some buildings were moved to Saugatuck. And the sand moved in.",
+      "pause": 0.7,
+      "scene": {
+        "kind": "tab_land",
+        "sky": "dusk",
+        "ground": {
+          "type": "sand",
+          "y": 1180
+        },
+        "props": [
+          {
+            "p": "sawmill",
+            "x": 560,
+            "s": 1.15,
+            "lit": 0.0,
+            "y": 1180
+          },
+          {
+            "p": "dune",
+            "x": 300,
+            "s": 1.2,
+            "y": 1330
+          }
+        ],
+        "move": "in",
+        "amount": 0.08,
+        "grass": false
+      },
+      "label": "THE SAND MOVED IN",
+      "credit": "Great Lakes Echo; Saugatuck-Douglas History Center",
+      "sfx": [
+        {
+          "kind": "whoosh",
+          "at": "the sand moved in",
+          "gain": 0.3
+        }
+      ]
+    },
+    {
+      "text": "Legend says one man refused to leave, climbing in and out through an upstairs window until the sand reached the roof.",
+      "pause": 0.7,
+      "scene": {
+        "kind": "tab_land",
+        "sky": "night",
+        "ground": {
+          "type": "sand",
+          "y": 1180
+        },
+        "props": [
+          {
+            "p": "sawmill",
+            "x": 560,
+            "s": 1.15,
+            "lit": 0.0,
+            "y": 1180
+          },
+          {
+            "p": "dune",
+            "x": 700,
+            "s": 1.2,
+            "y": 1200
+          }
+        ],
+        "move": "in",
+        "amount": 0.08,
+        "grass": false,
+        "moon": [
+          760,
+          380,
+          50
+        ],
+        "glows": [
+          {
+            "x": 860,
+            "y": 990,
+            "r": 40,
+            "color": [
+              1,
+              0.75,
+              0.4
+            ],
+            "k": 0.9,
+            "flick": true
+          }
+        ]
+      },
+      "label": "THE LEGEND",
+      "credit": "WWJ Newsradio; Wikipedia"
+    },
+    {
+      "text": "Today, a state historical marker in Saugatuck says the site of the town lies beneath the sands, near the mouth of the Kalamazoo River.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "tab_town",
+        "sky": "dawn",
+        "ground": {
+          "type": "land",
+          "y": 1180
+        },
+        "props": [
+          {
+            "p": "tree",
+            "x": 120,
+            "s": 1.4,
+            "seed": 7,
+            "y": 1190
+          },
+          {
+            "p": "signpost",
+            "x": 560,
+            "s": 2.0,
+            "marker": true,
+            "text": "SINGAPORE,|MICHIGAN",
+            "y": 1200
+          }
+        ],
+        "move": "in",
+        "amount": 0.08
+      },
+      "label": "THE STATE MARKER",
+      "credit": "Michigan historical marker",
+      "typed": [
+        {
+          "text": "BENEATH THE SANDS",
+          "at": "beneath the sands",
+          "y": 660,
+          "size": 72
+        }
+      ]
+    },
+    {
+      "text": "Comment your town, and it could be next.",
+      "end": true,
+      "end_card": {
+        "q": "COMMENT YOUR TOWN",
+        "q2": "IT COULD BE NEXT",
+        "bubble": "Your town, your state",
+        "pill": "State marker: Saugatuck City Hall, Butler Street",
+        "scene": {
+          "kind": "tab_land",
+          "sky": "blue",
+          "ground": {
+            "type": "sand",
+            "y": 1180
+          },
+          "props": [
+            {
+              "p": "sawmill",
+              "x": 560,
+              "s": 1.15,
+              "lit": 0.0,
+              "y": 1180
+            },
+            {
+              "p": "dune",
+              "x": 540,
+              "s": 1.2,
+              "y": 1230
+            }
+          ],
+          "move": "still",
+          "amount": 0.08,
+          "grass": false,
+          "moon": [
+            840,
+            320,
+            44
+          ]
+        }
+      },
+      "credit": "All pictures drawn"
     }
-   },
-   "credit": "All pictures drawn"
-  }
- ]
+  ],
+  "illustrated": "2026-11-12"
 }

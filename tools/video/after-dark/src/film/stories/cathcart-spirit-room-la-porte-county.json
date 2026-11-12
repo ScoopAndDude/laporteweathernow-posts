@@ -44,10 +44,30 @@
       "text": "In the dark, a drum began to beat. And a former congressman from LaPorte had come to prove it was a trick.",
       "pause": 0.6,
       "scene": {
-        "kind": "room",
-        "seed": 0,
+        "kind": "tab_room",
+        "sky": "room",
+        "ground": {
+          "type": "floor",
+          "y": 1250
+        },
+        "props": [
+          {
+            "p": "window",
+            "x": 200,
+            "s": 1.0,
+            "y": 1010
+          },
+          {
+            "p": "seance",
+            "x": 440,
+            "s": 1.15,
+            "stick": true,
+            "y": 1250
+          }
+        ],
         "move": "in",
-        "amount": 0.08
+        "amount": 0.08,
+        "wall": "#120b08"
       },
       "label": "LAPORTE COUNTY, THE 1800s",
       "title": {
@@ -74,10 +94,23 @@
       "text": "His name was Charles Cathcart. He farmed near LaPorte, served in Congress, and briefly in the United States Senate.",
       "pause": 0.45,
       "scene": {
-        "kind": "card",
-        "seed": 1,
+        "kind": "tab_land",
+        "sky": "dawn",
+        "ground": {
+          "type": "land",
+          "y": 1180
+        },
+        "props": [
+          {
+            "p": "capitol",
+            "x": 540,
+            "s": 1.3,
+            "y": 1180
+          }
+        ],
         "move": "in",
-        "amount": 0.05
+        "amount": 0.08,
+        "grass": false
       },
       "label": "CHARLES CATHCART",
       "typed": [
@@ -100,18 +133,37 @@
       "text": "He didn't believe in spirit circles. So he went to one at the Poston home, to expose it.",
       "pause": 0.45,
       "scene": {
-        "kind": "house",
-        "style": "farmhouse",
-        "seed": 1,
+        "kind": "tab_land",
+        "sky": "night",
+        "ground": {
+          "type": "land",
+          "y": 1180
+        },
+        "props": [
+          {
+            "p": "farm",
+            "x": 560,
+            "s": 1.1,
+            "lit": 1,
+            "y": 1170
+          },
+          {
+            "p": "tree",
+            "x": 70,
+            "s": 1.4,
+            "bare": true,
+            "seed": 1,
+            "y": 1190
+          }
+        ],
         "move": "in",
-        "amount": 0.07,
-        "lit": [
-          0,
-          1,
-          1,
-          0,
-          0
-        ]
+        "amount": 0.08,
+        "moon": [
+          760,
+          380,
+          50
+        ],
+        "fog": 0.2
       },
       "label": "A LAPORTE COUNTY HOME",
       "credit": "Indiana Historical Bureau; Transatlantica (Hardinge, 1870)"
@@ -120,10 +172,44 @@
       "text": "He brought a homemade device that could light the dark room in a flash.",
       "pause": 0.45,
       "scene": {
-        "kind": "room",
-        "seed": 1,
+        "kind": "tab_room",
+        "sky": "room",
+        "ground": {
+          "type": "floor",
+          "y": 1250
+        },
+        "props": [
+          {
+            "p": "window",
+            "x": 200,
+            "s": 1.0,
+            "y": 1010
+          },
+          {
+            "p": "seance",
+            "x": 440,
+            "s": 1.15,
+            "stick": false,
+            "y": 1250
+          }
+        ],
         "move": "in",
-        "amount": 0.06
+        "amount": 0.08,
+        "wall": "#120b08",
+        "glows": [
+          {
+            "x": 470,
+            "y": 1040,
+            "r": 120,
+            "color": [
+              1,
+              0.8,
+              0.5
+            ],
+            "k": 0.5,
+            "flick": true
+          }
+        ]
       },
       "label": "HIS TRAP",
       "credit": "Indiana Historical Bureau"
@@ -132,10 +218,30 @@
       "text": "The lights went out. A spirit the circle called Old King began to beat a bass drum.",
       "pause": 0.7,
       "scene": {
-        "kind": "card",
-        "seed": 4,
-        "move": "in",
-        "amount": 0.06
+        "kind": "tab_room",
+        "sky": "room",
+        "ground": {
+          "type": "floor",
+          "y": 1250
+        },
+        "props": [
+          {
+            "p": "window",
+            "x": 200,
+            "s": 1.0,
+            "y": 1010
+          },
+          {
+            "p": "seance",
+            "x": 440,
+            "s": 1.15,
+            "stick": true,
+            "y": 1250
+          }
+        ],
+        "move": "right",
+        "amount": 0.08,
+        "wall": "#120b08"
       },
       "label": "OLD KING",
       "credit": "Indiana Historical Bureau",
@@ -202,11 +308,44 @@
       "text": "The skeptic became a believer, and started a spirit circle of his own.",
       "pause": 0.55,
       "scene": {
-        "kind": "room",
-        "seed": 4,
-        "move": "in",
-        "amount": 0.06,
-        "fog": 0.12
+        "kind": "tab_room",
+        "sky": "room",
+        "ground": {
+          "type": "floor",
+          "y": 1250
+        },
+        "props": [
+          {
+            "p": "window",
+            "x": 200,
+            "s": 1.0,
+            "y": 1010
+          },
+          {
+            "p": "seance",
+            "x": 440,
+            "s": 1.15,
+            "stick": false,
+            "y": 1250
+          }
+        ],
+        "move": "out",
+        "amount": 0.08,
+        "wall": "#120b08",
+        "glows": [
+          {
+            "x": 440,
+            "y": 1050,
+            "r": 200,
+            "color": [
+              1,
+              0.7,
+              0.35
+            ],
+            "k": 0.6,
+            "flick": true
+          }
+        ]
       },
       "label": "CATHCART'S SPIRIT ROOM",
       "credit": "Indiana Historical Bureau; Indiana Historical Society; Hardinge (1870)"
@@ -219,13 +358,35 @@
         "q2": "IT COULD BE NEXT",
         "bubble": "Your town, your state",
         "scene": {
-          "kind": "room",
-          "seed": 5,
-          "move": "still"
+          "kind": "tab_room",
+          "sky": "room",
+          "ground": {
+            "type": "floor",
+            "y": 1250
+          },
+          "props": [
+            {
+              "p": "window",
+              "x": 200,
+              "s": 1.0,
+              "y": 1010
+            },
+            {
+              "p": "seance",
+              "x": 440,
+              "s": 1.15,
+              "stick": true,
+              "y": 1250
+            }
+          ],
+          "move": "still",
+          "amount": 0.08,
+          "wall": "#120b08"
         },
         "pill": "Source: Indiana Historical Bureau"
       },
       "credit": "All pictures drawn"
     }
-  ]
+  ],
+  "illustrated": "2026-11-12"
 }

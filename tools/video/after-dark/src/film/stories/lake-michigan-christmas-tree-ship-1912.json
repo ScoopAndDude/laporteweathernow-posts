@@ -1,227 +1,395 @@
 {
- "slug": "lake-michigan-christmas-tree-ship-1912",
- "title": "The Christmas Tree Ship: The Rouse Simmons, 1912",
- "series": "LA PORTE AFTER DARK",
- "music": {
-  "seed": 185,
-  "prog": 6
- },
- "say": [
-  [
-   "\\bSchuenemann\\b",
-   "Shoonaman"
+  "slug": "lake-michigan-christmas-tree-ship-1912",
+  "title": "The Christmas Tree Ship: The Rouse Simmons, 1912",
+  "series": "LA PORTE AFTER DARK",
+  "music": {
+    "seed": 185,
+    "prog": 6
+  },
+  "say": [
+    [
+      "\\bSchuenemann\\b",
+      "Shoonaman"
+    ],
+    [
+      "\\bKewaunee\\b",
+      "Ke-waunee"
+    ],
+    [
+      "\\bRouse\\b",
+      "Rouss"
+    ]
   ],
-  [
-   "\\bKewaunee\\b",
-   "Ke-waunee"
-  ],
-  [
-   "\\bRouse\\b",
-   "Rouss"
-  ]
- ],
- "sources": [
-  {
-   "what": "'failed to arrive in Chicago Harbor on schedule'; 'flying its flag at half-mast'; '3,000-5,000 Christmas trees'; count 'as high as 23'; widow Barbara and daughters 'continued the family's Christmas tree business'; found 1971; Capt. Herman E. Schuenemann, 'Captain Santa'",
-   "who": "National Archives, Prologue (2006)",
-   "url": "https://www.archives.gov/publications/prologue/2006/winter/christmas-tree.html"
-  },
-  {
-   "what": "'Late in the afternoon on Nov. 22'; 'never arrived at Chicago'; 'flying a distress flag five miles offshore'; 'estimated 16 crew and passengers'; 'Christmas trees washed up along the coastline' for years; wallet 'near Two Rivers, Wis.' (1923); wreck at 165 feet",
-   "who": "Wisconsin Shipwrecks (Wisconsin Historical Society / Sea Grant)",
-   "url": "https://wisconsinshipwrecks.org/Vessel/Details/541"
-  },
-  {
-   "what": "'got underway from Thompson on 22 November 1912'; 'spotted a schooner at 2:50 P.M. on Saturday, 23 November 1912 flying an ensign at half mast'; 'Local fisherman reported pulling up evergreen trees in their nets'; found 1971 by Kent Bellrichard",
-   "who": "Meverden & Thomsen, archaeological report (NOAA repository)",
-   "url": "https://repository.library.noaa.gov/view/noaa/34644/noaa_34644_DS1.pdf"
-  },
-  {
-   "what": "'washed up on the beaches of Two Rivers for years'; 16 lost",
-   "who": "Wisconsin Marine Historical Society",
-   "url": "https://wmhs.org/?p=2180"
-  },
-  {
-   "what": "wallet 'ensnared in the nets of the fishing tug Reindeer' (1924)",
-   "who": "Atlas Obscura; Milwaukee Magazine",
-   "url": "https://www.atlasobscura.com/articles/captain-santa-christmas-tree-boat-rouse-simmons-lake-michigan-shipwrecks"
-  },
-  {
-   "what": "Coast Guard Cutter Mackinaw has carried trees to Chicago each year since 2000",
-   "who": "U.S. Coast Guard (2024)",
-   "url": "https://www.mycg.uscg.mil/News/Article/4032967/25-years-and-counting/"
-  }
- ],
- "beats": [
-  {
-   "text": "For years after the ship went down, Christmas trees kept washing ashore.",
-   "pause": 0.6,
-   "scene": {
-    "kind": "lake",
-    "seed": 0,
-    "pier": false,
-    "boat": false,
-    "move": "in",
-    "amount": 0.08,
-    "snow": true,
-    "fog": 0.2
-   },
-   "label": "LAKE MICHIGAN, 1912",
-   "credit": "Wisconsin Historical Society; Wisconsin Marine Historical Society",
-   "title": {
-    "text": "THE CHRISTMAS TREE SHIP",
-    "at": "Christmas trees",
-    "size": 76,
-    "style": "red"
-   },
-   "sfx": [
+  "sources": [
     {
-     "kind": "heartbeat",
-     "at": "kept washing",
-     "gain": 0.33
-    }
-   ]
-  },
-  {
-   "text": "November 22, 1912. The schooner Rouse Simmons left Thompson, Michigan, bound for Chicago, her deck piled high with Christmas trees.",
-   "pause": 0.5,
-   "scene": {
-    "kind": "lake",
-    "seed": 1,
-    "pier": false,
-    "boat": false,
-    "move": "in",
-    "amount": 0.08
-   },
-   "label": "NOVEMBER 22, 1912",
-   "credit": "National Archives; Wisconsin Historical Society"
-  },
-  {
-   "text": "Her captain was Herman Schuenemann. People called him Captain Santa.",
-   "pause": 0.5,
-   "scene": {
-    "kind": "card",
-    "seed": 1,
-    "move": "in",
-    "amount": 0.05
-   },
-   "label": "\"CAPTAIN SANTA\"",
-   "credit": "National Archives; U.S. Coast Guard",
-   "typed": [
-    {
-     "text": "CAPT. HERMAN SCHUENEMANN",
-     "at": "Herman Schuenemann",
-     "y": 660,
-     "size": 52
+      "what": "'failed to arrive in Chicago Harbor on schedule'; 'flying its flag at half-mast'; '3,000-5,000 Christmas trees'; count 'as high as 23'; widow Barbara and daughters 'continued the family's Christmas tree business'; found 1971; Capt. Herman E. Schuenemann, 'Captain Santa'",
+      "who": "National Archives, Prologue (2006)",
+      "url": "https://www.archives.gov/publications/prologue/2006/winter/christmas-tree.html"
     },
     {
-     "text": "\"CAPTAIN SANTA\"",
-     "at": "Captain Santa",
-     "y": 733,
-     "size": 84
-    }
-   ]
-  },
-  {
-   "text": "The next afternoon, a life-saving crew at Kewaunee, Wisconsin, spotted a schooner flying a distress signal. A rescue boat from Two Rivers found nothing.",
-   "pause": 0.8,
-   "scene": {
-    "kind": "lake",
-    "seed": 2,
-    "pier": false,
-    "boat": false,
-    "move": "in",
-    "amount": 0.08,
-    "snow": true,
-    "fog": 0.3,
-    "storm": true
-   },
-   "label": "NOVEMBER 23, 1912",
-   "credit": "National Archives; Wisconsin Historical Society",
-   "sfx": [
-    {
-     "kind": "foghorn",
-     "at": "rescue boat",
-     "gain": 0.3
-    }
-   ]
-  },
-  {
-   "text": "Everyone aboard was lost.",
-   "pause": 0.7,
-   "scene": {
-    "kind": "lake",
-    "seed": 3,
-    "pier": false,
-    "boat": false,
-    "move": "in",
-    "amount": 0.08,
-    "fog": 0.35
-   },
-   "label": "ALL LOST",
-   "credit": "National Archives; Wisconsin Historical Society"
-  },
-  {
-   "text": "Fishermen pulled evergreens up in their nets. And in the 1920s, a fishing net brought up the captain's wallet.",
-   "pause": 0.5,
-   "scene": {
-    "kind": "card",
-    "seed": 2,
-    "move": "in",
-    "amount": 0.05
-   },
-   "label": "IN THE NETS",
-   "credit": "National Archives; Atlas Obscura",
-   "typed": [
-    {
-     "text": "EVERGREENS IN THE NETS",
-     "at": "evergreens",
-     "y": 660,
-     "size": 56
+      "what": "'Late in the afternoon on Nov. 22'; 'never arrived at Chicago'; 'flying a distress flag five miles offshore'; 'estimated 16 crew and passengers'; 'Christmas trees washed up along the coastline' for years; wallet 'near Two Rivers, Wis.' (1923); wreck at 165 feet",
+      "who": "Wisconsin Shipwrecks (Wisconsin Historical Society / Sea Grant)",
+      "url": "https://wisconsinshipwrecks.org/Vessel/Details/541"
     },
     {
-     "text": "THEN THE CAPTAIN'S WALLET",
-     "at": "captain's wallet",
-     "y": 738,
-     "size": 52
+      "what": "'got underway from Thompson on 22 November 1912'; 'spotted a schooner at 2:50 P.M. on Saturday, 23 November 1912 flying an ensign at half mast'; 'Local fisherman reported pulling up evergreen trees in their nets'; found 1971 by Kent Bellrichard",
+      "who": "Meverden & Thomsen, archaeological report (NOAA repository)",
+      "url": "https://repository.library.noaa.gov/view/noaa/34644/noaa_34644_DS1.pdf"
+    },
+    {
+      "what": "'washed up on the beaches of Two Rivers for years'; 16 lost",
+      "who": "Wisconsin Marine Historical Society",
+      "url": "https://wmhs.org/?p=2180"
+    },
+    {
+      "what": "wallet 'ensnared in the nets of the fishing tug Reindeer' (1924)",
+      "who": "Atlas Obscura; Milwaukee Magazine",
+      "url": "https://www.atlasobscura.com/articles/captain-santa-christmas-tree-boat-rouse-simmons-lake-michigan-shipwrecks"
+    },
+    {
+      "what": "Coast Guard Cutter Mackinaw has carried trees to Chicago each year since 2000",
+      "who": "U.S. Coast Guard (2024)",
+      "url": "https://www.mycg.uscg.mil/News/Article/4032967/25-years-and-counting/"
     }
-   ]
-  },
-  {
-   "text": "His widow and daughters kept selling Christmas trees in Chicago. And since 2000, a Coast Guard cutter has carried trees to the city every year.",
-   "pause": 0.5,
-   "scene": {
-    "kind": "lake",
-    "seed": 5,
-    "pier": false,
-    "boat": false,
-    "move": "out",
-    "amount": 0.08,
-    "city": true,
-    "snow": true
-   },
-   "label": "THE TRADITION",
-   "credit": "National Archives; U.S. Coast Guard"
-  },
-  {
-   "text": "Comment your town for the next La Porte After Dark.",
-   "end": true,
-   "end_card": {
-    "q": "COMMENT YOUR TOWN",
-    "q2": "FOR THE NEXT STORY",
-    "bubble": "Your town, your state",
-    "pill": "The Rouse Simmons, 1912",
-    "scene": {
-     "kind": "lake",
-     "seed": 9,
-     "pier": false,
-     "boat": false,
-     "move": "still",
-     "amount": 0.08,
-     "snow": true
+  ],
+  "beats": [
+    {
+      "text": "For years after the ship went down, Christmas trees kept washing ashore.",
+      "pause": 0.6,
+      "scene": {
+        "kind": "tab_lake",
+        "sky": "blue",
+        "ground": {
+          "type": "water",
+          "y": 1080
+        },
+        "props": [
+          {
+            "p": "band",
+            "x": 540,
+            "s": 1.0,
+            "y": 1220
+          },
+          {
+            "p": "flotsam",
+            "x": 540,
+            "s": 1.2,
+            "what": "trees",
+            "n": 8,
+            "seed": 1,
+            "y": 1290
+          }
+        ],
+        "move": "in",
+        "amount": 0.08,
+        "snow": true,
+        "moon": [
+          820,
+          320,
+          44
+        ]
+      },
+      "label": "LAKE MICHIGAN, 1912",
+      "credit": "Wisconsin Historical Society; Wisconsin Marine Historical Society",
+      "title": {
+        "text": "THE CHRISTMAS TREE SHIP",
+        "at": "Christmas trees",
+        "size": 76,
+        "style": "red"
+      },
+      "sfx": [
+        {
+          "kind": "heartbeat",
+          "at": "kept washing",
+          "gain": 0.33
+        }
+      ]
+    },
+    {
+      "text": "November 22, 1912. The schooner Rouse Simmons left Thompson, Michigan, bound for Chicago, her deck piled high with Christmas trees.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "tab_lake",
+        "sky": "dusk",
+        "ground": {
+          "type": "water",
+          "y": 1150
+        },
+        "props": [
+          {
+            "p": "pier",
+            "x": 260,
+            "s": 1.3,
+            "y": 1250
+          },
+          {
+            "p": "schooner",
+            "x": 600,
+            "s": 1.4,
+            "trees": true,
+            "y": 1170
+          }
+        ],
+        "move": "in",
+        "amount": 0.08
+      },
+      "label": "NOVEMBER 22, 1912",
+      "credit": "National Archives; Wisconsin Historical Society"
+    },
+    {
+      "text": "Her captain was Herman Schuenemann. People called him Captain Santa.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "tab_lake",
+        "sky": "blue",
+        "ground": {
+          "type": "water",
+          "y": 1150
+        },
+        "props": [
+          {
+            "p": "rowhouses",
+            "x": 540,
+            "s": 0.5,
+            "n": 11,
+            "lit": 0.5,
+            "seed": 3,
+            "y": 1150
+          },
+          {
+            "p": "schooner",
+            "x": 620,
+            "s": 1.2,
+            "trees": true,
+            "sails": false,
+            "y": 1165
+          },
+          {
+            "p": "pier",
+            "x": 300,
+            "s": 1.4,
+            "y": 1260
+          },
+          {
+            "p": "people",
+            "x": 280,
+            "s": 0.9,
+            "n": 7,
+            "seed": 2,
+            "spread": 200,
+            "y": 1214
+          }
+        ],
+        "move": "in",
+        "amount": 0.08,
+        "snow": true
+      },
+      "label": "\"CAPTAIN SANTA\"",
+      "credit": "National Archives; U.S. Coast Guard",
+      "typed": [
+        {
+          "text": "CAPT. HERMAN SCHUENEMANN",
+          "at": "Herman Schuenemann",
+          "y": 660,
+          "size": 52
+        },
+        {
+          "text": "\"CAPTAIN SANTA\"",
+          "at": "Captain Santa",
+          "y": 733,
+          "size": 84
+        }
+      ]
+    },
+    {
+      "text": "The next afternoon, a life-saving crew at Kewaunee, Wisconsin, spotted a schooner flying a distress signal. A rescue boat from Two Rivers found nothing.",
+      "pause": 0.8,
+      "scene": {
+        "kind": "tab_lake",
+        "sky": "storm",
+        "ground": {
+          "type": "water",
+          "y": 1150
+        },
+        "props": [
+          {
+            "p": "schooner",
+            "x": 420,
+            "s": 0.7,
+            "trees": true,
+            "flag": true,
+            "y": 1150
+          },
+          {
+            "p": "boat",
+            "x": 860,
+            "s": 1.0,
+            "y": 1200
+          }
+        ],
+        "move": "in",
+        "amount": 0.08,
+        "snow": true,
+        "fog": 0.3
+      },
+      "label": "NOVEMBER 23, 1912",
+      "credit": "National Archives; Wisconsin Historical Society",
+      "sfx": [
+        {
+          "kind": "foghorn",
+          "at": "rescue boat",
+          "gain": 0.3
+        }
+      ]
+    },
+    {
+      "text": "Everyone aboard was lost.",
+      "pause": 0.7,
+      "scene": {
+        "kind": "tab_lake",
+        "sky": "storm",
+        "ground": {
+          "type": "water",
+          "y": 1150
+        },
+        "props": [],
+        "move": "in",
+        "amount": 0.08,
+        "snow": true,
+        "fog": 0.45
+      },
+      "label": "ALL LOST",
+      "credit": "National Archives; Wisconsin Historical Society"
+    },
+    {
+      "text": "Fishermen pulled evergreens up in their nets. And in the 1920s, a fishing net brought up the captain's wallet.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "tab_lake",
+        "sky": "dawn",
+        "ground": {
+          "type": "water",
+          "y": 1150
+        },
+        "props": [
+          {
+            "p": "boat",
+            "x": 540,
+            "s": 2.0,
+            "net": true,
+            "y": 1180
+          }
+        ],
+        "move": "in",
+        "amount": 0.08
+      },
+      "label": "IN THE NETS",
+      "credit": "National Archives; Atlas Obscura",
+      "typed": [
+        {
+          "text": "EVERGREENS IN THE NETS",
+          "at": "evergreens",
+          "y": 660,
+          "size": 56
+        },
+        {
+          "text": "THEN THE CAPTAIN'S WALLET",
+          "at": "captain's wallet",
+          "y": 738,
+          "size": 52
+        }
+      ]
+    },
+    {
+      "text": "His widow and daughters kept selling Christmas trees in Chicago. And since 2000, a Coast Guard cutter has carried trees to the city every year.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "tab_town",
+        "sky": "blue",
+        "ground": {
+          "type": "street",
+          "y": 1150
+        },
+        "props": [
+          {
+            "p": "rowhouses",
+            "x": 540,
+            "s": 1.1,
+            "n": 6,
+            "lit": 0.7,
+            "seed": 5,
+            "y": 1150
+          },
+          {
+            "p": "flotsam",
+            "x": 420,
+            "s": 1.3,
+            "what": "trees",
+            "n": 7,
+            "seed": 4,
+            "y": 1260
+          },
+          {
+            "p": "people",
+            "x": 760,
+            "s": 1.0,
+            "n": 5,
+            "seed": 3,
+            "spread": 130,
+            "y": 1300
+          }
+        ],
+        "move": "in",
+        "amount": 0.08,
+        "snow": true
+      },
+      "label": "THE TRADITION",
+      "credit": "National Archives; U.S. Coast Guard"
+    },
+    {
+      "text": "Comment your town for the next La Porte After Dark.",
+      "end": true,
+      "end_card": {
+        "q": "COMMENT YOUR TOWN",
+        "q2": "FOR THE NEXT STORY",
+        "bubble": "Your town, your state",
+        "pill": "The Rouse Simmons, 1912",
+        "scene": {
+          "kind": "tab_lake",
+          "sky": "blue",
+          "ground": {
+            "type": "water",
+            "y": 1080
+          },
+          "props": [
+            {
+              "p": "band",
+              "x": 540,
+              "s": 1.0,
+              "y": 1220
+            },
+            {
+              "p": "flotsam",
+              "x": 540,
+              "s": 1.2,
+              "what": "trees",
+              "n": 6,
+              "seed": 2,
+              "y": 1290
+            }
+          ],
+          "move": "still",
+          "amount": 0.08,
+          "snow": true,
+          "moon": [
+            220,
+            320,
+            44
+          ]
+        }
+      },
+      "credit": "All pictures drawn"
     }
-   },
-   "credit": "All pictures drawn"
-  }
- ]
+  ],
+  "illustrated": "2026-11-12"
 }

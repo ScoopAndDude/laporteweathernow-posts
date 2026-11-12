@@ -1,168 +1,275 @@
 {
- "slug": "gulliver-seul-choix-point-lighthouse",
- "title": "Seul Choix Point Lighthouse: The Keeper Who Never Left",
- "series": "LA PORTE AFTER DARK",
- "music": {
-  "seed": 173,
-  "prog": 6
- },
- "say": [
-  [
-   "\\bSeul Choix\\b",
-   "Sis-schwa"
-  ]
- ],
- "sources": [
-  {
-   "what": "'supposedly named by French sailors' whose 'only choice' for shelter was the bay; 'preferred pronunciation is Sis-shwa'; lens 'placed in operation on August 15, 1895'; Joseph W. Townshend 'passed away in the dwelling in 1910' and 'lay in state in the downstairs parlor until his relatives could gather'; cigar smell, moved silverware, face in a mirror; owned by Michigan DNR, managed by the Gulliver Historical Society",
-   "who": "Lighthousefriends, Seul Choix Point",
-   "url": "https://www.lighthousefriends.com/light.asp?ID=565"
+  "slug": "gulliver-seul-choix-point-lighthouse",
+  "title": "Seul Choix Point Lighthouse: The Keeper Who Never Left",
+  "series": "LA PORTE AFTER DARK",
+  "music": {
+    "seed": 173,
+    "prog": 6
   },
-  {
-   "what": "'Capt. Joseph Willie Townshend' 'died in 1910 inside the lighthouse'; Marilyn Fischer, society president: 'I've written over 150 true stories that have happened to our house guests and volunteers'; open Memorial Day weekend to end of September",
-   "who": "The Mining Journal (2022 and 2024)",
-   "url": "https://www.miningjournal.net/news/2024/10/local-lighthouse-one-of-states-most-haunted-sites/"
-  },
-  {
-   "what": "Fischer, 'president of Gulliver Historical Society': 'I've written over 150 true stories that have happened to our house guests and volunteers'",
-   "who": "Michigan Blue magazine, 'Spooky Lights'",
-   "url": "https://www.mibluemag.com/waterways/spooky-lights/"
-  },
-  {
-   "what": "'An operational Light'; run by the Gulliver Historical Society; cigar smoke; face in mirror",
-   "who": "Pure Michigan",
-   "url": "https://www.michigan.org/node/9469"
-  }
- ],
- "beats": [
-  {
-   "text": "Visitors say they smell cigar smoke in this lighthouse. Nobody is smoking.",
-   "pause": 0.6,
-   "scene": {
-    "kind": "lighthouse",
-    "seed": 0,
-    "style": "tower",
-    "move": "in",
-    "amount": 0.08
-   },
-   "label": "MICHIGAN'S UPPER PENINSULA",
-   "credit": "Lighthousefriends; Mining Journal (2022, 2024)",
-   "title": {
-    "text": "SEUL CHOIX POINT",
-    "at": "Nobody",
-    "size": 84,
-    "style": "red"
-   },
-   "sfx": [
+  "say": [
+    [
+      "\\bSeul Choix\\b",
+      "Sis-schwa"
+    ]
+  ],
+  "sources": [
     {
-     "kind": "heartbeat",
-     "at": "Nobody",
-     "gain": 0.33
-    }
-   ]
-  },
-  {
-   "text": "This is Seul Choix Point, on Lake Michigan near Gulliver, Michigan. The name is French for only choice.",
-   "pause": 0.5,
-   "scene": {
-    "kind": "lake",
-    "seed": 0,
-    "pier": false,
-    "boat": false,
-    "move": "in",
-    "amount": 0.08
-   },
-   "label": "\"ONLY CHOICE\"",
-   "credit": "Lighthousefriends; Wikipedia"
-  },
-  {
-   "text": "The tower's light was first lit in 1895, and it still guides ships today.",
-   "pause": 0.5,
-   "scene": {
-    "kind": "lighthouse",
-    "seed": 1,
-    "style": "tower",
-    "move": "left",
-    "amount": 0.06
-   },
-   "label": "TOWER LIT 1895",
-   "credit": "Lighthousefriends; Pure Michigan"
-  },
-  {
-   "text": "In 1910, keeper Joseph Willie Townshend died in the keeper's house. Accounts say he lay in state in the parlor until his family could gather.",
-   "pause": 0.7,
-   "scene": {
-    "kind": "room",
-    "seed": 0
-   },
-   "label": "THE KEEPER, 1910",
-   "credit": "Lighthousefriends; Mining Journal (2022, 2024)"
-  },
-  {
-   "text": "Since then, volunteers and guests have reported the smell of his cigars, silverware moved on the table, and a man's face in a mirror.",
-   "pause": 0.5,
-   "scene": {
-    "kind": "card",
-    "seed": 2,
-    "move": "in",
-    "amount": 0.05
-   },
-   "label": "WHAT PEOPLE REPORT",
-   "credit": "Lighthousefriends; Mining Journal (2022, 2024)",
-   "typed": [
-    {
-     "text": "CIGAR SMOKE",
-     "at": "smell of his cigars",
-     "y": 660,
-     "size": 84
+      "what": "'supposedly named by French sailors' whose 'only choice' for shelter was the bay; 'preferred pronunciation is Sis-shwa'; lens 'placed in operation on August 15, 1895'; Joseph W. Townshend 'passed away in the dwelling in 1910' and 'lay in state in the downstairs parlor until his relatives could gather'; cigar smell, moved silverware, face in a mirror; owned by Michigan DNR, managed by the Gulliver Historical Society",
+      "who": "Lighthousefriends, Seul Choix Point",
+      "url": "https://www.lighthousefriends.com/light.asp?ID=565"
     },
     {
-     "text": "MOVED SILVERWARE",
-     "at": "silverware moved",
-     "y": 773,
-     "size": 68
+      "what": "'Capt. Joseph Willie Townshend' 'died in 1910 inside the lighthouse'; Marilyn Fischer, society president: 'I've written over 150 true stories that have happened to our house guests and volunteers'; open Memorial Day weekend to end of September",
+      "who": "The Mining Journal (2022 and 2024)",
+      "url": "https://www.miningjournal.net/news/2024/10/local-lighthouse-one-of-states-most-haunted-sites/"
     },
     {
-     "text": "A FACE IN A MIRROR",
-     "at": "face in a mirror",
-     "y": 866,
-     "size": 68
-    }
-   ],
-   "sfx": [
+      "what": "Fischer, 'president of Gulliver Historical Society': 'I've written over 150 true stories that have happened to our house guests and volunteers'",
+      "who": "Michigan Blue magazine, 'Spooky Lights'",
+      "url": "https://www.mibluemag.com/waterways/spooky-lights/"
+    },
     {
-     "kind": "creak",
-     "at": "silverware",
-     "gain": 0.3
+      "what": "'An operational Light'; run by the Gulliver Historical Society; cigar smoke; face in mirror",
+      "who": "Pure Michigan",
+      "url": "https://www.michigan.org/node/9469"
     }
-   ]
-  },
-  {
-   "text": "The president of the Gulliver Historical Society says she has written more than 150 true stories from guests and volunteers.",
-   "pause": 0.6,
-   "scene": {
-    "kind": "room",
-    "seed": 1
-   },
-   "label": "150 STORIES",
-   "credit": "Marilyn Fischer, via Michigan Blue magazine"
-  },
-  {
-   "text": "Comment your town, and it could be next.",
-   "end": true,
-   "end_card": {
-    "q": "COMMENT YOUR TOWN",
-    "q2": "IT COULD BE NEXT",
-    "bubble": "Your town, your state",
-    "pill": "Museum open Memorial Day weekend through September",
-    "scene": {
-     "kind": "lighthouse",
-     "seed": 4,
-     "style": "tower",
-     "move": "still"
+  ],
+  "beats": [
+    {
+      "text": "Visitors say they smell cigar smoke in this lighthouse. Nobody is smoking.",
+      "pause": 0.6,
+      "scene": {
+        "kind": "tab_room",
+        "sky": "room",
+        "ground": {
+          "type": "floor",
+          "y": 1250
+        },
+        "props": [
+          {
+            "p": "parlor",
+            "x": 560,
+            "s": 1.2,
+            "mirror": false,
+            "y": 1250
+          },
+          {
+            "p": "smoke",
+            "x": 330,
+            "s": 1.5,
+            "y": 1010
+          }
+        ],
+        "move": "in",
+        "amount": 0.08,
+        "wall": "#17100b"
+      },
+      "label": "MICHIGAN'S UPPER PENINSULA",
+      "credit": "Lighthousefriends; Mining Journal (2022, 2024)",
+      "title": {
+        "text": "SEUL CHOIX POINT",
+        "at": "Nobody",
+        "size": 84,
+        "style": "red"
+      },
+      "sfx": [
+        {
+          "kind": "heartbeat",
+          "at": "Nobody",
+          "gain": 0.33
+        }
+      ]
+    },
+    {
+      "text": "This is Seul Choix Point, on Lake Michigan near Gulliver, Michigan. The name is French for only choice.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "lake",
+        "seed": 0,
+        "pier": false,
+        "boat": false,
+        "move": "in",
+        "amount": 0.08
+      },
+      "label": "\"ONLY CHOICE\"",
+      "credit": "Lighthousefriends; Wikipedia"
+    },
+    {
+      "text": "The tower's light was first lit in 1895, and it still guides ships today.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "lighthouse",
+        "seed": 1,
+        "style": "tower",
+        "move": "left",
+        "amount": 0.06
+      },
+      "label": "TOWER LIT 1895",
+      "credit": "Lighthousefriends; Pure Michigan"
+    },
+    {
+      "text": "In 1910, keeper Joseph Willie Townshend died in the keeper's house. Accounts say he lay in state in the parlor until his family could gather.",
+      "pause": 0.7,
+      "scene": {
+        "kind": "tab_room",
+        "sky": "room",
+        "ground": {
+          "type": "floor",
+          "y": 1250
+        },
+        "props": [
+          {
+            "p": "window",
+            "x": 230,
+            "s": 1.2,
+            "y": 1010
+          },
+          {
+            "p": "door",
+            "x": 820,
+            "s": 1.5,
+            "y": 1250
+          }
+        ],
+        "move": "in",
+        "amount": 0.08,
+        "wall": "#17100b",
+        "glows": [
+          {
+            "x": 480,
+            "y": 980,
+            "r": 90,
+            "color": [
+              1,
+              0.75,
+              0.4
+            ],
+            "k": 0.7,
+            "flick": true
+          },
+          {
+            "x": 600,
+            "y": 980,
+            "r": 90,
+            "color": [
+              1,
+              0.75,
+              0.4
+            ],
+            "k": 0.7,
+            "flick": true
+          }
+        ]
+      },
+      "label": "THE KEEPER, 1910",
+      "credit": "Lighthousefriends; Mining Journal (2022, 2024)"
+    },
+    {
+      "text": "Since then, volunteers and guests have reported the smell of his cigars, silverware moved on the table, and a man's face in a mirror.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "tab_room",
+        "sky": "room",
+        "ground": {
+          "type": "floor",
+          "y": 1250
+        },
+        "props": [
+          {
+            "p": "parlor",
+            "x": 600,
+            "s": 1.2,
+            "y": 1250
+          },
+          {
+            "p": "smoke",
+            "x": 760,
+            "s": 1.3,
+            "y": 1000
+          }
+        ],
+        "move": "in",
+        "amount": 0.08,
+        "wall": "#17100b"
+      },
+      "label": "WHAT PEOPLE REPORT",
+      "credit": "Lighthousefriends; Mining Journal (2022, 2024)",
+      "typed": [
+        {
+          "text": "CIGAR SMOKE",
+          "at": "smell of his cigars",
+          "y": 660,
+          "size": 84
+        },
+        {
+          "text": "MOVED SILVERWARE",
+          "at": "silverware moved",
+          "y": 773,
+          "size": 68
+        },
+        {
+          "text": "A FACE IN A MIRROR",
+          "at": "face in a mirror",
+          "y": 866,
+          "size": 68
+        }
+      ],
+      "sfx": [
+        {
+          "kind": "creak",
+          "at": "silverware",
+          "gain": 0.3
+        }
+      ]
+    },
+    {
+      "text": "The president of the Gulliver Historical Society says she has written more than 150 true stories from guests and volunteers.",
+      "pause": 0.6,
+      "scene": {
+        "kind": "tab_room",
+        "sky": "room",
+        "ground": {
+          "type": "floor",
+          "y": 1250
+        },
+        "props": [
+          {
+            "p": "window",
+            "x": 230,
+            "s": 1.2,
+            "y": 1010
+          },
+          {
+            "p": "stairs",
+            "x": 700,
+            "s": 1.2,
+            "y": 1260
+          }
+        ],
+        "move": "in",
+        "amount": 0.08,
+        "wall": "#17100b"
+      },
+      "label": "150 STORIES",
+      "credit": "Marilyn Fischer, via Michigan Blue magazine"
+    },
+    {
+      "text": "Comment your town, and it could be next.",
+      "end": true,
+      "end_card": {
+        "q": "COMMENT YOUR TOWN",
+        "q2": "IT COULD BE NEXT",
+        "bubble": "Your town, your state",
+        "pill": "Museum open Memorial Day weekend through September",
+        "scene": {
+          "kind": "lighthouse",
+          "seed": 4,
+          "style": "tower",
+          "move": "still"
+        }
+      },
+      "credit": "All pictures drawn"
     }
-   },
-   "credit": "All pictures drawn"
-  }
- ]
+  ],
+  "illustrated": "2026-11-12"
 }

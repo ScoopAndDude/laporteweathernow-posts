@@ -63,12 +63,23 @@
       "text": "The prisoners built the walls that held them.",
       "pause": 0.7,
       "scene": {
-        "kind": "prison",
-        "seed": 0,
+        "kind": "tab_land",
+        "sky": "dusk",
+        "ground": {
+          "type": "land",
+          "y": 1180
+        },
+        "props": [
+          {
+            "p": "quarry",
+            "x": 500,
+            "s": 1.1,
+            "y": 1180
+          }
+        ],
         "move": "in",
-        "amount": 0.1,
-        "fog": 0.25,
-        "dark": true
+        "amount": 0.08,
+        "grass": false
       },
       "label": "JOLIET, ILLINOIS",
       "title": {
@@ -90,11 +101,30 @@
       "text": "In 1858, convicts began building the Joliet Prison, out of limestone quarried nearby.",
       "pause": 0.5,
       "scene": {
-        "kind": "prison",
-        "seed": 1,
+        "kind": "tab_land",
+        "sky": "dawn",
+        "ground": {
+          "type": "land",
+          "y": 1180
+        },
+        "props": [
+          {
+            "p": "gatehouse",
+            "x": 540,
+            "s": 1.15,
+            "lit": 0.0,
+            "y": 1180
+          },
+          {
+            "p": "quarry",
+            "x": 300,
+            "s": 0.6,
+            "y": 1330
+          }
+        ],
         "move": "in",
         "amount": 0.08,
-        "dark": true
+        "grass": false
       },
       "label": "1858",
       "credit": "Joliet Area Historical Museum; CBS Chicago; AP"
@@ -134,9 +164,10 @@
       "scene": {
         "kind": "cell",
         "seed": 1,
+        "door_open": true,
         "move": "in",
-        "amount": 0.12,
-        "fog": 0.2
+        "amount": 0.1,
+        "fog": 0.1
       },
       "label": "WHAT PEOPLE SAY",
       "sfx": [
@@ -152,14 +183,33 @@
       "text": "In 2018, a visitor's photo seemed to show a woman in white, floating in the prison yard.",
       "pause": 0.8,
       "scene": {
-        "kind": "prison",
-        "seed": 2,
+        "kind": "tab_land",
+        "sky": "night",
+        "ground": {
+          "type": "land",
+          "y": 1180
+        },
+        "props": [
+          {
+            "p": "gatehouse",
+            "x": 540,
+            "s": 1.15,
+            "lit": 0.0,
+            "y": 1180
+          }
+        ],
         "move": "in",
-        "amount": 0.12,
-        "fog": 0.35,
+        "amount": 0.08,
+        "moon": [
+          860,
+          300,
+          46
+        ],
         "ghost": "woman",
-        "ghost_x": 820,
-        "dark": true
+        "ghost_x": 800,
+        "ghost_y": 1290,
+        "fog": 0.35,
+        "grass": false
       },
       "label": "THE WOMAN IN WHITE",
       "credit": "Legend: WBEZ (2024)"
@@ -168,11 +218,32 @@
       "text": "Today, the Joliet Area Historical Museum runs seasonal tours. Check dates before you go.",
       "pause": 0.5,
       "scene": {
-        "kind": "prison",
-        "seed": 3,
+        "kind": "tab_land",
+        "sky": "dawn",
+        "ground": {
+          "type": "land",
+          "y": 1180
+        },
+        "props": [
+          {
+            "p": "gatehouse",
+            "x": 540,
+            "s": 1.15,
+            "lit": 0.1,
+            "y": 1180
+          },
+          {
+            "p": "people",
+            "x": 540,
+            "s": 1.0,
+            "n": 8,
+            "seed": 1,
+            "y": 1310
+          }
+        ],
         "move": "out",
-        "amount": 0.07,
-        "dark": true
+        "amount": 0.08,
+        "grass": false
       },
       "label": "TODAY",
       "credit": "WBEZ; FOX 32; Shaw Local"
@@ -186,10 +257,29 @@
         "bubble": "Your town, your state",
         "pill": "Old Joliet Prison: tours in season",
         "scene": {
-          "kind": "prison",
-          "seed": 4,
+          "kind": "tab_land",
+          "sky": "blue",
+          "ground": {
+            "type": "land",
+            "y": 1180
+          },
+          "props": [
+            {
+              "p": "gatehouse",
+              "x": 540,
+              "s": 1.15,
+              "lit": 0.1,
+              "y": 1180
+            }
+          ],
           "move": "still",
-          "dark": true
+          "amount": 0.08,
+          "moon": [
+            200,
+            300,
+            44
+          ],
+          "grass": false
         }
       },
       "credit": "All pictures drawn"
@@ -199,5 +289,6 @@
     "date": "2026-11-07",
     "by": "independent subagent",
     "result": "'tour guides and ghost hunters' narrowed to one tour guide and some paranormal investigators (the museum's historian doesn't believe it); 'did time here'; tours 'seasonal, check dates'; searchlight off (closed prison); all supported (the 2018 photo is from one outlet, WBEZ, told as 'seemed to show')"
-  }
+  },
+  "illustrated": "2026-11-12"
 }

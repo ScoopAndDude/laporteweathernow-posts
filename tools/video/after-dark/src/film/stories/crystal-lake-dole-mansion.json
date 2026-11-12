@@ -59,15 +59,41 @@
       "text": "A figure in Victorian dress. That's what some people say they've seen at the Dole Mansion, in Crystal Lake, Illinois.",
       "pause": 0.6,
       "scene": {
-        "kind": "courthouse",
-        "tower": "turret",
-        "seed": 0,
+        "kind": "tab_town",
+        "sky": "night",
+        "ground": {
+          "type": "land",
+          "y": 1200
+        },
+        "props": [
+          {
+            "p": "mansion",
+            "x": 540,
+            "s": 1.35,
+            "style": "italianate",
+            "lit": 0.15,
+            "y": 1200
+          },
+          {
+            "p": "tree",
+            "x": 60,
+            "s": 1.5,
+            "bare": true,
+            "seed": 1,
+            "y": 1230
+          }
+        ],
         "move": "in",
-        "amount": 0.1,
-        "fog": 0.22,
+        "amount": 0.08,
+        "moon": [
+          860,
+          300,
+          44
+        ],
         "ghost": "woman",
         "ghost_x": 900,
-        "round": false
+        "ghost_y": 1260,
+        "fog": 0.2
       },
       "label": "CRYSTAL LAKE, ILLINOIS",
       "title": {
@@ -89,12 +115,42 @@
       "text": "It was built in 1865 for Charles Dole, a Chicago grain merchant. Later, ice was cut from the lake here.",
       "pause": 0.5,
       "scene": {
-        "kind": "lake",
-        "seed": 1,
+        "kind": "tab_lake",
+        "sky": "dawn",
+        "ground": {
+          "type": "snow",
+          "y": 1080
+        },
+        "props": [
+          {
+            "p": "pine",
+            "x": 120,
+            "s": 1.0,
+            "y": 1080
+          },
+          {
+            "p": "pine",
+            "x": 240,
+            "s": 0.7,
+            "y": 1080
+          },
+          {
+            "p": "mansion",
+            "x": 800,
+            "s": 0.55,
+            "lit": 0.2,
+            "y": 1080
+          },
+          {
+            "p": "iceblocks",
+            "x": 520,
+            "s": 1.5,
+            "y": 1280
+          }
+        ],
         "move": "in",
-        "amount": 0.07,
-        "snow": true,
-        "pier": false
+        "amount": 0.08,
+        "snow": true
       },
       "label": "1865",
       "typed": [
@@ -111,12 +167,36 @@
       "text": "In 1922, a group that included Lou Ringling, widow of circus co-founder Al Ringling, turned it into a country club.",
       "pause": 0.5,
       "scene": {
-        "kind": "courthouse",
-        "tower": "turret",
-        "seed": 1,
+        "kind": "tab_town",
+        "sky": "dusk",
+        "ground": {
+          "type": "land",
+          "y": 1200
+        },
+        "props": [
+          {
+            "p": "mansion",
+            "x": 540,
+            "s": 1.35,
+            "style": "italianate",
+            "lit": 0.95,
+            "y": 1200
+          },
+          {
+            "p": "car",
+            "x": 280,
+            "s": 0.9,
+            "y": 1330
+          },
+          {
+            "p": "car",
+            "x": 800,
+            "s": 1.0,
+            "y": 1350
+          }
+        ],
         "move": "in",
-        "amount": 0.08,
-        "round": false
+        "amount": 0.08
       },
       "label": "THE COUNTRY CLUB",
       "card": {
@@ -132,13 +212,39 @@
       "text": "Later, Franciscans ran a boys' school here. In 2002, the community raised the money to save it from a condo developer.",
       "pause": 0.5,
       "scene": {
-        "kind": "courthouse",
-        "tower": "turret",
-        "seed": 2,
+        "kind": "tab_town",
+        "sky": "dawn",
+        "ground": {
+          "type": "land",
+          "y": 1200
+        },
+        "props": [
+          {
+            "p": "mansion",
+            "x": 540,
+            "s": 1.35,
+            "style": "italianate",
+            "lit": 0.1,
+            "y": 1200
+          },
+          {
+            "p": "people",
+            "x": 540,
+            "s": 1.0,
+            "n": 9,
+            "seed": 2,
+            "y": 1300
+          },
+          {
+            "p": "tree",
+            "x": 1010,
+            "s": 1.4,
+            "seed": 3,
+            "y": 1230
+          }
+        ],
         "move": "in",
-        "amount": 0.07,
-        "fog": 0.2,
-        "round": false
+        "amount": 0.08
       },
       "label": "SAVED",
       "credit": "Landmarks Illinois; The Dole; Northwest Quarterly"
@@ -147,15 +253,45 @@
       "text": "Some believe Lou Ringling never left. A staff member has described drastic temperature changes. And visitors tell of a figure in Victorian dress.",
       "pause": 0.9,
       "scene": {
-        "kind": "courthouse",
-        "tower": "turret",
-        "seed": 3,
+        "kind": "tab_room",
+        "sky": "room",
+        "ground": {
+          "type": "floor",
+          "y": 1250
+        },
+        "props": [
+          {
+            "p": "window",
+            "x": 250,
+            "s": 1.3,
+            "y": 1000
+          },
+          {
+            "p": "stairs",
+            "x": 680,
+            "s": 1.2,
+            "y": 1260
+          }
+        ],
         "move": "in",
-        "amount": 0.12,
-        "fog": 0.32,
+        "amount": 0.08,
+        "wall": "#1a100c",
         "ghost": "woman",
-        "ghost_x": 880,
-        "round": false
+        "ghost_x": 330,
+        "ghost_y": 1250,
+        "glows": [
+          {
+            "x": 250,
+            "y": 800,
+            "r": 260,
+            "color": [
+              0.4,
+              0.55,
+              0.7
+            ],
+            "k": 0.25
+          }
+        ]
       },
       "label": "WHAT PEOPLE REPORT",
       "typed": [
@@ -179,12 +315,41 @@
       "text": "Not everyone believes it. But the stories keep coming.",
       "pause": 0.7,
       "scene": {
-        "kind": "lake",
-        "seed": 2,
+        "kind": "tab_lake",
+        "sky": "night",
+        "ground": {
+          "type": "water",
+          "y": 1120
+        },
+        "props": [
+          {
+            "p": "mansion",
+            "x": 540,
+            "s": 0.9,
+            "lit": 0.1,
+            "y": 1120
+          },
+          {
+            "p": "pine",
+            "x": 120,
+            "s": 0.9,
+            "y": 1120
+          },
+          {
+            "p": "pine",
+            "x": 960,
+            "s": 1.1,
+            "y": 1120
+          }
+        ],
         "move": "out",
-        "amount": 0.06,
-        "fog": 0.2,
-        "pier": false
+        "amount": 0.08,
+        "moon": [
+          220,
+          330,
+          48
+        ],
+        "fog": 0.2
       },
       "label": "THE LEGEND",
       "sfx": [
@@ -200,12 +365,39 @@
       "text": "Today the Dole is an arts center, open to the public.",
       "pause": 0.5,
       "scene": {
-        "kind": "courthouse",
-        "tower": "turret",
-        "seed": 4,
+        "kind": "tab_town",
+        "sky": "dawn",
+        "ground": {
+          "type": "land",
+          "y": 1200
+        },
+        "props": [
+          {
+            "p": "mansion",
+            "x": 540,
+            "s": 1.35,
+            "style": "italianate",
+            "lit": 0.3,
+            "y": 1200
+          },
+          {
+            "p": "tree",
+            "x": 60,
+            "s": 1.5,
+            "seed": 4,
+            "y": 1230
+          },
+          {
+            "p": "people",
+            "x": 700,
+            "s": 0.9,
+            "n": 5,
+            "seed": 5,
+            "y": 1310
+          }
+        ],
         "move": "out",
-        "amount": 0.08,
-        "round": false
+        "amount": 0.08
       },
       "label": "TODAY",
       "credit": "The Dole; Northwest Quarterly"
@@ -219,11 +411,36 @@
         "bubble": "Your town, your state",
         "pill": "The Dole, Crystal Lake: open to the public",
         "scene": {
-          "kind": "courthouse",
-          "tower": "turret",
-          "seed": 5,
+          "kind": "tab_town",
+          "sky": "blue",
+          "ground": {
+            "type": "land",
+            "y": 1200
+          },
+          "props": [
+            {
+              "p": "mansion",
+              "x": 540,
+              "s": 1.35,
+              "style": "italianate",
+              "lit": 0.4,
+              "y": 1200
+            },
+            {
+              "p": "tree",
+              "x": 1010,
+              "s": 1.4,
+              "seed": 3,
+              "y": 1230
+            }
+          ],
           "move": "still",
-          "round": false
+          "amount": 0.08,
+          "moon": [
+            180,
+            300,
+            40
+          ]
         }
       },
       "credit": "All pictures drawn"
@@ -233,5 +450,6 @@
     "date": "2026-11-07",
     "by": "independent subagent, 2 rounds",
     "result": "Ice harvest moved to 'later' (it was the son-in-law's era); 'grain baron' not 'ice baron'; Lou Ringling 'a group that included', Al a co-founder; 'a condo developer'; temperature changes from one staff member; 'figure' (sources say woman and girl); mansion redrawn at three storeys with a tower (exact tower shape and gables not verified); all narration supported"
-  }
+  },
+  "illustrated": "2026-11-12"
 }

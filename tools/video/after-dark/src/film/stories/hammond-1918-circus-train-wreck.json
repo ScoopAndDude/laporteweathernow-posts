@@ -59,11 +59,38 @@
       "text": "4 in the morning. A troop train's engineer fell asleep.",
       "pause": 0.7,
       "scene": {
-        "kind": "card",
-        "seed": 3,
-        "move": "in",
+        "kind": "tab_rail",
+        "sky": "night",
+        "ground": {
+          "type": "land",
+          "y": 1200
+        },
+        "props": [
+          {
+            "p": "tracks",
+            "x": 540,
+            "s": 1.0,
+            "y": 1190
+          },
+          {
+            "p": "railcars",
+            "x": 380,
+            "s": 1.3,
+            "n": 2,
+            "what": "coach",
+            "lit": 0.1,
+            "loco": true,
+            "y": 1190
+          }
+        ],
+        "move": "right",
         "amount": 0.08,
-        "fog": 0.35
+        "moon": [
+          200,
+          340,
+          40
+        ],
+        "fog": 0.2
       },
       "label": "NEAR HAMMOND, 1918",
       "title": {
@@ -117,11 +144,50 @@
       "text": "An empty troop train slammed into it from behind.",
       "pause": 0.8,
       "scene": {
-        "kind": "card",
-        "seed": 2,
+        "kind": "tab_rail",
+        "sky": "night",
+        "ground": {
+          "type": "land",
+          "y": 1200
+        },
+        "props": [
+          {
+            "p": "tracks",
+            "x": 540,
+            "s": 1.0,
+            "y": 1190
+          },
+          {
+            "p": "railcars",
+            "x": 700,
+            "s": 1.3,
+            "n": 3,
+            "what": "sleeper",
+            "lit": 0.5,
+            "y": 1190
+          }
+        ],
         "move": "in",
         "amount": 0.08,
-        "fog": 0.4
+        "glows": [
+          {
+            "x": 40,
+            "y": 1090,
+            "r": 150,
+            "color": [
+              1,
+              0.9,
+              0.6
+            ],
+            "k": 0.8
+          }
+        ],
+        "moon": [
+          860,
+          320,
+          40
+        ],
+        "fog": 0.25
       },
       "label": "THE CRASH",
       "credit": "Indiana Historical Bureau; Smithsonian",
@@ -162,11 +228,38 @@
       "text": "Five days later, dozens of them were buried together outside Chicago, at Showmen's Rest. Most of the graves are marked Unknown.",
       "pause": 0.8,
       "scene": {
-        "kind": "cemetery",
-        "seed": 0,
+        "kind": "tab_land",
+        "sky": "dawn",
+        "ground": {
+          "type": "land",
+          "y": 1180
+        },
+        "props": [
+          {
+            "p": "tree",
+            "x": 100,
+            "s": 1.4,
+            "seed": 1,
+            "y": 1190
+          },
+          {
+            "p": "elephant",
+            "x": 760,
+            "s": 1.5,
+            "y": 1170
+          },
+          {
+            "p": "stones",
+            "x": 400,
+            "s": 1.3,
+            "n": 9,
+            "seed": 9,
+            "spread": 380,
+            "y": 1250
+          }
+        ],
         "move": "in",
-        "amount": 0.1,
-        "fog": 0.3
+        "amount": 0.08
       },
       "label": "SHOWMEN'S REST",
       "typed": [
@@ -183,11 +276,44 @@
       "text": "Stone elephants stand around the graves, trunks lowered. Visitors say they've heard elephants trumpeting there. The nearby zoo hasn't had elephants since 2010.",
       "pause": 0.8,
       "scene": {
-        "kind": "cemetery",
-        "seed": 1,
+        "kind": "tab_land",
+        "sky": "night",
+        "ground": {
+          "type": "land",
+          "y": 1180
+        },
+        "props": [
+          {
+            "p": "elephant",
+            "x": 280,
+            "s": 1.7,
+            "flip": false,
+            "y": 1180
+          },
+          {
+            "p": "elephant",
+            "x": 830,
+            "s": 1.7,
+            "flip": true,
+            "y": 1180
+          },
+          {
+            "p": "stones",
+            "x": 540,
+            "s": 1.1,
+            "n": 8,
+            "seed": 10,
+            "y": 1290
+          }
+        ],
         "move": "in",
-        "amount": 0.12,
-        "fog": 0.35
+        "amount": 0.08,
+        "moon": [
+          540,
+          330,
+          50
+        ],
+        "fog": 0.3
       },
       "label": "WHAT VISITORS SAY",
       "sfx": [
@@ -208,9 +334,29 @@
         "bubble": "Your town, your state",
         "pill": "Showmen's Rest, Forest Park, Illinois",
         "scene": {
-          "kind": "cemetery",
-          "seed": 2,
-          "move": "still"
+          "kind": "tab_land",
+          "sky": "dawn",
+          "ground": {
+            "type": "land",
+            "y": 1180
+          },
+          "props": [
+            {
+              "p": "tree",
+              "x": 950,
+              "s": 1.5,
+              "seed": 2,
+              "y": 1190
+            },
+            {
+              "p": "elephant",
+              "x": 480,
+              "s": 2.0,
+              "y": 1180
+            }
+          ],
+          "move": "still",
+          "amount": 0.08
         }
       },
       "credit": "All pictures drawn"
@@ -220,5 +366,6 @@
     "date": "2026-11-07",
     "by": "independent subagent",
     "result": "'A troop train's engineer' (not the circus train's); stones 'Unknown Male/Female' became 'graves marked Unknown'; the zoo line now says it hasn't had elephants since 2010; dune and lightning removed; map pin moved toward the Hammond-Gary line; all supported"
-  }
+  },
+  "illustrated": "2026-11-12"
 }

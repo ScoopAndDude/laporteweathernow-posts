@@ -54,11 +54,49 @@
       "text": "A young woman by a dark road, waiting for a ride. This is Reder Road, in Griffith.",
       "pause": 0.6,
       "scene": {
-        "kind": "road",
-        "seed": 0,
+        "kind": "tab_land",
+        "sky": "night",
+        "ground": {
+          "type": "land",
+          "y": 1180
+        },
+        "props": [
+          {
+            "p": "tree",
+            "x": 90,
+            "s": 1.6,
+            "bare": true,
+            "seed": 1,
+            "y": 1200
+          },
+          {
+            "p": "tree",
+            "x": 990,
+            "s": 1.7,
+            "bare": true,
+            "seed": 2,
+            "y": 1210
+          },
+          {
+            "p": "roadgate",
+            "x": 540,
+            "s": 1.2,
+            "gate": false,
+            "y": 1150
+          }
+        ],
         "move": "in",
-        "amount": 0.09,
-        "ghost": "woman"
+        "amount": 0.08,
+        "moon": [
+          820,
+          320,
+          44
+        ],
+        "ghost": "woman",
+        "ghost_x": 820,
+        "ghost_y": 1290,
+        "fog": 0.3,
+        "grass": false
       },
       "label": "GRIFFITH, INDIANA",
       "title": {
@@ -80,10 +118,45 @@
       "text": "It once ran a few miles through the woods toward Merrillville. Today its east end is gated off, and has been for decades.",
       "pause": 0.45,
       "scene": {
-        "kind": "woods",
-        "seed": 0,
+        "kind": "tab_land",
+        "sky": "blue",
+        "ground": {
+          "type": "land",
+          "y": 1180
+        },
+        "props": [
+          {
+            "p": "tree",
+            "x": 90,
+            "s": 1.6,
+            "bare": true,
+            "seed": 3,
+            "y": 1200
+          },
+          {
+            "p": "tree",
+            "x": 990,
+            "s": 1.7,
+            "bare": true,
+            "seed": 4,
+            "y": 1210
+          },
+          {
+            "p": "roadgate",
+            "x": 540,
+            "s": 1.2,
+            "gate": true,
+            "y": 1150
+          }
+        ],
         "move": "in",
-        "amount": 0.06
+        "amount": 0.08,
+        "moon": [
+          220,
+          320,
+          44
+        ],
+        "grass": false
       },
       "label": "TOWARD MERRILLVILLE",
       "credit": "Ghost Research Society; Occult World; Valpo.Life"
@@ -92,11 +165,49 @@
       "text": "Legend says a young woman named Elizabeth Wilson was in a car that went off the road in the 1950s, into a swamp, and never made it home.",
       "pause": 0.6,
       "scene": {
-        "kind": "road",
-        "seed": 1,
+        "kind": "tab_land",
+        "sky": "night",
+        "ground": {
+          "type": "land",
+          "y": 1180
+        },
+        "props": [
+          {
+            "p": "tree",
+            "x": 80,
+            "s": 1.5,
+            "bare": true,
+            "seed": 5,
+            "y": 1190
+          },
+          {
+            "p": "pond",
+            "x": 640,
+            "s": 1.4,
+            "y": 1230
+          },
+          {
+            "p": "reeds",
+            "x": 760,
+            "s": 1.0,
+            "y": 1260
+          },
+          {
+            "p": "car",
+            "x": 330,
+            "s": 1.0,
+            "era": 1955,
+            "y": 1300
+          }
+        ],
         "move": "in",
-        "amount": 0.07,
-        "fog": 0.24
+        "amount": 0.08,
+        "moon": [
+          760,
+          380,
+          50
+        ],
+        "fog": 0.3
       },
       "label": "THE LEGEND",
       "typed": [
@@ -113,12 +224,58 @@
       "text": "People say she still walks the road, looking for a ride. And drivers who stop for her say she vanishes near Ross Cemetery.",
       "pause": 0.9,
       "scene": {
-        "kind": "road",
-        "seed": 2,
+        "kind": "tab_land",
+        "sky": "night",
+        "ground": {
+          "type": "land",
+          "y": 1180
+        },
+        "props": [
+          {
+            "p": "tree",
+            "x": 90,
+            "s": 1.6,
+            "bare": true,
+            "seed": 6,
+            "y": 1200
+          },
+          {
+            "p": "tree",
+            "x": 990,
+            "s": 1.7,
+            "bare": true,
+            "seed": 7,
+            "y": 1210
+          },
+          {
+            "p": "roadgate",
+            "x": 540,
+            "s": 1.2,
+            "gate": false,
+            "y": 1150
+          },
+          {
+            "p": "stones",
+            "x": 880,
+            "s": 1.0,
+            "n": 4,
+            "seed": 17,
+            "spread": 160,
+            "y": 1250
+          }
+        ],
         "move": "in",
         "amount": 0.08,
-        "fog": 0.22,
-        "ghost": "woman"
+        "moon": [
+          200,
+          330,
+          44
+        ],
+        "ghost": "woman",
+        "ghost_x": 300,
+        "ghost_y": 1290,
+        "fog": 0.35,
+        "grass": false
       },
       "label": "WHAT PEOPLE SAY",
       "credit": "Legend: HauntedPlaces.org; WROK; Ghost Research Society",
@@ -139,12 +296,57 @@
       "text": "Others report a dark figure walking the railroad tracks nearby, sometimes carrying a lantern.",
       "pause": 0.6,
       "scene": {
-        "kind": "woods",
-        "seed": 2,
+        "kind": "tab_rail",
+        "sky": "night",
+        "ground": {
+          "type": "land",
+          "y": 1200
+        },
+        "props": [
+          {
+            "p": "tree",
+            "x": 80,
+            "s": 1.6,
+            "bare": true,
+            "seed": 8,
+            "y": 1200
+          },
+          {
+            "p": "tree",
+            "x": 1000,
+            "s": 1.5,
+            "bare": true,
+            "seed": 9,
+            "y": 1200
+          },
+          {
+            "p": "tracks",
+            "x": 540,
+            "s": 1.2,
+            "y": 1200
+          }
+        ],
         "move": "in",
-        "amount": 0.07,
-        "lantern": true,
-        "fog": 0.2
+        "amount": 0.08,
+        "glows": [
+          {
+            "x": 620,
+            "y": 1120,
+            "r": 70,
+            "color": [
+              1,
+              0.7,
+              0.3
+            ],
+            "k": 0.8,
+            "flick": true
+          }
+        ],
+        "ghost": "shadow",
+        "ghost_x": 660,
+        "ghost_y": 1215,
+        "ghost_h": 230,
+        "fog": 0.3
       },
       "label": "BY THE TRACKS",
       "credit": "Ghost Research Society; Occult World",
@@ -160,12 +362,37 @@
       "text": "But the Ghost Research Society says it found no burial record for an Elizabeth Wilson at Ross Cemetery.",
       "pause": 0.7,
       "scene": {
-        "kind": "cemetery",
-        "style": "country",
-        "seed": 2,
+        "kind": "tab_land",
+        "sky": "dawn",
+        "ground": {
+          "type": "land",
+          "y": 1180
+        },
+        "props": [
+          {
+            "p": "tree",
+            "x": 960,
+            "s": 1.5,
+            "seed": 10,
+            "y": 1190
+          },
+          {
+            "p": "stones",
+            "x": 480,
+            "s": 1.5,
+            "n": 9,
+            "seed": 18,
+            "y": 1200
+          },
+          {
+            "p": "fence",
+            "x": 540,
+            "s": 1.0,
+            "y": 1310
+          }
+        ],
         "move": "in",
-        "amount": 0.07,
-        "fog": 0.18
+        "amount": 0.08
       },
       "label": "NO RECORD",
       "credit": "Ghost Research Society"
@@ -174,12 +401,49 @@
       "text": "And some say she's still out there, waiting by the road.",
       "pause": 0.55,
       "scene": {
-        "kind": "road",
-        "seed": 3,
+        "kind": "tab_land",
+        "sky": "night",
+        "ground": {
+          "type": "land",
+          "y": 1180
+        },
+        "props": [
+          {
+            "p": "tree",
+            "x": 90,
+            "s": 1.6,
+            "bare": true,
+            "seed": 11,
+            "y": 1200
+          },
+          {
+            "p": "tree",
+            "x": 990,
+            "s": 1.7,
+            "bare": true,
+            "seed": 12,
+            "y": 1210
+          },
+          {
+            "p": "roadgate",
+            "x": 540,
+            "s": 1.2,
+            "gate": false,
+            "y": 1150
+          }
+        ],
         "move": "in",
-        "amount": 0.06,
-        "fog": 0.24,
-        "ghost": "woman"
+        "amount": 0.08,
+        "moon": [
+          540,
+          320,
+          48
+        ],
+        "ghost": "woman",
+        "ghost_x": 760,
+        "ghost_y": 1290,
+        "fog": 0.45,
+        "grass": false
       },
       "label": "STILL WAITING",
       "credit": "Legend: HauntedPlaces.org; WROK; Valpo.Life",
@@ -199,13 +463,50 @@
         "q2": "IT COULD BE NEXT",
         "bubble": "Your town, your state",
         "scene": {
-          "kind": "road",
-          "seed": 4,
-          "move": "still"
+          "kind": "tab_land",
+          "sky": "blue",
+          "ground": {
+            "type": "land",
+            "y": 1180
+          },
+          "props": [
+            {
+              "p": "tree",
+              "x": 90,
+              "s": 1.6,
+              "bare": true,
+              "seed": 3,
+              "y": 1200
+            },
+            {
+              "p": "tree",
+              "x": 990,
+              "s": 1.7,
+              "bare": true,
+              "seed": 4,
+              "y": 1210
+            },
+            {
+              "p": "roadgate",
+              "x": 540,
+              "s": 1.2,
+              "gate": true,
+              "y": 1150
+            }
+          ],
+          "move": "still",
+          "amount": 0.08,
+          "moon": [
+            820,
+            320,
+            44
+          ],
+          "grass": false
         },
         "pill": "A neighborhood street: respect residents and gates"
       },
       "credit": "All pictures drawn"
     }
-  ]
+  ],
+  "illustrated": "2026-11-12"
 }

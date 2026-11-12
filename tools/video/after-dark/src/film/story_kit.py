@@ -1511,3 +1511,4 @@ def make(spec, dur):
 
 
 import story_kit2  # noqa: E402,F401  story illustrations (registers more KINDS)
+import story_kit3  # noqa: E402,F401  tableaux built from props (registers tab_* KINDS)

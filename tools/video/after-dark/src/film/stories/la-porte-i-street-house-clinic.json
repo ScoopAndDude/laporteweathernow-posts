@@ -74,19 +74,23 @@
       "text": "The late county historian Fern Eddy Schultz called it the granddaddy of local ghost stories.",
       "pause": 0.45,
       "scene": {
-        "kind": "house",
-        "style": "victorian",
-        "seed": 2,
+        "kind": "tab_room",
+        "sky": "room",
+        "ground": {
+          "type": "floor",
+          "y": 1250
+        },
+        "props": [
+          {
+            "p": "cases",
+            "x": 540,
+            "s": 1.2,
+            "y": 1250
+          }
+        ],
         "move": "in",
-        "amount": 0.06,
-        "lit": [
-          0,
-          1,
-          0,
-          0,
-          0,
-          0
-        ]
+        "amount": 0.08,
+        "wall": "#17100b"
       },
       "label": "THE GRANDDADDY",
       "credit": "Fern Eddy Schultz, via What's New LaPorte (2009)"
@@ -125,10 +129,29 @@
       "text": "Later, the house came down, and a medical clinic now stands on the site.",
       "pause": 0.45,
       "scene": {
-        "kind": "card",
-        "seed": 3,
+        "kind": "tab_town",
+        "sky": "night",
+        "ground": {
+          "type": "street",
+          "y": 1180
+        },
+        "props": [
+          {
+            "p": "clinic",
+            "x": 540,
+            "s": 1.25,
+            "sign": "MEDICAL CLINIC",
+            "y": 1180
+          }
+        ],
         "move": "in",
-        "amount": 0.05
+        "amount": 0.08,
+        "moon": [
+          840,
+          300,
+          42
+        ],
+        "fog": 0.15
       },
       "label": "THE CLINIC",
       "credit": "What's New LaPorte (2009); NWI Times (2011); Beacon Health System",
@@ -151,10 +174,37 @@
       "text": "Then the staff stories started. Instruments laid out for patients would disappear.",
       "pause": 0.6,
       "scene": {
-        "kind": "card",
-        "seed": 4,
+        "kind": "tab_room",
+        "sky": "room",
+        "ground": {
+          "type": "floor",
+          "y": 1250
+        },
+        "props": [
+          {
+            "p": "examroom",
+            "x": 540,
+            "s": 1.25,
+            "missing": true,
+            "y": 1250
+          }
+        ],
         "move": "in",
-        "amount": 0.05
+        "amount": 0.08,
+        "wall": "#1c2424",
+        "glows": [
+          {
+            "x": 540,
+            "y": 520,
+            "r": 320,
+            "color": [
+              0.8,
+              0.9,
+              1.0
+            ],
+            "k": 0.25
+          }
+        ]
       },
       "label": "WHAT STAFF SAID",
       "credit": "What's New LaPorte (2009); NWI Times (2011)",
@@ -184,10 +234,30 @@
       "text": "Workers also reported doors opening and closing on their own.",
       "pause": 0.9,
       "scene": {
-        "kind": "card",
-        "seed": 5,
+        "kind": "tab_room",
+        "sky": "room",
+        "ground": {
+          "type": "floor",
+          "y": 1250
+        },
+        "props": [
+          {
+            "p": "door",
+            "x": 300,
+            "s": 1.5,
+            "ajar": true,
+            "y": 1250
+          },
+          {
+            "p": "door",
+            "x": 800,
+            "s": 1.5,
+            "y": 1250
+          }
+        ],
         "move": "in",
-        "amount": 0.05
+        "amount": 0.08,
+        "wall": "#1c2424"
       },
       "label": "DOORS ON THEIR OWN",
       "credit": "What's New LaPorte (2009); GhostQuest",
@@ -217,19 +287,23 @@
       "text": "Schultz collected stories like these for years, and told them at the county museum.",
       "pause": 0.55,
       "scene": {
-        "kind": "house",
-        "style": "victorian",
-        "seed": 4,
-        "move": "still",
-        "amount": 0.04,
-        "lit": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ]
+        "kind": "tab_room",
+        "sky": "room",
+        "ground": {
+          "type": "floor",
+          "y": 1250
+        },
+        "props": [
+          {
+            "p": "cases",
+            "x": 540,
+            "s": 1.2,
+            "y": 1250
+          }
+        ],
+        "move": "out",
+        "amount": 0.08,
+        "wall": "#17100b"
       },
       "label": "THE STORYTELLER",
       "credit": "What's New LaPorte (2009); NWI Times (2011)"
@@ -242,22 +316,33 @@
         "q2": "IT COULD BE NEXT",
         "bubble": "Your town, your state",
         "scene": {
-          "kind": "house",
-          "style": "victorian",
-          "seed": 5,
+          "kind": "tab_town",
+          "sky": "blue",
+          "ground": {
+            "type": "street",
+            "y": 1180
+          },
+          "props": [
+            {
+              "p": "clinic",
+              "x": 540,
+              "s": 1.25,
+              "sign": "MEDICAL CLINIC",
+              "y": 1180
+            }
+          ],
           "move": "still",
-          "lit": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
+          "amount": 0.08,
+          "moon": [
+            200,
+            300,
+            42
           ]
         },
         "pill": "A working clinic: please don't bother the staff"
       },
       "credit": "All pictures drawn"
     }
-  ]
+  ],
+  "illustrated": "2026-11-12"
 }

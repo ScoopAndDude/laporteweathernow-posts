@@ -49,19 +49,31 @@
       "text": "In 1940, the Army picked the farmland around Kingsbury for a war plant. The families who lived there had to leave.",
       "pause": 0.7,
       "scene": {
-        "kind": "house",
-        "style": "farmhouse",
-        "seed": 0,
-        "lit": [
-          0,
-          1,
-          0,
-          0,
-          0
+        "kind": "tab_land",
+        "sky": "dusk",
+        "ground": {
+          "type": "land",
+          "y": 1150
+        },
+        "props": [
+          {
+            "p": "farm",
+            "x": 560,
+            "s": 1.1,
+            "lit": 1,
+            "truck": true,
+            "y": 1150
+          },
+          {
+            "p": "tree",
+            "x": 80,
+            "s": 1.2,
+            "seed": 1,
+            "y": 1160
+          }
         ],
         "move": "in",
-        "amount": 0.1,
-        "fog": 0.2
+        "amount": 0.08
       },
       "label": "KINGSBURY, LAPORTE COUNTY",
       "title": {
@@ -105,12 +117,32 @@
       "text": "It loaded shells and ammunition for World War 2. At its peak, more than 20,000 people worked there, and nearly half were women.",
       "pause": 0.5,
       "scene": {
-        "kind": "town",
-        "seed": 1,
-        "tower": "none",
+        "kind": "tab_town",
+        "sky": "night",
+        "ground": {
+          "type": "land",
+          "y": 1120
+        },
+        "props": [
+          {
+            "p": "plant",
+            "x": 540,
+            "s": 1.2,
+            "y": 1120
+          },
+          {
+            "p": "people",
+            "x": 540,
+            "s": 1.1,
+            "n": 14,
+            "seed": 3,
+            "spread": 420,
+            "y": 1300
+          }
+        ],
         "move": "in",
         "amount": 0.08,
-        "fog": 0.25
+        "fog": 0.15
       },
       "label": "WORLD WAR 2",
       "typed": [
@@ -127,11 +159,46 @@
       "text": "A whole new town went up beside it. Today, it's Kingsford Heights.",
       "pause": 0.5,
       "scene": {
-        "kind": "town",
-        "seed": 2,
-        "tower": "none",
+        "kind": "tab_town",
+        "sky": "blue",
+        "ground": {
+          "type": "land",
+          "y": 1060
+        },
+        "props": [
+          {
+            "p": "rowhouses",
+            "x": 540,
+            "s": 1.0,
+            "n": 6,
+            "small": true,
+            "seed": 1,
+            "y": 1060
+          },
+          {
+            "p": "band",
+            "x": 540,
+            "s": 1.0,
+            "color": "#0c0f10",
+            "y": 1100
+          },
+          {
+            "p": "rowhouses",
+            "x": 600,
+            "s": 1.4,
+            "n": 5,
+            "small": true,
+            "seed": 2,
+            "y": 1250
+          }
+        ],
         "move": "in",
-        "amount": 0.07
+        "amount": 0.08,
+        "moon": [
+          860,
+          300,
+          40
+        ]
       },
       "label": "A WARTIME TOWN",
       "credit": "La Porte Herald-Dispatch; Towne Post; Indiana Public Media"
@@ -140,11 +207,56 @@
       "text": "After the war, and a second run for Korea, the plant shut down for good. But out in the woods, rows of old ammunition bunkers still stand.",
       "pause": 0.8,
       "scene": {
-        "kind": "woods",
-        "seed": 1,
+        "kind": "tab_land",
+        "sky": "night",
+        "ground": {
+          "type": "land",
+          "y": 1180
+        },
+        "props": [
+          {
+            "p": "tree",
+            "x": 60,
+            "s": 1.6,
+            "bare": true,
+            "seed": 2,
+            "y": 1190
+          },
+          {
+            "p": "bunker",
+            "x": 300,
+            "s": 0.9,
+            "y": 1150
+          },
+          {
+            "p": "bunker",
+            "x": 760,
+            "s": 1.0,
+            "y": 1160
+          },
+          {
+            "p": "bunker",
+            "x": 520,
+            "s": 1.6,
+            "y": 1280
+          },
+          {
+            "p": "tree",
+            "x": 1020,
+            "s": 1.7,
+            "bare": true,
+            "seed": 3,
+            "y": 1260
+          }
+        ],
         "move": "in",
-        "amount": 0.12,
-        "fog": 0.35
+        "amount": 0.08,
+        "moon": [
+          540,
+          330,
+          50
+        ],
+        "fog": 0.3
       },
       "label": "IN THE WOODS",
       "sfx": [
@@ -160,11 +272,41 @@
       "text": "Part of the old plant is an industrial park now. And part of it is the Kingsbury Fish and Wildlife Area, open to the public.",
       "pause": 0.5,
       "scene": {
-        "kind": "woods",
-        "seed": 2,
+        "kind": "tab_land",
+        "sky": "dawn",
+        "ground": {
+          "type": "land",
+          "y": 1170
+        },
+        "props": [
+          {
+            "p": "tree",
+            "x": 100,
+            "s": 1.4,
+            "seed": 4,
+            "y": 1180
+          },
+          {
+            "p": "bunker",
+            "x": 760,
+            "s": 1.2,
+            "y": 1170
+          },
+          {
+            "p": "pond",
+            "x": 380,
+            "s": 1.2,
+            "y": 1260
+          },
+          {
+            "p": "reeds",
+            "x": 300,
+            "s": 0.9,
+            "y": 1300
+          }
+        ],
         "move": "out",
-        "amount": 0.07,
-        "fog": 0.2
+        "amount": 0.08
       },
       "label": "TODAY",
       "credit": "Indiana DNR; Indiana Landmarks"
@@ -178,9 +320,35 @@
         "bubble": "Your town, your state",
         "pill": "Kingsbury Fish & Wildlife Area, LaPorte County",
         "scene": {
-          "kind": "woods",
-          "seed": 3,
-          "move": "still"
+          "kind": "tab_land",
+          "sky": "blue",
+          "ground": {
+            "type": "land",
+            "y": 1180
+          },
+          "props": [
+            {
+              "p": "bunker",
+              "x": 540,
+              "s": 1.7,
+              "y": 1220
+            },
+            {
+              "p": "tree",
+              "x": 1000,
+              "s": 1.5,
+              "bare": true,
+              "seed": 5,
+              "y": 1200
+            }
+          ],
+          "move": "still",
+          "amount": 0.08,
+          "moon": [
+            200,
+            320,
+            44
+          ]
         }
       },
       "credit": "All pictures drawn"
@@ -190,5 +358,6 @@
     "date": "2026-11-07",
     "by": "independent subagent, 2 rounds",
     "result": "'30 days' dropped (blog only); '250 families' dropped; 'bombs' became 'ammunition'; Korea reopening added (closed for good 1960); 'grass-covered' dropped; private-land line replaced by the industrial park; all supported"
-  }
+  },
+  "illustrated": "2026-11-12"
 }

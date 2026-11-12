@@ -49,12 +49,28 @@
       "text": "58 people were lost over Lake Michigan, and the plane has never been found.",
       "pause": 0.7,
       "scene": {
-        "kind": "lake",
-        "seed": 6,
-        "pier": false,
+        "kind": "tab_lake",
+        "sky": "night",
+        "ground": {
+          "type": "water",
+          "y": 1150
+        },
+        "props": [
+          {
+            "p": "plane",
+            "x": 560,
+            "s": 1.3,
+            "y": 760
+          }
+        ],
         "move": "in",
         "amount": 0.08,
-        "fog": 0.25
+        "moon": [
+          220,
+          330,
+          44
+        ],
+        "fog": 0.15
       },
       "label": "LAKE MICHIGAN, 1950",
       "title": {
@@ -93,11 +109,22 @@
       "text": "Just after midnight, over Lake Michigan, it flew into a storm. Then it went silent.",
       "pause": 0.8,
       "scene": {
-        "kind": "lake",
-        "seed": 7,
-        "pier": false,
-        "move": "in",
-        "amount": 0.12,
+        "kind": "tab_lake",
+        "sky": "storm",
+        "ground": {
+          "type": "water",
+          "y": 1150
+        },
+        "props": [
+          {
+            "p": "plane",
+            "x": 480,
+            "s": 0.9,
+            "y": 700
+          }
+        ],
+        "move": "right",
+        "amount": 0.08,
         "rain": true,
         "fog": 0.3
       },
@@ -118,12 +145,17 @@
       "text": "All 58 people on board were lost. At the time, it was the deadliest commercial airline crash in American history.",
       "pause": 0.7,
       "scene": {
-        "kind": "lake",
-        "seed": 8,
-        "pier": false,
+        "kind": "tab_lake",
+        "sky": "storm",
+        "ground": {
+          "type": "water",
+          "y": 1150
+        },
+        "props": [],
         "move": "in",
-        "amount": 0.1,
-        "fog": 0.35
+        "amount": 0.08,
+        "rain": true,
+        "fog": 0.45
       },
       "label": "58 LIVES",
       "credit": "CBS News / AP; ABC7 Chicago; Michigan Public"
@@ -153,12 +185,23 @@
       "text": "In 2025, the Michigan Shipwreck Research Association ended its 20-year search. It never found the wreck.",
       "pause": 0.8,
       "scene": {
-        "kind": "lake",
-        "seed": 9,
-        "pier": false,
-        "move": "in",
-        "amount": 0.1,
-        "fog": 0.3
+        "kind": "tab_lake",
+        "sky": "dawn",
+        "ground": {
+          "type": "water",
+          "y": 1150
+        },
+        "props": [
+          {
+            "p": "boat",
+            "x": 560,
+            "s": 1.8,
+            "lamp": true,
+            "y": 1190
+          }
+        ],
+        "move": "out",
+        "amount": 0.08
       },
       "label": "NEVER FOUND",
       "credit": "CBS News / AP (2025)"
@@ -167,12 +210,36 @@
       "text": "Some call these waters the Lake Michigan Triangle.",
       "pause": 0.8,
       "scene": {
-        "kind": "lake",
-        "seed": 10,
-        "pier": false,
-        "move": "out",
+        "kind": "tab_lake",
+        "sky": "night",
+        "ground": {
+          "type": "water",
+          "y": 1100
+        },
+        "props": [
+          {
+            "p": "band",
+            "x": 540,
+            "s": 1.0,
+            "y": 1270
+          },
+          {
+            "p": "flotsam",
+            "x": 540,
+            "s": 1.0,
+            "n": 7,
+            "seed": 4,
+            "y": 1330
+          }
+        ],
+        "move": "in",
         "amount": 0.08,
-        "fog": 0.4
+        "moon": [
+          540,
+          340,
+          56
+        ],
+        "fog": 0.3
       },
       "label": "THE LEGEND",
       "sfx": [
@@ -193,10 +260,27 @@
         "bubble": "Your town, your state",
         "pill": "South Haven and St. Joseph, Michigan",
         "scene": {
-          "kind": "lake",
-          "seed": 11,
-          "pier": false,
-          "move": "still"
+          "kind": "tab_lake",
+          "sky": "blue",
+          "ground": {
+            "type": "water",
+            "y": 1100
+          },
+          "props": [
+            {
+              "p": "band",
+              "x": 540,
+              "s": 1.0,
+              "y": 1280
+            }
+          ],
+          "move": "still",
+          "amount": 0.08,
+          "moon": [
+            820,
+            320,
+            44
+          ]
         }
       },
       "credit": "All pictures drawn"
@@ -206,5 +290,6 @@
     "date": "2026-11-07",
     "by": "independent subagent",
     "result": "'vanished' became 'were lost'; 'just after midnight ... went silent'; 'commercial airline'; the searchers named (MSRA); all supported"
-  }
+  },
+  "illustrated": "2026-11-12"
 }

@@ -1,190 +1,375 @@
 {
- "slug": "michigan-dogman-legend",
- "title": "The Michigan Dogman: The Legend That Started as a Radio Song",
- "series": "LA PORTE AFTER DARK",
- "music": {
-  "seed": 187,
-  "prog": 6
- },
- "say": [],
- "sources": [
-  {
-   "what": "'written and played by Cook at radio station WTCM-FM in 1987'; '7-feet tall with the torso of a muscular man and a howl similar to a human's scream'; 'a 10-year cycle restricted to years ending in seven'",
-   "who": "Central Michigan Life (2017)",
-   "url": "https://www.cm-life.com/article/2017/10/michigan-disc-jockey-shares-story-behind-the-dogman-legend"
+  "slug": "michigan-dogman-legend",
+  "title": "The Michigan Dogman: The Legend That Started as a Radio Song",
+  "series": "LA PORTE AFTER DARK",
+  "music": {
+    "seed": 187,
+    "prog": 6
   },
-  {
-   "what": "Cook: 'that April Fool's morning of 87'; 'I created the Dog Man as a character.'",
-   "who": "WCMU Public Media (2023)",
-   "url": "https://www.wcmu.org/local-regional-news/2023-10-31/dog-man-story-starts-as-song-continues-as-legend"
-  },
-  {
-   "what": "'a 1887 incident in Wexford County, Mich.'; 'the station began to receive calls from people who had claimed to have seen one of the beasts'; Gable film 'later revealed to be a hoax on the History Channel's MonsterQuest'; 'raise more than $60,000 for various animal charities'",
-   "who": "HuffPost (2012)",
-   "url": "https://www.huffingtonpost.co.uk/entry/michigan-dogman-upright-canine_n_2019442"
-  },
-  {
-   "what": "'I made it up completely from my own imagination as an April Fools' prank for the radio'; 'listeners began to call up'; hoax 'confirmed by the very last episode of Monster Quest in 2010'; 'head of a canine'",
-   "who": "Skeptoid no. 4477",
-   "url": "https://skeptoid.com/episodes/4477"
-  },
-  {
-   "what": "'said to have taken place in 1887 in Wexford County, when a group of lumberjacks'",
-   "who": "Discovery UK",
-   "url": "https://www.discoveryuk.com/mysteries/the-legend-of-the-michigan-dogman-a-modern-werewolf-tale/"
-  },
-  {
-   "what": "'a 1987 April Fool's Day radio piece called The Legend'",
-   "who": "9News / WZZM",
-   "url": "https://www.9news.com/article/news/local/michigan-full-of-monsters-and-mysteries/345014613"
-  }
- ],
- "beats": [
-  {
-   "text": "Seven feet tall. A dog's head on a man's body. A howl like a human scream. That's the Michigan Dogman.",
-   "pause": 0.6,
-   "scene": {
-    "kind": "woods",
-    "seed": 0,
-    "move": "in",
-    "amount": 0.07,
-    "fog": 0.3
-   },
-   "label": "NORTHERN MICHIGAN",
-   "credit": "CM Life (2017); Skeptoid",
-   "title": {
-    "text": "THE MICHIGAN DOGMAN",
-    "at": "That's the",
-    "size": 80,
-    "style": "red"
-   },
-   "sfx": [
+  "say": [],
+  "sources": [
     {
-     "kind": "heartbeat",
-     "at": "A howl",
-     "gain": 0.33
+      "what": "'written and played by Cook at radio station WTCM-FM in 1987'; '7-feet tall with the torso of a muscular man and a howl similar to a human's scream'; 'a 10-year cycle restricted to years ending in seven'",
+      "who": "Central Michigan Life (2017)",
+      "url": "https://www.cm-life.com/article/2017/10/michigan-disc-jockey-shares-story-behind-the-dogman-legend"
     },
     {
-     "kind": "owl",
-     "at": "Seven",
-     "gain": 0.25
-    }
-   ]
-  },
-  {
-   "text": "The legend says lumberjacks first met it in Wexford County in 1887, and that it comes back every ten years, in years ending in 7.",
-   "pause": 0.7,
-   "scene": {
-    "kind": "woods",
-    "seed": 1,
-    "move": "in",
-    "amount": 0.07,
-    "lantern": true
-   },
-   "label": "THE LEGEND",
-   "credit": "HuffPost (2012); CM Life (2017)"
-  },
-  {
-   "text": "Here's the twist. The story comes from a song.",
-   "pause": 0.5,
-   "scene": {
-    "kind": "card",
-    "seed": 1,
-    "move": "in",
-    "amount": 0.05
-   },
-   "label": "THE TWIST",
-   "credit": "CM Life (2017); WCMU (2023)",
-   "typed": [
-    {
-     "text": "IT STARTED",
-     "at": "Here's the twist",
-     "y": 660,
-     "size": 72
+      "what": "Cook: 'that April Fool's morning of 87'; 'I created the Dog Man as a character.'",
+      "who": "WCMU Public Media (2023)",
+      "url": "https://www.wcmu.org/local-regional-news/2023-10-31/dog-man-story-starts-as-song-continues-as-legend"
     },
     {
-     "text": "AS A SONG",
-     "at": "from a song",
-     "y": 758,
-     "size": 110
-    }
-   ]
-  },
-  {
-   "text": "On April Fools' Day, 1987, Traverse City radio station WTCM aired a song called The Legend, written by disc jockey Steve Cook. He has said he made it up as a prank.",
-   "pause": 0.5,
-   "scene": {
-    "kind": "card",
-    "seed": 2,
-    "move": "in",
-    "amount": 0.05
-   },
-   "label": "APRIL FOOLS' DAY, 1987",
-   "credit": "HuffPost (2012); CM Life (2017); Skeptoid",
-   "card": {
-    "kind": "year",
-    "at": "1987",
-    "label": "APRIL FOOLS' DAY",
-    "value": "1987",
-    "note": "WTCM RADIO, TRAVERSE CITY"
-   },
-   "sfx": [
+      "what": "'a 1887 incident in Wexford County, Mich.'; 'the station began to receive calls from people who had claimed to have seen one of the beasts'; Gable film 'later revealed to be a hoax on the History Channel's MonsterQuest'; 'raise more than $60,000 for various animal charities'",
+      "who": "HuffPost (2012)",
+      "url": "https://www.huffingtonpost.co.uk/entry/michigan-dogman-upright-canine_n_2019442"
+    },
     {
-     "kind": "static",
-     "at": "aired a song",
-     "gain": 0.25
-    }
-   ]
-  },
-  {
-   "text": "Then the phones rang. Listeners called the station to say they had seen one.",
-   "pause": 0.6,
-   "scene": {
-    "kind": "woods",
-    "seed": 2,
-    "move": "in",
-    "amount": 0.07,
-    "fog": 0.3
-   },
-   "label": "THE CALLS",
-   "credit": "HuffPost (2012); Skeptoid"
-  },
-  {
-   "text": "Cook has used the song to raise money for animal charities. And the legend says the Dogman returns in years ending in 7.",
-   "pause": 0.8,
-   "scene": {
-    "kind": "woods",
-    "seed": 3,
-    "move": "in",
-    "amount": 0.07,
-    "fog": 0.35
-   },
-   "label": "YEARS ENDING IN 7",
-   "credit": "HuffPost (2012); Skeptoid; CM Life (2017)",
-   "sfx": [
+      "what": "'I made it up completely from my own imagination as an April Fools' prank for the radio'; 'listeners began to call up'; hoax 'confirmed by the very last episode of Monster Quest in 2010'; 'head of a canine'",
+      "who": "Skeptoid no. 4477",
+      "url": "https://skeptoid.com/episodes/4477"
+    },
     {
-     "kind": "heartbeat",
-     "at": "years ending",
-     "gain": 0.33
+      "what": "'said to have taken place in 1887 in Wexford County, when a group of lumberjacks'",
+      "who": "Discovery UK",
+      "url": "https://www.discoveryuk.com/mysteries/the-legend-of-the-michigan-dogman-a-modern-werewolf-tale/"
+    },
+    {
+      "what": "'a 1987 April Fool's Day radio piece called The Legend'",
+      "who": "9News / WZZM",
+      "url": "https://www.9news.com/article/news/local/michigan-full-of-monsters-and-mysteries/345014613"
     }
-   ]
-  },
-  {
-   "text": "Next year is 2027. Comment your town, and it could be next.",
-   "end": true,
-   "end_card": {
-    "q": "COMMENT YOUR TOWN",
-    "q2": "IT COULD BE NEXT",
-    "bubble": "Your town, your state",
-    "pill": "A legend, born on the radio in 1987",
-    "scene": {
-     "kind": "woods",
-     "seed": 6,
-     "move": "still",
-     "amount": 0.07
+  ],
+  "beats": [
+    {
+      "text": "Seven feet tall. A dog's head on a man's body. A howl like a human scream. That's the Michigan Dogman.",
+      "pause": 0.6,
+      "scene": {
+        "kind": "tab_land",
+        "sky": "night",
+        "ground": {
+          "type": "land",
+          "y": 1190
+        },
+        "props": [
+          {
+            "p": "pine",
+            "x": 70,
+            "s": 1.6,
+            "y": 1200
+          },
+          {
+            "p": "pine",
+            "x": 230,
+            "s": 1.2,
+            "y": 1210
+          },
+          {
+            "p": "pine",
+            "x": 900,
+            "s": 1.5,
+            "y": 1200
+          },
+          {
+            "p": "pine",
+            "x": 1040,
+            "s": 1.8,
+            "y": 1220
+          },
+          {
+            "p": "dogman",
+            "x": 560,
+            "s": 1.15,
+            "y": 1200
+          }
+        ],
+        "move": "in",
+        "amount": 0.08,
+        "moon": [
+          560,
+          560,
+          90
+        ],
+        "fog": 0.3
+      },
+      "label": "NORTHERN MICHIGAN",
+      "credit": "CM Life (2017); Skeptoid",
+      "title": {
+        "text": "THE MICHIGAN DOGMAN",
+        "at": "That's the",
+        "size": 80,
+        "style": "red"
+      },
+      "sfx": [
+        {
+          "kind": "heartbeat",
+          "at": "A howl",
+          "gain": 0.33
+        },
+        {
+          "kind": "owl",
+          "at": "Seven",
+          "gain": 0.25
+        }
+      ]
+    },
+    {
+      "text": "The legend says lumberjacks first met it in Wexford County in 1887, and that it comes back every ten years, in years ending in 7.",
+      "pause": 0.7,
+      "scene": {
+        "kind": "tab_land",
+        "sky": "night",
+        "ground": {
+          "type": "land",
+          "y": 1180
+        },
+        "props": [
+          {
+            "p": "pine",
+            "x": 113,
+            "s": 1.3499999999999999,
+            "y": 1190
+          },
+          {
+            "p": "pine",
+            "x": 340,
+            "s": 1.65,
+            "y": 1220
+          },
+          {
+            "p": "pine",
+            "x": 567,
+            "s": 1.2,
+            "y": 1250
+          },
+          {
+            "p": "pine",
+            "x": 854,
+            "s": 1.5,
+            "y": 1190
+          },
+          {
+            "p": "cabin",
+            "x": 760,
+            "s": 1.3,
+            "y": 1190
+          },
+          {
+            "p": "campfire",
+            "x": 360,
+            "s": 1.2,
+            "y": 1260
+          },
+          {
+            "p": "lumberjacks",
+            "x": 330,
+            "s": 1.0,
+            "y": 1250
+          }
+        ],
+        "move": "in",
+        "amount": 0.08,
+        "fog": 0.2
+      },
+      "label": "THE LEGEND",
+      "credit": "HuffPost (2012); CM Life (2017)"
+    },
+    {
+      "text": "Here's the twist. The story comes from a song.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "tab_room",
+        "sky": "room",
+        "ground": {
+          "type": "floor",
+          "y": 1250
+        },
+        "props": [
+          {
+            "p": "studio",
+            "x": 560,
+            "s": 1.1,
+            "phones": false,
+            "y": 1250
+          }
+        ],
+        "move": "in",
+        "amount": 0.08,
+        "wall": "#1a1a1e"
+      },
+      "label": "THE TWIST",
+      "credit": "CM Life (2017); WCMU (2023)",
+      "typed": [
+        {
+          "text": "IT STARTED",
+          "at": "Here's the twist",
+          "y": 660,
+          "size": 72
+        },
+        {
+          "text": "AS A SONG",
+          "at": "from a song",
+          "y": 758,
+          "size": 110
+        }
+      ]
+    },
+    {
+      "text": "On April Fools' Day, 1987, Traverse City radio station WTCM aired a song called The Legend, written by disc jockey Steve Cook. He has said he made it up as a prank.",
+      "pause": 0.5,
+      "scene": {
+        "kind": "card",
+        "seed": 2,
+        "move": "in",
+        "amount": 0.05
+      },
+      "label": "APRIL FOOLS' DAY, 1987",
+      "credit": "HuffPost (2012); CM Life (2017); Skeptoid",
+      "card": {
+        "kind": "year",
+        "at": "1987",
+        "label": "APRIL FOOLS' DAY",
+        "value": "1987",
+        "note": "WTCM RADIO, TRAVERSE CITY"
+      },
+      "sfx": [
+        {
+          "kind": "static",
+          "at": "aired a song",
+          "gain": 0.25
+        }
+      ]
+    },
+    {
+      "text": "Then the phones rang. Listeners called the station to say they had seen one.",
+      "pause": 0.6,
+      "scene": {
+        "kind": "tab_room",
+        "sky": "room",
+        "ground": {
+          "type": "floor",
+          "y": 1250
+        },
+        "props": [
+          {
+            "p": "studio",
+            "x": 560,
+            "s": 1.1,
+            "phones": true,
+            "y": 1250
+          }
+        ],
+        "move": "right",
+        "amount": 0.08,
+        "wall": "#1a1a1e"
+      },
+      "label": "THE CALLS",
+      "credit": "HuffPost (2012); Skeptoid"
+    },
+    {
+      "text": "Cook has used the song to raise money for animal charities. And the legend says the Dogman returns in years ending in 7.",
+      "pause": 0.8,
+      "scene": {
+        "kind": "tab_land",
+        "sky": "blue",
+        "ground": {
+          "type": "land",
+          "y": 1180
+        },
+        "props": [
+          {
+            "p": "pine",
+            "x": 60,
+            "s": 1.7,
+            "y": 1200
+          },
+          {
+            "p": "pine",
+            "x": 220,
+            "s": 1.3,
+            "y": 1200
+          },
+          {
+            "p": "pine",
+            "x": 380,
+            "s": 1.0,
+            "y": 1195
+          },
+          {
+            "p": "pine",
+            "x": 1000,
+            "s": 1.7,
+            "y": 1210
+          },
+          {
+            "p": "pine",
+            "x": 860,
+            "s": 1.2,
+            "y": 1200
+          },
+          {
+            "p": "dogman",
+            "x": 640,
+            "s": 0.5,
+            "y": 1190
+          }
+        ],
+        "move": "out",
+        "amount": 0.08,
+        "moon": [
+          640,
+          700,
+          70
+        ],
+        "fog": 0.35
+      },
+      "label": "YEARS ENDING IN 7",
+      "credit": "HuffPost (2012); Skeptoid; CM Life (2017)",
+      "sfx": [
+        {
+          "kind": "heartbeat",
+          "at": "years ending",
+          "gain": 0.33
+        }
+      ]
+    },
+    {
+      "text": "Next year is 2027. Comment your town, and it could be next.",
+      "end": true,
+      "end_card": {
+        "q": "COMMENT YOUR TOWN",
+        "q2": "IT COULD BE NEXT",
+        "bubble": "Your town, your state",
+        "pill": "A legend, born on the radio in 1987",
+        "scene": {
+          "kind": "tab_room",
+          "sky": "room",
+          "ground": {
+            "type": "floor",
+            "y": 1250
+          },
+          "props": [
+            {
+              "p": "studio",
+              "x": 560,
+              "s": 1.1,
+              "phones": false,
+              "y": 1250
+            },
+            {
+              "p": "calendar",
+              "x": 800,
+              "s": 1.0,
+              "text": "2027",
+              "y": 640
+            }
+          ],
+          "move": "still",
+          "amount": 0.08,
+          "wall": "#1a1a1e"
+        }
+      },
+      "credit": "All pictures drawn"
     }
-   },
-   "credit": "All pictures drawn"
-  }
- ]
+  ],
+  "illustrated": "2026-11-12"
 }

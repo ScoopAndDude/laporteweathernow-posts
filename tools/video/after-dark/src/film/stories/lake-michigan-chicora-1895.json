@@ -49,13 +49,29 @@
       "text": "The warning came too late. The ship had already sailed.",
       "pause": 0.7,
       "scene": {
-        "kind": "lake",
-        "seed": 0,
-        "pier": false,
-        "boat": false,
+        "kind": "tab_room",
+        "sky": "room",
+        "ground": {
+          "type": "floor",
+          "y": 1250
+        },
+        "props": [
+          {
+            "p": "window",
+            "x": 230,
+            "s": 1.2,
+            "y": 1010
+          },
+          {
+            "p": "telegraph",
+            "x": 600,
+            "s": 1.25,
+            "y": 1250
+          }
+        ],
         "move": "in",
         "amount": 0.08,
-        "fog": 0.2
+        "wall": "#17100b"
       },
       "label": "LAKE MICHIGAN, 1895",
       "title": {
@@ -77,12 +93,34 @@
       "text": "On January 21, 1895, the steamer Chicora left Milwaukee before dawn, bound for her home port, Saint Joseph, Michigan.",
       "pause": 0.5,
       "scene": {
-        "kind": "lake",
-        "seed": 1,
-        "pier": false,
-        "boat": false,
+        "kind": "tab_lake",
+        "sky": "night",
+        "ground": {
+          "type": "water",
+          "y": 1150
+        },
+        "props": [
+          {
+            "p": "pier",
+            "x": 300,
+            "s": 1.4,
+            "y": 1250
+          },
+          {
+            "p": "steamer",
+            "x": 620,
+            "s": 1.5,
+            "y": 1160
+          }
+        ],
         "move": "in",
-        "amount": 0.07
+        "amount": 0.08,
+        "moon": [
+          200,
+          320,
+          40
+        ],
+        "snow": true
       },
       "label": "JANUARY 21, 1895",
       "credit": "Mansfield (1899); Milwaukee Journal (1895); Saugatuck-Douglas Historical Society"
@@ -91,9 +129,30 @@
       "text": "Her owner sent a warning not to sail. She was already gone.",
       "pause": 0.7,
       "scene": {
-        "kind": "card",
-        "seed": 0,
-        "move": "still"
+        "kind": "tab_room",
+        "sky": "room",
+        "ground": {
+          "type": "floor",
+          "y": 1250
+        },
+        "props": [
+          {
+            "p": "window",
+            "x": 230,
+            "s": 1.2,
+            "y": 1010
+          },
+          {
+            "p": "telegraph",
+            "x": 600,
+            "s": 1.25,
+            "y": 1250
+          }
+        ],
+        "move": "out",
+        "amount": 0.08,
+        "wall": "#17100b",
+        "seed": 1
       },
       "label": "THE WARNING",
       "typed": [
@@ -110,12 +169,24 @@
       "text": "That day, a gale and a blizzard tore across the lake.",
       "pause": 0.6,
       "scene": {
-        "kind": "lake",
-        "seed": 2,
-        "pier": false,
+        "kind": "tab_lake",
+        "sky": "storm",
+        "ground": {
+          "type": "water",
+          "y": 1130
+        },
+        "props": [
+          {
+            "p": "steamer",
+            "x": 540,
+            "s": 0.9,
+            "y": 1140
+          }
+        ],
         "move": "in",
-        "amount": 0.1,
+        "amount": 0.08,
         "snow": true,
+        "rain": true,
         "fog": 0.3
       },
       "label": "THE STORM",
@@ -125,12 +196,32 @@
       "text": "The Chicora never made port. Everyone aboard, about two dozen people, was lost.",
       "pause": 0.8,
       "scene": {
-        "kind": "lake",
-        "seed": 3,
-        "pier": false,
+        "kind": "tab_lake",
+        "sky": "storm",
+        "ground": {
+          "type": "water",
+          "y": 1130
+        },
+        "props": [
+          {
+            "p": "pier",
+            "x": 360,
+            "s": 1.5,
+            "y": 1240
+          }
+        ],
         "move": "in",
-        "amount": 0.1,
-        "fog": 0.35
+        "amount": 0.08,
+        "glows": [
+          {
+            "x": 600,
+            "y": 1120,
+            "r": 90,
+            "flick": true
+          }
+        ],
+        "snow": true,
+        "fog": 0.3
       },
       "label": "ALL LOST",
       "credit": "Michigan Shipwreck Research Association; Mansfield (1899); Milwaukee Journal (1895)"
@@ -161,12 +252,36 @@
       "text": "The Chicora has never been found.",
       "pause": 0.7,
       "scene": {
-        "kind": "lake",
-        "seed": 4,
-        "pier": false,
-        "move": "out",
-        "amount": 0.07,
-        "fog": 0.3
+        "kind": "tab_lake",
+        "sky": "dawn",
+        "ground": {
+          "type": "water",
+          "y": 1040
+        },
+        "props": [
+          {
+            "p": "band",
+            "x": 540,
+            "s": 1.0,
+            "y": 1180
+          },
+          {
+            "p": "flotsam",
+            "x": 480,
+            "s": 1.1,
+            "n": 10,
+            "seed": 2,
+            "y": 1250
+          },
+          {
+            "p": "dog",
+            "x": 800,
+            "s": 1.5,
+            "y": 1230
+          }
+        ],
+        "move": "in",
+        "amount": 0.08
       },
       "label": "NEVER FOUND",
       "credit": "Michigan Shipwreck Research Association; Saugatuck-Douglas Historical Society"
@@ -180,10 +295,35 @@
         "bubble": "Your town, your state",
         "pill": "St. Joseph, Michigan",
         "scene": {
-          "kind": "lake",
-          "seed": 5,
-          "pier": false,
-          "move": "still"
+          "kind": "tab_lake",
+          "sky": "night",
+          "ground": {
+            "type": "water",
+            "y": 1100
+          },
+          "props": [
+            {
+              "p": "band",
+              "x": 540,
+              "s": 1.0,
+              "y": 1260
+            },
+            {
+              "p": "flotsam",
+              "x": 540,
+              "s": 1.0,
+              "n": 6,
+              "seed": 3,
+              "y": 1320
+            }
+          ],
+          "move": "still",
+          "amount": 0.08,
+          "moon": [
+            540,
+            340,
+            54
+          ]
         }
       },
       "credit": "All pictures drawn"
@@ -193,5 +333,6 @@
     "date": "2026-11-07",
     "by": "independent subagent",
     "result": "the dog came ashore near St. Joseph, not with the wreckage; 'ALL HANDS' became 'ALL LOST'; lightning and the small boat removed; all supported"
-  }
+  },
+  "illustrated": "2026-11-12"
 }
