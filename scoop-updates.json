@@ -1,69 +1,57 @@
 {
  "about": "State for scripts/scoop_update.py, the automatic updates to today's Daily Scoop: the forecast the Scoop was written from (baseline), what was last published, the alerts last seen, and today's updates. Replaced each day. Safe to delete: the job starts over from the current post.",
- "date": "2026-11-11",
- "post": "2026-11-11T05:32:00-06:00",
+ "date": "2026-11-12",
+ "post": "2026-11-12T05:32:00-06:00",
  "kind": "written",
  "baseline": {
-  "from": "2026-11-11T05:02:15-06:00",
+  "from": "2026-11-12T05:02:14-06:00",
   "source": "nws-snapshot.json (what the Scoop was written from)",
   "periods": {
-   "night 2026-11-10": {
-    "name": "Overnight",
-    "temp": 36,
-    "rain": 0,
-    "short": "Patchy Fog"
-   },
-   "day 2026-11-11": {
-    "name": "Veterans Day",
-    "temp": 54,
-    "rain": 70,
-    "short": "Patchy Fog then Rain Showers Likely"
-   },
    "night 2026-11-11": {
-    "name": "Wednesday Night",
-    "temp": 40,
+    "name": "Overnight",
+    "temp": 41,
     "rain": 60,
     "short": "Rain Showers Likely"
    },
    "day 2026-11-12": {
     "name": "Thursday",
-    "temp": 45,
-    "rain": 60,
+    "temp": 46,
+    "rain": 70,
     "short": "Rain Showers Likely"
    },
    "night 2026-11-12": {
     "name": "Thursday Night",
     "temp": 31,
-    "rain": 90,
-    "short": "Rain And Snow Showers Likely"
+    "rain": 60,
+    "short": "Rain Showers Likely then Chance Snow Showers"
    },
    "day 2026-11-13": {
     "name": "Friday",
-    "temp": 40,
-    "rain": 90,
-    "short": "Rain And Snow Showers"
+    "temp": 42,
+    "rain": 40,
+    "short": "Chance Snow Showers"
    },
    "night 2026-11-13": {
     "name": "Friday Night",
-    "temp": 31,
-    "rain": 90,
-    "short": "Rain And Snow Showers"
+    "temp": 29,
+    "rain": 70,
+    "short": "Rain And Snow Showers Likely"
    },
    "day 2026-11-14": {
     "name": "Saturday",
     "temp": 43,
-    "rain": 50,
-    "short": "Chance Rain Showers"
+    "rain": 70,
+    "short": "Snow Showers Likely then Rain And Snow Showers Likely"
    },
    "night 2026-11-14": {
     "name": "Saturday Night",
-    "temp": 31,
-    "rain": 20,
-    "short": "Slight Chance Rain Showers then Mostly Cloudy"
+    "temp": 32,
+    "rain": 40,
+    "short": "Chance Rain Showers"
    },
    "day 2026-11-15": {
     "name": "Sunday",
-    "temp": 45,
+    "temp": 46,
     "rain": 0,
     "short": "Partly Sunny"
    },
@@ -75,19 +63,31 @@
    },
    "day 2026-11-16": {
     "name": "Monday",
-    "temp": 46,
+    "temp": 47,
     "rain": 0,
     "short": "Mostly Sunny"
    },
    "night 2026-11-16": {
     "name": "Monday Night",
-    "temp": 30,
+    "temp": 28,
     "rain": 0,
-    "short": "Partly Cloudy"
+    "short": "Mostly Clear"
    },
    "day 2026-11-17": {
     "name": "Tuesday",
-    "temp": 48,
+    "temp": 50,
+    "rain": 0,
+    "short": "Sunny"
+   },
+   "night 2026-11-17": {
+    "name": "Tuesday Night",
+    "temp": 29,
+    "rain": 0,
+    "short": "Clear"
+   },
+   "day 2026-11-18": {
+    "name": "Wednesday",
+    "temp": 52,
     "rain": 0,
     "short": "Sunny"
    }
@@ -95,190 +95,155 @@
   "alerts": [],
   "alertRows": [],
   "hourly": {
-   "2026-11-11T05": {
-    "temp": 37,
-    "rain": 2
-   },
-   "2026-11-11T06": {
-    "temp": 39,
-    "rain": 3
-   },
-   "2026-11-11T07": {
-    "temp": 40,
-    "rain": 5
-   },
-   "2026-11-11T08": {
-    "temp": 42,
-    "rain": 7
-   },
-   "2026-11-11T09": {
-    "temp": 45,
-    "rain": 9
-   },
-   "2026-11-11T10": {
-    "temp": 49,
-    "rain": 12
-   },
-   "2026-11-11T11": {
-    "temp": 52,
-    "rain": 16
-   },
-   "2026-11-11T12": {
-    "temp": 54,
-    "rain": 29
-   },
-   "2026-11-11T13": {
-    "temp": 54,
-    "rain": 42
-   },
-   "2026-11-11T14": {
-    "temp": 54,
-    "rain": 54
-   },
-   "2026-11-11T15": {
-    "temp": 53,
-    "rain": 66
-   },
-   "2026-11-11T16": {
-    "temp": 52,
-    "rain": 52
-   },
-   "2026-11-11T17": {
-    "temp": 50,
-    "rain": 38
-   },
-   "2026-11-11T18": {
-    "temp": 47,
-    "rain": 37
-   },
-   "2026-11-11T19": {
-    "temp": 45,
-    "rain": 36
-   },
-   "2026-11-11T20": {
-    "temp": 44,
-    "rain": 34
-   },
-   "2026-11-11T21": {
-    "temp": 43,
-    "rain": 32
-   },
-   "2026-11-11T22": {
-    "temp": 43,
-    "rain": 36
-   },
-   "2026-11-11T23": {
-    "temp": 42,
-    "rain": 39
-   },
-   "2026-11-12T00": {
-    "temp": 42,
-    "rain": 43
-   },
-   "2026-11-12T01": {
-    "temp": 42,
-    "rain": 48
-   },
-   "2026-11-12T02": {
-    "temp": 42,
-    "rain": 52
-   },
-   "2026-11-12T03": {
-    "temp": 42,
-    "rain": 55
-   },
-   "2026-11-12T04": {
-    "temp": 42,
-    "rain": 57
-   },
    "2026-11-12T05": {
-    "temp": 41,
-    "rain": 58
+    "temp": 45,
+    "rain": 59
    },
    "2026-11-12T06": {
-    "temp": 41,
-    "rain": 58
+    "temp": 44,
+    "rain": 61
    },
    "2026-11-12T07": {
-    "temp": 40,
-    "rain": 57
+    "temp": 43,
+    "rain": 62
    },
    "2026-11-12T08": {
-    "temp": 41,
-    "rain": 56
+    "temp": 44,
+    "rain": 64
    },
    "2026-11-12T09": {
-    "temp": 43,
-    "rain": 53
+    "temp": 44,
+    "rain": 65
    },
    "2026-11-12T10": {
-    "temp": 43,
-    "rain": 49
+    "temp": 44,
+    "rain": 63
    },
    "2026-11-12T11": {
     "temp": 44,
-    "rain": 43
+    "rain": 67
    },
    "2026-11-12T12": {
-    "temp": 44,
-    "rain": 37
+    "temp": 45,
+    "rain": 71
    },
    "2026-11-12T13": {
-    "temp": 44,
-    "rain": 45
+    "temp": 45,
+    "rain": 68
    },
    "2026-11-12T14": {
-    "temp": 44,
-    "rain": 52
+    "temp": 46,
+    "rain": 64
    },
    "2026-11-12T15": {
     "temp": 45,
-    "rain": 60
+    "rain": 66
    },
    "2026-11-12T16": {
-    "temp": 43,
-    "rain": 58
+    "temp": 45,
+    "rain": 67
+   },
+   "2026-11-12T17": {
+    "temp": 44,
+    "rain": 60
+   },
+   "2026-11-12T18": {
+    "temp": 41,
+    "rain": 53
+   },
+   "2026-11-12T19": {
+    "temp": 40,
+    "rain": 48
+   },
+   "2026-11-12T20": {
+    "temp": 39,
+    "rain": 44
+   },
+   "2026-11-12T21": {
+    "temp": 39,
+    "rain": 39
+   },
+   "2026-11-12T22": {
+    "temp": 38,
+    "rain": 38
+   },
+   "2026-11-12T23": {
+    "temp": 38,
+    "rain": 36
+   },
+   "2026-11-13T00": {
+    "temp": 37,
+    "rain": 35
+   },
+   "2026-11-13T01": {
+    "temp": 35,
+    "rain": 34
+   },
+   "2026-11-13T02": {
+    "temp": 35,
+    "rain": 38
+   },
+   "2026-11-13T03": {
+    "temp": 33,
+    "rain": 41
+   },
+   "2026-11-13T04": {
+    "temp": 32,
+    "rain": 45
+   },
+   "2026-11-13T05": {
+    "temp": 32,
+    "rain": 44
+   },
+   "2026-11-13T06": {
+    "temp": 31,
+    "rain": 42
+   },
+   "2026-11-13T07": {
+    "temp": 32,
+    "rain": 39
+   },
+   "2026-11-13T08": {
+    "temp": 35,
+    "rain": 35
+   },
+   "2026-11-13T09": {
+    "temp": 37,
+    "rain": 32
+   },
+   "2026-11-13T10": {
+    "temp": 40,
+    "rain": 37
+   },
+   "2026-11-13T11": {
+    "temp": 40,
+    "rain": 42
+   },
+   "2026-11-13T12": {
+    "temp": 42,
+    "rain": 39
+   },
+   "2026-11-13T13": {
+    "temp": 41,
+    "rain": 35
+   },
+   "2026-11-13T14": {
+    "temp": 41,
+    "rain": 32
+   },
+   "2026-11-13T15": {
+    "temp": 42,
+    "rain": 28
+   },
+   "2026-11-13T16": {
+    "temp": 40,
+    "rain": 40
    }
   },
-  "hourlyFrom": "2026-11-11T05:47:00-06:00"
+  "hourlyFrom": "2026-11-12T05:47:00-06:00"
  },
- "published": {
-  "time": "2026-11-11T22:32:00-06:00",
-  "alertKeys": [],
-  "alerts": [],
-  "changes": [
-   {
-    "k": "day 2026-11-12",
-    "was": "Thursday",
-    "now": "Thursday",
-    "shortWas": "Rain Showers Likely",
-    "shortNow": "Rain Showers",
-    "field": "rain",
-    "from": 60,
-    "to": 90
-   }
-  ],
-  "off": [],
-  "paragraph": "Automatic update, 10:32 p.m.: Since the Scoop below was written, NWS has raised its chance of rain for Thursday to 90% (from 60%). At 9:55 p.m. the La Porte airport reported mostly cloudy and 46 degrees. Over the next 12 hours, NWS's hour-by-hour forecast has rain possible from midnight to 1 a.m. (up to 42%), rain likely from 1 a.m. to 2 a.m. (up to 50%) and rain possible from 2 a.m. to 11 a.m. (up to 48%). There are no watches, warnings, or advisories for La Porte County right now."
- },
+ "published": null,
  "alertRows": [],
  "missing": [],
- "updates": [
-  {
-   "time": "2026-11-11T06:32:00-06:00",
-   "why": "airport running wet"
-  },
-  {
-   "time": "2026-11-11T14:02:00-06:00",
-   "why": "airport running warm"
-  },
-  {
-   "time": "2026-11-11T16:15:00-06:00",
-   "why": "NWS forecast day 2026-11-11 temp 54->57"
-  },
-  {
-   "time": "2026-11-11T22:32:00-06:00",
-   "why": "NWS forecast day 2026-11-12 rain 60->90"
-  }
- ]
+ "updates": []
 }
