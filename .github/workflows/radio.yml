@@ -60,7 +60,7 @@ jobs:
           path: |
             ~/.cache/pip
             ~/.cache/huggingface
-          key: kokoro-voice-${{ runner.os }}-py312-v1
+          key: kokoro-voice-${{ runner.os }}-py312-v2   # v2 (Nov. 13, 2026): the saved copy now includes the spaCy model file
 
       - name: Install the voice
         if: steps.script.outputs.changed == 'true'
@@ -68,7 +68,17 @@ jobs:
           sudo apt-get install -y -qq espeak-ng ffmpeg > /dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq espeak-ng ffmpeg > /dev/null)
           pip install -q torch --index-url https://download.pytorch.org/whl/cpu
           pip install -q "kokoro>=0.9.4" soundfile
-          python3 -m spacy download en_core_web_sm -q || true
+          # The voice needs spaCy's small English model. It used to be downloaded from GitHub on every run, and the
+          # job failed whenever that download timed out (504s on Nov. 4, 8 and 9, 2026). Now the file is kept in
+          # the pip cache folder (saved by "Voice cache" above), so it is only downloaded when the cache is empty.
+          WHEEL="$HOME/.cache/pip/en_core_web_sm-3.8.0-py3-none-any.whl"
+          mkdir -p "$HOME/.cache/pip"
+          if [ ! -s "$WHEEL" ]; then
+            curl -fsSL --retry 5 --retry-delay 5 --retry-all-errors -o "$WHEEL.part" \
+              https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl \
+              && mv "$WHEEL.part" "$WHEEL" || rm -f "$WHEEL.part"
+          fi
+          if [ -s "$WHEEL" ]; then pip install -q "$WHEEL"; else python3 -m spacy download en_core_web_sm -q || true; fi
 
       - name: Record
         if: steps.script.outputs.changed == 'true'
