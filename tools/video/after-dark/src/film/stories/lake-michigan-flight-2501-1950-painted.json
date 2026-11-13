@@ -1,0 +1,224 @@
+{
+ "slug": "lake-michigan-flight-2501-1950-painted",
+ "title": "Northwest Flight 2501, 1950: the Airliner Lake Michigan Never Gave Back",
+ "series": "LA PORTE AFTER DARK",
+ "music": {
+  "seed": 167,
+  "prog": 6
+ },
+ "say": [],
+ "sources": [
+  {
+   "what": "left LaGuardia at night on June 23, 1950; killing all 58 on board; debris washed ashore in South Haven; a 20-year search ended in 2025 without finding the wreckage",
+   "who": "CBS News / AP (June 25, 2025)",
+   "url": "https://www.cbsnews.com/news/missing-plane-1950-crash-search-ends-lake-michigan"
+  },
+  {
+   "what": "a DC-4 that disappeared over Lake Michigan with 58 aboard, en route to Seattle; went down in a thunderstorm",
+   "who": "MPR News (2014)",
+   "url": "https://www.mprnews.org/story/2014/03/12/where-is-northwest-flight-2501"
+  },
+  {
+   "what": "'the worst airline disaster in U.S. history' (at the time)",
+   "who": "ABC7 Chicago",
+   "url": "https://abc7chicago.com/archive/9472962/"
+  },
+  {
+   "what": "'the deadliest commercial airline crash in U.S. history' at the time; remains washed ashore in South Haven",
+   "who": "Michigan Public (2015)",
+   "url": "https://www.michiganpublic.org/offbeat/2015-06-25/memorial-service-for-victims-of-plane-crash-65-years-ago-held-in-south-haven"
+  },
+  {
+   "what": "a storm had developed over Lake Michigan",
+   "who": "WDIV ClickOnDetroit (2014)",
+   "url": "https://clickondetroit.com/news/search-continues-for-plane-lost-over-lake-michigan-in-1950"
+  },
+  {
+   "what": "the 'Lake Michigan Triangle' and its mysterious events",
+   "who": "WDIV ClickOnDetroit (2017)",
+   "url": "https://clickondetroit.com/all-about-michigan/2017/02/01/the-unexplained-disappearance-of-northwest-flight-2501-over-lake-michigan"
+  },
+  {
+   "what": "the plane 'mysteriously disappeared in the waters off St. Joseph'",
+   "who": "Michigan Maritime Museum",
+   "url": "https://www.michiganmaritimemuseum.org/?p=14947"
+  }
+ ],
+ "beats": [
+  {
+   "text": "58 people were lost over Lake Michigan, and the plane has never been found.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "paint",
+    "src": "paint/lake-michigan-flight-2501-1950/p0.jpg",
+    "move": "in",
+    "amount": 0.1,
+    "focus": [
+     400,
+     380
+    ]
+   },
+   "label": "LAKE MICHIGAN, 1950",
+   "title": {
+    "text": "FLIGHT 2501",
+    "at": "never been found",
+    "size": 100,
+    "style": "red"
+   },
+   "sfx": [
+    {
+     "kind": "heartbeat",
+     "at": "were lost",
+     "gain": 0.6
+    }
+   ],
+   "credit": "CBS News / AP (2025) \u00b7 AI-generated picture"
+  },
+  {
+   "text": "On June 23, 1950, Northwest Flight 2501 took off from New York, bound for Seattle.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "card",
+    "seed": 0,
+    "move": "still"
+   },
+   "label": "JUNE 23, 1950",
+   "card": {
+    "kind": "year",
+    "label": "NORTHWEST FLIGHT",
+    "value": "2501",
+    "note": "NEW YORK TO SEATTLE"
+   },
+   "credit": "CBS News / AP; MPR News"
+  },
+  {
+   "text": "Just after midnight, over Lake Michigan, it flew into a storm. Then it went silent.",
+   "pause": 0.8,
+   "scene": {
+    "kind": "paint",
+    "src": "paint/lake-michigan-flight-2501-1950/p2.jpg",
+    "move": "in",
+    "amount": 0.1,
+    "focus": [
+     440,
+     420
+    ],
+    "rain": true
+   },
+   "label": "THE STORM",
+   "flash": [
+    "storm"
+   ],
+   "sfx": [
+    {
+     "kind": "thunder",
+     "at": "went silent",
+     "gain": 0.5
+    }
+   ],
+   "credit": "WDIV \u00b7 AI-generated picture"
+  },
+  {
+   "text": "All 58 people on board were lost. At the time, it was the deadliest commercial airline crash in American history.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "paint",
+    "src": "paint/lake-michigan-flight-2501-1950/p3.jpg",
+    "move": "in",
+    "amount": 0.1,
+    "focus": [
+     640,
+     560
+    ],
+    "rain": true
+   },
+   "label": "58 LIVES",
+   "credit": "CBS News / AP \u00b7 AI-generated picture"
+  },
+  {
+   "text": "Debris washed ashore near South Haven, Michigan.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "card",
+    "seed": 1,
+    "move": "still"
+   },
+   "label": "SOUTH HAVEN",
+   "card": {
+    "kind": "map",
+    "center": "South Haven",
+    "span": 1.0,
+    "pins": [
+     "South Haven",
+     "La Porte"
+    ],
+    "hot": "South Haven"
+   },
+   "credit": "CBS News / AP; Michigan Public"
+  },
+  {
+   "text": "In 2025, the Michigan Shipwreck Research Association ended its 20-year search. It never found the wreck.",
+   "pause": 0.8,
+   "scene": {
+    "kind": "paint",
+    "src": "paint/lake-michigan-flight-2501-1950/p5.jpg",
+    "move": "in",
+    "amount": 0.1,
+    "focus": [
+     440,
+     460
+    ]
+   },
+   "label": "NEVER FOUND",
+   "credit": "CBS News / AP (2025) \u00b7 AI-generated picture"
+  },
+  {
+   "text": "Some call these waters the Lake Michigan Triangle.",
+   "pause": 0.8,
+   "scene": {
+    "kind": "paint",
+    "src": "paint/lake-michigan-flight-2501-1950/p6.jpg",
+    "move": "in",
+    "amount": 0.1,
+    "focus": [
+     440,
+     420
+    ]
+   },
+   "label": "THE LEGEND",
+   "sfx": [
+    {
+     "kind": "whoosh",
+     "at": "Triangle",
+     "gain": 0.6
+    }
+   ],
+   "credit": "Legend: WDIV (2017) \u00b7 AI-generated picture"
+  },
+  {
+   "text": "Comment your town for the next La Porte After Dark.",
+   "end": true,
+   "end_card": {
+    "q": "COMMENT YOUR TOWN",
+    "q2": "FOR THE NEXT STORY",
+    "bubble": "Your town, your state",
+    "pill": "South Haven and St. Joseph, Michigan",
+    "scene": {
+     "kind": "paint",
+     "src": "paint/lake-michigan-flight-2501-1950/p6.jpg",
+     "move": "still",
+     "amount": 0.1,
+     "dim": 0.7
+    }
+   },
+   "credit": "Pictures: AI-generated (Canva)"
+  }
+ ],
+ "factcheck": {
+  "date": "2026-11-07",
+  "by": "independent subagent",
+  "result": "'vanished' became 'were lost'; 'just after midnight ... went silent'; 'commercial airline'; the searchers named (MSRA); all supported"
+ },
+ "illustrated": "2026-11-12",
+ "ai_pictures": true
+}
