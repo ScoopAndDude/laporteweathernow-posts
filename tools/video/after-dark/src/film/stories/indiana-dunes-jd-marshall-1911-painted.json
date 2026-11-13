@@ -1,0 +1,192 @@
+{
+ "slug": "indiana-dunes-jd-marshall-1911-painted",
+ "title": "The J.D. Marshall, 1911: the shipwreck off Indiana Dunes State Park",
+ "series": "LA PORTE AFTER DARK",
+ "music": {
+  "seed": 201,
+  "prog": 6
+ },
+ "say": [],
+ "sources": [
+  {
+   "what": "'Built: 1891 in South Haven, MI'; four lost; 'Captain and 10 crew'",
+   "who": "Indiana DNR, J.D. Marshall FAQ",
+   "url": "https://www.in.gov/dnr/lake-michigan-coastal-program/files/sp-JDM_FAQ.PDF"
+  },
+  {
+   "what": "'first underwater preserve in Indiana', 'approximately 100 acres'; propeller 'can currently be viewed from the Indiana Dunes Historic Beach Pavilion's east side'; '29 feet'",
+   "who": "Indiana DNR, J.D. Marshall Nature Preserve",
+   "url": "https://www.in.gov/dnr/lake-michigan-coastal-program/indiana-shipwrecks/jd-marshall-nature-preserve/"
+  },
+  {
+   "what": "'154.5' long'; 'converted into a sandsucker'; 'sprung a leak, which required several hours to close'; 'the boat rolled over like a log' (Michigan City Evening Dispatch); 'three hundred yards from shore'; 'In 1982 the entire vessel was raised by salvors'",
+   "who": "Indiana University Underwater Science, J.D. Marshall historical background",
+   "url": "https://underwaterscience.indiana.edu/research/great-lakes/jd-marshall-historical-background.html"
+  },
+  {
+   "what": "'designed to haul lumber... later converted into a sand barge'; 'a squall blew in from the west'; 'The hull sprung a leak, which was patched after several hours... The patch in the hull failed'; 'sank 300 yards offshore from the Beach Pavilion'",
+   "who": "Indiana DNR marker at the propeller (HMdb)",
+   "url": "https://www.hmdb.org/m.asp?m=161459"
+  },
+  {
+   "what": "preserve created 2013; 28 feet; open for diving",
+   "who": "WBAA (Sept. 18, 2013); AP via WOWO (2013)",
+   "url": "https://www.wbaa.org/general-news/2013-09-18/in-creates-underwater-preserve"
+  },
+  {
+   "what": "'raised by Michigan salvagers who attempted to haul off the shipwreck for spare parts'",
+   "who": "Indiana Natural Resources Commission advisory council minutes (Aug. 2013)",
+   "url": "https://secure.in.gov/nrc/files/ac_minutes_aug_2013.pdf"
+  }
+ ],
+ "beats": [
+  {
+   "text": "There's a shipwreck about 30 feet down, off the beach at Indiana Dunes State Park.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "paint",
+    "src": "paint/indiana-dunes-jd-marshall-1911/p0.jpg",
+    "move": "in",
+    "amount": 0.1,
+    "focus": [
+     500,
+     440
+    ]
+   },
+   "label": "INDIANA DUNES STATE PARK",
+   "credit": "Indiana DNR \u00b7 AI-generated picture",
+   "title": {
+    "text": "THE J.D. MARSHALL",
+    "at": "about 30 feet",
+    "size": 90,
+    "style": "red"
+   },
+   "sfx": [
+    {
+     "kind": "heartbeat",
+     "at": "30 feet down",
+     "gain": 0.33
+    }
+   ]
+  },
+  {
+   "text": "She's the steamer Marshall, a wooden ship built in 1891 to haul lumber. Around 1910, she was rebuilt to pump sand from the lake bottom.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "paint",
+    "src": "paint/indiana-dunes-jd-marshall-1911/p1.jpg",
+    "move": "in",
+    "amount": 0.1,
+    "focus": [
+     440,
+     440
+    ]
+   },
+   "label": "BUILT 1891",
+   "credit": "Indiana DNR \u00b7 AI-generated picture"
+  },
+  {
+   "text": "That June, anchored off the dunes near Chesterton, she sprang a leak. The crew patched it.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "paint",
+    "src": "paint/indiana-dunes-jd-marshall-1911/p2.jpg",
+    "move": "in",
+    "amount": 0.1,
+    "focus": [
+     500,
+     440
+    ]
+   },
+   "label": "JUNE 1911",
+   "credit": "Indiana DNR marker \u00b7 AI-generated picture"
+  },
+  {
+   "text": "Then, early on June 11, 1911, a squall blew in from the west. The patch failed, and the ship rolled over.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "paint",
+    "src": "paint/indiana-dunes-jd-marshall-1911/p3.jpg",
+    "move": "in",
+    "amount": 0.1,
+    "focus": [
+     500,
+     380
+    ],
+    "rain": true
+   },
+   "label": "JUNE 11, 1911",
+   "credit": "Indiana DNR marker \u00b7 AI-generated picture",
+   "flash": [
+    "rolled over"
+   ]
+  },
+  {
+   "text": "Four of her crew were lost.",
+   "pause": 0.8,
+   "scene": {
+    "kind": "paint",
+    "src": "paint/indiana-dunes-jd-marshall-1911/p4.jpg",
+    "move": "in",
+    "amount": 0.1,
+    "focus": [
+     400,
+     460
+    ]
+   },
+   "label": "FOUR LOST",
+   "credit": "Indiana DNR \u00b7 AI-generated picture"
+  },
+  {
+   "text": "Decades later, salvagers raised the wreck and tried to haul it away. It ended up back on the bottom.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "paint",
+    "src": "paint/indiana-dunes-jd-marshall-1911/p5.jpg",
+    "move": "in",
+    "amount": 0.1,
+    "focus": [
+     540,
+     400
+    ]
+   },
+   "label": "THE SALVAGE",
+   "credit": "Indiana University Underwater Science \u00b7 AI-generated picture"
+  },
+  {
+   "text": "Her propeller now sits beside the park's beach pavilion. And in 2013, the wreck became Indiana's first underwater nature preserve.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "paint",
+    "src": "paint/indiana-dunes-jd-marshall-1911/p6.jpg",
+    "move": "in",
+    "amount": 0.1,
+    "focus": [
+     460,
+     420
+    ]
+   },
+   "label": "A PRESERVE SINCE 2013",
+   "credit": "Indiana DNR \u00b7 AI-generated picture"
+  },
+  {
+   "text": "Comment your town for the next La Porte After Dark.",
+   "end": true,
+   "end_card": {
+    "q": "COMMENT YOUR TOWN",
+    "q2": "FOR THE NEXT STORY",
+    "bubble": "Your town, your state",
+    "pill": "Her propeller: beside the state park's beach pavilion",
+    "scene": {
+     "kind": "paint",
+     "src": "paint/indiana-dunes-jd-marshall-1911/p6.jpg",
+     "move": "still",
+     "amount": 0.1,
+     "dim": 0.7
+    }
+   },
+   "credit": "Pictures: AI-generated (Canva)"
+  }
+ ],
+ "ai_pictures": true
+}
