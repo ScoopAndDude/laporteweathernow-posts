@@ -16,6 +16,7 @@ run either, the last saved copy is kept as it was (with its own "checked" time).
 import datetime
 import json
 import os
+import re
 import sys
 import urllib.parse
 
@@ -71,6 +72,49 @@ def hourly():
     now = now_utc()
     periods = get_json(f"{GRID}/forecast/hourly")["properties"].get("periods") or []
     return [slim(p) for p in periods if datetime.datetime.fromisoformat(p["endTime"]) > now][:24]
+
+
+# The forecasters' own write-up (the "Area Forecast Discussion"), added Nov. 13, 2026 so the homepage can carry
+# its text in the page itself (the site's edge function puts it in the HTML; search engines can read it).
+# Only the parts for the general public are kept; aviation, marine and the watch/warning list are left out.
+AFD_KEEP = ("KEY MESSAGES", "SYNOPSIS", "UPDATE", "DISCUSSION", "NEAR TERM", "SHORT TERM", "LONG TERM")
+AFD_MAX = 9000   # characters of text kept in all (a long discussion is cut at a paragraph)
+
+
+def discussion():
+    listed = get_json(f"{API}/products/types/AFD/locations/IWX").get("@graph") or []
+    if not listed:
+        raise RuntimeError("no forecast discussion is listed for IWX")
+    prod = get_json(f"{API}/products/{listed[0]['id']}")
+    text = (prod.get("productText") or "").replace("\r", "")
+    sections, used = [], 0
+    for chunk in re.split(r"\n[ \t]*&&[ \t]*(?=\n|$)", text):
+        m = re.search(r"^\.([A-Z][^\n]*?)\.\.\.[ \t]*(.*)", chunk, re.S | re.M)
+        if not m:
+            continue
+        title = re.sub(r"\s*/.*$", "", m.group(1)).strip()          # ".SHORT TERM /TODAY/..." -> "SHORT TERM"
+        if not title.startswith(AFD_KEEP):
+            continue
+        paras = []
+        for para in re.split(r"\n[ \t]*\n", m.group(2)):
+            para = " ".join(line.strip() for line in para.strip().split("\n")).strip()
+            if not para or re.match(r"^Issued at ", para):
+                continue
+            if used + len(para) > AFD_MAX:
+                break
+            paras.append(para)
+            used += len(para)
+        if paras:
+            sections.append({"title": m.group(1).strip(), "paragraphs": paras})
+    if not sections:
+        raise RuntimeError("the forecast discussion had no public sections")
+    issued = prod.get("issuanceTime")
+    return {
+        "office": "National Weather Service Northern Indiana",
+        "issued": central(datetime.datetime.fromisoformat(issued)) if issued else None,
+        "url": "https://forecast.weather.gov/product.php?site=IWX&issuedby=IWX&product=AFD",
+        "sections": sections,
+    }
 
 
 def alerts():
@@ -137,6 +181,7 @@ def main():
         "daily": attempt("NWS forecast", daily) or [],
         "hourly": attempt("NWS hourly forecast", hourly) or [],
         "alerts": attempt("NWS alerts", alerts),
+        "discussion": attempt("NWS forecast discussion", discussion),
         "alertsChecked": central(started),
         "errors": errors,
     }
