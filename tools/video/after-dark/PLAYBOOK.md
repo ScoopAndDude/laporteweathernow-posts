@@ -269,3 +269,27 @@ illustrations" (never "drawn"); set isAiGenerated true on YouTube, Instagram, Ti
 for the paintings: no real person's likeness (figures tiny, from behind, or faceless), no bodies, remains, blood or
 hangings, no text, signs or logos in the picture, and look at every picture before it is used. The full-size pictures
 can only be fetched from Canva through a signed-in browser, so making new paintings needs someone at the computer.
+
+## Scaling the series (Scoop, Nov. 13, 2026: "I am on track to monetize on Facebook with this series. How can we scale it?" then "Do 1 through 6")
+
+What the numbers said on Nov. 13 (Facebook, last 40 posts): one short carried the page. The Porter cemetery short
+reached about 19,500 views with 60 shares; Belle Gunness Part 5 about 4,300; the Michigan City lighthouse keeper
+about 800; a typical short 70 to 600. The winners are close-to-home places people know. So:
+
+1. **Winners first.** When picking a topic, places in and around LaPorte County, Porter and Chesterton, and Belle
+   Gunness stories go ahead of far-off ones. At most one short in four is a far-off Lake Michigan or out-of-state
+   story, unless a viewer asked for it. The weekly scorecard decides what counts as a winner; update this list from it.
+2. **Every "comment your town" request gets an answer.** A requested town goes into `queue.json` as `todo`, jumps the
+   line if it is within about an hour of LaPorte and has good sources, and the post text opens with "You asked for
+   <town>!". No tool here can read Facebook comments: Scoop passes those along.
+3. **One long video a week, Facebook only.** On the Friday run, stitch three or four shorts that have ALREADY AIRED and
+   share a place into one two-to-three-minute video with `src/long_story.py` (see its header), render it alone,
+   shrink it to under 100 MB (`ffmpeg -crf 24 -maxrate 4M`), save it in `out/long/`, and schedule it on Facebook for
+   Saturday at noon Central. No new facts: only lines from the fact-checked storyboards, plus an opening line that
+   repeats what they say. Label it the same way (AI-generated pictures, computer voice, sources). The `check` step
+   will complain about the length; that is expected for these.
+4. **One post per story per channel.** Never schedule the same short twice on a channel. (The two doubles on
+   Facebook on Nov. 7 and 8 were direct uploads on Facebook about 75 minutes after the Buffer post, not Buffer.)
+5. **Scoop's own voice.** When Scoop sends a recording of a script, use it in place of the computer voice and change
+   the label to "Narration: Scoop". Not built into `reel_story.py` yet: build it the first time a recording arrives.
+6. **Sharing into local groups is Scoop's job**; nothing here can post to groups.
