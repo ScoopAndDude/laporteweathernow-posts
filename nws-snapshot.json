@@ -1,6 +1,6 @@
 {
  "about": "Official weather for La Porte, Indiana, saved by a GitHub job for the Daily Scoop (laporteweathernow.com/daily-scoop). Copied from NWS, SPC and WPC as-is; see scripts/nws_snapshot.py.",
- "fetched": "2026-11-13T05:02:17-06:00",
+ "fetched": "2026-11-13T11:38:50-06:00",
  "place": "La Porte, IN",
  "lat": 41.6081,
  "lon": -86.7189,
@@ -23,80 +23,80 @@
  },
  "observation": {
   "station": "KPPO (La Porte Municipal Airport)",
-  "time": "2026-11-13T04:35:00-06:00",
+  "time": "2026-11-13T10:55:00-06:00",
   "weather": "Cloudy",
-  "temperatureF": 36,
-  "dewpointF": 36,
-  "humidityPercent": 100,
+  "temperatureF": null,
+  "dewpointF": null,
+  "humidityPercent": null,
   "wind": {
-   "from": "NNE",
-   "degrees": 20,
-   "mph": 9,
+   "from": null,
+   "degrees": null,
+   "mph": null,
    "gustMph": null
   },
   "visibilityMiles": 10.0,
-  "pressureInHg": 29.94,
-  "metar": "KPPO 131035Z AUTO 02008KT 10SM BKN070 OVC090 02/02 A2994 RMK AO2"
+  "pressureInHg": null,
+  "metar": "KPPO 131655Z AUTO 28008KT 10SM OVC030 05/02 A2999 RMK AO2"
  },
  "forecast": {
-  "updated": "2026-11-13T10:45:04+00:00",
-  "generated": "2026-11-13T11:02:17+00:00",
+  "updated": "2026-11-13T16:15:03+00:00",
+  "generated": "2026-11-13T17:32:14+00:00",
   "timesNote": "Clock times in the forecast wording are already in America/Chicago (La Porte's real time). NWS writes them in America/Indiana/Indianapolis, which it has on file for La Porte by mistake.",
   "periods": [
    {
-    "name": "Today",
-    "start": "2026-11-13T06:00:00-05:00",
+    "name": "This Afternoon",
+    "start": "2026-11-13T12:00:00-05:00",
     "end": "2026-11-13T18:00:00-05:00",
     "isDaytime": true,
-    "temperatureF": 42,
-    "rainChancePercent": 35,
-    "wind": "N 0 to 10 mph",
+    "temperatureF": 43,
+    "rainChancePercent": 29,
+    "wind": "N 5 to 10 mph",
     "short": "Chance Rain Showers",
-    "detailed": "A chance of rain showers. Mostly cloudy, with a high near 42. North wind 0 to 10 mph. Chance of precipitation is 40%."
+    "detailed": "A chance of rain showers. Mostly cloudy, with a high near 43. North wind 5 to 10 mph. Chance of precipitation is 30%."
    },
    {
     "name": "Tonight",
     "start": "2026-11-13T18:00:00-05:00",
     "end": "2026-11-14T06:00:00-05:00",
     "isDaytime": false,
-    "temperatureF": 29,
-    "rainChancePercent": 60,
-    "wind": "NW 0 to 5 mph",
-    "short": "Chance Rain Showers then Chance Snow Showers",
-    "detailed": "A chance of rain showers before 11pm, then a chance of snow showers between 11pm and 1am, then rain and snow showers likely. Mostly cloudy, with a low around 29. Northwest wind 0 to 5 mph. Chance of precipitation is 60%. New snow accumulation of less than half an inch possible."
+    "temperatureF": 30,
+    "rainChancePercent": 56,
+    "wind": "N 0 to 5 mph",
+    "short": "Rain And Snow Showers Likely",
+    "detailed": "A chance of rain showers before 8pm, then rain and snow showers likely. Mostly cloudy, with a low around 30. North wind 0 to 5 mph. Chance of precipitation is 60%. Little or no snow accumulation expected."
    },
    {
     "name": "Saturday",
     "start": "2026-11-14T06:00:00-05:00",
     "end": "2026-11-14T18:00:00-05:00",
     "isDaytime": true,
-    "temperatureF": 44,
-    "rainChancePercent": 65,
+    "temperatureF": 45,
+    "rainChancePercent": 71,
     "wind": "NW 0 to 10 mph",
-    "short": "Snow Showers Likely then Rain And Snow Showers Likely",
-    "detailed": "Snow showers likely before 6am, then rain and snow showers likely between 6am and 4pm. Mostly cloudy, with a high near 44. Northwest wind 0 to 10 mph. Chance of precipitation is 70%. New snow accumulation of less than half an inch possible."
+    "short": "Snow Showers Likely then Rain Showers Likely",
+    "detailed": "Snow showers likely before 6am, then rain showers likely. Mostly cloudy, with a high near 45. Northwest wind 0 to 10 mph. Chance of precipitation is 70%. Little or no snow accumulation expected."
    },
    {
     "name": "Saturday Night",
     "start": "2026-11-14T18:00:00-05:00",
     "end": "2026-11-15T06:00:00-05:00",
     "isDaytime": false,
-    "temperatureF": 33,
-    "rainChancePercent": 12,
+    "temperatureF": 35,
+    "rainChancePercent": 29,
     "wind": "NW 0 to 5 mph",
-    "short": "Mostly Cloudy",
-    "detailed": "Mostly cloudy, with a low around 33. Northwest wind 0 to 5 mph."
+    "short": "Chance Rain Showers then Mostly Cloudy",
+    "detailed": "A chance of rain showers before 6pm. Mostly cloudy, with a low around 35. Northwest wind 0 to 5 mph. Chance of precipitation is 30%."
    },
    {
     "name": "Sunday",
     "start": "2026-11-15T06:00:00-05:00",
     "end": "2026-11-15T18:00:00-05:00",
     "isDaytime": true,
-    "temperatureF": 46,
-    "rainChancePercent": 11,
+    "temperatureF": 47,
+    "rainChancePercent": 4,
     "wind": "NW 5 mph",
     "short": "Partly Sunny",
-    "detailed": "Partly sunny, with a high near 46. Northwest wind around 5 mph."
+    "detailed": "Partly sunny, with a high near 47. Northwest wind around 5 mph."
    },
    {
     "name": "Sunday Night",
@@ -104,8 +104,8 @@
     "end": "2026-11-16T06:00:00-05:00",
     "isDaytime": false,
     "temperatureF": 30,
-    "rainChancePercent": 1,
-    "wind": "S 0 to 5 mph",
+    "rainChancePercent": 2,
+    "wind": "SW 0 to 5 mph",
     "short": "Partly Cloudy",
     "detailed": "Partly cloudy, with a low around 30."
    },
@@ -114,111 +114,111 @@
     "start": "2026-11-16T06:00:00-05:00",
     "end": "2026-11-16T18:00:00-05:00",
     "isDaytime": true,
-    "temperatureF": 47,
+    "temperatureF": 50,
     "rainChancePercent": 0,
     "wind": "SW 0 to 5 mph",
     "short": "Sunny",
-    "detailed": "Sunny, with a high near 47."
+    "detailed": "Sunny, with a high near 50."
    },
    {
     "name": "Monday Night",
     "start": "2026-11-16T18:00:00-05:00",
     "end": "2026-11-17T06:00:00-05:00",
     "isDaytime": false,
-    "temperatureF": 28,
+    "temperatureF": 30,
     "rainChancePercent": 0,
     "wind": "0 mph",
-    "short": "Clear",
-    "detailed": "Clear, with a low around 28."
+    "short": "Mostly Clear",
+    "detailed": "Mostly clear, with a low around 30."
    },
    {
     "name": "Tuesday",
     "start": "2026-11-17T06:00:00-05:00",
     "end": "2026-11-17T18:00:00-05:00",
     "isDaytime": true,
-    "temperatureF": 50,
+    "temperatureF": 53,
     "rainChancePercent": 0,
     "wind": "S 0 to 5 mph",
     "short": "Sunny",
-    "detailed": "Sunny, with a high near 50."
+    "detailed": "Sunny, with a high near 53."
    },
    {
     "name": "Tuesday Night",
     "start": "2026-11-17T18:00:00-05:00",
     "end": "2026-11-18T06:00:00-05:00",
     "isDaytime": false,
-    "temperatureF": 30,
+    "temperatureF": 31,
     "rainChancePercent": 0,
     "wind": "S 5 mph",
-    "short": "Clear",
-    "detailed": "Clear, with a low around 30."
+    "short": "Mostly Clear",
+    "detailed": "Mostly clear, with a low around 31."
    },
    {
     "name": "Wednesday",
     "start": "2026-11-18T06:00:00-05:00",
     "end": "2026-11-18T18:00:00-05:00",
     "isDaytime": true,
-    "temperatureF": 53,
+    "temperatureF": 56,
     "rainChancePercent": 0,
     "wind": "S 5 to 10 mph",
     "short": "Sunny",
-    "detailed": "Sunny, with a high near 53."
+    "detailed": "Sunny, with a high near 56."
    },
    {
     "name": "Wednesday Night",
     "start": "2026-11-18T18:00:00-05:00",
     "end": "2026-11-19T06:00:00-05:00",
     "isDaytime": false,
-    "temperatureF": 35,
+    "temperatureF": 38,
     "rainChancePercent": 1,
     "wind": "S 5 mph",
     "short": "Partly Cloudy",
-    "detailed": "Partly cloudy, with a low around 35."
+    "detailed": "Partly cloudy, with a low around 38."
    },
    {
     "name": "Thursday",
     "start": "2026-11-19T06:00:00-05:00",
     "end": "2026-11-19T18:00:00-05:00",
     "isDaytime": true,
-    "temperatureF": 58,
-    "rainChancePercent": 7,
+    "temperatureF": 59,
+    "rainChancePercent": 11,
     "wind": "S 5 to 10 mph",
     "short": "Partly Sunny",
-    "detailed": "Partly sunny, with a high near 58."
+    "detailed": "Partly sunny, with a high near 59."
    },
    {
     "name": "Thursday Night",
     "start": "2026-11-19T18:00:00-05:00",
     "end": "2026-11-20T06:00:00-05:00",
     "isDaytime": false,
-    "temperatureF": 44,
-    "rainChancePercent": 15,
-    "wind": "S 5 to 10 mph",
-    "short": "Mostly Cloudy then Slight Chance Rain Showers",
-    "detailed": "A slight chance of rain showers after midnight. Mostly cloudy, with a low around 44."
+    "temperatureF": 45,
+    "rainChancePercent": 13,
+    "wind": "SW 5 to 10 mph",
+    "short": "Mostly Cloudy",
+    "detailed": "Mostly cloudy, with a low around 45."
    }
   ]
  },
  "rain": {
   "note": "NWS forecast grid rain totals (QPF) for the La Porte grid point; the forecast text's own wording comes first.",
-  "next24hInches": 0.11,
-  "next72hInches": 0.19,
+  "next24hInches": 0.06,
+  "next72hInches": 0.1,
   "byPeriod": [
    {
-    "name": "Today",
-    "inches": 0.02
+    "name": "This Afternoon",
+    "inches": 0.01
    },
    {
     "name": "Tonight",
-    "inches": 0.09
+    "inches": 0.03
    },
    {
     "name": "Saturday",
-    "inches": 0.08
+    "inches": 0.06
    },
    {
     "name": "Saturday Night",
-    "inches": 0.0
+    "inches": 0.01
    },
    {
     "name": "Sunday",
@@ -234,7 +234,7 @@
    },
    {
     "name": "Monday Night",
-    "inches": 0
+    "inches": 0.0
    },
    {
     "name": "Tuesday",
@@ -264,63 +264,27 @@
  },
  "alertsLaPorteCounty": [],
  "alertsNearby": {
-  "indiana": [
-   {
-    "id": "urn:oid:2.49.0.1.840.0.6183af3667d980cf254c9584c416b70df4079377.001.1",
-    "event": "Winter Weather Advisory",
-    "headline": "Winter Weather Advisory issued November 13 at 1:19AM CST until November 13 at 12:00PM CST by NWS Chicago IL",
-    "nwsHeadline": "WINTER WEATHER ADVISORY NOW IN EFFECT UNTIL NOON CST TODAY",
-    "area": "Southern Cook; Eastern Will; Lake",
-    "sender": "NWS Chicago IL",
-    "sent": "2026-11-13T01:19:00-06:00",
-    "onset": "2026-11-13T01:19:00-06:00",
-    "ends": "2026-11-13T12:00:00-06:00",
-    "expires": "2026-11-13T12:00:00-06:00",
-    "messageType": "Update",
-    "severity": "Moderate",
-    "certainty": "Likely",
-    "urgency": "Expected"
-   }
-  ],
-  "nearbyCountiesFullText": [
-   {
-    "id": "urn:oid:2.49.0.1.840.0.6183af3667d980cf254c9584c416b70df4079377.001.1",
-    "event": "Winter Weather Advisory",
-    "headline": "Winter Weather Advisory issued November 13 at 1:19AM CST until November 13 at 12:00PM CST by NWS Chicago IL",
-    "nwsHeadline": "WINTER WEATHER ADVISORY NOW IN EFFECT UNTIL NOON CST TODAY",
-    "area": "Southern Cook; Eastern Will; Lake",
-    "sender": "NWS Chicago IL",
-    "sent": "2026-11-13T01:19:00-06:00",
-    "onset": "2026-11-13T01:19:00-06:00",
-    "ends": "2026-11-13T12:00:00-06:00",
-    "expires": "2026-11-13T12:00:00-06:00",
-    "messageType": "Update",
-    "severity": "Moderate",
-    "certainty": "Likely",
-    "urgency": "Expected",
-    "description": "* WHAT...Locally slippery travel due to lake effect snow expected.\nLocalized snow totals in excess of 3 inches expected.\n\n* WHERE...In Illinois, Eastern Will and Southern Cook Counties. In\nIndiana, Lake IN County.\n\n* WHEN...Until noon CST today.\n\n* IMPACTS...Plan on locally slippery road conditions including during\nthis morning's commute.\n\n* ADDITIONAL DETAILS...Impacts from snow during lake effect snow are\noften highly variable across short distances. Conditions may vary\nfrom wet roads to snow-covered roads across just a mile. In\naddition, snow will struggle to stick within a few miles of the\nLake Michigan shoreline.",
-    "instruction": "Slow down and use caution while traveling. The latest road conditions\nfor Illinois can be obtained at www.gettingaroundillinois.com. The\nlatest road conditions for Indiana can be obtained at\nhttps://511in.org.\n\nBe prepared for slippery roads. Slow down and use caution while\ndriving. If you are going outside, watch your first few steps taken\non stairs, sidewalks, and driveways. These surfaces could be icy and\nslippery, increasing your risk of a fall and injury.\n\nDuring lake effect snow, the weather can vary from bands of locally\nheavy snow to dry weather just a few miles away. Visibilities can\nalso vary greatly. Be prepared for rapid changes in weather,\nvisibility, and road conditions."
-   }
-  ]
+  "indiana": [],
+  "nearbyCountiesFullText": []
  },
  "discussion": {
-  "issued": "2026-11-13T02:19:00-06:00",
-  "ageHours": 2.7,
-  "text": "000\nFXUS63 KIWX 130819\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n319 AM EST Fri Nov 13 2026\n\n.KEY MESSAGES...\n\n- Light lake effect/enhanced rain showers, possibly mixed with\n  some snow, will continue early this morning across southwest \n  Lower Michigan and northwest Indiana. No snow accumulation is \n  expected as most of the lake effect precipitation will remain \n  anchored across extreme northwest Indiana/far northeast \n  Illinois.\n\n- A more dominant band of lake effect rain and snow showers is expected\n  to shift east into northwest Indiana and southwest Lower \n  Michigan late tonight into Saturday morning. Some localized \n  light snow accumulations of less than an inch are possible \n  inland and mainly across grassy areas. \n\n- Below normal temperatures continue today through the weekend\n  followed by slowly moderating temperatures into the mid and\n  upper 50s by the middle of next week.\n\n&&\n\n.DISCUSSION...\nIssued at 318 AM EST Fri Nov 13 2026\n\nDominant single lake effect band continues to affect extreme NW \nIndiana early this morning in the Gary vicinity. Some synoptic \nenhanced light precipitation extends east across the local area from \nSouth bend vicinity into southern Lower Michigan. This area of light \nprecip appears tied to a lagging secondary low level baroclinic zone \nand weak accompanying low level frontogenesis forcing. Through the \nmorning, this band of precip should tend to diminish with near term \nlow level fgen progs depicting some weakening of this synoptic \nforcing. \n\nThe dominant band across far NW Indiana may try to exhibit some \nslight eastward adjustment after daybreak as a broader synoptic \nscale upper level short wave drops south across the Mid MS Valley. \nSome subtle uptick in low level fgen forcing could aid in some \neastward development this morning as 950-900 mb speed convergence \nassociated with better northerly flow working south across western \nGreat Lakes interacts with thermally modified mass fields over \nfar southern Lake Michigan. The more pronounced low level cold \nadvection this morning working across the western shore of Lake \nMichigan will continue to allow for development of a weak \nnortherly low level jet across western Lake Michigan and a \npronounced horizontal shearing zone across the western third of \nthe lake. This should keep the higher precip rates and dominant \nsingle band anchored along this horizontal shearing instability \naxis through the morning hours to the west of the local area. \nWith some uncertainty in other synoptic factors coming into play\ndiscussed above, did maintain some low to mid range chance PoPs\nextreme west, but not expecting any snow accumulation locally \nat this time.\n\nBy this afternoon southward passage of another upper level trough \nacross the western Great Lakes will likely allow for better lake \neffect precip to shift back to the Chicago metro area into portions \nof far NW Indiana. Did maintain high chance/low likely rain PoPs \nacross far western portions of the forecast area this afternoon, but \nit is possible this can be adjusted downward depending on trends. \nOtherwise for today, little temperature recovery is expected given \nweak ongoing cold advection and cloud cover. Between clouds across \nthe west and a possible maintenance of higher cloud cover in east \nwith Lake Huron connection, a zone from southwest Lower Michigan \ninto the US-15 corridor could experience some sun today. Highs will \nlikely be limited to the low-mid 40s.\n\nFor tonight, there should be a lull in the parade of stronger short \nwaves rotating through the broad negative upper height anomaly which \nshould allow for some backing of the flow to eventually take better \nlake effect precip chances into NW Indiana/SW Lower MI later tonight \ninto Saturday AM. Thermal profiles and sfc/near sfc wet bulbs do \nappear on the marginal side of rain vs snow in modified airmass \ndownwind of warmer Lake Michigan waters. It also appears by late \ntonight, some drying of the DGZ should take place which will make \nsnowfall production less efficient and possibly promote more of a \ncellular character. Did maintain some light accums across La Porte \nof less than a half inch across mainly grassy areas farther inland, \nbut currently not expecting any significant travel impacts. Lake \neffect rain showers in scattered fashion may continue into midday \nSaturday but should become less organized and cellular through time.\n\nA weak short wave spilling down the central CONUS/south central \nCanadian ridge may cause some isolated-scattered light lake effect \nrain again by Saturday evening, but otherwise dry conditions are \nexpected through the remainder of the weekend as a stable longwave \npattern featuring central CONUS ridging remains established. This \npattern will be characterized by weak baroclinicity and little day \nto day thermal advection. This will promote continued below normal \ntemperatures through the weekend. Looking ahead to next week, the \nbroad eastern CONUS negative upper height anomaly should finally \nbegin to break down allowing for eastward progression of the \nlongwave ridge as stronger Pacific systems moves inland. \nTemperatures should moderate back to above normal in this pattern \nfor middle and latter portions of next work week. While thee are \nsome indications a stronger eastern Pacific wave will dampen the \nlongwave ridge, better quality low level moisture should remain \nconfined to the southern/central Plains so a dry forecast has been \nmaintained through this forecast valid period.\n\n&&\n\n.AVIATION /06Z TAFS THROUGH 06Z SATURDAY/...\nIssued at 1244 AM EST Fri Nov 13 2026\n\nPredominantly MVFR conditions at the terminals, with potential\nfor IFR briefly at KSBN with rain showers over the next couple \nhours. Otherwise, continued northerly flow with gradual\nimprovement to more persistent VFR conditions.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...Small Craft Advisory until 7 AM EST Saturday for LMZ043-046.\n\n&&\n\n$$\n\nDISCUSSION...Marsili\nAVIATION...MCD"
+  "issued": "2026-11-13T05:43:00-06:00",
+  "ageHours": 5.9,
+  "text": "000\nFXUS63 KIWX 131143\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n643 AM EST Fri Nov 13 2026\n\n.KEY MESSAGES...\n\n- Light lake effect/enhanced rain showers, possibly mixed with\n  some snow, will continue early this morning across southwest \n  Lower Michigan and northwest Indiana. No snow accumulation is \n  expected as most of the lake effect precipitation will remain \n  anchored across extreme northwest Indiana/far northeast \n  Illinois.\n\n- A more dominant band of lake effect rain and snow showers is expected\n  to shift east into northwest Indiana and southwest Lower \n  Michigan late tonight into Saturday morning. Some localized \n  light snow accumulations of less than an inch are possible \n  inland and mainly across grassy areas. \n\n- Below normal temperatures continue today through the weekend\n  followed by slowly moderating temperatures into the mid and\n  upper 50s by the middle of next week.\n\n&&\n\n.DISCUSSION...\nIssued at 318 AM EST Fri Nov 13 2026\n\nDominant single lake effect band continues to affect extreme NW \nIndiana early this morning in the Gary vicinity. Some synoptic \nenhanced light precipitation extends east across the local area from \nSouth bend vicinity into southern Lower Michigan. This area of light \nprecip appears tied to a lagging secondary low level baroclinic zone \nand weak accompanying low level frontogenesis forcing. Through the \nmorning, this band of precip should tend to diminish with near term \nlow level fgen progs depicting some weakening of this synoptic \nforcing. \n\nThe dominant band across far NW Indiana may try to exhibit some \nslight eastward adjustment after daybreak as a broader synoptic \nscale upper level short wave drops south across the Mid MS Valley. \nSome subtle uptick in low level fgen forcing could aid in some \neastward development this morning as 950-900 mb speed convergence \nassociated with better northerly flow working south across western \nGreat Lakes interacts with thermally modified mass fields over \nfar southern Lake Michigan. The more pronounced low level cold \nadvection this morning working across the western shore of Lake \nMichigan will continue to allow for development of a weak \nnortherly low level jet across western Lake Michigan and a \npronounced horizontal shearing zone across the western third of \nthe lake. This should keep the higher precip rates and dominant \nsingle band anchored along this horizontal shearing instability \naxis through the morning hours to the west of the local area. \nWith some uncertainty in other synoptic factors coming into play\ndiscussed above, did maintain some low to mid range chance PoPs\nextreme west, but not expecting any snow accumulation locally \nat this time.\n\nBy this afternoon southward passage of another upper level trough \nacross the western Great Lakes will likely allow for better lake \neffect precip to shift back to the Chicago metro area into portions \nof far NW Indiana. Did maintain high chance/low likely rain PoPs \nacross far western portions of the forecast area this afternoon, but \nit is possible this can be adjusted downward depending on trends. \nOtherwise for today, little temperature recovery is expected given \nweak ongoing cold advection and cloud cover. Between clouds across \nthe west and a possible maintenance of higher cloud cover in east \nwith Lake Huron connection, a zone from southwest Lower Michigan \ninto the US-15 corridor could experience some sun today. Highs will \nlikely be limited to the low-mid 40s.\n\nFor tonight, there should be a lull in the parade of stronger short \nwaves rotating through the broad negative upper height anomaly which \nshould allow for some backing of the flow to eventually take better \nlake effect precip chances into NW Indiana/SW Lower MI later tonight \ninto Saturday AM. Thermal profiles and sfc/near sfc wet bulbs do \nappear on the marginal side of rain vs snow in modified airmass \ndownwind of warmer Lake Michigan waters. It also appears by late \ntonight, some drying of the DGZ should take place which will make \nsnowfall production less efficient and possibly promote more of a \ncellular character. Did maintain some light accums across La Porte \nof less than a half inch across mainly grassy areas farther inland, \nbut currently not expecting any significant travel impacts. Lake \neffect rain showers in scattered fashion may continue into midday \nSaturday but should become less organized and cellular through time.\n\nA weak short wave spilling down the central CONUS/south central \nCanadian ridge may cause some isolated-scattered light lake effect \nrain again by Saturday evening, but otherwise dry conditions are \nexpected through the remainder of the weekend as a stable longwave \npattern featuring central CONUS ridging remains established. This \npattern will be characterized by weak baroclinicity and little day \nto day thermal advection. This will promote continued below normal \ntemperatures through the weekend. Looking ahead to next week, the \nbroad eastern CONUS negative upper height anomaly should finally \nbegin to break down allowing for eastward progression of the \nlongwave ridge as stronger Pacific systems moves inland. \nTemperatures should moderate back to above normal in this pattern \nfor middle and latter portions of next work week. While thee are \nsome indications a stronger eastern Pacific wave will dampen the \nlongwave ridge, better quality low level moisture should remain \nconfined to the southern/central Plains so a dry forecast has been \nmaintained through this forecast valid period.\n\n&&\n\n.AVIATION /12Z TAFS THROUGH 12Z SATURDAY/...\nIssued at 641 AM EST Fri Nov 13 2026\n\nPredominantly MVFR to VFR conditions are expected at the\nterminals this morning, with light rain showers at KFWA coming\nto an end within the hour. Otherwise, light northerly flow \nshifts more west-northwest at KFWA through the period, and more \nnorthwest at KSBN. \n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...None.\nOH...None.\nMI...None.\nMARINE...Small Craft Advisory until 7 AM EST Saturday for LMZ043-046.\n\n&&\n\n$$\n\nDISCUSSION...Marsili\nAVIATION...MCD"
  },
  "hazardousWeatherOutlook": null,
  "hydrologicOutlook": null,
  "spc": [
   {
    "day": 1,
-   "valid": "202611131200",
+   "valid": "202611131630",
    "expires": "202611141200",
    "riskAtLaPorte": "No thunderstorm or severe risk area",
    "riskAreasAnywhere": [
     "General Thunderstorms Risk"
    ],
-   "summary": "Severe thunderstorms are not forecast across the U.S. today and tonight.",
-   "text": "SPC AC 130510\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1110 PM CST Thu Nov 12 2026\n\n   Valid 131200Z - 141200Z\n\n   ...NO SEVERE THUNDERSTORM AREAS FORECAST...\n\n   ...SUMMARY...\n   Severe thunderstorms are not forecast across the U.S. today and\n   tonight.\n\n   ...Synopsis...\n\n   An upper shortwave trough near the California coast this morning\n   will shift east toward the southern Rockies by Saturday morning.\n   Cooling aloft will support weak instability across portions of\n   southern AZ/NM to Far West TX. Boundary layer moisture is expected\n   to remain modest, with the dewpoints generally in the 40s and 50s F.\n   This will support scattered thunderstorms during the afternoon\n   across southern AZ/NM, spreading eastward toward southwest TX by\n   late afternoon/early evening. Southerly deep-layer flow is forecast,\n   with effective shear magnitudes generally around 20-25 kt. Modest\n   shear and instability will likely limit severe potential, though\n   gusty winds and small hail could occur with the strongest storms. \n\n   Additional thunderstorms are possible across portions of coastal OR\n   into northern/central CA as a second upper shortwave trough moves\n   inland across the Pacific Northwest and Great Basin. A lightning\n   flash or two is possible during the nighttime hours from central CA\n   into the Great Basin, but overall coverage is expected to remain\n   less than 10 percent.\n\n   ..Leitman/Chalmers.. 11/13/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 1300Z"
+   "summary": "Organized severe thunderstorms are not expected across the U.S. today or tonight.",
+   "text": "SPC AC 131614\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1014 AM CST Fri Nov 13 2026\n\n   Valid 131630Z - 141200Z\n\n   ...NO SEVERE THUNDERSTORM AREAS FORECAST...\n\n   ...SUMMARY...\n   Organized severe thunderstorms are not expected across the U.S.\n   today or tonight.\n\n   ...Southeast AZ...\n   A strong shortwave trough is rotating across northwest Mexico.  This\n   feature will affect southern AZ, providing increasing large scale\n   ascent and steep lapse rates through the afternoon and evening. \n   Visible satellite imagery suggests rather widespread cloud cover\n   will affect much of southern AZ, and low-level moisture is limited. \n   These factors should keep MLCAPE values below 500 J/kg.  Winds aloft\n   are also relatively weak.  While organized severe storms appear\n   unlikely today, scattered showers and thunderstorms will track\n   across the region, with some concern for a few strong wind gusts in\n   the more intense cells. \n\n   ...Northern CA...\n   A strong cold front has moved inland across northern CA, with\n   intense low and mid level wind fields accompanying the front.  No\n   lightning has been observed with the line thus far, and\n   thermodynamic profiles remain quite weak.  Nevertheless, strong wind\n   gusts may accompany the shallow convective line, and even an\n   orographically-induced brief tornado is possible - mainly through\n   mid afternoon.\n\n   ..Hart/Halbert-E.. 11/13/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 2000Z"
   },
   {
    "day": 2,
@@ -331,7 +295,7 @@
     "General Thunderstorms Risk"
    ],
    "summary": "Severe thunderstorms are unlikely across the U.S. Saturday and Saturday night.",
-   "text": "SPC AC 130657\n\n   Day 2 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1257 AM CST Fri Nov 13 2026\n\n   Valid 141200Z - 151200Z\n\n   ...NO SEVERE THUNDERSTORM AREAS FORECAST...\n\n   ...SUMMARY...\n   Severe thunderstorms are unlikely across the U.S. Saturday and\n   Saturday night.\n\n   ...Southern Plains...\n   A mid-level trough over the western US is forecast to deamplify, as\n   the primary shortwave continues southeastward across the southern\n   Rockies/Plains. To the west, another trough will deepen across the\n   Pacific coast while surface high pressure with cool and relatively\n   dry conditions dominates the East. As the upper trough migrates\n   across the Rockies and into the Plains Saturday/Saturday night,\n   strong mid-level ascent will deepen a lee cyclone from southeastern\n   CO into NM and West TX. Southerly flow will increase and modest\n   surface moisture return (40s to near 50 F dewpoints) will occur\n   beneath cooling mid-level temperatures over the southern High\n   Plains. Weak destabilization is expected with model profiles showing\n   perhaps up to 500 J/kg of elevated MUCAPE available.\n\n   Ascent from the upper trough and increasing low-level warm air\n   advection will likely support scattered thunderstorms from the Four\n   Corners to OK/TX from Saturday afternoon/evening. A 30-40 kt\n   southerly low-level jet over parts of western OK/TX may also aide in\n   additional convection overnight. Some potential for a few stronger\n   storms may exist if sufficient buoyancy and around 30-40 kts of\n   effective shear develop. Likely elevated, marginally severe hail\n   would be the primary hazard with any stronger storms able to\n   persist. However the scant destabilization casts significant\n   uncertainty on severe potential, as such, probabilities will be\n   withheld for now. \n\n   Elsewhere, occasional lightning flashes will be possible along the\n   Pacific Northwest coast ahead of the aforementioned upper trough.\n   Additional storms are also possible along the lower TX Gulf coast\n   within the southerly return flow and warm advection regime. Very\n   weak buoyancy is expected and coverage, as well as any severe\n   potential will remain low in both locales.\n\n   ..Lyons.. 11/13/2026\n\n   CLICK TO GET WUUS02 PTSDY2 PRODUCT\n\n   NOTE: THE NEXT DAY 2 OUTLOOK IS SCHEDULED BY 1730Z"
+   "text": "SPC AC 131712\n\n   Day 2 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1112 AM CST Fri Nov 13 2026\n\n   Valid 141200Z - 151200Z\n\n   ...NO SEVERE THUNDERSTORM AREAS FORECAST...\n\n   ...SUMMARY...\n   Severe thunderstorms are unlikely across the U.S. Saturday and\n   Saturday night.\n\n   ...Synopsis...\n   Mid-morning water-vapor imagery depicts an upper wave over the\n   western CONUS that is forecast to de-amplify as if shifts eastward\n   over the next 48 hours. As de-amplification occurs the primary\n   vorticity maximum and attendant jet streak will migrate across the\n   Southwest and into the southern Plains through Sunday morning. Cold\n   temperatures aloft attendant to the upper low, coupled with ascent\n   within the left-exit region of a weakening jet and eventually within\n   the warm advection branch of an intensifying low-level cyclone, will\n   support isolated to scattered thunderstorms from the Four Corners\n   into western Texas/Oklahoma. The prevailing consensus among guidance\n   continues to depict modest and shallow buoyancy profiles\n   characterized by equilibrium temperatures near 500 mb and only\n   around 250-500 J/kg MUCAPE. Despite somewhat elongated hodographs,\n   effective shear through the CAPE-bearing layer is forecast to remain\n   limited. Given these concerns, the expectation is that convection\n   will largely remain sub-severe, though instances of small hail\n   appear possible - especially if deeper buoyancy profiles can be\n   achieved as suggested by recent RRFS solutions. \n\n   Elsewhere, more sporadic lightning flashes are anticipated along the\n   northern CA and OR coasts as a secondary upper wave approaches the\n   region. Isolated thunderstorms, including a few strong storms, will\n   also be possible along and just off the southern TX Gulf coast\n   within a weak warm advection regime.\n\n   ..Moore.. 11/13/2026\n\n   CLICK TO GET WUUS02 PTSDY2 PRODUCT\n\n   NOTE: THE NEXT DAY 2 OUTLOOK IS SCHEDULED BY 0700Z"
   },
   {
    "day": 3,
@@ -373,39 +337,19 @@
   "days": [
    {
     "date": "2026-11-13",
-    "summary": "mostly dry 6 a.m.-8 a.m.; rain possible 8 a.m.-10 a.m. (up to 35%); mostly dry 10 a.m.-4 p.m.; rain possible 4 p.m.-6 p.m. (up to 40%)",
+    "summary": "mostly dry 11 a.m.-5 p.m.; rain possible 5 p.m.-6 p.m. (up to 35%)",
     "hours": [
      {
-      "hour": 6,
-      "rainChancePercent": 22
-     },
-     {
-      "hour": 7,
-      "rainChancePercent": 24
-     },
-     {
-      "hour": 8,
-      "rainChancePercent": 35
-     },
-     {
-      "hour": 9,
-      "rainChancePercent": 31
-     },
-     {
-      "hour": 10,
-      "rainChancePercent": 27
-     },
-     {
       "hour": 11,
-      "rainChancePercent": 23
+      "rainChancePercent": 19
      },
      {
       "hour": 12,
-      "rainChancePercent": 22
+      "rainChancePercent": 21
      },
      {
       "hour": 13,
-      "rainChancePercent": 20
+      "rainChancePercent": 18
      },
      {
       "hour": 14,
@@ -417,17 +361,17 @@
      },
      {
       "hour": 16,
-      "rainChancePercent": 31
+      "rainChancePercent": 29
      },
      {
       "hour": 17,
-      "rainChancePercent": 40
+      "rainChancePercent": 35
      }
     ]
    },
    {
     "date": "2026-11-14",
-    "summary": "rain likely 6 a.m.-11 a.m. (up to 62%); rain possible 11 a.m.-2 p.m. (up to 46%); mostly dry 2 p.m.-6 p.m.",
+    "summary": "rain likely 6 a.m.-12 p.m. (up to 71%); rain possible 12 p.m.-2 p.m. (up to 42%); mostly dry 2 p.m.-6 p.m.",
     "hours": [
      {
       "hour": 6,
@@ -443,15 +387,15 @@
      },
      {
       "hour": 9,
-      "rainChancePercent": 53
+      "rainChancePercent": 64
      },
      {
       "hour": 10,
-      "rainChancePercent": 50
+      "rainChancePercent": 57
      },
      {
       "hour": 11,
-      "rainChancePercent": 46
+      "rainChancePercent": 71
      },
      {
       "hour": 12,
@@ -463,25 +407,226 @@
      },
      {
       "hour": 14,
-      "rainChancePercent": 24
+      "rainChancePercent": 29
      },
      {
       "hour": 15,
-      "rainChancePercent": 15
+      "rainChancePercent": 16
      },
      {
       "hour": 16,
-      "rainChancePercent": 10
+      "rainChancePercent": 27
      },
      {
       "hour": 17,
-      "rainChancePercent": 6
+      "rainChancePercent": 29
      }
     ]
    }
   ]
  },
- "consensus": null,
+ "consensus": {
+  "about": "NWS next to four computer models (Open-Meteo, CC BY 4.0). blend = the middle value of NWS and the models; adjusted = blend corrected by our own average past error at the La Porte airport once 14+ days are graded (capped at 3 degrees). Rain chances are NWS's. suggested = what the Daily Scoop's forecasts use (tomorrow and the day after).",
+  "models": {
+   "ncep_nbm_conus": "National Blend of Models (NBM)",
+   "ncep_hrrr_conus": "HRRR (short range)",
+   "gfs_seamless": "American GFS",
+   "ecmwf_ifs025": "European ECMWF"
+  },
+  "bias": {
+   "days": 25,
+   "ready": true,
+   "high": -0.7,
+   "highDays": 25,
+   "low": 0.7,
+   "lowDays": 25,
+   "note": "Average of (forecast minus airport reading) over the last 30 graded days; positive means we ran warm. Used to nudge the model blend once 14+ days are graded."
+  },
+  "days": [
+   {
+    "date": "2026-11-13",
+    "nws": {
+     "high": 43,
+     "low": null,
+     "rain": 56
+    },
+    "models": {
+     "ncep_nbm_conus": {
+      "high": 42,
+      "low": 32,
+      "rain": 34
+     },
+     "ncep_hrrr_conus": {
+      "high": 42,
+      "low": 33,
+      "rain": 34
+     },
+     "gfs_seamless": {
+      "high": 42,
+      "low": 33,
+      "rain": 34
+     },
+     "ecmwf_ifs025": {
+      "high": 41,
+      "low": 34,
+      "rain": 99
+     }
+    },
+    "blend": {
+     "high": 42,
+     "low": 33
+    },
+    "adjusted": {
+     "high": 43,
+     "low": 32
+    },
+    "spread": {
+     "high": 2,
+     "low": 2
+    },
+    "note": "NWS and the models agree within a few degrees"
+   },
+   {
+    "date": "2026-11-14",
+    "nws": {
+     "high": 45,
+     "low": 30,
+     "rain": 71
+    },
+    "models": {
+     "ncep_nbm_conus": {
+      "high": 45,
+      "low": 32,
+      "rain": 33
+     },
+     "ncep_hrrr_conus": {
+      "high": 43,
+      "low": 33,
+      "rain": 33
+     },
+     "gfs_seamless": {
+      "high": 43,
+      "low": 33,
+      "rain": 33
+     },
+     "ecmwf_ifs025": {
+      "high": 44,
+      "low": 34,
+      "rain": 94
+     }
+    },
+    "blend": {
+     "high": 44,
+     "low": 33
+    },
+    "adjusted": {
+     "high": 45,
+     "low": 32
+    },
+    "spread": {
+     "high": 2,
+     "low": 4
+    },
+    "note": "NWS and the models agree within a few degrees"
+   },
+   {
+    "date": "2026-11-15",
+    "nws": {
+     "high": 47,
+     "low": 35,
+     "rain": 4
+    },
+    "models": {
+     "ncep_nbm_conus": {
+      "high": 47,
+      "low": 34,
+      "rain": 11
+     },
+     "ncep_hrrr_conus": {
+      "rain": 11
+     },
+     "gfs_seamless": {
+      "high": 45,
+      "low": 36,
+      "rain": 11
+     },
+     "ecmwf_ifs025": {
+      "high": 48,
+      "low": 37,
+      "rain": 4
+     }
+    },
+    "blend": {
+     "high": 47,
+     "low": 36
+    },
+    "adjusted": {
+     "high": 48,
+     "low": 35
+    },
+    "spread": {
+     "high": 3,
+     "low": 3
+    },
+    "note": "NWS and the models agree within a few degrees"
+   },
+   {
+    "date": "2026-11-16",
+    "nws": {
+     "high": 50,
+     "low": 30,
+     "rain": 0
+    },
+    "models": {
+     "ncep_nbm_conus": {
+      "high": 50,
+      "low": 30,
+      "rain": 0
+     },
+     "ncep_hrrr_conus": {
+      "rain": 0
+     },
+     "gfs_seamless": {
+      "high": 49,
+      "low": 34,
+      "rain": 0
+     },
+     "ecmwf_ifs025": {
+      "high": 49,
+      "low": 31,
+      "rain": 0
+     }
+    },
+    "blend": {
+     "high": 50,
+     "low": 30
+    },
+    "adjusted": {
+     "high": 51,
+     "low": 29
+    },
+    "spread": {
+     "high": 1,
+     "low": 4
+    },
+    "note": "NWS and the models agree within a few degrees"
+   }
+  ],
+  "suggested": [
+   {
+    "date": "2026-11-14",
+    "high": 45,
+    "low": 32,
+    "rain": 71
+   },
+   {
+    "date": "2026-11-15",
+    "high": 48,
+    "low": 35,
+    "rain": 4
+   }
+  ]
+ },
  "links": {
   "forecast": "https://forecast.weather.gov/MapClick.php?lat=41.6081&lon=-86.7189",
   "discussion": "https://forecast.weather.gov/product.php?site=IWX&issuedby=IWX&product=AFD",
@@ -492,10 +637,5 @@
   "wpcExcessiveRain": "https://www.wpc.ncep.noaa.gov/qpf/excessive_rainfall_outlook_ero.php",
   "observation": "https://forecast.weather.gov/data/obhistory/KPPO.html"
  },
- "errors": [
-  {
-   "source": "Computer models (Open-Meteo)",
-   "error": "https://api.open-meteo.com/v1/forecast?latitude=41.6081&longitude=-86.7189&daily=temperature_2m_max%2Ctemperature_2m_min%2Cprecipitation_probability_max&models=ncep_nbm_conus%2Cncep_hrrr_conus%2Cgfs_seamless%2Cecmwf_ifs025&temperature_unit=fahrenheit&timezone=America%2FChicago&forecast_days=4 -> <urlopen error _ssl.c:1063: The handshake operation timed out>"
-  }
- ]
+ "errors": []
 }
