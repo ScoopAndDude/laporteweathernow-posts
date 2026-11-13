@@ -1,10 +1,10 @@
 {
  "about": "The Shore Call: La Porte Weather Now's morning call for the La Porte County shore (Washington Park, Long Beach, Mount Baldy, the Michigan City harbor), made by fixed rules from National Weather Service forecasts and graded the next day against the Michigan City buoy (NDBC 45170), the Michigan City lighthouse station (MCYI3) and NWS snow reports. Our call, not a warning: NWS alerts always win. Rules: laporteweathernow.com/lake-michigan#shore-rules. Saved by the 'Shore Call' job (scripts/shore_call.py).",
- "updated": "2026-11-12T05:32:16-06:00",
+ "updated": "2026-11-13T05:32:12-06:00",
  "score": {
   "since": "2026-10-06",
-  "graded": 37,
-  "hit": 23,
+  "graded": 38,
+  "hit": 24,
   "close": 13,
   "miss": 1
  },
@@ -18,12 +18,170 @@
     7,
     67
    ],
-   "hours": 171,
-   "maxWaveFt": 12.0,
+   "hours": 170,
+   "maxWaveFt": 9.0,
    "elevationM": 175.8696
   }
  ],
  "calls": [
+  {
+   "date": "2026-11-13",
+   "made": "2026-11-13T05:32:12-06:00",
+   "counts": true,
+   "lake": "rough",
+   "swim": {
+    "call": null,
+    "why": "No swim forecast: the Weather Service's beach forecast runs from just before Memorial Day weekend through September, and there are no lifeguards out of season."
+   },
+   "piers": {
+    "call": "STAY OFF",
+    "why": "Waves up to 7 feet in the Weather Service's lake forecast, and a Small Craft Advisory is out."
+   },
+   "boats": {
+    "window": null,
+    "windowText": null,
+    "after": null,
+    "call": "STAY IN",
+    "why": "Weather Service lake forecast for today: Northeast winds 10 to 15 knots becoming north 15 to 20 knots. A slight chance of waterspouts. A chance of rain showers. Waves 4 to 7 feet. Small Craft Advisory out."
+   },
+   "band": null,
+   "alerts": [
+    {
+     "event": "Small Craft Advisory",
+     "when": "until Sat. 6 a.m.",
+     "zones": [
+      "New Buffalo to St. Joseph",
+      "Michigan City to New Buffalo"
+     ],
+     "sender": "NWS Northern Indiana"
+    },
+    {
+     "event": "Small Craft Advisory",
+     "when": "until Sat. 10 a.m.",
+     "zones": [
+      "Burns Harbor to Michigan City"
+     ],
+     "sender": "NWS Chicago IL"
+    }
+   ],
+   "forecast": {
+    "waveMaxFt": 7,
+    "windMaxKt": 20,
+    "gustKt": null,
+    "waterF": 54
+   },
+   "nws": {
+    "lake": {
+     "issued": "2026-11-13T03:36-06:00",
+     "period": "Today",
+     "today": "Northeast winds 10 to 15 knots becoming north 15 to 20 knots. A slight chance of waterspouts. A chance of rain showers. Waves 4 to 7 feet.",
+     "tonight": "North winds 15 to 20 knots becoming northwest 10 to 15 knots. A slight chance of waterspouts. Rain showers. Waves 5 to 9 feet."
+    },
+    "beach": null
+   },
+   "hours": [
+    {
+     "hour": 6,
+     "status": "stay",
+     "waveFt": 6.0,
+     "windKt": 13,
+     "gustKt": 15
+    },
+    {
+     "hour": 7,
+     "status": "stay",
+     "waveFt": 6.0,
+     "windKt": 13,
+     "gustKt": 14
+    },
+    {
+     "hour": 8,
+     "status": "stay",
+     "waveFt": 6.0,
+     "windKt": 12,
+     "gustKt": 14
+    },
+    {
+     "hour": 9,
+     "status": "stay",
+     "waveFt": 6.0,
+     "windKt": 12,
+     "gustKt": 14
+    },
+    {
+     "hour": 10,
+     "status": "stay",
+     "waveFt": 5.0,
+     "windKt": 13,
+     "gustKt": 15
+    },
+    {
+     "hour": 11,
+     "status": "stay",
+     "waveFt": 5.0,
+     "windKt": 14,
+     "gustKt": 15
+    },
+    {
+     "hour": 12,
+     "status": "stay",
+     "waveFt": 5.0,
+     "windKt": 14,
+     "gustKt": 16
+    },
+    {
+     "hour": 13,
+     "status": "stay",
+     "waveFt": 5.0,
+     "windKt": 15,
+     "gustKt": 17
+    },
+    {
+     "hour": 14,
+     "status": "stay",
+     "waveFt": 5.0,
+     "windKt": 14,
+     "gustKt": 18
+    },
+    {
+     "hour": 15,
+     "status": "stay",
+     "waveFt": 5.0,
+     "windKt": 15,
+     "gustKt": 19
+    },
+    {
+     "hour": 16,
+     "status": "stay",
+     "waveFt": 6.0,
+     "windKt": 16,
+     "gustKt": 20
+    },
+    {
+     "hour": 17,
+     "status": "stay",
+     "waveFt": 6.0,
+     "windKt": 18,
+     "gustKt": 21
+    },
+    {
+     "hour": 18,
+     "status": "stay",
+     "waveFt": 7.0,
+     "windKt": 19,
+     "gustKt": 21
+    },
+    {
+     "hour": 19,
+     "status": "stay",
+     "waveFt": 8.0,
+     "windKt": 19,
+     "gustKt": 21
+    }
+   ],
+   "grade": null,
+   "headline": "Rough lake: stay off the piers, small boats stay in."
+  },
   {
    "date": "2026-11-12",
    "made": "2026-11-12T05:32:16-06:00",
@@ -95,107 +253,19 @@
     },
     "beach": null
    },
-   "hours": [
-    {
-     "hour": 6,
-     "status": "stay",
-     "waveFt": 9.0,
-     "windKt": 24,
-     "gustKt": 26
+   "grade": {
+    "wind": {
+     "called": "strong",
+     "calledKt": 30,
+     "measuredKt": 37,
+     "measured": "strong",
+     "where": "Michigan City lighthouse",
+     "result": "hit"
     },
-    {
-     "hour": 7,
-     "status": "stay",
-     "waveFt": 10.0,
-     "windKt": 24,
-     "gustKt": 26
-    },
-    {
-     "hour": 8,
-     "status": "stay",
-     "waveFt": 10.0,
-     "windKt": 24,
-     "gustKt": 27
-    },
-    {
-     "hour": 9,
-     "status": "stay",
-     "waveFt": 10.0,
-     "windKt": 24,
-     "gustKt": 27
-    },
-    {
-     "hour": 10,
-     "status": "stay",
-     "waveFt": 11.0,
-     "windKt": 24,
-     "gustKt": 27
-    },
-    {
-     "hour": 11,
-     "status": "stay",
-     "waveFt": 12.0,
-     "windKt": 24,
-     "gustKt": 27
-    },
-    {
-     "hour": 12,
-     "status": "stay",
-     "waveFt": 12.0,
-     "windKt": 25,
-     "gustKt": 28
-    },
-    {
-     "hour": 13,
-     "status": "stay",
-     "waveFt": 12.0,
-     "windKt": 25,
-     "gustKt": 28
-    },
-    {
-     "hour": 14,
-     "status": "stay",
-     "waveFt": 12.0,
-     "windKt": 25,
-     "gustKt": 28
-    },
-    {
-     "hour": 15,
-     "status": "stay",
-     "waveFt": 12.0,
-     "windKt": 25,
-     "gustKt": 29
-    },
-    {
-     "hour": 16,
-     "status": "stay",
-     "waveFt": 11.0,
-     "windKt": 25,
-     "gustKt": 29
-    },
-    {
-     "hour": 17,
-     "status": "stay",
-     "waveFt": 11.0,
-     "windKt": 26,
-     "gustKt": 29
-    },
-    {
-     "hour": 18,
-     "status": "stay",
-     "waveFt": 11.0,
-     "windKt": 25,
-     "gustKt": 28
-    },
-    {
-     "hour": 19,
-     "status": "stay",
-     "waveFt": 11.0,
-     "windKt": 24,
-     "gustKt": 27
-    }
-   ],
-   "grade": null,
+    "result": "hit",
+    "note": "Waves not graded: the Michigan City buoy didn't report (it's out of the water from late fall to spring).",
+    "graded": "2026-11-13T05:32-06:00"
+   },
    "headline": "Rough lake: stay off the piers, small boats stay in."
   },
   {
@@ -1061,40 +1131,12 @@
    "made": "2026-10-30T05:32:16-05:00",
    "counts": true,
    "lake": "choppy",
-   "swim": {
-    "call": null,
-    "why": "No swim forecast: the Weather Service's beach forecast runs from just before Memorial Day weekend through September, and there are no lifeguards out of season."
-   },
-   "piers": {
-    "call": "CAUTION",
-    "why": "Waves up to 4 feet in the Weather Service's lake forecast."
-   },
-   "boats": {
-    "window": [
-     "06:00",
-     "20:00"
-    ],
-    "windowText": "6 a.m. to 8 p.m.",
-    "after": null,
-    "call": "GO",
-    "why": "Weather Service lake forecast for today: North winds 10 knots or less becoming northeast. Mostly sunny. Waves 2 to 4 feet."
-   },
-   "band": null,
-   "alerts": [],
+   "headline": "Choppy lake: careful on the piers, small boats GO 6 a.m. to 8 p.m.",
    "forecast": {
     "waveMaxFt": 4,
     "windMaxKt": 10,
     "gustKt": null,
     "waterF": 57
-   },
-   "nws": {
-    "lake": {
-     "issued": "2026-10-30T02:48-05:00",
-     "period": "Today",
-     "today": "North winds 10 knots or less becoming northeast. Mostly sunny. Waves 2 to 4 feet.",
-     "tonight": "Northeast winds 5 to 10 knots becoming east. Mostly cloudy. Waves 1 to 2 feet."
-    },
-    "beach": null
    },
    "grade": {
     "waves": {
@@ -1116,7 +1158,16 @@
     "result": "close",
     "graded": "2026-10-31T05:32-05:00"
    },
-   "headline": "Choppy lake: careful on the piers, small boats GO 6 a.m. to 8 p.m."
+   "swim": {
+    "call": null
+   },
+   "piers": {
+    "call": "CAUTION"
+   },
+   "boats": {
+    "call": "GO",
+    "windowText": "6 a.m. to 8 p.m."
+   }
   },
   {
    "date": "2026-10-29",
