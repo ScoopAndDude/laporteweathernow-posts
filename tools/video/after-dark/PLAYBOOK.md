@@ -285,7 +285,7 @@ about 800; a typical short 70 to 600. The winners are close-to-home places peopl
 3. **One long video a week, Facebook only.** On the Friday run, stitch three or four shorts that have ALREADY AIRED and
    share a place into one two-to-three-minute video with `src/long_story.py` (see its header), render it alone,
    shrink it to under 100 MB (`ffmpeg -crf 24 -maxrate 4M`), save it in `out/long/`, and schedule it on Facebook for
-   Saturday at noon Central. No new facts: only lines from the fact-checked storyboards, plus an opening line that
+   Saturday at noon Central. Use Facebook type `post`, not `reel`: Buffer refuses reels longer than 1 minute 30 seconds. No new facts: only lines from the fact-checked storyboards, plus an opening line that
    repeats what they say. Label it the same way (AI-generated pictures, computer voice, sources). The `check` step
    will complain about the length; that is expected for these.
 4. **One post per story per channel.** Never schedule the same short twice on a channel. (The two doubles on
