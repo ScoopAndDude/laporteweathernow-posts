@@ -293,3 +293,16 @@ about 800; a typical short 70 to 600. The winners are close-to-home places peopl
 5. **Scoop's own voice.** When Scoop sends a recording of a script, use it in place of the computer voice and change
    the label to "Narration: Scoop". Not built into `reel_story.py` yet: build it the first time a recording arrives.
 6. **Sharing into local groups is Scoop's job**; nothing here can post to groups.
+
+### What Facebook's own numbers said (Scoop's Page assistant screenshot, Nov. 13, 2026)
+
+The Porter cemetery reel: 22,408 views, 50.8% of viewers stayed past three seconds, 43 net new followers. The
+Harriet Colfax lighthouse reel held 48% past three seconds but got only a small fraction of the views, so the
+opening keeps people watching but shares are what spread a reel (Porter had 60, Colfax 5). The pinned weather
+reel has the highest share rate on the page (2.64%). So:
+
+- **First three seconds.** A short opens with its strongest local fact or mystery, not with a date or a set-up
+  clause. "The farm families around Kingsbury had to leave. It was 1940…" beats "In 1940, the Army picked…".
+  Reordering must not add a fact. All 24 scheduled shorts were checked on Nov. 13; five were reordered.
+- **Weather history** topics are in `queue.json` (the La Porte weather anomaly, the 1978 and 1967 blizzards, the
+  1965 Palm Sunday tornadoes): they join what the page's audience shares most with what brings in new followers.
