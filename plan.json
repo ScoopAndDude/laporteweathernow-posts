@@ -1,0 +1,214 @@
+{
+  "about": "The Daily Video for La Porte Weather Now (scripts/daily_video.py): official NWS weather, read aloud.",
+  "date": "2026-11-14",
+  "planned": "2026-11-14T06:02:00-06:00",
+  "source": "nws",
+  "forecastUpdated": "2026-11-14T11:14:46+00:00",
+  "observationTime": "2026-11-14T03:06:00-06:00",
+  "alerts": [],
+  "shortFused": [],
+  "hook": {
+    "kind": "snow",
+    "score": 86,
+    "big": "Snow",
+    "small": "Rain and snow showers likely",
+    "say": "LaPorte, ready for snow today? Rain and snow showers likely, says the Weather Service.",
+    "when": "today"
+  },
+  "hookOptions": [
+    {
+      "kind": "snow",
+      "score": 86,
+      "say": "LaPorte, ready for snow today? Rain and snow showers likely, says the Weather Service."
+    },
+    {
+      "kind": "rain",
+      "score": 66,
+      "say": "Need an umbrella today, LaPorte? There's a 60% chance of rain, mostly until 9 a.m."
+    },
+    {
+      "kind": "plain",
+      "score": 10,
+      "say": "How's today looking, LaPorte? Rain and snow showers likely, high near 45°."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "hook",
+      "label": "LAPORTE · SATURDAY, NOV. 14",
+      "big": "Snow",
+      "small": "Rain and snow showers likely",
+      "icon": "snow",
+      "tone": "cold",
+      "hookKind": "snow",
+      "say": "LaPorte, ready for snow today? Rain and snow showers likely, says the Weather Service.",
+      "ask": [
+        "LaPorte, ready for",
+        "today?"
+      ],
+      "sayParts": [
+        "LaPorte, ready for snow today?",
+        "Rain and snow showers likely, says the Weather Service."
+      ],
+      "spoken": "La Port, ready for snow today? Rain and snow showers likely, says the Weather Service.",
+      "spokenParts": [
+        "La Port, ready for snow today?",
+        "Rain and snow showers likely, says the Weather Service."
+      ],
+      "factAfter": 2.35,
+      "voiceFile": "voice/hook.wav",
+      "voiceSeconds": 5.8,
+      "start": 0.0,
+      "duration": 6.2,
+      "voiceAt": 0.04,
+      "factAt": 2.27
+    },
+    {
+      "id": "today",
+      "sun": null,
+      "kind": "period",
+      "title": "TODAY",
+      "date": "Saturday, Nov. 14",
+      "temp": 45,
+      "tempLabel": "HIGH",
+      "icon": "mix",
+      "text": "Rain and snow showers likely",
+      "sentence": "Rain and snow showers likely, a 60% chance until 9 a.m.",
+      "rain": {
+        "pct": 60,
+        "what": "rain or snow",
+        "window": "until 9 a.m."
+      },
+      "note": null,
+      "hours": [
+        {
+          "label": "6 AM",
+          "temp": 33,
+          "pop": 62
+        },
+        {
+          "label": "8 AM",
+          "temp": 37,
+          "pop": 56
+        },
+        {
+          "label": "10 AM",
+          "temp": 41,
+          "pop": 41
+        },
+        {
+          "label": "12 PM",
+          "temp": 44,
+          "pop": 30
+        },
+        {
+          "label": "2 PM",
+          "temp": 45,
+          "pop": 24
+        },
+        {
+          "label": "4 PM",
+          "temp": 44,
+          "pop": 17
+        }
+      ],
+      "say": "Today: a 60% chance of rain or snow. High 45. Tonight: low 33.",
+      "next": {
+        "name": "Tonight",
+        "temp": 33,
+        "tempLabel": "LOW"
+      },
+      "spoken": "Today: a sixty percent chance of rain or snow. High forty-five. Tonight: low thirty-three.",
+      "voiceFile": "voice/today.wav",
+      "voiceSeconds": 5.88,
+      "start": 6.2,
+      "duration": 6.28,
+      "voiceAt": 6.3
+    },
+    {
+      "id": "radar",
+      "kind": "radar",
+      "title": "RADAR",
+      "say": "Here's the radar right now.",
+      "spoken": "Here's the radar right now.",
+      "voiceFile": "voice/radar.wav",
+      "voiceSeconds": 1.98,
+      "start": 12.48,
+      "duration": 3.2,
+      "voiceAt": 12.58
+    },
+    {
+      "id": "days",
+      "kind": "days",
+      "title": "NEXT 3 DAYS",
+      "days": [
+        {
+          "name": "Sun",
+          "day": "Sunday",
+          "hi": 47,
+          "lo": 28,
+          "pop": null,
+          "icon": "cloud",
+          "text": "Mostly cloudy",
+          "short": "Mostly Cloudy",
+          "star": false
+        },
+        {
+          "name": "Mon",
+          "day": "Monday",
+          "hi": 50,
+          "lo": 30,
+          "pop": null,
+          "icon": "sun",
+          "text": "Sunny",
+          "short": "Sunny",
+          "star": false
+        },
+        {
+          "name": "Tue",
+          "day": "Tuesday",
+          "hi": 52,
+          "lo": 31,
+          "pop": null,
+          "icon": "sun",
+          "text": "Sunny",
+          "short": "Sunny",
+          "star": false
+        }
+      ],
+      "say": "Sunday: mostly cloudy, 47.",
+      "spoken": "Sunday: mostly cloudy, forty-seven.",
+      "voiceFile": "voice/days.wav",
+      "voiceSeconds": 2.73,
+      "start": 15.68,
+      "duration": 3.2,
+      "voiceAt": 15.78
+    },
+    {
+      "id": "end",
+      "kind": "end",
+      "say": "laporteweathernow.com.",
+      "spoken": "La Port Weather Now dot com.",
+      "voiceFile": "voice/end.wav",
+      "voiceSeconds": 2.02,
+      "start": 18.88,
+      "duration": 2.42,
+      "voiceAt": 18.98
+    }
+  ],
+  "caption": "LaPorte weather for Saturday, Nov. 14, from the National Weather Service:\nToday: Rain and snow showers likely, a 60% chance until 9 a.m. High 45.\nTonight: Mostly cloudy. Low 33.\nSunday: Mostly cloudy, high 47. Monday: Sunny, high 50. Tuesday: Sunny, high 52.\nToday's Daily Scoop: Early showers, then drier near 45; dry all week, highs near 56 by Wednesday\nFree forecast every morning: laporteweathernow.com\nNo hype. Just the forecast.\n#LaPorte #LaPorteIndiana #LaPorteCounty #IndianaWeather #NWIndiana",
+  "words": 44,
+  "mode": "auto",
+  "normalsStation": {
+    "id": "USC00124837",
+    "name": "LAPORTE, IN US",
+    "km": 1.0
+  },
+  "seconds": 21.3,
+  "voice": "Kokoro-82M af_heart, speed 1.1",
+  "video": "laporte-2026-11-14.mp4",
+  "cover": "cover.jpg",
+  "bytes": 9179410,
+  "rendered": "2026-11-14T06:04:22-06:00"
+}
