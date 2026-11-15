@@ -87,6 +87,23 @@ def whistle(seed=5, dur=2.4):
     return _norm(X.reverb(X.stereo(x, 0.2), rt=2.4, wet=0.55).mean(1), 0.5)
 
 
+def shots(seed=1, n=2, gap=0.85):
+    """Two gunshots heard from a distance across open ground: a sharp crack, a low thump and a long echo
+    (added Nov. 15, 2026 for the Lake Station short: "The trainmen heard two shots")."""
+    r = np.random.default_rng(90 + seed)
+    m = int((0.1 + gap * n + 0.4) * SR)
+    x = np.zeros(m, np.float32)
+    for i in range(n):
+        t0 = int((0.05 + i * gap) * SR)
+        k = int(0.3 * SR)
+        tt = np.arange(k) / SR
+        crack = X.bp(r.normal(0, 1, k).astype(np.float32), 700, 4500) * np.exp(-tt / 0.012)
+        thump = np.sin(2 * np.pi * 62 * tt) * np.exp(-tt / 0.06)
+        x[t0:t0 + k] += crack * 1.0 + thump * 0.7
+    x = X.lp(x, 3200)                                                    # distance takes the top off
+    return _norm(X.reverb(X.stereo(_norm(x), -0.15), rt=2.8, wet=0.7).mean(1), 0.7)
+
+
 def rumble(dur, seed=6, clack=True):
     """A freight train rolling past: low rumble with the clack of wheels over rail joints."""
     r = np.random.default_rng(seed)
@@ -137,6 +154,8 @@ def accent(kind, seed=1):
         return foghorn(seed)
     if kind == "whistle":
         return whistle(seed)
+    if kind == "shots":
+        return shots(seed)
     if kind == "keys":
         return keys(seed)
     if kind == "thunder":

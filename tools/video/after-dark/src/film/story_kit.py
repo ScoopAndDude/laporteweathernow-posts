@@ -1518,3 +1518,5 @@ import story_kit6  # noqa: E402,F401  1865 funeral train props: funeraltrain, ar
 import story_kit7  # noqa: E402,F401  Beatty hospital props: hospital, prisonfence, bowling, excavator, crane
 import story_kit8  # noqa: E402,F401  Crisman stones and Liverpool props: foundstones, dirt, backhoe, routesign, highway, farmhouse, bank, confluence, moonpath, stakes, timberframe, scow, riders, wagon, loghouse, townfire
 import story_kit9  # noqa: E402,F401  Wanatah Bank props: bankblock, storefront, vault, tellercage, barwindow, desk, hitchrail
+import story_kit10  # noqa: E402,F401  Wanatah petrified-woman props: bogpit, darkwater, railfence, homestead, lane, walker, pitmen, handpress, typecase, rolltop, hanglamp, coach, stationlamp
+import story_kit11  # noqa: E402,F401  Lake Station props: trackhouse, rocker, boxstove, cane, lamptable, freightloco, boxcars, lanternman, poles, switchlamp

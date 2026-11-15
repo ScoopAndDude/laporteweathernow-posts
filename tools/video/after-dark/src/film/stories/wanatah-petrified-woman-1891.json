@@ -1,0 +1,543 @@
+{
+ "slug": "wanatah-petrified-woman-1891",
+ "title": "Wanatah, Indiana: the petrified woman (an 1891 newspaper hoax)",
+ "series": "LAPORTE AFTER DARK",
+ "music": {
+  "seed": 223,
+  "prog": 6
+ },
+ "say": [
+  [
+   "\\bWanatah\\b",
+   "Wanna-tah"
+  ],
+  [
+   "\\bWanatah's\\b",
+   "Wanna-tah's"
+  ]
+ ],
+ "sources": [
+  {
+   "what": "From the Valparaiso Star, May 29, 1891 (edited by Norm Grieger): 'Mary Ann Grier, who lived two miles south of Wanatah, abruptly disappeared about 1851. Forty years later (1891) her body was recovered from a long abandoned bog-iron pit.' 'Mary Ann had slipped out of the house to meet him saying she was going to the neighbors.' Found 'at 8 o'clock the morning of May 23, 1891'; 'Under the blanket of iron and lime saturated water, she had become the petrified body'. Then: 'The Petrified woman of Wanatah is a very interesting and believable story, but it is just that -- a story.' A well-written hoax by Harry Darling, a Valparaiso newspaperman. 'It is said that a lot of people came to Wanatah on the train to view the body of the of the Petrified Woman and were disappointed when told there was no Petrified Woman, that it was a hoax.' 'this was a big story for the day.'",
+   "who": "Wanatah Historical Society, 'The Petrified Woman of Wanatah'",
+   "url": "http://www.wanatah.org/petrified-woman-of-wanatah.php"
+  },
+  {
+   "what": "'In 1891 a local newsman, Harry Darling, concocted a story about \"The Petrified Woman\" that had been missing for 40 years and then found in an iron rich bog in Wanatah. The story was a hoax but made quite a splash for a time.'",
+   "who": "Indiana's Lincoln Highway Byway, turn-by-turn guide to the 1928 route (east), Feb. 2024, Wanatah entry",
+   "url": "https://indianalincolnhighway.org/wp-content/uploads/2024/02/IN-LH-TBT-1928-East-Final-2-11-2024.pdf"
+  },
+  {
+   "what": "Reprint (OCR): '...her father's home, two miles south of this place, nearly forty years ... Today her body was recovered in an abandoned bog iron ore pit ... without one vestage of change ...'",
+   "who": "The Montgomery Vidette (Troy, N.C.), June 11, 1891, p. 1, via DigitalNC",
+   "url": "https://newspapers.digitalnc.org/lccn/sn91068781/1891-06-11/ed-1/seq-1/ocr/"
+  },
+  {
+   "what": "Reprint (from the independent fact-check): she 'disappeared from her father's home two miles south of [Wanatah], Ind., nearly 40 years ago'; 'her body was recovered in an abandoned bog iron-ore pit'; mentions 'the afternoon of her disappearance'.",
+   "who": "Watauga Democrat (Boone, N.C.), June 25, 1891, p. 1, via DigitalNC",
+   "url": "https://newspapers.digitalnc.org/lccn/sn82007642/1891-06-25/ed-1/seq-1/ocr"
+  },
+  {
+   "what": "A transcription of another reprint, headed 'NOT ELOPED, BUT DEAD', says 'early in the evening' she left saying she was going to a neighbor's and never reached it, and puts the home 'two miles south of Michigan City'. It disagrees with the other copies on the place and the Watauga Democrat's 'afternoon', so the short uses none of its details.",
+   "who": "Marion Daily Star (Marion, Ohio), June 29, 1891, as transcribed on the Genealogy.com Greirson forum (page would not load for the fact-check)",
+   "url": "https://www.genealogy.com/forum/surnames/topics/greirson/22/"
+  }
+ ],
+ "beats": [
+  {
+   "text": "Missing 40 years. Found turned to stone. That's what a newspaper said happened near Wanatah, in 1891.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "night",
+    "moon": [
+     850,
+     660,
+     34
+    ],
+    "ground": {
+     "type": "land",
+     "y": 1000
+    },
+    "fog": 0.16,
+    "amount": 0.05,
+    "move": "in",
+    "props": [
+     {
+      "p": "tree",
+      "x": 110,
+      "y": 1004,
+      "s": 0.55,
+      "bare": true,
+      "seed": 2
+     },
+     {
+      "p": "tree",
+      "x": 950,
+      "y": 1002,
+      "s": 0.42,
+      "bare": true,
+      "seed": 5
+     },
+     {
+      "p": "haze",
+      "x": 540,
+      "y": 1000,
+      "depth": 200,
+      "color": "#3a4450",
+      "a": 0.4
+     },
+     {
+      "p": "reeds",
+      "x": 130,
+      "y": 1330,
+      "s": 0.8
+     },
+     {
+      "p": "reeds",
+      "x": 950,
+      "y": 1335,
+      "s": 0.7
+     },
+     {
+      "p": "bogpit",
+      "x": 540,
+      "y": 1390,
+      "s": 1.25,
+      "glint": 1.0,
+      "rust": 0.6
+     }
+    ]
+   },
+   "label": "WANATAH, INDIANA",
+   "title": {
+    "text": "THE PETRIFIED WOMAN",
+    "at": "stone",
+    "size": 70
+   },
+   "sfx": [
+    {
+     "kind": "crow",
+     "at": "stone",
+     "gain": 0.35
+    }
+   ],
+   "credit": "Valparaiso Star, May 29, 1891, via Wanatah Historical Society"
+  },
+  {
+   "text": "The story said a young woman vanished from her father's home, two miles south of Wanatah, around 1851.",
+   "pause": 0.8,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "dusk",
+    "ground": {
+     "type": "land",
+     "y": 1150
+    },
+    "fog": 0.06,
+    "amount": 0.05,
+    "move": "left",
+    "props": [
+     {
+      "p": "tree",
+      "x": 60,
+      "y": 1154,
+      "s": 0.9,
+      "seed": 3
+     },
+     {
+      "p": "homestead",
+      "x": 290,
+      "y": 1152,
+      "s": 1.0,
+      "lit": 1
+     },
+     {
+      "p": "railfence",
+      "x": 290,
+      "y": 1215,
+      "s": 0.8,
+      "w": 430
+     },
+     {
+      "p": "lane",
+      "x": 600,
+      "y": 1420,
+      "x2": 800,
+      "w": 190,
+      "color": "#221d17",
+      "a": 0.85,
+      "rise": 270
+     },
+     {
+      "p": "homestead",
+      "x": 1000,
+      "y": 1147,
+      "s": 0.13,
+      "lit": 1,
+      "flip": true
+     },
+     {
+      "p": "walker",
+      "x": 800,
+      "y": 1152,
+      "s": 0.78
+     }
+    ]
+   },
+   "typed": [
+    {
+     "text": "AROUND 1851",
+     "at": "1851",
+     "y": 545,
+     "size": 60
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "heartbeat",
+     "at": "vanished",
+     "gain": 0.4
+    }
+   ],
+   "credit": "The 1891 story: Wanatah Historical Society and 1891 reprints"
+  },
+  {
+   "text": "Forty years later, it said, she was found in an abandoned bog-iron pit.",
+   "pause": 0.9,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "dawn",
+    "ground": {
+     "type": "land",
+     "y": 900
+    },
+    "fog": 0.14,
+    "amount": 0.05,
+    "move": "in",
+    "props": [
+     {
+      "p": "tree",
+      "x": 80,
+      "y": 904,
+      "s": 0.5,
+      "bare": true,
+      "seed": 8
+     },
+     {
+      "p": "tree",
+      "x": 1000,
+      "y": 900,
+      "s": 0.38,
+      "bare": true,
+      "seed": 4
+     },
+     {
+      "p": "haze",
+      "x": 540,
+      "y": 900,
+      "depth": 260,
+      "color": "#7a6a70",
+      "a": 0.55
+     },
+     {
+      "p": "bogpit",
+      "x": 540,
+      "y": 1385,
+      "s": 1.5,
+      "glint": 0.5,
+      "rust": 0.8
+     },
+     {
+      "p": "pitmen",
+      "x": 540,
+      "y": 1066,
+      "s": 1.12,
+      "n": 4,
+      "spread": 250,
+      "seed": 2,
+      "poles": false
+     }
+    ]
+   },
+   "sfx": [
+    {
+     "kind": "heartbeat",
+     "at": "found",
+     "gain": 0.45
+    }
+   ],
+   "credit": "The 1891 story: Wanatah Historical Society and 1891 reprints"
+  },
+  {
+   "text": "The iron in the water had turned her to stone.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "dawn",
+    "ground": {
+     "type": "land",
+     "y": 540
+    },
+    "fog": 0.08,
+    "amount": 0.04,
+    "move": "in",
+    "props": [
+     {
+      "p": "tree",
+      "x": 180,
+      "y": 544,
+      "s": 0.45,
+      "bare": true,
+      "seed": 6
+     },
+     {
+      "p": "tree",
+      "x": 900,
+      "y": 540,
+      "s": 0.35,
+      "bare": true,
+      "seed": 12
+     },
+     {
+      "p": "haze",
+      "x": 540,
+      "y": 540,
+      "depth": 160,
+      "color": "#7a6a70",
+      "a": 0.5
+     },
+     {
+      "p": "darkwater",
+      "x": 540,
+      "y": 1560,
+      "s": 1.0,
+      "h": 690,
+      "seed": 3,
+      "rust": 1.0
+     }
+    ]
+   },
+   "typed": [
+    {
+     "text": "TURNED TO STONE",
+     "at": "stone",
+     "y": 545,
+     "size": 66
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "music_box",
+     "at": "iron",
+     "gain": 0.25
+    }
+   ],
+   "credit": "The 1891 story, via Wanatah Historical Society"
+  },
+  {
+   "text": "But it was a hoax. There was no petrified woman.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "tab_room",
+    "sky": "room",
+    "wall": "#15110d",
+    "ground": {
+     "type": "floor",
+     "y": 1250
+    },
+    "fog": 0.05,
+    "amount": 0.04,
+    "move": "in",
+    "props": [
+     {
+      "p": "hanglamp",
+      "x": 800,
+      "y": 820,
+      "s": 1.0
+     },
+     {
+      "p": "typecase",
+      "x": 200,
+      "y": 1252,
+      "s": 0.9
+     },
+     {
+      "p": "handpress",
+      "x": 640,
+      "y": 1260,
+      "s": 1.0
+     }
+    ]
+   },
+   "typed": [
+    {
+     "text": "A HOAX",
+     "at": "hoax",
+     "y": 545,
+     "size": 80
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "whoosh",
+     "at": "But",
+     "gain": 0.45
+    }
+   ],
+   "credit": "Wanatah Historical Society; Indiana Lincoln Highway Byway"
+  },
+  {
+   "text": "A local newsman named Harry Darling had made the whole thing up.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "tab_room",
+    "sky": "room",
+    "wall": "#120e0b",
+    "ground": {
+     "type": "floor",
+     "y": 1250
+    },
+    "fog": 0.04,
+    "amount": 0.04,
+    "move": "in",
+    "props": [
+     {
+      "p": "window",
+      "x": 880,
+      "y": 960,
+      "s": 0.85,
+      "moon": false
+     },
+     {
+      "p": "rolltop",
+      "x": 450,
+      "y": 1252,
+      "s": 1.05
+     }
+    ]
+   },
+   "label": "A LOCAL NEWSMAN",
+   "label2": {
+    "text": "HARRY DARLING, 1891",
+    "at": "Harry Darling"
+   },
+   "credit": "Wanatah Historical Society; Indiana Lincoln Highway Byway"
+  },
+  {
+   "text": "It still caused a stir. Wanatah's historical society tells of people coming by train to see her, and being told there was no one to see.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "tab_rail",
+    "sky": "dusk",
+    "ground": {
+     "type": "land",
+     "y": 1170
+    },
+    "fog": 0.08,
+    "amount": 0.05,
+    "move": "left",
+    "props": [
+     {
+      "p": "tree",
+      "x": 60,
+      "y": 1090,
+      "s": 0.6,
+      "seed": 1
+     },
+     {
+      "p": "coach",
+      "x": 400,
+      "y": 1172,
+      "s": 0.95,
+      "lit": 0.85
+     },
+     {
+      "p": "stationlamp",
+      "x": 975,
+      "y": 1224,
+      "s": 1.0
+     },
+     {
+      "p": "people",
+      "x": 860,
+      "y": 1226,
+      "s": 0.85,
+      "n": 5,
+      "spread": 110,
+      "seed": 4
+     }
+    ]
+   },
+   "sfx": [
+    {
+     "kind": "whistle",
+     "at": "train",
+     "gain": 0.35
+    }
+   ],
+   "credit": "Wanatah Historical Society; Indiana Lincoln Highway Byway"
+  },
+  {
+   "text": "Comment your town, and it could be next.",
+   "end": true,
+   "end_card": {
+    "q": "COMMENT YOUR TOWN",
+    "q2": "IT COULD BE NEXT",
+    "bubble": "Your town, your state",
+    "pill": "The Petrified Woman, 1891",
+    "scene": {
+     "kind": "tab_land",
+     "sky": "night",
+     "ground": {
+      "type": "land",
+      "y": 1010
+     },
+     "fog": 0.28,
+     "amount": 0.04,
+     "move": "still",
+     "props": [
+      {
+       "p": "tree",
+       "x": 880,
+       "y": 1014,
+       "s": 0.62,
+       "bare": true,
+       "seed": 11
+      },
+      {
+       "p": "haze",
+       "x": 540,
+       "y": 1010,
+       "depth": 200,
+       "color": "#3a4450",
+       "a": 0.45
+      },
+      {
+       "p": "reeds",
+       "x": 160,
+       "y": 1300,
+       "s": 0.8
+      },
+      {
+       "p": "reeds",
+       "x": 930,
+       "y": 1305,
+       "s": 0.8
+      },
+      {
+       "p": "bogpit",
+       "x": 540,
+       "y": 1380,
+       "s": 1.1,
+       "glint": 0.7,
+       "seed": 9
+      }
+     ]
+    }
+   },
+   "credit": "All pictures drawn"
+  }
+ ],
+ "factcheck": "Independent check Nov. 15, 2026, in two passes. The Wanatah Historical Society page loops between https and http and would not load for the checker, so it worked from the Lincoln Highway Byway guide, the Society's history index and two 1891 reprints it found (Watauga Democrat, June 25; Montgomery Vidette, June 11). Changes made: line 2 had 'left her family's farm one evening, saying she was going to a neighbor's; she never got there' (the Watauga Democrat says she was berry-picking 'the afternoon of her disappearance', another copy says early evening): now 'vanished from her father's home, two miles south of Wanatah, around 1851', which the reprints and the Society give. Line 3 'men found her' became 'she was found'. Line 5 'none of it was true' went further than the sources: now 'But it was a hoax.' Line 6 'A Valparaiso newsman' rests only on the Society page: now 'A local newsman named Harry Darling', the Lincoln Highway guide's words (on screen 'A LOCAL NEWSMAN'). Line 7: the train story rests on one source, the Society's 'It is said that a lot of people came to Wanatah on the train...': the narration says the Society 'tells of' it. The men at the pit lost their invented poles. The Marion Daily Star credit came off the screen. Pronunciation of Wanatah unconfirmed."
+}

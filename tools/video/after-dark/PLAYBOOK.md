@@ -39,6 +39,13 @@ Scary comes from the story, the pacing and the sound, never from gore. All of Sc
 - Sound: "sfx" accents at the words that matter: heartbeat under the build, knock, creak, crow, thunder with "flash", music_box, whoosh at the turn, static (radio), dance (distant 1930s band, for a ballroom story).
 - End on the unsettling line before the call to comment (for legends: "And some say she's still out there."), only if sources report it.
 
+## Creepy first (Scoop, Nov. 15, 2026: "nothing really spooky about the bank lol", "laporte after dark is meant to be creepy spooky history")
+
+A requested town gets a creepy story: an unsolved death, a disappearance, a hoax that fooled people, a legend, a
+disaster, a strange find. A plain history story (a bank failure, a lost county seat) only if nothing creepy can be
+sourced, and then say so in the message to Scoop. The Wanatah bank and Lake Station's Liverpool shorts were followed
+on Nov. 15 by the petrified-woman hoax (Wanatah) and the 1888 doorway murder (Lake Station).
+
 ## Illustrate the story (Scoop, Nov. 12, 2026: "we need to illustrate the stories", "dont keep using the same ones", "we can mek new backgronds")
 
 Each beat's picture should show what the narrator is describing at that moment, not a mood backdrop, and the same
@@ -69,6 +76,17 @@ few backdrops (bare woods, the generic brick house, the generic courthouse) shou
   vault door, no maker's name), tellercage, barwindow (moonlight on the floor: drop= px from the window's foot down
   to the floor line), desk (an oil lamp, unreadable papers, inkwell and pen, a chair) and hitchrail. When the
   sources don't describe a building or its sign, draw a generic one and put no words on it.
+- `src/film/story_kit10.py` (Nov. 15, 2026, for the Wanatah petrified-woman short) adds props: bogpit (an abandoned
+  bog-iron pit with layered walls and rust-dark water; it must sit wholly below the horizon line), darkwater (close on
+  the pit's water from its edge), railfence (zigzag split rail), homestead (an 1850s frame farmhouse), lane (a dirt
+  lane: x2= and rise= px, because only a prop's "y" is lifted 130 px, never its other coordinates), walker (one
+  small woman walking away), pitmen (men at a pit's edge; poles=False unless sources mention poles), handpress,
+  typecase, rolltop (an editor's desk), hanglamp, coach (an 1890s passenger coach) and stationlamp. Never draw
+  figures upside down or dangling, not even as reflections: they read as hangings.
+- `src/film/story_kit11.py` (Nov. 15, 2026, for the Lake Station doorway-murder short) adds props: trackhouse (a
+  generic gable-front farmhouse; door="open" with glow=), rocker, boxstove, cane, lamptable, freightloco (an 1880s
+  4-4-0 with a headlamp beam; x is the pilot, flip=True faces left), boxcars, lanternman, poles (telegraph poles
+  receding: x2=, rise=) and switchlamp. `story_sound.py` has a new sfx kind, "shots" (two distant gunshots).
 - `src/film/story_kit3.py` builds a picture from props (ships, a plane, buildings, rooms, trains, trees, people...):
   scene kinds `tab_lake`, `tab_land`, `tab_town`, `tab_room`, `tab_rail` take a sky, a ground and a list of props.
   `python3 story_kit3.py sheet` draws every prop (shorts/out/_props.jpg). Use these first; add a prop when one is
@@ -142,6 +160,16 @@ keep working.
   seat, check for a temporary seat before it (Lake Court House came before Liverpool); when only one historian
   reports an event (Liverpool's fire, Bowers 1929), say "one historian wrote"; when sources disagree about what a
   building was made of (Liverpool's courthouse: frame or log), draw it as a silhouette.
+
+- Wanatah petrified woman (Nov. 2026): a hoax is told as what the story said ("The story said...", "it said"),
+  then the reveal. "None of it was true" went further than the sources ("But it was a hoax."); "a Valparaiso
+  newsman" rested on one page that wouldn't load for the checker ("a local newsman", the Lincoln Highway guide's
+  words). The Wanatah Historical Society page loops between https and http and can't be fetched: read it through
+  search-result text, and find 1891 reprints on DigitalNC (newspapers.digitalnc.org) and Chronicling America. Copies
+  of a reprinted story can disagree (afternoon or evening; Wanatah or Michigan City): leave the detail out.
+- Lake Station doorway murder (Nov. 2026): only one newspaper covered it (the Chesterton Tribune, 1888, plus its own
+  later mentions). Scoop chose to make it anyway, with the paper credited in the narration and in every beat's
+  credit line. That was his call for that story: the two-source rule still stands, so ask him before doing it again.
 
 ## 3. Write the script
 
