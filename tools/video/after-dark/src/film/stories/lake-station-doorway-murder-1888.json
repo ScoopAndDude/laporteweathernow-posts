@@ -1,0 +1,576 @@
+{
+ "slug": "lake-station-doorway-murder-1888",
+ "title": "Lake Station, Indiana: murdered in his own doorway (1888)",
+ "series": "LAPORTE AFTER DARK",
+ "music": {
+  "seed": 231,
+  "prog": 6
+ },
+ "say": [],
+ "sources": [
+  {
+   "what": "'MURDERED IN HIS OWN DOORWAY. George Wolf Shot Sunday Night at His Home Near Lake Station.' 'Last Sunday night one of the most startling tragedies happened at Lake Station that ever occurred in this part of the state. George Wolf an old man 72 years of age, was shot and killed in his home, and the murder was committed within a stone's throw of help.' 'Wolf lives a half miles west of Lake Station on the north side of the Michigan Central railroad, and the house is about 15 rods from the track. About 7:30 Sunday evening, a Michigan Central freight train was doing some switching in front of the house. The trainmen heard two shots fired in the direction of Wolf's house'; brakeman H. J. Klasmer, August Colar and the fireman went to the house. 'no weapon could be found'; 'the murder could not have been committed for the purpose of robbery'; 'The Coroner of Lake County held an inquest Monday, and rendered by a verdict of murder, probably caused by tramps.' 'The affair is shrouded in mystery.' Mrs. Wolf 'was in Hegeswich, taking care of her grand-daughter, and the old man was alone in the house.' 'The old man was feeble and crippled up, but managed to do some work.' 'He was also partially deaf.' (Sept. 6, 1888 was a Thursday, so 'last Sunday' was Sept. 2.)",
+   "who": "The Tribune (Chesterton, Ind.), September 6, 1888, vol. 5 no. 21, p. 1, transcribed by the Porter County INGenWeb",
+   "url": "https://www.inportercounty.org/Data/Obits/Wolf6559.html"
+  },
+  {
+   "what": "'Mrs. Wolf, wife of Geo. Wolf, who was mysteriously murdered at Lake last fall, died at her home in Lake Station last Friday. Since the death of her husband, she had been failing.'",
+   "who": "The Tribune (Chesterton, Ind.), May 23, 1889, transcribed by the Porter County INGenWeb",
+   "url": "https://www.inportercounty.org/Data/Obits/Wolf6572.html"
+  },
+  {
+   "what": "John Wolf of Hammond, 'the son of old man Wolf, who was found dead, murdered some three years ago'",
+   "who": "The Tribune (Chesterton, Ind.), September 1, 1893, transcribed by the Porter County INGenWeb",
+   "url": "https://www.inportercounty.org/Data/Obits/Wolf6563.html"
+  }
+ ],
+ "sourcing_note": "Only one newspaper is known to have covered the murder (the Chesterton Tribune, Sept. 6, 1888, plus its own later mentions in 1889 and 1893). The Crown Point Register has a microfilm gap from Aug. 20, 1888 to Jan. 3, 1889 and the Lake County Star is on microfilm only. Scoop chose on Nov. 15, 2026 to make it anyway, crediting the paper in the narration and on screen.",
+ "beats": [
+  {
+   "text": "Two shots, a stone's throw from help. Lake Station, 1888, as a Chesterton paper reported it.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_rail",
+    "sky": "night",
+    "ground": {
+     "type": "land",
+     "y": 1110
+    },
+    "fog": 0.18,
+    "amount": 0.05,
+    "move": "in",
+    "props": [
+     {
+      "p": "tree",
+      "x": 960,
+      "y": 1050,
+      "s": 0.5,
+      "bare": true,
+      "seed": 3
+     },
+     {
+      "p": "trackhouse",
+      "x": 720,
+      "y": 1060,
+      "s": 0.62,
+      "lit": 0.6,
+      "door": "shut"
+     },
+     {
+      "p": "haze",
+      "x": 540,
+      "y": 1110,
+      "depth": 200,
+      "color": "#3a4450",
+      "a": 0.35
+     },
+     {
+      "p": "tracks",
+      "x": 540,
+      "y": 1240,
+      "s": 1.0
+     },
+     {
+      "p": "boxcars",
+      "x": 250,
+      "y": 1240,
+      "s": 0.85,
+      "n": 2,
+      "seed": 4
+     },
+     {
+      "p": "lanternman",
+      "x": 120,
+      "y": 1012,
+      "s": 0.75
+     },
+     {
+      "p": "lanternman",
+      "x": 620,
+      "y": 1248,
+      "s": 0.8,
+      "raise_": false
+     }
+    ]
+   },
+   "label": "LAKE STATION, INDIANA",
+   "title": {
+    "text": "THE DOORWAY MURDER",
+    "at": "help",
+    "size": 74
+   },
+   "sfx": [
+    {
+     "kind": "shots",
+     "at": "shots",
+     "gain": 0.55
+    }
+   ],
+   "credit": "The Tribune, Chesterton, September 6, 1888"
+  },
+  {
+   "text": "George Wolf was 72, feeble, partly deaf, and home alone. His wife was away caring for a granddaughter, the paper said.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_room",
+    "sky": "room",
+    "wall": "#14100c",
+    "ground": {
+     "type": "floor",
+     "y": 1240
+    },
+    "fog": 0.04,
+    "amount": 0.04,
+    "move": "in",
+    "props": [
+     {
+      "p": "window",
+      "x": 830,
+      "y": 930,
+      "s": 0.85,
+      "moon": false
+     },
+     {
+      "p": "boxstove",
+      "x": 250,
+      "y": 1244,
+      "s": 1.0,
+      "glow": 0.7
+     },
+     {
+      "p": "lamptable",
+      "x": 820,
+      "y": 1246,
+      "s": 1.0
+     },
+     {
+      "p": "rocker",
+      "x": 540,
+      "y": 1250,
+      "s": 1.05,
+      "color": "#1e140c"
+     },
+     {
+      "p": "cane",
+      "x": 630,
+      "y": 1250,
+      "s": 1.0,
+      "lean": -30
+     }
+    ]
+   },
+   "sfx": [
+    {
+     "kind": "creak",
+     "at": "alone",
+     "gain": 0.3
+    }
+   ],
+   "credit": "The Tribune, Chesterton, September 6, 1888"
+  },
+  {
+   "text": "The paper put his house west of town, about 250 feet north of the Michigan Central tracks.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_rail",
+    "sky": "night",
+    "ground": {
+     "type": "land",
+     "y": 1100
+    },
+    "fog": 0.14,
+    "amount": 0.05,
+    "move": "left",
+    "props": [
+     {
+      "p": "tree",
+      "x": 110,
+      "y": 1046,
+      "s": 0.45,
+      "seed": 4
+     },
+     {
+      "p": "trackhouse",
+      "x": 300,
+      "y": 1052,
+      "s": 0.42,
+      "lit": 0.7
+     },
+     {
+      "p": "storefront",
+      "x": 905,
+      "y": 1046,
+      "s": 0.14,
+      "storeys": 2,
+      "lit": 0.8,
+      "seed": 1
+     },
+     {
+      "p": "depot",
+      "x": 990,
+      "y": 1046,
+      "s": 0.2,
+      "lit": true
+     },
+     {
+      "p": "storefront",
+      "x": 1060,
+      "y": 1046,
+      "s": 0.12,
+      "storeys": 1,
+      "lit": 0.8,
+      "seed": 2
+     },
+     {
+      "p": "haze",
+      "x": 540,
+      "y": 1100,
+      "depth": 200,
+      "color": "#3a4450",
+      "a": 0.35
+     },
+     {
+      "p": "tracks",
+      "x": 540,
+      "y": 1200,
+      "s": 1.0
+     },
+     {
+      "p": "poles",
+      "x": 30,
+      "y": 1236,
+      "x2": 1060,
+      "rise": 120,
+      "n": 7,
+      "h": 340
+     }
+    ]
+   },
+   "typed": [
+    {
+     "text": "WEST OF LAKE STATION",
+     "at": "west",
+     "y": 545,
+     "size": 56
+    }
+   ],
+   "credit": "The Tribune, Chesterton, September 6, 1888"
+  },
+  {
+   "text": "About 7:30 that Sunday evening, a freight train was switching cars in front of the house. The trainmen heard two shots.",
+   "pause": 0.9,
+   "scene": {
+    "kind": "tab_rail",
+    "sky": "night",
+    "ground": {
+     "type": "land",
+     "y": 1090
+    },
+    "fog": 0.12,
+    "amount": 0.05,
+    "move": "right",
+    "props": [
+     {
+      "p": "tree",
+      "x": 1010,
+      "y": 1030,
+      "s": 0.5,
+      "seed": 6
+     },
+     {
+      "p": "trackhouse",
+      "x": 770,
+      "y": 1010,
+      "s": 0.72,
+      "lit": 1.0,
+      "door": "open",
+      "glow": 0.4
+     },
+     {
+      "p": "haze",
+      "x": 540,
+      "y": 1090,
+      "depth": 180,
+      "color": "#3a4450",
+      "a": 0.3
+     },
+     {
+      "p": "tracks",
+      "x": 540,
+      "y": 1236,
+      "s": 1.0
+     },
+     {
+      "p": "freightloco",
+      "x": 470,
+      "y": 1236,
+      "s": 0.9,
+      "beam": 1.0
+     },
+     {
+      "p": "lanternman",
+      "x": 650,
+      "y": 1244,
+      "s": 0.85
+     }
+    ]
+   },
+   "sfx": [
+    {
+     "kind": "whistle",
+     "at": "freight",
+     "gain": 0.3
+    },
+    {
+     "kind": "shots",
+     "at": "shots",
+     "gain": 0.6
+    }
+   ],
+   "credit": "The Tribune, Chesterton, September 6, 1888"
+  },
+  {
+   "text": "Railroad men went to the house. George Wolf had been murdered in his own doorway.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "night",
+    "ground": {
+     "type": "land",
+     "y": 1080
+    },
+    "fog": 0.1,
+    "amount": 0.05,
+    "move": "in",
+    "props": [
+     {
+      "p": "tree",
+      "x": 980,
+      "y": 1060,
+      "s": 0.6,
+      "seed": 2
+     },
+     {
+      "p": "haze",
+      "x": 540,
+      "y": 1080,
+      "depth": 160,
+      "color": "#3a4450",
+      "a": 0.3
+     },
+     {
+      "p": "trackhouse",
+      "x": 540,
+      "y": 1210,
+      "s": 1.3,
+      "lit": 0.3,
+      "door": "open",
+      "glow": 0.6
+     },
+     {
+      "p": "lanternman",
+      "x": 170,
+      "y": 1300,
+      "s": 1.1
+     },
+     {
+      "p": "lanternman",
+      "x": 890,
+      "y": 1306,
+      "s": 1.05,
+      "raise_": false
+     },
+     {
+      "p": "pitmen",
+      "x": 300,
+      "y": 1296,
+      "s": 1.05,
+      "n": 1,
+      "spread": 0,
+      "poles": false,
+      "seed": 7
+     }
+    ]
+   },
+   "card": {
+    "kind": "headline",
+    "paper": "THE TRIBUNE (CHESTERTON)",
+    "date": "SEPTEMBER 6, 1888",
+    "lines": [
+     "MURDERED IN HIS",
+     "OWN DOORWAY"
+    ],
+    "body": [
+     "George Wolf Shot Sunday Night at His",
+     "Home Near Lake Station."
+    ],
+    "at": "murdered",
+    "y": 600
+   },
+   "sfx": [
+    {
+     "kind": "heartbeat",
+     "at": "house",
+     "gain": 0.4
+    }
+   ],
+   "credit": "The Tribune, Chesterton, September 6, 1888"
+  },
+  {
+   "text": "No weapon was found. The coroner's verdict: murder, probably by tramps.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_rail",
+    "sky": "night",
+    "ground": {
+     "type": "land",
+     "y": 980
+    },
+    "fog": 0.3,
+    "amount": 0.05,
+    "move": "in",
+    "props": [
+     {
+      "p": "haze",
+      "x": 540,
+      "y": 980,
+      "depth": 220,
+      "color": "#3a4450",
+      "a": 0.45
+     },
+     {
+      "p": "trackview",
+      "x": 540,
+      "y": 980,
+      "s": 1.0
+     },
+     {
+      "p": "switchlamp",
+      "x": 800,
+      "y": 1130,
+      "s": 0.9,
+      "color": "red"
+     }
+    ]
+   },
+   "typed": [
+    {
+     "text": "NO WEAPON FOUND",
+     "at": "weapon",
+     "y": 545,
+     "size": 62
+    },
+    {
+     "text": "\"PROBABLY CAUSED BY TRAMPS\"",
+     "at": "tramps",
+     "y": 640,
+     "size": 42
+    }
+   ],
+   "credit": "The Tribune, Chesterton, September 6, 1888"
+  },
+  {
+   "text": "The paper called it shrouded in mystery. Months later, when his widow died, it still called it a mysterious murder.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "night",
+    "ground": {
+     "type": "land",
+     "y": 1060
+    },
+    "fog": 0.3,
+    "amount": 0.04,
+    "move": "in",
+    "props": [
+     {
+      "p": "tree",
+      "x": 880,
+      "y": 1090,
+      "s": 0.8,
+      "seed": 5
+     },
+     {
+      "p": "haze",
+      "x": 540,
+      "y": 1060,
+      "depth": 180,
+      "color": "#3a4450",
+      "a": 0.35
+     },
+     {
+      "p": "trackhouse",
+      "x": 520,
+      "y": 1150,
+      "s": 1.0,
+      "lit": 0.0,
+      "door": "shut"
+     }
+    ]
+   },
+   "label": "MAY 1889",
+   "typed": [
+    {
+     "text": "\"MYSTERIOUSLY MURDERED\"",
+     "at": "mysterious",
+     "y": 545,
+     "size": 50
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "music_box",
+     "at": "widow",
+     "gain": 0.22
+    }
+   ],
+   "credit": "The Tribune, Chesterton, Sept. 6, 1888, and May 23, 1889"
+  },
+  {
+   "text": "Comment your town, and it could be next.",
+   "end": true,
+   "end_card": {
+    "q": "COMMENT YOUR TOWN",
+    "q2": "IT COULD BE NEXT",
+    "bubble": "Your town, your state",
+    "pill": "George Wolf, Lake Station, 1888",
+    "scene": {
+     "kind": "tab_rail",
+     "sky": "night",
+     "ground": {
+      "type": "land",
+      "y": 980
+     },
+     "fog": 0.35,
+     "amount": 0.04,
+     "move": "still",
+     "props": [
+      {
+       "p": "haze",
+       "x": 540,
+       "y": 980,
+       "depth": 220,
+       "color": "#3a4450",
+       "a": 0.45
+      },
+      {
+       "p": "trackview",
+       "x": 540,
+       "y": 980,
+       "s": 1.0
+      },
+      {
+       "p": "switchlamp",
+       "x": 300,
+       "y": 1130,
+       "s": 0.8,
+       "color": "red"
+      }
+     ]
+    }
+   },
+   "credit": "All pictures drawn"
+  }
+ ],
+ "factcheck": "Independent check Nov. 15, 2026: every line rests on one source, The Tribune (Chesterton), Sept. 6, 1888, with its own mentions on May 23, 1889 and Sept. 1, 1893 (Porter County INGenWeb transcriptions by Steven R. Shook); no second account found online, and nothing contradicts it. Scoop chose to make it with the paper credited. Fixes: the transcription reads 'a half miles west of Lake Station', a misprint that could mean half a mile or a mile and a half, so line 3 and the on-screen text now say only 'west of town' and 'WEST OF LAKE STATION' (15 rods = 247.5 ft, about 250 feet, north side of the Michigan Central); line 6 'No gun' became 'No weapon', the paper's word; a third railroad man was added to picture 5 (the paper names three). The Sunday is Sept. 2, 1888 by date arithmetic (the paper says 'last Sunday' in its Thursday, Sept. 6 issue); the short doesn't print the date."
+}
