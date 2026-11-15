@@ -1,0 +1,444 @@
+{
+ "slug": "wanatah-bank-robbery-1901",
+ "title": "Wanatah, Indiana: the robbery that failed, and the bank that closed anyway (1901)",
+ "series": "LAPORTE AFTER DARK",
+ "music": {
+  "seed": 211,
+  "prog": 6
+ },
+ "say": [
+  [
+   "\\$91,000",
+   "ninety-one thousand dollars"
+  ],
+  [
+   "\\$40,000",
+   "forty thousand dollars"
+  ],
+  [
+   "\\bConitz\\b",
+   "Koh-nits"
+  ],
+  [
+   "\\bWanatah\\b",
+   "Wanna-tah"
+  ]
+ ],
+ "sources": [
+  {
+   "what": "LAPORTE, Dec. 12: the Wanatah Bank, 'owned by Julius Conitz, a prominent resident of the county, has suspended business. Two weeks ago an unsuccessful attempt was made to rob the vault, and this frightened many of the depositors, resulting in a run on the bank, which used up all the available cash.' Conitz, 'being unable to realize quickly on his assets, transferred all his real and personal property, including the bank, three farms, his residence and $40,000 worth of stock of the Eastern & Northwestern Railroad Company', in all $91,000, to August Grieger and Clayton Osborne as trustees, 'to be disposed of to satisfy the creditors and depositors. The liabilities are one-third of the assets, being $29,100.' Headline: 'Bank in Liquidation. Institution at Wanatah Succumbs to a Run by the Depositors.'",
+   "who": "The Indianapolis Journal, December 13, 1901 (special dispatch from LaPorte), via Chronicling America, transcribed at finhist.com",
+   "url": "https://finhist.com/bank-runs/episodes/5736831091223.html"
+  },
+  {
+   "what": "Wire story, LAPORTE, Dec. 12: 'An attempt made two weeks ago to rob the Wanatah bank of Wanatah, Laporte county, owned by Julius Conitz, caused a run on the institution, which today resulted in its suspension.' Assets $91,000, liabilities $29,100; depositors and creditors to be paid in full (headline 'Queer Cause for Suspension'). The Cameron County Press (Emporium, Pa.), Dec. 19, 1901, adds that $40,000 of the assets was railway stock.",
+   "who": "The Saint Paul Globe, December 13, 1901; Cameron County Press, December 19, 1901; Rock Island Argus, December 13, 1901",
+   "url": "https://finhist.com/bank-runs/episodes/5736831091223.html"
+  },
+  {
+   "what": "Year-end list of 1902 bank failures includes 'Mar. 15-Wanatah, Ind., Julius Conitz, banker.' (not used in the script: what happened after the trustees took over is left out)",
+   "who": "Syndicated 'Business Failures' list, e.g. The Bourbon News, January 2, 1903",
+   "url": "https://www.finhist.com/bank-runs/episodes/3674.html"
+  },
+  {
+   "what": "Wanatah, LaPorte County: settled in the 1850s when the railroad came, platted 1865, named for Wanata, a Yanktonai Dakota leader (background only)",
+   "who": "Wikipedia, citing Baker, From Needmore to Prosperity (1995)",
+   "url": "https://en.wikipedia.org/wiki/Wanatah,_Indiana"
+  },
+  {
+   "what": "'Wanatah Bank ... (Julius Conitz)', listed as a private bank (from the independent fact-check; confirms the owner)",
+   "who": "Rand McNally Bankers' Directory, July 1900, via FRASER (Federal Reserve Bank of St. Louis)",
+   "url": "https://fraser.stlouisfed.org/title/rand-mcnally-bankers-directory-105"
+  }
+ ],
+ "beats": [
+  {
+   "text": "In 1901, a robbery that failed still broke a bank in Wanatah.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_town",
+    "sky": "dusk",
+    "ground": {
+     "type": "street",
+     "y": 1180
+    },
+    "move": "in",
+    "fog": 0.12,
+    "amount": 0.06,
+    "props": [
+     {
+      "p": "tree",
+      "x": 40,
+      "y": 1186,
+      "s": 1.2,
+      "bare": true,
+      "seed": 7
+     },
+     {
+      "p": "storefront",
+      "x": 170,
+      "s": 0.92,
+      "storeys": 2,
+      "lit": 0.7,
+      "seed": 1
+     },
+     {
+      "p": "bankblock",
+      "x": 560,
+      "s": 1.04,
+      "lit": 0.7,
+      "front": true
+     },
+     {
+      "p": "storefront",
+      "x": 950,
+      "s": 0.88,
+      "storeys": 1,
+      "lit": 0.5,
+      "seed": 2
+     },
+     {
+      "p": "hitchrail",
+      "x": 190,
+      "y": 1214,
+      "s": 0.55
+     }
+    ]
+   },
+   "label": "WANATAH, INDIANA",
+   "title": {
+    "text": "THE ROBBERY THAT FAILED",
+    "at": "failed",
+    "size": 70
+   },
+   "sfx": [
+    {
+     "kind": "whoosh",
+     "at": "failed",
+     "gain": 0.4
+    }
+   ],
+   "credit": "History: Indianapolis Journal and wire reports, December 1901"
+  },
+  {
+   "text": "It was the Wanatah Bank, owned by one man, Julius Conitz. That fall, someone tried to rob it, and failed.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_room",
+    "sky": "room",
+    "wall": "#1c1612",
+    "ground": {
+     "type": "floor",
+     "y": 1250
+    },
+    "move": "in",
+    "amount": 0.06,
+    "props": [
+     {
+      "p": "tellercage",
+      "x": 120,
+      "s": 0.82
+     },
+     {
+      "p": "barwindow",
+      "x": 960,
+      "y": 1050,
+      "s": 0.78,
+      "drop": 200
+     },
+     {
+      "p": "vault",
+      "x": 590,
+      "s": 0.9,
+      "glint": 0.6
+     }
+    ]
+   },
+   "label": "THE WANATAH BANK",
+   "label2": {
+    "text": "OWNER: JULIUS CONITZ",
+    "at": "Julius"
+   },
+   "typed": [
+    {
+     "text": "FAILED",
+     "at": "and failed",
+     "y": 545,
+     "size": 80
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "heartbeat",
+     "at": "someone",
+     "gain": 0.5
+    }
+   ],
+   "credit": "Indianapolis Journal and Saint Paul Globe, Dec. 13, 1901"
+  },
+  {
+   "text": "But the attempt frightened many depositors. They rushed to take their money out.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "tab_town",
+    "sky": "dawn",
+    "ground": {
+     "type": "street",
+     "y": 1180
+    },
+    "move": "left",
+    "fog": 0.1,
+    "amount": 0.06,
+    "props": [
+     {
+      "p": "tree",
+      "x": 70,
+      "y": 1184,
+      "s": 1.3,
+      "bare": true,
+      "seed": 3
+     },
+     {
+      "p": "bankblock",
+      "x": 800,
+      "s": 1.0,
+      "lit": 0.0,
+      "front": true,
+      "door": "open",
+      "flip": true
+     },
+     {
+      "p": "people",
+      "x": 360,
+      "y": 1192,
+      "s": 0.95,
+      "n": 9,
+      "spread": 250,
+      "seed": 5
+     }
+    ]
+   },
+   "label": "A RUN ON THE BANK",
+   "credit": "The Indianapolis Journal, December 13, 1901"
+  },
+  {
+   "text": "On December 12, the bank closed its doors.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "tab_town",
+    "sky": "night",
+    "ground": {
+     "type": "street",
+     "y": 1400
+    },
+    "move": "in",
+    "fog": 0.08,
+    "amount": 0.05,
+    "props": [
+     {
+      "p": "bankblock",
+      "x": 600,
+      "y": 1400,
+      "s": 2.1,
+      "lit": 0.0,
+      "shade": true
+     }
+    ]
+   },
+   "label": "DECEMBER 12, 1901",
+   "card": {
+    "kind": "headline",
+    "paper": "The Indianapolis Journal",
+    "date": "December 13, 1901",
+    "lines": [
+     "Bank in Liquidation"
+    ],
+    "body": [
+     "Institution at Wanatah Succumbs",
+     "to a Run by the Depositors."
+    ],
+    "at": "On December",
+    "y": 600
+   },
+   "credit": "Indianapolis Journal and Saint Paul Globe, Dec. 13, 1901"
+  },
+  {
+   "text": "On paper, Conitz had $91,000 in property, three times what was owed. But $40,000 of it was railroad stock.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "dusk",
+    "ground": {
+     "type": "land",
+     "y": 1150
+    },
+    "move": "right",
+    "fog": 0.12,
+    "amount": 0.06,
+    "props": [
+     {
+      "p": "tree",
+      "x": 70,
+      "s": 1.0,
+      "seed": 21,
+      "bare": true
+     },
+     {
+      "p": "farmhouse",
+      "x": 330,
+      "s": 0.9,
+      "lit": [
+       0,
+       1,
+       1
+      ]
+     },
+     {
+      "p": "fence",
+      "x": 700,
+      "y": 1190,
+      "s": 0.9
+     },
+     {
+      "p": "tree",
+      "x": 1010,
+      "s": 0.9,
+      "seed": 22,
+      "bare": true
+     }
+    ]
+   },
+   "label": "ON PAPER",
+   "typed": [
+    {
+     "text": "$91,000",
+     "at": "$91,000",
+     "y": 470,
+     "size": 96
+    },
+    {
+     "text": "$40,000 IN RAILROAD STOCK",
+     "at": "$40,000",
+     "y": 570,
+     "size": 52
+    }
+   ],
+   "credit": "Indianapolis Journal, Dec. 13; Cameron County Press, Dec. 19, 1901"
+  },
+  {
+   "text": "One paper reported he couldn't turn it into cash fast enough, so he signed everything he owned over to trustees, even his three farms and his home.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_room",
+    "sky": "room",
+    "wall": "#1a120e",
+    "ground": {
+     "type": "floor",
+     "y": 1250
+    },
+    "move": "in",
+    "amount": 0.06,
+    "props": [
+     {
+      "p": "window",
+      "x": 850,
+      "y": 1010,
+      "s": 0.9
+     },
+     {
+      "p": "desk",
+      "x": 520,
+      "s": 1.15
+     }
+    ]
+   },
+   "label": "EVERYTHING HE OWNED",
+   "credit": "The Indianapolis Journal, December 13, 1901"
+  },
+  {
+   "text": "The robbery failed. Two weeks later, so did the bank.",
+   "pause": 0.8,
+   "scene": {
+    "kind": "tab_town",
+    "sky": "night",
+    "moon": [
+     985,
+     770,
+     38
+    ],
+    "ground": {
+     "type": "street",
+     "y": 1180
+    },
+    "move": "in",
+    "fog": 0.35,
+    "amount": 0.06,
+    "props": [
+     {
+      "p": "tree",
+      "x": 150,
+      "y": 1186,
+      "s": 1.45,
+      "bare": true,
+      "seed": 4
+     },
+     {
+      "p": "bankblock",
+      "x": 640,
+      "s": 1.0,
+      "lit": 0.0,
+      "shade": true
+     }
+    ]
+   },
+   "typed": [
+    {
+     "text": "TWO WEEKS LATER",
+     "at": "Two weeks",
+     "y": 545,
+     "size": 66
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "whoosh",
+     "at": "so did",
+     "gain": 0.35
+    }
+   ],
+   "credit": "Indianapolis Journal and Saint Paul Globe, Dec. 13, 1901"
+  },
+  {
+   "text": "Comment your town, and it could be next.",
+   "end": true,
+   "end_card": {
+    "q": "COMMENT YOUR TOWN",
+    "q2": "IT COULD BE NEXT",
+    "bubble": "Your town, your state",
+    "pill": "The Wanatah Bank, 1901",
+    "scene": {
+     "kind": "tab_room",
+     "sky": "room",
+     "wall": "#141210",
+     "ground": {
+      "type": "floor",
+      "y": 1300
+     },
+     "move": "still",
+     "amount": 0.04,
+     "props": [
+      {
+       "p": "vault",
+       "x": 540,
+       "y": 1300,
+       "s": 1.45,
+       "glint": 0.8
+      }
+     ]
+    }
+   },
+   "credit": "All pictures drawn"
+  }
+ ],
+ "factcheck": "Independent check Nov. 15, 2026 (read the 1901 papers through finhist.com's typed transcriptions; the Library of Congress scans would not load): lines 1-4, 6, 7 and all on-screen text supported. Line 5 'But $40,000 of it was railroad stock, not cash' implied the other $51,000 was cash: now 'But $40,000 of it was railroad stock', and line 6 adds the Journal's 'being unable to realize quickly on his assets' as 'One paper reported he couldn't turn it into cash fast enough'. The railroad track came out of the farm picture (the Eastern & Northwestern was building between Toledo and St. Joseph, Mich., not past Wanatah). The 1901 accounts are two reports at most (the Indianapolis Journal's own special and one wire story, both datelined LaPorte); the Rand McNally directory of July 1900 independently confirms the owner. No record found of whether depositors were paid in full, so the short doesn't say. The building and its sign aren't described anywhere found: the bank is drawn generic, with no words on it. Series line spelled LAPORTE (one word, the spelling rule). Pronunciation of Wanatah unconfirmed."
+}

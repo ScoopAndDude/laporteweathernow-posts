@@ -63,6 +63,12 @@ few backdrops (bare woods, the generic brick house, the generic courthouse) shou
   being staked out), timberframe (an unfinished frame building), scow (a river scow carrying one), riders, wagon,
   loghouse and townfire (empty buildings burning, no one shown). funeraltrain takes drape=False for an ordinary
   1850s-1860s train. Keep the moon away from the label and title lines (y 250 to 470) and the typed line (y 545).
+- `src/film/story_kit9.py` (Nov. 15, 2026, for the Wanatah Bank short) adds props: bankblock (a two-storey brick
+  bank of about 1890; front=, shade=, door="open", flip=; its front window gets a gilt border with no words unless
+  name= gives the real sign's words), storefront (a frame store with a false front, no lettering), vault (a steel
+  vault door, no maker's name), tellercage, barwindow (moonlight on the floor: drop= px from the window's foot down
+  to the floor line), desk (an oil lamp, unreadable papers, inkwell and pen, a chair) and hitchrail. When the
+  sources don't describe a building or its sign, draw a generic one and put no words on it.
 - `src/film/story_kit3.py` builds a picture from props (ships, a plane, buildings, rooms, trains, trees, people...):
   scene kinds `tab_lake`, `tab_land`, `tab_town`, `tab_room`, `tab_rail` take a sky, a ground and a list of props.
   `python3 story_kit3.py sheet` draws every prop (shorts/out/_props.jpg). Use these first; add a prop when one is
