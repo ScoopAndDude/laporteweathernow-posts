@@ -55,6 +55,14 @@ few backdrops (bare woods, the generic brick house, the generic courthouse) shou
   bonfire, mourners (flags=, torches=), depot, haze (mist below the horizon so dark crowds read), trackview (looking
   down the track to the horizon) and locofront (the same engine head-on; rear=True the last coach going away). Its
   docstring gives the sizes by distance. Figures only read against the sky or the haze, never against bare ground.
+- `src/film/story_kit8.py` (Nov. 14, 2026, for the Portage and Lake Station shorts) adds props: foundstones (a pale
+  marble family monument and two headstones, buried=, tilt=, lamp= a lantern on the dirt), dirt (an excavation),
+  backhoe (a late-1950s tractor backhoe-loader), routesign (a U.S. route shield, num=), highway (a two-lane road
+  with telephone poles and a side road), farmhouse (1870s, lit=), bank (a high wooded bank), confluence (a river
+  winding in with a second one joining it; use "grass": false), moonpath (moonlight on open water), stakes (a town
+  being staked out), timberframe (an unfinished frame building), scow (a river scow carrying one), riders, wagon,
+  loghouse and townfire (empty buildings burning, no one shown). funeraltrain takes drape=False for an ordinary
+  1850s-1860s train. Keep the moon away from the label and title lines (y 250 to 470) and the typed line (y 545).
 - `src/film/story_kit3.py` builds a picture from props (ships, a plane, buildings, rooms, trains, trees, people...):
   scene kinds `tab_lake`, `tab_land`, `tab_town`, `tab_room`, `tab_rail` take a sky, a ground and a list of props.
   `python3 story_kit3.py sheet` draws every prop (shorts/out/_props.jpg). Use these first; add a prop when one is

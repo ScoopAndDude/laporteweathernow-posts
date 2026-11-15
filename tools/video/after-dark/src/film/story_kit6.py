@@ -69,8 +69,9 @@ def _wheel(c, x, y, r, s, spokes=10, col="#050506"):
 
 
 @prop
-def funeraltrain(c, L, x, y, s=1.0, n=3, flip=False, lamp=True, smoke=True, lit=0.4, **k):
-    """An 1865 funeral train: a black-draped 4-4-0 locomotive, its tender and n wooden coaches. x = cowcatcher tip."""
+def funeraltrain(c, L, x, y, s=1.0, n=3, flip=False, lamp=True, smoke=True, lit=0.4, drape=True, **k):
+    """An 1865 funeral train: a black-draped 4-4-0 locomotive, its tender and n wooden coaches. x = cowcatcher tip.
+    drape=False: the same train with no black swags or rosette (an ordinary 1850s-1860s train)."""
     d = -1 if flip else 1
 
     def X(v):                                    # v = distance back from the cowcatcher tip
@@ -97,14 +98,17 @@ def funeraltrain(c, L, x, y, s=1.0, n=3, flip=False, lamp=True, smoke=True, lit=
             R(wa, wa + 18, 126, 92, "#070606")
             if on:
                 L.rect(min(X(wa), X(wa + 18)), y - 126 * s, max(X(wa), X(wa + 18)), y - 92 * s, WARM, 0.5)
-        _swags(c, min(X(a + 6), X(b - 6)), max(X(a + 6), X(b - 6)), y - 146 * s, 4, 16 * s, s)
-        _swags(c, min(X(a + 6), X(b - 6)), max(X(a + 6), X(b - 6)), y - 84 * s, 5, 12 * s, s)
+        if drape:
+            _swags(c, min(X(a + 6), X(b - 6)), max(X(a + 6), X(b - 6)), y - 146 * s, 4, 16 * s, s)
+        if drape:
+            _swags(c, min(X(a + 6), X(b - 6)), max(X(a + 6), X(b - 6)), y - 84 * s, 5, 12 * s, s)
         for wv in (a + 36, a + 74, b - 74, b - 36):
             _wheel(c, X(wv), y - 16 * s, 17 * s, s, spokes=6)
     # tender
     R(312, 404, 104, 38, body)
     R(316, 400, 112, 104, "#090a0c")
-    _swags(c, min(X(318), X(398)), max(X(318), X(398)), y - 100 * s, 2, 14 * s, s)
+    if drape:
+        _swags(c, min(X(318), X(398)), max(X(318), X(398)), y - 100 * s, 2, 14 * s, s)
     for wv in (330, 362, 386):
         _wheel(c, X(wv), y - 16 * s, 15 * s, s, spokes=6)
     # cab
@@ -120,9 +124,11 @@ def funeraltrain(c, L, x, y, s=1.0, n=3, flip=False, lamp=True, smoke=True, lit=
                                   (X(cx + 18), y - 116 * s)], True, k=0.25), paint("#0b0c0f"))
     c.circle(X(158), y - 128 * s, 8 * s, "#0b0c0f")
     R(40, 300, 66, 58, "#050607")
-    _swags(c, min(X(76), X(226)), max(X(76), X(226)), y - 66 * s, 4, 14 * s, s)
-    c.circle(X(146), y - 96 * s, 10 * s, TRIM, 0.55)                             # a rosette on the boiler side
-    c.circle(X(146), y - 96 * s, 5 * s, "#000000")
+    if drape:
+        _swags(c, min(X(76), X(226)), max(X(76), X(226)), y - 66 * s, 4, 14 * s, s)
+    if drape:
+        c.circle(X(146), y - 96 * s, 10 * s, TRIM, 0.55)                             # a rosette on the boiler side
+        c.circle(X(146), y - 96 * s, 5 * s, "#000000")
     # balloon stack
     R(58, 74, 168, 124, "#08090b")
     c.poly([(X(42), y - 214 * s), (X(90), y - 214 * s), (X(74), y - 168 * s), (X(58), y - 168 * s)], "#08090b")

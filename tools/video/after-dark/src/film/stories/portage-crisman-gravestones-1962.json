@@ -1,0 +1,542 @@
+{
+ "slug": "portage-crisman-gravestones-1962",
+ "title": "Portage, Indiana: the gravestones found under a gas station dig in 1962 (the Crisman stones)",
+ "series": "LA PORTE AFTER DARK",
+ "music": {
+  "seed": 193,
+  "prog": 6
+ },
+ "say": [],
+ "sources": [
+  {
+   "what": "'Grave Question' (July 11, 1962): descendants of Portage pioneers Isaac and Jane Crisman mulling over recently unearthed family gravestones; three stones, a family monument and two headstones, found by workmen excavating for a new filling station at the southeast corner of U.S. 20 and Crisman road; headstones bear the names Wilbur and Marta; the monument apparently erected by Isaac and Jane Crisman in memory of two children; 'Both the monument and headstones are of unpolished marble'; the children died in 1876 of scarlet fever, aged five and three; Isaac and Jane were the grandparents of Celia Nealon and Mrs. Max Wheat",
+   "who": "Vidette-Messenger (Valparaiso), July 11, 1962, vol. 36 no. 6, by Rollie Bernhart; transcribed by inportercounty.org (Crisman Cemetery)",
+   "url": "https://inportercounty.org/Data/Cemeteries/CrismanCemetery.html"
+  },
+  {
+   "what": "'Explanation Offered Crisman Grave Mystery' (July 19, 1962): 'Any possibilities of the existence of the pioneer Crisman family cemetery at the southeast corner of U. S. 20 and Crisman road in Portage, were dissipated in a report from Mrs. Celia (Crisman) Nealon'; workmen unearthed the stones two weeks earlier; Mrs. Blair took Mrs. Nealon to a spot north of U.S. 20, the township cemetery, on a high bank overgrown with trees and thick brush, with no visible stones or markers; how the stones came to be buried at Crisman road and U.S. 20 'still remains unsolved'",
+   "who": "Vidette-Messenger, July 19, 1962, vol. 36 no. 13, by Rollie Bernhart; same transcription",
+   "url": "https://inportercounty.org/Data/Cemeteries/CrismanCemetery.html"
+  },
+  {
+   "what": "'While excavating for a service station at the SE corner of US 20 in section 1, stones were found'; one stone bore the initials of I. and J. Crisman, another the names of Wilbur and Martha, children of I. and J. Crisman; Isaac Crisman married Jane White in December 1870",
+   "who": "Northwest Indiana Genealogical Society, Portage Township cemetery index (1995), quoted on the same page",
+   "url": "https://inportercounty.org/Data/Cemeteries/CrismanCemetery.html"
+  },
+  {
+   "what": "'One of Ike Crisman's little children died Thursday of scarlet fever; the other is at the point of death' (Joy's Run Items)",
+   "who": "Porter County Vidette, Dec. 7, 1876, vol. 20 no. 49, p. 3; transcribed by inportercounty.org",
+   "url": "https://inportercounty.org/Data/Obits/Crisman1426.html"
+  },
+  {
+   "what": "the village of Crisman was laid out by B. G. Crisman, 'after whom it was named'; Isaac Crisman its first postmaster and storekeeper",
+   "who": "Goodspeed and Blanchard, Counties of Porter and Lake (1882), ch. XII, Portage Township; transcribed by inportercounty.org",
+   "url": "https://inportercounty.org/Data/Misc/PorterCountyHistory-1882/PorterCountyHistory-1882-Chapter12.html"
+  },
+  {
+   "what": "Benjamin G. Crisman came to Porter County in 1850 with his family, Isaac among them; Crisman (now part of Portage) was named after him",
+   "who": "Ray Crisman, in A Biographical History of Porter County (1976); transcribed by inportercounty.org",
+   "url": "https://inportercounty.org/Data/Biographies/Crisman302.html"
+  }
+ ],
+ "beats": [
+  {
+   "text": "A gas station dig in Portage turned up gravestones.",
+   "pause": 0.8,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "dusk",
+    "ground": {
+     "type": "land",
+     "y": 1180
+    },
+    "move": "in",
+    "fog": 0.12,
+    "grass": false,
+    "props": [
+     {
+      "p": "highway",
+      "x": 760,
+      "y": 1180,
+      "side": false
+     },
+     {
+      "p": "dirt",
+      "x": 260,
+      "y": 1236,
+      "s": 1.1,
+      "w": 520,
+      "h": 150,
+      "pit": false
+     },
+     {
+      "p": "backhoe",
+      "x": 800,
+      "y": 1238,
+      "s": 1.05,
+      "flip": true
+     },
+     {
+      "p": "dirt",
+      "x": 560,
+      "y": 1300,
+      "s": 1.0,
+      "w": 900,
+      "h": 40
+     },
+     {
+      "p": "foundstones",
+      "x": 540,
+      "y": 1318,
+      "s": 1.25,
+      "buried": 0.35,
+      "tilt": true
+     }
+    ],
+    "amount": 0.08,
+    "focus": [
+     540,
+     1050
+    ]
+   },
+   "label": "PORTAGE, INDIANA",
+   "title": {
+    "text": "THE CRISMAN STONES",
+    "at": "gravestones",
+    "size": 80
+   },
+   "sfx": [
+    {
+     "kind": "heartbeat",
+     "at": "A gas station",
+     "gain": 0.35
+    },
+    {
+     "kind": "crow",
+     "at": "gravestones",
+     "gain": 0.5
+    }
+   ],
+   "credit": "History: Vidette-Messenger (1962); NW Indiana Genealogical Society"
+  },
+  {
+   "text": "It was July 1962. Workmen found them at the corner of US 20 and Crisman Road.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "dusk",
+    "ground": {
+     "type": "land",
+     "y": 1150
+    },
+    "move": "left",
+    "fog": 0.1,
+    "grass": false,
+    "props": [
+     {
+      "p": "tree",
+      "x": 110,
+      "s": 1.1,
+      "seed": 2,
+      "y": 1150
+     },
+     {
+      "p": "tree",
+      "x": 990,
+      "s": 1.0,
+      "seed": 5,
+      "y": 1150
+     },
+     {
+      "p": "highway",
+      "x": 620,
+      "y": 1150
+     },
+     {
+      "p": "car",
+      "x": 280,
+      "y": 1198,
+      "s": 0.85,
+      "era": 1955
+     },
+     {
+      "p": "routesign",
+      "x": 330,
+      "y": 1340,
+      "s": 1.2
+     }
+    ],
+    "amount": 0.06
+   },
+   "label": "JULY 1962",
+   "label2": {
+    "text": "U.S. 20 AND CRISMAN ROAD",
+    "at": "corner of"
+   },
+   "card": {
+    "kind": "headline",
+    "paper": "The Vidette-Messenger",
+    "date": "July 11, 1962",
+    "lines": [
+     "Grave Question"
+    ],
+    "at": "It was July 1962",
+    "until": "corner of"
+   },
+   "credit": "Vidette-Messenger, July 11 and 19, 1962"
+  },
+  {
+   "text": "There was a family monument and two marble headstones, for two children of pioneers Isaac and Jane Crisman.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "night",
+    "moon": [
+     820,
+     380,
+     40
+    ],
+    "ground": {
+     "type": "land",
+     "y": 1190
+    },
+    "move": "in",
+    "fog": 0.2,
+    "grass": false,
+    "props": [
+     {
+      "p": "dirt",
+      "x": 620,
+      "y": 1150,
+      "s": 1.3,
+      "w": 760,
+      "h": 170,
+      "pit": false
+     },
+     {
+      "p": "foundstones",
+      "x": 560,
+      "y": 1290,
+      "s": 1.7,
+      "buried": 0.25,
+      "tilt": true,
+      "lamp": true
+     }
+    ],
+    "amount": 0.09,
+    "focus": [
+     560,
+     980
+    ]
+   },
+   "label": "THE STONES",
+   "typed": [
+    {
+     "text": "ISAAC AND JANE CRISMAN",
+     "at": "Isaac and Jane",
+     "y": 545,
+     "size": 62
+    }
+   ],
+   "credit": "Vidette-Messenger (1962); NW Indiana Genealogical Society (1995)"
+  },
+  {
+   "text": "In 1876, scarlet fever took them both, Wilbur and his sister.",
+   "pause": 0.9,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "night",
+    "moon": [
+     200,
+     420,
+     36
+    ],
+    "ground": {
+     "type": "land",
+     "y": 1200
+    },
+    "move": "in",
+    "fog": 0.22,
+    "props": [
+     {
+      "p": "haze",
+      "x": 540,
+      "y": 1200,
+      "depth": 150,
+      "a": 0.3,
+      "color": "#2a3440"
+     },
+     {
+      "p": "tree",
+      "x": 150,
+      "s": 1.3,
+      "seed": 7,
+      "y": 1200,
+      "bare": true
+     },
+     {
+      "p": "farmhouse",
+      "x": 610,
+      "y": 1210,
+      "s": 1.45,
+      "lit": [
+       1,
+       0,
+       0
+      ]
+     },
+     {
+      "p": "tree",
+      "x": 1000,
+      "s": 1.1,
+      "seed": 9,
+      "y": 1210,
+      "bare": true
+     },
+     {
+      "p": "fence",
+      "x": 540,
+      "y": 1262,
+      "s": 1.0
+     }
+    ],
+    "amount": 0.07,
+    "focus": [
+     610,
+     960
+    ]
+   },
+   "label": "1876",
+   "sfx": [
+    {
+     "kind": "music_box",
+     "at": "Wilbur",
+     "gain": 0.3
+    }
+   ],
+   "credit": "Porter County Vidette (Dec. 7, 1876); Vidette-Messenger (1962)"
+  },
+  {
+   "text": "But a Crisman granddaughter said the family cemetery was never at that corner.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "dawn",
+    "ground": {
+     "type": "land",
+     "y": 1170
+    },
+    "move": "right",
+    "fog": 0.06,
+    "grass": false,
+    "props": [
+     {
+      "p": "highway",
+      "x": 700,
+      "y": 1170,
+      "side": false
+     },
+     {
+      "p": "dirt",
+      "x": 470,
+      "y": 1262,
+      "s": 1.35,
+      "w": 620,
+      "h": 140
+     },
+     {
+      "p": "routesign",
+      "x": 900,
+      "y": 1330,
+      "s": 1.1
+     }
+    ],
+    "amount": 0.06
+   },
+   "label": "THE FAMILY",
+   "credit": "Vidette-Messenger, July 19, 1962"
+  },
+  {
+   "text": "She was shown the old township cemetery, north of the highway, on a bank overgrown with trees, with no stones showing.",
+   "pause": 0.9,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "night",
+    "moon": [
+     300,
+     360,
+     44
+    ],
+    "ground": {
+     "type": "land",
+     "y": 1240
+    },
+    "move": "in",
+    "fog": 0.35,
+    "props": [
+     {
+      "p": "bank",
+      "x": 540,
+      "y": 1240,
+      "w": 1200,
+      "h": 290
+     },
+     {
+      "p": "tree",
+      "x": 560,
+      "y": 950,
+      "s": 1.05,
+      "seed": 11
+     },
+     {
+      "p": "tree",
+      "x": 770,
+      "y": 955,
+      "s": 1.2,
+      "seed": 12
+     },
+     {
+      "p": "tree",
+      "x": 980,
+      "y": 950,
+      "s": 1.0,
+      "seed": 13
+     },
+     {
+      "p": "haze",
+      "x": 540,
+      "y": 1240,
+      "depth": 120,
+      "a": 0.35,
+      "color": "#3a4450"
+     }
+    ],
+    "amount": 0.08,
+    "focus": [
+     760,
+     900
+    ]
+   },
+   "label": "NORTH OF U.S. 20",
+   "sfx": [
+    {
+     "kind": "whoosh",
+     "at": "no stones showing",
+     "gain": 0.4
+    }
+   ],
+   "credit": "Vidette-Messenger, July 19, 1962"
+  },
+  {
+   "text": "How the stones came to be buried at that corner, the paper said, remained unsolved.",
+   "pause": 0.9,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "storm",
+    "ground": {
+     "type": "land",
+     "y": 1190
+    },
+    "move": "out",
+    "fog": 0.25,
+    "rain": true,
+    "grass": false,
+    "props": [
+     {
+      "p": "highway",
+      "x": 540,
+      "y": 1190,
+      "side": false
+     },
+     {
+      "p": "foundstones",
+      "x": 540,
+      "y": 1300,
+      "s": 1.45,
+      "buried": 0.45,
+      "tilt": true
+     }
+    ],
+    "amount": 0.07
+   },
+   "label": "STILL A MYSTERY",
+   "typed": [
+    {
+     "text": "UNSOLVED",
+     "at": "remained unsolved",
+     "y": 545,
+     "size": 110
+    }
+   ],
+   "flash": [
+    "remained unsolved"
+   ],
+   "credit": "Vidette-Messenger, July 19, 1962"
+  },
+  {
+   "text": "Comment your town, and it could be next.",
+   "end": true,
+   "end_card": {
+    "q": "COMMENT YOUR TOWN",
+    "q2": "IT COULD BE NEXT",
+    "bubble": "Your town, your state",
+    "pill": "Old cemeteries: please don't trespass",
+    "scene": {
+     "kind": "tab_land",
+     "sky": "night",
+     "moon": [
+      820,
+      380,
+      40
+     ],
+     "ground": {
+      "type": "land",
+      "y": 1240
+     },
+     "move": "still",
+     "fog": 0.35,
+     "props": [
+      {
+       "p": "bank",
+       "x": 540,
+       "y": 1240,
+       "w": 1200,
+       "h": 290
+      },
+      {
+       "p": "tree",
+       "x": 560,
+       "y": 950,
+       "s": 1.05,
+       "seed": 11
+      },
+      {
+       "p": "tree",
+       "x": 770,
+       "y": 955,
+       "s": 1.2,
+       "seed": 12
+      },
+      {
+       "p": "tree",
+       "x": 980,
+       "y": 950,
+       "s": 1.0,
+       "seed": 13
+      },
+      {
+       "p": "haze",
+       "x": 540,
+       "y": 1240,
+       "depth": 120,
+       "a": 0.35,
+       "color": "#3a4450"
+      }
+     ],
+     "seed": 3
+    }
+   },
+   "credit": "All pictures drawn"
+  }
+ ]
+}
