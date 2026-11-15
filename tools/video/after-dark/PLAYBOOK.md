@@ -130,6 +130,13 @@ keep working.
   cut. The prison opened in 1979 as the Westville Correctional Center (now Facility); the state took the hospital
   over in 1977.
 
+- Portage and Lake Station (Nov. 2026): attribute a quote to whoever said it (the 1962 paper quoted the Crisman
+  granddaughter calling it unsolved: "she told the paper", not "the paper said"); date a mystery ("A MYSTERY IN
+  1962", not "STILL A MYSTERY") unless a source says it is unsolved today; before calling a town a county's "first"
+  seat, check for a temporary seat before it (Lake Court House came before Liverpool); when only one historian
+  reports an event (Liverpool's fire, Bowers 1929), say "one historian wrote"; when sources disagree about what a
+  building was made of (Liverpool's courthouse: frame or log), draw it as a silhouette.
+
 ## 3. Write the script
 
 - 6 to 8 beats (paragraphs), 95 to 135 words in all (35 to 50 seconds). One beat = one scene.
