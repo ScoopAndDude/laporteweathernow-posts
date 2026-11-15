@@ -209,6 +209,7 @@ python3 reel_story.py stories/<slug>.json check     # must end "check: all good"
   Fix any that come out wrong with a `"say"` rule in the storyboard (for example `["\\bGipp\\b", "Ghip"]`), test with
   `python3 -c "from kokoro_onnx.tokenizer import Tokenizer; print(Tokenizer().phonemize('Ghip', 'en-us'))"`, and
   record again. Add names that will come up again to `LOCAL_SAY` in reel_story.py.
+- Wanatah is said WAH-nuh-tah (Scoop confirmed Nov. 15, 2026); `LOCAL_SAY` spells it "Wanna-tah".
 - **Look at the stills:** text must not cover text, nothing important under the captions (y 1290 to 1400), no frame
   that is just black, and the drawing must match what's said at that moment.
 
