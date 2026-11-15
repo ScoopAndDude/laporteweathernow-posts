@@ -1,0 +1,642 @@
+{
+ "slug": "westville-lincoln-funeral-train-1865",
+ "title": "Westville and Lincoln's Funeral Train, May 1, 1865",
+ "series": "LA PORTE AFTER DARK",
+ "music": {
+  "seed": 186,
+  "prog": 6
+ },
+ "say": [],
+ "sources": [
+  {
+   "what": "'On Monday May 1, 1865, shortly before 8:00 a.m., the train bearing the body of President Lincoln stopped briefly at this site'; erected 1965 by the Westville Women's Club; W. Main St. and Monon St.",
+   "who": "Westville Women's Club marker (1965), via the Historical Marker Database",
+   "url": "https://www.hmdb.org/m.asp?m=77449"
+  },
+  {
+   "what": "photo of the same marker and its full text",
+   "who": "Flickr (speedyjr), Indiana Historical Marker - Lincoln's Funeral Train, Westville",
+   "url": "https://www.flickr.com/photos/speedyjr/5361049215"
+  },
+  {
+   "what": "'The train passed through Westville at about 20 minutes to 8 a.m.'; Willie Lincoln's casket on the train; Michigan City: 'a magnificent arch of roses and evergreen'; the train waited an hour or so there for the Chicago committee",
+   "who": "Fern Eddy Schultz, LaPorte County Historian, What's New LaPorte (2009)",
+   "url": "http://whatsnewlaporte.com/2009/07/30/the-day-lincolns-funeral-train-passed-through-laporte-county/"
+  },
+  {
+   "what": "the LaPorte Herald of May 6, 1865 described the train's reception by mourners in Westville and in Michigan City",
+   "who": "The Times of Northwest Indiana (nwitimes.com), May 1, 2015",
+   "url": "https://www.nwitimes.com/news/local/lake/region-witnessed-lincoln-funeral-train-150-years-ago-today/article_d7108bd3-e773-5441-89ce-42cc07df8bf8.html"
+  },
+  {
+   "what": "the route through Lacrosse, Wanatah, Westville, Lacroix (Otis) to Michigan City on the Monon; it puts the Chicago Tribune's '2,000 people', choir and arch passage at MICHIGAN CITY (Fern Eddy Schultz's article puts the same passage after Westville), so that passage is left out",
+   "who": "Monon Railroad Historical-Technical Society",
+   "url": "https://monon.org/LincolnFuneralTrain.php"
+  },
+  {
+   "what": "'From Indianapolis, train passed mourners lighted by bonfires and torches along the way; arrived in Michigan City by 8:35 a.m., May 1'; assassinated president's funeral April 19, 1865",
+   "who": "Indiana Historical Bureau marker, The Lincoln Funeral Train (Michigan City, 2010)",
+   "url": "https://www.in.gov/history/markers/4110.htm"
+  },
+  {
+   "what": "'The funeral train left Indianapolis at midnight on May 1'; Lafayette 3:35 a.m.; torches ('Some of them hold torches in their hands') and bonfires ('Large bonfires are burning in the drizzling rain'); the towns after Lafayette include Wanatha, Westville and Lacroix",
+   "who": "Indiana Historical Bureau, Lincoln Funeral Train Part Two: Indianapolis to Michigan City",
+   "url": "https://www.in.gov/history/about-indiana-history-and-trivia/explore-indiana-history-by-topic/lincoln-funeral-train/lincoln-funeral-train-part-two-indianapolis-to-michigan-city"
+  },
+  {
+   "what": "Indiana, 'where Lincoln spent much of his youth (1816-1830)'; the train left Indianapolis at midnight; route listing through Westville",
+   "who": "Indiana Historical Bureau, Indiana History Blog, The Lincoln Funeral Train in Indiana",
+   "url": "https://blog.history.in.gov/tag/state-house/"
+  },
+  {
+   "what": "'The funeral train left Michigan City the morning of May 1, 1865... and headed towards Chicago'",
+   "who": "Indiana Historical Bureau, Lincoln Funeral Train Part Three: Michigan City to Springfield",
+   "url": "https://www.in.gov/history/about-indiana-history-and-trivia/explore-indiana-history-by-topic/lincoln-funeral-train/lincoln-funeral-train-part-three-michigan-city-to-springfield"
+  },
+  {
+   "what": "'The body of Lincoln's departed son Willie, who had died in 1862 of typhoid fever, made the trip with Lincoln in the first room of this car'; the engine was followed by nine cars",
+   "who": "TIME, 'Lincoln's funeral train' (2015)",
+   "url": "https://time.com/3771210/lincoln-funeral-train"
+  },
+  {
+   "what": "the train 'contained the body of Lincoln's 11-year-old son, Willie, an 1862 victim of typhoid fever'; nine cars; Michigan City among the stops",
+   "who": "American Battlefield Trust",
+   "url": "https://battlefields.org/learn/articles/lincolns-funeral-train-and-grand-review"
+  },
+  {
+   "what": "nine cars; 'The train also carried the casket of Lincoln's son, Willie Lincoln, who had died three years earlier'",
+   "who": "University of Illinois, Illinois History and Lincoln Collections blog",
+   "url": "https://publish.illinois.edu/ihlc-blog/?p=1541"
+  },
+  {
+   "what": "Lincoln lived in Indiana 1816-1830",
+   "who": "National Park Service, Lincoln Boyhood National Memorial",
+   "url": "https://www.nps.gov/libo/learn/historyculture/index.htm"
+  }
+ ],
+ "beats": [
+  {
+   "text": "A murdered president's funeral train came through Westville.",
+   "pause": 0.8,
+   "scene": {
+    "kind": "tab_rail",
+    "sky": "morning",
+    "ground": {
+     "type": "land",
+     "y": 1190
+    },
+    "move": "in",
+    "amount": 0.08,
+    "fog": 0.25,
+    "props": [
+     {
+      "p": "tree",
+      "x": 60,
+      "s": 1.2,
+      "seed": 4,
+      "y": 1190
+     },
+     {
+      "p": "tree",
+      "x": 1010,
+      "s": 1.0,
+      "seed": 7,
+      "y": 1190
+     },
+     {
+      "p": "haze",
+      "x": 540,
+      "y": 1190,
+      "depth": 170,
+      "a": 0.45,
+      "color": "#9aa6b0"
+     },
+     {
+      "p": "depot",
+      "x": 185,
+      "y": 1262,
+      "s": 0.4,
+      "lit": false
+     },
+     {
+      "p": "trackview",
+      "x": 540,
+      "y": 1190
+     },
+     {
+      "p": "locofront",
+      "x": 540,
+      "y": 1228,
+      "g": 22,
+      "lamp": true
+     },
+     {
+      "p": "mourners",
+      "x": 255,
+      "y": 1300,
+      "s": 0.53,
+      "n": 11,
+      "spread": 250,
+      "seed": 11
+     },
+     {
+      "p": "mourners",
+      "x": 825,
+      "y": 1300,
+      "s": 0.53,
+      "n": 11,
+      "spread": 250,
+      "seed": 12
+     },
+     {
+      "p": "mourners",
+      "x": 150,
+      "y": 1380,
+      "s": 0.92,
+      "n": 6,
+      "spread": 190,
+      "seed": 13,
+      "rows": 1
+     },
+     {
+      "p": "mourners",
+      "x": 935,
+      "y": 1380,
+      "s": 0.92,
+      "n": 6,
+      "spread": 190,
+      "seed": 14,
+      "rows": 1
+     }
+    ]
+   },
+   "label": "WESTVILLE, INDIANA",
+   "title": {
+    "text": "LINCOLN'S FUNERAL TRAIN",
+    "at": "funeral train",
+    "size": 80
+   },
+   "sfx": [
+    {
+     "kind": "whistle",
+     "at": "came through",
+     "gain": 0.5
+    }
+   ],
+   "credit": "History: Westville Women's Club marker (1965); Indiana Historical Bureau"
+  },
+  {
+   "text": "On May 1, 1865, it rolled north from Indianapolis through the night, past mourners lit by bonfires and torches.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_rail",
+    "sky": "storm",
+    "ground": {
+     "type": "land",
+     "y": 1190
+    },
+    "move": "right",
+    "amount": 0.07,
+    "fog": 0.18,
+    "props": [
+     {
+      "p": "tracks",
+      "x": 540,
+      "y": 1190
+     },
+     {
+      "p": "funeraltrain",
+      "x": 1000,
+      "y": 1190,
+      "s": 1.0,
+      "n": 8,
+      "lit": 0.45
+     },
+     {
+      "p": "bonfire",
+      "x": 190,
+      "y": 1300,
+      "s": 1.1
+     },
+     {
+      "p": "mourners",
+      "x": 360,
+      "y": 1330,
+      "s": 1.05,
+      "n": 7,
+      "spread": 210,
+      "seed": 21,
+      "rows": 1,
+      "torches": 0.45
+     }
+    ]
+   },
+   "label": "MAY 1, 1865",
+   "typed": [
+    {
+     "text": "BONFIRES AND TORCHES",
+     "at": "bonfires",
+     "y": 545,
+     "size": 70
+    }
+   ],
+   "credit": "Indiana Historical Bureau"
+  },
+  {
+   "text": "Shortly before 8 in the morning, it reached Westville.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "tab_rail",
+    "sky": "morning",
+    "ground": {
+     "type": "land",
+     "y": 1190
+    },
+    "move": "in",
+    "amount": 0.1,
+    "fog": 0.2,
+    "props": [
+     {
+      "p": "tree",
+      "x": 1020,
+      "s": 1.1,
+      "seed": 9,
+      "y": 1190
+     },
+     {
+      "p": "haze",
+      "x": 540,
+      "y": 1190,
+      "depth": 170,
+      "a": 0.45,
+      "color": "#9aa6b0"
+     },
+     {
+      "p": "depot",
+      "x": 190,
+      "y": 1265,
+      "s": 0.42,
+      "lit": false
+     },
+     {
+      "p": "trackview",
+      "x": 540,
+      "y": 1190
+     },
+     {
+      "p": "locofront",
+      "x": 540,
+      "y": 1305,
+      "g": 66
+     },
+     {
+      "p": "mourners",
+      "x": 255,
+      "y": 1300,
+      "s": 0.53,
+      "n": 11,
+      "spread": 250,
+      "seed": 31
+     },
+     {
+      "p": "mourners",
+      "x": 825,
+      "y": 1300,
+      "s": 0.53,
+      "n": 11,
+      "spread": 250,
+      "seed": 32
+     },
+     {
+      "p": "mourners",
+      "x": 150,
+      "y": 1380,
+      "s": 0.92,
+      "n": 6,
+      "spread": 190,
+      "seed": 33,
+      "rows": 1
+     },
+     {
+      "p": "mourners",
+      "x": 935,
+      "y": 1380,
+      "s": 0.92,
+      "n": 6,
+      "spread": 190,
+      "seed": 34,
+      "rows": 1
+     }
+    ]
+   },
+   "label": "SHORTLY BEFORE 8 A.M.",
+   "sfx": [
+    {
+     "kind": "whistle",
+     "at": "reached Westville",
+     "gain": 0.45
+    }
+   ],
+   "credit": "Westville Women's Club marker (1965); county historian Fern Eddy Schultz"
+  },
+  {
+   "text": "Westville's 1965 marker says the train stopped briefly here.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_rail",
+    "sky": "morning",
+    "ground": {
+     "type": "land",
+     "y": 1250
+    },
+    "move": "in",
+    "amount": 0.07,
+    "fog": 0.15,
+    "props": [
+     {
+      "p": "haze",
+      "x": 540,
+      "y": 1250,
+      "depth": 150,
+      "a": 0.4,
+      "color": "#9aa6b0"
+     },
+     {
+      "p": "depot",
+      "x": 330,
+      "y": 1250,
+      "s": 0.75,
+      "lit": false
+     },
+     {
+      "p": "tracks",
+      "x": 540,
+      "y": 1262
+     },
+     {
+      "p": "funeraltrain",
+      "x": 1250,
+      "y": 1262,
+      "s": 0.7,
+      "n": 3,
+      "lamp": false,
+      "lit": 0.0
+     },
+     {
+      "p": "mourners",
+      "x": 540,
+      "y": 1385,
+      "s": 1.25,
+      "n": 15,
+      "spread": 430,
+      "seed": 41,
+      "rows": 2
+     }
+    ]
+   },
+   "label": "WESTVILLE",
+   "typed": [
+    {
+     "text": "A BRIEF STOP",
+     "at": "stopped briefly",
+     "y": 545,
+     "size": 84
+    }
+   ],
+   "credit": "Westville Women's Club marker (1965)"
+  },
+  {
+   "text": "His son Willie, who died in 1862, made the trip with him.",
+   "pause": 0.9,
+   "scene": {
+    "kind": "tab_rail",
+    "sky": "morning",
+    "ground": {
+     "type": "land",
+     "y": 1190
+    },
+    "move": "left",
+    "amount": 0.05,
+    "fog": 0.2,
+    "props": [
+     {
+      "p": "haze",
+      "x": 540,
+      "y": 1190,
+      "depth": 170,
+      "a": 0.45,
+      "color": "#9aa6b0"
+     },
+     {
+      "p": "tracks",
+      "x": 540,
+      "y": 1200
+     },
+     {
+      "p": "funeraltrain",
+      "x": 1700,
+      "y": 1200,
+      "s": 1.55,
+      "n": 3,
+      "lamp": false,
+      "lit": 0.15
+     }
+    ]
+   },
+   "label": "THE FUNERAL CAR",
+   "credit": "TIME; American Battlefield Trust; Illinois History and Lincoln Collections"
+  },
+  {
+   "text": "Up the line, in Michigan City, the train stopped beneath an arch of roses and evergreens.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "tab_rail",
+    "sky": "morning",
+    "ground": {
+     "type": "land",
+     "y": 1190
+    },
+    "move": "in",
+    "amount": 0.1,
+    "fog": 0.2,
+    "props": [
+     {
+      "p": "haze",
+      "x": 540,
+      "y": 1190,
+      "depth": 170,
+      "a": 0.45,
+      "color": "#9aa6b0"
+     },
+     {
+      "p": "trackview",
+      "x": 540,
+      "y": 1190
+     },
+     {
+      "p": "mourners",
+      "x": 255,
+      "y": 1300,
+      "s": 0.53,
+      "n": 11,
+      "spread": 250,
+      "seed": 51
+     },
+     {
+      "p": "mourners",
+      "x": 825,
+      "y": 1300,
+      "s": 0.53,
+      "n": 11,
+      "spread": 250,
+      "seed": 52
+     },
+     {
+      "p": "arch",
+      "x": 540,
+      "y": 1330,
+      "s": 1.0
+     },
+     {
+      "p": "locofront",
+      "x": 540,
+      "y": 1345,
+      "g": 94
+     },
+     {
+      "p": "mourners",
+      "x": 140,
+      "y": 1385,
+      "s": 0.95,
+      "n": 6,
+      "spread": 190,
+      "seed": 53,
+      "rows": 1
+     },
+     {
+      "p": "mourners",
+      "x": 945,
+      "y": 1385,
+      "s": 0.95,
+      "n": 6,
+      "spread": 190,
+      "seed": 54,
+      "rows": 1
+     }
+    ]
+   },
+   "label": "MICHIGAN CITY",
+   "typed": [
+    {
+     "text": "ROSES AND EVERGREENS",
+     "at": "roses",
+     "y": 545,
+     "size": 68
+    }
+   ],
+   "credit": "Indiana Historical Bureau; county historian Fern Eddy Schultz"
+  },
+  {
+   "text": "Later that morning, Lincoln left Indiana, where he grew up, for the last time.",
+   "pause": 0.9,
+   "scene": {
+    "kind": "tab_rail",
+    "sky": "morning",
+    "ground": {
+     "type": "land",
+     "y": 1190
+    },
+    "move": "in",
+    "amount": 0.06,
+    "fog": 0.25,
+    "props": [
+     {
+      "p": "haze",
+      "x": 540,
+      "y": 1190,
+      "depth": 170,
+      "a": 0.45,
+      "color": "#9aa6b0"
+     },
+     {
+      "p": "trackview",
+      "x": 540,
+      "y": 1190
+     },
+     {
+      "p": "locofront",
+      "x": 540,
+      "y": 1236,
+      "g": 27,
+      "rear": true
+     },
+     {
+      "p": "tree",
+      "x": 80,
+      "s": 1.1,
+      "seed": 12,
+      "y": 1190
+     },
+     {
+      "p": "tree",
+      "x": 1000,
+      "s": 0.9,
+      "seed": 13,
+      "y": 1190
+     }
+    ]
+   },
+   "label": "MAY 1, 1865",
+   "typed": [
+    {
+     "text": "FOR THE LAST TIME",
+     "at": "last time",
+     "y": 545,
+     "size": 76
+    }
+   ],
+   "credit": "Indiana Historical Bureau; National Park Service"
+  },
+  {
+   "text": "Comment your town, and it could be next.",
+   "end": true,
+   "end_card": {
+    "q": "COMMENT YOUR TOWN",
+    "q2": "IT COULD BE NEXT",
+    "bubble": "Your town, your state",
+    "pill": "Lincoln's funeral train, May 1, 1865",
+    "scene": {
+     "kind": "tab_rail",
+     "sky": "morning",
+     "ground": {
+      "type": "land",
+      "y": 1190
+     },
+     "move": "still",
+     "fog": 0.3,
+     "props": [
+      {
+       "p": "haze",
+       "x": 540,
+       "y": 1190,
+       "depth": 170,
+       "a": 0.45,
+       "color": "#9aa6b0"
+      },
+      {
+       "p": "trackview",
+       "x": 540,
+       "y": 1190
+      }
+     ]
+    }
+   },
+   "credit": "All pictures drawn"
+  }
+ ],
+ "factcheck": {
+  "date": "2026-11-14",
+  "by": "independent subagent",
+  "result": "First script pulled: the 2,000 people, bareheaded men and silent women, white flags, arch of evergreens and roses and the choir singing 'The Departed' come from a Chicago Tribune passage that the Monon Society places at Michigan City (the county historian's 2009 article places it after Westville). Sources disagree, so the Westville short now keeps only what is solid for Westville (the marker's 'shortly before 8 a.m.', the LaPorte Herald's 'tremendous crowd at the depot'), puts the arch in Michigan City, adds Willie Lincoln on the train, makes the last line 'Later that morning', drops the dawn sky (8 a.m. was full daylight) and draws nine cars at night. Second check: the LaPorte Herald 'tremendous crowd' line rests on one 2009 article, so line 4 now cites the 1965 marker ('stopped briefly'); 1865 reports call the Michigan City morning clear, so the grey sky became a clear morning."
+ }
+}

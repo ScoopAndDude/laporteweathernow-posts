@@ -1514,3 +1514,5 @@ import story_kit2  # noqa: E402,F401  story illustrations (registers more KINDS)
 import story_kit3  # noqa: E402,F401  tableaux built from props (registers tab_* KINDS)
 import story_kit4  # noqa: E402,F401  more story illustrations: skijump, airliner, oldtown, bridge, steamer, wreck, propeller, fieldstone, plowfield
 import story_kit5  # noqa: E402,F401  painted scenes (a finished picture as the scene)
+import story_kit6  # noqa: E402,F401  1865 funeral train props: funeraltrain, arch, bonfire, mourners, depot
+import story_kit7  # noqa: E402,F401  Beatty hospital props: hospital, prisonfence, bowling, excavator, crane

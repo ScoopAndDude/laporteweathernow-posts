@@ -50,6 +50,11 @@ few backdrops (bare woods, the generic brick house, the generic courthouse) shou
 - `src/film/story_kit4.py` (Nov. 12, 2026) adds: skijump, airliner, oldtown (town / rising / under / drought), bridge
   (barricade, tents), steamer (list, storm), wreck (under water), propeller, fieldstone, plowfield. Its docstring
   lists the options. `lake` also takes storm=True (no moon) and `lighthouse` style="tower".
+- `src/film/story_kit6.py` (Nov. 14, 2026, for the Westville Lincoln funeral train short) adds props usable in any
+  `tab_*` scene: funeraltrain (an 1860s locomotive and coaches hung with black swags), arch (evergreens and roses),
+  bonfire, mourners (flags=, torches=), depot, haze (mist below the horizon so dark crowds read), trackview (looking
+  down the track to the horizon) and locofront (the same engine head-on; rear=True the last coach going away). Its
+  docstring gives the sizes by distance. Figures only read against the sky or the haze, never against bare ground.
 - `src/film/story_kit3.py` builds a picture from props (ships, a plane, buildings, rooms, trains, trees, people...):
   scene kinds `tab_lake`, `tab_land`, `tab_town`, `tab_room`, `tab_rail` take a sky, a ground and a list of props.
   `python3 story_kit3.py sheet` draws every prop (shorts/out/_props.jpg). Use these first; add a prop when one is
@@ -108,6 +113,14 @@ keep working.
   square tower (courthouse tower="turret" was added for Tippecanoe Place).
 - Mount Baldy (Oct. 2026): the boy fell into a hole that opened in the sand. A video said he crawled in, and
   viewers corrected it in the comments.
+- Check which town a quoted passage describes (Westville, Nov. 2026). A Chicago Tribune passage from May 1, 1865
+  (2,000 people, an arch by "the ladies of the village", a choir singing "The Departed") follows the Westville
+  paragraph in the county historian's 2009 article, and the NWI Times and Valpo.Life repeat it for Westville, but
+  the Monon Society prints it under Michigan City. Sources disagree, so the Westville short left it out. Don't use
+  Valpo.Life for the funeral train.
+- Beatty Memorial Hospital (Nov. 2026): its bowling alley rests only on Wikipedia and Asylum Projects, so it was
+  cut. The prison opened in 1979 as the Westville Correctional Center (now Facility); the state took the hospital
+  over in 1977.
 
 ## 3. Write the script
 
