@@ -87,6 +87,17 @@ few backdrops (bare woods, the generic brick house, the generic courthouse) shou
   generic gable-front farmhouse; door="open" with glow=), rocker, boxstove, cane, lamptable, freightloco (an 1880s
   4-4-0 with a headlamp beam; x is the pilot, flip=True faces left), boxcars, lanternman, poles (telegraph poles
   receding: x2=, rise=) and switchlamp. `story_sound.py` has a new sfx kind, "shots" (two distant gunshots).
+- `src/film/story_kit12.py` (Nov. 15, 2026, for the Drumright short) adds props: derrick (a wooden 1910s-20s oil
+  derrick; house=True adds the walking beam, band wheel and engine house; rim=0..1 a faint moonlit edge so it reads
+  against a night sky), oiltank, hills (rolling hills with oak clumps on the ridges: layers, amp, color, far),
+  dirtroad, dust, tourer (an early-1920s touring car, side on: men=0..4, lamps, flash=0..1 small gun flashes with
+  no gun drawn, dust, flip), jailhouse (a stone jail; door="open" throws lamplight down the steps), outlaw (a man
+  walking alone; skew= moves his shadow away from the light), townbank (a generic 1910s one-storey brick bank, no
+  lettering), courtroom (spread= how far apart the two windows are, so typed text at y 545 clears them) and
+  brickwall (a red-brick prison wall with a guard picket and its searchlight; keep the picket clear of typed text).
+  `story_kit3.py` has two new skies, "day" (a plain dusty daytime sky; the fact-check said "haze" read as dusk) and
+  "haze" (a dim, dusty afternoon), and a scene can set "clouds": 0..1. Draw things that happened in daylight in
+  daylight. Keep the moon away from the title (the title sits near y 430; moon coordinates aren't lifted).
 - `src/film/story_kit3.py` builds a picture from props (ships, a plane, buildings, rooms, trains, trees, people...):
   scene kinds `tab_lake`, `tab_land`, `tab_town`, `tab_room`, `tab_rail` take a sky, a ground and a list of props.
   `python3 story_kit3.py sheet` draws every prop (shorts/out/_props.jpg). Use these first; add a prop when one is
@@ -170,6 +181,15 @@ keep working.
 - Lake Station doorway murder (Nov. 2026): only one newspaper covered it (the Chesterton Tribune, 1888, plus its own
   later mentions). Scoop chose to make it anyway, with the paper credited in the narration and in every beat's
   credit line. That was his call for that story: the two-source rule still stands, so ask him before doing it again.
+- Drumright, Oklahoma (Nov. 2026, the first out-of-state request): ODMP has a short page and a full entry
+  (beta.odmp.org/officer/...). Read the full entry: here it said "No one was ever arrested" (offender "At large"),
+  while the Oklahoma Law Enforcement Memorial and Wikipedia said Blackie Thompson was convicted and got life, and
+  RevolverGuy said William Weaver served life for it. The conviction came out, and the short ended on what was
+  solid: Thompson's July 1934 escape from the Texas death house (Texas Prison Board minutes on tsl.texas.gov) and
+  his death in a gunfight with Amarillo officers that December (Memphis (Tex.) Democrat, Dec. 7, 1934, on
+  newspapers.swco.ttu.edu). History.com and PBS both relay David Grann, so they count as one source. The Gateway to
+  Oklahoma History's search pages and the Portal to Texas History stop fetchers at a bot check, and oklemem.com
+  loops between https and http for some. Daytime events get the "day" sky, not dusk.
 
 ## 3. Write the script
 
@@ -210,6 +230,8 @@ python3 reel_story.py stories/<slug>.json check     # must end "check: all good"
   `python3 -c "from kokoro_onnx.tokenizer import Tokenizer; print(Tokenizer().phonemize('Ghip', 'en-us'))"`, and
   record again. Add names that will come up again to `LOCAL_SAY` in reel_story.py.
 - Wanatah is said WAH-nuh-tah (Scoop confirmed Nov. 15, 2026); `LOCAL_SAY` spells it "Wanna-tah".
+- Osage is said OH-sayj; the voice says "AH-sij" unless respelled, so `LOCAL_SAY` spells it "Ohsayj". The
+  Drumright storyboard respells Ulysses "Yoo-lisseez" (the voice otherwise stresses YOO-lih-seez).
 - **Look at the stills:** text must not cover text, nothing important under the captions (y 1290 to 1400), no frame
   that is just black, and the drawing must match what's said at that moment.
 

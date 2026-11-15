@@ -3,7 +3,7 @@ pictures that show the story). One scene kind, many pictures: the storyboard lis
 
   "scene": {"kind": "tab_lake" | "tab_land" | "tab_town" | "tab_room" | "tab_rail",    (same picture code; the name
             picks the background sound: waves / wind+owl / wind / room+creak / rumble+whistle)
-            "sky": "dusk" | "blue" | "dawn" | "night" | "storm" | "room",   "moon": [x, y, r] (optional)
+            "sky": "dusk" | "blue" | "dawn" | "night" | "storm" | "haze" | "day" | "room",  "clouds": 0..1 (optional)   "moon": [x, y, r] (optional)
             "wall": "#1a100c"  (sky "room": the wall colour)
             "ground": {"type": "water" | "land" | "snow" | "sand" | "street" | "floor", "y": 1150},
             "props": [{"p": "steamer", "x": 540, "y": 1150, "s": 1.0, ...}, ...],     drawn in order, back to front
@@ -29,8 +29,13 @@ from reel_frank import flick
 from story_kit2 import sky as mk_sky, leafy, DUSK, BLUE, DAWN, NIGHT, wagon, horse, walkers, touring_car
 
 STORM = [(0.0, "#050608"), (0.4, "#0e1318"), (0.62, "#1a2228"), (1.0, "#161c20")]
-SKIES = {"dusk": DUSK, "blue": BLUE, "dawn": DAWN, "night": NIGHT, "storm": STORM}
-GROUND = {"water": {"dusk": "#2a2630", "blue": "#0e2030", "dawn": "#4a4a58", "night": "#081420", "storm": "#0c1216"},
+HAZE = [(0.0, "#16181e"), (0.22, "#2e2e34"), (0.38, "#55493e"), (0.47, "#8a6e52"), (0.53, "#a07e5a"), (0.6, "#6a5240"),
+        (1.0, "#2e241e")]   # a hot, dusty afternoon, kept dim (added Nov. 15, 2026 for the Drumright short)
+DAY = [(0.0, "#4a5e72"), (0.24, "#6a7c8e"), (0.4, "#949ea4"), (0.48, "#bfb39a"), (0.54, "#b8a486"), (0.62, "#8a7860"),
+       (1.0, "#4a3e32")]  # a plain, dusty daytime sky (added Nov. 15, 2026: daylight events shouldn't look like dusk)
+SKIES = {"dusk": DUSK, "blue": BLUE, "dawn": DAWN, "night": NIGHT, "storm": STORM, "haze": HAZE, "day": DAY}
+GROUND = {"water": {"dusk": "#2a2630", "blue": "#0e2030", "dawn": "#4a4a58", "night": "#081420", "storm": "#0c1216",
+                    "haze": "#3a3028", "day": "#4a4a44"},
           "land": "#070908", "snow": "#56626c", "sand": "#3a372e", "street": "#101214", "floor": "#150d09"}
 INK = "#050607"
 PROPS = {}
@@ -1002,7 +1007,7 @@ class Tableau(Shot):
             moon = p.get("moon")
             night = skyn in ("night", "blue")
             img = mk_sky(SKIES[skyn], 900 + self.seed, moon=tuple(moon) if moon else None,
-                         stars=(380 if night else 0), clouds=0.6 if skyn == "storm" else 0.35)
+                         stars=(380 if night else 0), clouds=float(p.get("clouds", 0.6 if skyn == "storm" else 0.35)))
         c, L = cv(), cv()
         gt = g.get("type", "land")
         if skyn == "room":
