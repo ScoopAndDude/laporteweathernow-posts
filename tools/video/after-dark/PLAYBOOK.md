@@ -107,6 +107,20 @@ few backdrops (bare woods, the generic brick house, the generic courthouse) shou
   `story_kit3.py` has two new skies, "day" (a plain dusty daytime sky; the fact-check said "haze" read as dusk) and
   "haze" (a dim, dusty afternoon), and a scene can set "clouds": 0..1. Draw things that happened in daylight in
   daylight. Keep the moon away from the title (the title sits near y 430; moon coordinates aren't lifted).
+- `src/film/story_kit13.py` (Nov. 15, 2026, for the Michigan City pier-light short) adds props: pierhead (the 1904
+  East Pierhead Light at the end of its pier, with the elevated walk on steel A-frames; wall= the building colour: it
+  was painted buff until about 1920, so darken it for early scenes), islandlight (a tall conical lighthouse with its
+  keeper's house and passageway on an island shore), smallboat (no people; capsized=True), icefloes and towergallery
+  (the top of a lighthouse tower; boys= small figures at the rail, drawn behind it).
+- `src/film/story_kit14.py` (Nov. 15, 2026, for the Wanatah Palm Sunday tornado short) adds props: tornado (h, top,
+  base, lean, debris=0..1; rope=True), stormbase (a dark cloud base with a lowered wall cloud; flash= lightning glow
+  inside the cloud), rainshaft, thunderhead, fields (furrows to the horizon), countyroad, sedan65 (a 1960s sedan),
+  photographer, church65 (palms= fronds, only for morning scenes), farmstead (house, barn, silo, bare windbreak),
+  houses65, brokenbarn, boards (air=True: flying), wallmap (Indiana), weatherdesk (rotary phone, teletype), tvset65
+  (text="LINE ONE|LINE TWO") and floorlamp. `story_kit3.py` has two new skies, "squall" (the green-grey light under a
+  storm) and "warm" (a warm spring afternoon). A light spot with a radius over 20 gets a bright dot in its middle, so
+  don't use spots for lightning or a TV screen: draw that glow on the light layer L. Outdoor storm scenes use
+  tab_town (wind with no owl).
 - `src/film/story_kit3.py` builds a picture from props (ships, a plane, buildings, rooms, trains, trees, people...):
   scene kinds `tab_lake`, `tab_land`, `tab_town`, `tab_room`, `tab_rail` take a sky, a ground and a list of props.
   `python3 story_kit3.py sheet` draws every prop (shorts/out/_props.jpg). Use these first; add a prop when one is
@@ -199,6 +213,16 @@ keep working.
   newspapers.swco.ttu.edu). History.com and PBS both relay David Grann, so they count as one source. The Gateway to
   Oklahoma History's search pages and the Portal to Texas History stop fetchers at a bot check, and oklemem.com
   loops between https and http for some. Daytime events get the "day" sky, not dusk.
+- Michigan City pier light (Nov. 2026): one writer said the keepers' boys watched from the tower; Lighthousefriends
+  and Lighthouse Digest put them on the beach. "One account says" is for a claim with one source, not for one other
+  sources contradict, so it came out. Philip/Phillip Sheridan is spelled both ways. Lighthousefriends and the U.S.
+  Lighthouse Society keeper register are the same compiler, so they count as one source.
+- Wanatah Palm Sunday tornado (Nov. 2026): the NWS Northern Indiana page's own table (the official track, from south
+  of Crown Point) and its narrative (south of Valparaiso) disagree on where it touched down, so the short says
+  "Porter County"; check a page's table against its text. "No way to get a warning" was wrong there: South Bend had
+  warned LaPorte County shortly before ("Warnings went out, but many people never got them"). The Times of Northwest
+  Indiana sends fetchers to a TollBit paywall: read it through search-result text and count it once. Draw the season
+  and the sky as they were: bare trees in early April, and no full moon unless it was full.
 
 ## 3. Write the script
 

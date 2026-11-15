@@ -1522,3 +1522,4 @@ import story_kit10  # noqa: E402,F401  Wanatah petrified-woman props: bogpit, da
 import story_kit11  # noqa: E402,F401  Lake Station props: trackhouse, rocker, boxstove, cane, lamptable, freightloco, boxcars, lanternman, poles, switchlamp
 import story_kit12  # noqa: E402,F401  Drumright props: derrick, oiltank, hills, dirtroad, dust, tourer, jailhouse, outlaw, townbank, courtroom
 import story_kit13  # noqa: E402,F401  Michigan City pier-light props: pierhead, islandlight, smallboat, icefloes, towergallery
+import story_kit14  # noqa: E402,F401  Wanatah 1965 tornado props: tornado, stormbase, rainshaft, thunderhead, fields, countyroad, sedan65, photographer, church65, farmstead, houses65, brokenbarn, boards, wallmap, weatherdesk, tvset65, floorlamp

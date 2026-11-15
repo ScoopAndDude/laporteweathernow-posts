@@ -33,9 +33,14 @@ HAZE = [(0.0, "#16181e"), (0.22, "#2e2e34"), (0.38, "#55493e"), (0.47, "#8a6e52"
         (1.0, "#2e241e")]   # a hot, dusty afternoon, kept dim (added Nov. 15, 2026 for the Drumright short)
 DAY = [(0.0, "#4a5e72"), (0.24, "#6a7c8e"), (0.4, "#949ea4"), (0.48, "#bfb39a"), (0.54, "#b8a486"), (0.62, "#8a7860"),
        (1.0, "#4a3e32")]  # a plain, dusty daytime sky (added Nov. 15, 2026: daylight events shouldn't look like dusk)
-SKIES = {"dusk": DUSK, "blue": BLUE, "dawn": DAWN, "night": NIGHT, "storm": STORM, "haze": HAZE, "day": DAY}
+SQUALL = [(0.0, "#07090a"), (0.28, "#141a1a"), (0.42, "#2a3530"), (0.5, "#4e5c48"), (0.55, "#5e6a4c"), (0.6, "#3a4232"),
+          (1.0, "#12160f")]  # the green-grey light under a tornadic storm (added Nov. 15, 2026, Wanatah 1965)
+WARMDAY = [(0.0, "#2e4058"), (0.26, "#56708a"), (0.42, "#a49a84"), (0.5, "#c4a878"), (0.56, "#a88a62"), (0.64, "#6a5642"),
+           (1.0, "#2e261e")]  # a warm spring late afternoon, kept dim (added Nov. 15, 2026, Wanatah 1965)
+SKIES = {"dusk": DUSK, "blue": BLUE, "dawn": DAWN, "night": NIGHT, "storm": STORM, "haze": HAZE, "day": DAY,
+         "squall": SQUALL, "warm": WARMDAY}
 GROUND = {"water": {"dusk": "#2a2630", "blue": "#0e2030", "dawn": "#4a4a58", "night": "#081420", "storm": "#0c1216",
-                    "haze": "#3a3028", "day": "#4a4a44"},
+                    "haze": "#3a3028", "day": "#4a4a44", "squall": "#1a2018", "warm": "#3a3a36"},
           "land": "#070908", "snow": "#56626c", "sand": "#3a372e", "street": "#101214", "floor": "#150d09"}
 INK = "#050607"
 PROPS = {}
