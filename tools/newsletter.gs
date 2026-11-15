@@ -451,7 +451,7 @@ function nlBuildIssue_(g) {
     var temp = (p.isDaytime ? "high near " : "low around ") + p.temperature;
     return "<tr><td style=\"padding:6px 10px 6px 0;font-weight:bold;white-space:nowrap;vertical-align:top\">" +
       nlEsc_(p.name) + "</td><td style=\"padding:6px 0\">" + nlEsc_(nlCap_(p.shortForecast)) + ", " + temp +
-      nlEsc_(rain) + ". Wind " + nlEsc_(p.windSpeed) + ".</td></tr>";
+      nlEsc_(rain) + ". Wind " + nlEsc_(/^0 mph$/i.test(p.windSpeed) ? "calm" : p.windSpeed) + ".</td></tr>";
   }).join("");
 
   var sat = periods.filter(function (p) { return p.name === "Saturday"; })[0] || periods[0];

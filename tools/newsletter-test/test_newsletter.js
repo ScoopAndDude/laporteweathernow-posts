@@ -1,5 +1,5 @@
 // Local test of tools/newsletter.gs (the Thursday weekend email) with Apps Script stand-ins.
-//   node tools/newsletter-test/test_newsletter.js tools/newsletter.gs   (from the repo root; 40 checks, nothing real is called)
+//   node tools/newsletter-test/test_newsletter.js tools/newsletter.gs   (from the repo root; 41 checks, nothing real is called)
 const fs = require("fs");
 const crypto = require("crypto");
 const vm = require("vm");
@@ -28,7 +28,7 @@ function makeWorld(opts = {}) {
     { id: 90, name: "Weekend Outlook · Canton, GA · 2026-11-12" },
     { id: 91, name: "Morning Forecast" },
   ];
-  const period = (name, day, t, sf, pop) => ({ name, isDaytime: day, temperature: t, shortForecast: sf, windSpeed: "5 to 10 mph", probabilityOfPrecipitation: { value: pop } });
+  const period = (name, day, t, sf, pop) => ({ name, isDaytime: day, temperature: t, shortForecast: sf, windSpeed: name === "Friday" ? "0 mph" : "5 to 10 mph", probabilityOfPrecipitation: { value: pop } });
   const weekend = (hi) => [period("Tonight", false, hi - 20, "Clear", 0), period("Friday", true, hi, "Mostly Sunny", 0), period("Friday Night", false, hi - 18, "Partly Cloudy", 10),
     period("Saturday", true, hi + 2, "Chance Rain Showers", 40), period("Saturday Night", false, hi - 15, "Rain Showers Likely", 60), period("Sunday", true, hi - 1, "Sunny", 0), period("Sunday Night", false, hi - 19, "Clear", 0)];
   const today = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(now);
@@ -227,6 +227,14 @@ const brevo = (w, method, re) => w.calls.filter((c) => c.method === method && c.
   cases.forEach(([t, want]) => check(label(t) === want, `town "${t}" -> ${want}`));
   const mc = w.sb.nlPlace_("Michigan City, IN");
   check(mc.lat === 41.699 && mc.lon === -86.8749, "a town with several ZIPs: their middle point (" + mc.lat + ", " + mc.lon + ")");
+}
+
+// 9b. "0 mph" reads as calm.
+{
+  const w = makeWorld();
+  w.sb.nlPreview();
+  const lp = brevo(w, "post", /^\/smtp\/email$/)[0].body.htmlContent;
+  check(!/Wind 0 mph/.test(lp) && /Wind 5 to 10 mph/.test(lp), "wind: \"0 mph\" never shows as such; real speeds kept");
 }
 
 // 9. An alert at a reader's spot shows in their own time zone.
