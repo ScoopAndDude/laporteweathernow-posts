@@ -39,6 +39,15 @@ Scary comes from the story, the pacing and the sound, never from gore. All of Sc
 - Sound: "sfx" accents at the words that matter: heartbeat under the build, knock, creak, crow, thunder with "flash", music_box, whoosh at the turn, static (radio), dance (distant 1930s band, for a ballroom story).
 - End on the unsettling line before the call to comment (for legends: "And some say she's still out there."), only if sources report it.
 
+## Check what Muse already posted (Scoop, Nov. 15, 2026: "we have muse making videos too")
+
+Muse, another tool Scoop uses, also makes LaPorte After Dark videos and posts them straight to the networks.
+Buffer still lists those posts (list_posts shows them with via "network"). Before starting any requested town,
+list the last two weeks of posts and search their text for the town; if Muse already told a story, pick a
+different one. On Nov. 15 both pipelines made the 1924 Drumright story, about 90 minutes apart. Muse's captions
+can carry legends with no source behind them (its "Grey Lady" of the Michigan City pier light had none), so
+don't take a story from them without the two-source check.
+
 ## Creepy first (Scoop, Nov. 15, 2026: "nothing really spooky about the bank lol", "laporte after dark is meant to be creepy spooky history")
 
 A requested town gets a creepy story: an unsolved death, a disappearance, a hoax that fooled people, a legend, a

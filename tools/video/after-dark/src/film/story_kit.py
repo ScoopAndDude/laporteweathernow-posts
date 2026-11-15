@@ -1521,3 +1521,4 @@ import story_kit9  # noqa: E402,F401  Wanatah Bank props: bankblock, storefront,
 import story_kit10  # noqa: E402,F401  Wanatah petrified-woman props: bogpit, darkwater, railfence, homestead, lane, walker, pitmen, handpress, typecase, rolltop, hanglamp, coach, stationlamp
 import story_kit11  # noqa: E402,F401  Lake Station props: trackhouse, rocker, boxstove, cane, lamptable, freightloco, boxcars, lanternman, poles, switchlamp
 import story_kit12  # noqa: E402,F401  Drumright props: derrick, oiltank, hills, dirtroad, dust, tourer, jailhouse, outlaw, townbank, courtroom
+import story_kit13  # noqa: E402,F401  Michigan City pier-light props: pierhead, islandlight, smallboat, icefloes, towergallery
