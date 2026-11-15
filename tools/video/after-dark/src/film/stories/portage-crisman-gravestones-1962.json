@@ -7,6 +7,11 @@
   "prog": 6
  },
  "say": [],
+ "factcheck": {
+  "date": "2026-11-14",
+  "by": "independent subagent",
+  "result": "lines 1-6 supported (line 6 from the July 19, 1962 article alone; the second death in 1876 from the 1962 article, the first from the Dec. 7, 1876 Vidette); line 7 changed: it was the granddaughter, Mrs. Nealon, who told the paper it was still unsolved, not the paper itself; the last label changed from STILL A MYSTERY to A MYSTERY IN 1962 (nothing shows it is unsolved today); beat 5 credit now July 11 and 19 (the granddaughter is named in July 11); the sister is not named because sources spell her Marta, Martha, Myrta and Myrtie; the highway drawn without a centre line because the 1962 lane count is not known. The standard ending was kept (Scoop's rule)."
+ },
  "sources": [
   {
    "what": "'Grave Question' (July 11, 1962): descendants of Portage pioneers Isaac and Jane Crisman mulling over recently unearthed family gravestones; three stones, a family monument and two headstones, found by workmen excavating for a new filling station at the southeast corner of U.S. 20 and Crisman road; headstones bear the names Wilbur and Marta; the monument apparently erected by Isaac and Jane Crisman in memory of two children; 'Both the monument and headstones are of unpolished marble'; the children died in 1876 of scarlet fever, aged five and three; Isaac and Jane were the grandparents of Celia Nealon and Mrs. Max Wheat",
@@ -58,7 +63,8 @@
       "p": "highway",
       "x": 760,
       "y": 1180,
-      "side": false
+      "side": false,
+      "dashes": false
      },
      {
       "p": "dirt",
@@ -150,7 +156,8 @@
      {
       "p": "highway",
       "x": 620,
-      "y": 1150
+      "y": 1150,
+      "dashes": false
      },
      {
       "p": "car",
@@ -334,7 +341,8 @@
       "p": "highway",
       "x": 700,
       "y": 1170,
-      "side": false
+      "side": false,
+      "dashes": false
      },
      {
       "p": "dirt",
@@ -354,7 +362,7 @@
     "amount": 0.06
    },
    "label": "THE FAMILY",
-   "credit": "Vidette-Messenger, July 19, 1962"
+   "credit": "Vidette-Messenger, July 11 and 19, 1962"
   },
   {
    "text": "She was shown the old township cemetery, north of the highway, on a bank overgrown with trees, with no stones showing.",
@@ -428,7 +436,7 @@
    "credit": "Vidette-Messenger, July 19, 1962"
   },
   {
-   "text": "How the stones came to be buried at that corner, the paper said, remained unsolved.",
+   "text": "How the stones came to be buried at that corner, she told the paper, was still unsolved.",
    "pause": 0.9,
    "scene": {
     "kind": "tab_land",
@@ -446,7 +454,8 @@
       "p": "highway",
       "x": 540,
       "y": 1190,
-      "side": false
+      "side": false,
+      "dashes": false
      },
      {
       "p": "foundstones",
@@ -459,17 +468,17 @@
     ],
     "amount": 0.07
    },
-   "label": "STILL A MYSTERY",
+   "label": "A MYSTERY IN 1962",
    "typed": [
     {
      "text": "UNSOLVED",
-     "at": "remained unsolved",
+     "at": "still unsolved",
      "y": 545,
      "size": 110
     }
    ],
    "flash": [
-    "remained unsolved"
+    "still unsolved"
    ],
    "credit": "Vidette-Messenger, July 19, 1962"
   },

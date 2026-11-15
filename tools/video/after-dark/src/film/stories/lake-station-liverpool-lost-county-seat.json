@@ -6,6 +6,11 @@
   "seed": 199,
   "prog": 6
  },
+ "factcheck": {
+  "date": "2026-11-14",
+  "by": "independent subagent",
+  "result": "lines 3 to 6 supported; line 1 changed from 'Lake County's first county seat' to 'once chose a county seat' (Lake Court House was the temporary seat before 1839); line 2 now 'lots sold for $16,000' (the sources say sold, not paid); the fire rests on Bowers (1929) alone, so line 7 now says 'one historian wrote that fire took what was left'; 'only the name survives' became 'no buildings remain' (a 1937 marker stood at the courthouse site); credits corrected; the courthouse is drawn as a small unfinished silhouette because Bowers says frame and the WPA guide says log; Lake Court House's log court house drawn two storeys and the 1852 depot two storeys, as the sources describe; New Chicago added to the opening label."
+ },
  "say": [
   [
    "\\$16,000",
@@ -17,6 +22,26 @@
   ]
  ],
  "sources": [
+  {
+   "what": "'the first county seat' at Liverpool, through Earle's influence; 'construction was started on the first courthouse', 'a log structure'; 'Within the space of three days, $16,000 of lots were sold'; Liverpool 'soon became a deserted city'; a two-story Michigan Central depot at Lake Station; 'In the spring of the following year, George Earle had the townsite platted and recorded'; a 1937 marker at the 'site of the first courthouse in Lake County' (from the independent fact-check)",
+   "who": "Calumet Region Historical Guide (Federal Writers' Project, WPA, 1939), pp. 22, 116-117",
+   "url": "https://www.csu.edu/cerc/researchreports/documents/CalumetRegionHistoricalGuide1939.pdf"
+  },
+  {
+   "what": "by 1850 Liverpool was 'practically deserted'; repeats the Blue Island tavern story (from the independent fact-check)",
+   "who": "Cohen, 'Lake County Before the Railroad Era', Indiana Magazine of History",
+   "url": "https://scholarworks.iu.edu/journals/index.php/imh/article/download/6886/7486/0"
+  },
+  {
+   "what": "Robinson's log building 'was made the temporary courthouse'; so many people were dissatisfied that the legislature ordered relocation (from the independent fact-check)",
+   "who": "Lake County Historical Society, About the Courthouse",
+   "url": "https://lchs1875.org/about-the-courthouse/"
+  },
+  {
+   "what": "Liverpool's courthouse described as a log courthouse (Bowers calls it 'a frame house', so the drawing shows only a silhouette)",
+   "who": "Lowell Public Library, 'Strange, Unusual, Interesting Historical Facts No. 12' (2002)",
+   "url": "https://www.lowellpl.lib.in.us/lowell-history-pages/pioneer-history-index/strange-unusual-interesting-historical-facts-no-12/"
+  },
   {
    "what": "Liverpool platted in January 1836 by John Chapman, Frederickson and Davis at the junction of the Deep and Little Calumet rivers; streets 100 feet wide, three squares, 40 blocks, 435 lots; three days of lot sales in July 1836 brought $16,000; commissioners favored Liverpool May 11, 1839, and a frame court house was begun; a second commission chose Lake Court House (later Crown Point) June 12, 1840; 'According to Timothy Ball, the courthouse at Liverpool, which had never been entirely finished, was sold' and 'moved on a scow down the Deep and Little Calumet rivers to Blue Island, Illinois'; 'Some persons dispute the story of the removal of the court-house'; after George Earle founded Hobart the empty buildings decayed, 'Finally the arch enemy of wooden structures appeared and demanded its toll, and only ashes remained'; in 1929 the site was a small railroad junction with a station house",
    "who": "John O. Bowers, 'Dream Cities of the Calumet', History of Lake County vol. 10 (Lake County Historical Association, 1929); transcribed by inportercounty.org",
@@ -75,7 +100,7 @@
  ],
  "beats": [
   {
-   "text": "Lake County's first county seat vanished. It stood where Lake Station and New Chicago are now.",
+   "text": "Lake County once chose a county seat that vanished. It stood where Lake Station and New Chicago are now.",
    "pause": 0.7,
    "scene": {
     "kind": "tab_land",
@@ -150,7 +175,7 @@
      1000
     ]
    },
-   "label": "LAKE STATION, INDIANA",
+   "label": "LAKE STATION AND NEW CHICAGO",
    "title": {
     "text": "THE LOST COUNTY SEAT",
     "at": "vanished",
@@ -163,10 +188,10 @@
      "gain": 0.4
     }
    ],
-   "credit": "History: T. H. Ball (1900); Town of New Chicago; Crown Point Library"
+   "credit": "History: J. O. Bowers (1929); WPA guide (1939); Town of New Chicago"
   },
   {
-   "text": "In 1836, Liverpool was laid out where Deep River meets the Little Calumet. In three days, buyers paid $16,000 for lots.",
+   "text": "In 1836, Liverpool was laid out where Deep River meets the Little Calumet. In three days, lots sold for $16,000.",
    "pause": 0.6,
    "scene": {
     "kind": "tab_land",
@@ -247,7 +272,7 @@
      "size": 76
     }
    ],
-   "credit": "J. O. Bowers (1929); T. H. Ball (1900); Lowell Public Library"
+   "credit": "J. O. Bowers (1929); T. H. Ball (1900); WPA guide (1939)"
   },
   {
    "text": "In 1839, it became the county seat, and work began on a courthouse.",
@@ -284,11 +309,10 @@
       "lit": false
      },
      {
-      "p": "timberframe",
+      "p": "halfbuilt",
       "x": 560,
       "y": 1216,
-      "s": 1.5,
-      "done": 0.3
+      "s": 1.45
      }
     ],
     "amount": 0.08,
@@ -306,7 +330,7 @@
      "size": 84
     }
    ],
-   "credit": "J. O. Bowers (1929); T. H. Ball (1900); Crown Point Library"
+   "credit": "J. O. Bowers (1929); WPA guide (1939); Lowell Public Library"
   },
   {
    "text": "But settlers protested. In 1840, the seat moved to Lake Court House, soon renamed Crown Point.",
@@ -340,8 +364,9 @@
       "p": "loghouse",
       "x": 680,
       "y": 1200,
-      "s": 1.35,
-      "lit": true
+      "s": 1.25,
+      "lit": true,
+      "storeys": 2
      },
      {
       "p": "riders",
@@ -362,7 +387,7 @@
    "credit": "Lowell Public Library; Crown Point Library; J. O. Bowers (1929)"
   },
   {
-   "text": "An early historian wrote that the unfinished courthouse was floated downriver on a scow, to Blue Island, Illinois. Others dispute it.",
+   "text": "An early historian wrote that the unfinished courthouse was floated downriver to Blue Island, Illinois. Others dispute it.",
    "pause": 0.8,
    "scene": {
     "kind": "tab_lake",
@@ -416,7 +441,8 @@
       "p": "scow",
       "x": 500,
       "y": 1250,
-      "s": 1.55
+      "s": 1.55,
+      "cargo": "halfbuilt"
      },
      {
       "p": "reeds",
@@ -446,7 +472,7 @@
      "size": 62
     }
    ],
-   "credit": "T. H. Ball, quoted by J. O. Bowers (1929); Lowell Public Library"
+   "credit": "T. H. Ball, cited by J. O. Bowers (1929); Lowell Public Library"
   },
   {
    "text": "George Earle, who had pushed for Liverpool, went on to found Hobart, and in 1852 he laid out Lake Station.",
@@ -470,7 +496,7 @@
       "color": "#6a7076"
      },
      {
-      "p": "depot",
+      "p": "depot2",
       "x": 230,
       "y": 1214,
       "s": 0.9,
@@ -521,10 +547,10 @@
      "gain": 0.4
     }
    ],
-   "credit": "T. H. Ball (1900); South Shore CVA; Encyclopedia of Chicago"
+   "credit": "WPA guide (1939); T. H. Ball (1900); Town of New Chicago"
   },
   {
-   "text": "Liverpool emptied, and fire took what was left. Only the name survives.",
+   "text": "Liverpool emptied. One historian wrote that fire took what was left. No buildings remain.",
    "pause": 0.9,
    "scene": {
     "kind": "tab_land",
@@ -561,13 +587,13 @@
    "label": "LIVERPOOL",
    "typed": [
     {
-     "text": "ONLY THE NAME SURVIVES",
-     "at": "Only the name",
+     "text": "NO BUILDINGS REMAIN",
+     "at": "No buildings remain",
      "y": 545,
-     "size": 62
+     "size": 66
     }
    ],
-   "credit": "J. O. Bowers (1929); Town of New Chicago"
+   "credit": "J. O. Bowers (1929); WPA guide (1939); Town of New Chicago"
   },
   {
    "text": "Comment your town, and it could be next.",
@@ -576,7 +602,7 @@
     "q": "COMMENT YOUR TOWN",
     "q2": "IT COULD BE NEXT",
     "bubble": "Your town, your state",
-    "pill": "Liverpool: Lake County's first county seat",
+    "pill": "Liverpool: Lake County's lost county seat, 1839 to 1840",
     "scene": {
      "kind": "tab_land",
      "sky": "night",

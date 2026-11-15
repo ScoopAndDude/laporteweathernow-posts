@@ -9,8 +9,8 @@ themselves in story_kit3.PROPS, so any tab_* scene can use them:
     backhoe      a late-1950s tractor backhoe-loader: big rear wheels, a loader bucket in front, the digging arm
                  raised behind (flip=True faces the other way); no one in the seat
     routesign    a U.S. highway shield on a post (num="20"). Signs show only what is really on the real sign
-    highway      a two-lane highway across the middle distance, a side road running toward the viewer, and
-                 telephone poles with sagging wires along it (side=False: no side road)
+    highway      a highway across the middle distance, a side road running toward the viewer, and telephone poles
+                 with sagging wires along it (side=False: no side road; dashes=False: no centre line, lanes left vague)
     farmhouse    an 1870s two-storey frame farmhouse with a porch and a chimney; lit=[0/1, 0/1, 0/1] windows that
                  glow (upstairs left, upstairs right, downstairs); smoke=True a thin chimney plume
     bank         a high bank overgrown with brush rising across the picture (w, h; flip=True rises the other way).
@@ -21,10 +21,15 @@ themselves in story_kit3.PROPS, so any tab_* scene can use them:
     stakes       a new town staked out on open ground: rows of survey stakes with small white flags
     timberframe  an unfinished two-storey timber-frame building: open studs and rafters, the lower part sided
                  (done=0..1), a ladder and scaffold poles, lumber stacked in front
-    scow         a flat-bottomed river scow carrying an unfinished frame building, two small figures poling it
+    halfbuilt    a small building left unfinished, in silhouette only: walls partly up with a ragged top, no roof,
+                 scaffold poles, a ladder and lumber (it doesn't say log or frame; sources differ for Liverpool's)
+    scow         a flat-bottomed river scow carrying an unfinished building, two small figures poling it
+                 (cargo="frame" the timber frame, cargo="halfbuilt" the silhouette)
     riders       n small horseback riders (story_kit2.horse with a rider), facing right (flip=True: left)
     wagon        a covered wagon and its two-horse team, facing right (flip=True: left; team=False: no horses)
-    loghouse     a long, low log building with a chimney (Crown Point's first court house was a log building)
+    loghouse     a long log building with a chimney (Crown Point's first court house was a log building);
+                 storeys=2 makes it two storeys high
+    depot2       a two-storey board-and-batten railroad depot of the 1850s with deep eaves and a platform
     townfire     a few small, empty frame and log buildings burning at night: flames, smoke, sparks, flickering light
 
 People are small anonymous silhouettes. Nothing shows a body, a real person's likeness, an inscription or a brand.
@@ -194,11 +199,12 @@ def routesign(c, L, x, y, s=1.0, num="20", **k):
 
 
 @prop
-def highway(c, L, x, y, s=1.0, side=True, poles=True, **k):
-    """A two-lane highway across the picture at y, a side road running toward the viewer at x, telephone poles."""
+def highway(c, L, x, y, s=1.0, side=True, poles=True, dashes=True, **k):
+    """A highway across the picture at y, a side road running toward the viewer at x, telephone poles.
+    dashes=False: no centre line, so the picture doesn't say how many lanes there were."""
     c.poly([(-20, y), (W + 20, y), (W + 20, y + 52 * s), (-20, y + 52 * s)], "#16181b")
     c.line([(-20, y + 1), (W + 20, y + 1)], "#2a2d30", 2, 0.8)
-    for j in range(0, W + 60, int(76 * s)):
+    for j in range(0, W + 60, int(76 * s)) if dashes else ():
         c.rect(j, y + 24 * s, j + 36 * s, y + 28 * s, "#9a9478", 0.55)
     if side:
         c.poly([(x - 70 * s, y + 52 * s), (x + 70 * s, y + 52 * s), (x + 520 * s, y + 900 * s), (x - 520 * s, y + 900 * s)],
@@ -405,10 +411,38 @@ def timberframe(c, L, x, y, s=1.0, done=0.3, scaffold=True, ladder=True, lumber=
 
 
 @prop
-def scow(c, L, x, y, s=1.0, polers=2, **k):
-    """A flat-bottomed river scow carrying an unfinished frame building, poled by two small figures."""
+def halfbuilt(c, L, x, y, s=1.0, col="#0c0a08", poles=True, ladder=True, lumber=True, **k):
+    """A small building left unfinished, in silhouette: walls partly up with a ragged top and no roof."""
+    w2 = 150 * s
+    top = [(x - w2, y - 150 * s), (x - w2 * 0.38, y - 150 * s), (x - w2 * 0.38, y - 120 * s), (x + w2 * 0.18, y - 120 * s),
+           (x + w2 * 0.18, y - 88 * s), (x + w2 * 0.6, y - 88 * s), (x + w2 * 0.6, y - 58 * s), (x + w2, y - 58 * s)]
+    c.poly([(x - w2, y)] + top + [(x + w2, y)], col)
+    if poles:
+        for px, ph in ((x - w2 - 34 * s, 240), (x - w2 + 4 * s, 218), (x + w2 * 0.6, 170), (x + w2 + 22 * s, 150)):
+            c.line([(px, y), (px, y - ph * s)], col, 5 * s)
+        c.line([(x - w2 - 44 * s, y - 124 * s), (x - w2 + 14 * s, y - 124 * s)], col, 7 * s)
+    if ladder:
+        a, b = (x + w2 + 60 * s, y), (x + w2 * 0.7, y - 120 * s)
+        for off in (-10, 10):
+            c.line([(a[0] + off * s, a[1]), (b[0] + off * s, b[1])], col, 4 * s)
+        for t in range(1, 8):
+            f = t / 8
+            px, py = a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f
+            c.line([(px - 10 * s, py), (px + 10 * s, py)], col, 3 * s)
+    if lumber:
+        for t in range(4):
+            c.rect(x - 250 * s + t * 6 * s, y + (16 - t * 10) * s, x - 100 * s + t * 6 * s, y + (24 - t * 10) * s, "#1c150e")
+    return []
+
+
+@prop
+def scow(c, L, x, y, s=1.0, polers=2, cargo="frame", **k):
+    """A flat-bottomed river scow carrying an unfinished building, poled by two small figures."""
     c.rect(x - 290 * s, y + 6 * s, x + 290 * s, y + 46 * s, "#000000", 0.35, blur=8)            # its shadow on the water
-    timberframe(c, L, x + 10 * s, y - 40 * s, s * 0.6, done=0.6, scaffold=False, ladder=False, lumber=False)
+    if cargo == "halfbuilt":
+        halfbuilt(c, L, x + 10 * s, y - 40 * s, s * 0.85, poles=False, ladder=False, lumber=False)
+    else:
+        timberframe(c, L, x + 10 * s, y - 40 * s, s * 0.6, done=0.6, scaffold=False, ladder=False, lumber=False)
     c.poly([(x - 310 * s, y - 42 * s), (x + 310 * s, y - 42 * s), (x + 276 * s, y + 6 * s), (x - 276 * s, y + 6 * s)],
            "#0a0806")
     c.line([(x - 310 * s, y - 42 * s), (x + 310 * s, y - 42 * s)], "#2e2418", 3 * s, 0.8)
@@ -452,11 +486,11 @@ def wagon(c, L, x, y, s=1.0, team=True, flip=False, **k):
 
 
 @prop
-def loghouse(c, L, x, y, s=1.0, lit=True, **k):
-    """A long, low log building with a shake roof and a stick-and-clay chimney at one end."""
-    w2, h = 240 * s, 150 * s
+def loghouse(c, L, x, y, s=1.0, lit=True, storeys=1, **k):
+    """A long log building with a shake roof and a chimney at one end (storeys=2: two storeys high)."""
+    w2, h = 240 * s, (150 if storeys < 2 else 270) * s
     c.rect(x - w2, y - h, x + w2, y, "#0b0908")
-    for j in range(9):
+    for j in range(int(h / (16.5 * s))):
         yy = y - (8 + j * 16.5) * s
         c.line([(x - w2 - 10 * s, yy), (x + w2 + 10 * s, yy)], "#2a1c12", 3 * s, 0.85)
     c.poly([(x - w2 - 26 * s, y - h + 6 * s), (x - w2 + 70 * s, y - h - 104 * s), (x + w2 - 70 * s, y - h - 104 * s),
@@ -469,6 +503,39 @@ def loghouse(c, L, x, y, s=1.0, lit=True, **k):
         K3._win(c, L, x + wx * s, y - 104 * s, x + (wx + 40) * s, y - 56 * s, on)
         if on:
             out.append((x + (wx + 20) * s, y - 80 * s, (1.0, 0.8, 0.5), 60 * s, True, 0.4))
+    if storeys >= 2:
+        for wx in (-160, -40, 110):
+            K3._win(c, L, x + wx * s, y - 224 * s, x + (wx + 40) * s, y - 180 * s, False)
+    return out
+
+
+@prop
+def depot2(c, L, x, y, s=1.0, lit=True, **k):
+    """A two-storey board-and-batten railroad depot of the 1850s: deep eaves between the floors, a hipped roof."""
+    c.rect(x - 330 * s, y - 14 * s, x + 330 * s, y, "#16130f")                    # platform
+    c.rect(x - 220 * s, y - 140 * s, x + 220 * s, y - 14 * s, "#141210")             # ground floor
+    c.rect(x - 190 * s, y - 266 * s, x + 190 * s, y - 150 * s, "#131110")            # upper floor
+    for x0, x1, y0, y1 in ((x - 220 * s, x + 220 * s, y - 140 * s, y - 14 * s), (x - 190 * s, x + 190 * s, y - 266 * s, y - 150 * s)):
+        for j in range(int((x1 - x0) / (14 * s))):
+            bx = x0 + j * 14 * s
+            c.line([(bx, y0), (bx, y1)], "#0a0908", 1.4 * s, 0.9)
+    c.poly([(x - 280 * s, y - 136 * s), (x + 280 * s, y - 136 * s), (x + 240 * s, y - 158 * s), (x - 240 * s, y - 158 * s)],
+           "#0a0a0b")                                                                 # the eaves over the platform
+    for bx in (-200, -100, 0, 100, 200):
+        c.line([(x + bx * s, y - 136 * s), (x + (bx + (12 if bx > 0 else -12)) * s, y - 116 * s)], "#0a0a0b", 4 * s)
+    c.poly([(x - 214 * s, y - 262 * s), (x + 214 * s, y - 262 * s), (x + 120 * s, y - 330 * s), (x - 120 * s, y - 330 * s)],
+           "#0a0a0b")                                                                 # hipped roof
+    c.rect(x + 80 * s, y - 370 * s, x + 104 * s, y - 310 * s, "#0b0b0c")              # chimney
+    c.rect(x - 30 * s, y - 110 * s, x + 30 * s, y - 14 * s, "#070606")
+    for wx in (-170, -110, 80, 140):
+        c.rect(x + wx * s, y - 112 * s, x + (wx + 32) * s, y - 56 * s, "#070606")
+    for wx in (-150, -60, 30, 120):
+        c.rect(x + wx * s, y - 246 * s, x + (wx + 30) * s, y - 190 * s, "#070606")
+    out = []
+    if lit:
+        L.rect(x + 80 * s, y - 112 * s, x + 112 * s, y - 56 * s, WARM, 0.55)
+        L.rect(x - 60 * s, y - 246 * s, x - 30 * s, y - 190 * s, WARM, 0.4)
+        out.append((x + 96 * s, y - 84 * s, (1.0, 0.8, 0.5), 50 * s, True, 0.4))
     return out
 
 
