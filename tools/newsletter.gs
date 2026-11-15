@@ -13,6 +13,8 @@
  *     the NWS forecast for Friday through Sunday night (from the site's 15-minute copy, home.json),
  *     any La Porte County alerts at send time, and that morning's Daily Scoop. Brevo adds the
  *     one-click unsubscribe and keeps unsubscribed people off every later send.
+ *   - Since Nov. 15, 2026 (while the script property NL_BY_TOWN is "on"): each reader gets their own
+ *     town's forecast and alerts, from the Town they gave at sign-up (see "the Thursday email" below).
  *   - It never sends the weekly email without NL_MAILING_ADDRESS (U.S. law, CAN-SPAM, requires a
  *     real postal address in every marketing email; a P.O. box is fine), and never twice in a day.
  *
@@ -169,16 +171,49 @@ function nlWelcomeHtml_() {
 }
 
 // ---------- the Thursday email ----------
+//
+// Each reader's own town (Nov. 15, 2026; Scoop said yes to the weekend email using each reader's town).
+// The Newsletter tab's Town column (what the sign-up box got: a town, "Town, ST" or a ZIP code) is looked
+// up once on Zippopotam.us (free; GeoNames ZIP data) and saved in the Script properties. Readers in
+// LaPorte, and anyone whose town can't be placed (left blank, outside the U.S., not found), get LaPorte's
+// weekend from the site's own copy (home.json), as before; the second group's email asks for a ZIP code.
+// Everyone else gets the Weather Service forecast and alerts for their own spot. Each town gets its own
+// Brevo campaign, sent to a short-lived list of just its readers ("Weekend Outlook · <town> · <date>",
+// deleted the next week), so Brevo's one-click unsubscribe works as before.
+//
+// The town-by-town send runs only while the script property NL_BY_TOWN is "on" (nlByTownOn / nlByTownOff);
+// otherwise nlSendWeekly sends one LaPorte email to the whole list, as before. nlPreview always sends the
+// owner every town's version. A reader who replies with a new town or ZIP code: change their Town cell.
+
+var NL_LAPORTE = { key: "laporte, in", label: "LaPorte, IN", name: "LaPorte", lat: 41.6106, lon: -86.7225, tz: NL_TZ };
+var NL_UA = "LaPorteWeatherNow-weekend-email/2.0 (+https://laporteweathernow.com; laporteweathernow@gmail.com)";
+var NL_STATES = ("AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND " +
+  "OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY PR").split(" ");
+
+function nlByTownOn() {
+  PropertiesService.getScriptProperties().setProperty("NL_BY_TOWN", "on");
+  Logger.log("Weekend email: each reader's own town (on).");
+}
+
+function nlByTownOff() {
+  PropertiesService.getScriptProperties().deleteProperty("NL_BY_TOWN");
+  Logger.log("Weekend email: one LaPorte email for everyone (town-by-town off).");
+}
 
 function nlPreview() {
-  var issue = nlBuildIssue_();
-  nlBrevo_("post", "/smtp/email", {
-    sender: NL_SENDER,
-    to: [{ email: NL_OWNER }],
-    subject: "[Preview] " + issue.subject,
-    htmlContent: issue.html.replace(/\{\{\s*unsubscribe\s*\}\}/g, NL_SITE),
+  var groups = nlGroups_();
+  if (!groups.length) groups = [{ key: NL_LAPORTE.key, place: NL_LAPORTE, fallback: false, emails: [] }];
+  groups.forEach(function (g) {
+    var issue = nlBuildIssue_(g);
+    var n = g.emails.length;
+    nlBrevo_("post", "/smtp/email", {
+      sender: NL_SENDER,
+      to: [{ email: NL_OWNER }],
+      subject: "[Preview: " + (g.fallback ? "town not found" : g.place.label) + ", " + n + " reader" + (n === 1 ? "" : "s") + "] " + issue.subject,
+      htmlContent: issue.html.replace(/\{\{\s*unsubscribe\s*\}\}/g, NL_SITE),
+    });
+    Logger.log("Preview sent to " + NL_OWNER + " (" + (g.fallback ? "town not found" : g.place.label) + ", " + n + "): " + issue.subject);
   });
-  Logger.log("Preview sent to " + NL_OWNER + ": " + issue.subject);
 }
 
 function nlSendWeekly() {
@@ -189,46 +224,226 @@ function nlSendWeekly() {
     if (!props.getProperty("NL_MAILING_ADDRESS")) throw new Error("add the NL_MAILING_ADDRESS script property");
     var listId = Number(props.getProperty("NL_LIST_ID"));
     if (!listId) throw new Error("run nlSetUp first");
-    var list = nlBrevo_("get", "/contacts/lists/" + listId);
-    if (!(list.uniqueSubscribers || list.totalSubscribers)) {
-      Logger.log("Nobody on the list yet; nothing sent.");
-      return;
-    }
-    var issue = nlBuildIssue_();
-    var campaign = nlBrevo_("post", "/emailCampaigns", {
-      name: "Weekend outlook " + today,
-      subject: issue.subject,
-      previewText: issue.preview,
-      sender: NL_SENDER,
-      replyTo: NL_OWNER,
-      htmlContent: issue.html,
-      recipients: { listIds: [listId] },
-    });
-    nlBrevo_("post", "/emailCampaigns/" + campaign.id + "/sendNow");
-    props.setProperty("NL_LAST_SENT", today);
-    Logger.log("Sent: " + issue.subject);
+    if (props.getProperty("NL_BY_TOWN") === "on") nlSendByTown_(today);
+    else nlSendOne_(listId, today);
   } catch (e) {
     MailApp.sendEmail(NL_OWNER, "Weekend email didn't go out (" + today + ")",
       "The Thursday weekend email failed: " + (e.message || e) +
-      "\n\nFix it, then run nlSendWeekly in the Hard Hat Weather sender script to send it today.");
+      "\n\nFix it, then run nlSendWeekly in the Hard Hat Weather sender script to send it today" +
+      " (towns that already got theirs today are skipped).");
     throw e;
   }
 }
 
-function nlBuildIssue_() {
-  var home = nlJson_(NL_HOME_JSON);
+// One LaPorte email for the whole list (the way it worked until Nov. 15, 2026).
+function nlSendOne_(listId, today) {
+  var props = PropertiesService.getScriptProperties();
+  var list = nlBrevo_("get", "/contacts/lists/" + listId);
+  if (!(list.uniqueSubscribers || list.totalSubscribers)) {
+    Logger.log("Nobody on the list yet; nothing sent.");
+    return;
+  }
+  var issue = nlBuildIssue_();
+  var campaign = nlBrevo_("post", "/emailCampaigns", {
+    name: "Weekend outlook " + today,
+    subject: issue.subject,
+    previewText: issue.preview,
+    sender: NL_SENDER,
+    replyTo: NL_OWNER,
+    htmlContent: issue.html,
+    recipients: { listIds: [listId] },
+  });
+  nlBrevo_("post", "/emailCampaigns/" + campaign.id + "/sendNow");
+  props.setProperty("NL_LAST_SENT", today);
+  Logger.log("Sent: " + issue.subject);
+}
+
+function nlSendByTown_(today) {
+  var props = PropertiesService.getScriptProperties();
+  nlCleanUpLists_(today);
+  var groups = nlGroups_();
+  if (!groups.length) {
+    Logger.log("Nobody on the list yet; nothing sent.");
+    return;
+  }
+  var sentKey = "NL_SENT_" + today;   // towns already sent today, so a rerun after a problem skips them
+  var sent = JSON.parse(props.getProperty(sentKey) || "[]");
+  var folderId = nlFolderId_();
+  var problems = [];
+  groups.forEach(function (g) {
+    var key = g.fallback ? "town not found" : g.key;
+    if (sent.indexOf(key) >= 0) return;
+    var name = g.fallback ? "LaPorte (town not found)" : g.place.label;
+    try {
+      var issue = nlBuildIssue_(g);
+      var list = nlBrevo_("post", "/contacts/lists", { name: "Weekend Outlook · " + name + " · " + today, folderId: folderId });
+      for (var i = 0; i < g.emails.length; i += 150) {
+        nlBrevo_("post", "/contacts/lists/" + list.id + "/contacts/add", { emails: g.emails.slice(i, i + 150) });
+      }
+      var campaign = nlBrevo_("post", "/emailCampaigns", {
+        name: "Weekend outlook " + today + " · " + name,
+        subject: issue.subject,
+        previewText: issue.preview,
+        sender: NL_SENDER,
+        replyTo: NL_OWNER,
+        htmlContent: issue.html,
+        recipients: { listIds: [list.id] },
+      });
+      nlBrevo_("post", "/emailCampaigns/" + campaign.id + "/sendNow");
+      sent.push(key);
+      props.setProperty(sentKey, JSON.stringify(sent));
+      Logger.log("Sent to " + g.emails.length + " (" + name + "): " + issue.subject);
+    } catch (e) {
+      problems.push(name + ": " + (e.message || e));
+    }
+  });
+  if (problems.length) throw new Error(problems.join("; "));
+  props.setProperty("NL_LAST_SENT", today);
+  props.deleteProperty(sentKey);
+}
+
+// The readers still subscribed (Brevo), grouped by their town (the Newsletter tab).
+// -> [{key, place, fallback, emails}]; "fallback" readers couldn't be placed and get LaPorte's weekend.
+function nlGroups_() {
+  var listId = Number(PropertiesService.getScriptProperties().getProperty("NL_LIST_ID"));
+  if (!listId) throw new Error("run nlSetUp first");
+  var towns = {};
+  nlTab_().getDataRange().getValues().slice(1).forEach(function (r) {
+    var email = String(r[1] || "").trim().toLowerCase();
+    if (email && !(email in towns)) towns[email] = String(r[2] || "").trim();
+  });
+  var readers = [];
+  for (var offset = 0; ; offset += 500) {
+    var cs = nlBrevo_("get", "/contacts/lists/" + listId + "/contacts?limit=500&offset=" + offset).contacts || [];
+    cs.forEach(function (c) {
+      var off = c.emailBlacklisted || (c.listUnsubscribed || []).indexOf(listId) >= 0;
+      var email = String(c.email || "").trim().toLowerCase();
+      if (email && !off && readers.indexOf(email) < 0) readers.push(email);
+    });
+    if (cs.length < 500) break;
+  }
+  var groups = {}, order = [];
+  readers.forEach(function (email) {
+    var place = nlPlace_(towns[email] || "");
+    var key = place ? place.key : "town not found";
+    if (!groups[key]) {
+      groups[key] = { key: key, place: place || NL_LAPORTE, fallback: !place, emails: [] };
+      order.push(key);
+    }
+    groups[key].emails.push(email);
+  });
+  return order.map(function (k) { return groups[k]; });
+}
+
+// A reader's town -> {key, label, name, lat, lon}, or null when it can't be placed. Each town is looked
+// up once and kept in the Script properties (a town that isn't found is tried again after a week).
+function nlPlace_(town) {
+  var t = String(town || "").replace(/\s+/g, " ").trim();
+  if (!t) return null;
+  if (/^la ?porte(\s*,?\s*(in|indiana))?\.?$/i.test(t)) return NL_LAPORTE;
+  var props = PropertiesService.getScriptProperties();
+  var ck = "NL_PLACE_" + Utilities.base64EncodeWebSafe(
+    Utilities.computeDigest(Utilities.DigestAlgorithm.MD5, t.toLowerCase(), Utilities.Charset.UTF_8)).replace(/=+$/, "");
+  var hit = props.getProperty(ck);
+  if (hit) {
+    var c = JSON.parse(hit);
+    if (c.place) return c.place;
+    if (Date.now() - c.at < 7 * 864e5) return null;
+  }
+  var place;
+  try {
+    place = nlLookUp_(t);
+  } catch (e) {
+    Logger.log("Town lookup didn't work for \"" + t + "\" (" + (e.message || e) + "); LaPorte's weekend this time.");
+    return null;   // not saved, so it's tried again next time
+  }
+  props.setProperty(ck, JSON.stringify(place ? { town: t, place: place } : { town: t, at: Date.now() }));
+  return place;
+}
+
+function nlLookUp_(t) {
+  var m = /^(\d{5})(-\d{4})?$/.exec(t);
+  if (m) return nlZippo_("/us/" + m[1]);
+  m = /^(.+?)[,\s]+([A-Za-z]{2})\.?$/.exec(t);   // "Michigan City, IN", "Canton GA"
+  if (m && NL_STATES.indexOf(m[2].toUpperCase()) >= 0) {
+    return nlZippo_("/us/" + m[2].toLowerCase() + "/" + encodeURIComponent(m[1].replace(/,$/, "").trim().toLowerCase()));
+  }
+  if (!/^[A-Za-z .'-]{2,40}$/.test(t)) return null;
+  return nlZippo_("/us/in/" + encodeURIComponent(t.toLowerCase()));   // just a town name: Indiana first
+}
+
+function nlZippo_(path) {
+  var res = UrlFetchApp.fetch("https://api.zippopotam.us" + path, { muteHttpExceptions: true, headers: { "User-Agent": NL_UA } });
+  if (res.getResponseCode() === 404) return null;
+  if (res.getResponseCode() !== 200) throw new Error("Zippopotam.us answered " + res.getResponseCode());
+  var d = JSON.parse(res.getContentText()), ps = d.places || [];
+  if (!ps.length) return null;
+  var lat = 0, lon = 0;
+  ps.forEach(function (p) { lat += Number(p.latitude); lon += Number(p.longitude); });
+  var name = String(ps[0]["place name"] || "").replace(/\b\w/g, function (ch) { return ch.toUpperCase(); });
+  var st = ps[0]["state abbreviation"] || d["state abbreviation"] || "";
+  var label = name + ", " + st;
+  if (/^la ?porte, in$/i.test(label)) return NL_LAPORTE;
+  return { key: label.toLowerCase(), label: label, name: name,
+    lat: Math.round(lat / ps.length * 1e4) / 1e4, lon: Math.round(lon / ps.length * 1e4) / 1e4 };
+}
+
+// The weekend for a place: {periods, alerts (null when the alert check didn't work), fetched, alertsChecked,
+// tz, area}. LaPorte comes from the site's own 15-minute copy (home.json), as before; other towns come
+// straight from the Weather Service.
+function nlWeekend_(place) {
+  if (place.key === NL_LAPORTE.key) {
+    var home = nlJson_(NL_HOME_JSON);
+    var ageHours = (Date.now() - new Date(home.fetched).getTime()) / 36e5;
+    if (!(ageHours < 3)) throw new Error("the site's weather copy (home.json) is " + Math.round(ageHours) + " hours old");
+    return { periods: home.daily || [], alerts: Array.isArray(home.alerts) ? home.alerts : null,
+      fetched: new Date(home.fetched), alertsChecked: new Date(home.alertsChecked || home.fetched), tz: NL_TZ, area: "La Porte County" };
+  }
+  var pt = nlNws_("https://api.weather.gov/points/" + place.lat + "," + place.lon);
+  var fc = nlNws_(pt.properties.forecast);
+  var alerts = null;
+  try {
+    alerts = (nlNws_("https://api.weather.gov/alerts/active?point=" + place.lat + "," + place.lon).features || [])
+      .map(function (f) { return f.properties || {}; });
+  } catch (e) {
+    Logger.log("Alert check didn't work for " + place.label + ": " + (e.message || e));
+  }
+  return { periods: fc.properties.periods || [], alerts: alerts, fetched: new Date(), alertsChecked: new Date(),
+    tz: pt.properties.timeZone || NL_TZ, area: place.label };
+}
+
+function nlNws_(url) {
+  var res = UrlFetchApp.fetch(url, { muteHttpExceptions: true, headers: { "User-Agent": NL_UA, Accept: "application/geo+json" } });
+  if (res.getResponseCode() !== 200) throw new Error(url.replace("https://api.weather.gov", "Weather Service ") + " answered " + res.getResponseCode());
+  return JSON.parse(res.getContentText());
+}
+
+function nlBuildIssue_(g) {
+  g = g || { key: NL_LAPORTE.key, place: NL_LAPORTE, fallback: false, emails: [] };
+  var place = g.place, wx, missed = false;
+  try {
+    wx = nlWeekend_(place);
+  } catch (e) {
+    if (place.key === NL_LAPORTE.key) throw e;
+    Logger.log("Weather for " + place.label + " didn't come (" + (e.message || e) + "); sending LaPorte's.");
+    place = NL_LAPORTE;
+    wx = nlWeekend_(place);
+    missed = true;
+  }
+  var local = place.key === NL_LAPORTE.key;
   var posts = (nlJson_(NL_POSTS_JSON).posts) || [];
   var today = Utilities.formatDate(new Date(), NL_TZ, "yyyy-MM-dd");
+  var zone = function (d) { return local ? "Central" : Utilities.formatDate(d, wx.tz, "z"); };
   // The first Friday, Saturday and Sunday periods (day and night) in the 7-day forecast.
   var periods = [], seen = {};
-  (home.daily || []).forEach(function (p) {
+  wx.periods.forEach(function (p) {
     var m = /^(Friday|Saturday|Sunday)( Night)?$/.exec(p.name || "");
     if (!m || seen[p.name]) return;
     if (m[1] === "Sunday" && !seen.Saturday && !seen["Saturday Night"]) return;
     seen[p.name] = true;
     periods.push(p);
   });
-  if (!periods.length) throw new Error("no weekend periods in home.json (fetched " + home.fetched + ")");
+  if (!periods.length) throw new Error("no weekend periods in the forecast for " + place.label);
 
   var rows = periods.map(function (p) {
     var pop = p.probabilityOfPrecipitation && p.probabilityOfPrecipitation.value;
@@ -240,48 +455,58 @@ function nlBuildIssue_() {
   }).join("");
 
   var sat = periods.filter(function (p) { return p.name === "Saturday"; })[0] || periods[0];
-  var subject = "La Porte weekend: " + nlCap_(sat.shortForecast) + " " + sat.name + ", " +
+  var subject = place.name + " weekend: " + nlCap_(sat.shortForecast) + " " + sat.name + ", " +
     (sat.isDaytime ? "high near " : "low around ") + sat.temperature;
 
-  var ageHours = (Date.now() - new Date(home.fetched).getTime()) / 36e5;
-  if (!(ageHours < 3)) throw new Error("the site's weather copy (home.json) is " + Math.round(ageHours) + " hours old");
-  var alerts = home.alerts;
+  var townPage = local ? NL_SITE + "/emergency"
+    : NL_SITE + "/emergency?lat=" + place.lat + "&lon=" + place.lon + "&name=" + encodeURIComponent(place.label);
+  var alerts = wx.alerts;
   var alertHtml = !Array.isArray(alerts)
     ? "<p style=\"margin:0\">The Weather Service didn't answer our alert check just now, so for watches and warnings " +
-      "see <a href=\"" + NL_SITE + "/emergency\">laporteweathernow.com/emergency</a>.</p>"
+      "see <a href=\"" + nlEsc_(townPage) + "\">" + (local ? "laporteweathernow.com/emergency" : "the alerts for " + nlEsc_(place.label)) + "</a>.</p>"
     : alerts.length
     ? "<ul style=\"margin:0;padding-left:20px\">" + alerts.map(function (a) {
         var ends = a.ends || a.expires;
         return "<li><b>" + nlEsc_(a.event || a.headline || "Alert") + "</b>" +
-          (ends ? " until " + nlEsc_(Utilities.formatDate(new Date(ends), NL_TZ, "EEE h:mm a")) + " Central" : "") +
+          (ends ? " until " + nlEsc_(Utilities.formatDate(new Date(ends), wx.tz, "EEE h:mm a")) + " " + nlEsc_(zone(new Date(ends))) : "") +
           "</li>";
       }).join("") + "</ul><p style=\"margin:8px 0 0\">Details and what to do: " +
-      "<a href=\"" + NL_SITE + "/emergency\">laporteweathernow.com/emergency</a></p>"
-    : "<p style=\"margin:0\">No watches, warnings or advisories for La Porte County as of " +
-      nlEsc_(Utilities.formatDate(new Date(home.alertsChecked || home.fetched), NL_TZ, "h:mm a")) +
-      " Central. If that changes, the latest is always at " +
-      "<a href=\"" + NL_SITE + "/emergency\">laporteweathernow.com/emergency</a>.</p>";
+      "<a href=\"" + nlEsc_(townPage) + "\">" + (local ? "laporteweathernow.com/emergency" : "alerts for " + nlEsc_(place.label)) + "</a></p>"
+    : "<p style=\"margin:0\">No watches, warnings or advisories for " + nlEsc_(wx.area) + " as of " +
+      nlEsc_(Utilities.formatDate(wx.alertsChecked, wx.tz, "h:mm a")) + " " + nlEsc_(zone(wx.alertsChecked)) +
+      ". If that changes, the latest is always at " +
+      "<a href=\"" + nlEsc_(townPage) + "\">" + (local ? "laporteweathernow.com/emergency" : "laporteweathernow.com") + "</a>.</p>";
 
   var post = posts.filter(function (p) { return p.type === "daily" && p.date === today; })[0];
   var scoopHtml = "";
   if (post && !post.auto) {
-    scoopHtml = "<h2 style=\"font-size:18px;margin:24px 0 8px\">This morning's Daily Scoop</h2>" +
+    scoopHtml = "<h2 style=\"font-size:18px;margin:24px 0 8px\">" + (local ? "This morning's Daily Scoop" : "From LaPorte: this morning's Daily Scoop") + "</h2>" +
       "<p style=\"margin:0 0 8px\"><b>" + nlEsc_(post.title) + "</b></p>" +
       "<p style=\"margin:0 0 8px\">" + nlEsc_((post.body || []).filter(function (t) { return !/^(Automatic update|Update),/.test(t); })[1] || post.summary || "") + "</p>" +
       "<p style=\"margin:0\"><a href=\"" + NL_SITE + "/daily-scoop\">Read the whole Scoop</a></p>";
   }
 
+  // A line for readers whose town we used, couldn't find, or couldn't get the weather for.
+  var townNote = g.fallback
+    ? "This is LaPorte's weekend. Want your own town's? Reply with your ZIP code and next week's email will be for your town."
+    : missed
+    ? "The Weather Service didn't answer for " + g.place.label + " just now, so this is LaPorte's weekend. Yours should be back next week."
+    : local ? "" : "Your town on file is " + place.label + ". Moved? Reply with your ZIP code.";
+
   var address = PropertiesService.getScriptProperties().getProperty("NL_MAILING_ADDRESS") ||
     "(mailing address goes here)";
   var html = nlFrame_(
-    "<h1 style=\"font-size:22px;margin:0 0 4px\">Your La Porte weekend</h1>" +
+    "<h1 style=\"font-size:22px;margin:0 0 4px\">Your " + nlEsc_(place.name) + " weekend</h1>" +
     "<p style=\"margin:0 0 16px;color:#555\">" +
     nlEsc_(Utilities.formatDate(new Date(), NL_TZ, "EEEE, MMMM d")) + "</p>" +
+    (townNote && (g.fallback || missed) ? "<p style=\"margin:0 0 16px;padding:10px 12px;background:#f1f5f9;border-radius:8px\">" + nlEsc_(townNote) + "</p>" : "") +
     "<h2 style=\"font-size:18px;margin:0 0 8px\">Forecast</h2>" +
     "<table style=\"border-collapse:collapse;font-size:15px\">" + rows + "</table>" +
-    "<p style=\"margin:8px 0 0;font-size:13px;color:#555\">From the National Weather Service forecast for La Porte, " +
-    nlEsc_(Utilities.formatDate(new Date(home.fetched || new Date()), NL_TZ, "h:mm a")) + " Central. " +
-    "The latest: <a href=\"" + NL_SITE + "/weekend\">laporteweathernow.com/weekend</a></p>" +
+    "<p style=\"margin:8px 0 0;font-size:13px;color:#555\">From the National Weather Service forecast for " + nlEsc_(local ? "La Porte" : place.label) + ", " +
+    nlEsc_(Utilities.formatDate(wx.fetched, wx.tz, "h:mm a")) + " " + nlEsc_(zone(wx.fetched)) + ". " +
+    (local ? "The latest: <a href=\"" + NL_SITE + "/weekend\">laporteweathernow.com/weekend</a>"
+      : "The latest: <a href=\"" + nlEsc_(townPage) + "\">laporteweathernow.com</a>") + "</p>" +
+    (townNote && !g.fallback && !missed ? "<p style=\"margin:8px 0 0;font-size:13px;color:#555\">" + nlEsc_(townNote) + "</p>" : "") +
     "<h2 style=\"font-size:18px;margin:24px 0 8px\">Alerts</h2>" + alertHtml + scoopHtml,
     "We pass along official alerts; we never issue our own warnings. Forecasts from the National Weather Service. " +
     "You're getting this because you signed up for the weekend email at laporteweathernow.com. " +
@@ -289,6 +514,23 @@ function nlBuildIssue_() {
   );
   var preview = periods.slice(0, 3).map(function (p) { return p.name + ": " + nlCap_(p.shortForecast).toLowerCase(); }).join(". ");
   return { subject: subject, preview: preview, html: html };
+}
+
+// This script's own short-lived town lists from earlier days ("Weekend Outlook · <town> · <date>").
+function nlCleanUpLists_(today) {
+  try {
+    (nlBrevo_("get", "/contacts/lists?limit=50&offset=0").lists || []).forEach(function (l) {
+      var m = /^Weekend Outlook · .+ · (\d{4}-\d{2}-\d{2})$/.exec(l.name || "");
+      if (m && m[1] < today) nlBrevo_("delete", "/contacts/lists/" + l.id);
+    });
+  } catch (e) {
+    Logger.log("Last week's town lists weren't cleaned up: " + (e.message || e));
+  }
+}
+
+function nlFolderId_() {
+  var folders = nlBrevo_("get", "/contacts/folders?limit=50&offset=0").folders || [];
+  return folders.length ? folders[0].id : nlBrevo_("post", "/contacts/folders", { name: "La Porte Weather Now" }).id;
 }
 
 // ---------- helpers ----------
