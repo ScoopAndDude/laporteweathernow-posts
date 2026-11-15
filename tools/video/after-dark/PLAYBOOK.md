@@ -225,6 +225,10 @@ Load the Buffer tools with ToolSearch (`list_posts`, `create_post`, `get_post`).
 | Threads (@danielscoop420) | `6aef3318e29c69a171942800` | metadata.threads: type "post"; text = the `x` text with only one hashtag, #LaPorteAfterDark (Threads allows one), and "Pictures drawn. Narration is a computer voice." |
 | Facebook (La Porte Weather Now page) | `6aeddf15e29c69a171821e16` | metadata.facebook: type "reel"; text = the `facebook` caption. Scoop asked on Nov. 7, 2026 for Facebook to be scheduled through Buffer too (Buffer can't add Facebook topics; that's accepted) |
 
+- If a post errors with "Facebook was unable to process the media" (it happened once, Nov. 14, 2026, to a 56 MB
+  file; the other five channels took it), push a smaller copy, `ffmpeg -i out/<slug>.mp4 -c:v libx264 -preset veryfast
+  -crf 22 -maxrate 6M -bufsize 12M -pix_fmt yuv420p -c:a aac -b:a 160k -ar 48000 -movflags +faststart
+  out/<slug>-fb.mp4` (about 12 MB, looks the same), and edit the Facebook post to use it.
 - Pinterest is connected in Buffer too, but don't post there until Scoop picks a board.
 - Asset: `[{"video": {"url": "<raw URL>", "metadata": {"thumbnailOffset": 800}}}]`, schedulingType `"automatic"`.
 - Buffer is on a paid plan since Nov. 7, 2026 (5,000 scheduled posts), so there's no queue limit. The goal is one
