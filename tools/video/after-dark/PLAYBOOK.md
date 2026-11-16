@@ -128,6 +128,13 @@ few backdrops (bare woods, the generic brick house, the generic courthouse) shou
   a before-and-after pair of beats), oldhouse (an empty, boarded-up farmhouse), stump, carback (a 1990s car from behind
   with its headlights on), hunters (ghost hunters with flashlights and a tripod camera; make them big enough that their
   heads reach the sky, or they vanish against dark ground) and farlights (a pair of distant headlights).
+- `src/film/story_kit16.py` (Nov. 16, 2026, for the City West short) adds props: hotel1836 (a big two-storey 1830s
+  frame hotel with a porch; lit= share of lit windows; empty=True: dark windows, the door open, sand on the porch),
+  frame1836 (a row of small frame houses: n, spread, lit, empty), stagecoach (drawn but not used: the sources disagree
+  on how Webster travelled), watermill (a small sawmill on a creek with its wheel), platmap (a town plat on a desk by
+  candlelight, no lettering), skyglow (a far fire's glow and smoke on the horizon, no flames up close), marram (dune
+  grass) and beach (a sand beach on the left of a lake picture). Give beach an x2 smaller than x (say x2=560, x=1040)
+  so the shoreline runs back to the horizon at an angle; with x2 near x it stands up like a wall.
 - `src/film/story_kit3.py` builds a picture from props (ships, a plane, buildings, rooms, trains, trees, people...):
   scene kinds `tab_lake`, `tab_land`, `tab_town`, `tab_room`, `tab_rail` take a sky, a ground and a list of props.
   `python3 story_kit3.py sheet` draws every prop (shorts/out/_props.jpg). Use these first; add a prop when one is
@@ -237,6 +244,15 @@ keep working.
   on how many times to flash your lights, so no count. A picture can't change partway through a beat: when two versions
   need two pictures (a dark house, then a burning one), give each its own beat. The preview contact sheet can catch a
   caption from the end of one beat over the next beat's picture; check real frames with ffmpeg before "fixing" sync.
+- City West (Nov. 2026): the blind check found 9 problems, most of them from leaning on Wikipedia, so credit the old
+  histories themselves (T. H. Ball 1900, John O. Bowers 1929, Hubert Skinner 1878, Goodspeed & Blanchard 1882; all
+  transcribed on inportercounty.org) and not Wikipedia. Pictures need sources too: the 1936 Vidette-Messenger gave the
+  town a long pier, but Skinner says a pier was built "some years after" it was destroyed, so no pier was drawn; the
+  Vidette put Daniel Webster on a stagecoach and Ball in a two-horse carriage, so no coach. Say "promoters", not
+  "speculators", unless a source does. Don't move a whole building when the sources move one: one City West building
+  went to Chesterton (Goodspeed; Bowers quoting the Chesterton Tribune, 1908) and became a hotel there. The fire's year
+  (1838, about 1853, about 1854) and cause (storm, forest fire, travelers' fires) all disagree, so the short says only
+  that a fire burned what was left. A detail in Wikipedia with no footnote (the 1854 smell and glow) isn't a source.
 
 ## 3. Write the script
 
