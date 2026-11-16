@@ -277,7 +277,8 @@ keep working.
 - Fish Lake (Nov. 2026): no legend with any source exists (the Al Capone hideout tale is one old unsourced Wikipedia
   line and its copies). The 1897 handcar death rests on one paper, the Westchester Tribune, read on the Porter County
   INGenWeb obituary pages (inportercounty.org/Data/Obits/), which load for fetchers when Hoosier State Chronicles and
-  Chronicling America don't. The paper put Swift's ice houses "at Mill Creek", the Grand Trunk station by Upper Fish
+  Chronicling America don't. Scoop okayed posting it with the paper credited aloud, as with Lake Station; ask him
+  again the next time a story rests on one source. The paper put Swift's ice houses "at Mill Creek", the Grand Trunk station by Upper Fish
   Lake, not at Fish Lake. The Portable LaPorte County (c. 1978, on mclib.org) is the only source for the three ice
   houses, the lightning and the 1930 end, and pages that repeat its entries word for word count as the same source, so
   the narration credits it ("A 1978 county history says"). It gives 1888 and 1889 for Swift's purchases and 1935 for
