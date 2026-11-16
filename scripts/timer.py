@@ -36,6 +36,8 @@ starts whichever jobs are due at that moment, in La Porte (Central) time:
   every tick           Readers' reports queue (added Oct. 17, 2026; once it's set up)
   every tick           Morning forecast email (U.S.-wide, 6 AM each subscriber's time) and Warning emails
                        (a new NWS warning at a subscriber's spot), both added Oct. 17, 2026
+  every tick           Warning to X (added Nov. 16, 2026; a new NWS Warning for La Porte County, posted
+                       once to X through Buffer)
   8:30, 10:30 AM and 1:30 PM (each for 15 minutes)   Rain totals by town (added Oct. 18, 2026; CoCoRaHS
                        and NWS co-op rain gauges in La Porte County, for /rain-totals)
   every 3 hours from 12:35 AM (12:35, 3:35, 6:35 ...)   Earth from space data (NASA FIRMS fires,
@@ -64,7 +66,8 @@ CENTRAL = ZoneInfo("America/Chicago")
 EVERY_TICK = ["home-cache.yml", "radio.yml", "scoop-update.yml", "scoop-pages.yml", "snow-totals.yml",
               "reports.yml",   # reports.yml (Oct. 17, 2026): readers' reports queue; does nothing until set up
               "morning-email.yml",   # morning email (Oct. 17, 2026): sends to whoever's 6 AM it is, U.S.-wide
-              "warning-email.yml"]   # warning emails (Oct. 17, 2026): a NEW NWS warning at a subscriber's spot
+              "warning-email.yml",   # warning emails (Oct. 17, 2026): a NEW NWS warning at a subscriber's spot
+              "warning-x.yml"]       # Warning to X (Nov. 16, 2026): a NEW NWS Warning for La Porte County, on X
 # (workflow, [(from, to), ...], days): days are Python weekdays (Monday is 0); None means every day.
 WINDOWS = [
     ("nws-snapshot.yml", [("05:00", "05:14")], None),

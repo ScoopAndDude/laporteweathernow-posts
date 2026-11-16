@@ -1,0 +1,60 @@
+# Warning to X (added Nov. 16, 2026; scripts/warning_x.py).
+#
+# Every 15 minutes it asks the National Weather Service for active alerts on La Porte County
+# (zones INZ103, INZ203, county INC091, and the La Porte point 41.6081,-86.7189) and posts each
+# NEW Warning to X through Buffer (only events whose name contains "Warning", and only when the
+# alert is for La Porte County; never a warning that is only for somewhere else). The town is
+# written LaPorte (one word). Posted NWS alert ids are kept on the "warning-x-state" branch, so
+# a warning is never posted twice. When there's nothing new, the job says so and posts nothing.
+#
+# The Timer starts it every tick. GitHub's own schedules for this repository have been hours late
+# or missing, so the cron below is only a backup. Safe to run twice: already-posted ids are skipped.
+# Needs the BUFFER_API_KEY secret (the same key as the Daily Video). Run it by hand from
+# Actions > Warning to X.
+name: Warning to X
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: warning-x
+  cancel-in-progress: false
+
+jobs:
+  warn:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get which warnings were already posted
+        run: |
+          mkdir -p "$RUNNER_TEMP/wx"
+          if git fetch -q --depth 1 origin warning-x-state 2>/dev/null; then
+            git show FETCH_HEAD:posted-alerts.txt > "$RUNNER_TEMP/wx/posted-alerts.txt" || rm -f "$RUNNER_TEMP/wx/posted-alerts.txt"
+          fi
+          cp "$RUNNER_TEMP/wx/posted-alerts.txt" "$RUNNER_TEMP/wx/before.txt" 2>/dev/null || true
+      - name: Post new La Porte County warnings to X
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          WARNING_X_STATE: ${{ runner.temp }}/wx/posted-alerts.txt
+        run: python3 scripts/warning_x.py
+      - name: Save posted warning ids
+        if: always()
+        run: |
+          S="$RUNNER_TEMP/wx/posted-alerts.txt"
+          [ -f "$S" ] || exit 0
+          if [ -f "$RUNNER_TEMP/wx/before.txt" ] && cmp -s "$S" "$RUNNER_TEMP/wx/before.txt"; then exit 0; fi
+          D=$(mktemp -d) && cp "$S" "$D/" && cd "$D"
+          git init -q -b warning-x-state
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" add posted-alerts.txt
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -q -m "Warning to X: posted alert ids"
+          for i in 1 2 3; do
+            git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" warning-x-state:warning-x-state && exit 0
+            sleep 4
+          done
+          exit 1
