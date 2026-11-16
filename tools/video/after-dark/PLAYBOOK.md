@@ -121,6 +121,13 @@ few backdrops (bare woods, the generic brick house, the generic courthouse) shou
   storm) and "warm" (a warm spring afternoon). A light spot with a radius over 20 gets a bright dot in its middle, so
   don't use spots for lightning or a TV screen: draw that glow on the light layer L. Outdoor storm scenes use
   tab_town (wind with no owl).
+- `src/film/story_kit15.py` (Nov. 15, 2026, for the Moody's Light short) adds props: gravelroad (a straight gravel road
+  to the horizon), cornwall (a row of corn stalks; stack them, smaller toward the horizon; near-black so they read
+  against a night sky), ghostlight (a floating light; red=True), ghostfarmer (a faint, see-through farmer with a
+  lantern), firehouse (a farmhouse with fire in its windows; fire=0 the same house dark, lamp=True one lit window, for
+  a before-and-after pair of beats), oldhouse (an empty, boarded-up farmhouse), stump, carback (a 1990s car from behind
+  with its headlights on), hunters (ghost hunters with flashlights and a tripod camera; make them big enough that their
+  heads reach the sky, or they vanish against dark ground) and farlights (a pair of distant headlights).
 - `src/film/story_kit3.py` builds a picture from props (ships, a plane, buildings, rooms, trains, trees, people...):
   scene kinds `tab_lake`, `tab_land`, `tab_town`, `tab_room`, `tab_rail` take a sky, a ground and a list of props.
   `python3 story_kit3.py sheet` draws every prop (shorts/out/_props.jpg). Use these first; add a prop when one is
@@ -223,6 +230,13 @@ keep working.
   warned LaPorte County shortly before ("Warnings went out, but many people never got them"). The Times of Northwest
   Indiana sends fetchers to a TollBit paywall: read it through search-result text and count it once. Draw the season
   and the sky as they were: bare trees in early April, and no full moon unless it was full.
+- Moody's Light (Nov. 2026): the Rensselaer Republican's "RIP: Local legend laid to rest" (Oct. 31, 2007, on
+  newsbug.info) is the one solid source; it never uses the word "headlights" (the team "recreated Moody's Light from
+  49"), so say that. The neighbor said the last Moody "never had a family", but a Granville Moody founded the hamlet of
+  Moody in 1893 and lost a son in 1906, and nothing shows whether "Van" was that man, so it came out. Tellers disagree
+  on how many times to flash your lights, so no count. A picture can't change partway through a beat: when two versions
+  need two pictures (a dark house, then a burning one), give each its own beat. The preview contact sheet can catch a
+  caption from the end of one beat over the next beat's picture; check real frames with ffmpeg before "fixing" sync.
 
 ## 3. Write the script
 
