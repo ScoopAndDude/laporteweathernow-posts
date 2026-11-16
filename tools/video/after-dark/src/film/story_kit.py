@@ -1527,3 +1527,4 @@ import story_kit15  # noqa: E402,F401  Moody's Light props: gravelroad, cornwall
 import story_kit16  # noqa: E402,F401  City West props: hotel1836, frame1836, stagecoach, watermill, platmap, skyglow, marram
 import story_kit17  # noqa: E402,F401  Fish Lake props: handcar, icehouse, icecrew, iceharvest
 import story_kit18  # noqa: E402,F401  Kingsford Heights props: bungalows, ringplan, housecrate
+import story_kit19  # noqa: E402,F401  Bass Lake props: rowboat, serpenttail, lakeserpent, swirl, wake, cedars, springcut, cottages

@@ -123,6 +123,28 @@ def rumble(dur, seed=6, clack=True):
     return _norm(x * swell, 0.7)
 
 
+def splash(seed=8, dur=1.8):
+    """Something big hitting the water: a thump, a rush of spray, then drops falling back (added Nov. 16, 2026,
+    for the Bass Lake short)."""
+    r = np.random.default_rng(seed)
+    n = int(SR * dur)
+    t = np.arange(n) / SR
+    noise = r.standard_normal(n)
+    rush = noise * np.exp(-t * 4.2) * (1 - np.exp(-t * 60))
+    k = 9
+    rush = np.convolve(rush, np.ones(k) / k, mode="same")                 # soften the hiss
+    thump = np.sin(2 * np.pi * 62 * t) * np.exp(-t * 12) * 1.4
+    drops = np.zeros(n)
+    for _ in range(24):
+        t0 = r.uniform(0.15, dur * 0.85)
+        f = r.uniform(700, 2000)
+        i0, m = int(t0 * SR), int(0.06 * SR)
+        if i0 + m < n:
+            tt = np.arange(m) / SR
+            drops[i0:i0 + m] += np.sin(2 * np.pi * f * tt * (1 + tt * 10)) * np.exp(-tt * 80) * r.uniform(0.1, 0.4)
+    return _norm(rush + thump + drops * (1 - t / dur), 0.8)
+
+
 def bed(kind, dur, seed=1):
     """A long ambience under a scene, mono."""
     if kind == "wind":
@@ -173,6 +195,8 @@ def accent(kind, seed=1):
         return X.radio_static(3.0, seed=15 + seed).mean(1) * 0.7
     if kind == "dance":
         return X.reverb(X.stereo(X.dance_music(6.0, seed=17 + seed).mean(1) if X.dance_music(1.0).ndim > 1 else X.dance_music(6.0, seed=17 + seed)), rt=3.0, wet=0.6).mean(1) * 0.5
+    if kind == "splash":
+        return splash(seed)
     if kind == "whoosh":
         return X.whoosh(1.2, seed=21 + seed).mean(1)
     if kind == "crow":

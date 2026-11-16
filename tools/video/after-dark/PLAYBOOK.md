@@ -147,6 +147,16 @@ few backdrops (bare woods, the generic brick house, the generic courthouse) shou
   side="left"/"right"/"both"), housecrate (a house's wall panels crated on skids with a roof section leaning on them,
   for houses being shipped away) and ringplan (an aerial plan of ring streets; it was dropped from the short because
   no map could be checked, so use it only as a stylized plan for a town whose layout a source shows).
+- `src/film/story_kit19.py` (Nov. 16, 2026, for the Bass Lake short) adds props: rowboat (an 1890s rowboat with n men
+  in hats and oars; rods; tow=0 to 1 bends a rod and runs its line taut ahead; broken=True an empty boat with its
+  stern smashed and planks adrift; thrown=True two men in the air, placed with throw=[(u, height, lean), ...]),
+  serpenttail (a finless tail whipping up out of the water with spray), eelbody (a long finless body rolling at the
+  surface to a huge pointed head darting off; pair it with serpenttail), lakeserpent (the storybook kind, humps and a
+  raised neck: a fact-check said it read as a Loch Ness cliche, so it went unused), swirl (rings where something went
+  under), wake (a V wake behind a dark dome), cedars (a shore of narrow cedars, reflected on water), springcut (a
+  cut-away of a hill with a lake on top fed by springs from below; give the scene a dark land ground at the prop's y)
+  and cottages (lake cottages with lit windows reflected in the water). `story_sound.py` has a new accent, "splash",
+  for sfx.
 - `src/film/story_kit3.py` builds a picture from props (ships, a plane, buildings, rooms, trains, trees, people...):
   scene kinds `tab_lake`, `tab_land`, `tab_town`, `tab_room`, `tab_rail` take a sky, a ground and a list of props.
   `python3 story_kit3.py sheet` draws every prop (shorts/out/_props.jpg). Use these first; add a prop when one is
@@ -284,6 +294,21 @@ keep working.
   the narration credits it ("A 1978 county history says"). It gives 1888 and 1889 for Swift's purchases and 1935 for
   the sale; don't say the buildings came down when the ice cutting ended. When no source says two fires came together,
   draw one building burning, not both.
+- Bass Lake (Nov. 2026): the lake was called Cedar Lake in 1838 (Smalley, Indiana Magazine of History, 1946, note 25).
+  The Logansport Herald of Aug. 16, 1838 put a monster there and called it Indian tradition; the narration calls it
+  "a legend" and the card quotes the paper. The Telegraph's "Lake of the Devil's Bones" name was left out (Smalley
+  thinks its editor wrote those pieces playfully, and a Purdue history gives a different Indian name), and so was
+  "subterranean passages to Lake Maxinkuckee", which is about Lake Manitou. The 1893 story ran in the Evening Herald
+  (Shenandoah, Pa., June 22, p. 2; panewsarchive.psu.edu serves page PDFs that fetchers can read) and, per Charles
+  Fort's notes, the New Orleans Picayune (May 18) and the Philadelphia Public Ledger (May 17, headed "Ananias in
+  Indiana"). Guiteau had two defense lawyers, so George Scoville is "a lawyer who defended President Garfield's
+  assassin", not "the lawyer". Nothing says whether the creature was ever caught, so the short doesn't say. Read the
+  whole article before drawing it, and list every clause with "boat" in it: all four men were in one boat (the two
+  standing in the stern were thrown out; the other two stayed aboard until it sank near shore), and a summarizer that
+  read "their boat sank" as a second boat had the pictures redrawn wrong until the second check caught it. A 2024 blog
+  reprint gave a different headline and details; the page's OCR (ocr.txt) is the source, and a summarizer can mix up
+  a headline and its subhead, so check the headline twice. The story says "the other morning": morning light. And no
+  fishing rods: Beeman trolled a spoon on "a heavy silk Florida line" that was then "made fast" to the boat.
 
 ## 3. Write the script
 
