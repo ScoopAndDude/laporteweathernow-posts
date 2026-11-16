@@ -1,0 +1,424 @@
+{
+ "slug": "fish-lake-ice-houses-1897",
+ "title": "Fish Lake, Indiana: the ice houses, and the handcar on the Grand Trunk, 1897",
+ "series": "LAPORTE AFTER DARK",
+ "music": {
+  "seed": 402,
+  "prog": 6
+ },
+ "say": [
+  [
+   "\\bSent\\b",
+   "Sent"
+  ]
+ ],
+ "sourcing_note": "Requested town (Scoop, Nov. 16, 2026; he asked to 'dig deeper' after no legend turned up). No Fish Lake ghost story or legend with any source was found; the Al Capone hideout tale rests only on an old, unsourced Wikipedia line and its copies, so it is left out. This is dark history. The 1897 handcar death rests on one newspaper (the Westchester Tribune), so the narration credits it ('A Chesterton paper said'); the paper puts Swift's ice houses 'at Mill Creek' (the Grand Trunk station by Upper Fish Lake), so the narration says 'Swift's ice houses at Mill Creek, near Upper Fish Lake' and doesn't say where on the line the crash happened. Swift's 1888 land purchase: Schultz and the 1978 booklet (Barker: '1880s'). The three ice houses, the lightning ('In the early 1900's', hence the label), the 1930 end, the 1935 sale and the tearing down rest on the 1978 booklet alone (copied by ALCO and the Monon pages), so beats 6 and 7 credit it ('A 1978 county history says...', 'It says...'); the 50-foot height and the 300-400 men are left out. Its Fish Lake entry: 'In 1935, Swift and Co. sold all their Fish Lake holdings. The buildings were torn down and the land staked out in lot sizes' (hence the stakes). 'For Chicago': Barker via Wikipedia (rail cars of ice to Chicago) and the booklet (Chicago meat packers). No one is shown hurt; the men are drawn leaping clear and the handcar is drawn empty. Independent check Nov. 16 (blind): 'the ice houses near Fish Lake' became 'Swift's ice houses at Mill Creek, near Upper Fish Lake' (the paper says Mill Creek, about 1.7 miles from Fish Lake, linked to Upper Fish Lake by a stream; the 1978 booklet says Mill Creek was first called Fish Lake); '1888' became '1888 and 1889' (the booklet; Schultz gives 1888); lightning 'two of Swift's three' ice houses (the booklet built three); the buildings came down after the 1935 sale, not in 1930; the ice harvest shows a crew. The headline card is re-set from the Oct. 16, 1897 issue; the death was probably the Saturday before. Second check Nov. 16: all revised lines supported; the lightning picture now shows one ice house burning and the other two standing (no source says whether the two fires came together or apart). The booklet's Mill Creek entry: 'the town of Mill Creek was originally called Fish Lake. In 1879, the Grand Trunk RR bought the track running through town and, because there was already one Fish Lake on the Trunk Line, the town was christened Mill Creek' (as the checker read it; not used in the narration). Nov. 16 after the second check: beat 7 became one sentence under 'It says' ('It says the ice cutting ended in 1930, Swift sold out in 1935, and the buildings came down'), since the sale and the tearing down rest on the booklet alone (re-read on mclib.org); the crew and the sled driver now wear short coats over trousers (icecrew, iceharvest), because the flared coat read as a dress.",
+ "beats": [
+  {
+   "text": "The men on the handcar jumped for their lives. Their boss didn't make it. They were headed to Swift's ice houses at Mill Creek, near Upper Fish Lake.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "tab_rail",
+    "sky": "night",
+    "moon": [
+     200,
+     640,
+     24
+    ],
+    "clouds": 0.3,
+    "ground": {
+     "type": "land",
+     "y": 1120
+    },
+    "grass": false,
+    "fog": 0.12,
+    "amount": 0.05,
+    "move": "in",
+    "props": [
+     {
+      "p": "tracks",
+      "x": 540
+     },
+     {
+      "p": "handcar",
+      "x": 360,
+      "s": 1.1,
+      "n": 4,
+      "jump": true,
+      "seed": 3
+     },
+     {
+      "p": "freightloco",
+      "x": 960,
+      "s": 1.0,
+      "flip": true,
+      "beam": 1.0
+     }
+    ]
+   },
+   "label": "LAPORTE COUNTY, INDIANA",
+   "title": {
+    "text": "FISH LAKE",
+    "at": "Upper Fish Lake",
+    "size": 88
+   },
+   "sfx": [
+    {
+     "kind": "whoosh",
+     "at": "jumped",
+     "gain": 0.35
+    },
+    {
+     "kind": "heartbeat",
+     "at": "didn't make it",
+     "gain": 0.3
+    }
+   ],
+   "credit": "The Westchester Tribune (Chesterton), Oct. 16, 1897"
+  },
+  {
+   "text": "It was 1897, on the Grand Trunk railroad. A fast freight came out of the night.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_rail",
+    "sky": "night",
+    "clouds": 0.35,
+    "ground": {
+     "type": "land",
+     "y": 1120
+    },
+    "grass": false,
+    "fog": 0.1,
+    "amount": 0.06,
+    "move": "left",
+    "props": [
+     {
+      "p": "tracks",
+      "x": 540
+     },
+     {
+      "p": "freightloco",
+      "x": 700,
+      "s": 1.35,
+      "flip": true,
+      "beam": 1.0
+     }
+    ]
+   },
+   "typed": [
+    {
+     "text": "1897",
+     "at": "It was 1897",
+     "y": 545,
+     "size": 72
+    }
+   ],
+   "label": "THE GRAND TRUNK RAILROAD",
+   "credit": "The Westchester Tribune (Chesterton), Oct. 16, 1897"
+  },
+  {
+   "text": "A Chesterton paper said section boss John Sent was killed while trying to move his handcar.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "tab_rail",
+    "sky": "night",
+    "moon": [
+     860,
+     660,
+     22
+    ],
+    "clouds": 0.3,
+    "ground": {
+     "type": "land",
+     "y": 1120
+    },
+    "grass": false,
+    "fog": 0.16,
+    "amount": 0.04,
+    "move": "still",
+    "props": [
+     {
+      "p": "tracks",
+      "x": 540
+     },
+     {
+      "p": "handcar",
+      "x": 540,
+      "s": 1.15,
+      "n": 0
+     }
+    ]
+   },
+   "card": {
+    "kind": "headline",
+    "paper": "THE WESTCHESTER TRIBUNE",
+    "date": "OCTOBER 16, 1897",
+    "lines": [
+     "SECTION BOSS KILLED",
+     "BY A TRAIN"
+    ],
+    "at": "paper said",
+    "y": 620
+   },
+   "credit": "The Westchester Tribune (Chesterton), Oct. 16, 1897"
+  },
+  {
+   "text": "Swift and Company, the Chicago meatpacker, had bought the land around both Fish Lakes in 1888 and 1889.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "haze",
+    "clouds": 0.3,
+    "ground": {
+     "type": "snow",
+     "y": 1080
+    },
+    "grass": false,
+    "amount": 0.05,
+    "move": "right",
+    "props": [
+     {
+      "p": "icehouse",
+      "x": 180,
+      "s": 0.45,
+      "snow": true,
+      "seed": 1
+     },
+     {
+      "p": "icehouse",
+      "x": 500,
+      "s": 0.6,
+      "snow": true,
+      "seed": 2
+     },
+     {
+      "p": "icehouse",
+      "x": 860,
+      "s": 0.55,
+      "snow": true,
+      "seed": 3,
+      "flip": true
+     },
+     {
+      "p": "tree",
+      "x": 1040,
+      "s": 0.45,
+      "bare": true,
+      "seed": 4
+     }
+    ]
+   },
+   "typed": [
+    {
+     "text": "1888-89",
+     "at": "in 1888",
+     "y": 545,
+     "size": 72
+    }
+   ],
+   "label": "SWIFT AND COMPANY",
+   "credit": "Fern Eddy Schultz (2019); The Portable LaPorte County (1978)"
+  },
+  {
+   "text": "Each winter, crews cut the lakes into blocks of ice for Chicago.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "day",
+    "clouds": 0.4,
+    "ground": {
+     "type": "snow",
+     "y": 1060
+    },
+    "grass": false,
+    "amount": 0.05,
+    "move": "in",
+    "props": [
+     {
+      "p": "icehouse",
+      "x": 780,
+      "s": 0.55,
+      "snow": true,
+      "seed": 3
+     },
+     {
+      "p": "iceharvest",
+      "x": 430,
+      "y": 1280,
+      "s": 1.2
+     },
+     {
+      "p": "icecrew",
+      "x": 200,
+      "y": 1290,
+      "s": 1.0,
+      "n": 5,
+      "spread": 260,
+      "seed": 4
+     }
+    ]
+   },
+   "label": "FISH LAKE ICE",
+   "credit": "The Portable LaPorte County (1978); Margaret Barker (2021)"
+  },
+  {
+   "text": "A 1978 county history says lightning later struck two of Swift's three giant ice houses, and they burned.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "storm",
+    "clouds": 0.8,
+    "ground": {
+     "type": "land",
+     "y": 1080
+    },
+    "grass": false,
+    "amount": 0.05,
+    "move": "in",
+    "props": [
+     {
+      "p": "icehouse",
+      "x": 170,
+      "s": 0.5,
+      "seed": 6
+     },
+     {
+      "p": "icehouse",
+      "x": 560,
+      "s": 0.65,
+      "fire": 1.0,
+      "seed": 8
+     },
+     {
+      "p": "icehouse",
+      "x": 930,
+      "s": 0.55,
+      "seed": 9,
+      "flip": true
+     }
+    ]
+   },
+   "flash": [
+    "lightning"
+   ],
+   "label": "EARLY 1900s",
+   "credit": "The Portable LaPorte County (Michigan City Library, 1978)"
+  },
+  {
+   "text": "It says the ice cutting ended in 1930, Swift sold out in 1935, and the buildings came down.",
+   "pause": 0.0,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "dusk",
+    "clouds": 0.35,
+    "ground": {
+     "type": "snow",
+     "y": 1080
+    },
+    "grass": false,
+    "fog": 0.08,
+    "amount": 0.05,
+    "move": "right",
+    "props": [
+     {
+      "p": "icehouse",
+      "x": 420,
+      "s": 0.8,
+      "ruin": true,
+      "seed": 9
+     },
+     {
+      "p": "stakes",
+      "x": 700,
+      "y": 1250,
+      "s": 0.7,
+      "rows": 2,
+      "n": 5
+     },
+     {
+      "p": "tree",
+      "x": 960,
+      "s": 0.55,
+      "bare": true,
+      "seed": 6
+     }
+    ]
+   },
+   "typed": [
+    {
+     "text": "1930",
+     "at": "in 1930",
+     "y": 545,
+     "size": 72
+    },
+    {
+     "text": "1935",
+     "at": "in 1935",
+     "y": 625,
+     "size": 72
+    }
+   ],
+   "credit": "The Portable LaPorte County (Michigan City Library, 1978)"
+  },
+  {
+   "text": "Comment your town, and it could be next.",
+   "end": true,
+   "end_card": {
+    "q": "COMMENT YOUR TOWN",
+    "q2": "IT COULD BE NEXT",
+    "bubble": "Your town, your state",
+    "pill": "Fish Lake, LaPorte County",
+    "scene": {
+     "kind": "tab_lake",
+     "sky": "night",
+     "moon": [
+      760,
+      640,
+      30
+     ],
+     "clouds": 0.2,
+     "ground": {
+      "type": "water",
+      "y": 1080
+     },
+     "amount": 0.04,
+     "move": "still",
+     "props": [
+      {
+       "p": "moonpath",
+       "x": 760
+      }
+     ]
+    }
+   },
+   "credit": "All pictures drawn"
+  }
+ ],
+ "sources": [
+  {
+   "what": "Headline 'Section Boss Killed by a Train': John Sent, a Grand Trunk section boss living at Stillwell, was killed instantly on a Saturday night by a fast freight. 'He was taking several laborers on his handcar to the Swift ice-houses at Mill Creek, and did not observe the train until it was so near as to compel the men to jump for their lives'; the others escaped unhurt; Sent was killed while trying to move his handcar. Left a widow and two children (not used).",
+   "who": "The Westchester Tribune (Chesterton), Oct. 16, 1897, p. 1, transcribed by Porter County INGenWeb",
+   "url": "https://www.inportercounty.org/Data/Obits/Sent5227.html"
+  },
+  {
+   "what": "'In 1888, Swift & Co. of Chicago purchased land around both Upper and Lower Fish Lakes.'",
+   "who": "Fern Eddy Schultz, La Porte County Historian, 'A major export here in the late 1800s/early 1900s? Ice.' (What's New LaPorte, Jan. 9, 2019; read through search-result text, the page refuses fetchers)",
+   "url": "https://whatsnewlaporte.com/2019/01/09/90999/"
+  },
+  {
+   "what": "Entry 44, Fish Lake: 'In 1888 and 1889, Swift and Co., Chicago meat packers, bought the land around both of the lakes.' 'Construction of 3 huge ice houses with elevators on the outside for the ice was begun in 1889. Two of these buildings were 50 feet high, 250 feet long...' Horses hauled the ice plows 'which cut the lakes into ice blocks'; 300 to 400 men came from Chicago each winter; 'In the early 1900's, two of the ice houses were struck by lightning and burned.' 'Until 1930, when ice cutting ceased on Fish Lake...'; in 1935 Swift sold its Fish Lake holdings and the buildings were torn down. (Copied word for word by Access LaPorte County, alco.org, and the Monon Society's Kankakee River pages: one source.)",
+   "who": "The Portable LaPorte County (c.1978), Michigan City Public Library / LaPorte County CETA history project",
+   "url": "https://www.mclib.org/explore-topics/local-history/portable-laporte-county/"
+  },
+  {
+   "what": "In the 1880s the Swift & Co. company of Chicago purchased land around Upper and Lower Fish Lake and carried out ice harvesting in the winter months; by 1899 it was shipping 18 railroad cars of ice from Fish Lake to Chicago each day.",
+   "who": "Wikipedia, 'Fish Lake, Indiana', citing Margaret B. Barker, Newspaper-Real Estate Schemes of the 1920s (McFarland, 2021), p. 111",
+   "url": "https://en.wikipedia.org/wiki/Fish_Lake,_Indiana"
+  },
+  {
+   "what": "Mill Creek is in northern Lincoln Township; 'It is possible to reach Mill Creek from Upper Fish Lake by way of a shallow stream that feeds the lake.' Mill Creek was a station on the Grand Trunk.",
+   "who": "Wikipedia, 'Mill Creek, Indiana'; Michigan Railroads station history (GTW South Bend subdivision)",
+   "url": "https://en.wikipedia.org/wiki/Mill_Creek,_Indiana"
+  }
+ ]
+}

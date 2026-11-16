@@ -1525,3 +1525,5 @@ import story_kit13  # noqa: E402,F401  Michigan City pier-light props: pierhead,
 import story_kit14  # noqa: E402,F401  Wanatah 1965 tornado props: tornado, stormbase, rainshaft, thunderhead, fields, countyroad, sedan65, photographer, church65, farmstead, houses65, brokenbarn, boards, wallmap, weatherdesk, tvset65, floorlamp
 import story_kit15  # noqa: E402,F401  Moody's Light props: gravelroad, cornwall, ghostlight, ghostfarmer, firehouse, oldhouse, stump, carback, hunters, farlights
 import story_kit16  # noqa: E402,F401  City West props: hotel1836, frame1836, stagecoach, watermill, platmap, skyglow, marram
+import story_kit17  # noqa: E402,F401  Fish Lake props: handcar, icehouse, icecrew, iceharvest
+import story_kit18  # noqa: E402,F401  Kingsford Heights props: bungalows, ringplan, housecrate

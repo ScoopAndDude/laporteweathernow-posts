@@ -1,0 +1,516 @@
+{
+ "slug": "kingsford-heights-ghost-town-1942",
+ "title": "Kingsford Heights, Indiana: the wartime town where most houses stood empty",
+ "series": "LAPORTE AFTER DARK",
+ "music": {
+  "seed": 316,
+  "prog": 6
+ },
+ "say": [],
+ "sourcing_note": "Requested town (Scoop, Nov. 16, 2026). No ghost legend or dark event with two sources was found for Kingsford Heights itself (the Kingsbury Ordnance Plant had no major accidents, IPM and Places That Were; the 1965 tornado and the plant itself already ran), so this is eerie history: the government's near-empty wartime town. Not the Nov. 7/15 Kingsbury plant short's story (that one only said 'a whole new town went up'). Occupancy: 'only around 300' rests on Towne Post and the History Museum (same wording, one source); the 1940s 'New Deal Ghost Town' story ('Only [n] families moved in', 'abandoned') is the second, so the narration says 'most of them stood empty', no number. The headline card uses the real headline words; its paper and date come from the Utah Digital Newspapers record (see the check below). Houses moved: 185 to Evansville's Diamond Villa (Clio) and 100 to Green Bay (Wisconsin Historical Society): 'hundreds'. 'Packed up' follows Green Bay's 'package the houses'. No picture shows how they travelled (the crate sits on skids). Rename date left out (sources disagree: 1942 vs. after the purchase). 'Empty lots' rests on the DHPA survey via Wikipedia. The streets: Towne Post ('wagon wheel') and the DHPA survey ('curvilinear arrangement'); no town plan is drawn (see the check below). Independent check Nov. 16 (blind, script/text/pictures only): 'Nearly 3,000 houses went up' became 'Thousands of homes went up' (sources split between 3,000 planned, 2,974 built in the 1944 story, and 'more than 2,600 dormitories, trailers, and prefabricated homes'); the headline card now names the paper, the Garfield County News (Panguitch, Utah), Sept. 28, 1944, as the checker read the Utah Digital Newspapers record (neighboring record 3301869 is the same paper's Oct. 12, 1944 issue); 'bought the town' became 'bought the land from the government and incorporated the town' (town website; Wikipedia); the aerial ring drawing was dropped (no map could be checked from here) and 'curved in rings around a town center' became 'laid out in long curves, not a grid' (Towne Post's 'wagon wheel' rather than a grid; the DHPA survey's 'curvilinear arrangement'); first label 1940s so the dark street isn't read as today. New homes are filling some lots (Century Communities listings), so the line says empty lots 'still dot' the streets, not that they line them. Second check Nov. 16: all four revised lines supported; the card drops '(UTAH)', which isn't printed on the scan (the paper is Panguitch's Garfield County News, per the Utah Digital Newspapers record, item 3301756 in issue 3301678, p. 8).",
+ "beats": [
+  {
+   "text": "Thousands of homes went up, and most of them stood empty. This is Kingsford Heights.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "tab_town",
+    "sky": "blue",
+    "moon": [
+     860,
+     660,
+     30
+    ],
+    "clouds": 0.25,
+    "ground": {
+     "type": "land",
+     "y": 1020
+    },
+    "fog": 0.14,
+    "amount": 0.05,
+    "move": "in",
+    "props": [
+     {
+      "p": "haze",
+      "x": 540,
+      "depth": 150,
+      "color": "#3a4a5e",
+      "a": 0.45
+     },
+     {
+      "p": "bungalows",
+      "x": 700,
+      "nx": 300,
+      "ny": 1280,
+      "s": 1.2,
+      "n": 9,
+      "lit": 0.05,
+      "curve": 0.3,
+      "seed": 7
+     }
+    ]
+   },
+   "label": "LAPORTE COUNTY, 1940s",
+   "title": {
+    "text": "KINGSFORD HEIGHTS",
+    "at": "Kingsford Heights",
+    "size": 80
+   },
+   "sfx": [
+    {
+     "kind": "heartbeat",
+     "at": "stood empty",
+     "gain": 0.3
+    },
+    {
+     "kind": "whoosh",
+     "at": "Kingsford Heights",
+     "gain": 0.3
+    }
+   ],
+   "credit": "The History Museum, South Bend; Garfield County News, 1944"
+  },
+  {
+   "text": "In 1942, the government built a whole town here for workers at the Kingsbury Ordnance Plant. It was first called Victory City.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "day",
+    "clouds": 0.3,
+    "ground": {
+     "type": "land",
+     "y": 1030
+    },
+    "grass": false,
+    "amount": 0.04,
+    "move": "right",
+    "props": [
+     {
+      "p": "plant",
+      "x": 860,
+      "s": 0.42,
+      "lit": 0.0
+     },
+     {
+      "p": "bungalows",
+      "x": 420,
+      "nx": 780,
+      "ny": 1280,
+      "s": 1.2,
+      "n": 8,
+      "curve": -0.28,
+      "new": true,
+      "seed": 3
+     },
+     {
+      "p": "stakes",
+      "x": 230,
+      "y": 1300,
+      "s": 0.7,
+      "rows": 2,
+      "n": 5
+     }
+    ]
+   },
+   "typed": [
+    {
+     "text": "1942",
+     "at": "In 1942",
+     "y": 545,
+     "size": 72
+    }
+   ],
+   "label": "KINGSBURY ORDNANCE PLANT",
+   "label2": {
+    "text": "VICTORY CITY",
+    "at": "Victory City"
+   },
+   "credit": "Towne Post; The History Museum; Indiana DHPA survey"
+  },
+  {
+   "text": "Its streets were laid out in long curves, not a grid.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "tab_town",
+    "sky": "dusk",
+    "clouds": 0.3,
+    "ground": {
+     "type": "land",
+     "y": 1000
+    },
+    "amount": 0.05,
+    "move": "right",
+    "props": [
+     {
+      "p": "haze",
+      "x": 540,
+      "depth": 150,
+      "color": "#5a4a50",
+      "a": 0.35
+     },
+     {
+      "p": "bungalows",
+      "x": 860,
+      "nx": 160,
+      "ny": 1270,
+      "s": 1.15,
+      "n": 10,
+      "lit": 0.04,
+      "curve": 0.75,
+      "seed": 14
+     }
+    ]
+   },
+   "label": "THE TOWN PLAN",
+   "credit": "Towne Post (Jeff Kenney, 2022); Indiana DHPA survey"
+  },
+  {
+   "text": "But many workers kept their own homes and commuted to the plant.",
+   "pause": 0.8,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "dawn",
+    "clouds": 0.3,
+    "ground": {
+     "type": "land",
+     "y": 1030
+    },
+    "grass": false,
+    "fog": 0.1,
+    "amount": 0.05,
+    "move": "in",
+    "props": [
+     {
+      "p": "haze",
+      "x": 540,
+      "depth": 140,
+      "color": "#6a5a60",
+      "a": 0.45
+     },
+     {
+      "p": "plant",
+      "x": 760,
+      "s": 0.55,
+      "lit": 0.9
+     },
+     {
+      "p": "countyroad",
+      "x": 700,
+      "w": 520,
+      "bx": 640,
+      "poles": true
+     },
+     {
+      "p": "bungalows",
+      "x": 300,
+      "nx": -80,
+      "ny": 1280,
+      "s": 1.15,
+      "n": 6,
+      "lit": 0.0,
+      "curve": 0.05,
+      "side": "right",
+      "street": false,
+      "seed": 11
+     }
+    ],
+    "glows": [
+     {
+      "x": 694,
+      "y": 1040,
+      "r": 4,
+      "color": [
+       1,
+       0.15,
+       0.08
+      ],
+      "k": 0.9
+     },
+     {
+      "x": 704,
+      "y": 1040,
+      "r": 4,
+      "color": [
+       1,
+       0.15,
+       0.08
+      ],
+      "k": 0.9
+     },
+     {
+      "x": 684,
+      "y": 1085,
+      "r": 6,
+      "color": [
+       1,
+       0.15,
+       0.08
+      ],
+      "k": 0.9
+     },
+     {
+      "x": 700,
+      "y": 1085,
+      "r": 6,
+      "color": [
+       1,
+       0.15,
+       0.08
+      ],
+      "k": 0.9
+     },
+     {
+      "x": 662,
+      "y": 1160,
+      "r": 8,
+      "color": [
+       1,
+       0.15,
+       0.08
+      ],
+      "k": 0.9
+     },
+     {
+      "x": 688,
+      "y": 1160,
+      "r": 8,
+      "color": [
+       1,
+       0.15,
+       0.08
+      ],
+      "k": 0.9
+     }
+    ]
+   },
+   "label": "THE KINGSBURY PLANT",
+   "credit": "The History Museum, South Bend; Towne Post"
+  },
+  {
+   "text": "A 1944 newspaper headline called it a New Deal ghost town.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_town",
+    "sky": "night",
+    "moon": [
+     260,
+     660,
+     26
+    ],
+    "clouds": 0.3,
+    "ground": {
+     "type": "land",
+     "y": 1020
+    },
+    "fog": 0.18,
+    "amount": 0.04,
+    "move": "still",
+    "props": [
+     {
+      "p": "haze",
+      "x": 540,
+      "depth": 150,
+      "color": "#2e3a4a",
+      "a": 0.45
+     },
+     {
+      "p": "bungalows",
+      "x": 420,
+      "nx": 800,
+      "ny": 1280,
+      "s": 1.2,
+      "n": 9,
+      "lit": 0.0,
+      "curve": -0.3,
+      "seed": 21
+     }
+    ]
+   },
+   "card": {
+    "kind": "headline",
+    "paper": "GARFIELD COUNTY NEWS",
+    "date": "SEPTEMBER 28, 1944",
+    "lines": [
+     "NEW DEAL",
+     "GHOST TOWN"
+    ],
+    "at": "headline",
+    "y": 700
+   },
+   "sfx": [
+    {
+     "kind": "creak",
+     "at": "ghost town",
+     "gain": 0.3
+    }
+   ],
+   "credit": "Garfield County News (Panguitch, Utah), Sept. 28, 1944"
+  },
+  {
+   "text": "Hundreds of the houses were packed up and shipped off to other cities, like Evansville and Green Bay.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "haze",
+    "clouds": 0.3,
+    "ground": {
+     "type": "land",
+     "y": 1030
+    },
+    "grass": false,
+    "amount": 0.05,
+    "move": "in",
+    "props": [
+     {
+      "p": "bungalows",
+      "x": 640,
+      "nx": 900,
+      "ny": 1240,
+      "s": 1.1,
+      "n": 8,
+      "lit": 0.0,
+      "gaps": 0.5,
+      "curve": -0.2,
+      "seed": 5
+     },
+     {
+      "p": "housecrate",
+      "x": 330,
+      "y": 1370,
+      "s": 0.95
+     }
+    ]
+   },
+   "typed": [
+    {
+     "text": "EVANSVILLE",
+     "at": "Evansville",
+     "y": 545,
+     "size": 60
+    },
+    {
+     "text": "GREEN BAY",
+     "at": "Green Bay",
+     "y": 625,
+     "size": 60
+    }
+   ],
+   "credit": "Clio (Diamond Villa, Evansville); Wisconsin Historical Society"
+  },
+  {
+   "text": "The families who stayed bought the land from the government and incorporated the town. Today, empty lots still dot its curving streets.",
+   "pause": 0.0,
+   "scene": {
+    "kind": "tab_town",
+    "sky": "dusk",
+    "clouds": 0.35,
+    "ground": {
+     "type": "land",
+     "y": 1020
+    },
+    "amount": 0.05,
+    "move": "right",
+    "props": [
+     {
+      "p": "bungalows",
+      "x": 600,
+      "nx": 240,
+      "ny": 1260,
+      "s": 1.2,
+      "n": 9,
+      "lit": 0.55,
+      "gaps": 0.3,
+      "trees": 0.6,
+      "curve": 0.3,
+      "seed": 33
+     }
+    ]
+   },
+   "label": "KINGSFORD HEIGHTS",
+   "label2": {
+    "text": "TODAY",
+    "at": "Today"
+   },
+   "credit": "Town of Kingsford Heights; Wikipedia (Indiana DHPA survey)"
+  },
+  {
+   "text": "Comment your town, and it could be next.",
+   "end": true,
+   "end_card": {
+    "q": "COMMENT YOUR TOWN",
+    "q2": "IT COULD BE NEXT",
+    "bubble": "Your town, your state",
+    "pill": "Kingsford Heights, LaPorte County",
+    "scene": {
+     "kind": "tab_town",
+     "sky": "night",
+     "moon": [
+      820,
+      660,
+      26
+     ],
+     "clouds": 0.25,
+     "ground": {
+      "type": "land",
+      "y": 1020
+     },
+     "fog": 0.1,
+     "amount": 0.04,
+     "move": "still",
+     "props": [
+      {
+       "p": "bungalows",
+       "x": 560,
+       "nx": 220,
+       "ny": 1270,
+       "s": 1.2,
+       "n": 9,
+       "lit": 0.5,
+       "gaps": 0.3,
+       "trees": 0.5,
+       "curve": 0.3,
+       "seed": 41
+      }
+     ]
+    }
+   },
+   "credit": "All pictures drawn"
+  }
+ ],
+ "sources": [
+  {
+   "what": "'Initially dubbed \"Victory City,\" planning for the town had begun alongside planning of the ordnance plant. Construction was underway for nearly 3,000 houses, on 775 acres of former farmland, in 1942.' Most houses one-story bungalows; layout 'a sort of \"wagon wheel,\" circular pattern' with municipal services at the center; many workers 'preferred to commute from their own homes'; postwar reports indicated 'only around 300 of the homes were actually occupied during World War II'; residents purchased the town from the U.S. government; incorporated 1956.",
+   "who": "Jeff Kenney, 'Victory City', Towne Post (Lakes Region), April 2022",
+   "url": "https://townepost.com/indiana/lakes-region/victory-city/"
+  },
+  {
+   "what": "'Initially named \"Victory City,\" ... Construction of nearly 3,000 on 775 acres began in 1942.' 'Workers rented the newly built bungalows from the government; numerous workers still commuted to Kingsbury from their own homes, and postwar news reports showed that only around 300 of the newly built homes were occupied during World War II.' (Wording close to Towne Post's: counted as one source with it for the occupancy figure.)",
+   "who": "The History Museum (South Bend), 'Indiana and Another World War'",
+   "url": "https://www.historymuseumsb.org/jexm"
+  },
+  {
+   "what": "Headline 'NEW DEAL GHOST TOWN': 'acre tract of rich Indiana farm land purchased by the government from 14 farmers covered with 2974 war [houses]'; '18 miles of streets'; the Defense Housing Co. 'decided a new city should be built' for an anticipated workforce near the Army's shell loading plant; 'Only [OCR drops the number] families moved in'; 'Kingsford Heights was abandoned and placed on the liquidation list'. The paper's name and date are not shown on the page.",
+   "who": "Utah Digital Newspapers, item 3301756 (syndicated story)",
+   "url": "https://newspapers.lib.utah.edu/details?id=3301756"
+  },
+  {
+   "what": "'Kingsford Heights consisted of more than 2,600 dormitories, trailers, and prefabricated homes.'",
+   "who": "Indiana Public Media, Moment of Indiana History, 'The Kingsbury Ordnance Plant' (after Katherine Turk, Indiana Magazine of History, 2012)",
+   "url": "https://indianapublicmedia.org/momentofindianahistory/kingsbury-ordnance-plant"
+  },
+  {
+   "what": "Diamond Villa, established 1944: 'A total of 185 prefabricated housing units were relocated from Kingsford Heights in LaPorte County, Indiana.'",
+   "who": "Clio, 'Diamond Villa Housing' (Evansville)",
+   "url": "https://theclio.com/entry/207090"
+  },
+  {
+   "what": "Green Bay Housing Authority bought 100 houses 'constructed for and used by defense industry workers at Kingsford Heights, Indiana' from the Federal Public Housing Authority; Greene and Gust Construction got a contract 'to package the houses in Kingsford Heights, Indiana, and to relocate and erect the houses in Green Bay'; first erected 1946, all built and sold to veterans by August 1947.",
+   "who": "Wisconsin Historical Society, Property Record HI245038",
+   "url": "https://wisconsinhistory.org/Records/Property/HI245038"
+  },
+  {
+   "what": "Federal planners created a village near the plant, originally Victory City; original plans 3,000 homes; remaining residents purchased the land from the government and incorporated the town; the town boundary includes the entire planned community, 'even encompassing lots without houses' (citing the Indiana DHPA survey 'Calumet.pdf'). 2020 population 1,335.",
+   "who": "Wikipedia, 'Kingsford Heights, Indiana' (citing Indiana Division of Historic Preservation and Archaeology, Residential Planning and Development in Indiana 1940-1973 survey)",
+   "url": "https://en.wikipedia.org/wiki/Kingsford_Heights,_Indiana"
+  }
+ ]
+}

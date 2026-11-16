@@ -135,6 +135,18 @@ few backdrops (bare woods, the generic brick house, the generic courthouse) shou
   candlelight, no lettering), skyglow (a far fire's glow and smoke on the horizon, no flames up close), marram (dune
   grass) and beach (a sand beach on the left of a lake picture). Give beach an x2 smaller than x (say x2=560, x=1040)
   so the shoreline runs back to the horizon at an angle; with x2 near x it stands up like a wall.
+- `src/film/story_kit17.py` (Nov. 16, 2026, for the Fish Lake short) adds props: handcar (a railroad pump handcar with
+  n riders; jump=True draws them leaping clear, and n=0 draws it empty), icehouse (a huge windowless 1890s ice house
+  with its inclined elevator; snow, fire=0 to 1 for a burning house, ruin=True for only the foundation and posts),
+  icecrew (men in short coats over trousers, with caps, some bent to work, no tools) and iceharvest (story_kit3's
+  iceblocks with its sled driver drawn the same way). For any crew before about 1940, use icecrew, not people, which
+  mixes in women and a child; art.figure's coat=True flares like a dress.
+- `src/film/story_kit18.py` (Nov. 16, 2026, for the Kingsford Heights short; City West took 16 the same morning) adds
+  props: bungalows (a street of side-gabled 1940s houses running to the horizon: nx/ny is the near end of the street,
+  x/y the far end; curve bends it, gaps leaves empty lots, lit lights windows, new=True draws raw new wood,
+  side="left"/"right"/"both"), housecrate (a house's wall panels crated on skids with a roof section leaning on them,
+  for houses being shipped away) and ringplan (an aerial plan of ring streets; it was dropped from the short because
+  no map could be checked, so use it only as a stylized plan for a town whose layout a source shows).
 - `src/film/story_kit3.py` builds a picture from props (ships, a plane, buildings, rooms, trains, trees, people...):
   scene kinds `tab_lake`, `tab_land`, `tab_town`, `tab_room`, `tab_rail` take a sky, a ground and a list of props.
   `python3 story_kit3.py sheet` draws every prop (shorts/out/_props.jpg). Use these first; add a prop when one is
@@ -253,6 +265,24 @@ keep working.
   went to Chesterton (Goodspeed; Bowers quoting the Chesterton Tribune, 1908) and became a hotel there. The fire's year
   (1838, about 1853, about 1854) and cause (storm, forest fire, travelers' fires) all disagree, so the short says only
   that a fire burned what was left. A detail in Wikipedia with no footnote (the 1854 smell and glow) isn't a source.
+- Kingsford Heights (Nov. 2026): the Towne Post (Jeff Kenney, 2022), the History Museum in South Bend and the town's
+  website carry the same text, so they count as one source. The "New Deal Ghost Town" story ran in the Garfield County
+  News (Panguitch, Utah), Sept. 28, 1944, p. 8, on Utah Digital Newspapers; when that site's search won't load, the
+  item's record (paper, date, page) can be read at api.lib.utah.edu. Card text shows only what is printed on the scan
+  (no "(UTAH)"). House counts differ (3,000 planned, 2,974 in the 1944 story, "more than 2,600 dormitories,
+  trailers, and prefabricated homes" in the Indiana Magazine of History), so "thousands". Don't draw a town plan from
+  a word like "wagon wheel": the ring plan came out and the line became "long curves, not a grid". The families
+  "bought the land from the government and incorporated the town", not "bought the town". No major accident at the
+  Kingsbury Ordnance Plant was found (IPM; Places That Were), so don't add one for drama.
+- Fish Lake (Nov. 2026): no legend with any source exists (the Al Capone hideout tale is one old unsourced Wikipedia
+  line and its copies). The 1897 handcar death rests on one paper, the Westchester Tribune, read on the Porter County
+  INGenWeb obituary pages (inportercounty.org/Data/Obits/), which load for fetchers when Hoosier State Chronicles and
+  Chronicling America don't. The paper put Swift's ice houses "at Mill Creek", the Grand Trunk station by Upper Fish
+  Lake, not at Fish Lake. The Portable LaPorte County (c. 1978, on mclib.org) is the only source for the three ice
+  houses, the lightning and the 1930 end, and pages that repeat its entries word for word count as the same source, so
+  the narration credits it ("A 1978 county history says"). It gives 1888 and 1889 for Swift's purchases and 1935 for
+  the sale; don't say the buildings came down when the ice cutting ended. When no source says two fires came together,
+  draw one building burning, not both.
 
 ## 3. Write the script
 
