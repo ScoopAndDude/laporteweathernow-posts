@@ -1528,3 +1528,6 @@ import story_kit16  # noqa: E402,F401  City West props: hotel1836, frame1836, st
 import story_kit17  # noqa: E402,F401  Fish Lake props: handcar, icehouse, icecrew, iceharvest
 import story_kit18  # noqa: E402,F401  Kingsford Heights props: bungalows, ringplan, housecrate
 import story_kit19  # noqa: E402,F401  Bass Lake props: rowboat, serpenttail, lakeserpent, swirl, wake, cedars, springcut, cottages
+import story_kit20  # noqa: E402,F401  Kingsbury contamination props: plumecut, monwell, drums, warnsign, lineruins, shellstack
+import story_kit21  # noqa: E402,F401  Knox props: comet, storefronts, arclamp, crowd1910, stargazer, sparks, windowseal
+import story_kit22  # noqa: E402,F401  Saugatuck props: feltmansion, addingmachine, frenchdoors, schoolprison

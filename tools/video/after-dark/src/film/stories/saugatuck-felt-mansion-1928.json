@@ -1,0 +1,472 @@
+{
+ "slug": "saugatuck-felt-mansion-1928",
+ "title": "The Felt Mansion near Saugatuck, Michigan: the summer house his wife lived in for six weeks",
+ "series": "LAPORTE AFTER DARK",
+ "music": {
+  "seed": 1928,
+  "prog": 6
+ },
+ "say": [],
+ "sourcing_note": "Requested town (Scoop, Nov. 16, 2026: 'Then Saugatuck Michigan'). The Nov. 29 short saugatuck-singapore-buried-town already tells Singapore's story, so this one is the Felt Mansion in Laketown Township, near Saugatuck (Wikipedia; HMDB lists the marker 'Near Saugatuck'): eerie history and a legend, told as what visitors say. Line 1: 'built her a mansion' (Michigan historical marker S697, 2006: 'built this house as a summer home for his wife, Agnes'); 'Six weeks after they moved in, she died' (Saugatuck/Douglas visitors bureau, 2025: 'only six weeks after moving in'; Dread Central, 2010: 'just six weeks after moving in'; Wikipedia's Dorr Felt article: 'six weeks after the family had moved in'; the marker says 'two months after the house was finished'). Line 2: 'Chicago inventor' (marker); 'got rich from an adding machine he invented' (the Comptometer: marker 'the first machine to do complex calculations'; WHTC 'a basic adding machine'; Dread Central 'invented the Comptometer calculator, which made him very wealthy'); the brand name is left out. Line 3: finished 1928 (marker; Wikipedia, from the National Register nomination); Agnes died August 1928 (Wikipedia); 'Within two years' because Dorr's death is put at 18 months (visitors bureau; Dread Central) or two years (marker; Wikipedia: August 1930). Line 4: sold in 1949 to the Augustinians, St. Augustine Seminary preparatory school (marker; Wikipedia); 'a home for cloistered nuns' (marker: leased in 1962 to Dominican cloistered nuns; Wikipedia: nuns of the friars' order; Dread Central: 'a group of cloistered nuns'), so no order is named; the future Pope Leo XIV, Robert Prevost, graduated from St. Augustine Seminary High School in 1973 (WOOD TV8, which says the school was at the Felt Mansion and Shore Acres Park; Detroit Catholic; Laketown Township; the visitors bureau). The school moved into a new building on the estate in 1962-63, so the line says he studied at 'that school', not in the mansion. Line 5: the state bought it in 1977, the house a state police post, the school the Saugatuck Dunes Correctional Facility (marker; Wikipedia). One township archive says the school became a prison 'around 1987', so the line gives no year for the prison. Line 6: the prison closed (1991, Wikipedia; 1992, Fox 17; no year said); 1995, 44 acres including the house sold to Laketown Township for one dollar (marker; Wikipedia; Dread Central). Line 7: open for tours (visitors bureau; Dread Central); the legend, told as what visitors say: the visitors bureau says doors 'open and close on their own' and suggests the shadowy figures may be Agnes; Dread Central reports that many believe an apparition is Agnes and describes French doors in Agnes's old room filmed seeming to open and close by themselves (West Michigan Ghost Hunters Society). Pictures: the house as the National Register description gives it (via Wikipedia): three storeys, yellow brick, a slate roof, limestone sills and keystones, a limestone entrance portico, a six-bay main block and slightly recessed four-bay wings with round-arched first-floor windows; the wings are drawn two storeys (not stated); no photo could be checked from here. The adding machine is generic, with no name on it. The prison building is drawn generic (no picture found). Left out: the 'Melonheads' legend (it mocks children with a medical condition) and the zoo. Blind check Nov. 16 and fixes: line 4 implied the future pope studied in the mansion; the school moved into its own building on the ridge west of the mansion in 1962-63 (marker; Wikipedia; Felt Estate), and Prevost's yearbooks are 1970-73, so it now says 'The estate became a seminary where a future pope went to school, and the mansion housed cloistered nuns', and picture 4 shows the separate school building with the mansion smaller beside it. The real prison was that remodeled seminary building, 'four-story, 135,000 square feet' (Wikipedia, St. Augustine Seminary High School), so the prison is drawn four storeys, not long and low. The state's 1980 audit calls it 'Michigan Dunes Correctional Facility' and says it opened July 1978 after a $4.2 million purchase in late 1977, so the label is 'DUNES CORRECTIONAL FACILITY' and the typed 1977 was dropped from the prison picture. Line 2 'got rich on an adding machine' (the Comptometer; Smithsonian: 'Chicago machinist Dorr E. Felt... an improved adding machine... named it the Comptometer'); line 7 'some visitors say' (the Felt Estate itself mentions 'very few documented sightings'). Dorr died Aug. 7, 1930, 12 days short of two years after Agnes (Aug. 19, 1928), so 'within two years' stands; the visitors bureau and Dread Central give 18 months and aren't credited for that line. The township purchase year differs (1995 marker; 1996 WHTC), so no year is said.",
+ "beats": [
+  {
+   "text": "Her husband built her a mansion near Saugatuck. Six weeks after they moved in, she died.",
+   "pause": 0.8,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "dusk",
+    "clouds": 0.3,
+    "ground": {
+     "type": "land",
+     "y": 1100
+    },
+    "grass": false,
+    "fog": 0.1,
+    "amount": 0.05,
+    "move": "in",
+    "props": [
+     {
+      "p": "pine",
+      "x": 90,
+      "y": 1090,
+      "s": 1.3
+     },
+     {
+      "p": "pine",
+      "x": 990,
+      "y": 1085,
+      "s": 1.2
+     },
+     {
+      "p": "feltmansion",
+      "x": 540,
+      "y": 1110,
+      "s": 1.05,
+      "lit": 0.0,
+      "one": [
+       1,
+       4
+      ],
+      "tone": 0.6
+     },
+     {
+      "p": "marram",
+      "x": 540,
+      "y": 1180,
+      "s": 1.0
+     }
+    ]
+   },
+   "label": "NEAR SAUGATUCK, MICHIGAN",
+   "title": {
+    "text": "THE FELT MANSION",
+    "at": "mansion",
+    "size": 80
+   },
+   "sfx": [
+    {
+     "kind": "heartbeat",
+     "at": "she died",
+     "gain": 0.3
+    }
+   ],
+   "credit": "Saugatuck/Douglas visitors bureau; Dread Central; Wikipedia"
+  },
+  {
+   "text": "Chicago inventor Dorr Felt got rich on an adding machine. He built this house for his wife, Agnes.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "tab_town",
+    "sky": "night",
+    "ground": {
+     "type": "street",
+     "y": 1200
+    },
+    "amount": 0.03,
+    "move": "in",
+    "props": [
+     {
+      "p": "addingmachine",
+      "x": 540,
+      "y": 1080,
+      "s": 1.25
+     }
+    ]
+   },
+   "label": "THE INVENTOR",
+   "credit": "Michigan historical marker (2006); Smithsonian Institution"
+  },
+  {
+   "text": "It was finished in 1928. Agnes died that summer. Within two years, Dorr was dead too.",
+   "pause": 0.8,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "night",
+    "moon": [
+     820,
+     600,
+     26
+    ],
+    "clouds": 0.25,
+    "ground": {
+     "type": "land",
+     "y": 1100
+    },
+    "grass": false,
+    "fog": 0.15,
+    "amount": 0.04,
+    "move": "still",
+    "props": [
+     {
+      "p": "pine",
+      "x": 120,
+      "y": 1090,
+      "s": 1.1
+     },
+     {
+      "p": "feltmansion",
+      "x": 600,
+      "y": 1120,
+      "s": 1.25,
+      "lit": 0.0,
+      "one": [
+       0,
+       1
+      ],
+      "tone": 0.45
+     }
+    ]
+   },
+   "typed": [
+    {
+     "text": "1928",
+     "at": "1928",
+     "y": 545,
+     "size": 76
+    }
+   ],
+   "label": "SHORE ACRES FARM",
+   "sfx": [
+    {
+     "kind": "heartbeat",
+     "at": "dead too",
+     "gain": 0.3
+    }
+   ],
+   "credit": "Michigan historical marker; Wikipedia (National Register)"
+  },
+  {
+   "text": "Then it changed hands. The estate became a seminary where a future pope went to school, and the mansion housed cloistered nuns.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "dusk",
+    "clouds": 0.35,
+    "ground": {
+     "type": "land",
+     "y": 1100
+    },
+    "grass": false,
+    "fog": 0.06,
+    "amount": 0.05,
+    "move": "right",
+    "props": [
+     {
+      "p": "schoolprison",
+      "x": 330,
+      "y": 1095,
+      "s": 0.6,
+      "n": 14,
+      "storeys": 4,
+      "lit": 0.55,
+      "bars": false,
+      "seed": 5
+     },
+     {
+      "p": "pine",
+      "x": 640,
+      "y": 1100,
+      "s": 0.75
+     },
+     {
+      "p": "feltmansion",
+      "x": 850,
+      "y": 1110,
+      "s": 0.5,
+      "lit": 0.35,
+      "tone": 0.6,
+      "seed": 8
+     },
+     {
+      "p": "people",
+      "x": 330,
+      "y": 1240,
+      "s": 0.8,
+      "n": 6,
+      "spread": 200,
+      "seed": 4
+     }
+    ]
+   },
+   "typed": [
+    {
+     "text": "1949",
+     "at": "Then it changed",
+     "y": 545,
+     "size": 72
+    }
+   ],
+   "label": "ST. AUGUSTINE SEMINARY",
+   "label2": {
+    "text": "POPE LEO XIV, CLASS OF 1973",
+    "at": "future pope"
+   },
+   "credit": "Michigan historical marker; WOOD TV8; Detroit Catholic"
+  },
+  {
+   "text": "In 1977, the state bought it. The mansion became a police post, and the school became a prison.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "night",
+    "clouds": 0.2,
+    "ground": {
+     "type": "land",
+     "y": 1100
+    },
+    "grass": false,
+    "fog": 0.1,
+    "amount": 0.04,
+    "move": "right",
+    "props": [
+     {
+      "p": "schoolprison",
+      "x": 540,
+      "y": 1080,
+      "s": 1.0,
+      "n": 16,
+      "storeys": 4,
+      "lit": 0.25,
+      "bars": true
+     },
+     {
+      "p": "prisonfence",
+      "x": 540,
+      "y": 1190,
+      "s": 1.0
+     }
+    ]
+   },
+   "typed": [],
+   "label": "DUNES CORRECTIONAL FACILITY",
+   "sfx": [
+    {
+     "kind": "clang",
+     "at": "prison",
+     "gain": 0.3
+    }
+   ],
+   "credit": "Michigan historical marker; Wikipedia (National Register)"
+  },
+  {
+   "text": "The prison closed, and the township bought the mansion for one dollar.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "day",
+    "clouds": 0.4,
+    "ground": {
+     "type": "land",
+     "y": 1100
+    },
+    "grass": false,
+    "amount": 0.05,
+    "move": "in",
+    "props": [
+     {
+      "p": "pine",
+      "x": 40,
+      "y": 1095,
+      "s": 0.8
+     },
+     {
+      "p": "pine",
+      "x": 130,
+      "y": 1100,
+      "s": 0.6
+     },
+     {
+      "p": "feltmansion",
+      "x": 600,
+      "y": 1110,
+      "s": 0.85,
+      "lit": 0.0,
+      "tone": 1.0,
+      "seed": 12
+     },
+     {
+      "p": "marram",
+      "x": 560,
+      "y": 1175,
+      "s": 1.0,
+      "seed": 4
+     }
+    ]
+   },
+   "typed": [
+    {
+     "text": "$1",
+     "at": "one dollar",
+     "y": 545,
+     "size": 84
+    }
+   ],
+   "label": "LAKETOWN TOWNSHIP",
+   "credit": "Michigan historical marker; Wikipedia; Dread Central"
+  },
+  {
+   "text": "Today it's open for tours, and some visitors say Agnes never left. They tell of doors that open and close on their own.",
+   "pause": 0.0,
+   "scene": {
+    "kind": "tab_town",
+    "sky": "night",
+    "ground": {
+     "type": "street",
+     "y": 1200
+    },
+    "amount": 0.04,
+    "move": "in",
+    "props": [
+     {
+      "p": "frenchdoors",
+      "x": 600,
+      "y": 1080,
+      "s": 1.0,
+      "ajar": 0.6
+     }
+    ]
+   },
+   "label": "THE LEGEND",
+   "sfx": [
+    {
+     "kind": "creak",
+     "at": "doors",
+     "gain": 0.35
+    }
+   ],
+   "credit": "Saugatuck/Douglas visitors bureau (2025); Dread Central (2010)"
+  },
+  {
+   "text": "Comment your town, and it could be next.",
+   "end": true,
+   "end_card": {
+    "q": "COMMENT YOUR TOWN",
+    "q2": "IT COULD BE NEXT",
+    "bubble": "Your town, your state",
+    "pill": "Felt Mansion, near Saugatuck, Michigan",
+    "scene": {
+     "kind": "tab_land",
+     "sky": "night",
+     "moon": [
+      260,
+      620,
+      24
+     ],
+     "clouds": 0.2,
+     "ground": {
+      "type": "land",
+      "y": 1100
+     },
+     "grass": false,
+     "fog": 0.1,
+     "amount": 0.04,
+     "move": "still",
+     "props": [
+      {
+       "p": "pine",
+       "x": 960,
+       "y": 1090,
+       "s": 1.2
+      },
+      {
+       "p": "feltmansion",
+       "x": 470,
+       "y": 1110,
+       "s": 0.9,
+       "lit": 0.0,
+       "one": [
+        1,
+        2
+       ],
+       "tone": 0.5,
+       "seed": 21
+      }
+     ]
+    }
+   },
+   "credit": "All pictures drawn"
+  }
+ ],
+ "sources": [
+  {
+   "what": "'Chicago inventor and businessman Dorr Felt built this house as a summer home for his wife, Agnes'; the Comptometer, 'the first machine to do complex calculations'; 750 acres bought in 1919, 'Shore Acres Farm'; house designed by Frank P. Allen and Son, completed 1928; 'Agnes Felt died two months after the house was finished, and Dorr died two years later'; sold in 1949 to an Augustinian order; St. Augustine Catholic Seminary preparatory school, 1949; in 1962 the order built a school and leased the house to Dominican cloistered nuns; the state bought it in 1977, using the house as a state police post and converting the school into the Saugatuck Dunes Correctional Facility; 1995, 44 acres including the house and the prison buildings sold to Laketown Township for one dollar; Friends of the Felt Estate formed 2002.",
+   "who": "Michigan Historical Commission, marker S697 'Felt Mansion' (2006), via HMDB ('Near Saugatuck in Allegan County')",
+   "url": "https://www.hmdb.org/m.asp?m=73640"
+  },
+  {
+   "what": "Laketown Township near Saugatuck; Classical Revival, three stories, yellow brick, limestone sills and keystones, limestone portico, six-bay main body with slightly recessed four-bay wings, round-arch first-floor windows on the wings, third-floor ballroom; built 1927-28; Agnes died August 1928 at the estate; Dorr died August 1930; seminary 1949; nuns 1962; state 1977, police post; the school became the Saugatuck Dunes Correctional Facility, closed 1991; township bought it in 1995 for $1.",
+   "who": "Wikipedia, 'Dorr E. Felt Mansion' (from the National Register of Historic Places nomination)",
+   "url": "https://en.wikipedia.org/wiki/Dorr_E._Felt_Mansion"
+  },
+  {
+   "what": "Built as 'a dream home for his beloved wife, Agnes'; Agnes died in 1928, 'only six weeks after moving in'; Dorr died about a year and a half later; later a Catholic prep school that Pope Leo XIV attended; open for weddings and tours; doors reportedly open and close on their own; shadowy figures in the library, ballroom and bedrooms, which the page suggests may be Agnes; Hauntings & History Nights in October.",
+   "who": "Saugatuck/Douglas Area Convention and Visitors Bureau, 'Ghosts of the Art Coast' (Sept. 2025)",
+   "url": "https://saugatuck.com/ghosts-of-the-art-coast/"
+  },
+  {
+   "what": "Felt invented the Comptometer calculator, which made him very wealthy; finished 1928; Agnes died 'just six weeks after moving in'; Dorr died eighteen months later; St. Augustine Seminary; cloistered nuns; the state built Dunes Correctional Facility; the township bought it for one dollar; tours; many believe an apparition is Agnes; shadow people in the third-floor ballroom; French doors in Agnes's old room filmed seeming to open and close by themselves (West Michigan Ghost Hunters Society).",
+   "who": "Scott A. Johnson, 'Cold Spots: The Felt Mansion', Dread Central (2010)",
+   "url": "https://www.dreadcentral.com/cold-spots/17089/cold-spots-the-felt-mansion/"
+  },
+  {
+   "what": "'The 25-room, three-story Felt Mansion was built in 1925 by Dorr Felt, inventor of the Comptometer, a basic adding machine'; later a seminary school, then a state prison and Michigan State Police post.",
+   "who": "WHTC (June 2023)",
+   "url": "https://whtc.com/2023/06/06/528069/"
+  },
+  {
+   "what": "The Saint Augustine Seminary prep school 'was at the Felt Mansion and Shore Acres Park in Laketown Township, between Holland and Saugatuck'; the Felt Estate confirmed Robert Prevost graduated in 1973.",
+   "who": "WOOD TV8 (May 2025)",
+   "url": "https://www.woodtv.com/news/allegan-county/new-pope-attended-catholic-school-in-west-michigan/"
+  },
+  {
+   "what": "Pope Leo XIV, class of 1973, St. Augustine Seminary High School in Holland, Michigan; the Felt Estate is the site of the former school.",
+   "who": "Detroit Catholic (May 2025)",
+   "url": "https://www.detroitcatholic.com/news/a-pope-with-midwest-roots-pope-leo-xiv-attended-high-school-in-western-michigan"
+  },
+  {
+   "what": "Robert F. Prevost attended St. Augustine Seminary High School in Laketown Township at what is now the Felt Estate and Shore Acres Park; returned in 2013 for his class's 40th reunion.",
+   "who": "Laketown Township",
+   "url": "https://laketowntwp.org/photograph-shows-now-pope-leo-xiv-at-felt-estate/"
+  },
+  {
+   "what": "'Chicago machinist Dorr E. Felt... design an improved adding machine... named it the Comptometer'; no crank, no paper tape.",
+   "who": "Smithsonian Institution, Adding machines: Felt & Tarrant Comptometer",
+   "url": "https://www.si.edu/spotlight/adding-machines/full-keyboard-hill-to-felt-tarrant"
+  },
+  {
+   "what": "The estate bought by the state for $4.2 million in late 1977, remodeled for $2.3 million, opened July 1978 as Michigan Dunes Correctional Facility.",
+   "who": "Michigan Auditor General, audit (1980), via NCJRS",
+   "url": "https://www.ojp.gov/pdffiles1/Digitization/69310NCJRS.pdf"
+  },
+  {
+   "what": "The seminary high school on the Felt estate, 1949-1977; the later school building ('four-story, 135,000 square feet') became the prison; Pope Leo XIV, class of 1973.",
+   "who": "Wikipedia, 'St. Augustine Seminary High School'",
+   "url": "https://en.wikipedia.org/wiki/St._Augustine_Seminary_High_School"
+  },
+  {
+   "what": "History of the estate; the newer school stood on the ridge west of the mansion; tours; 'very few documented sightings'.",
+   "who": "The Felt Estate (feltmansion.org)",
+   "url": "https://www.feltmansion.org/history"
+  }
+ ]
+}

@@ -21,7 +21,7 @@ The storyboard (see film/stories/*.json for real ones):
      "label": "CROWN POINT, INDIANA",               small caps line at the top (y 300), from the beat's start
      "label2": {"text": "WHAT VISITORS SAY", "at": "Visitors say"},     replaces label at that phrase
      "title": {"text": "THE OLD LAKE COUNTY JAIL", "at": "Lake County Jail", "style": "bone"|"red", "size": 88},
-     "typed": [{"text": "MARCH 3, 1934", "at": "March 3,", "y": 545, "size": 72}],
+     "typed": [{"text": "MARCH 3, 1934", "at": "March 3,", "y": 545, "size": 72}],   (optional "gain" for its typing sound, default 0.8)
      "card": {"kind": "year"|"quote"|"headline"|"map"|"photo", "at": "phrase", "until": "phrase", ...},
      "credit": "History: The Old Sheriff's House Foundation",      bottom line; who the facts come from
      "flash": ["phrase"],                           lightning (with thunder) at these words
@@ -321,8 +321,8 @@ def build(st, R):
             events.append(("whoosh", t0, 0.5))
         if title:
             events.append(("hit" if title.get("style") == "red" else "pop", t_title, 0.6))
-        for tt_ in t_ty:
-            events.append(("type", tt_, 0.8))
+        for ty, tt_ in zip(tys, t_ty):                     # "gain" per typed item (default 0.8): lower it when several land close together
+            events.append(("type", tt_, float(ty.get("gain", 0.8))))
         if card:
             events.append(("whoosh" if card["kind"] in ("map", "photo") else "pop", tc[0], 0.45))
 

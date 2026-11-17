@@ -157,6 +157,28 @@ few backdrops (bare woods, the generic brick house, the generic courthouse) shou
   cut-away of a hill with a lake on top fed by springs from below; give the scene a dark land ground at the prop's y)
   and cottages (lake cottages with lit windows reflected in the water). `story_sound.py` has a new accent, "splash",
   for sfx.
+- `src/film/story_kit20.py` (Nov. 16, 2026, for the Kingsford Heights remake and the Kingsbury contamination short)
+  adds props: plumecut (a cut-away of the ground: soil layers, the water table and a dark patch with specks; keep
+  drift=0 and buildings=False unless a source says the contamination moved or came from a building; two plumecuts with
+  the same seed and w=620 at x=270 and x=810 join seamlessly into one ground with two patches), monwell (a locked
+  groundwater monitoring well ringed by yellow posts; cut=True draws its pipe down into the ground), drums (rusty
+  55-gallon drums half-buried in dirt mounds; dig=True adds an excavator arm), warnsign (a lane closed by a cable gate;
+  sign=False leaves out the sign when the real sign's words aren't known: put the words you do have on a quote card),
+  lineruins (roofless concrete line buildings) and shellstack (artillery shells on pallets).
+- `src/film/story_kit21.py` (Nov. 16, 2026, for the Knox short) adds props: comet (a comet with a long tail; ang =
+  the tail's direction), storefronts (a row of 1900s brick business blocks with awnings), arclamp (an early electric
+  street lamp), crowd1910 (a crowd seen from behind, hats and long skirts, faces turned up), stargazer (a man in a long
+  coat pointing at the sky; crate=False stands him on the sidewalk, scope=False drops the telescope, rim gives him a
+  thin lamplight edge so he reads against dark storefronts), sparks (glowing specks; k = brightness) and windowseal (a
+  window from inside with paper strips pasted over the cracks, a rolled cloth and an unlabeled tin).
+- `src/film/story_kit22.py` (Nov. 16, 2026, for the Saugatuck short) adds props: feltmansion (the Felt Mansion as the
+  National Register describes it: three-storey yellow brick, slate roof, limestone portico, recessed wings; one=[row,
+  col] lights a single window, tone darkens it for night), addingmachine (a generic key-driven adding machine on a desk,
+  a panelled office wall behind, no name on it), frenchdoors (a dark room with glazed French doors, one open on
+  darkness, moonlight on the floor) and schoolprison (a long, low brick school building with barred windows; pair it
+  with prisonfence).
+- Typed words take an optional "gain" (default 0.8) for their typing sound: when four words land within a second or
+  two, use about 0.4 each, or the stacked clicks push the true peak toward 0 dBFS.
 - `src/film/story_kit3.py` builds a picture from props (ships, a plane, buildings, rooms, trains, trees, people...):
   scene kinds `tab_lake`, `tab_land`, `tab_town`, `tab_room`, `tab_rail` take a sky, a ground and a list of props.
   `python3 story_kit3.py sheet` draws every prop (shorts/out/_props.jpg). Use these first; add a prop when one is
@@ -309,6 +331,35 @@ keep working.
   reprint gave a different headline and details; the page's OCR (ocr.txt) is the source, and a summarizer can mix up
   a headline and its subhead, so check the headline twice. The story says "the other morning": morning light. And no
   fishing rods: Beeman trolled a spoon on "a heavy silk Florida line" that was then "made fast" to the boat.
+- Kingsbury contamination (Nov. 2026, the Kingsford Heights remake and the Kingsbury short): ProPublica's "Bombs in
+  Your Backyard" page is the Defense Department's cleanup data as last updated in 2015 (published 2017): say "data
+  from 2015 listed" and date the credit. For where things stand now, use the Defense Department's yearly DERP status
+  tables on DENIX (the FY2025 tables, posted June 2026: the plant's 4 hazardous-waste sites response complete in 2009;
+  its 1 munitions site 2046, still in investigation, not cleanup); say "latest data", since the matching Annual Report
+  to Congress can lag a year. The listed sites are on the old plant grounds, miles from the town: never draw or imply
+  contamination under Kingsford Heights, and don't end on the town's houses under "IT COULD BE NEXT" (the end card
+  now shows the wildlife area). Don't draw a plume moving unless a source says it moves (ATSDR says Fisher-Calo's do;
+  the DoD sites' data doesn't), and don't draw it coming out of a building. Fisher-Calo was a solvent reclaimer on the
+  old grounds from late 1972, not the Army; EPA drum counts differ (over 10,000 at listing; about 3,500 dug up in
+  1995), so "thousands" and "the EPA says". The DNR's real sign wording isn't known, so its map legend goes on a quote
+  card and no sign is drawn. Bunkers under a munitions line can suggest stored munitions: use the grounds instead.
+- Knox (Nov. 2026): the only telling of the 1910 comet crowd is Alexander L. Jonas's "Knox Characters I Have Known"
+  (his WKVI talks, 1969-70, Starke County Historical Society PDF on the library's site; Chapter Six), and Jonas had it
+  from Senator Oliver Cannon, so the narration says both. Scoop okayed a one-source story with Jonas named. The
+  historical society's "Past Tidbits" PDFs (same site) are good Starke County leads. Earth was only "expected" to pass
+  through Halley's tail on May 18-19, 1910 (Nature and later calculations say it probably missed), and the comet's
+  head was between Earth and the Sun that night, so no comet over the crowd or the sealed window. Astronomy.com's
+  anti-comet-remedies article is a reprint of The Conversation's: credit its own 2023 article instead. Unused Starke
+  County leads (unchecked): downtown Knox's 1909 fire, the courthouse bell (Past Tidbits #47), and the summer-1902
+  murder in the Kankakee Valley Historical Society's article (kankakeevalleyhistoricalsociety.org/?p=2798).
+- Saugatuck (Nov. 2026): Singapore already ran (Nov. 29), so the second Saugatuck short is the Felt Mansion in
+  Laketown Township (mailing address Holland; the National Register lists it under Saugatuck, so "near Saugatuck").
+  The seminary's school moved into its own four-storey building west of the mansion in 1962-63; the future Pope Leo
+  XIV (class of 1973) studied there, not in the mansion, and that building became the prison (opened July 1978 per
+  the state's 1980 audit, which calls it "Michigan Dunes Correctional Facility"; closed 1991). Agnes died Aug. 19,
+  1928, Dorr Aug. 7, 1930 ("within two years"; the visitors bureau and Dread Central wrongly say 18 months). The
+  township's $1 purchase is 1995 or 1996 depending on the source. The "Melonheads" legend was left out on purpose: it
+  mocks children with a medical condition.
 
 ## 3. Write the script
 
