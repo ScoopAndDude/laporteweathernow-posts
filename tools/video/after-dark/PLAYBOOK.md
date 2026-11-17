@@ -574,6 +574,10 @@ for the paintings: no real person's likeness (figures tiny, from behind, or face
 hangings, no text, signs or logos in the picture, and look at every picture before it is used. The full-size pictures
 can only be fetched from Canva through a signed-in browser, so making new paintings needs someone at the computer.
 
+**Stopped Nov. 17, 2026.** Canva kept giving one picture per try and then 'Your credit usage is cooling down'. Scoop:
+"we can create without canva". Shorts not yet repainted keep their drawn versions and new shorts are drawn. Don't make
+more Canva paintings unless Scoop asks.
+
 ## Scaling the series (Scoop, Nov. 13, 2026: "I am on track to monetize on Facebook with this series. How can we scale it?" then "Do 1 through 6")
 
 What the numbers said on Nov. 13 (Facebook, last 40 posts): one short carried the page. The Porter cemetery short
