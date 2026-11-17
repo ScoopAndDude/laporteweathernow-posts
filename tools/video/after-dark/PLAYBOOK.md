@@ -389,7 +389,7 @@ quote, headline, map, photo) at the top of `src/film/story_cards.py`.
 
 ```
 cd ~/afterdark/film
-python3 reel_story.py stories/<slug>.json vo        # read the "pronunciation" list it prints
+python3 reel_story.py stories/<slug>.json vo        # read the "pronunciation" and "heteronyms" lists it prints
 python3 reel_story.py stories/<slug>.json stills    # then Read shorts/out/<slug>_preview.jpg and a few _pf_ frames
 python3 reel_story.py stories/<slug>.json video
 python3 reel_story.py stories/<slug>.json check     # must end "check: all good"
@@ -402,6 +402,19 @@ python3 reel_story.py stories/<slug>.json check     # must end "check: all good"
 - Wanatah is said WAH-nuh-tah (Scoop confirmed Nov. 15, 2026); `LOCAL_SAY` spells it "Wanna-tah".
 - Osage is said OH-sayj; the voice says "AH-sij" unless respelled, so `LOCAL_SAY` spells it "Ohsayj". The
   Drumright storyboard respells Ulysses "Yoo-lisseez" (the voice otherwise stresses YOO-lih-seez).
+- **Words spelled one way but said two ways (heteronyms):** the voice can't tell which one you mean. Until Scoop caught
+  it (Nov. 16, 2026: "Lead is pronounced led"), it said "lead" (the metal) as "leed" in Kingsbury and Kingsford Heights.
+  A scan of every script then found "Bass Lake" said "Base Lake" and "open and close" said with an s sound (Saugatuck,
+  and the Valparaiso jail short). The vo step prints a "heteronyms" list showing how each one comes out: read it
+  every time. Fix a wrong one with a narrow `"say"` rule in that storyboard, never in `LOCAL_SAY`, because the other
+  sense comes up too ("lead the manhunt" is right as "leed"). Rules that work: `["\\b([Ll])ead\\b", "\\1ed"]` for the
+  metal, `["\\bBass Lake\\b", "Bas Lake"]`, `["\\bopen and close\\b", "open and cloze"]`. They give led /lɛd/, Bas /bæs/
+  and cloze /kloʊz/; captions keep the real spelling. These already come out right: "for their lives", "wounded",
+  "winds", "death row", "rows of", "bass drum" (/beɪs/), "has used", "record" (the noun).
+- **A slip in a short that's already out** can't be fixed in place, because Buffer can't take published posts down.
+  Re-render it, post the fixed one with the same texts, and send Scoop the links to the old posts so he can delete them
+  in each app (Kingsbury and Saugatuck were swapped this way on Nov. 16, 2026). For a short that's only scheduled, put
+  the new video into the same posts with `edit_post`, carrying the text and metadata forward.
 - **Look at the stills:** text must not cover text, nothing important under the captions (y 1290 to 1400), no frame
   that is just black, and the drawing must match what's said at that moment.
 
