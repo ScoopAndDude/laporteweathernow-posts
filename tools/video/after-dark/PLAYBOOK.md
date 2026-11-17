@@ -177,6 +177,12 @@ few backdrops (bare woods, the generic brick house, the generic courthouse) shou
   a panelled office wall behind, no name on it), frenchdoors (a dark room with glazed French doors, one open on
   darkness, moonlight on the floor) and schoolprison (a long, low brick school building with barred windows; pair it
   with prisonfence).
+- `src/film/story_kit23.py` (Nov. 17, 2026, for the Porter 1921 wreck short) adds props: paxloco (a passenger steam
+  locomotive of about 1920 with its tender; x is the pilot, flip=True faces left, beam, smoke), coaches (1920s
+  coaches from x running right, flip=True left; wood=True a wooden coach), semaphore (arm="stop" level and red,
+  "clear" angled and green; arms=2 two blades; dim fades the lamp), intertower (a generic two-storey interlocking
+  tower), crosstrack (a second track crossing at an angle, below the horizon) and steamcloud. A wreck is told without
+  showing the collision or anyone hurt. Keep a tall signal's blade below the typed line (y 545).
 - Typed words take an optional "gain" (default 0.8) for their typing sound: when four words land within a second or
   two, use about 0.4 each, or the stacked clicks push the true peak toward 0 dBFS.
 - `src/film/story_kit3.py` builds a picture from props (ships, a plane, buildings, rooms, trains, trees, people...):
@@ -360,6 +366,16 @@ keep working.
   1928, Dorr Aug. 7, 1930 ("within two years"; the visitors bureau and Dread Central wrongly say 18 months). The
   township's $1 purchase is 1995 or 1996 depending on the source. The "Melonheads" legend was left out on purpose: it
   mocks children with a medical condition.
+
+- Porter 1921 wreck (Nov. 2026): the ICC report (rosap.ntl.bts.gov), Railway Age (March 4, 1921, on
+  michiganrailroads.com) and Railway Signaling (1921, on jonroma.net) carry it; porterhistory.org loops between https
+  and http and can't be fetched. The collision time (6:11 to 6:23 p.m.) and the Michigan Central train's speed (35 to
+  55 mph) differ by source, so neither is given; "about 50 miles an hour" is the New York Central express only. Early
+  death counts ran from 27 to 44; the final count is 37 (35 passengers and the express's engineman and fireman). The
+  Michigan Central came off a long curve (no straight track to the horizon), its home signal had two blades, and the
+  first car behind the express's engine was a wooden horse car. No moon that evening (it rose near midnight). The
+  coroner asked for manslaughter charges against the Michigan Central engineman and fireman; how that ended was not
+  found, so it was left out.
 
 ## 3. Write the script
 

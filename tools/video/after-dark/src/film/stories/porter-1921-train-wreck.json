@@ -1,0 +1,449 @@
+{
+ "slug": "porter-1921-train-wreck",
+ "title": "Porter, Indiana: the 1921 Crossing Wreck",
+ "series": "LA PORTE AFTER DARK",
+ "music": {
+  "seed": 211,
+  "prog": 6
+ },
+ "say": [],
+ "sources": [
+  {
+   "what": "'ON FEBRUARY 27 1921'; 'At the time of the accident it was dark and the weather was clear'; No. 20 passed the home signal at stop and ran through the open derail, 'The train continued on the ties'; the coach struck 'was of wooden construction with steel center sills'; No. 151 about 50 mph; 35 passengers and 2 employees killed; direct cause 'failure of Engineman Long to observe and obey the signal indication of the home signal'; Long thought he saw a green light above a red one, then lost sight of it in smoke and steam; the derail, 311 feet from the crossing, did not give the protection intended",
+   "who": "Interstate Commerce Commission, Bureau of Safety, accident report (March 14, 1921)",
+   "url": "https://rosap.ntl.bts.gov/view/dot/47925/dot_47925_DS1.pdf"
+  },
+  {
+   "what": "'On Sunday evening, February 27'; westbound New York Central No. 151 (Interstate Express) and eastbound Michigan Central No. 20 (Canadian), both passenger trains; 'Thirty-seven persons were killed'; No. 20 ran past the home signal and through the derail, a day coach stood on the New York Central track; two-storey tower, the route was lined for the New York Central train",
+   "who": "Railway Age, March 4, 1921 (reprinted by michiganrailroads.com, with the ICC summary)",
+   "url": "https://www.michiganrailroads.com/stories/7162-disaster-at-porter-indiana-1921"
+  },
+  {
+   "what": "the coroner's count: 'thirty-five (35) passengers and two (2) employees killed'; the ICC's cause; the route set for the New York Central train",
+   "who": "The Dash (Porter County history), 'Tragic Railroad Accidents in Porter County' (2024), quoting the coroner's report",
+   "url": "https://the-dash.org/2024/06/28/tragic-railroad-accidents-in-porter-county/"
+  },
+  {
+   "what": "'the railroad wreck at Porter which caused the death of thirty-seven persons' (Valparaiso newspapers, March 1921)",
+   "who": "Porter County Museum, Looking Back: March 1921",
+   "url": "https://www.pocomuse.org/looking-back/2021/3/3/0ss7mfemsj7ei4lrbeseelkqvg7r7w"
+  },
+  {
+   "what": "the ICC findings as printed in 1921: '35 passengers and 2 employees killed'; No. 151 'about 50 miles an hour'; 'the derail located 311 feet from the crossing does not afford the protection intended'; semaphore home signals, level blade for stop",
+   "who": "Railway Signaling, 1921, 'Accident on Porter, Indiana Interlocking Plant'",
+   "url": "https://jonroma.net/media/signaling/railway-signaling/1921/Accident%20on%20Porter%2C%20Indiana%20Interlocking%20Plant.pdf"
+  },
+  {
+   "what": "first wire report, Feb. 28, 1921: the train 'plowed across the ties'; the express at 'nearly 50 miles an hour'",
+   "who": "Morning Oregonian (AP), Feb. 28, 1921",
+   "url": "https://oregonnews.uoregon.edu/lccn/sn83025138/1921-02-28/ed-1/seq-1/ocr"
+  }
+ ],
+ "beats": [
+  {
+   "text": "37 people died at one railroad crossing. In Porter, Indiana.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_rail",
+    "sky": "night",
+    "ground": {
+     "type": "land",
+     "y": 1200
+    },
+    "props": [
+     {
+      "p": "tracks",
+      "x": 540,
+      "y": 1196,
+      "s": 1.0
+     },
+     {
+      "p": "intertower",
+      "x": 800,
+      "y": 1194,
+      "s": 0.95
+     },
+     {
+      "p": "semaphore",
+      "x": 300,
+      "y": 1194,
+      "s": 0.9,
+      "arm": "stop",
+      "arms": 2
+     },
+     {
+      "p": "crosstrack",
+      "x": 300,
+      "y": 1560,
+      "x2": 540,
+      "y2": 1206,
+      "w": 280,
+      "w2": 90
+     }
+    ],
+    "move": "in",
+    "amount": 0.07,
+    "fog": 0.15
+   },
+   "label": "PORTER, INDIANA",
+   "title": {
+    "text": "THE CROSSING",
+    "at": "one railroad crossing",
+    "size": 96,
+    "style": "red"
+   },
+   "typed": [
+    {
+     "text": "37",
+     "at": "37",
+     "y": 545,
+     "size": 130
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "heartbeat",
+     "at": "one railroad",
+     "gain": 0.6
+    }
+   ],
+   "credit": "History: ICC accident report, 1921; Railway Age, 1921"
+  },
+  {
+   "text": "It was Sunday evening, February 27, 1921. Dark, and clear. Two passenger trains were headed for the same crossing.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "card",
+    "seed": 0,
+    "move": "still"
+   },
+   "label": "FEBRUARY 27, 1921",
+   "card": {
+    "kind": "map",
+    "center": "Porter",
+    "span": 0.8,
+    "pins": [
+     "Porter",
+     "La Porte",
+     "Chicago"
+    ],
+    "hot": "Porter"
+   },
+   "credit": "ICC accident report, 1921; Railway Age, 1921"
+  },
+  {
+   "text": "The tower set the signals for the New York Central express. The Michigan Central train was told to stop.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "tab_rail",
+    "sky": "blue",
+    "ground": {
+     "type": "land",
+     "y": 1200
+    },
+    "props": [
+     {
+      "p": "tracks",
+      "x": 540,
+      "y": 1196,
+      "s": 1.0
+     },
+     {
+      "p": "intertower",
+      "x": 380,
+      "y": 1194,
+      "s": 1.5
+     },
+     {
+      "p": "semaphore",
+      "x": 840,
+      "y": 1194,
+      "s": 1.5,
+      "arm": "stop",
+      "flip": true,
+      "arms": 2
+     }
+    ],
+    "move": "right",
+    "amount": 0.06,
+    "fog": 0.1
+   },
+   "label": "THE SIGNAL TOWER",
+   "typed": [
+    {
+     "text": "STOP",
+     "at": "told to stop",
+     "y": 545,
+     "size": 110
+    }
+   ],
+   "credit": "ICC accident report, 1921; Railway Age, 1921"
+  },
+  {
+   "text": "It didn't. It ran through a safety derail, onto the ties, and a wooden coach was on the crossing when the express arrived.",
+   "pause": 0.85,
+   "scene": {
+    "kind": "tab_rail",
+    "sky": "night",
+    "ground": {
+     "type": "land",
+     "y": 1200
+    },
+    "props": [
+     {
+      "p": "tracks",
+      "x": 540,
+      "y": 1196,
+      "s": 1.0
+     },
+     {
+      "p": "semaphore",
+      "x": 150,
+      "y": 1194,
+      "s": 1.0,
+      "arm": "stop",
+      "arms": 2
+     },
+     {
+      "p": "coaches",
+      "x": 230,
+      "y": 1192,
+      "s": 0.8,
+      "n": 2,
+      "flip": true,
+      "wood": true,
+      "lit": 0.7
+     },
+     {
+      "p": "paxloco",
+      "x": 900,
+      "y": 1192,
+      "s": 0.8,
+      "beam": 0.7,
+      "smoke": 0.8
+     }
+    ],
+    "move": "right",
+    "amount": 0.09,
+    "fog": 0.15
+   },
+   "label": "MICHIGAN CENTRAL No. 20",
+   "sfx": [
+    {
+     "kind": "whoosh",
+     "at": "It ran",
+     "gain": 0.6
+    },
+    {
+     "kind": "heartbeat",
+     "at": "a wooden coach",
+     "gain": 0.7
+    }
+   ],
+   "credit": "ICC accident report, 1921; Railway Age, 1921"
+  },
+  {
+   "text": "The express hit it at about 50 miles an hour.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "tab_rail",
+    "sky": "night",
+    "ground": {
+     "type": "land",
+     "y": 1200
+    },
+    "props": [
+     {
+      "p": "tracks",
+      "x": 540,
+      "y": 1196,
+      "s": 1.0
+     },
+     {
+      "p": "paxloco",
+      "x": 110,
+      "y": 1192,
+      "s": 1.1,
+      "flip": true,
+      "beam": 1.0,
+      "smoke": 0.7
+     }
+    ],
+    "move": "in",
+    "amount": 0.1,
+    "fog": 0.2
+   },
+   "label": "NEW YORK CENTRAL No. 151",
+   "typed": [
+    {
+     "text": "ABOUT 50 MPH",
+     "at": "about 50",
+     "y": 545,
+     "size": 84
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "whistle",
+     "at": "The express",
+     "gain": 0.5
+    }
+   ],
+   "credit": "ICC accident report, 1921; Railway Age, 1921"
+  },
+  {
+   "text": "Federal investigators said the engineer missed a stop signal. He said he thought he saw green, then lost it in smoke and steam.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_rail",
+    "sky": "blue",
+    "ground": {
+     "type": "land",
+     "y": 1200
+    },
+    "props": [
+     {
+      "p": "tracks",
+      "x": 540,
+      "y": 1196,
+      "s": 1.0
+     },
+     {
+      "p": "semaphore",
+      "x": 620,
+      "y": 1194,
+      "s": 1.45,
+      "arm": "stop",
+      "dim": 0.35,
+      "arms": 2
+     },
+     {
+      "p": "steamcloud",
+      "x": 560,
+      "y": 700,
+      "s": 1.0,
+      "w": 760,
+      "h": 360,
+      "a": 0.9,
+      "seed": 4
+     },
+     {
+      "p": "steamcloud",
+      "x": 300,
+      "y": 900,
+      "s": 1.0,
+      "w": 600,
+      "h": 300,
+      "a": 0.6,
+      "seed": 7
+     }
+    ],
+    "move": "in",
+    "amount": 0.06,
+    "fog": 0.3
+   },
+   "label": "WHAT INVESTIGATORS SAID",
+   "credit": "ICC accident report, March 1921"
+  },
+  {
+   "text": "They also said the derail, 311 feet from the crossing, did not give the protection it was meant to.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_rail",
+    "sky": "blue",
+    "ground": {
+     "type": "land",
+     "y": 1200
+    },
+    "props": [
+     {
+      "p": "tracks",
+      "x": 540,
+      "y": 1196,
+      "s": 1.0
+     },
+     {
+      "p": "intertower",
+      "x": 900,
+      "y": 1194,
+      "s": 0.7
+     },
+     {
+      "p": "crosstrack",
+      "x": 560,
+      "y": 1560,
+      "x2": 760,
+      "y2": 1206,
+      "w": 280,
+      "w2": 90
+     },
+     {
+      "p": "semaphore",
+      "x": 230,
+      "y": 1194,
+      "s": 0.95,
+      "arm": "stop",
+      "arms": 2
+     }
+    ],
+    "move": "right",
+    "amount": 0.08,
+    "fog": 0.15
+   },
+   "label": "THE DERAIL",
+   "typed": [
+    {
+     "text": "311 FEET",
+     "at": "311 feet",
+     "y": 545,
+     "size": 100
+    }
+   ],
+   "credit": "ICC accident report, March 1921"
+  },
+  {
+   "text": "Comment your town for the next LaPorte After Dark.",
+   "end": true,
+   "end_card": {
+    "q": "COMMENT YOUR TOWN",
+    "q2": "FOR THE NEXT STORY",
+    "bubble": "Your town, your state",
+    "pill": "Porter, Indiana, February 27, 1921",
+    "scene": {
+     "kind": "tab_rail",
+     "sky": "dawn",
+     "ground": {
+      "type": "land",
+      "y": 1200
+     },
+     "props": [
+      {
+       "p": "tracks",
+       "x": 540,
+       "y": 1196,
+       "s": 1.0
+      },
+      {
+       "p": "intertower",
+       "x": 760,
+       "y": 1194,
+       "s": 1.0,
+       "lit": 0
+      },
+      {
+       "p": "semaphore",
+       "x": 300,
+       "y": 1194,
+       "s": 1.0,
+       "arm": "stop",
+       "arms": 2
+      }
+     ],
+     "move": "still",
+     "amount": 0.05
+    }
+   },
+   "credit": "All pictures drawn"
+  }
+ ]
+}
