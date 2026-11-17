@@ -183,6 +183,11 @@ few backdrops (bare woods, the generic brick house, the generic courthouse) shou
   "clear" angled and green; arms=2 two blades; dim fades the lamp), intertower (a generic two-storey interlocking
   tower), crosstrack (a second track crossing at an angle, below the horizon) and steamcloud. A wreck is told without
   showing the collision or anyone hurt. Keep a tall signal's blade below the typed line (y 545).
+- `src/film/story_kit24.py` (Nov. 17, 2026, for the Munster short) adds props: brasstavern (a large two-storey
+  flat-roofed frame inn with a full-width open porch, as Wilhelmine Kaske described the Brass Tavern; pole=True a
+  telegraph pole), charbeams (charred timbers smouldering on a limestone foundation, no burning building) and
+  foursquare (a two-storey American Foursquare with a clipped-gable roof and porch: the Kaske House; one=[row, col]
+  lights one window).
 - Typed words take an optional "gain" (default 0.8) for their typing sound: when four words land within a second or
   two, use about 0.4 each, or the stacked clicks push the true peak toward 0 dBFS.
 - `src/film/story_kit3.py` builds a picture from props (ships, a plane, buildings, rooms, trains, trees, people...):
@@ -376,6 +381,17 @@ keep working.
   first car behind the express's engine was a wooden horse car. No moon that evening (it rose near midnight). The
   coroner asked for manslaughter charges against the Michigan Central engineman and fireman; how that ended was not
   found, so it was left out.
+
+- Munster (Nov. 2026): two blind checks. No source says the Brass Tavern was built in 1845: the marker has a log
+  stagecoach inn in 1837 and the Brasses taking over in 1845; Kaske (1934) and the National Register put Brass's frame
+  inn about 1855. Stagecoaches rest on the marker alone. So the short gives no build date and no coach. Wilhelmine
+  Stallbohm Kaske was the Stallbohms' daughter (they bought it in 1864), not the Brasses': don't say "the owners'
+  daughter" right after the Brass name. The fire is November 1909 in her account and Halloween on ghost sites: "the
+  fall of 1909". The house is 1909 (National Register) or 1910 (marker): no year. The "get out" quote is Mike
+  McDowell's account in one article, not tied to a tour ("says a voice once whispered"); the footsteps and cold spots
+  are one user-submitted listing ("One haunted-places listing reports"). The names Stallbohm and Kaske are shown,
+  not spoken: how locals say them wasn't confirmed. munsterhistory.org and porterhistory.org loop between https and
+  http for fetchers. When a first check rewrites lines, run the second one before saving.
 
 ## 3. Write the script
 
