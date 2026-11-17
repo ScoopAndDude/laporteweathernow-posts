@@ -1,0 +1,281 @@
+{
+ "slug": "schererville-lake-george-hart-ditch-1883",
+ "title": "Schererville, Indiana: the Lake That Was Drained Away",
+ "series": "LA PORTE AFTER DARK",
+ "music": {
+  "seed": 233,
+  "prog": 6
+ },
+ "say": [],
+ "sources": [
+  {
+   "what": "'A big ditch leading out of Dyer, extending five miles to the Calumet River, is known as the Hart Ditch, and it quite effectually drained what was once called Lake George, lying between Dyer and Hartsdale and Schererville'; Hart 'had been a book publisher at Philadelphia'; he 'had entered and purchased a large amount of what was called swamp land, east of Dyer'",
+   "who": "T. H. Ball, Northwestern Indiana from 1800 to 1900 (1900), chapter 19",
+   "url": "https://www.inportercounty.org/Data/Misc/NW-Indiana-1900/NW-Indiana-1900-Chapter19.html"
+  },
+  {
+   "what": "'He met his death on January 12, 1883'; 'Mr. Hart was superintending the construction of a ditch cutting off a large bend in Plum creek, which flows through his farm at Dyer'; 'standing at the bottom of the ditch'; 'Suddenly, without warning, the left-hand bank caved, the sharp, frozen edge of the falling bank'; 'Death was instantaneous'",
+   "who": "Lake County biographies (1904), quoting the local press of January 1883, on Genealogy Trails",
+   "url": "http://genealogytrails.com/ind/lake/history_chapter4_pg5.html"
+  },
+  {
+   "what": "'January 12, 1883, when Mr. Hart was killed while supervising ditch construction after the left bank of a twelve-foot-high embankment collapsed without warning near a bend in Plum Creek'; the ditch system controlled Cady Marsh and 'a large body of water known as Lake George'; about 20,000 acres reclaimed",
+   "who": "Town of Dyer, History of Dyer",
+   "url": "https://www.townofdyer.com/Home/History"
+  },
+  {
+   "what": "Hartsdale, one mile north of Schererville, annexed by Schererville in 1911; Lake George on Hart's swamp land; Hart Ditch north to the Little Calumet River (citing Ball 1900 and Schoon, Calumet Beginnings, 2003)",
+   "who": "Wikipedia, 'Hartsdale, Indiana' (for leads; checked against Ball)",
+   "url": "https://en.wikipedia.org/wiki/Hartsdale,_Indiana"
+  },
+  {
+   "what": "an early map labelled the lowland joined to Cady Marsh as Lake George, water two to seven feet deep; the ditch ran across five sections of land to the Little Calumet River",
+   "who": "Indiana Academy of Science, paper on Cady Marsh",
+   "url": "https://journals.indianapolis.iu.edu/index.php/ias/article/download/13262/13321/19693"
+  },
+  {
+   "what": "stream gauge 05536190 'Hart Ditch at Munster, IN' (the name is in use today)",
+   "who": "U.S. Geological Survey",
+   "url": "https://waterdata.usgs.gov/monitoring-location/05536190/"
+  }
+ ],
+ "beats": [
+  {
+   "text": "There was once a shallow lake between Dyer and Schererville, Indiana. A ditch made it disappear.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_lake",
+    "sky": "dusk",
+    "ground": {
+     "type": "water",
+     "y": 1080
+    },
+    "props": [
+     {
+      "p": "marsh",
+      "x": 540,
+      "y": 1080
+     }
+    ],
+    "move": "in",
+    "amount": 0.08,
+    "fog": 0.2
+   },
+   "label": "BETWEEN DYER AND SCHERERVILLE",
+   "title": {
+    "text": "THE LOST LAKE",
+    "at": "made it disappear",
+    "size": 96,
+    "style": "red"
+   },
+   "sfx": [
+    {
+     "kind": "heartbeat",
+     "at": "A ditch",
+     "gain": 0.5
+    }
+   ],
+   "credit": "History: T. H. Ball (1900); Town of Dyer history"
+  },
+  {
+   "text": "It was called Lake George. It lay between Dyer, Hartsdale and Schererville, with swamp around it.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "card",
+    "seed": 0,
+    "move": "still"
+   },
+   "label": "LAKE GEORGE (NOT HAMMOND'S OR HOBART'S)",
+   "card": {
+    "kind": "map",
+    "center": "Schererville",
+    "span": 0.3,
+    "pins": [
+     "Dyer",
+     "Schererville"
+    ],
+    "hot": "Schererville"
+   },
+   "credit": "T. H. Ball, Northwestern Indiana (1900)"
+  },
+  {
+   "text": "Aaron Hart, a former Philadelphia book publisher, bought swamp land there. A big ditch was dug, five miles to the Little Calumet River.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "day",
+    "ground": {
+     "type": "land",
+     "y": 900,
+     "grass": false
+    },
+    "props": [
+     {
+      "p": "ditch",
+      "x": 540,
+      "y": 900,
+      "w": 520,
+      "bank": 230,
+      "spoil": true
+     }
+    ],
+    "move": "in",
+    "amount": 0.08,
+    "lift": 0
+   },
+   "label": "THE HART DITCH",
+   "typed": [
+    {
+     "text": "FIVE MILES",
+     "at": "five miles",
+     "y": 545,
+     "size": 92
+    }
+   ],
+   "credit": "T. H. Ball (1900); Proceedings, Indiana Academy of Science"
+  },
+  {
+   "text": "The lake drained away. Thousands of acres became farmland.",
+   "pause": 0.8,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "warm",
+    "ground": {
+     "type": "land",
+     "y": 1090
+    },
+    "props": [
+     {
+      "p": "fields",
+      "x": 540,
+      "y": 960
+     },
+     {
+      "p": "farmhouse",
+      "x": 760,
+      "y": 960,
+      "s": 0.55
+     }
+    ],
+    "move": "right",
+    "amount": 0.07,
+    "lift": 0
+   },
+   "label": "DRAINED",
+   "credit": "T. H. Ball (1900); Town of Dyer history"
+  },
+  {
+   "text": "On January 12, 1883, Hart stood in the bottom of a new ditch on his farm at Dyer. The left bank caved in without warning. He was killed instantly.",
+   "pause": 0.8,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "day",
+    "clouds": 0.8,
+    "ground": {
+     "type": "snow",
+     "y": 900,
+     "grass": false
+    },
+    "props": [
+     {
+      "p": "ditch",
+      "x": 600,
+      "y": 900,
+      "w": 300,
+      "bank": 330,
+      "snow": true,
+      "water": "#3a4a52",
+      "trees": 0.6,
+      "seed": 4
+     }
+    ],
+    "move": "in",
+    "amount": 0.1,
+    "lift": 0,
+    "fog": 0.25
+   },
+   "label": "DYER, JANUARY 12, 1883",
+   "typed": [
+    {
+     "text": "WITHOUT WARNING",
+     "at": "without warning",
+     "y": 545,
+     "size": 80
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "heartbeat",
+     "at": "Hart stood",
+     "gain": 0.7
+    },
+    {
+     "kind": "whoosh",
+     "at": "caved in",
+     "gain": 0.6
+    }
+   ],
+   "credit": "Local press, 1883, quoted in a 1904 county history; Town of Dyer"
+  },
+  {
+   "text": "The big ditch still carries his name: Hart Ditch. That Lake George is gone.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "blue",
+    "ground": {
+     "type": "land",
+     "y": 900,
+     "grass": false
+    },
+    "props": [
+     {
+      "p": "ditch",
+      "x": 480,
+      "y": 900,
+      "w": 500,
+      "bank": 170,
+      "trees": 0.9,
+      "seed": 7
+     }
+    ],
+    "move": "in",
+    "amount": 0.07,
+    "lift": 0,
+    "fog": 0.2
+   },
+   "label": "HART DITCH TODAY",
+   "credit": "T. H. Ball (1900); U.S. Geological Survey"
+  },
+  {
+   "text": "Comment your town, and it could be next.",
+   "end": true,
+   "end_card": {
+    "q": "COMMENT YOUR TOWN",
+    "q2": "IT COULD BE NEXT",
+    "bubble": "Your town, your state",
+    "pill": "Hart Ditch, Lake County, Indiana",
+    "scene": {
+     "kind": "tab_lake",
+     "sky": "dawn",
+     "ground": {
+      "type": "water",
+      "y": 1080
+     },
+     "props": [
+      {
+       "p": "marsh",
+       "x": 540,
+       "y": 1080,
+       "seed": 5
+      }
+     ],
+     "move": "still",
+     "amount": 0.05
+    }
+   },
+   "credit": "All pictures drawn"
+  }
+ ],
+ "notes": "Fact-check 1 (Nov. 17, 2026): there is a living Lake George in Hammond, so the map pins only Dyer and Schererville, a typed line says 'NOT THE ONE IN HAMMOND' and the last line says 'That Lake George is gone'. Ball says 'Calumet River'; four other sources say Little Calumet. Hart's cut was on Plum Creek at his Dyer farm and isn't shown to be the big Hart Ditch itself: keep 'a new ditch'. Only the left bank fell. Hart's ditch business employed up to forty men: 'One man's ditch', not 'One man'. No silo on an 1880s farm. Hartsdale's 1911 annexation by Schererville rests on Wikipedia alone, so it isn't said. Fact-check 2: 'One man's ditch' still overstated (crews of up to forty men; a ditch system), so 'A ditch made it disappear'; the 1883 account says the bank's edge was frozen, not 'frozen hard', so 'frozen' came out; Hobart has a Lake George too, so the typed line names both."
+}
