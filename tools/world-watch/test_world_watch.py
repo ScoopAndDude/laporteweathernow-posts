@@ -18,7 +18,10 @@ REPO = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, os.path.join(REPO, "scripts"))
 import world_watch as ww  # noqa: E402
 
-TODAY = datetime.date(2026, 10, 19)   # a Monday
+TODAY = datetime.date(2026, 10, 19)   # a Monday, for the due and next-Monday tests only
+# The checks below run on proposals built from the live World Watch files, so they use the day those files
+# were last saved. A fixed day broke every run once a weekly update saved newer news (Oct. 26-Nov. 16, 2026).
+CHECK_DAY = max(datetime.date.fromisoformat(ww.load(path)["updated"]) for path in (ww.WORLD, ww.AMAZON))
 FAILED = []
 
 
@@ -34,6 +37,7 @@ def good_proposal():
     enso = dict(copy.deepcopy(world["enso"]), changed=True)
     enso["reading"] = "+2.6°C"
     enso["readingNote"] = "above normal in the key Nino-3.4 zone of the Pacific, week of October 12"
+    enso["nextUpdate"] = (CHECK_DAY + datetime.timedelta(days=7)).isoformat()
     am = {k: copy.deepcopy(amazon[k]) for k in ("headline", "stats", "now", "species")}
     for s in am["species"]:
         s.setdefault("more", [])
@@ -42,36 +46,36 @@ def good_proposal():
 
 # ---------------------------------------------------------------- checks
 p = good_proposal()
-ok(ww.check(copy.deepcopy(p), TODAY) == [], "a proposal built from today's files passes: " + str(ww.check(copy.deepcopy(p), TODAY)))
+ok(ww.check(copy.deepcopy(p), CHECK_DAY) == [], "a proposal built from today's files passes: " + str(ww.check(copy.deepcopy(p), CHECK_DAY)))
 
 bad = copy.deepcopy(p); bad["amazon"]["stats"] = bad["amazon"]["stats"][:3]
-ok(any("exactly 4 tiles" in x for x in ww.check(bad, TODAY)), "3 stats tiles fail")
+ok(any("exactly 4 tiles" in x for x in ww.check(bad, CHECK_DAY)), "3 stats tiles fail")
 bad = copy.deepcopy(p); bad["enso"]["points"] = bad["enso"]["points"][:3]
-ok(any("exactly 4 sentences" in x for x in ww.check(bad, TODAY)), "3 El Nino points fail")
+ok(any("exactly 4 sentences" in x for x in ww.check(bad, CHECK_DAY)), "3 El Nino points fail")
 bad = copy.deepcopy(p); bad["amazon"]["now"][0]["source"]["url"] = "http://example.com/x"
-ok(any("https" in x for x in ww.check(bad, TODAY)), "an http link fails")
-bad = copy.deepcopy(p); bad["amazon"]["now"][0]["date"] = "2026-10-25"
-ok(any("future" in x for x in ww.check(bad, TODAY)), "a news date in the future fails")
+ok(any("https" in x for x in ww.check(bad, CHECK_DAY)), "an http link fails")
+bad = copy.deepcopy(p); bad["amazon"]["now"][0]["date"] = (CHECK_DAY + datetime.timedelta(days=1)).isoformat()
+ok(any("future" in x for x in ww.check(bad, CHECK_DAY)), "a news date in the future fails")
 bad = copy.deepcopy(p); bad["amazon"]["species"][0]["photo"] = {"url": "https://upload.wikimedia.org/a.jpg", "alt": "a fly",
     "credit": "Someone", "license": "All rights reserved", "licenseUrl": "https://example.com/l", "page": "https://commons.wikimedia.org/x"}
-ok(any("license" in x for x in ww.check(bad, TODAY)), "a photo without a free license fails")
+ok(any("license" in x for x in ww.check(bad, CHECK_DAY)), "a photo without a free license fails")
 good = copy.deepcopy(p); good["amazon"]["species"][0]["photo"] = {"url": "https://upload.wikimedia.org/a.jpg", "alt": "a fly",
     "credit": "Someone", "license": "CC BY-SA 4.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
     "page": "https://commons.wikimedia.org/wiki/File:A.jpg"}
-ok(ww.check(good, TODAY) == [], "a CC BY-SA photo passes")
+ok(ww.check(good, CHECK_DAY) == [], "a CC BY-SA photo passes")
 bad = copy.deepcopy(p); bad["enso"]["reading"] = "2.6 degrees"
-ok(any("reading" in x for x in ww.check(bad, TODAY)), "a reading without degrees C fails")
+ok(any("reading" in x for x in ww.check(bad, CHECK_DAY)), "a reading without degrees C fails")
 bad = copy.deepcopy(p); bad["enso"]["nextUpdate"] = "2026-10-01"
-ok(any("passed" in x for x in ww.check(bad, TODAY)), "a nextUpdate that has passed fails")
+ok(any("passed" in x for x in ww.check(bad, CHECK_DAY)), "a nextUpdate that has passed fails")
 bad = copy.deepcopy(p); bad["amazon"]["species"].append(copy.deepcopy(bad["amazon"]["species"][0])); bad["amazon"]["species"].append(copy.deepcopy(bad["amazon"]["species"][0]))
-ok(any("3 to 6" in x for x in ww.check(bad, TODAY)), "7 species fail")
+ok(any("3 to 6" in x for x in ww.check(bad, CHECK_DAY)), "7 species fail")
 bad = copy.deepcopy(p); bad["amazon"]["now"][1]["text"] = "Fires fell. <img src=x onerror=alert(1)>"
-ok(any("no '<'" in x for x in ww.check(bad, TODAY)), "HTML in a text is refused")
+ok(any("no '<'" in x for x in ww.check(bad, CHECK_DAY)), "HTML in a text is refused")
 bad = copy.deepcopy(p); bad["amazon"]["stats"][2]["source"]["url"] = "javascript:alert(1)"
-ok(len(ww.check(bad, TODAY)) >= 1, "a javascript: link is refused")
+ok(len(ww.check(bad, CHECK_DAY)) >= 1, "a javascript: link is refused")
 mixed = copy.deepcopy(p); mixed["amazon"]["now"].reverse()
 _dates = [x["date"] for x in mixed["amazon"]["now"]]
-ok(ww.check(mixed, TODAY) == [] and [x["date"] for x in mixed["amazon"]["now"]] == sorted(_dates, reverse=True),
+ok(ww.check(mixed, CHECK_DAY) == [] and [x["date"] for x in mixed["amazon"]["now"]] == sorted(_dates, reverse=True),
    "news comes out newest first")
 
 # ---------------------------------------------------------------- due
@@ -88,16 +92,17 @@ try:
     shutil.copy(ww.WORLD, wpath); shutil.copy(ww.AMAZON, apath)
     before_world, before_amazon = ww.load(wpath), ww.load(apath)
     prop_path = os.path.join(tmp, "p.json")
-    q = good_proposal(); q["_meta"] = {"date": "2026-10-26"}
+    q = good_proposal(); q["_meta"] = {"date": CHECK_DAY.isoformat()}
     ww.save(prop_path, q)
-    changed = ww.apply(prop_path, today=datetime.date(2026, 10, 26), world_path=wpath, amazon_path=apath)
+    changed = ww.apply(prop_path, today=CHECK_DAY, world_path=wpath, amazon_path=apath)
     w2, a2 = ww.load(wpath), ww.load(apath)
     ok(changed and os.path.exists(prop_path + ".msg"), "a real change writes the commit message")
-    ok(w2["enso"]["reading"] == "+2.6°C" and w2["updated"] == "2026-10-26", "El Nino and its date saved")
+    ok(w2["enso"]["reading"] == "+2.6°C" and w2["updated"] == CHECK_DAY.isoformat(), "El Nino and its date saved")
     ok(w2["climate"] == before_world["climate"], "climate kept as it was")
     ok(list(w2.keys()) == list(before_world.keys()), "world-watch.json keeps its key order")
     ok(a2["about"] == before_amazon["about"], "about kept as it was")
-    ok(a2["updated"] == "2026-10-26" and a2["nextUpdate"] == "2026-11-02", "Amazon dates set by the script")
+    ok(a2["updated"] == CHECK_DAY.isoformat() and a2["nextUpdate"] == ww.next_monday(CHECK_DAY).isoformat(),
+       "Amazon dates set by the script")
     ok(list(a2.keys()) == list(before_amazon.keys()), "amazon-watch.json keeps its key order")
     ok(open(wpath, encoding="utf-8").read().endswith("}\n") and "Niño" in open(wpath, encoding="utf-8").read(),
        "files stay plain UTF-8 with a newline at the end")
@@ -107,14 +112,14 @@ try:
     raw_before = open(wpath, encoding="utf-8").read()
     q = good_proposal(); q["enso"]["changed"] = False; q["enso"]["reading"] = "+9.9°C"
     ww.save(prop_path, q)
-    ww.apply(prop_path, today=datetime.date(2026, 10, 26), world_path=wpath, amazon_path=apath)
+    ww.apply(prop_path, today=CHECK_DAY, world_path=wpath, amazon_path=apath)
     ok(open(wpath, encoding="utf-8").read() == raw_before, "no El Nino change leaves world-watch.json byte for byte")
 
     # a bad proposal is refused by apply too
     q = good_proposal(); q["amazon"]["stats"] = []
     ww.save(prop_path, q)
     try:
-        ww.apply(prop_path, today=TODAY, world_path=wpath, amazon_path=apath)
+        ww.apply(prop_path, today=CHECK_DAY, world_path=wpath, amazon_path=apath)
         ok(False, "apply refuses a proposal that fails the checks")
     except SystemExit:
         pass
@@ -157,7 +162,7 @@ replies = [
 ]
 fake = FakeClient(replies)
 logs = []
-prop, total, notes = ww.ask_claude(fake, TODAY, ww.load(ww.WORLD), ww.load(ww.AMAZON), log=logs.append)
+prop, total, notes = ww.ask_claude(fake, CHECK_DAY, ww.load(ww.WORLD), ww.load(ww.AMAZON), log=logs.append)
 ok(len(fake.calls) == 3, "three requests: paused, fixed, saved")
 first = fake.calls[0]["messages"][0]["content"]
 ok(ww.NOAA_ENSO in first and ww.IRI_ENSO in first, "the NOAA and IRI links are in the user message (so web_fetch may fetch them)")
@@ -176,14 +181,14 @@ ok(fake.calls[0]["model"] == "claude-opus-5-5", "Claude Opus 5.5")
 # ends its turn without saving: one nudge, then it saves
 fake = FakeClient([NS(stop_reason="end_turn", content=[NS(type="text", text="Done.")], usage=usage()),
                    NS(stop_reason="tool_use", content=[save_block(good_proposal())], usage=usage())])
-prop, total, notes = ww.ask_claude(fake, TODAY, ww.load(ww.WORLD), ww.load(ww.AMAZON), log=logs.append)
+prop, total, notes = ww.ask_claude(fake, CHECK_DAY, ww.load(ww.WORLD), ww.load(ww.AMAZON), log=logs.append)
 ok(fake.calls[1]["messages"][-1] == {"role": "user", "content": "Please call save_world_watch now with the full update."},
    "a turn that ends without saving gets one nudge")
 
 # keeps failing: refused after MAX_FIXES
 fake = FakeClient([NS(stop_reason="tool_use", content=[save_block(three_tiles, f"t{i}")], usage=usage()) for i in range(5)])
 try:
-    ww.ask_claude(fake, TODAY, ww.load(ww.WORLD), ww.load(ww.AMAZON), log=logs.append)
+    ww.ask_claude(fake, CHECK_DAY, ww.load(ww.WORLD), ww.load(ww.AMAZON), log=logs.append)
     ok(False, "a proposal that keeps failing is refused")
 except RuntimeError as e:
     ok("didn't pass" in str(e) and len(fake.calls) == ww.MAX_FIXES + 1, "refused after the allowed fixes")
@@ -191,7 +196,7 @@ except RuntimeError as e:
 # runaway cost: stopped
 fake = FakeClient([NS(stop_reason="pause_turn", content=[], usage=usage(i=3_000_000)) for _ in range(3)])
 try:
-    ww.ask_claude(fake, TODAY, ww.load(ww.WORLD), ww.load(ww.AMAZON), log=logs.append)
+    ww.ask_claude(fake, CHECK_DAY, ww.load(ww.WORLD), ww.load(ww.AMAZON), log=logs.append)
     ok(False, "a run that costs too much is stopped")
 except RuntimeError as e:
     ok("Stopped" in str(e), "a run past the cost cap stops")
