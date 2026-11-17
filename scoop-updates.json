@@ -260,12 +260,14 @@
   "hourlyFrom": "2026-11-16T05:47:00-06:00"
  },
  "published": {
-  "time": "2026-11-16T08:32:00-06:00",
+  "time": "2026-11-16T19:02:00-06:00",
   "alertKeys": [],
   "alerts": [],
   "changes": [],
-  "off": [],
-  "paragraph": "Automatic update, 8:32 a.m.: The Special Weather Statement for La Porte County has ended. There are no watches, warnings, or advisories for La Porte County right now."
+  "off": [
+   "cool"
+  ],
+  "paragraph": "Automatic update, 7:02 p.m.: The Special Weather Statement for La Porte County has ended. It's running cooler than NWS's earlier hour-by-hour forecast: at 6:15 p.m. the La Porte airport reported clear and 37 degrees, where that forecast had about 42. There are no watches, warnings, or advisories for La Porte County right now."
  },
  "alertRows": [],
  "missing": [],
@@ -273,6 +275,10 @@
   {
    "time": "2026-11-16T08:32:00-06:00",
    "why": "alerts changed (none now)"
+  },
+  {
+   "time": "2026-11-16T19:02:00-06:00",
+   "why": "airport running cool"
   }
  ]
 }
