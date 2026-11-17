@@ -1,63 +1,51 @@
 {
  "about": "State for scripts/scoop_update.py, the automatic updates to today's Daily Scoop: the forecast the Scoop was written from (baseline), what was last published, the alerts last seen, and today's updates. Replaced each day. Safe to delete: the job starts over from the current post.",
- "date": "2026-11-16",
- "post": "2026-11-16T05:32:00-06:00",
+ "date": "2026-11-17",
+ "post": "2026-11-17T05:32:00-06:00",
  "kind": "written",
  "baseline": {
-  "from": "2026-11-16T05:02:17-06:00",
+  "from": "2026-11-17T05:02:15-06:00",
   "source": "nws-snapshot.json (what the Scoop was written from)",
   "periods": {
-   "day 2026-11-16": {
-    "name": "Today",
-    "temp": 50,
-    "rain": 0,
-    "short": "Patchy Fog then Mostly Sunny"
-   },
-   "night 2026-11-16": {
-    "name": "Tonight",
-    "temp": 31,
-    "rain": 0,
-    "short": "Mostly Clear"
-   },
    "day 2026-11-17": {
-    "name": "Tuesday",
+    "name": "Today",
     "temp": 54,
     "rain": 0,
     "short": "Sunny"
    },
    "night 2026-11-17": {
-    "name": "Tuesday Night",
-    "temp": 34,
+    "name": "Tonight",
+    "temp": 33,
     "rain": 0,
-    "short": "Mostly Clear"
+    "short": "Partly Cloudy"
    },
    "day 2026-11-18": {
     "name": "Wednesday",
-    "temp": 57,
+    "temp": 58,
     "rain": 0,
     "short": "Sunny"
    },
    "night 2026-11-18": {
     "name": "Wednesday Night",
-    "temp": 42,
+    "temp": 41,
     "rain": 0,
     "short": "Partly Cloudy"
    },
    "day 2026-11-19": {
     "name": "Thursday",
-    "temp": 61,
+    "temp": 62,
     "rain": 0,
     "short": "Sunny"
    },
    "night 2026-11-19": {
     "name": "Thursday Night",
-    "temp": 43,
+    "temp": 42,
     "rain": 0,
     "short": "Mostly Clear"
    },
    "day 2026-11-20": {
     "name": "Friday",
-    "temp": 61,
+    "temp": 63,
     "rain": 0,
     "short": "Sunny"
    },
@@ -65,151 +53,50 @@
     "name": "Friday Night",
     "temp": 46,
     "rain": 0,
-    "short": "Partly Cloudy"
+    "short": "Mostly Clear"
    },
    "day 2026-11-21": {
     "name": "Saturday",
     "temp": 64,
-    "rain": 20,
-    "short": "Mostly Sunny then Slight Chance Rain Showers"
+    "rain": 0,
+    "short": "Mostly Sunny"
    },
    "night 2026-11-21": {
     "name": "Saturday Night",
-    "temp": 43,
-    "rain": 40,
-    "short": "Chance Rain Showers"
+    "temp": 45,
+    "rain": 60,
+    "short": "Rain Showers Likely"
    },
    "day 2026-11-22": {
     "name": "Sunday",
-    "temp": 49,
-    "rain": 40,
-    "short": "Chance Rain Showers"
+    "temp": 51,
+    "rain": 60,
+    "short": "Rain Showers Likely"
    },
    "night 2026-11-22": {
     "name": "Sunday Night",
     "temp": 34,
     "rain": 0,
+    "short": "Mostly Cloudy"
+   },
+   "day 2026-11-23": {
+    "name": "Monday",
+    "temp": 44,
+    "rain": 0,
+    "short": "Partly Sunny"
+   },
+   "night 2026-11-23": {
+    "name": "Monday Night",
+    "temp": 29,
+    "rain": 0,
     "short": "Partly Cloudy"
    }
   },
-  "alerts": [
-   {
-    "key": "Special Weather Statement | La Porte County | no set end",
-    "event": "Special Weather Statement",
-    "where": "La Porte County"
-   }
-  ],
-  "alertRows": [
-   {
-    "id": "urn:oid:2.49.0.1.840.0.b16f0982c734cd7fdfc156fb116225a70ad7dfef.001.1",
-    "event": "Special Weather Statement",
-    "area": "Elkhart; Lagrange; Steuben; Noble; De Kalb; Starke; Pulaski; Marshall; Fulton; Whitley; Allen; White; Cass; Miami; Wabash; Huntington; Wells; Adams; Grant; Blackford; Jay; Northern La Porte; Eastern St. Joseph; Northern Kosciusko; Southern La Porte; Western St. Joseph; Southern Kosciusko; Cass; St. Joseph; Branch; Hillsdale; Northern Berrien; Southern Berrien; Williams; Defiance; Paulding; Van Wert",
-    "onset": "2026-11-16T05:41:00-05:00",
-    "ends": null,
-    "expires": "2026-11-16T09:15:00-05:00",
-    "sent": "2026-11-16T05:41:00-05:00",
-    "messageType": "Alert"
-   }
-  ],
+  "alerts": [],
+  "alertRows": [],
   "hourly": {
-   "2026-11-16T05": {
-    "temp": 29,
-    "rain": 0
-   },
-   "2026-11-16T06": {
-    "temp": 29,
-    "rain": 0
-   },
-   "2026-11-16T07": {
-    "temp": 29,
-    "rain": 0
-   },
-   "2026-11-16T08": {
-    "temp": 34,
-    "rain": 0
-   },
-   "2026-11-16T09": {
-    "temp": 38,
-    "rain": 0
-   },
-   "2026-11-16T10": {
-    "temp": 42,
-    "rain": 0
-   },
-   "2026-11-16T11": {
-    "temp": 46,
-    "rain": 0
-   },
-   "2026-11-16T12": {
-    "temp": 48,
-    "rain": 0
-   },
-   "2026-11-16T13": {
-    "temp": 49,
-    "rain": 0
-   },
-   "2026-11-16T14": {
-    "temp": 50,
-    "rain": 0
-   },
-   "2026-11-16T15": {
-    "temp": 49,
-    "rain": 0
-   },
-   "2026-11-16T16": {
-    "temp": 47,
-    "rain": 0
-   },
-   "2026-11-16T17": {
-    "temp": 44,
-    "rain": 0
-   },
-   "2026-11-16T18": {
-    "temp": 42,
-    "rain": 0
-   },
-   "2026-11-16T19": {
-    "temp": 41,
-    "rain": 0
-   },
-   "2026-11-16T20": {
-    "temp": 39,
-    "rain": 0
-   },
-   "2026-11-16T21": {
-    "temp": 38,
-    "rain": 0
-   },
-   "2026-11-16T22": {
-    "temp": 37,
-    "rain": 0
-   },
-   "2026-11-16T23": {
-    "temp": 36,
-    "rain": 0
-   },
-   "2026-11-17T00": {
-    "temp": 35,
-    "rain": 0
-   },
-   "2026-11-17T01": {
-    "temp": 34,
-    "rain": 0
-   },
-   "2026-11-17T02": {
-    "temp": 33,
-    "rain": 0
-   },
-   "2026-11-17T03": {
-    "temp": 33,
-    "rain": 0
-   },
-   "2026-11-17T04": {
-    "temp": 32,
-    "rain": 0
-   },
    "2026-11-17T05": {
-    "temp": 32,
+    "temp": 30,
     "rain": 0
    },
    "2026-11-17T06": {
@@ -221,64 +108,142 @@
     "rain": 0
    },
    "2026-11-17T08": {
-    "temp": 35,
+    "temp": 34,
     "rain": 0
    },
    "2026-11-17T09": {
-    "temp": 41,
+    "temp": 40,
     "rain": 0
    },
    "2026-11-17T10": {
-    "temp": 45,
+    "temp": 44,
     "rain": 0
    },
    "2026-11-17T11": {
-    "temp": 49,
+    "temp": 47,
     "rain": 0
    },
    "2026-11-17T12": {
-    "temp": 52,
+    "temp": 51,
     "rain": 0
    },
    "2026-11-17T13": {
-    "temp": 53,
+    "temp": 52,
     "rain": 0
    },
    "2026-11-17T14": {
-    "temp": 54,
-    "rain": 0
-   },
-   "2026-11-17T15": {
     "temp": 53,
     "rain": 0
    },
+   "2026-11-17T15": {
+    "temp": 54,
+    "rain": 0
+   },
    "2026-11-17T16": {
-    "temp": 52,
+    "temp": 51,
+    "rain": 0
+   },
+   "2026-11-17T17": {
+    "temp": 48,
+    "rain": 0
+   },
+   "2026-11-17T18": {
+    "temp": 46,
+    "rain": 0
+   },
+   "2026-11-17T19": {
+    "temp": 42,
+    "rain": 0
+   },
+   "2026-11-17T20": {
+    "temp": 41,
+    "rain": 0
+   },
+   "2026-11-17T21": {
+    "temp": 39,
+    "rain": 0
+   },
+   "2026-11-17T22": {
+    "temp": 38,
+    "rain": 0
+   },
+   "2026-11-17T23": {
+    "temp": 38,
+    "rain": 0
+   },
+   "2026-11-18T00": {
+    "temp": 37,
+    "rain": 0
+   },
+   "2026-11-18T01": {
+    "temp": 37,
+    "rain": 0
+   },
+   "2026-11-18T02": {
+    "temp": 36,
+    "rain": 0
+   },
+   "2026-11-18T03": {
+    "temp": 35,
+    "rain": 0
+   },
+   "2026-11-18T04": {
+    "temp": 34,
+    "rain": 0
+   },
+   "2026-11-18T05": {
+    "temp": 34,
+    "rain": 0
+   },
+   "2026-11-18T06": {
+    "temp": 33,
+    "rain": 0
+   },
+   "2026-11-18T07": {
+    "temp": 33,
+    "rain": 0
+   },
+   "2026-11-18T08": {
+    "temp": 38,
+    "rain": 0
+   },
+   "2026-11-18T09": {
+    "temp": 42,
+    "rain": 0
+   },
+   "2026-11-18T10": {
+    "temp": 47,
+    "rain": 0
+   },
+   "2026-11-18T11": {
+    "temp": 51,
+    "rain": 0
+   },
+   "2026-11-18T12": {
+    "temp": 55,
+    "rain": 0
+   },
+   "2026-11-18T13": {
+    "temp": 57,
+    "rain": 0
+   },
+   "2026-11-18T14": {
+    "temp": 57,
+    "rain": 0
+   },
+   "2026-11-18T15": {
+    "temp": 58,
+    "rain": 0
+   },
+   "2026-11-18T16": {
+    "temp": 56,
     "rain": 0
    }
   },
-  "hourlyFrom": "2026-11-16T05:47:00-06:00"
+  "hourlyFrom": "2026-11-17T05:47:00-06:00"
  },
- "published": {
-  "time": "2026-11-16T19:02:00-06:00",
-  "alertKeys": [],
-  "alerts": [],
-  "changes": [],
-  "off": [
-   "cool"
-  ],
-  "paragraph": "Automatic update, 7:02 p.m.: The Special Weather Statement for La Porte County has ended. It's running cooler than NWS's earlier hour-by-hour forecast: at 6:15 p.m. the La Porte airport reported clear and 37 degrees, where that forecast had about 42. There are no watches, warnings, or advisories for La Porte County right now."
- },
+ "published": null,
  "alertRows": [],
  "missing": [],
- "updates": [
-  {
-   "time": "2026-11-16T08:32:00-06:00",
-   "why": "alerts changed (none now)"
-  },
-  {
-   "time": "2026-11-16T19:02:00-06:00",
-   "why": "airport running cool"
-  }
- ]
+ "updates": []
 }
