@@ -188,6 +188,10 @@ few backdrops (bare woods, the generic brick house, the generic courthouse) shou
   telegraph pole), charbeams (charred timbers smouldering on a limestone foundation, no burning building) and
   foursquare (a two-storey American Foursquare with a clipped-gable roof and porch: the Kaske House; one=[row, col]
   lights one window).
+- `src/film/story_kit25.py` (Nov. 17, 2026, for the Schererville short) adds props: ditch (a dug ditch seen from
+  down inside it, earth walls on both sides; bank = wall height, snow, spoil, trees; give the scene's ground
+  "grass": false and the same y), marsh (a shallow reedy marsh lake; use a "water" ground) and spades. A ditch drawn
+  from above reads as a road. A typed line at y 1150 hides behind a map card: put a short note in the label.
 - Typed words take an optional "gain" (default 0.8) for their typing sound: when four words land within a second or
   two, use about 0.4 each, or the stacked clicks push the true peak toward 0 dBFS.
 - `src/film/story_kit3.py` builds a picture from props (ships, a plane, buildings, rooms, trains, trees, people...):
@@ -392,6 +396,15 @@ keep working.
   are one user-submitted listing ("One haunted-places listing reports"). The names Stallbohm and Kaske are shown,
   not spoken: how locals say them wasn't confirmed. munsterhistory.org and porterhistory.org loop between https and
   http for fetchers. When a first check rewrites lines, run the second one before saving.
+
+- Schererville (Nov. 2026): no creepy story with two sources (recent crimes are off limits; the Scherwood Lake
+  legend is unsourced and about a child). The short is Lake George and Aaron Hart, shared with Dyer. Lake County has
+  two living Lake Georges (Hammond, Hobart): say which one. Ball (1900) says the Hart Ditch ran to the "Calumet
+  River"; his Cady Marsh paper and others say Little Calumet. Hart died in a cut-off on Plum Creek at his Dyer farm,
+  not shown to be the Hart Ditch itself ("a new ditch"); only the left bank fell, and only its edge is called frozen.
+  His ditch crews ran to forty men: not "one man". No silo on an 1880s farm. Hartsdale's 1911 annexation rests on
+  Wikipedia alone. Unused Schererville leads: Chief Pete Redar's 1964 death at US 41 and 30 (town history page, which
+  fetchers can't load), pioneer winters and epidemics (town history), Hoosier Boys Town, Illiana Motor Speedway.
 
 ## 3. Write the script
 
