@@ -1,0 +1,494 @@
+{
+ "slug": "knox-halleys-comet-sparks-1910",
+ "title": "Knox, Indiana: the night a crowd saw sparks from Halley's Comet (1910)",
+ "series": "LAPORTE AFTER DARK",
+ "music": {
+  "seed": 910,
+  "prog": 6
+ },
+ "say": [],
+ "sourcing_note": "Requested town (Scoop, Nov. 16, 2026: 'knox'). One-source core story, made with Scoop's OK (Nov. 16: 'Yes', after he was told it rests on one source and that Jonas would be named on screen; the two-source rule still stands for other shorts). The Knox crowd: Alexander L. Jonas, 'Knox Characters I Have Known' (vignettes he presented over WKVI on Almo Smith's 'Musical Stepping Stones' programs on Thursday evenings in 1969 and 1970; PDF from the Starke County Historical Society, hosted on the library's site; Past Tidbits #31 says the same), Chapter Six, p. 11: Senator Oliver Cannon told Jonas of Brad Glazebrook, 'one of our less popular attorneys but he was well regarded as an astronomer'; 'when the earth was to pass through the tail of Halley's comet, I believe that was about 1910', the town turned to him and he said he would explain it on 'the corner where the Moose parking lot is now located'; 'addressing a group of several hundred local people', he would 'point to the skies and loudly exclaim, \"Just look at those sparks.\"'; 'at first he was the only one to observe this imaginary phenomenon, but as a good example of mass hysteria, it was not long before BRAD had the entire crowd seeing hot glowing particles.' Jonas came to Knox from 1914 and passes on Cannon's story, so line 7 says so. Glazebrook isn't named (no second record of him found). National facts (two sources each): cyanogen found in Halley's tail, announced by Yerkes Feb. 7, 1910 (Science History Institute, 2025; Astronomy, Jan. 2023; The Conversation); Earth expected to pass through the tail May 18-19 (Astronomy; The Conversation; Barnard, ApJ 1914; whether it did is disputed: Nature 1910 and The Conversation say it probably missed, so 'expected'); comet pills (SHI 'comet pills'; The Conversation 'anti-comet pills'; Guinness); sealed homes (SHI 'sealed off their homes and papered over the keyholes'; Astronomy 'tried to seal up their homes'; The Conversation 'caulked their windows'). Blind check Nov. 16 and fixes: 'was about to pass through it' became 'was expected to'; line 7 names Cannon as Jonas's source; the comet was taken out of the sealed-window picture (on the night of May 18-19 the comet's head was between Earth and the Sun, below the horizon: Barnard 1914); credits name the Starke County Historical Society and Astronomy's own 2023 article (its anti-comet-remedies piece is a reprint of The Conversation's). Pictures: the crowd scenes show no comet; the specks stay faint except when the crowd 'sees' them; arc street lamps fit Knox (Past Tidbits #06: carbon arc lamps downtown from about 1894); the lawyer stands on the sidewalk (no crate or telescope: the account mentions neither). Second check (of the changes), Nov. 16: all supported; 'Senator' alone could sound like the U.S. Senate and Jonas lists Cannon among Starke County people who served in the state legislature, so 'state senator' (the title rests on Jonas alone); credits say 'WKVI talks, 1969-70' (the PDF credits only Jonas; it is in the Starke County Public Library's digital collection).",
+ "beats": [
+  {
+   "text": "Several hundred people in Knox once stared up at the sky and claimed they saw glowing sparks.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "tab_town",
+    "sky": "night",
+    "clouds": 0.15,
+    "ground": {
+     "type": "street",
+     "y": 1120
+    },
+    "fog": 0.06,
+    "amount": 0.05,
+    "move": "in",
+    "props": [
+     {
+      "p": "storefronts",
+      "x": 480,
+      "y": 1050,
+      "s": 0.9,
+      "n": 5,
+      "lit": 0.3,
+      "seed": 5
+     },
+     {
+      "p": "arclamp",
+      "x": 900,
+      "y": 1080,
+      "s": 0.9
+     },
+     {
+      "p": "sparks",
+      "x": 540,
+      "y": 980,
+      "s": 1.0,
+      "n": 55,
+      "w": 1000,
+      "h": 480,
+      "k": 0.55,
+      "seed": 9
+     },
+     {
+      "p": "crowd1910",
+      "x": 540,
+      "y": 1300,
+      "s": 1.15,
+      "n": 27,
+      "rows": 3,
+      "look": 1.0,
+      "seed": 7
+     }
+    ]
+   },
+   "label": "STARKE COUNTY, INDIANA",
+   "title": {
+    "text": "KNOX",
+    "at": "Knox",
+    "size": 96
+   },
+   "sfx": [
+    {
+     "kind": "heartbeat",
+     "at": "glowing sparks",
+     "gain": 0.3
+    }
+   ],
+   "credit": "Jonas, Knox Characters I Have Known (WKVI talks, 1969-70)"
+  },
+  {
+   "text": "It was 1910. Astronomers had found a poison gas in the tail of Halley's Comet, and Earth was expected to pass through it.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_town",
+    "sky": "night",
+    "clouds": 0.2,
+    "ground": {
+     "type": "street",
+     "y": 1160
+    },
+    "fog": 0.08,
+    "amount": 0.04,
+    "move": "in",
+    "props": [
+     {
+      "p": "comet",
+      "x": 300,
+      "y": 760,
+      "s": 1.0,
+      "ang": 52,
+      "length": 760
+     },
+     {
+      "p": "storefronts",
+      "x": 520,
+      "y": 1160,
+      "s": 1.0,
+      "n": 5,
+      "lit": 0.15,
+      "seed": 11
+     },
+     {
+      "p": "arclamp",
+      "x": 960,
+      "y": 1170,
+      "s": 1.0
+     }
+    ]
+   },
+   "typed": [
+    {
+     "text": "1910",
+     "at": "1910",
+     "y": 545,
+     "size": 76
+    }
+   ],
+   "label": "HALLEY'S COMET",
+   "credit": "Science History Institute; Astronomy (2023); The Conversation"
+  },
+  {
+   "text": "People bought comet pills. Some sealed up their houses.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_town",
+    "sky": "night",
+    "clouds": 0.15,
+    "ground": {
+     "type": "street",
+     "y": 1200
+    },
+    "amount": 0.03,
+    "move": "in",
+    "props": [
+     {
+      "p": "windowseal",
+      "x": 540,
+      "y": 1260,
+      "s": 1.12
+     }
+    ]
+   },
+   "label": "THE COMET SCARE",
+   "credit": "Science History Institute; The Conversation; Astronomy (2023)"
+  },
+  {
+   "text": "In Knox, folks turned to a lawyer known for his astronomy. He said he'd explain it all on a street corner.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "tab_town",
+    "sky": "dusk",
+    "clouds": 0.25,
+    "ground": {
+     "type": "street",
+     "y": 1120
+    },
+    "fog": 0.05,
+    "amount": 0.04,
+    "move": "right",
+    "props": [
+     {
+      "p": "storefronts",
+      "x": 520,
+      "y": 1050,
+      "s": 0.9,
+      "n": 5,
+      "lit": 0.45,
+      "seed": 21
+     },
+     {
+      "p": "arclamp",
+      "x": 640,
+      "y": 1140,
+      "s": 1.0
+     },
+     {
+      "p": "stargazer",
+      "x": 700,
+      "y": 1250,
+      "s": 1.15,
+      "crate": false,
+      "scope": false
+     },
+     {
+      "p": "crowd1910",
+      "x": 260,
+      "y": 1300,
+      "s": 1.7,
+      "n": 5,
+      "rows": 1,
+      "spread": 420,
+      "look": 0.2,
+      "seed": 3
+     }
+    ]
+   },
+   "label": "KNOX, 1910",
+   "credit": "Jonas, Knox Characters I Have Known (WKVI talks, 1969-70)"
+  },
+  {
+   "text": "Hundreds came. He told them about the comet and kept pointing up. \"Just look at those sparks.\"",
+   "pause": 0.7,
+   "scene": {
+    "kind": "tab_town",
+    "sky": "night",
+    "clouds": 0.15,
+    "ground": {
+     "type": "street",
+     "y": 1120
+    },
+    "fog": 0.05,
+    "amount": 0.04,
+    "move": "in",
+    "props": [
+     {
+      "p": "storefronts",
+      "x": 480,
+      "y": 1050,
+      "s": 0.9,
+      "n": 5,
+      "lit": 0.3,
+      "seed": 31
+     },
+     {
+      "p": "arclamp",
+      "x": 250,
+      "y": 1130,
+      "s": 1.0,
+      "flip": true
+     },
+     {
+      "p": "stargazer",
+      "x": 260,
+      "y": 1250,
+      "s": 1.15,
+      "crate": false,
+      "scope": false
+     },
+     {
+      "p": "sparks",
+      "x": 230,
+      "y": 820,
+      "s": 1.0,
+      "n": 14,
+      "w": 360,
+      "h": 260,
+      "k": 0.2,
+      "seed": 4
+     },
+     {
+      "p": "crowd1910",
+      "x": 700,
+      "y": 1320,
+      "s": 1.15,
+      "n": 21,
+      "rows": 3,
+      "spread": 720,
+      "look": 0.95,
+      "seed": 12
+     }
+    ]
+   },
+   "card": {
+    "kind": "quote",
+    "lines": [
+     "Just look at",
+     "those sparks."
+    ],
+    "by": "AS TOLD BY A. L. JONAS",
+    "at": "Just look",
+    "y": 600
+   },
+   "credit": "Jonas, Knox Characters I Have Known (WKVI talks, 1969-70)"
+  },
+  {
+   "text": "At first, only he saw them. Then the whole crowd said they saw them too.",
+   "pause": 0.8,
+   "scene": {
+    "kind": "tab_town",
+    "sky": "night",
+    "clouds": 0.15,
+    "ground": {
+     "type": "street",
+     "y": 1120
+    },
+    "fog": 0.05,
+    "amount": 0.05,
+    "move": "in",
+    "props": [
+     {
+      "p": "storefronts",
+      "x": 480,
+      "y": 1050,
+      "s": 0.9,
+      "n": 5,
+      "lit": 0.3,
+      "seed": 31
+     },
+     {
+      "p": "arclamp",
+      "x": 250,
+      "y": 1130,
+      "s": 1.0,
+      "flip": true
+     },
+     {
+      "p": "stargazer",
+      "x": 260,
+      "y": 1250,
+      "s": 1.15,
+      "crate": false,
+      "scope": false
+     },
+     {
+      "p": "sparks",
+      "x": 560,
+      "y": 960,
+      "s": 1.0,
+      "n": 70,
+      "w": 1000,
+      "h": 520,
+      "k": 0.85,
+      "seed": 19
+     },
+     {
+      "p": "crowd1910",
+      "x": 700,
+      "y": 1320,
+      "s": 1.15,
+      "n": 21,
+      "rows": 3,
+      "spread": 720,
+      "look": 1.0,
+      "seed": 12
+     }
+    ]
+   },
+   "sfx": [
+    {
+     "kind": "heartbeat",
+     "at": "whole crowd",
+     "gain": 0.3
+    }
+   ],
+   "credit": "Jonas, Knox Characters I Have Known (WKVI talks, 1969-70)"
+  },
+  {
+   "text": "Alexander Jonas retold it on Knox radio around 1970, from a story state senator Oliver Cannon told him. He called it mass hysteria.",
+   "pause": 0.8,
+   "scene": {
+    "kind": "tab_town",
+    "sky": "night",
+    "clouds": 0.2,
+    "ground": {
+     "type": "street",
+     "y": 1120
+    },
+    "fog": 0.12,
+    "amount": 0.05,
+    "move": "out",
+    "props": [
+     {
+      "p": "storefronts",
+      "x": 520,
+      "y": 1050,
+      "s": 0.95,
+      "n": 5,
+      "lit": 0.08,
+      "seed": 41
+     },
+     {
+      "p": "arclamp",
+      "x": 860,
+      "y": 1130,
+      "s": 1.0
+     },
+     {
+      "p": "sparks",
+      "x": 540,
+      "y": 900,
+      "s": 1.0,
+      "n": 16,
+      "w": 900,
+      "h": 400,
+      "k": 0.15,
+      "seed": 23
+     }
+    ]
+   },
+   "label": "ALEXANDER L. JONAS",
+   "label2": {
+    "text": "WKVI RADIO, 1969-70",
+    "at": "Knox radio"
+   },
+   "typed": [
+    {
+     "text": "MASS HYSTERIA",
+     "at": "He called it",
+     "y": 545,
+     "size": 60
+    }
+   ],
+   "credit": "Jonas, Knox Characters I Have Known (WKVI talks, 1969-70)"
+  },
+  {
+   "text": "Comment your town, and it could be next.",
+   "end": true,
+   "end_card": {
+    "q": "COMMENT YOUR TOWN",
+    "q2": "IT COULD BE NEXT",
+    "bubble": "Your town, your state",
+    "pill": "Knox, Starke County",
+    "scene": {
+     "kind": "tab_town",
+     "sky": "night",
+     "clouds": 0.2,
+     "ground": {
+      "type": "street",
+      "y": 1120
+     },
+     "fog": 0.08,
+     "amount": 0.04,
+     "move": "still",
+     "props": [
+      {
+       "p": "storefronts",
+       "x": 540,
+       "y": 1050,
+       "s": 0.95,
+       "n": 5,
+       "lit": 0.35,
+       "seed": 51
+      },
+      {
+       "p": "arclamp",
+       "x": 150,
+       "y": 1130,
+       "s": 1.0,
+       "flip": true
+      }
+     ]
+    }
+   },
+   "credit": "All pictures drawn"
+  }
+ ],
+ "sources": [
+  {
+   "what": "Chapter Six, p. 11: the Brad Glazebrook / Halley's comet story as told to Jonas by Senator Oliver Cannon (quoted in the note); preface: vignettes presented over WKVI on Thursday evenings in 1969 and 1970.",
+   "who": "Alexander L. Jonas, 'Knox Characters I Have Known' (1969-70), Starke County Historical Society, via the Starke County Public Library",
+   "url": "https://www.starkecountylibrary.org/historical/sites/default/files/documents/Local%20History/knox_characters_i_have_known_jonas_1969_1970.pdf"
+  },
+  {
+   "what": "Jonas's WKVI vignettes, 1969-70.",
+   "who": "Starke County Historical Society, Past Tidbits #31",
+   "url": "https://www.starkecountylibrary.org/historical/sites/default/files/documents/Past%20Tidbits/Starke%20County%2031.pdf"
+  },
+  {
+   "what": "Yerkes announced Feb. 7, 1910 it had detected cyanogen gas in Halley's tail; Earth to pass through the tail in mid-May; 'comet pills'; people sealed off their homes and papered over the keyholes.",
+   "who": "Sam Kean, 'The Comet Panic of 1910, Revisited', Distillations, Science History Institute (Jan. 2025)",
+   "url": "https://www.sciencehistory.org/stories/magazine/the-comet-panic-of-1910-revisited/"
+  },
+  {
+   "what": "'With Earth predicted to pass through it on May 18/19'; Flammarion's warning; people tried to seal up their homes.",
+   "who": "Astronomy, 'Unlocking the mystery of comets' (Jan. 2023)",
+   "url": "https://www.astronomy.com/science/unlocking-the-mystery-of-comets/"
+  },
+  {
+   "what": "Anti-comet pills 'based on sugar and quinine'; Americans 'caulked their windows'; the tail crossing on the night of May 18-19 was predicted; later calculations say it missed.",
+   "who": "The Conversation, 'Halley's comet, COVID-19 and the history of miracle anti-comet remedies'",
+   "url": "https://theconversation.com/halleys-comet-covid-19-and-the-history-of-miracle-anti-comet-remedies-141400"
+  },
+  {
+   "what": "Earth possibly met one branch of the tail on or about May 18 or 19; the comet passed between Earth and the Sun on May 18, its head below the horizon.",
+   "who": "E. E. Barnard, 'Visual observations of Halley's comet in 1910', Astrophysical Journal 39 (1914)",
+   "url": "https://articles.adsabs.harvard.edu/pdf/1914ApJ....39..373B"
+  },
+  {
+   "what": "Downtown Knox's street lamps were carbon arc lamps from about 1894.",
+   "who": "Starke County Historical Society, Past Tidbits #06",
+   "url": "https://www.starkecountylibrary.org/historical/sites/default/files/documents/Past%20Tidbits/Starke%20County%206-Depot%20lamp.pdf"
+  }
+ ]
+}
