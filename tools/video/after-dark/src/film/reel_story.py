@@ -186,6 +186,29 @@ def sentences(p):
     return V.sentences(p)
 
 
+# Words spelled one way and said two ways. The voice picks one sound for each, often the wrong one for the story: it
+# said "lead" (the metal) as "leed", "Bass Lake" as "Base Lake", and "open and close" with an s (Nov. 16, 2026). The vo
+# step lists every one in the script with how it will sound; fix a wrong one with a narrow "say" rule in the storyboard.
+HETERONYMS = re.compile(r"(lead|leads|wind|winds|wound|wounds|tear|tears|live|lives|read|close|closes|bass|bow|bows|"
+                        r"row|rows|dove|sow|does|minute|minutes|polish|sewer|sewers|desert|deserts|invalid|house|"
+                        r"object|record|records|present|produce|project|refuse|content|conduct|convict|convicts|"
+                        r"suspect|suspects|subject|permit|rebel|separate|moderate|estimate|graduate|resume|axes|"
+                        r"entrance|excuse|abuse)", re.I)
+
+
+def heteronym_list(st, rules, tok):
+    """Every heteronym in the narration, with the words around it and how the voice will say them."""
+    rows = []
+    for pi, b in enumerate(st["beats"]):
+        words = b["text"].split()
+        for i, w in enumerate(words):
+            core = re.sub(r"[^\w'-]", "", w)
+            if core and HETERONYMS.fullmatch(core):
+                win = " ".join(words[max(0, i - 2): i + 3]).replace('"', "").replace("“", "").replace("”", "")
+                rows.append((pi, core, win, tok.phonemize(spoken(win, rules), "en-us")))
+    return rows
+
+
 def narrate(st):
     from kokoro_onnx import Kokoro
     import reels_vo as V
@@ -230,6 +253,10 @@ def narrate(st):
         print("pronunciation (check names):")
         for w in words:
             print("  %-18s -> %-24s /%s/" % (w, spoken(w, rules), tok.phonemize(spoken(w, rules), "en-us")))
+        rows = heteronym_list(st, rules, tok)
+        print("heteronyms (check the sense; fix a wrong one with a narrow \"say\" rule):" + ("" if rows else " none"))
+        for pi, w, win, ph in rows:
+            print("  p%d %-9s %-38s /%s/" % (pi, w, win[:38], ph))
     except Exception as e:                                           # the phoneme listing is a help, not a must
         print("(no phoneme listing: %s)" % e)
 
