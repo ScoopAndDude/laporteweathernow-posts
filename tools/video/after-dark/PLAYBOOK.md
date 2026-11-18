@@ -615,6 +615,16 @@ about 800; a typical short 70 to 600. The winners are close-to-home places peopl
    the label to "Narration: Scoop". Not built into `reel_story.py` yet: build it the first time a recording arrives.
 6. **Sharing into local groups is Scoop's job**; nothing here can post to groups.
 
+### Longer compilations (Scoop, Nov. 18, 2026: 'go ahead')
+
+A compilation of six to ten shorts that have already aired and share a theme can be stitched straight from the finished
+videos with ffmpeg, with no re-render: cut each short just before its 'Comment your town' caption (the time is in its
+.srt), fade out, and keep the ending only on the last one. `posts/long-laporte-county-8-stories.json` records how the
+first one was made. Check that a short's .srt matches its video before trusting it: a remade short can keep its old
+.srt (Kingsford Heights did). Leave out shorts with a known slip (Harriet Colfax, the Valparaiso jail). Facebook takes
+it as type `post`. Buffer can't put it on YouTube: its YouTube channel only takes Shorts (vertical, 3 minutes or less),
+so Scoop uploads the widescreen `-wide` copy himself in YouTube Studio. Don't schedule it at the same minute as a short.
+
 ### What Facebook's own numbers said (Scoop's Page assistant screenshot, Nov. 13, 2026)
 
 The Porter cemetery reel: 22,408 views, 50.8% of viewers stayed past three seconds, 43 net new followers. The
