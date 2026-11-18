@@ -1,6 +1,6 @@
 {
  "about": "Official weather for La Porte, Indiana, saved by a GitHub job for the Daily Scoop (laporteweathernow.com/daily-scoop). Copied from NWS, SPC and WPC as-is; see scripts/nws_snapshot.py.",
- "fetched": "2026-11-17T13:06:07-06:00",
+ "fetched": "2026-11-18T05:02:14-06:00",
  "place": "La Porte, IN",
  "lat": 41.6081,
  "lon": -86.7189,
@@ -23,69 +23,47 @@
  },
  "observation": {
   "station": "KPPO (La Porte Municipal Airport)",
-  "time": "2026-11-17T12:35:00-06:00",
+  "time": "2026-11-18T04:35:00-06:00",
   "weather": "Clear",
-  "temperatureF": null,
-  "dewpointF": null,
-  "humidityPercent": null,
+  "temperatureF": 36,
+  "dewpointF": 36,
+  "humidityPercent": 100,
   "wind": {
-   "from": null,
-   "degrees": null,
-   "mph": null,
+   "from": "SSE",
+   "degrees": 150,
+   "mph": 2,
    "gustMph": null
   },
   "visibilityMiles": 10.0,
-  "pressureInHg": null,
-  "metar": "KPPO 171835Z AUTO 20008KT 10SM CLR 12/04 A3050 RMK AO2"
+  "pressureInHg": 30.44,
+  "metar": "KPPO 181035Z AUTO 15002KT 10SM CLR 02/02 A3044 RMK AO2"
  },
  "forecast": {
-  "updated": "2026-11-17T18:29:46+00:00",
-  "generated": "2026-11-17T18:47:25+00:00",
+  "updated": "2026-11-18T10:29:58+00:00",
+  "generated": "2026-11-18T11:02:06+00:00",
   "timesNote": "Clock times in the forecast wording are already in America/Chicago (La Porte's real time). NWS writes them in America/Indiana/Indianapolis, which it has on file for La Porte by mistake.",
   "periods": [
    {
-    "name": "This Afternoon",
-    "start": "2026-11-17T13:00:00-05:00",
-    "end": "2026-11-17T18:00:00-05:00",
-    "isDaytime": true,
-    "temperatureF": 54,
-    "rainChancePercent": 0,
-    "wind": "S 5 mph",
-    "short": "Sunny",
-    "detailed": "Sunny, with a high near 54. South wind around 5 mph."
-   },
-   {
-    "name": "Tonight",
-    "start": "2026-11-17T18:00:00-05:00",
-    "end": "2026-11-18T06:00:00-05:00",
-    "isDaytime": false,
-    "temperatureF": 34,
-    "rainChancePercent": 0,
-    "wind": "S 5 mph",
-    "short": "Partly Cloudy",
-    "detailed": "Partly cloudy, with a low around 34. South wind around 5 mph."
-   },
-   {
-    "name": "Wednesday",
+    "name": "Today",
     "start": "2026-11-18T06:00:00-05:00",
     "end": "2026-11-18T18:00:00-05:00",
     "isDaytime": true,
     "temperatureF": 58,
     "rainChancePercent": 0,
-    "wind": "S 5 to 10 mph",
-    "short": "Mostly Sunny",
-    "detailed": "Mostly sunny, with a high near 58. South wind 5 to 10 mph, with gusts as high as 25 mph."
+    "wind": "S 5 to 15 mph",
+    "short": "Sunny",
+    "detailed": "Sunny, with a high near 58. South wind 5 to 15 mph, with gusts as high as 25 mph."
    },
    {
-    "name": "Wednesday Night",
+    "name": "Tonight",
     "start": "2026-11-18T18:00:00-05:00",
     "end": "2026-11-19T06:00:00-05:00",
     "isDaytime": false,
-    "temperatureF": 43,
+    "temperatureF": 42,
     "rainChancePercent": 0,
     "wind": "S 10 mph",
-    "short": "Mostly Cloudy",
-    "detailed": "Mostly cloudy, with a low around 43. South wind around 10 mph, with gusts as high as 25 mph."
+    "short": "Partly Cloudy",
+    "detailed": "Partly cloudy, with a low around 42. South wind around 10 mph."
    },
    {
     "name": "Thursday",
@@ -94,20 +72,20 @@
     "isDaytime": true,
     "temperatureF": 62,
     "rainChancePercent": 0,
-    "wind": "SW 10 mph",
+    "wind": "SW 10 to 15 mph",
     "short": "Sunny",
-    "detailed": "Sunny, with a high near 62. Southwest wind around 10 mph."
+    "detailed": "Sunny, with a high near 62. Southwest wind 10 to 15 mph, with gusts as high as 25 mph."
    },
    {
     "name": "Thursday Night",
     "start": "2026-11-19T18:00:00-05:00",
     "end": "2026-11-20T06:00:00-05:00",
     "isDaytime": false,
-    "temperatureF": 42,
+    "temperatureF": 41,
     "rainChancePercent": 0,
     "wind": "SW 5 to 10 mph",
-    "short": "Mostly Clear",
-    "detailed": "Mostly clear, with a low around 42."
+    "short": "Clear",
+    "detailed": "Clear, with a low around 41. Southwest wind 5 to 10 mph."
    },
    {
     "name": "Friday",
@@ -115,21 +93,21 @@
     "end": "2026-11-20T18:00:00-05:00",
     "isDaytime": true,
     "temperatureF": 64,
-    "rainChancePercent": 0,
-    "wind": "S 0 to 5 mph",
+    "rainChancePercent": 1,
+    "wind": "S 5 to 10 mph",
     "short": "Sunny",
-    "detailed": "Sunny, with a high near 64."
+    "detailed": "Sunny, with a high near 64. South wind 5 to 10 mph."
    },
    {
     "name": "Friday Night",
     "start": "2026-11-20T18:00:00-05:00",
     "end": "2026-11-21T06:00:00-05:00",
     "isDaytime": false,
-    "temperatureF": 46,
-    "rainChancePercent": 2,
-    "wind": "S 5 mph",
+    "temperatureF": 45,
+    "rainChancePercent": 1,
+    "wind": "S 10 mph",
     "short": "Mostly Clear",
-    "detailed": "Mostly clear, with a low around 46."
+    "detailed": "Mostly clear, with a low around 45."
    },
    {
     "name": "Saturday",
@@ -137,10 +115,10 @@
     "end": "2026-11-21T18:00:00-05:00",
     "isDaytime": true,
     "temperatureF": 63,
-    "rainChancePercent": 12,
+    "rainChancePercent": 10,
     "wind": "S 10 mph",
-    "short": "Sunny",
-    "detailed": "Sunny, with a high near 63."
+    "short": "Mostly Sunny",
+    "detailed": "Mostly sunny, with a high near 63."
    },
    {
     "name": "Saturday Night",
@@ -148,54 +126,76 @@
     "end": "2026-11-22T06:00:00-05:00",
     "isDaytime": false,
     "temperatureF": 47,
-    "rainChancePercent": 53,
+    "rainChancePercent": 39,
     "wind": "S 10 mph",
     "short": "Chance Rain Showers",
-    "detailed": "A chance of rain showers after 6pm. Mostly cloudy, with a low around 47. Chance of precipitation is 50%."
+    "detailed": "A chance of rain showers after 6pm. Mostly cloudy, with a low around 47. Chance of precipitation is 40%."
    },
    {
     "name": "Sunday",
     "start": "2026-11-22T06:00:00-05:00",
     "end": "2026-11-22T18:00:00-05:00",
     "isDaytime": true,
-    "temperatureF": 52,
-    "rainChancePercent": 53,
+    "temperatureF": 54,
+    "rainChancePercent": 61,
     "wind": "W 10 to 15 mph",
-    "short": "Chance Rain Showers",
-    "detailed": "A chance of rain showers. Mostly cloudy, with a high near 52. Chance of precipitation is 50%."
+    "short": "Rain Showers Likely",
+    "detailed": "Rain showers likely. Mostly cloudy, with a high near 54. Chance of precipitation is 60%."
    },
    {
     "name": "Sunday Night",
     "start": "2026-11-22T18:00:00-05:00",
     "end": "2026-11-23T06:00:00-05:00",
     "isDaytime": false,
-    "temperatureF": 37,
-    "rainChancePercent": 15,
-    "wind": "NW 5 to 10 mph",
-    "short": "Slight Chance Rain Showers then Mostly Cloudy",
-    "detailed": "A slight chance of rain showers before 6pm. Mostly cloudy, with a low around 37."
+    "temperatureF": 35,
+    "rainChancePercent": 44,
+    "wind": "NW 10 mph",
+    "short": "Chance Rain Showers then Mostly Cloudy",
+    "detailed": "A chance of rain showers before 6pm. Mostly cloudy, with a low around 35. Chance of precipitation is 40%."
    },
    {
     "name": "Monday",
     "start": "2026-11-23T06:00:00-05:00",
     "end": "2026-11-23T18:00:00-05:00",
     "isDaytime": true,
-    "temperatureF": 43,
-    "rainChancePercent": 3,
-    "wind": "N 5 to 10 mph",
-    "short": "Mostly Sunny",
-    "detailed": "Mostly sunny, with a high near 43."
+    "temperatureF": 42,
+    "rainChancePercent": 4,
+    "wind": "NW 5 to 10 mph",
+    "short": "Partly Sunny",
+    "detailed": "Partly sunny, with a high near 42."
    },
    {
     "name": "Monday Night",
     "start": "2026-11-23T18:00:00-05:00",
     "end": "2026-11-24T06:00:00-05:00",
     "isDaytime": false,
-    "temperatureF": 31,
+    "temperatureF": 27,
     "rainChancePercent": 2,
+    "wind": "N 5 mph",
+    "short": "Mostly Cloudy",
+    "detailed": "Mostly cloudy, with a low around 27."
+   },
+   {
+    "name": "Tuesday",
+    "start": "2026-11-24T06:00:00-05:00",
+    "end": "2026-11-24T18:00:00-05:00",
+    "isDaytime": true,
+    "temperatureF": 40,
+    "rainChancePercent": 1,
     "wind": "NE 0 to 5 mph",
-    "short": "Partly Cloudy",
-    "detailed": "Partly cloudy, with a low around 31."
+    "short": "Partly Sunny",
+    "detailed": "Partly sunny, with a high near 40."
+   },
+   {
+    "name": "Tuesday Night",
+    "start": "2026-11-24T18:00:00-05:00",
+    "end": "2026-11-25T06:00:00-05:00",
+    "isDaytime": false,
+    "temperatureF": 27,
+    "rainChancePercent": 7,
+    "wind": "E 5 mph",
+    "short": "Mostly Cloudy",
+    "detailed": "Mostly cloudy, with a low around 27."
    }
   ]
  },
@@ -205,19 +205,11 @@
   "next72hInches": 0.0,
   "byPeriod": [
    {
-    "name": "This Afternoon",
+    "name": "Today",
     "inches": 0.0
    },
    {
     "name": "Tonight",
-    "inches": 0.0
-   },
-   {
-    "name": "Wednesday",
-    "inches": 0.0
-   },
-   {
-    "name": "Wednesday Night",
     "inches": 0.0
    },
    {
@@ -238,7 +230,7 @@
    },
    {
     "name": "Saturday",
-    "inches": 0
+    "inches": 0.0
    },
    {
     "name": "Saturday Night",
@@ -258,6 +250,14 @@
    },
    {
     "name": "Monday Night",
+    "inches": 0
+   },
+   {
+    "name": "Tuesday",
+    "inches": 0
+   },
+   {
+    "name": "Tuesday Night",
     "inches": 0
    }
   ]
@@ -338,45 +338,46 @@
   ]
  },
  "discussion": {
-  "issued": "2026-11-17T12:07:00-06:00",
-  "ageHours": 1.0,
-  "text": "000\nFXUS63 KIWX 171807\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n107 PM EST Tue Nov 17 2026\n\n.KEY MESSAGES...\n\n- Tranquil fall weather continues with mild temperatures, light \n  winds, and sunshine this week!\n\n- Rain chances hold off until Saturday night into Sunday (20-50% \n  chances).\n\n- Mild weather pattern persists at least through the end of\n  November.\n\n&&\n\n.DISCUSSION...\nIssued at 106 PM EST Tue Nov 17 2026\n\nA large upper level ridge will amplify into the Midwest and Great \nLakes regions throughout the coming week with temperatures remaining \nvery mild by mid to late November standards. Surface high pressure \nwill prevail with little movement from where it is currently \ncentered over the Appalachian mountains. One more night with \nlows around freezing is expected tonight, with clear skies and \nlight southerly winds promoting at least some localized patchy \nfog for Wednesday morning. Otherwise, temperatures will continue\nto climb each day this week. Southerly flow and increased WAA \nwill funnel in much warmer air from the Gulf and southern US. \nHigh temperatures will soar into the mid to upper 60s by late in\nthe week, which is 15 to 20 degrees above normal for this time \nof the year!\n\nAs the ridge breaks down by late in the week, rain chances return by \nSaturday night into Sunday with the passage of a cold front. Given \nthat this is several days away, the overall pattern evolution may \nchange. There are still uncertainties as to how much moisture this \nfront will have to work with so low to medium PoPs persist with 20-\n40% chances. Following the frontal passage, temperatures will \nmoderate back towards seasonable levels with highs in the 40s. There \nare no real signs of winter yet as the mild weather pattern looks to \nhold at least through the end of meteorological fall. \n\n\n&&\n\n.AVIATION /18Z TAFS THROUGH 18Z WEDNESDAY/...\nIssued at 1106 AM EST Tue Nov 17 2026\n\nHigh pressure will continue to support VFR conditions and light\nwinds through the TAF cycle. Could once again see patchy ground\nfog toward daybreak tomorrow, though point probabilities remain\ntoo low for a mention at this time.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...Air Quality Alert from 6 PM this evening to 10 AM EST \n     Wednesday for INZ005.\nOH...None.\nMI...None.\nMARINE...None.\n\n&&\n\n$$\n\nDISCUSSION...Johnson\nAVIATION...Steinwedel"
+  "issued": "2026-11-18T01:42:00-06:00",
+  "ageHours": 3.3,
+  "text": "000\nFXUS63 KIWX 180742\nAFDIWX\n\nArea Forecast Discussion\nNational Weather Service Northern Indiana\n242 AM EST Wed Nov 18 2026\n\n.KEY MESSAGES...\n\n- Temps lean above normal with sunshine through the rest of the\n  week.\n\n- After our dry spell this week, rain chances return Saturday\n  night into Sunday (30-60% chance).\n\n&&\n\n.DISCUSSION...\nIssued at 235 AM EST Wed Nov 18 2026\n\nSurface high pressure just east of the Ohio River Valley and mid \nlevel ridging passing from the Plains States to the Mid Atlantic \nStates is in control of the short term's weather providing dry \nconditions through late Saturday night. With high pressure to \nour east, modest WAA allows high temps to slowly warm between \ntoday and Friday so that all areas are securely in the 60s. Lows\nstay above freezing and this will continue to be the case into \nthe first half next week. We'll also have some breezy winds \nThursday around 20 to 25 mph.\n\nTemperatures drop Sunday as the moisture column becomes more \nsaturated. A theta-e plume with connection to the Gulf swings \nthrough the area with PWAT standardized anomalies over 2. Even \nstill, the arrival of the front will need to be watched because with \nits early arrival in the midday to early afternoon, maximum heating \nand instability formation is likely to be stunted limiting \nthunderstorm potential. Therefore, precipitation is expected to \ntotal 0.1\" to 0.25\" across the area with the highest residing in the \nsoutheast portion of the area. Behind this cold front, high temps \nwill drop through the 50s and level out in the 40s the next work \nweek with below freezing lows back in the picture for the end of \nnext week. This is as 850 mb temperatures fall below 0C and the -10C \ncontour gets near the area late Monday. Instability is generated on \nMonday as an area of cold air moves over the warmer lakes/ground, \nbut the lake induced instability is fairly modest and the moisture \ncolumn is rather dry. Low level lapse rates approach dry adiabatic \nthough.\n\n&&\n\n.AVIATION /06Z TAFS THROUGH 06Z THURSDAY/...\nIssued at 1246 AM EST Wed Nov 18 2026\n\nVFR conditions are expected at the terminals, with high clouds\nand light south-southwesterly flow through the period.\n\n&&\n\n.IWX WATCHES/WARNINGS/ADVISORIES...\nIN...Air Quality Alert until 10 AM EST this morning for INZ005.\nOH...None.\nMI...None.\nMARINE...None.\n\n&&\n\n$$\n\nDISCUSSION...Roller\nAVIATION...MCD"
  },
  "hazardousWeatherOutlook": null,
  "hydrologicOutlook": null,
  "spc": [
   {
    "day": 1,
-   "valid": "202611171630",
-   "expires": "202611181200",
-   "riskAtLaPorte": "No thunderstorm or severe risk area",
-   "riskAreasAnywhere": [
-    "General Thunderstorms Risk"
-   ],
-   "summary": "Organized severe thunderstorms are not forecast across the contiguous U.S. through tonight, although occasional strong/gusty winds may occur with convection across parts of coastal northern California, the Great Basin/Intermountain West, and south Florida.",
-   "text": "SPC AC 171625\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1025 AM CST Tue Nov 17 2026\n\n   Valid 171630Z - 181200Z\n\n   ...NO SEVERE THUNDERSTORM AREAS FORECAST...\n\n   ...SUMMARY...\n   Organized severe thunderstorms are not forecast across the\n   contiguous U.S. through tonight, although occasional strong/gusty\n   winds may occur with convection across parts of coastal northern\n   California, the Great Basin/Intermountain West, and south Florida.\n\n   ...Coastal Northern California...\n   A low-topped convective line will approach and move onshore along\n   the northern CA Coast late tonight into early Wednesday morning\n   (18/06-12Z). Low/mid-level flow will markedly increase in this time\n   frame, as a mid/upper-level low moves across the eastern Pacific.\n   There is some concern that strong/convectively augmented wind gusts\n   could occur with this activity, primarily along the immediate coast\n   of northern CA. But, MUCAPE will likely remain minimal/shallow (less\n   than 200 J/kg), and perhaps even insufficient for lighting\n   production due to the poor low-level moisture recovery forecast\n   ahead of the convective band. Have not included low severe wind\n   probabilities with this update due to the expected thermodynamic\n   limitations, but strong/gusty winds locally exceeding the enhanced\n   background gradient wind field may occur.\n\n   ...Great Basin/Intermountain West...\n   A highly amplified upper trough will continue to advance eastward\n   across the Great Basin/Four Corners today. Cool surface temperatures\n   and meager low-level moisture (surface dewpoints generally in the\n   30s/40s) will hinder any more than weak instability from developing\n   with filtered daytime heating. Still, with enhanced low/mid-level\n   flow attendant to the ejecting upper trough overspreading these\n   regions, some potential for gusty winds may exist with isolated to\n   scattered convection that develops and spreads east-northeastward\n   this afternoon/evening across northern AZ into eastern UT/western\n   CO. Regardless, instability is expected to remain too meager to\n   support organized severe thunderstorms.\n\n   ...Florida...\n   Recent water vapor satellite imagery shows a weak/positively tilted\n   upper trough over the Southeast and eastern Gulf, with associated\n   thunderstorms occurring well west of the Keys. Latest visible\n   satellite imagery also suggests a remnant front/boundary extending\n   eastward from this ongoing convection across the FL Straits.\n   Isolated to scattered thunderstorms are anticipated through the\n   period over the FL Atlantic Coast into south FL and the Keys in a\n   weakly unstable but moderately sheared environment. However, poor\n   lapse rates and multiple temperature inversions aloft noted on the\n   12Z KEY/MFL observed soundings will likely hinder robust updrafts,\n   and should limit overall severe potential.\n\n   ..Gleason/Flournoy.. 11/17/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 2000Z"
-  },
-  {
-   "day": 2,
    "valid": "202611181200",
    "expires": "202611191200",
    "riskAtLaPorte": "No thunderstorm or severe risk area",
    "riskAreasAnywhere": [
     "General Thunderstorms Risk"
    ],
-   "summary": "Severe storms are not expected Wednesday.",
-   "text": "SPC AC 171704\n\n   Day 2 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1104 AM CST Tue Nov 17 2026\n\n   Valid 181200Z - 191200Z\n\n   ...NO SEVERE THUNDERSTORM AREAS FORECAST...\n\n   ...SUMMARY...\n   Severe storms are not expected Wednesday.\n\n   ...Synopsis...\n   Cool and stable conditions will preclude thunderstorm chances for\n   much of the country on Wednesday. Isolated to scattered\n   thunderstorms will mainly be confined to portions of the West Coast\n   and along the FL peninsula. Across the West, an upper wave off the\n   CA/OR coast is evident in late-morning water-vapor imagery. This\n   feature will progress southward along the CA coast over the next 48\n   hours. As this occurs, cold mid-level temperatures atop an\n   adequately warm/moist marine layer will support sufficient buoyancy\n   for shallow convection. Strong flow through much of the column may\n   allow for a few stronger gusts with the deeper convective cores;\n   however, such gusts will likely be comparable to ambient\n   gradient-driven wind gusts. \n\n   Further east, a meandering upper low over the Gulf will continue to\n   weaken through Thursday morning. South/southeasterly flow within the\n   warm advection branch of the decaying cyclone will promote northward\n   moisture flux and scattered to widespread showers and thunderstorms.\n   Weakening flow through the CAPE-bearing layer should limit overall\n   storm longevity and organization - especially inland where buoyancy\n   profiles will be more modest.\n\n   ..Moore.. 11/17/2026\n\n   CLICK TO GET WUUS02 PTSDY2 PRODUCT\n\n   NOTE: THE NEXT DAY 2 OUTLOOK IS SCHEDULED BY 0700Z"
+   "summary": "Severe thunderstorms are not forecast across the U.S. today and tonight.",
+   "text": "SPC AC 180545\n\n   Day 1 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1145 PM CST Tue Nov 17 2026\n\n   Valid 181200Z - 191200Z\n\n   ...NO SEVERE THUNDERSTORM AREAS FORECAST...\n\n   ...SUMMARY...\n   Severe thunderstorms are not forecast across the U.S. today and\n   tonight.\n\n   ...DISCUSSION...\n   A mid-level shortwave trough will move through the central U.S.\n   today, as an upper-level low remains over the northeast Gulf. In the\n   southern part of this system, scattered thunderstorms will be\n   possible over much of the eastern Gulf extending eastward across the\n   Florida Peninsula. Out west, an upper-level low will move toward the\n   West Coast today. On the southern edge of the system, strong\n   large-scale ascent will be favorable for isolated to scattered\n   thunderstorms over much of central and northern California.\n\n   No severe threat is forecast across the continental U.S. today or\n   tonight.\n\n   ..Broyles/Chalmers.. 11/18/2026\n\n   CLICK TO GET WUUS01 PTSDY1 PRODUCT\n\n   NOTE: THE NEXT DAY 1 OUTLOOK IS SCHEDULED BY 1300Z"
   },
   {
-   "day": 3,
+   "day": 2,
    "valid": "202611191200",
    "expires": "202611201200",
    "riskAtLaPorte": "No thunderstorm or severe risk area",
    "riskAreasAnywhere": [
+    "General Thunderstorms Risk",
+    "Marginal Risk"
+   ],
+   "summary": "Isolated strong to severe thunderstorms are possible over portions of California with damaging gusts and a brief tornado possible. Additional non-severe storms are possible across the Great Basin, and into the Southeast Thursday and Thursday night.",
+   "text": "SPC AC 180659\n\n   Day 2 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   1259 AM CST Wed Nov 18 2026\n\n   Valid 191200Z - 201200Z\n\n   ...THERE IS A MARGINAL RISK OF SEVERE THUNDERSTORMS ACROSS THE\n   CENTRAL VALLEY OF CALIFORNIA...\n\n   ...SUMMARY...\n   Isolated strong to severe thunderstorms are possible over portions\n   of California with damaging gusts and a brief tornado possible.\n   Additional non-severe storms are possible across the Great Basin,\n   and into the Southeast Thursday and Thursday night.\n\n   ...CA Central Valley...\n   A deep upper low and embedded shortwave will move inland over the\n   northern/central CA coast early Thursday. Attendant to the upper\n   low, very strong westerly flow aloft will overspread a modestly\n   moist air mass (dewpoints in the upper 40s to low 50s F) south of a\n   weak surface low over the Central Valley. A narrow convective band\n   is forecast to move inland during the morning with modest clearing\n   in its wake. Mid-level temperatures near -25C will steepen lapse\n   rates (7-7.5 C/km) amid weak diurnal heating, supporting\n   destabilization with MLCAPE of 250-500 J/kg through the lowest 6-7\n   km. \n\n   Concurrent with the shallow unstable profiles, terrain-enhanced\n   southerly winds are expected across the valley. Elongated and\n   modestly curved hodographs may support some stronger storms in the\n   form of organized low-topped clusters or transient supercells. A\n   low-end risk for damaging gusts and perhaps a brief tornado is\n   possible across parts of the Central Valley through the morning and\n   early afternoon. Thereafter, the arrival of the surface cold front\n   and veering  winds will favor cooler surface temperatures and\n   weakening buoyancy.\n\n   Farther northeast into the Great Basin, more limited surface\n   moisture is forecast across NV and western UT. Strong ascent from\n   the approaching upper low will still support modest buoyancy\n   favoring scattered thunderstorms. However, the weak buoyancy should\n   preclude much severe risk.\n\n   ...Southeast...\n   A weak upper low over the Gulf will continue to diminish as diffuse\n   surface cyclones moves from the central Gulf and off the eastern FL\n   coast. Strengthening low-level flow will continue to promote\n   isolated to perhaps scattered thunderstorms across the region. Weak\n   flow aloft through much of the CAPE-bearing layer will limit the\n   potential for severe convection, but sporadic gusts remain possible.\n\n   ..Lyons.. 11/18/2026\n\n   CLICK TO GET WUUS02 PTSDY2 PRODUCT\n\n   NOTE: THE NEXT DAY 2 OUTLOOK IS SCHEDULED BY 1730Z"
+  },
+  {
+   "day": 3,
+   "valid": "202611201200",
+   "expires": "202611211200",
+   "riskAtLaPorte": "No thunderstorm or severe risk area",
+   "riskAreasAnywhere": [
     "General Thunderstorms Risk"
    ],
-   "summary": "Thunderstorms are possible over portions of California, the Great Basin, and into the Southeast.",
-   "text": "SPC AC 170828\n\n   Day 3 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   0228 AM CST Tue Nov 17 2026\n\n   Valid 191200Z - 201200Z\n\n   ...NO SEVERE THUNDERSTORM AREAS FORECAST...\n\n   ...SUMMARY...\n   Thunderstorms are possible over portions of California, the Great\n   Basin, and into the Southeast.\n\n   ...Synopsis...\n   A deep upper low will move inland across central CA Thursday as\n   ridging persist over the eastern US. Onshore flow will favor\n   thunderstorm potential across CA and parts of the Great Basin ahead\n   of the upper low. Additionally, a weak vort max will linger across\n   the Gulf producing unsettled weather. Elsewhere, high pressure will\n   keep cool, dry and stable conditions in place over much of the\n   country.\n\n   ...CA Central Valley...\n   Strong ascent beneath the upper-low and an associated 70+ kt jet\n   will overspread central CA as a surface low moves onshore early\n   Thursday. The low will aid inland transport of Pacific moisture\n   which should allow for surface dewpoints to increase from the upper\n   40s to low 50s F from the CA coast into the Central Valley. This,\n   combined with steeping mid-level lapse rates and cold mid-level\n   temperatures (500mb -25 to -30 C) should result in some\n   destabilization and thunderstorm potential.\n\n   Model soundings show shallow unstable thermodynamic profiles across\n   the Central Valley with elongated hodographs from strong flow aloft.\n   This may allow support a few stronger low-topped cells or clusters\n   with non-zero severe potential. However, uncertainty on the degree\n   of destabilization remains quite high as substantial cloud cover is\n   likely. Given the uncertainty, severe probabilities will be withheld\n   for this outlook.\n\n   ...Southeast...\n   A weak upper-level disturbance will continue to linger over the\n   Southeast allowing for another day of scattered showers and\n   thunderstorms. Buoyancy and lapse rates will remain modest, which\n   should limit overall convective intensity. However, an isolated\n   damaging gust cannot be completely ruled out over portions of\n   southern GA into the FL Peninsula where scattered thunderstorm\n   coverage is expected.\n\n   ..Lyons.. 11/17/2026\n\n   CLICK TO GET WUUS03 PTSDY3 PRODUCT\n\n   NOTE: THE NEXT DAY 3 OUTLOOK IS SCHEDULED BY 1930Z"
+   "summary": "Severe storms are unlikely Friday.",
+   "text": "SPC AC 180830\n\n   Day 3 Convective Outlook  \n   NWS Storm Prediction Center Norman OK\n   0230 AM CST Wed Nov 18 2026\n\n   Valid 201200Z - 211200Z\n\n   ...NO SEVERE THUNDERSTORM AREAS FORECAST...\n\n   ...SUMMARY...\n   Severe storms are unlikely Friday.\n\n   ...Central/Northern Rockies and Plains States...\n   An upper trough over the Great basin is forecast to eject eastward\n   across the Rockies and into the northern/central Plains as it merges\n   with a second weaker perturbation emanating from southern Canada.\n   Strong southwesterly flow aloft will overspread the Plains states\n   deepening a lee cyclone across eastern CO/WY. This will draw modest\n   surface moisture northward ahead of a cold front/lee trough tied to\n   the low. Strong ascent ahead of the aforementioned trough and\n   boundaries, along with the modest moisture return may support\n   isolated thunderstorms across the Plains late Friday afternoon into\n   early Saturday. While deep-layer flow will strengthen through the\n   day, relatively cool surface temperatures and overall modest\n   buoyancy suggests severe potential will be quite limited. Additional\n   isolated storms are possible under the core of the upper trough\n   throughout the higher terrain.\n\n   ...Gulf and Atlantic Coasts...\n   A weak upper trough will move from the eastern Gulf across the FL\n   peninsula Friday. A broad low over open waters farther west should\n   gradually fill while a compact secondary surface low is forecast to\n   deepen along the Atlantic coast. Weak ascent fro the upper trough\n   will support scattered thunderstorms within a moist and broad yet\n   weakly unstable environment from the middle Gulf Coast to FL. Poor\n   lapse rates and generally weak upper-level flow should preclude much\n   in the way of storm organization. However, given scattered storm\n   coverage, sporadic damaging gusts is possible.\n\n   ..Lyons.. 11/18/2026\n\n   CLICK TO GET WUUS03 PTSDY3 PRODUCT\n\n   NOTE: THE NEXT DAY 3 OUTLOOK IS SCHEDULED BY 1930Z"
   }
  ],
  "wpcExcessiveRain": [
@@ -405,9 +406,37 @@
   "about": "NWS hour-by-hour rain chances for work hours, 6 a.m. to 6 p.m. Central (30-49% = possible, 50%+ = likely).",
   "days": [
    {
-    "date": "2026-11-17",
+    "date": "2026-11-18",
     "summary": "dry through work hours (6 a.m. to 6 p.m.)",
     "hours": [
+     {
+      "hour": 6,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 7,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 8,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 9,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 10,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 11,
+      "rainChancePercent": 0
+     },
+     {
+      "hour": 12,
+      "rainChancePercent": 0
+     },
      {
       "hour": 13,
       "rainChancePercent": 0
@@ -431,7 +460,7 @@
     ]
    },
    {
-    "date": "2026-11-18",
+    "date": "2026-11-19",
     "summary": "dry through work hours (6 a.m. to 6 p.m.)",
     "hours": [
      {
@@ -505,73 +534,30 @@
   },
   "days": [
    {
-    "date": "2026-11-17",
+    "date": "2026-11-18",
     "nws": {
-     "high": 54,
+     "high": 58,
      "low": null,
      "rain": 0
     },
     "models": {
      "ncep_nbm_conus": {
-      "high": 53,
-      "low": 33,
+      "high": 59,
+      "low": 37,
       "rain": 0
      },
      "ncep_hrrr_conus": {
-      "high": 52,
-      "low": 31,
+      "high": 56,
+      "low": 34,
       "rain": 0
      },
      "gfs_seamless": {
-      "high": 52,
-      "low": 31,
+      "high": 56,
+      "low": 34,
       "rain": 0
      },
      "ecmwf_ifs025": {
-      "high": 53,
-      "low": 30,
-      "rain": 0
-     }
-    },
-    "blend": {
-     "high": 53,
-     "low": 31
-    },
-    "adjusted": {
-     "high": 54,
-     "low": 30
-    },
-    "spread": {
-     "high": 2,
-     "low": 3
-    },
-    "note": "NWS and the models agree within a few degrees"
-   },
-   {
-    "date": "2026-11-18",
-    "nws": {
-     "high": 58,
-     "low": 34,
-     "rain": 0
-    },
-    "models": {
-     "ncep_nbm_conus": {
-      "high": 58,
-      "low": 36,
-      "rain": 0
-     },
-     "ncep_hrrr_conus": {
-      "high": 55,
-      "low": 32,
-      "rain": 0
-     },
-     "gfs_seamless": {
-      "high": 55,
-      "low": 32,
-      "rain": 0
-     },
-     "ecmwf_ifs025": {
-      "high": 58,
+      "high": 59,
       "low": 35,
       "rain": 0
      }
@@ -586,7 +572,7 @@
     },
     "spread": {
      "high": 3,
-     "low": 4
+     "low": 3
     },
     "note": "NWS and the models agree within a few degrees"
    },
@@ -594,22 +580,24 @@
     "date": "2026-11-19",
     "nws": {
      "high": 62,
-     "low": 43,
+     "low": 42,
      "rain": 0
     },
     "models": {
      "ncep_nbm_conus": {
-      "high": 62,
-      "low": 43,
-      "rain": 0
+      "high": 63,
+      "low": 45,
+      "rain": 1
      },
      "ncep_hrrr_conus": {
-      "rain": 0
+      "high": 62,
+      "low": 39,
+      "rain": 1
      },
      "gfs_seamless": {
-      "high": 61,
-      "low": 42,
-      "rain": 0
+      "high": 62,
+      "low": 39,
+      "rain": 1
      },
      "ecmwf_ifs025": {
       "high": 61,
@@ -623,47 +611,6 @@
     },
     "adjusted": {
      "high": 63,
-     "low": 41
-    },
-    "spread": {
-     "high": 1,
-     "low": 1
-    },
-    "note": "NWS and the models agree within a few degrees"
-   },
-   {
-    "date": "2026-11-20",
-    "nws": {
-     "high": 64,
-     "low": 42,
-     "rain": 2
-    },
-    "models": {
-     "ncep_nbm_conus": {
-      "high": 64,
-      "low": 42,
-      "rain": 0
-     },
-     "ncep_hrrr_conus": {
-      "rain": 0
-     },
-     "gfs_seamless": {
-      "high": 62,
-      "low": 45,
-      "rain": 0
-     },
-     "ecmwf_ifs025": {
-      "high": 62,
-      "low": 39,
-      "rain": 2
-     }
-    },
-    "blend": {
-     "high": 63,
-     "low": 42
-    },
-    "adjusted": {
-     "high": 64,
      "low": 41
     },
     "spread": {
@@ -671,20 +618,102 @@
      "low": 6
     },
     "note": "the models disagree on the low by 6 degrees (less certain)"
+   },
+   {
+    "date": "2026-11-20",
+    "nws": {
+     "high": 64,
+     "low": 41,
+     "rain": 1
+    },
+    "models": {
+     "ncep_nbm_conus": {
+      "high": 65,
+      "low": 42,
+      "rain": 0
+     },
+     "ncep_hrrr_conus": {
+      "rain": 0
+     },
+     "gfs_seamless": {
+      "high": 63,
+      "low": 46,
+      "rain": 0
+     },
+     "ecmwf_ifs025": {
+      "high": 62,
+      "low": 38,
+      "rain": 0
+     }
+    },
+    "blend": {
+     "high": 64,
+     "low": 42
+    },
+    "adjusted": {
+     "high": 65,
+     "low": 41
+    },
+    "spread": {
+     "high": 3,
+     "low": 8
+    },
+    "note": "the models disagree on the low by 8 degrees (less certain)"
+   },
+   {
+    "date": "2026-11-21",
+    "nws": {
+     "high": 63,
+     "low": 45,
+     "rain": 39
+    },
+    "models": {
+     "ncep_nbm_conus": {
+      "high": 64,
+      "low": 46,
+      "rain": 14
+     },
+     "ncep_hrrr_conus": {
+      "rain": 14
+     },
+     "gfs_seamless": {
+      "high": 61,
+      "low": 46,
+      "rain": 14
+     },
+     "ecmwf_ifs025": {
+      "high": 63,
+      "low": 44,
+      "rain": 11
+     }
+    },
+    "blend": {
+     "high": 63,
+     "low": 46
+    },
+    "adjusted": {
+     "high": 64,
+     "low": 45
+    },
+    "spread": {
+     "high": 3,
+     "low": 2
+    },
+    "note": "NWS and the models agree within a few degrees"
    }
   ],
   "suggested": [
-   {
-    "date": "2026-11-18",
-    "high": 59,
-    "low": 33,
-    "rain": 0
-   },
    {
     "date": "2026-11-19",
     "high": 63,
     "low": 41,
     "rain": 0
+   },
+   {
+    "date": "2026-11-20",
+    "high": 65,
+    "low": 41,
+    "rain": 1
    }
   ]
  },
