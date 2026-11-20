@@ -243,23 +243,12 @@
   "hourlyFrom": "2026-11-19T05:47:00-06:00"
  },
  "published": {
-  "time": "2026-11-19T13:32:00-06:00",
+  "time": "2026-11-19T18:17:00-06:00",
   "alertKeys": [],
   "alerts": [],
-  "changes": [
-   {
-    "k": "day 2026-11-20",
-    "was": "Friday",
-    "now": "Friday",
-    "shortWas": "Sunny",
-    "shortNow": "Sunny",
-    "field": "temp",
-    "from": 64,
-    "to": 67
-   }
-  ],
+  "changes": [],
   "off": [],
-  "paragraph": "Automatic update, 1:32 p.m.: Since the Scoop below was written, NWS has raised its high for Friday to 67 (from 64). At 12:55 p.m. the La Porte airport reported clear and 66 degrees. There are no watches, warnings, or advisories for La Porte County right now."
+  "paragraph": "Automatic update, 6:17 p.m.: NWS's forecast is back in line with the Scoop below. At 5:35 p.m. the La Porte airport reported clear and 55 degrees. There are no watches, warnings, or advisories for La Porte County right now."
  },
  "alertRows": [],
  "missing": [],
@@ -267,6 +256,10 @@
   {
    "time": "2026-11-19T13:32:00-06:00",
    "why": "NWS forecast day 2026-11-20 temp 64->67"
+  },
+  {
+   "time": "2026-11-19T18:17:00-06:00",
+   "why": "NWS forecast back in line with the Scoop"
   }
  ]
 }
