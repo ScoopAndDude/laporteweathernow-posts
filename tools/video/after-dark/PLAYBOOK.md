@@ -498,6 +498,26 @@ In `~/ad/tools/video/after-dark/`:
 
 ## 9. Post through Buffer
 
+**Free plan from Nov. 21, 2026** (Scoop: "I can't afford buffer I'll have to work with the free plan"). Buffer's free
+plan allows 3 channels and 10 scheduled posts per channel. Scoop chose **Facebook, TikTok and Instagram** for Buffer
+(he switches the channels in Buffer himself). YouTube, X and Threads are no longer posted through Buffer: the phone
+message gives him each short's video link and its posts/<slug>.json link so he can post them himself. This overrides the
+six-channel rows below wherever they disagree.
+
+- First count the scheduled posts on each of the three channels (list_posts, status scheduled). Free slots = 10 minus
+  the biggest count. If there are no free slots, make nothing and send nothing.
+- Shorts in log.md marked "MADE, NOT SCHEDULED" go first (oldest first), on the next free nights, before any new short
+  is made. Then make new shorts, up to 4 and no more than the free slots.
+- Each short goes at 6:30 PM on the first night after the last scheduled After Dark short. Buffer can't hold two weeks
+  any more: the queue now reaches about 9 nights ahead at most.
+- If Buffer answers "Access denied" or "Scheduled posts limit reached" for a channel, don't retry: say so in the phone
+  message (Scoop may not have switched the channels yet).
+- The phone message, per short: the night, the title, the video link, the Facebook-sized link (-fb.mp4) and
+  `https://github.com/ScoopAndDude/laporteweathernow-posts/blob/after-dark/tools/video/after-dark/posts/<slug>.json`
+  for the YouTube title and description, the X text and the Threads text.
+
+### The old six-channel setup (paid plan, Nov. 7 to Nov. 20, 2026)
+
 Load the Buffer tools with ToolSearch (`list_posts`, `create_post`, `get_post`). Organization
 `6abd7addf66b764edacca840` (Central time).
 
