@@ -512,6 +512,15 @@ six-channel rows below wherever they disagree.
   any more: the queue now reaches about 9 nights ahead at most.
 - If Buffer answers "Access denied" or "Scheduled posts limit reached" for a channel, don't retry: say so in the phone
   message (Scoop may not have switched the channels yet).
+- **Chrome (Scoop, Nov. 21, 2026: "We can post directly through chrome").** When the run has Scoop's Chrome (the
+  built-in browser or Claude in Chrome tools on his computer), schedule YouTube (LaPorteWeatherNow, in YouTube Studio:
+  title, description, public, not made for kids, no altered-content flag), X and Threads yourself in each site's own
+  scheduler at the same 6:30 PM night, using the posts/<slug>.json texts and the video downloaded from its raw URL into
+  his Downloads folder. Also post there any Buffer channel that refuses a post (Facebook through Meta Business Suite's
+  scheduler, which can also do Instagram; TikTok through tiktok.com's upload page, which schedules up to 10 days
+  ahead). Never post the same slug twice on a channel: check the site's scheduled list first. If a site asks for a
+  sign-in, a code or a confirmation you can't see, stop for that channel and say so. With no Chrome in the run, send
+  the links instead (below).
 - The phone message, per short: the night, the title, the video link, the Facebook-sized link (-fb.mp4) and
   `https://github.com/ScoopAndDude/laporteweathernow-posts/blob/after-dark/tools/video/after-dark/posts/<slug>.json`
   for the YouTube title and description, the X text and the Threads text.
