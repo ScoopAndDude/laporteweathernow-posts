@@ -1,0 +1,364 @@
+{
+ "slug": "rogers-city-carl-d-bradley-1958",
+ "title": "Rogers City, Michigan: the Carl D. Bradley, November 18, 1958",
+ "series": "LA PORTE AFTER DARK",
+ "music": {
+  "seed": 241,
+  "prog": 6
+ },
+ "say": [],
+ "notes": "Viewer request (YouTube comment, Nov. 16, 2026). A real disaster: history only, no one shown in the water, no bodies. Numbers with disagreements left out or rounded: widows (23 or 25), children (53 or 54: 'more than 50'), Rogers City dead (23 in most sources; one says 26), how fast she sank, time on the raft (14 to 16 hours), depth. The two men lost from the raft and their names are left out. No cause given (Marine Board and Commandant disagreed). Blind check Nov. 21: '33 lost, 23 from Rogers City' (locals say 33); 'bound for Calcite, at Rogers City' (she had been headed for winter layup and was sent back for one more load); 'ABOUT 5:30 P.M.' (some say 5:35); no lightning (a gale, not a thunderstorm); a night departure; the memorial lists both the Bradley and Cedarville crews, and its anchor and propeller are not the Bradley's (Alpena News, 2017), so the drawing is just an anchor and the text never calls it hers.",
+ "sources": [
+  {
+   "what": "623 x 65 x 33, built 1927; left Gary 'bound for Calcite, Michigan, at approximately 2200 on 17 November 1958' in ballast; winds '60-65 MPH', seas 'about 25 feet high'; broke about 1730; 'MAY DAY' on 2182 kc before the power failed; 35 aboard, 2 survivors; Sundew rescued them at 0837 on Nov. 19",
+   "who": "U.S. Coast Guard, Commandant's Action on the Marine Board of Investigation, July 7, 1959 (transcription)",
+   "url": "https://us-data.org/mi/glm/shipwrecks/carl-d-bradley/bradley-investigation.txt"
+  },
+  {
+   "what": "'Of its 35 crew, 33 died'; '28 were from Presque Isle County and 23 from Rogers City'; '53 children lost their fathers'; heading to Calcite for its last load of the season; the memorial lists the names",
+   "who": "Rogers City Sailors Memorial marker (Historical Marker Database)",
+   "url": "https://www.hmdb.org/m.asp?m=278074"
+  },
+  {
+   "what": "Bradley Transportation Co. of Rogers City; 25-foot waves; 'About 5:30 pm a loud noise was heard'; the mate sent the call 'just as the power cables snapped'; Rogers City 'home to 23 of the lost crew'; 1959 survey found it in 360 feet",
+   "who": "Wisconsin Marine Historical Society",
+   "url": "https://wmhs.org/?p=2227"
+  },
+  {
+   "what": "'65 mph winds and 25-foot waves'; 23 of the crew from Rogers City; 'An estimated 53 children in town lost their fathers'; a plaque lists the names",
+   "who": "WCMU, Nov. 18, 2025",
+   "url": "https://www.wcmu.org/local-regional-news/2025-11-18/a-story-that-should-never-be-forgotten-remembering-the-ss-carl-d-bradley"
+  },
+  {
+   "what": "'Twenty-three of the 33 crew members who died were from Rogers City'; the two survivors of the 35",
+   "who": "Presque Isle County Advance",
+   "url": "https://piadvance.com/?p=19152"
+  },
+  {
+   "what": "'Launched April 9, 1927, at Lorain, Ohio'; 638 feet; Bradley Transportation Company",
+   "who": "NOAA, Mariners Weather Log, December 2004",
+   "url": "https://vos.noaa.gov/MWL/dec_04/bradley.shtml"
+  },
+  {
+   "what": "left Gary, ordered back to Rogers City for one more load; built 1927, the largest on the Lakes then",
+   "who": "Mackinaw City historical marker (Historical Marker Database)",
+   "url": "https://www.hmdb.org/m.asp?m=154689"
+  },
+  {
+   "what": "'the 638-foot Bradley'; 'Fifty-four children were now fatherless'",
+   "who": "The Alpena News, Nov. 2022",
+   "url": "https://thealpenanews.com/news/local-news/2022/11/64-years-ago-lake-michigan-claimed-the-carl-d-bradley"
+  }
+ ],
+ "beats": [
+  {
+   "text": "You asked for Rogers City, Michigan. In one night, 33 men were lost. 23 of them were from this small town.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "tab_town",
+    "sky": "night",
+    "ground": {
+     "type": "land",
+     "y": 1200
+    },
+    "props": [
+     {
+      "p": "houses65",
+      "x": 540,
+      "y": 1196,
+      "s": 1.4,
+      "n": 7,
+      "spread": 480,
+      "lit": 0.6
+     },
+     {
+      "p": "church65",
+      "x": 860,
+      "y": 1200,
+      "s": 0.7,
+      "people": 0,
+      "palms": false,
+      "lit": false
+     }
+    ],
+    "moon": [
+     300,
+     700,
+     30
+    ],
+    "move": "in",
+    "amount": 0.07,
+    "fog": 0.15
+   },
+   "label": "ROGERS CITY, MICHIGAN",
+   "typed": [
+    {
+     "text": "23 FROM ROGERS CITY",
+     "at": "23 of them",
+     "y": 545,
+     "size": 70
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "heartbeat",
+     "at": "In one night",
+     "gain": 0.6
+    }
+   ],
+   "credit": "History: Rogers City Sailors Memorial; WCMU; Presque Isle County Advance",
+   "title": {
+    "text": "33 LOST",
+    "at": "33 men were lost",
+    "size": 110,
+    "style": "red"
+   }
+  },
+  {
+   "text": "November 1958. The Bradley, a limestone freighter more than 600 feet long, left Gary, Indiana, empty, bound for Calcite, at Rogers City.",
+   "pause": 0.45,
+   "scene": {
+    "kind": "tab_lake",
+    "sky": "night",
+    "ground": {
+     "type": "water",
+     "y": 1170
+    },
+    "props": [
+     {
+      "p": "freighter",
+      "x": 560,
+      "y": 1170,
+      "s": 0.9
+     }
+    ],
+    "move": "right",
+    "amount": 0.06,
+    "fog": 0.15
+   },
+   "label": "LEFT GARY, NOVEMBER 17, 1958",
+   "title": {
+    "text": "THE CARL D. BRADLEY",
+    "at": "The Bradley",
+    "size": 88,
+    "style": "bone"
+   },
+   "credit": "U.S. Coast Guard Marine Board report, 1959; NOAA; Wisconsin Marine Historical Society"
+  },
+  {
+   "text": "On Lake Michigan the next day, winds topped 60 miles an hour. Waves were about 25 feet high.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "tab_lake",
+    "sky": "storm",
+    "ground": {
+     "type": "water",
+     "y": 1170
+    },
+    "props": [
+     {
+      "p": "freighter",
+      "x": 520,
+      "y": 1172,
+      "s": 1.0
+     }
+    ],
+    "move": "in",
+    "amount": 0.08,
+    "fog": 0.25,
+    "rain": true
+   },
+   "label": "NOVEMBER 18, 1958",
+   "typed": [
+    {
+     "text": "25-FOOT WAVES",
+     "at": "Waves were about 25",
+     "y": 545,
+     "size": 90
+    }
+   ],
+   "credit": "U.S. Coast Guard Marine Board report, 1959; WCMU; Wisconsin Marine Historical Society"
+  },
+  {
+   "text": "Around 5:30 that evening, the Bradley broke in two.",
+   "pause": 0.85,
+   "scene": {
+    "kind": "tab_lake",
+    "sky": "storm",
+    "ground": {
+     "type": "water",
+     "y": 1170
+    },
+    "props": [
+     {
+      "p": "freighter",
+      "x": 540,
+      "y": 1176,
+      "s": 1.0,
+      "lit": true
+     }
+    ],
+    "move": "in",
+    "amount": 0.1,
+    "fog": 0.35,
+    "rain": true
+   },
+   "label": "ABOUT 5:30 P.M.",
+   "typed": [
+    {
+     "text": "BROKE IN TWO",
+     "at": "broke in two",
+     "y": 545,
+     "size": 100
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "heartbeat",
+     "at": "that evening",
+     "gain": 0.7
+    }
+   ],
+   "credit": "U.S. Coast Guard Marine Board report, 1959; Wisconsin Marine Historical Society"
+  },
+  {
+   "text": "A Mayday went out, just as the power failed. Of 35 men aboard, 2 survived, on a raft, through the night.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_lake",
+    "sky": "night",
+    "ground": {
+     "type": "water",
+     "y": 1170
+    },
+    "props": [
+     {
+      "p": "flotsam",
+      "x": 540,
+      "y": 1240,
+      "s": 1.2
+     }
+    ],
+    "move": "in",
+    "amount": 0.06,
+    "fog": 0.3,
+    "rain": true
+   },
+   "label": "MAYDAY",
+   "typed": [
+    {
+     "text": "2 OF 35",
+     "at": "2 survived",
+     "y": 545,
+     "size": 130
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "static",
+     "at": "A Mayday",
+     "gain": 0.5
+    }
+   ],
+   "credit": "U.S. Coast Guard Marine Board report, 1959; Rogers City Sailors Memorial"
+  },
+  {
+   "text": "In Rogers City, more than 50 children lost their fathers.",
+   "pause": 0.8,
+   "scene": {
+    "kind": "tab_town",
+    "sky": "dawn",
+    "ground": {
+     "type": "land",
+     "y": 1200
+    },
+    "props": [
+     {
+      "p": "houses65",
+      "x": 540,
+      "y": 1196,
+      "s": 1.5,
+      "n": 6,
+      "spread": 520,
+      "lit": 0.4
+     },
+     {
+      "p": "church65",
+      "x": 860,
+      "y": 1200,
+      "s": 0.8,
+      "people": 0,
+      "palms": false
+     }
+    ],
+    "move": "right",
+    "amount": 0.05,
+    "fog": 0.15
+   },
+   "label": "ROGERS CITY",
+   "typed": [
+    {
+     "text": "MORE THAN 50",
+     "at": "more than 50",
+     "y": 545,
+     "size": 100
+    }
+   ],
+   "credit": "Rogers City Sailors Memorial; WCMU; The Alpena News"
+  },
+  {
+   "text": "Today, a sailors' memorial by the lake in Rogers City lists the crew's names.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "blue",
+    "ground": {
+     "type": "land",
+     "y": 1200
+    },
+    "props": [
+     {
+      "p": "chain",
+      "x": 520,
+      "y": 1262,
+      "s": 1.1
+     }
+    ],
+    "move": "in",
+    "amount": 0.05,
+    "fog": 0.1
+   },
+   "label": "ROGERS CITY SAILORS MEMORIAL",
+   "credit": "Rogers City Sailors Memorial marker; WCMU"
+  },
+  {
+   "text": "Comment your town for the next LaPorte After Dark.",
+   "end": true,
+   "end_card": {
+    "q": "COMMENT YOUR TOWN",
+    "q2": "FOR THE NEXT STORY",
+    "bubble": "Your town, your state",
+    "pill": "The Carl D. Bradley, Lake Michigan, November 18, 1958",
+    "scene": {
+     "kind": "tab_lake",
+     "sky": "dawn",
+     "ground": {
+      "type": "water",
+      "y": 1170
+     },
+     "props": [
+      {
+       "p": "moonpath",
+       "x": 540,
+       "y": 1170,
+       "w": 80
+      }
+     ],
+     "move": "still",
+     "amount": 0.05
+    }
+   },
+   "credit": "All pictures drawn"
+  }
+ ]
+}

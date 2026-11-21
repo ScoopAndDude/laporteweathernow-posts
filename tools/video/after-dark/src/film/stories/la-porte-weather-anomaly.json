@@ -1,0 +1,365 @@
+{
+ "slug": "la-porte-weather-anomaly",
+ "title": "LaPorte, Indiana: the LaPorte Weather Anomaly",
+ "series": "LA PORTE AFTER DARK",
+ "music": {
+  "seed": 251,
+  "prog": 6
+ },
+ "say": [],
+ "notes": "From the queue (Scoop, Nov. 13: weather history). A real weather mystery, not a ghost story. The 31% / 38% / 246% figures are for 1951-1965 only (not 'since 1925'). The cause is what Changnon 'suggested'; the critics 'questioned the observer's records' (Holzman and Thom's own text wasn't read, so no 'fraud'). METROMEX left out (only Changnon's group says La Porte inspired it). No press quotes (none found with two sources). Blind check Nov. 21: line 1 was overstated ('steel mills were making it storm'), now 'industry near Chicago was adding to the rain and storms'; 30 miles is to the Gary-South Chicago industry (Huff and Changnon: 25-35 mi), so the map has no Chicago pin; 'faded' with no decade (1960s per Changnon 1980; after 1970 per Niyogi and Schmid 2014); 'never fully settled'; no weather-office picture (the records were one cooperative observer's) and no oil lamp. Second check: 'heat' dropped (not confirmed as Changnon's), 'ROUGHLY 30 MILES'.",
+ "sources": [
+  {
+   "what": "title 'The La Porte Weather Anomaly—Fact or Fiction?', Bulletin of the American Meteorological Society 49(1), 1968; 'A notable increase in precipitation, moderate rain days, thunderstorm days, and hail days has been occurring since 1925'; 'during the 1951–1965 period La Porte had 31% more precipitation, 38% more thunderstorms ... and 246% more hail days than did surrounding stations'; about 30 miles east of heavy industry, suggesting 'inadvertent' modification; precipitation follows Chicago steel production",
+   "who": "S. A. Changnon Jr., BAMS, 1968 (abstract, AMS and Scilit)",
+   "url": "https://journals.ametsoc.org/bams/article/49/1/4/47988/the-La-Porte-weather-anomaly-fact-or-fiction"
+  },
+  {
+   "what": "'For the period of 1951-1965, Changnon reported positive anomalies at La Porte of 31% for mean precipitation and 38% for the number of thunderstorm days'; 'about 30 miles downwind of the industrial complex of Gary'; 'transport of rainfall-augmenting pollutants by prevailing winds'; Holzman and Thom (1970): 'observer-perpetuated and fictional'; Changnon: 'not substantiated'; 'remains debatable'",
+   "who": "Norwine, Proceedings of the Indiana Academy of Science, about 1971",
+   "url": "https://journals.indianapolis.iu.edu/index.php/ias/article/download/6864/7070/13186"
+  },
+  {
+   "what": "'LPT had 38% more thunderstorms and 246% more hail days in the 1951-65 period'",
+   "who": "Huff and Changnon, Illinois State Water Survey report for the National Science Foundation, 1972",
+   "url": "https://core.ac.uk/download/29157872.pdf"
+  },
+  {
+   "what": "the anomaly 'began to shift locale in the 1950s and then disappeared in the 1960s'; a 'cause célèbre'",
+   "who": "Changnon, 'More on the La Porte Anomaly: A Review', BAMS 61(7), 1980",
+   "url": "https://www.scilit.com/publications/aee491c00d1af3c219b046d1022ed309"
+  },
+  {
+   "what": "Chicago steel production vs. La Porte summer rainfall; the anomaly 'becomes much smaller after 1960'",
+   "who": "Cassity, MIT thesis, 1969",
+   "url": "https://core.ac.uk/download/4416073.pdf"
+  },
+  {
+   "what": "Holzman and Thom 'used annual precipitation data for LaPorte to conclude that the rain change was due to systematic observer falsification of the records'",
+   "who": "Changnon, 'Cities Can Modify Rainfall', Journal of Weather Modification",
+   "url": "https://journalofweathermodification.org/index.php/JWM/article/download/640/686/1660"
+  },
+  {
+   "what": "'Our particular tree-ring analysis neither proves nor disproves the precipitation anomaly at LaPorte'",
+   "who": "Ashby and Fritts, BAMS, 1972",
+   "url": "https://www.scilit.com/publications/4ee216c37c0e602c5b769563544fb149"
+  },
+  {
+   "what": "'25-35 mi downwind of the South Chicago-Gary industrial complex'",
+   "who": "Huff and Changnon, 1972",
+   "url": "https://core.ac.uk/download/29157872.pdf"
+  },
+  {
+   "what": "later work 'cast doubt on the causes or even the existence' of the anomaly; it weakened and shifted west after 1970",
+   "who": "Niyogi and Schmid, AMS Annual Meeting, 2014",
+   "url": "https://studio.m-anage.com/ams/94Annual/webprogram/Paper235964.html"
+  },
+  {
+   "what": "Holzman, B. G. and Thom, H. C. S., 'The La Porte precipitation anomaly', BAMS 51:335-337 (1970), in a reference list",
+   "who": "AMS monograph chapter (Springer)",
+   "url": "https://link.springer.com/chapter/10.1007/978-1-935704-29-4_1"
+  }
+ ],
+ "beats": [
+  {
+   "text": "A scientist once suggested that industry near Chicago was adding to the rain and storms over LaPorte, Indiana.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "squall",
+    "ground": {
+     "type": "land",
+     "y": 1200
+    },
+    "props": [
+     {
+      "p": "fields",
+      "x": 540,
+      "y": 1200,
+      "s": 1.0
+     },
+     {
+      "p": "stormbase",
+      "x": 600,
+      "y": 760,
+      "s": 1.0,
+      "wall": 0.0,
+      "flash": 2
+     },
+     {
+      "p": "rainshaft",
+      "x": 380,
+      "y": 760,
+      "s": 1.0,
+      "w": 300,
+      "h": 440
+     }
+    ],
+    "move": "in",
+    "amount": 0.08,
+    "fog": 0.12
+   },
+   "label": "LAPORTE, INDIANA",
+   "title": {
+    "text": "THE WEATHER ANOMALY",
+    "at": "adding to the rain",
+    "size": 88,
+    "style": "red"
+   },
+   "flash": [
+    "rain and storms"
+   ],
+   "credit": "History: Changnon, Bulletin of the American Meteorological Society, 1968"
+  },
+  {
+   "text": "He published his findings in 1968, in a leading weather journal.",
+   "pause": 0.45,
+   "scene": {
+    "kind": "card",
+    "seed": 0,
+    "move": "still"
+   },
+   "label": "1968",
+   "card": {
+    "kind": "headline",
+    "paper": "BULLETIN OF THE AMERICAN METEOROLOGICAL SOCIETY",
+    "date": "JANUARY 1968",
+    "lines": [
+     "THE LA PORTE WEATHER",
+     "ANOMALY—FACT OR FICTION?"
+    ],
+    "at": "He published",
+    "y": 620
+   },
+   "credit": "Changnon, BAMS 49(1), 1968; Norwine, Indiana Academy of Science"
+  },
+  {
+   "text": "From 1951 to 1965, he reported, LaPorte got 31% more precipitation and 38% more thunderstorms than stations around it.",
+   "pause": 0.5,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "warm",
+    "ground": {
+     "type": "land",
+     "y": 1200
+    },
+    "props": [
+     {
+      "p": "fields",
+      "x": 540,
+      "y": 1200,
+      "s": 1.0
+     },
+     {
+      "p": "thunderhead",
+      "x": 700,
+      "y": 1200,
+      "s": 0.9,
+      "lit": 0.9
+     }
+    ],
+    "move": "in",
+    "amount": 0.06,
+    "fog": 0.05
+   },
+   "label": "1951 TO 1965",
+   "typed": [
+    {
+     "text": "+31% PRECIPITATION",
+     "at": "31% more",
+     "y": 545,
+     "size": 70,
+     "gain": 0.5
+    }
+   ],
+   "credit": "Changnon, BAMS, 1968; Norwine, Indiana Academy of Science"
+  },
+  {
+   "text": "And days with hail? 246% more.",
+   "pause": 0.8,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "storm",
+    "ground": {
+     "type": "land",
+     "y": 1200
+    },
+    "props": [
+     {
+      "p": "fields",
+      "x": 540,
+      "y": 1200,
+      "s": 1.0
+     },
+     {
+      "p": "stormbase",
+      "x": 540,
+      "y": 700,
+      "s": 1.0,
+      "wall": 0.4,
+      "flash": 1,
+      "seed": 4
+     },
+     {
+      "p": "rainshaft",
+      "x": 600,
+      "y": 700,
+      "s": 1.0,
+      "w": 520,
+      "h": 500,
+      "a": 0.4
+     }
+    ],
+    "move": "in",
+    "amount": 0.1,
+    "fog": 0.2,
+    "rain": true
+   },
+   "label": "HAIL DAYS",
+   "typed": [
+    {
+     "text": "+246%",
+     "at": "246%",
+     "y": 545,
+     "size": 140
+    }
+   ],
+   "sfx": [
+    {
+     "kind": "heartbeat",
+     "at": "days with hail",
+     "gain": 0.6
+    }
+   ],
+   "credit": "Changnon, BAMS, 1968; Huff and Changnon, Illinois State Water Survey, 1972"
+  },
+  {
+   "text": "LaPorte sits about 30 miles downwind of the industry around Chicago and Gary. He suggested its pollution was feeding the storms.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "card",
+    "seed": 1,
+    "move": "still"
+   },
+   "label": "ROUGHLY 30 MILES DOWNWIND",
+   "card": {
+    "kind": "map",
+    "center": "Chesterton",
+    "span": 0.7,
+    "pins": [
+     "Gary",
+     "La Porte"
+    ],
+    "hot": "La Porte"
+   },
+   "credit": "Changnon, BAMS, 1968; Norwine, Indiana Academy of Science; Cassity, MIT, 1969"
+  },
+  {
+   "text": "Other scientists pushed back. They questioned the local weather observer's records.",
+   "pause": 0.6,
+   "scene": {
+    "kind": "tab_room",
+    "sky": "room",
+    "wall": "#121014",
+    "ground": {
+     "type": "floor",
+     "y": 1250
+    },
+    "props": [
+     {
+      "p": "window",
+      "x": 820,
+      "y": 1000,
+      "s": 1.0
+     },
+     {
+      "p": "rolltop",
+      "x": 420,
+      "y": 1250,
+      "s": 1.1,
+      "lamp": false
+     }
+    ],
+    "move": "right",
+    "amount": 0.05
+   },
+   "label": "THE CRITICS, 1970",
+   "typed": [
+    {
+     "text": "THE RECORDS?",
+     "at": "observer's records",
+     "y": 545,
+     "size": 100
+    }
+   ],
+   "credit": "Norwine, Indiana Academy of Science; Changnon, Journal of Weather Modification"
+  },
+  {
+   "text": "Later, the anomaly faded. It was never fully settled how much of it was real.",
+   "pause": 0.7,
+   "scene": {
+    "kind": "tab_land",
+    "sky": "dawn",
+    "ground": {
+     "type": "land",
+     "y": 1200
+    },
+    "props": [
+     {
+      "p": "fields",
+      "x": 540,
+      "y": 1200,
+      "s": 1.0
+     },
+     {
+      "p": "thunderhead",
+      "x": 300,
+      "y": 1200,
+      "s": 0.5,
+      "lit": 0.8
+     }
+    ],
+    "move": "in",
+    "amount": 0.06,
+    "fog": 0.08
+   },
+   "label": "NEVER SETTLED",
+   "credit": "Changnon, BAMS, 1980; Cassity, MIT, 1969; Ashby and Fritts, BAMS, 1972"
+  },
+  {
+   "text": "Comment your town, and it could be next.",
+   "end": true,
+   "end_card": {
+    "q": "COMMENT YOUR TOWN",
+    "q2": "IT COULD BE NEXT",
+    "bubble": "Your town, your state",
+    "pill": "The LaPorte weather anomaly, reported in 1968",
+    "scene": {
+     "kind": "tab_land",
+     "sky": "squall",
+     "ground": {
+      "type": "land",
+      "y": 1200
+     },
+     "props": [
+      {
+       "p": "fields",
+       "x": 540,
+       "y": 1200,
+       "s": 1.0
+      },
+      {
+       "p": "thunderhead",
+       "x": 540,
+       "y": 1200,
+       "s": 0.9
+      }
+     ],
+     "move": "still",
+     "amount": 0.05
+    }
+   },
+   "credit": "All pictures drawn"
+  }
+ ]
+}

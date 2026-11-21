@@ -233,16 +233,17 @@ def _sag(ax, ay, bx, by, d):
 
 
 @prop
-def farmhouse(c, L, x, y, s=1.0, lit=(0, 1, 0), smoke=True, **k):
-    """An 1870s two-storey gable-front frame farmhouse with a porch and a chimney."""
-    wall = "#13110e"
+def farmhouse(c, L, x, y, s=1.0, lit=(0, 1, 0), smoke=True, brick=False, **k):
+    """An 1870s two-storey gable-front frame farmhouse with a porch and a chimney.
+    brick=True (Nov. 21, 2026, for the Gunness house, 'a square house of red brick'): dark red brick walls."""
+    wall = "#2e1812" if brick else "#13110e"
     x0, x1 = x - 120 * s, x + 120 * s
     c.rect(x0, y - 250 * s, x1, y, wall)
     c.poly([(x0 - 16 * s, y - 246 * s), (x, y - 372 * s), (x1 + 16 * s, y - 246 * s)], wall)
     c.line([(x0 - 16 * s, y - 246 * s), (x, y - 372 * s), (x1 + 16 * s, y - 246 * s)], "#070605", 9 * s)
-    for j in range(16):
-        yy = y - (12 + j * 15) * s
-        c.line([(x0, yy), (x1, yy)], "#1d1914", 1.2, 0.7)
+    for j in range(40 if brick else 16):
+        yy = y - (12 + j * (6 if brick else 15)) * s
+        c.line([(x0, yy), (x1, yy)], "#1a0d09" if brick else "#1d1914", 1.0 if brick else 1.2, 0.6 if brick else 0.7)
     wins = [(-76, -224, -40, -160), (40, -224, 76, -160), (-76, -112, -40, -50)]
     out = []
     for i, (a, b, cc, d) in enumerate(wins):
