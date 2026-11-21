@@ -1,0 +1,203 @@
+{
+  "about": "The Daily Video for La Porte Weather Now (scripts/daily_video.py): official NWS weather, read aloud.",
+  "date": "2026-11-21",
+  "planned": "2026-11-21T06:02:00-06:00",
+  "source": "nws",
+  "forecastUpdated": "2026-11-21T11:14:40+00:00",
+  "observationTime": "2026-11-21T05:15:00-06:00",
+  "alerts": [],
+  "shortFused": [],
+  "hook": {
+    "kind": "normal",
+    "score": 65,
+    "big": "66°",
+    "small": "21° above normal",
+    "say": "LaPorte, ready for 66° in late November? That's about 21° above normal.",
+    "when": "today"
+  },
+  "hookOptions": [
+    {
+      "kind": "normal",
+      "score": 65,
+      "say": "LaPorte, ready for 66° in late November? That's about 21° above normal."
+    },
+    {
+      "kind": "normal",
+      "score": 55,
+      "say": "LaPorte, ready for 62° Sunday? That's about 17° above normal."
+    },
+    {
+      "kind": "nice",
+      "score": 40,
+      "say": "Got plans outside today, LaPorte? Sunny, with a high near 66°."
+    },
+    {
+      "kind": "plain",
+      "score": 10,
+      "say": "How's today looking, LaPorte? Sunny, high near 66°."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "hook",
+      "label": "LAPORTE · SATURDAY, NOV. 21",
+      "big": "66°",
+      "small": "21° above normal",
+      "icon": "sun",
+      "tone": "warm",
+      "hookKind": "normal",
+      "say": "LaPorte, ready for 66° in late November? That's about 21° above normal.",
+      "ask": [
+        "LaPorte, ready for",
+        "in late November?"
+      ],
+      "sayParts": [
+        "LaPorte, ready for 66° in late November?",
+        "That's about 21° above normal."
+      ],
+      "spoken": "La Port, ready for sixty-six degrees in late November? That's about twenty-one degrees above normal.",
+      "spokenParts": [
+        "La Port, ready for sixty-six degrees in late November?",
+        "That's about twenty-one degrees above normal."
+      ],
+      "factAfter": 3.85,
+      "voiceFile": "voice/hook.wav",
+      "voiceSeconds": 6.66,
+      "start": 0.0,
+      "duration": 7.06,
+      "voiceAt": 0.04,
+      "factAt": 3.77
+    },
+    {
+      "id": "today",
+      "sun": null,
+      "kind": "period",
+      "title": "TODAY",
+      "date": "Saturday, Nov. 21",
+      "temp": 66,
+      "tempLabel": "HIGH",
+      "icon": "sun",
+      "text": "Sunny",
+      "sentence": "Sunny",
+      "rain": null,
+      "note": "Gusts to 25 mph",
+      "hours": [
+        {
+          "label": "6 AM",
+          "temp": 46,
+          "pop": 0
+        },
+        {
+          "label": "8 AM",
+          "temp": 47,
+          "pop": 0
+        },
+        {
+          "label": "10 AM",
+          "temp": 55,
+          "pop": 0
+        },
+        {
+          "label": "12 PM",
+          "temp": 63,
+          "pop": 0
+        },
+        {
+          "label": "2 PM",
+          "temp": 65,
+          "pop": 0
+        },
+        {
+          "label": "4 PM",
+          "temp": 63,
+          "pop": 0
+        }
+      ],
+      "say": "Today: sunny. High 66. Gusts to 25 mph. Tonight: low 46.",
+      "next": {
+        "name": "Tonight",
+        "temp": 46,
+        "tempLabel": "LOW"
+      },
+      "spoken": "Today: sunny. High sixty-six. Gusts to twenty-five miles an hour. Tonight: low forty-six.",
+      "voiceFile": "voice/today.wav",
+      "voiceSeconds": 6.3,
+      "start": 7.06,
+      "duration": 6.7,
+      "voiceAt": 7.16
+    },
+    {
+      "id": "days",
+      "kind": "days",
+      "title": "NEXT 3 DAYS",
+      "days": [
+        {
+          "name": "Sun",
+          "day": "Sunday",
+          "hi": 62,
+          "lo": 36,
+          "pop": 100,
+          "icon": "rain",
+          "text": "Partly sunny, then showers",
+          "short": "Partly Sunny then Rain Showers",
+          "star": false
+        },
+        {
+          "name": "Mon",
+          "day": "Monday",
+          "hi": 44,
+          "lo": 29,
+          "pop": null,
+          "icon": "sun-small-cloud",
+          "text": "Mostly sunny",
+          "short": "Mostly Sunny",
+          "star": false
+        },
+        {
+          "name": "Tue",
+          "day": "Tuesday",
+          "hi": 40,
+          "lo": 24,
+          "pop": null,
+          "icon": "sun-small-cloud",
+          "text": "Mostly sunny",
+          "short": "Mostly Sunny",
+          "star": false
+        }
+      ],
+      "say": "Sunday: partly sunny, then showers, 62.",
+      "spoken": "Sunday: partly sunny, then showers, sixty-two.",
+      "voiceFile": "voice/days.wav",
+      "voiceSeconds": 3.1,
+      "start": 13.76,
+      "duration": 3.5,
+      "voiceAt": 13.86
+    },
+    {
+      "id": "end",
+      "kind": "end",
+      "say": "laporteweathernow.com.",
+      "spoken": "La Port Weather Now dot com.",
+      "voiceFile": "voice/end.wav",
+      "voiceSeconds": 2.02,
+      "start": 17.26,
+      "duration": 2.42,
+      "voiceAt": 17.36
+    }
+  ],
+  "caption": "LaPorte weather for Saturday, Nov. 21, from the National Weather Service:\nToday: Sunny. High 66. Gusts to 25 mph.\nTonight: Mostly clear. Low 46.\nSunday: Partly sunny, then showers, high 62. Monday: Mostly sunny, high 44. Tuesday: Mostly sunny, high 40.\nToday's Daily Scoop: Sunny near 66; rain likely Sunday\nFree forecast every morning: laporteweathernow.com\nNo hype. Just the forecast.\n#LaPorte #LaPorteIndiana #LaPorteCounty #IndianaWeather #NWIndiana",
+  "words": 40,
+  "mode": "auto",
+  "normalsStation": {
+    "id": "USC00124837",
+    "name": "LAPORTE, IN US",
+    "km": 1.0
+  },
+  "seconds": 19.68,
+  "voice": "Kokoro-82M af_heart, speed 1.1",
+  "video": "laporte-2026-11-21.mp4",
+  "cover": "cover.jpg",
+  "bytes": 8249826,
+  "rendered": "2026-11-21T06:04:41-06:00"
+}
