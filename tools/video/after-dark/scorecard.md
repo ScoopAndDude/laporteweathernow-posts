@@ -3,6 +3,35 @@
 Written every Monday by the "La Porte After Dark weekly scorecard" task from Buffer's per-post numbers.
 Newest week first. The shorts task reads this when picking topics: more of what works, less of what doesn't.
 
+## Week of Nov. 23
+
+Week over week (YouTube, TikTok and X only, daily weather included; Buffer totals, Mon.-Mon. Central): reactions 930 → 1,036 (up 11%), comments 68 → 135 (up 99%), engagement rate 4.78% → 6.08%, on 90 → 155 posts. Instagram and Threads: no numbers, Buffer refused access ("Actor can not access the specified channels").
+Shorts posted Nov. 16-23, reactions + comments (TikTok views, YouTube views, X impressions in brackets). * = posted in the last 48 hours, too new to judge. — = not posted there this week. n/a = Buffer refused access.
+
+| # | Short | Night | YouTube | TikTok | X | Instagram | Threads | Total |
+|---|---|---|---|---|---|---|---|---|
+| 1 | Moody's Light, Rensselaer (ghost lantern) | Tue. 11/17, noon | 2 (31) | 345 (6,059) | 0 (4) | n/a | n/a | 347 |
+| 2 | Kingsford Heights ghost town, 1942 | Tue. 11/17, 9 AM | 0 (38) | 245 (4,095) | 0 (0) | n/a | n/a | 245 |
+| 3 | Old Woodville under Lake Texoma (Kingston) | TikTok Wed. 11/18 | — | 78 (1,879) | — | n/a | n/a | 78 |
+| 4 | Schererville: Lake George and the Hart Ditch | Sun. 11/22, noon | 0 (2)* | 53 (1,241)* | 0 (0)* | n/a | n/a | 53* |
+| 5 | Porter 1921 crossing wreck | Fri. 11/20, noon | — | 38 (960) | 0 (2) | n/a | n/a | 38 |
+| 6 | Wanatah Palm Sunday tornado, 1965 | Mon. 11/16, 9 AM | 2 (61) | 28 (533) | 0 (3) | n/a | n/a | 30 |
+| 7 | Michigan City pier light keepers, 1878 | Mon. 11/16, noon | 0 (27) | 23 (414) | 0 (4) | n/a | n/a | 23 |
+| 8 | Felt Mansion, Saugatuck | Mon. 11/16, 8:14 PM | 0 (2) | 22 (422) | 0 (2) | n/a | n/a | 22 |
+| 9 | Knox, Halley's Comet sparks, 1910 | Mon. 11/16, 7:48 PM | 1 (267) | 21 (614) | 0 (4) | n/a | n/a | 22 |
+| 10 | Ogden Dunes ski jump | TikTok Mon. 11/16 | — | 19 (578) | — | n/a | n/a | 19 |
+| 11 | Bass Lake monster, 1893 | Thu. 11/19, noon | 0 (9) | 19 (660) | 0 (5) | n/a | n/a | 19 |
+| 12 | J.D. Marshall shipwreck, 1911 | TikTok Fri. 11/20 | — | 15 (314) | — | n/a | n/a | 15 |
+| 13 | City West, lost 1836 town | Mon. 11/16, 10:41 AM | 3 (169) | 11 (329) | 0 (8) | n/a | n/a | 14 |
+
+Also: Red River Bridge War (TikTok 11/19) 13; Griffith's Reder Road 10*; Chesterton 1933 bombing (TikTok 11/17) 9; Munster Brass Tavern 6*; Kingsbury contamination 6; Fish Lake ice houses 6; Posey Chapel 3* (no YouTube post went out for Porter or Posey). YouTube/X-only re-airings: Old Joliet Prison 3, Chicora 1, Flight 2501 0, circus train wreck 0, Hull-House 0.
+Also: 70 After Dark "Story" posts went straight to TikTok (one to YouTube) Nov. 16-23: 95 reactions + 69 comments together (5,218 views), median 2 each; 57 show exactly 1 comment. Best: Fisher-Calo fire, 1978 (28 likes, 4 comments, 709 views); far-off ones (England, Ireland, India, Arizona) got 0-1.
+Best: Moody's Light (TikTok 319 likes, 26 comments, 6,059 views, 9.7%). Worst of the judgeable new shorts: Fish Lake ice houses (6 total; TikTok 201 views, 2.99%), tied on total with Kingsbury contamination (6, but 5.3%).
+Best channel: TikTok, 1,023 reactions and 134 comments of the week's 1,036 and 135 (26,532 views, 507 shares, 6.26%). YouTube 13 + 1 (963 views), X 0 + 0 (102 impressions).
+Pattern: one nearby Indiana place with one eerie hook won big (Moody's Light 347, Kingsford Heights 245, both Tue. daytime), while 70 quick TikTok "Story" uploads, mostly far-off places, made 164 together. Fewer, local, one-hook shorts beat volume.
+Viewers asked for: nothing new on YouTube since Nov. 16 (Rogers City, already made; Michigan City, already in the queue), so nothing added. vidIQ is still connected to ScoopAndDude (10 newest Shorts are weather, no comments); LaPorteWeatherNow comments read as public comments.
+Fix: Instagram and Threads need reconnecting in Buffer (refused for list_posts and metrics, as on Nov. 21).
+
 ## Week of Nov. 16
 
 Week over week (all posts on YouTube, TikTok, X, Instagram, Threads, daily weather included; Buffer totals, Mon.-Mon. Central): reactions 982 → 575 (down 41%), comments 56 → 60, engagement rate 5.59% → 3.68%, on twice the posts (77 → 154). Last week's totals kept growing after last Monday (Bailly TikTok now 487 likes, 8,865 views).
