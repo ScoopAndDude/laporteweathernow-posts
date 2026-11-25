@@ -44,8 +44,10 @@ import nws_snapshot as ns  # noqa: E402
 TZ = bs.TZ
 RADIO_JSON_URL = "https://raw.githubusercontent.com/ScoopAndDude/laporteweathernow-posts/radio/radio.json"
 VOICE = "af_heart"
-SPEED = 0.97
+SPEED = 1.05                 # a touch quicker, with real pauses between sentences (matched to Scoop's own read, Nov. 25, 2026)
 RATE = 24000
+PAUSE_SENTENCE = 0.35        # added after each sentence, on top of the voice's own short stop
+PAUSE_BEAT = 0.9             # the longer beat before the holiday wish
 PAUSE_PARAGRAPH = 0.55
 PAUSE_SEGMENT = 1.0
 OBS_MAX_HOURS = 2
@@ -423,8 +425,10 @@ def scoop_paragraphs(posts, today):
 
 def build_script(data, now):
     segs = []
-    intro = (f"{greeting(now)}, friends, and thanks for tuning in. This is the La Porte Weather Now weather radio "
-             f"for La Porte County, Indiana. Here's the latest as of {bs.clock(now)}, {long_date(now)}.")
+    hello = greeting(now)
+    hey = "Hey there, La Porte." if hello == "Hello" else f"Hey, {hello.lower()}, La Porte."
+    intro = (f"{hey} This is the La Porte Weather Now weather radio, and thanks for tuning in. "
+             f"Here's the latest for La Porte County as of {bs.clock(now)}, {long_date(now)}.")
     segs.append({"id": "intro", "title": "Welcome", "paragraphs": [intro]})
     alert_text, alert_ids = alert_paragraphs(data["alerts"], now)
     segs.append({"id": "alerts", "title": "Alerts", "paragraphs": alert_text})
@@ -523,6 +527,27 @@ def cmd_script(out_path, force=False, use_snapshot=False):
 # ---------------------------------------------------------------------------------------------
 # Recording
 # ---------------------------------------------------------------------------------------------
+NOT_AN_END = {"st", "dr", "mr", "mrs", "ms", "mt", "ft", "rd", "jr", "sr", "vs", "no", "u.s"}
+
+
+def sentences(text):
+    """A spoken line split into sentences, so the recording can breathe between them. Splits only after
+    . ! or ? followed by a space and a capital letter or a digit, and never after a single letter or a short
+    title ("U. S.", "St."), so a name or an abbreviation stays in one piece."""
+    out, start = [], 0
+    for m in re.finditer(r'[.!?]["\')\]]?\s+(?=[A-Z0-9"\'(\[])', text):
+        before = text[start:m.start()].split()
+        last = before[-1] if before else ""
+        if text[m.start()] == "." and (len(last.strip(".")) <= 1 or last.strip(".").lower() in NOT_AN_END):
+            continue
+        out.append(text[start:m.end()].strip())
+        start = m.end()
+    tail = text[start:].strip()
+    if tail:
+        out.append(tail)
+    return out or [text]
+
+
 def cmd_record(script_path, out_dir):
     import numpy as np
     import soundfile as sf
@@ -552,9 +577,16 @@ def cmd_record(script_path, out_dir):
     for i, seg in enumerate(script["segments"]):
         start = pos
         for j, line in enumerate(seg["spoken"]):
-            audio = speak(line).astype(np.float32)
-            pieces.append(audio)
-            pos += len(audio)
+            wish = for_ear(HOLIDAY_WISH)
+            parts = sentences(line)
+            for k, part in enumerate(parts):
+                audio = speak(part).astype(np.float32)
+                pieces.append(audio)
+                pos += len(audio)
+                if k < len(parts) - 1:                     # a breath between sentences, a longer one before the wish
+                    breath = silence(PAUSE_BEAT if parts[k + 1] == wish else PAUSE_SENTENCE)
+                    pieces.append(breath)
+                    pos += len(breath)
             gap = silence(PAUSE_PARAGRAPH if j < len(seg["spoken"]) - 1 else PAUSE_SEGMENT)
             pieces.append(gap)
             pos += len(gap)
