@@ -426,7 +426,7 @@ def scoop_paragraphs(posts, today):
 def build_script(data, now):
     segs = []
     hello = greeting(now)
-    hey = "Hey there, La Porte." if hello == "Hello" else f"Hey, {hello.lower()}, La Porte."
+    hey = "Hey there, La Porte." if hello == "Hello" else f"Hey La Porte, {hello.lower()}."   # Scoop's own wording
     intro = (f"{hey} This is the La Porte Weather Now weather radio, and thanks for tuning in. "
              f"Here's the latest for La Porte County as of {bs.clock(now)}, {long_date(now)}.")
     segs.append({"id": "intro", "title": "Welcome", "paragraphs": [intro]})
