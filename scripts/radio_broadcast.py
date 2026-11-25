@@ -271,6 +271,22 @@ def greeting(now):
     return "Good morning" if 4 <= h < 12 else "Good afternoon" if 12 <= h < 17 else "Good evening" if 17 <= h < 22 else "Hello"
 
 
+HOLIDAY_WISH = "I hope everyone has a safe and happy holiday."
+
+
+def holiday_wish(now):
+    """Scoop's holiday line (Nov. 25, 2026), said on its own each year: from the day before Thanksgiving
+    through the Sunday after, and from Dec. 20 through New Year's Day. Empty the rest of the year."""
+    d = now.date() if hasattr(now, "date") else now
+    first = datetime.date(d.year, 11, 1)
+    thanksgiving = first + datetime.timedelta(days=(3 - first.weekday()) % 7 + 21)   # the fourth Thursday
+    if thanksgiving - datetime.timedelta(days=1) <= d <= thanksgiving + datetime.timedelta(days=3):
+        return HOLIDAY_WISH
+    if (d.month == 12 and d.day >= 20) or (d.month == 1 and d.day == 1):
+        return HOLIDAY_WISH
+    return ""
+
+
 def long_date(now):
     return f"{WEEKDAYS[now.weekday()]}, {MONTHS[now.month - 1]} {now.day}"
 
@@ -373,7 +389,7 @@ def period_name(p):
 
 
 def forecast_paragraphs(periods):
-    out = ["Now, the forecast from the National Weather Service."]
+    out = ["Now, here's your forecast from the National Weather Service."]
     for p in periods[:3]:
         detail = bs.house_style(p.get("detailed") or p.get("short") or "")
         out.append(f"{period_name(p)}: {detail}")
@@ -407,8 +423,8 @@ def scoop_paragraphs(posts, today):
 
 def build_script(data, now):
     segs = []
-    intro = (f"{greeting(now)}. This is the La Porte Weather Now weather radio for La Porte County, Indiana, "
-             f"with the latest as of {bs.clock(now)}, {long_date(now)}.")
+    intro = (f"{greeting(now)}, friends, and thanks for tuning in. This is the La Porte Weather Now weather radio "
+             f"for La Porte County, Indiana. Here's the latest as of {bs.clock(now)}, {long_date(now)}.")
     segs.append({"id": "intro", "title": "Welcome", "paragraphs": [intro]})
     alert_text, alert_ids = alert_paragraphs(data["alerts"], now)
     segs.append({"id": "alerts", "title": "Alerts", "paragraphs": alert_text})
@@ -419,8 +435,10 @@ def build_script(data, now):
     scoop, scoop_date = scoop_paragraphs(data["posts"], now.date().isoformat())
     if scoop:
         segs.append({"id": "scoop", "title": "Daily Scoop", "paragraphs": scoop})
-    outro = ("That's the latest from La Porte Weather Now. If a warning is issued, act on it right away, "
-             "and keep your phone's emergency alerts turned on. Stay safe, La Porte County.")
+    wish = holiday_wish(now)
+    outro = ("That's the latest from La Porte Weather Now, and thanks for listening. If a warning is issued, "
+             "act on it right away, and keep your phone's emergency alerts turned on. "
+             + (wish + " " if wish else "") + "Take care of each other, and stay safe, La Porte County.")
     segs.append({"id": "outro", "title": "Sign-off", "paragraphs": [outro]})
     for s in segs:
         s["spoken"] = [for_ear(p) for p in s["paragraphs"]]

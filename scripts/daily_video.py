@@ -743,7 +743,8 @@ def build_plan(data, now, normals, radar_ok=None):
     nxt = days_scene(data, now, local(second["end"]), hook)
     if nxt:
         scenes.append(nxt)
-    scenes.append({"id": "end", "kind": "end", "say": "laporteweathernow.com."})
+    wish = rb.holiday_wish(now)                 # Scoop's holiday line, only around Thanksgiving and Christmas
+    scenes.append({"id": "end", "kind": "end", "say": (wish + " " if wish else "") + "laporteweathernow.com."})
     for s in scenes:
         s["spoken"] = rb.for_ear(s["say"])
         if s.get("sayParts"):                    # recorded in two pieces, so the answer appears as it's said
