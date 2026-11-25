@@ -1,13 +1,13 @@
 {
  "about": "Daily Scoop forecasts graded against the La Porte airport (KPPO), same rules as laporteweathernow.com/track-record: temperatures count if within 3 degrees F; rain calls count at 50%+ (should rain) and 20% or less (should stay dry). Made by scripts/scorecard.py.",
- "generated": "2026-11-24T14:36:31-06:00",
+ "generated": "2026-11-25T05:02:19-06:00",
  "station": "La Porte Municipal Airport (KPPO)",
  "tolerance": 3,
  "since": "2026-09-27",
  "window": {
   "days": 30,
-  "from": "2026-10-25",
-  "to": "2026-11-23"
+  "from": "2026-10-26",
+  "to": "2026-11-24"
  },
  "last30": {
   "days": 27,
@@ -35,26 +35,26 @@
   "lowAvgOff": 2.6
  },
  "allTime": {
-  "days": 51,
+  "days": 52,
   "highs": [
-   37,
-   51
+   38,
+   52
   ],
   "lows": [
-   35,
-   51
+   36,
+   52
   ],
   "rainLikely": [
    11,
    13
   ],
   "rainDry": [
-   31,
-   31
+   32,
+   32
   ],
   "rain": [
-   42,
-   44
+   43,
+   45
   ],
   "highAvgOff": 2.7,
   "lowAvgOff": 2.7
@@ -84,10 +84,36 @@
     25,
     26
    ],
-   "nwsHighAvgOff": 2.3,
+   "nwsHighAvgOff": 2.2,
    "blendHighAvgOff": 1.7
   },
   "days": [
+   {
+    "date": "2026-11-24",
+    "said": {
+     "nwsHigh": 40,
+     "blendHigh": 40,
+     "rain": 8
+    },
+    "status": "scored",
+    "observed": {
+     "high": 41,
+     "rained": false,
+     "rainText": "no rain recorded"
+    },
+    "nwsHigh": {
+     "off": 1.0,
+     "hit": true
+    },
+    "blendHigh": {
+     "off": 1.0,
+     "hit": true
+    },
+    "rain": {
+     "hit": true,
+     "kind": "dry"
+    }
+   },
    {
     "date": "2026-11-23",
     "said": {
@@ -1401,18 +1427,18 @@
   ]
  },
  "latest": {
-  "date": "2026-11-23",
-  "fromPost": "2026-11-22",
+  "date": "2026-11-24",
+  "fromPost": "2026-11-23",
   "leadDays": 1,
   "forecast": {
-   "high": 42,
-   "low": 32,
+   "high": 40,
+   "low": 29,
    "rain": 0
   },
   "status": "scored",
   "observed": {
-   "high": 43,
-   "low": 36,
+   "high": 41,
+   "low": 26,
    "rained": false,
    "rainText": "no rain recorded"
   },
@@ -1421,14 +1447,14 @@
    "hit": true
   },
   "low": {
-   "off": 4.0,
-   "hit": false
+   "off": 3.0,
+   "hit": true
   },
   "rain": {
    "hit": true,
    "kind": "dry"
   },
-  "verdict": "close"
+  "verdict": "hit"
  },
  "days": [
   {
@@ -1462,7 +1488,26 @@
     "low": 29,
     "rain": 0
    },
-   "status": "pending"
+   "status": "scored",
+   "observed": {
+    "high": 41,
+    "low": 26,
+    "rained": false,
+    "rainText": "no rain recorded"
+   },
+   "high": {
+    "off": 1.0,
+    "hit": true
+   },
+   "low": {
+    "off": 3.0,
+    "hit": true
+   },
+   "rain": {
+    "hit": true,
+    "kind": "dry"
+   },
+   "verdict": "hit"
   },
   {
    "date": "2026-11-23",
@@ -3119,6 +3164,7 @@
   "2026-11-20": 24,
   "2026-11-21": 24,
   "2026-11-22": 24,
-  "2026-11-23": 24
+  "2026-11-23": 24,
+  "2026-11-24": 24
  }
 }
