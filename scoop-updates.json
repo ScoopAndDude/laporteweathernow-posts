@@ -242,8 +242,31 @@
   },
   "hourlyFrom": "2026-11-26T05:47:00-06:00"
  },
- "published": null,
+ "published": {
+  "time": "2026-11-26T09:45:00-06:00",
+  "alertKeys": [],
+  "alerts": [],
+  "changes": [
+   {
+    "k": "day 2026-11-26",
+    "was": "Thanksgiving Day",
+    "now": "Thanksgiving Day",
+    "shortWas": "Light Rain",
+    "shortNow": "Light Rain",
+    "field": "temp",
+    "from": 45,
+    "to": 42
+   }
+  ],
+  "off": [],
+  "paragraph": "Automatic update, 9:45 a.m.: Since the Scoop below was written, NWS has lowered its high for today to 42 (from 45). At 8:55 a.m. the La Porte airport reported 37 degrees. Over the next 12 hours, NWS's hour-by-hour forecast has rain possible from 10 a.m. to 11 a.m. (up to 41%) and rain likely from 11 a.m. to 10 p.m. (up to 99%). There are no watches, warnings, or advisories for La Porte County right now."
+ },
  "alertRows": [],
  "missing": [],
- "updates": []
+ "updates": [
+  {
+   "time": "2026-11-26T09:45:00-06:00",
+   "why": "NWS forecast day 2026-11-26 temp 45->42"
+  }
+ ]
 }
