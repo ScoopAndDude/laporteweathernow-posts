@@ -1,6 +1,6 @@
 {
  "about": "The Forecast Race: NOAA's new AI weather model, the National Weather Service's own forecasters and three other computer models, graded every day against the La Porte airport (KPPO). Each morning we save what each racer says about tomorrow (temperatures at four checkpoints and the 24-hour rain total) and grade it the next day. Saved forecasts are never changed. Run by La Porte Weather Now (scripts/forecast_race.py).",
- "generated": "2026-11-25T07:32:36-06:00",
+ "generated": "2026-11-26T05:32:34-06:00",
  "started": "2026-10-06",
  "station": {
   "id": "KPPO",
@@ -78,7 +78,7 @@
     "avgMiss": 2.2,
     "hitPct": 76,
     "rainRight": 18,
-    "rainCalls": 26,
+    "rainCalls": 25,
     "wins": 7,
     "ties": 2,
     "rank": 1
@@ -87,10 +87,10 @@
     "id": "ifs",
     "days": 26,
     "avgMiss": 2.4,
-    "hitPct": 74,
-    "rainRight": 24,
-    "rainCalls": 26,
-    "wins": 5,
+    "hitPct": 73,
+    "rainRight": 23,
+    "rainCalls": 25,
+    "wins": 6,
     "ties": 1,
     "rank": 2
    },
@@ -98,9 +98,9 @@
     "id": "nws",
     "days": 26,
     "avgMiss": 2.4,
-    "hitPct": 66,
-    "rainRight": 24,
-    "rainCalls": 26,
+    "hitPct": 67,
+    "rainRight": 23,
+    "rainCalls": 25,
     "wins": 7,
     "ties": 0,
     "rank": 3
@@ -109,9 +109,9 @@
     "id": "aigfs",
     "days": 26,
     "avgMiss": 3.0,
-    "hitPct": 71,
-    "rainRight": 24,
-    "rainCalls": 26,
+    "hitPct": 69,
+    "rainRight": 23,
+    "rainCalls": 25,
     "wins": 0,
     "ties": 1,
     "rank": 4
@@ -119,11 +119,11 @@
    {
     "id": "gfs",
     "days": 26,
-    "avgMiss": 3.2,
-    "hitPct": 60,
-    "rainRight": 25,
-    "rainCalls": 26,
-    "wins": 4,
+    "avgMiss": 3.3,
+    "hitPct": 58,
+    "rainRight": 24,
+    "rainCalls": 25,
+    "wins": 3,
     "ties": 2,
     "rank": 5
    }
@@ -131,7 +131,7 @@
   "all": [
    {
     "id": "aifs",
-    "days": 46,
+    "days": 47,
     "avgMiss": 2.4,
     "hitPct": 69,
     "rainRight": 32,
@@ -142,7 +142,7 @@
    },
    {
     "id": "nws",
-    "days": 53,
+    "days": 54,
     "avgMiss": 2.6,
     "hitPct": 65,
     "rainRight": 47,
@@ -153,18 +153,18 @@
    },
    {
     "id": "ifs",
-    "days": 46,
+    "days": 47,
     "avgMiss": 2.8,
     "hitPct": 64,
     "rainRight": 40,
     "rainCalls": 43,
-    "wins": 5,
+    "wins": 6,
     "ties": 1,
     "rank": 3
    },
    {
     "id": "aigfs",
-    "days": 53,
+    "days": 54,
     "avgMiss": 3.3,
     "hitPct": 61,
     "rainRight": 47,
@@ -175,7 +175,7 @@
    },
    {
     "id": "gfs",
-    "days": 53,
+    "days": 54,
     "avgMiss": 3.6,
     "hitPct": 56,
     "rainRight": 48,
@@ -190,31 +190,31 @@
   "aiVsNws": {
    "a": "aigfs",
    "b": "nws",
-   "days": 53,
-   "aBetter": 22,
+   "days": 54,
+   "aBetter": 23,
    "bBetter": 30,
    "same": 1,
-   "aAvgMiss": 3.3,
+   "aAvgMiss": 3.2,
    "bAvgMiss": 2.6
   },
   "aiVsGfs": {
    "a": "aigfs",
    "b": "gfs",
-   "days": 53,
-   "aBetter": 31,
+   "days": 54,
+   "aBetter": 32,
    "bBetter": 17,
    "same": 5,
-   "aAvgMiss": 3.3,
+   "aAvgMiss": 3.2,
    "bAvgMiss": 3.6
   },
   "europeAiVsNws": {
    "a": "aifs",
    "b": "nws",
-   "days": 46,
-   "aBetter": 24,
+   "days": 47,
+   "aBetter": 25,
    "bBetter": 21,
    "same": 1,
-   "aAvgMiss": 2.4,
+   "aAvgMiss": 2.3,
    "bAvgMiss": 2.5
   }
  },
@@ -7448,7 +7448,52 @@
      "saved": "2026-11-24T11:33Z"
     }
    },
-   "status": "waiting"
+   "status": "scored",
+   "observed": {
+    "temps": [
+     26.6,
+     28.4,
+     41.0,
+     null
+    ],
+    "rainIn": null,
+    "rainHours": 20
+   },
+   "scores": {
+    "nws": {
+     "avgMiss": 3.0,
+     "hits": 2,
+     "checks": 3,
+     "worst": 4.4
+    },
+    "aigfs": {
+     "avgMiss": 1.8,
+     "hits": 2,
+     "checks": 3,
+     "worst": 3.2
+    },
+    "gfs": {
+     "avgMiss": 1.9,
+     "hits": 2,
+     "checks": 3,
+     "worst": 4.1
+    },
+    "aifs": {
+     "avgMiss": 1.5,
+     "hits": 3,
+     "checks": 3,
+     "worst": 2.9
+    },
+    "ifs": {
+     "avgMiss": 1.3,
+     "hits": 3,
+     "checks": 3,
+     "worst": 2.5
+    }
+   },
+   "winners": [
+    "ifs"
+   ]
   },
   {
    "target": "2026-11-26",
@@ -7526,6 +7571,86 @@
      "rainIn": 0.79,
      "run": "2026-11-25T00:00Z",
      "saved": "2026-11-25T11:33Z"
+    }
+   },
+   "status": "waiting"
+  },
+  {
+   "target": "2026-11-27",
+   "made": "2026-11-26",
+   "checkpoints": [
+    {
+     "utc": "2026-11-27T06:00Z",
+     "local": "midnight"
+    },
+    {
+     "utc": "2026-11-27T12:00Z",
+     "local": "6 AM"
+    },
+    {
+     "utc": "2026-11-27T18:00Z",
+     "local": "noon"
+    },
+    {
+     "utc": "2026-11-28T00:00Z",
+     "local": "6 PM"
+    }
+   ],
+   "forecasts": {
+    "nws": {
+     "temps": [
+      38.0,
+      34.1,
+      45.1,
+      42.0
+     ],
+     "rainIn": 0.02,
+     "issued": "2026-11-26T11:16Z",
+     "saved": "2026-11-26T11:32Z"
+    },
+    "aigfs": {
+     "temps": [
+      37.9,
+      38.2,
+      41.1,
+      39.1
+     ],
+     "rainIn": 0.47,
+     "run": "2026-11-26T00:00Z",
+     "saved": "2026-11-26T11:32Z"
+    },
+    "gfs": {
+     "temps": [
+      35.7,
+      38.7,
+      43.4,
+      40.1
+     ],
+     "rainIn": 0.26,
+     "run": "2026-11-26T00:00Z",
+     "saved": "2026-11-26T11:32Z"
+    },
+    "aifs": {
+     "temps": [
+      39.7,
+      38.5,
+      42.7,
+      42.7
+     ],
+     "rainIn": 502.73,
+     "run": "2026-11-26T00:00Z",
+     "saved": "2026-11-26T11:32Z"
+    },
+    "ifs": {
+     "temps": [
+      36.1,
+      36.1,
+      41.0,
+      40.4
+     ],
+     "rainIn": 0.5,
+     "run": "2026-11-26T00:00Z",
+     "saved": "2026-11-26T11:33Z"
     }
    },
    "status": "waiting"
