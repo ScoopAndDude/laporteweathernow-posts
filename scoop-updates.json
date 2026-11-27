@@ -243,7 +243,7 @@
   "hourlyFrom": "2026-11-27T05:47:00-06:00"
  },
  "published": {
-  "time": "2026-11-27T16:17:00-06:00",
+  "time": "2026-11-27T17:47:00-06:00",
   "alertKeys": [],
   "alerts": [],
   "changes": [
@@ -252,14 +252,14 @@
     "was": "Friday",
     "now": "This Afternoon",
     "shortWas": "Light Rain",
-    "shortNow": "Chance Light Rain",
+    "shortNow": "Mostly Cloudy",
     "field": "rain",
     "from": 90,
-    "to": 40
+    "to": 0
    }
   ],
   "off": [],
-  "paragraph": "Automatic update, 4:17 p.m.: Since the Scoop below was written, NWS has lowered its chance of rain for this afternoon to 40% (from 90% for the whole day). At 3:15 p.m. the La Porte airport reported mostly cloudy and 45 degrees. There are no watches, warnings, or advisories for La Porte County right now."
+  "paragraph": "Automatic update, 5:47 p.m.: Since the Scoop below was written, NWS has taken the rain out of its forecast for this afternoon (it had 90% for the whole day). At 5:15 p.m. the La Porte airport reported clear and 41 degrees. There are no watches, warnings, or advisories for La Porte County right now."
  },
  "alertRows": [],
  "missing": [],
@@ -279,6 +279,10 @@
   {
    "time": "2026-11-27T16:17:00-06:00",
    "why": "NWS forecast day 2026-11-27 rain 90->40"
+  },
+  {
+   "time": "2026-11-27T17:47:00-06:00",
+   "why": "NWS forecast day 2026-11-27 rain 90->0"
   }
  ]
 }
