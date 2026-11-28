@@ -44,8 +44,25 @@
       "permalink": "https://www.instagram.com/reel/DgSNojqSiKQ/",
       "place": "La Porte, Indiana",
       "at": "2026-11-28T06:05:00-06:00"
+    },
+    "tiktok": {
+      "id": "6b0ac3819665bd30feac6eae",
+      "via": "buffer",
+      "status": "sent",
+      "permalink": "https://tiktok.com/@scoopanddude/video/7713192026023513357",
+      "at": "2026-11-28T06:05:00-06:00"
     }
   },
-  "errors": [],
-  "postNote": "Posted."
+  "errors": [
+    {
+      "at": "2026-11-28T06:05:00-06:00",
+      "error": "X (Buffer): no X account named 'ScoopAndDude' is connected in Buffer (the name is in video/config.json, buffer.accounts)"
+    }
+  ],
+  "postNote": "Posted.",
+  "bufferTries": {
+    "tiktok": 1,
+    "x": 1
+  },
+  "bufferNote": "Not posted on X (see errors). Posted on TikTok."
 }
