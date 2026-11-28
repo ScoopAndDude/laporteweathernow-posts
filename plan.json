@@ -1,0 +1,200 @@
+{
+  "about": "The Daily Video for La Porte Weather Now (scripts/daily_video.py): official NWS weather, read aloud.",
+  "date": "2026-11-28",
+  "planned": "2026-11-28T06:02:00-06:00",
+  "source": "nws",
+  "forecastUpdated": "2026-11-28T11:29:37+00:00",
+  "observationTime": "2026-11-28T05:15:00-06:00",
+  "alerts": [],
+  "shortFused": [],
+  "hook": {
+    "kind": "plain",
+    "score": 10,
+    "big": "49°",
+    "small": null,
+    "say": "How's today looking, LaPorte? A chance of showers, then mostly sunny, high near 49°.",
+    "when": "today"
+  },
+  "hookOptions": [
+    {
+      "kind": "plain",
+      "score": 10,
+      "say": "How's today looking, LaPorte? A chance of showers, then mostly sunny, high near 49°."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "kind": "hook",
+      "label": "LAPORTE · SATURDAY, NOV. 28",
+      "big": "49°",
+      "small": null,
+      "icon": "sun-rain",
+      "tone": "plain",
+      "hookKind": "plain",
+      "say": "How's today looking, LaPorte? A chance of showers, then mostly sunny, high near 49°.",
+      "ask": [
+        "How's today looking?",
+        "a chance of showers, then mostly sunny"
+      ],
+      "sayParts": [
+        "How's today looking, LaPorte?",
+        "A chance of showers, then mostly sunny, high near 49°."
+      ],
+      "spoken": "How's today looking, La Port? A chance of showers, then mostly sunny, high near forty-nine degrees.",
+      "spokenParts": [
+        "How's today looking, La Port?",
+        "A chance of showers, then mostly sunny, high near forty-nine degrees."
+      ],
+      "factAfter": 2.16,
+      "voiceFile": "voice/hook.wav",
+      "voiceSeconds": 6.61,
+      "start": 0.0,
+      "duration": 7.01,
+      "voiceAt": 0.04,
+      "factAt": 2.08
+    },
+    {
+      "id": "today",
+      "sun": null,
+      "kind": "period",
+      "title": "TODAY",
+      "date": "Saturday, Nov. 28",
+      "temp": 49,
+      "tempLabel": "HIGH",
+      "icon": "sun-rain",
+      "text": "A chance of showers, then mostly sunny",
+      "sentence": "A chance of showers, then mostly sunny",
+      "rain": null,
+      "note": "Gusts to 25 mph",
+      "hours": [
+        {
+          "label": "6 AM",
+          "temp": 35,
+          "pop": 9
+        },
+        {
+          "label": "8 AM",
+          "temp": 36,
+          "pop": 13
+        },
+        {
+          "label": "10 AM",
+          "temp": 42,
+          "pop": 3
+        },
+        {
+          "label": "12 PM",
+          "temp": 47,
+          "pop": 1
+        },
+        {
+          "label": "2 PM",
+          "temp": 49,
+          "pop": 1
+        },
+        {
+          "label": "4 PM",
+          "temp": 47,
+          "pop": 1
+        }
+      ],
+      "say": "Today: a chance of showers. High 49. Gusts to 25 mph. Tonight: low 36.",
+      "next": {
+        "name": "Tonight",
+        "temp": 36,
+        "tempLabel": "LOW"
+      },
+      "spoken": "Today: a chance of showers. High forty-nine. Gusts to twenty-five miles an hour. Tonight: low thirty-six.",
+      "voiceFile": "voice/today.wav",
+      "voiceSeconds": 7.0,
+      "start": 7.01,
+      "duration": 7.4,
+      "voiceAt": 7.11
+    },
+    {
+      "id": "radar",
+      "kind": "radar",
+      "title": "RADAR",
+      "say": "Here's the radar right now.",
+      "spoken": "Here's the radar right now.",
+      "voiceFile": "voice/radar.wav",
+      "voiceSeconds": 1.98,
+      "start": 14.41,
+      "duration": 3.2,
+      "voiceAt": 14.51
+    },
+    {
+      "id": "days",
+      "kind": "days",
+      "title": "NEXT 3 DAYS",
+      "days": [
+        {
+          "name": "Sun",
+          "day": "Sunday",
+          "hi": 44,
+          "lo": 31,
+          "pop": 100,
+          "icon": "rain",
+          "text": "Light rain",
+          "short": "Light Rain",
+          "star": false
+        },
+        {
+          "name": "Mon",
+          "day": "Monday",
+          "hi": 37,
+          "lo": 26,
+          "pop": null,
+          "icon": "sun-small-cloud",
+          "text": "Mostly sunny",
+          "short": "Mostly Sunny",
+          "star": false
+        },
+        {
+          "name": "Tue",
+          "day": "Tuesday",
+          "hi": 42,
+          "lo": 31,
+          "pop": null,
+          "icon": "sun-cloud",
+          "text": "Partly sunny",
+          "short": "Partly Sunny",
+          "star": false
+        }
+      ],
+      "say": "Sunday: light rain, 44.",
+      "spoken": "Sunday: light rain, forty-four.",
+      "voiceFile": "voice/days.wav",
+      "voiceSeconds": 2.33,
+      "start": 17.61,
+      "duration": 3.2,
+      "voiceAt": 17.71
+    },
+    {
+      "id": "end",
+      "kind": "end",
+      "say": "I hope everyone has a safe and happy holiday. laporteweathernow.com.",
+      "spoken": "I hope everyone has a safe and happy holiday. La Port Weather Now dot com.",
+      "voiceFile": "voice/end.wav",
+      "voiceSeconds": 4.72,
+      "start": 20.81,
+      "duration": 5.12,
+      "voiceAt": 20.91
+    }
+  ],
+  "caption": "LaPorte weather for Saturday, Nov. 28, from the National Weather Service:\nToday: A chance of showers, then mostly sunny. High 49. Gusts to 25 mph.\nTonight: Mostly cloudy, then a 40% chance of light rain after 3 a.m. Low 36.\nSunday: Light rain, high 44. Monday: Mostly sunny, high 37. Tuesday: Partly sunny, high 42.\nToday's Daily Scoop: Mostly sunny near 49; rain likely Sunday\nFree forecast every morning: laporteweathernow.com\nNo hype. Just the forecast.\n#LaPorte #LaPorteIndiana #LaPorteCounty #IndianaWeather #NWIndiana",
+  "words": 56,
+  "mode": "auto",
+  "normalsStation": {
+    "id": "USC00124837",
+    "name": "LAPORTE, IN US",
+    "km": 1.0
+  },
+  "seconds": 25.93,
+  "voice": "Kokoro-82M af_heart, speed 1.1",
+  "video": "laporte-2026-11-28.mp4",
+  "cover": "cover.jpg",
+  "bytes": 10616859,
+  "rendered": "2026-11-28T06:04:16-06:00"
+}
